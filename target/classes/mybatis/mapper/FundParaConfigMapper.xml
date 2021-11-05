@@ -6,7 +6,7 @@
 
     <select id="selectByPrimaryKey" resultType="FundParaConfig">
         select *
-        from fund_para_config
+        from mybatis.fund_para_config
         where TAAccountID = #{id}
     </select>
 

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.psbc.mapper.FundDateMapper">
+
+    <!--    FundDateMapper.xml-->
+
+    <select id="selectByPrimaryKey" resultType="FundDate">
+        select *
+        from mybatis.fund_date
+        where TAAccountID = #{id}
+    </select>
+
+
+    <delete id="deleteByPrimaryKey">
+        delete
+        from mybatis.fund_date
+        where TAAccountID = #{id}
+    </delete>
+
+
+    <insert id="insert" parameterType="com.psbc.pojo.FundDate">
+        insert into mybatis.fund_date (
+        TACode,
+        FundCode,
+        DistributorCode,
+        DateType,
+        CorrCfmDate,
+        TransactionCfmDate
+            values (
+        #{TACode},
+        #{FundCode},
+        #{DistributorCode},
+        #{DateType},
+        #{CorrCfmDate},
+        #{TransactionCfmDate}
+        )
+
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.FundDate">
+        update mybatis.fund_date
+        set TACode          =   #{TACode},
+            FundCode        =   #{FundCode},
+            DistributorCode =   #{DistributorCode},
+            DateType        =   #{DateType},
+            CorrCfmDate     =   #{CorrCfmDate}
+        where TAAccountID = #{TAAccountID}
+    </update>
+</mapper>
