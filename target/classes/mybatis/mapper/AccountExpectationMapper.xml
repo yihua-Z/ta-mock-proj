@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.mapper.AccountExpectationMapper">
+<mapper namespace="com.psbc.mapper.AccountExpectationMapper">
     <!--AccountExpectation-->
 
     <select id="selectByPrimaryKey" resultType="AccountExpectation">
@@ -17,7 +17,7 @@
     </delete>
 
 
-    <insert id="insert" parameterType="com.example.pojo.AccountExpectation">
+    <insert id="insert" parameterType="com.psbc.pojo.AccountExpectation">
         insert into mybatis.AccountExpectation (AppSheetSerialNo,
                                                 ReturnCode,
                                                 ErrorDetail,
@@ -41,7 +41,7 @@
 
     </insert>
 
-    <update id="updateByPrimaryKey" parameterType="com.example.pojo.AccountExpectation">
+    <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AccountExpectation">
         update mybatis.AccountExpectation
         set ReturnCode         = #{ReturnCode},
             ErrorDetail        = #{ErrorDetail},

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.mapper.AcctReconciliationMapper">
+<mapper namespace="com.psbc.mapper.AcctReconciliationMapper">
     <!--    AcctReconciliationMapper.xml-->
     <select id="selectByPrimaryKey" resultType="AcctReconciliation">
         select *
@@ -16,7 +16,7 @@
     </delete>
 
 
-    <insert id="insert" parameterType="com.example.pojo.AcctReconciliation">
+    <insert id="insert" parameterType="com.psbc.pojo.AcctReconciliation">
         insert into mybatis.AcctReconciliation (ReconciliationID,
                                                 AvailableVol,
                                                 TotalVolOfDistributorInTA,
@@ -56,7 +56,7 @@
 
     </insert>
 
-    <update id="updateByPrimaryKey" parameterType="com.example.pojo.AcctReconciliation">
+    <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AcctReconciliation">
         update mybatis.AcctReconciliation
         set AvailableVol                   = #{AvailableVol},
             TotalVolOfDistributorInTA      = #{TotalVolOfDistributorInTA},

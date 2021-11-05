@@ -1,0 +1,87 @@
+package com.psbc.pojo;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class TransactionApplication {
+	private String AppSheetSerialNo;
+	private String FundCode;
+	private String LargeRedemptionFlag;
+	private String TransactionDate;
+	private String TransactionTime;
+	private String TransactionAccountID;
+	private String DistributorCode;
+	private Double ApplicationVol;
+	private Double ApplicationAmount;
+	private String BusinessCode;
+	private String TAAccountID;
+	private Double DiscountRateOfCommission;
+	private String DepositAcct;
+	private String RegionCode;
+	private String CurrencyType;
+	private String BranchCode;
+	private String OriginalAppSheetNo;
+	private String OriginalSubsDate;
+	private String IndividualOrInstitution;
+	private int ValidPeriod;
+	private int DaysRedemptionInAdvance;
+	private String RedemptionDateInAdvance;
+	private String OriginalSerialNo;
+	private String DateOfPeriodicSubs;
+	private String TASerialNO;
+	private int TermOfPeriodicSubs;
+	private String FutureBuyDate;
+	private String TargetDistributorCode;
+	private Double Charge;
+	private String TargetBranchCode;
+	private String TargetTransactionAccountID;
+	private String TargetRegionCode;
+	private Double DividendRatio;
+	private String Specification;
+	private String CodeOfTargetFund;
+	private Double TotalBackendLoa;
+	private String ShareClass;
+	private String OriginalCfmDate;
+	private String DetailFlag;
+	private String OriginalAppDate;
+	private String DefDividendMethod;
+	private String FrozenCause;
+	private String FreezingDeadline;
+	private String VarietyCodeOfPeriodicSubs;
+	private String SerialNoOfPeriodicSubs;
+	private String RationType;
+	private String TargetTAAccountID;
+	private String TargetRegistrarCode;
+	private String NetNo;
+	private String CustomerNo;
+	private String TargetShareType;
+	private String RationProtocolNo;
+	private String BeginDateOfPeriodicSubs;
+	private String EndDateOfPeriodicSubs;
+	private int SendDayOfPeriodicSubs;
+	private String Broker;
+	private String SalesPromotion;
+	private String AcceptMethod;
+	private String ForceRedemptionType;
+	private String TakeIncomeFlag;
+	private String PurposeOfPeSubs;
+	private Double FrequencyOfPeSubs;
+	private String PeriodSubTimeUnit;
+	private Double BatchNumOfPeSubs;
+	private String CapitalMode;
+	private String DetailCapitalMode;
+	private Double BackenloadDiscount;
+	private String CombineNum;
+	private String FutureSubscribeDate;
+	private String TradingMethod;
+	private String LargeBuyFlag;
+	private String ChargeType;
+	private Double SpecifyRateFee;
+	private Double SpecifyFee;
+	private String TACode;
+	private int ReferenceNumber;
+}

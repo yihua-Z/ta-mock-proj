@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.mapper.AcctShareMapper">
+<mapper namespace="com.psbc.mapper.AcctShareMapper">
 
     <!--    AcctShareMapper.xml-->
 
@@ -18,7 +18,7 @@
     </delete>
 
 
-    <insert id="insert" parameterType="com.example.pojo.AcctShare">
+    <insert id="insert" parameterType="com.psbc.pojo.AcctShare">
         insert into mybatis.account_info (TAAccountID,
                                           DistributorCode,
                                           TACode,
@@ -35,7 +35,7 @@
 
     </insert>
 
-    <update id="updateByPrimaryKey" parameterType="com.example.pojo.AcctShare">
+    <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AcctShare">
         update mybatis.account_info
         set DistributorCode= #{DistributorCode},
             TACode= #{TACode},

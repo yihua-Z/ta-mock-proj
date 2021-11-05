@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.mapper.AccountInfoMapper">
+<mapper namespace="com.psbc.mapper.AccountInfoMapper">
 
     <sql id="Base_Column_List">
         TAAccountID
@@ -35,7 +35,7 @@
     </delete>
 
 
-    <insert id="insert" parameterType="com.example.pojo.AccountInfo">
+    <insert id="insert" parameterType="com.psbc.pojo.AccountInfo">
         insert into mybatis.account_info (TAAccountID,
                                           Name,
                                           Sex,
@@ -71,7 +71,7 @@
 
     </insert>
 
-    <update id="updateByPrimaryKey" parameterType="com.example.pojo.AccountInfo">
+    <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AccountInfo">
         update mybatis.account_info
         set Name                 = #{Name},
             Sex                  = #{Sex},

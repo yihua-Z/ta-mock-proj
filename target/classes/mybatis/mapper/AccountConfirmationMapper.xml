@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.mapper.AccountConfirmationMapper">
+<mapper namespace="com.psbc.mapper.AccountConfirmationMapper">
 
     <!--    AccountConfirmation-->
     <select id="selectByPrimaryKey" resultType="AccountConfirmation">
@@ -17,7 +17,7 @@
     </delete>
 
 
-    <insert id="insert" parameterType="com.example.pojo.AccountConfirmation">
+    <insert id="insert" parameterType="com.psbc.pojo.AccountConfirmation">
         insert into mybatis.AccountConfirmation (ConfirmID,
                                                  TransactionCfmDate,
                                                  ReturnCode,
@@ -57,7 +57,7 @@
 
     </insert>
 
-    <update id="updateByPrimaryKey" parameterType="com.example.pojo.AccountConfirmation">
+    <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AccountConfirmation">
         update mybatis.AccountConfirmation
         set TransactionCfmDate = #{TransactionCfmDate},
             ReturnCode         = #{ReturnCode},

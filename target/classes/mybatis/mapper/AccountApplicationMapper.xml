@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.mapper.AccountApplicationMapper">
+<mapper namespace="com.psbc.mapper.AccountApplicationMapper">
 
     <!--    AccountApplication-->
     <select id="selectByPrimaryKey" resultType="AccountApplication">
@@ -17,7 +17,7 @@
     </delete>
 
 
-    <insert id="insert" parameterType="com.example.pojo.AccountApplication">
+    <insert id="insert" parameterType="com.psbc.pojo.AccountApplication">
         insert into mybatis.AccountApplication (AppSheetSerialN,
                                                 Address,
                                                 InstReprIDCode,
@@ -193,7 +193,7 @@
 
     </insert>
 
-    <update id="updateByPrimaryKey" parameterType="com.example.pojo.AccountApplication">
+    <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AccountApplication">
         update mybatis.AccountApplication
         set Address                            = #{Address                            },
             InstReprIDCode                     = #{InstReprIDCode                     },
