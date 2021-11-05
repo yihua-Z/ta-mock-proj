@@ -66,7 +66,7 @@ class TaMockProjectApplicationTests {
     @Test
     void testAcctShare(){
         AcctShare acctShare = new AcctShare();
-        acctShare.setTAAccountID("1");
+        acctShare.setTAAccountID("2");
         acctShare.setDistributorCode("1");
         acctShare.setTACode("1");
         acctShare.setTotalFrozenVol(1.0);
@@ -74,7 +74,9 @@ class TaMockProjectApplicationTests {
         acctShare.setTotalFrozenVol(0.1);
         acctShare.setTransactionCfmDate("2021");
 
-        acctShareMapper.insert(acctShare);
+        AcctShare acctShare1 = acctShareMapper.selectByPrimaryKey("1");
+        System.out.println(acctShare1.toString());
+//        int insert = acctShareMapper.insert(acctShare);
 
 
     }
