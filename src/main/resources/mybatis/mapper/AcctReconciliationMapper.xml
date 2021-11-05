@@ -34,7 +34,7 @@
                                                 FundCode,
                                                 TAAccountID,
                                                 TACode,
-                                                DistributorCode,)
+                                                DistributorCode)
         values (#{ReconciliationID},
                 #{AvailableVol},
                 #{TotalVolOfDistributorInTA},
