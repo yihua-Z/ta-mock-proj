@@ -7,14 +7,14 @@
     <select id="selectByPrimaryKey" resultType="Dividend">
         select *
         from dividend
-        where TAAccountID = #{id}
+        where DividendID = #{id}
     </select>
 
 
     <delete id="deleteByPrimaryKey">
         delete
         from dividend
-        where TAAccountID = #{id}
+        where DividendID = #{id}
     </delete>
 
 
@@ -98,8 +98,7 @@
 
     <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.Dividend">
         update dividend
-        set DividendID                   = #{DividendID},
-            BasisforCalculatingDividend  = #{BasisforCalculatingDividend},
+        set BasisforCalculatingDividend  = #{BasisforCalculatingDividend},
             VolOfDividendforReinvestment = #{VolOfDividendforReinvestment},
             DividentDate                 = #{DividentDate},
             DividendAmount               = #{DividendAmount},
@@ -135,6 +134,6 @@
             TACode                       = #{TACode},
             TransactionCfmDate           = #{TransactionCfmDate},
             FundCode                     = #{FundCode}
-        where TAAccountID = #{TAAccountID}
+        where DividendID = #{DividendID}
     </update>
 </mapper>

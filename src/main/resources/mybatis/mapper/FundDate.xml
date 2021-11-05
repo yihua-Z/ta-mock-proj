@@ -7,14 +7,14 @@
     <select id="selectByPrimaryKey" resultType="FundDate">
         select *
         from fund_date
-        where TAAccountID = #{id}
+        where TACode = #{id}
     </select>
 
 
     <delete id="deleteByPrimaryKey">
         delete
         from fund_date
-        where TAAccountID = #{id}
+        where TACode = #{id}
     </delete>
 
 
@@ -36,11 +36,11 @@
 
     <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.FundDate">
         update fund_date
-        set TACode          = #{TACode},
+        set
             FundCode        = #{FundCode},
             DistributorCode = #{DistributorCode},
             DateType        = #{DateType},
             CorrCfmDate     = #{CorrCfmDate}
-        where TAAccountID = #{TAAccountID}
+        where TACode = #{TACode}
     </update>
 </mapper>

@@ -7,14 +7,14 @@
     <select id="selectByPrimaryKey" resultType="FundInfo">
         select *
         from fund_info
-        where TAAccountID = #{id}
+        where FundCode = #{id}
     </select>
 
 
     <delete id="deleteByPrimaryKey">
         delete
         from fund_info
-        where TAAccountID = #{id}
+        where FundCode = #{id}
     </delete>
 
 
@@ -192,7 +192,7 @@
 
     <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.FundInfo">
         update fund_info
-        set FundCode               = #{FundCode},
+        set
             FundName               = #{FundName},
             TotalFundVol           = #{TotalFundVol},
             FundStatus             = #{FundStatus},
@@ -276,6 +276,6 @@
             FundServerTel          = #{FundServerTel},
             FundInternetAddress    = #{FundInternetAddress},
             DistributorCode        = #{DistributorCode}
-        where TAAccountID = #{TAAccountID}
+        where FundCode = #{FundCode}
     </update>
 </mapper>

@@ -7,14 +7,14 @@
     <select id="selectByPrimaryKey" resultType="TransactionApplication">
         select *
         from transaction_application
-        where TAAccountID = #{id}
+        where AppSheetSerialNo = #{id}
     </select>
 
 
     <delete id="deleteByPrimaryKey">
         delete
         from transaction_application
-        where TAAccountID = #{id}
+        where AppSheetSerialNo = #{id}
     </delete>
 
 
@@ -176,8 +176,7 @@
 
     <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.TransactionApplication">
         update transaction_application
-        set AppSheetSerialNo        = #{AppSheetSerialNo},
-            FundCode                = #{FundCode},
+        set FundCode                = #{FundCode},
             LargeRedemptionFlag     = #{LargeRedemptionFlag},
             TransactionDate         = #{TransactionDate},
             TransactionTime         = #{TransactionTime},
@@ -252,6 +251,6 @@
             SpecifyFee = #{SpecifyFee},
             TACode = #{TACode},
             ReferenceNumber = #{ReferenceNumber}
-        where TAAccountID = #{TAAccountID}
+        where AppSheetSerialNo = #{AppSheetSerialNo}
     </update>
 </mapper>

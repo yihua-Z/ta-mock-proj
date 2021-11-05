@@ -685,3 +685,15 @@ create table if not exists transaction_expectation
     primary key (AppSheetSerialNo)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+
+
+create table if not exists fund_date (
+                                         TACode							VARCHAR(9)	NOT NULL COMMENT "TA代码",
+                                         FundCode						VARCHAR(20)	NOT NULL COMMENT "理财产品代码",
+                                         DistributorCode					VARCHAR(9)	NOT NULL COMMENT "销售人代码",
+                                         DateType						VARCHAR(1)	NOT NULL COMMENT "日期类型",
+                                         CorrCfmDate						DECIMAL(8)	NOT NULL COMMENT "对应确认日",
+                                         TransactionCfmDate				VARCHAR(8)	NOT NULL COMMENT "交易确认日期",
+                                         primary key (TACode,FundCode,CorrCfmDate),
+                                         foreign key (FundCode) references fund_info(FundCode)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
