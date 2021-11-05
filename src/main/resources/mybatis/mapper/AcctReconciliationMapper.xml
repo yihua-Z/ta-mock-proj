@@ -5,14 +5,14 @@
     <select id="selectByPrimaryKey" resultType="AcctReconciliation">
         select *
         from acct_reconciliation
-        where TAAccountID = #{id}
+        where ReconciliationID = #{id}
     </select>
 
 
     <delete id="deleteByPrimaryKey">
         delete
         from acct_reconciliation
-        where TAAccountID = #{id}
+        where ReconciliationID = #{id}
     </delete>
 
 
@@ -75,6 +75,6 @@
             TAAccountID                    = #{TAAccountID},
             TACode                         = #{TACode},
             DistributorCode                = #{DistributorCode}
-        where TAAccountID = #{TAAccountID}
+        where ReconciliationID = #{ReconciliationID}
     </update>
 </mapper>
