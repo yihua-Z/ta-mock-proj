@@ -27,7 +27,7 @@
                                                 FromTAFlag,
                                                 RegionCode,
                                                 NetNo,
-                                                Specification,)
+                                                Specification)
         values (#{AppSheetSerialNo},
                 #{ReturnCode},
                 #{ErrorDetail},

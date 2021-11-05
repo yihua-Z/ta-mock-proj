@@ -2,24 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.psbc.mapper.AccountInfoMapper">
 
-    <sql id="Base_Column_List">
-        TAAccountID
-        ,
-             Name,
-             Sex,
-             Nationality,
-             Vocation,
-             Address,
-             TelNo,
-             CertificateType,
-             CertificateNo,
-             CertValidDate,
-             TransactionAccountID,
-             DistributorCode,
-             BranchCode,
-             AccountStatus,
-             CustomerNo
-    </sql>
 
     <select id="selectByPrimaryKey" resultType="AccountInfo">
         select *

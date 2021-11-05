@@ -76,7 +76,7 @@ class TaMockProjectApplicationTests {
 
         AcctShare acctShare1 = acctShareMapper.selectByPrimaryKey("1");
         System.out.println(acctShare1.toString());
-//        int insert = acctShareMapper.insert(acctShare);
+        int insert = acctShareMapper.insert(acctShare);
 
 
     }

@@ -24,14 +24,14 @@
                                         TACode,
                                         TotalVolOfDistributorInTA,
                                         TotalFrozenVol,
-                                        TransactionCfmDate,
-                                        values ( #{TAAccountID},
-                                            #{DistributorCode},
-                                            #{TACode},
-                                            #{TotalVolOfDistributorInTA},
-                                            #{TotalFrozenVol},
-                                            #{TransactionCfmDate}
-                                            )
+                                        TransactionCfmDate)
+
+        values (#{TAAccountID},
+                #{DistributorCode},
+                #{TACode},
+                #{TotalVolOfDistributorInTA},
+                #{TotalFrozenVol},
+                #{TransactionCfmDate})
 
     </insert>
 
