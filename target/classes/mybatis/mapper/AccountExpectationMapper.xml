@@ -5,20 +5,20 @@
 
     <select id="selectByPrimaryKey" resultType="AccountExpectation">
         select *
-        from mybatis.AccountExpectation
+        from account_expectation
         where AppSheetSerialNo = #{id}
     </select>
 
 
     <delete id="deleteByPrimaryKey">
         delete
-        from mybatis.AccountExpectation
+        from account_expectation
         where AppSheetSerialNo = #{id}
     </delete>
 
 
     <insert id="insert" parameterType="com.psbc.pojo.AccountExpectation">
-        insert into mybatis.AccountExpectation (AppSheetSerialNo,
+        insert into account_expectation (AppSheetSerialNo,
                                                 ReturnCode,
                                                 ErrorDetail,
                                                 Status,
@@ -27,7 +27,7 @@
                                                 FromTAFlag,
                                                 RegionCode,
                                                 NetNo,
-                                                Specification,)
+                                                Specification)
         values (#{AppSheetSerialNo},
                 #{ReturnCode},
                 #{ErrorDetail},
@@ -42,7 +42,7 @@
     </insert>
 
     <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AccountExpectation">
-        update mybatis.AccountExpectation
+        update account_expectation
         set ReturnCode         = #{ReturnCode},
             ErrorDetail        = #{ErrorDetail},
             Status             = #{Status},

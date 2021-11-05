@@ -66,7 +66,7 @@ class TaMockProjectApplicationTests {
     @Test
     void testAcctShare(){
         AcctShare acctShare = new AcctShare();
-        acctShare.setTAAccountID("2");
+        acctShare.setTAAccountID("3");
         acctShare.setDistributorCode("1");
         acctShare.setTACode("1");
         acctShare.setTotalFrozenVol(1.0);

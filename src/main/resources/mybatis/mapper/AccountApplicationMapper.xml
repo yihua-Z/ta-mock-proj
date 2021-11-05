@@ -5,20 +5,20 @@
     <!--    AccountApplication-->
     <select id="selectByPrimaryKey" resultType="AccountApplication">
         select *
-        from mybatis.AccountApplication
+        from account_application
         where AppSheetSerialNo = #{id}
     </select>
 
 
     <delete id="deleteByPrimaryKey">
         delete
-        from mybatis.AccountApplication
+        from account_application
         where AppSheetSerialNo = #{id}
     </delete>
 
 
     <insert id="insert" parameterType="com.psbc.pojo.AccountApplication">
-        insert into mybatis.AccountApplication (AppSheetSerialN,
+        insert into account_application (AppSheetSerialN,
                                                 Address,
                                                 InstReprIDCode,
                                                 InstReprIDType,
@@ -194,7 +194,7 @@
     </insert>
 
     <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AccountApplication">
-        update mybatis.AccountApplication
+        update account_application
         set Address                            = #{Address                            },
             InstReprIDCode                     = #{InstReprIDCode                     },
             InstReprIDType                     = #{InstReprIDType                     },
