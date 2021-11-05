@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.AcctShareMapper">
+
+    <!--    AcctShareMapper.xml-->
+
+    <select id="selectByPrimaryKey" resultType="AcctShare">
+        select *
+        from mybatis.account_info
+        where TAAccountID = #{id}
+    </select>
+
+
+    <delete id="deleteByPrimaryKey">
+        delete
+        from mybatis.account_info
+        where TAAccountID = #{id}
+    </delete>
+
+
+    <insert id="insert" parameterType="com.example.pojo.AcctShare">
+        insert into mybatis.account_info (TAAccountID,
+                                          DistributorCode,
+                                          TACode,
+                                          TotalVolOfDistributorInTA,
+                                          TotalFrozenVol,
+                                          TransactionCfmDate,
+                                          values ( #{TAAccountID},
+                                              #{DistributorCode},
+                                              #{TACode},
+                                              #{TotalVolOfDistributorInTA},
+                                              #{TotalFrozenVol},
+                                              #{TransactionCfmDate}
+                                              )
+
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="com.example.pojo.AcctShare">
+        update mybatis.account_info
+        set DistributorCode= #{DistributorCode},
+            TACode= #{TACode},
+            TotalVolOfDistributorInTA= #{TotalVolOfDistributorInTA},
+            TotalFrozenVol= #{TotalFrozenVol},
+            TransactionCfmDate= #{TransactionCfmDate}
+
+        where TAAccountID = #{TAAccountID}
+    </update>
+</mapper>

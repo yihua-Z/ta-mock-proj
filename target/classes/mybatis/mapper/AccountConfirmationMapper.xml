@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.AccountConfirmationMapper">
+
+    <!--    AccountConfirmation-->
+    <select id="selectByPrimaryKey" resultType="AccountConfirmation">
+        select *
+        from mybatis.AccountConfirmation
+        where ConfirmID = #{id}
+    </select>
+
+
+    <delete id="deleteByPrimaryKey">
+        delete
+        from mybatis.AccountConfirmation
+        where ConfirmID = #{id}
+    </delete>
+
+
+    <insert id="insert" parameterType="com.example.pojo.AccountConfirmation">
+        insert into mybatis.AccountConfirmation (ConfirmID,
+                                                 TransactionCfmDate,
+                                                 ReturnCode,
+                                                 BusinessCode,
+                                                 TransactionDate,
+                                                 TransactionTime,
+                                                 TASerialNO,
+                                                 FromTAFlag,
+                                                 RegionCode,
+                                                 NetNo,
+                                                 Specification,
+                                                 CustomerNo,
+                                                 ErrorDetail,
+                                                 AppSheetSerialNo,
+                                                 TACode,
+                                                 TAAccountID,
+                                                 DistributorCode,
+                                                 ReferenceNumber)
+        values (#{ConfirmID},
+                #{TransactionCfmDate},
+                #{ReturnCode},
+                #{BusinessCode},
+                #{TransactionDate},
+                #{TransactionTime},
+                #{TASerialNO},
+                #{FromTAFlag},
+                #{RegionCode},
+                #{NetNo},
+                #{Specification},
+                #{CustomerNo},
+                #{ErrorDetail},
+                #{AppSheetSerialNo},
+                #{TACode},
+                #{TAAccountID},
+                #{DistributorCode},
+                #{ReferenceNumber})
+
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="com.example.pojo.AccountConfirmation">
+        update mybatis.AccountConfirmation
+        set TransactionCfmDate = #{TransactionCfmDate},
+            ReturnCode         = #{ReturnCode},
+            BusinessCode       = #{BusinessCode},
+            TransactionDate    = #{TransactionDate},
+            TransactionTime    = #{TransactionTime},
+            TASerialNO         = #{TASerialNO},
+            FromTAFlag         = #{FromTAFlag},
+            RegionCode         = #{RegionCode},
+            NetNo              = #{NetNo},
+            Specification      = #{Specification},
+            CustomerNo         = #{CustomerNo},
+            ErrorDetail        = #{ErrorDetail},
+            AppSheetSerialNo   = #{AppSheetSerialNo},
+            TACode             = #{TACode},
+            TAAccountID        = #{TAAccountID},
+            DistributorCode    = #{DistributorCode},
+            ReferenceNumber    = #{ReferenceNumber})
+        where ConfirmID = #{ConfirmID}
+    </update>
+</mapper>

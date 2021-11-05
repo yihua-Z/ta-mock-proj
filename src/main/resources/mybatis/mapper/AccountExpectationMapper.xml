@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.AccountExpectationMapper">
+    <!--AccountExpectation-->
+
+    <select id="selectByPrimaryKey" resultType="AccountExpectation">
+        select *
+        from mybatis.AccountExpectation
+        where AppSheetSerialNo = #{id}
+    </select>
+
+
+    <delete id="deleteByPrimaryKey">
+        delete
+        from mybatis.AccountExpectation
+        where AppSheetSerialNo = #{id}
+    </delete>
+
+
+    <insert id="insert" parameterType="com.example.pojo.AccountExpectation">
+        insert into mybatis.AccountExpectation (AppSheetSerialNo,
+                                                ReturnCode,
+                                                ErrorDetail,
+                                                Status,
+                                                TransactionCfmDate,
+                                                TASerialNO,
+                                                FromTAFlag,
+                                                RegionCode,
+                                                NetNo,
+                                                Specification,)
+        values (#{AppSheetSerialNo},
+                #{ReturnCode},
+                #{ErrorDetail},
+                #{Status},
+                #{TransactionCfmDate},
+                #{TASerialNO},
+                #{FromTAFlag},
+                #{RegionCode},
+                #{NetNo},
+                #{Specification})
+
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="com.example.pojo.AccountExpectation">
+        update mybatis.AccountExpectation
+        set ReturnCode         = #{ReturnCode},
+            ErrorDetail        = #{ErrorDetail},
+            Status             = #{Status},
+            TransactionCfmDate = #{TransactionCfmDate},
+            TASerialNO         = #{TASerialNO},
+            FromTAFlag         = #{FromTAFlag},
+            RegionCode         = #{RegionCode},
+            NetNo              = #{NetNo},
+            Specification      = #{Specification})
+        where AppSheetSerialNo = #{AppSheetSerialNo}
+    </update>
+</mapper>

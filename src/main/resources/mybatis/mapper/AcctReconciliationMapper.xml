@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.AcctReconciliationMapper">
+    <!--    AcctReconciliationMapper.xml-->
+    <select id="selectByPrimaryKey" resultType="AcctReconciliation">
+        select *
+        from mybatis.AcctReconciliation
+        where TAAccountID = #{id}
+    </select>
+
+
+    <delete id="deleteByPrimaryKey">
+        delete
+        from mybatis.AcctReconciliation
+        where TAAccountID = #{id}
+    </delete>
+
+
+    <insert id="insert" parameterType="com.example.pojo.AcctReconciliation">
+        insert into mybatis.AcctReconciliation (ReconciliationID,
+                                                AvailableVol,
+                                                TotalVolOfDistributorInTA,
+                                                TransactionCfmDate,
+                                                TotalFrozenVol,
+                                                TASerialNO,
+                                                TotalBackendLoad,
+                                                ShareClass,
+                                                DetailFlag,
+                                                ShareRegisterDate,
+                                                UndistributeMonetaryIncome,
+                                                UndistributeMonetaryIncomeFlag,
+                                                GuaranteedAmount,
+                                                SourceType,
+                                                FundCode,
+                                                TAAccountID,
+                                                TACode,
+                                                DistributorCode,)
+        values (#{ReconciliationID},
+                #{AvailableVol},
+                #{TotalVolOfDistributorInTA},
+                #{TransactionCfmDate},
+                #{TotalFrozenVol},
+                #{TASerialNO},
+                #{TotalBackendLoad},
+                #{ShareClass},
+                #{DetailFlag},
+                #{ShareRegisterDate},
+                #{UndistributeMonetaryIncome},
+                #{UndistributeMonetaryIncomeFlag},
+                #{GuaranteedAmount},
+                #{SourceType},
+                #{FundCode},
+                #{TAAccountID},
+                #{TACode},
+                #{DistributorCode})
+
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="com.example.pojo.AcctReconciliation">
+        update mybatis.AcctReconciliation
+        set AvailableVol                   = #{AvailableVol},
+            TotalVolOfDistributorInTA      = #{TotalVolOfDistributorInTA},
+            TransactionCfmDate             = #{TransactionCfmDate},
+            TotalFrozenVol                 = #{TotalFrozenVol},
+            TASerialNO                     = #{TASerialNO},
+            TotalBackendLoad               = #{TotalBackendLoad},
+            ShareClass                     = #{ShareClass},
+            DetailFlag                     = #{DetailFlag},
+            ShareRegisterDate              = #{ShareRegisterDate},
+            UndistributeMonetaryIncome     = #{UndistributeMonetaryIncome},
+            UndistributeMonetaryIncomeFlag = #{UndistributeMonetaryIncomeFlag},
+            GuaranteedAmount               = #{GuaranteedAmount},
+            SourceType                     = #{SourceType},
+            FundCode                       = #{FundCode},
+            TAAccountID                    = #{TAAccountID},
+            TACode                         = #{TACode},
+            DistributorCode                = #{DistributorCode}
+        where TAAccountID = #{TAAccountID}
+    </update>
+</mapper>
