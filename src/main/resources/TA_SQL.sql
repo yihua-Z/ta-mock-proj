@@ -10,8 +10,8 @@ drop table fund_para_config;
 drop table transaction_application;
 drop table transaction_confirmation;
 drop table transaction_expectation;
-drop table fund_date;
 
+drop table fund_date;
 create table if not exists account_info
 (
     TAAccountID          VARCHAR(12)  NOT NULL COMMENT '投资人理财账号',
@@ -34,6 +34,7 @@ create table if not exists account_info
     unique key (TACode, TransactionAccountID)
 ) engine = InnoDB
   default charset = utf8;
+
 
 
 create table if not exists account_application
@@ -131,6 +132,7 @@ create table if not exists account_application
   default charset = utf8;
 
 
+
 create table if not exists account_confirmation
 (
     ConfirmID          INT         NOT NULL AUTO_INCREMENT COMMENT '确认ID',
@@ -158,6 +160,7 @@ create table if not exists account_confirmation
   default charset = utf8;
 
 
+
 create table if not exists account_expectation
 (
     AppSheetSerialNo   VARCHAR(24) NOT NULL COMMENT '申请单编号',
@@ -175,6 +178,7 @@ create table if not exists account_expectation
   DEFAULT CHARSET = utf8;
 
 
+
 create table if not exists acct_share
 (
     TAAccountID               VARCHAR(12)    NOT NULL COMMENT '投资人理财账号',
@@ -186,6 +190,7 @@ create table if not exists acct_share
     primary key (TAAccountID)
 ) engine = InnoDB
   default charset = utf8;
+
 
 
 create table if not exists acct_reconciliation
@@ -212,6 +217,7 @@ create table if not exists acct_reconciliation
     foreign key (TAAccountID) references acct_share (TAAccountID)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+
 
 
 create table if not exists dividend
@@ -258,6 +264,7 @@ create table if not exists dividend
     unique index (TAAccountID, BusinessCode, FundCode)
 ) engine = InnoDB
   default charset = utf8;
+
 
 
 create table if not exists fund_info
@@ -350,6 +357,7 @@ create table if not exists fund_info
     primary key (FundCode)
 ) engine = InnoDB
   default charset = utf8;
+
 
 
 create table if not exists fund_para_config
@@ -468,6 +476,7 @@ create table if not exists fund_para_config
   DEFAULT CHARSET = utf8;
 
 
+
 create table if not exists transaction_application
 (
     AppSheetSerialNo           VARCHAR(24)    NOT NULL COMMENT '申请单编号',
@@ -553,6 +562,7 @@ create table if not exists transaction_application
   default charset = utf8;
 
 
+
 create table if not exists transaction_confirmation
 (
     ConfirmID                         INT            NOT NULL AUTO_INCREMENT COMMENT '确认ID',
@@ -625,6 +635,7 @@ create table if not exists transaction_confirmation
   default charset = utf8;
 
 
+
 create table if not exists transaction_expectation
 (
     AppSheetSerialNo                  VARCHAR(24)    NOT NULL COMMENT '申请单编号',
@@ -687,16 +698,14 @@ create table if not exists transaction_expectation
   DEFAULT CHARSET = utf8;
 
 
-create table if not exists fund_date
-(
-    TACode             VARCHAR(9)  NOT NULL COMMENT 'TA代码',
-    FundCode           VARCHAR(20) NOT NULL COMMENT '理财产品代码',
-    DistributorCode    VARCHAR(9)  NOT NULL COMMENT '销售人代码',
-    DateType           VARCHAR(1)  NOT NULL COMMENT '日期类型',
-    CorrCfmDate        DECIMAL(8)  NOT NULL COMMENT '对应确认日',
-    TransactionCfmDate VARCHAR(8)  NOT NULL COMMENT '交易确认日期',
-    primary key (TACode, FundCode, CorrCfmDate),
-    foreign key (FundCode) references fund_info (FundCode)
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8;
 
+CREATE TABLE IF NOT EXISTS FUND_DATE (
+                                         TACode							VARCHAR(9)	NOT NULL COMMENT "TA代码",
+                                         FundCode						VARCHAR(20)	NOT NULL COMMENT "理财产品代码",
+                                         DistributorCode					VARCHAR(9)	NOT NULL COMMENT "销售人代码",
+                                         DateType						VARCHAR(1)	NOT NULL COMMENT "日期类型",
+                                         CorrCfmDate						DECIMAL(8)	NOT NULL COMMENT "对应确认日",
+                                         TransactionCfmDate				VARCHAR(8)	NOT NULL COMMENT "交易确认日期",
+                                         primary key (TACode,FundCode,CorrCfmDate),
+                                         foreign key (FundCode) references fund_info(FundCode)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

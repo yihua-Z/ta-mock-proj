@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<file  type="solidLength" businessCode="149">
+	<field fieldName="TransactionCfmDate" fieldType="A" length="8" description="交易确认日期" required="true" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="CurrencyType" fieldType="A" length="3" description="结算币种" required="true" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="ConfirmedAmount" fieldType="N" length="16" description="每笔交易确认金额" required="true" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="FundCode" fieldType="C" length="20" description="理财产品代码" required="true" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="Interest" fieldType="N" length="10" description="理财账户利息金额" required="true" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TransactionDate" fieldType="A" length="8" description="交易发生日期" required="true" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TransactionAccountID" fieldType="A" length="17" description="投资人理财交易账号" required="true" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="DistributorCode" fieldType="C" length="9" description="销售人代码" required="true" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="ApplicationVol" fieldType="N" length="16" description="申请理财产品份数" required="false" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="ApplicationAmount" fieldType="N" length="16" description="申请金额" required="true" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="BusinessCode" fieldType="A" length="3" description="业务代码" required="true" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TAAccountID" fieldType="C" length="12" description="投资人理财账号" required="true" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="InterestTax" fieldType="N" length="16" description="利息税" required="true" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="DepositAcct" fieldType="C" length="19" description="投资人在销售人处用于交易的资金账号" required="false" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="TransferDateThroughClearingAgency" fieldType="A" length="8" description="清算资金经清算人划出" required="false" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="DownLoaddate" fieldType="A" length="8" description="交易数据下传日期" required="true" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TASerialNO" fieldType="A" length="20" description="TA确认交易流水号" required="false" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="RaiseInterest" fieldType="N" length="16" description="认购期间利息" required="true" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="RefundAmount" fieldType="N" length="16" description="退款金额" required="false" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="ShareClass" fieldType="A" length="1" description="收费方式" required="true" placeholder="0" align="right" caseSensitive="insensitive"/>
+</file>

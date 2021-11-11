@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<file  type="solidLength" fileCode="06">
+	<field fieldName="BasisforCalculatingDividend" fieldType="N" length="16" description="红利/红利再投资基数" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TransactionCfmDate" fieldType="A" length="8" description="交易确认日期" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="CurrencyType" fieldType="A" length="3" description="结算币种" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="VolOfDividendforReinvestment" fieldType="N" length="16" description="理财账户红利再投资理财产品份数" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="DividentDate" fieldType="A" length="8" description="分红日/发放日" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="DividendAmount" fieldType="N" length="16" description="理财账户红利资金" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="XRDate" fieldType="A" length="8" description="除权日" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="ConfirmedAmount" fieldType="N" length="16" description="每笔交易确认金额" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="FundCode" fieldType="C" length="20" description="理财产品代码" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="RegistrationDate" fieldType="A" length="8" description="权益登记日期" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="ReturnCode" fieldType="A" length="4" description="交易处理返回代码" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TransactionAccountID" fieldType="A" length="17" description="投资人理财交易账号" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="DistributorCode" fieldType="C" length="9" description="销售人代码" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="BusinessCode" fieldType="A" length="3" description="业务代码" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TAAccountID" fieldType="C" length="12" description="投资人理财账号" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="DividendPerUnit" fieldType="N" length="16" description="单位理财产品分红金额（含税）" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="DefDividendMethod" fieldType="C" length="1" description="默认分红方式" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="DepositAcct" fieldType="C" length="19" description="投资人在销售人处用于交易的资金账号" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="RegionCode" fieldType="A" length="4" description="交易所在地区编号" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="DownLoaddate" fieldType="A" length="8" description="交易数据下传日期" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="Charge" fieldType="N" length="10" description="手续费" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="AgencyFee" fieldType="N" length="10" description="代理费" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TotalFrozenVol" fieldType="N" length="16" description="理财产品冻结总份数" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="NAV" fieldType="N" length="9" description="单位净值" placeholder="0" precision="6" align="right" caseSensitive="insensitive"/>
+	<field fieldName="BranchCode" fieldType="C" length="16" description="网点号码" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="OtherFee1" fieldType="N" length="10" description="其他费用1" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="OtherFee2" fieldType="N" length="16" description="其他费用2" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="IndividualOrInstitution" fieldType="C" length="1" description="个人/机构标志" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="DividendRatio" fieldType="N" length="16" description="红利比例" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TASerialNO" fieldType="A" length="20" description="TA确认交易流水号" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="StampDuty" fieldType="N" length="16" description="印花税" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="FrozenBalance" fieldType="N" length="16" description="冻结金额" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TransferFee" fieldType="N" length="10" description="过户费" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="ShareClass" fieldType="A" length="1" description="收费方式" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="FeeCalculator" fieldType="A" length="1" description="计费人" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="DrawBonusUnit" fieldType="N" length="10" description="分红单位" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="FrozenSharesforReinvest" fieldType="N" length="16" description="冻结再投资份额" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="DividendType" fieldType="C" length="1" description="分红类型" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="OriginalAppSheetNo" fieldType="A" length="24" description="原申请单编号" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="AchievementPay" fieldType="N" length="16" description="业绩报酬" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="AchievementCompen" fieldType="N" length="16" description="业绩补偿" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+</file>

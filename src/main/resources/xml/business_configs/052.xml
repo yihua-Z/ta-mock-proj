@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<file  type="solidLength" businessCode="052">
+	<field fieldName="AppSheetSerialNo" fieldType="C" length="24" description="申请单编号" required="true" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="FundCode" fieldType="C" length="20" description="理财产品代码" required="true" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="OriginalAppSheetNo" fieldType="A" length="24" description="原申请单编号" required="true" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TransactionDate" fieldType="A" length="8" description="交易发生日期" required="true" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TransactionAccountID" fieldType="A" length="17" description="投资人理财交易账号" required="true" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="DistributorCode" fieldType="C" length="9" description="销售人代码" required="true" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="BusinessCode" fieldType="A" length="3" description="业务代码" required="true" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TAAccountID" fieldType="C" length="12" description="投资人理财账号" required="true" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="ApplicationVol" fieldType="N" length="16" description="申请理财产品份数" required="false" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="ApplicationAmount" fieldType="N" length="16" description="申请金额" required="false" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="OriginalAppDate" fieldType="A" length="8" description="原申请日期" required="false" placeholder="0" align="right" caseSensitive="insensitive"/>
+</file>

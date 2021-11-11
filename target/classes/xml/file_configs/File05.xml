@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<file  type="solidLength" fileCode="05">
+	<field fieldName="AvailableVol" fieldType="N" length="16" description="持有人可用理财产品份数" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TotalVolOfDistributorInTA" fieldType="N" length="16" description="理财产品总份数（含冻结）" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TransactionCfmDate" fieldType="A" length="8" description="交易确认日期" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="FundCode" fieldType="C" length="20" description="理财产品代码" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="TransactionAccountID" fieldType="A" length="17" description="投资人理财交易账号" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="DistributorCode" fieldType="C" length="9" description="销售人代码" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="TAAccountID" fieldType="C" length="12" description="投资人理财账号" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="TotalFrozenVol" fieldType="N" length="16" description="理财产品冻结总份数" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="BranchCode" fieldType="C" length="16" description="网点号码" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="TASerialNO" fieldType="A" length="20" description="TA确认交易流水号" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TotalBackendLoad" fieldType="N" length="16" description="交易后端收费总额" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="ShareClass" fieldType="A" length="1" description="收费方式" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="DetailFlag" fieldType="A" length="1" description="明细标志" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="AccountStatus" fieldType="A" length="1" description="账户状态" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="ShareRegisterDate" fieldType="A" length="8" description="份额注册日期" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="UndistributeMonetaryIncome" fieldType="N" length="16" description="货币式理财未付收益金额" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="UndistributeMonetaryIncomeFlag" fieldType="C" length="1" description="货币式理财未付收益金额正负" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="GuaranteedAmount" fieldType="N" length="16" description="剩余保本金额" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="SourceType" fieldType="C" length="1" description="份额原始来源" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="DefDividendMethod" fieldType="C" length="1" description="默认分红方式" placeholder="space" align="left" caseSensitive="insensitive"/>
+</file>

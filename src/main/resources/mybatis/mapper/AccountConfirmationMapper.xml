@@ -5,20 +5,20 @@
     <!--    AccountConfirmation-->
     <select id="selectByPrimaryKey" resultType="AccountConfirmation">
         select *
-        from account_confirmation
+        from mybatis.account_confirmation
         where ConfirmID = #{id}
     </select>
 
 
     <delete id="deleteByPrimaryKey">
         delete
-        from account_confirmation
+        from mybatis.account_confirmation
         where ConfirmID = #{id}
     </delete>
 
 
     <insert id="insert" parameterType="com.psbc.pojo.AccountConfirmation">
-        insert into account_confirmation (ConfirmID,
+        insert into mybatis.account_confirmation (ConfirmID,
                                                  TransactionCfmDate,
                                                  ReturnCode,
                                                  BusinessCode,
@@ -58,7 +58,7 @@
     </insert>
 
     <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AccountConfirmation">
-        update account_confirmation
+        update mybatis.account_confirmation
         set TransactionCfmDate = #{TransactionCfmDate},
             ReturnCode         = #{ReturnCode},
             BusinessCode       = #{BusinessCode},

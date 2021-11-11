@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<file  type="solidLength" businessCode="036">
+	<field fieldName="AppSheetSerialNo" fieldType="C" length="24" description="申请单编号" required="true" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="DiscountRateOfCommission" fieldType="N" length="5" description="销售佣金折扣率" required="true" placeholder="0" precision="4" align="right" caseSensitive="insensitive"/>
+	<field fieldName="CodeOfTargetFund" fieldType="A" length="20" description="转换时的目标理财产品代码" required="true" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="FundCode" fieldType="C" length="20" description="理财产品代码" required="true" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="LargeRedemptionFlag" fieldType="A" length="1" description="巨额赎回处理标志" required="true" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TransactionDate" fieldType="A" length="8" description="交易发生日期" required="true" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TransactionAccountID" fieldType="A" length="17" description="投资人理财交易账号" required="true" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="DistributorCode" fieldType="C" length="9" description="销售人代码" required="true" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="ApplicationVol" fieldType="N" length="16" description="申请理财产品份数" required="true" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="BusinessCode" fieldType="A" length="3" description="业务代码" required="true" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TAAccountID" fieldType="C" length="12" description="投资人理财账号" required="true" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="RegionCode" fieldType="A" length="4" description="交易所在地区编号" required="false" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="BranchCode" fieldType="C" length="16" description="网点号码" required="true" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="OriginalSerialNo" fieldType="C" length="20" description="TA的原确认流水号" required="false" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="OriginalAppSheetNo" fieldType="A" length="24" description="原申请单编号" required="false" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TransactionTime" fieldType="A" length="6" description="交易发生时间" required="true" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="IndividualOrInstitution" fieldType="C" length="1" description="个人/机构标志" required="false" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="TotalBackendLoad" fieldType="N" length="16" description="交易后端收费总额" required="false" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+	<field fieldName="ShareClass" fieldType="A" length="1" description="收费方式" required="true" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="OriginalCfmDate" fieldType="A" length="8" description="TA的原确认日期" required="false" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="DetailFlag" fieldType="A" length="1" description="明细标志" required="false" placeholder="0" align="right" caseSensitive="insensitive"/>
+	<field fieldName="BackenloadDiscount" fieldType="N" length="5" description="补差费折扣率" required="true" placeholder="0" precision="4" align="right" caseSensitive="insensitive"/>
+	<field fieldName="TargetShareType" fieldType="C" length="1" description="对方理财产品份额类别" required="true" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="TargetTAAccountID" fieldType="C" length="12" description="对方理财账号" required="false" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="TargetRegistrarCode" fieldType="C" length="9" description="对方TA代码" required="false" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="TakeIncomeFlag" fieldType="C" length="1" description="带走收益标志" required="false" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="ChargeType" fieldType="C" length="1" description="收费类型" required="true" placeholder="space" align="left" caseSensitive="insensitive"/>
+	<field fieldName="SpecifyRateFee" fieldType="N" length="9" description="指定费率" required="false" placeholder="0" precision="8" align="right" caseSensitive="insensitive"/>
+	<field fieldName="SpecifyFee" fieldType="N" length="16" description="指定费用" required="false" placeholder="0" precision="2" align="right" caseSensitive="insensitive"/>
+</file>

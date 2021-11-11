@@ -1,11 +1,12 @@
 package com.psbc;
 
+import com.psbc.business.processor.BusinessCodeChecker;
+import com.psbc.business.processor.Processor_001;
+import com.psbc.business.processor.RecordOperator;
+import com.psbc.mapper.AccountApplicationMapper;
 import com.psbc.mapper.AccountInfoMapper;
-import com.psbc.mapper.AcctShareMapper;
-import com.psbc.mapper.DividendMapper;
+import com.psbc.pojo.AccountApplication;
 import com.psbc.pojo.AccountInfo;
-import com.psbc.pojo.AcctShare;
-import com.psbc.pojo.Dividend;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,15 +16,29 @@ import javax.sql.DataSource;
 @SpringBootTest
 class TaMockProjectApplicationTests {
 
-    @Autowired
-    DataSource dataSource;
 
-//    @Test
-//    void contextLoads() throws SQLException {
-//
-//        System.out.println(dataSource);
-//        System.out.println(dataSource.getConnection());
-//    }
+    @Autowired
+    AccountApplicationMapper accountApplicationMapper;
+
+    @Test
+    void testController() {
+
+        String applicationFilePath = ".\\src\\main\\resources\\data\\OFD_037_999_20211025_01.TXT";
+
+        Processor_001 processor_001 = new Processor_001();
+
+        RecordOperator recordOperator = new RecordOperator();
+        BusinessCodeChecker businessCodeChecker = new BusinessCodeChecker();
+
+        processor_001.setRecordOperator(recordOperator);
+        processor_001.setBusinessCodeChecker(businessCodeChecker);
+        processor_001.setApplicationFilePath(applicationFilePath);
+
+
+        AccountApplication processor = processor_001.processor();
+        processor.setTAAccountID("1");
+        accountApplicationMapper.insert(processor);
+    }
 
     @Autowired
     AccountInfoMapper accountInfoMapper;
@@ -50,11 +65,9 @@ class TaMockProjectApplicationTests {
         accountInfo.setTACode(data);
         accountInfo.setCustomerNo("4");
 
-
-
-        AccountInfo info = accountInfoMapper.selectByPrimaryKey("1");
-        System.out.println(info.toString());
-//        int insert = accountInfoMapper.insert(accountInfo);
+//        AccountInfo info = accountInfoMapper.selectByPrimaryKey("1");
+//        System.out.println(info.toString());
+        int insert = accountInfoMapper.insert(accountInfo);
 //        accountInfoMapper.deleteByPrimaryKey("2");
 //        accountInfoMapper.updateByPrimaryKey(accountInfo);
 //        AccountInfo a = accountInfoMapper.selectByPrimaryKey("5");
@@ -62,34 +75,7 @@ class TaMockProjectApplicationTests {
 
     }
 
-    @Autowired
-    AcctShareMapper acctShareMapper;
 
-    @Test
-    void testAcctShare(){
-        AcctShare acctShare = new AcctShare();
-        acctShare.setTAAccountID("4");
-        acctShare.setDistributorCode("1");
-        acctShare.setTACode("1");
-        acctShare.setTotalFrozenVol(1.0);
-        acctShare.setTotalVolOfDistributorInTA(0.1);
-        acctShare.setTotalFrozenVol(0.1);
-        acctShare.setTransactionCfmDate("2021");
-
-        AcctShare acctShare1 = acctShareMapper.selectByPrimaryKey("1");
-        System.out.println(acctShare1.toString());
-        int insert = acctShareMapper.insert(acctShare);
-
-
-    }
-
-    @Autowired
-    DividendMapper dividendMapper;
-    @Test
-    void Wang(){
-        Dividend dividend = dividendMapper.selectByPrimaryKey("1");
-        System.out.println(dividend.toString());
-    }
 
 
 }

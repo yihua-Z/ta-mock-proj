@@ -1,4 +1,16 @@
 drop table account_info;
+drop table account_application;
+drop table account_confirmation;
+drop table account_expectation;
+drop table acct_share;
+drop table acct_reconciliation;
+drop table dividend;
+drop table fund_info;
+drop table fund_para_config;
+drop table transaction_application;
+drop table transaction_confirmation;
+drop table transaction_expectation;
+
 create table if not exists account_info
 (
     TAAccountID          VARCHAR(12)  NOT NULL COMMENT '投资人理财账号',
@@ -23,7 +35,7 @@ create table if not exists account_info
   default charset = utf8;
 
 
-drop table account_application;
+
 create table if not exists account_application
 (
     AppSheetSerialNo                   VARCHAR(24)    NOT NULL COMMENT '申请单编',
@@ -114,12 +126,12 @@ create table if not exists account_application
     ReferenceNumber                    INT            NOT NULL COMMENT '同一个申请的序列',
     primary key (AppSheetSerialNo),
     foreign key (TAAccountID) references account_info (TAAccountID),
-    unique index (TACode,TransactionDate, TransactionAccountID, BusinessCode, ReferenceNumber)
+    unique index (TACode, TransactionDate, TransactionAccountID, BusinessCode, ReferenceNumber)
 ) engine = InnoDB
   default charset = utf8;
 
 
-drop table account_confirmation;
+
 create table if not exists account_confirmation
 (
     ConfirmID          INT         NOT NULL AUTO_INCREMENT COMMENT '确认ID',
@@ -147,7 +159,7 @@ create table if not exists account_confirmation
   default charset = utf8;
 
 
-drop table account_expectation;
+
 create table if not exists account_expectation
 (
     AppSheetSerialNo   VARCHAR(24) NOT NULL COMMENT '申请单编号',
@@ -165,7 +177,7 @@ create table if not exists account_expectation
   DEFAULT CHARSET = utf8;
 
 
-drop table acct_share;
+
 create table if not exists acct_share
 (
     TAAccountID               VARCHAR(12)    NOT NULL COMMENT '投资人理财账号',
@@ -180,7 +192,6 @@ create table if not exists acct_share
 
 
 
-drop table acct_reconciliation;
 create table if not exists acct_reconciliation
 (
     ReconciliationID               INT            NOT NULL AUTO_INCREMENT COMMENT '分红ID',
@@ -207,7 +218,7 @@ create table if not exists acct_reconciliation
   DEFAULT CHARSET = utf8;
 
 
-drop table dividend;
+
 create table if not exists dividend
 (
     DividendID                   INT            NOT NULL AUTO_INCREMENT COMMENT '分红ID',
@@ -255,7 +266,6 @@ create table if not exists dividend
 
 
 
-drop table fund_info;
 create table if not exists fund_info
 (
     FundCode               VARCHAR(20)    NOT NULL COMMENT '理财产品代码',
@@ -348,7 +358,7 @@ create table if not exists fund_info
   default charset = utf8;
 
 
-drop table fund_para_config;
+
 create table if not exists fund_para_config
 (
     FundParaID                 INT            NOT NULL AUTO_INCREMENT COMMENT '产品参数ID',
@@ -465,7 +475,7 @@ create table if not exists fund_para_config
   DEFAULT CHARSET = utf8;
 
 
-drop table transaction_application;
+
 create table if not exists transaction_application
 (
     AppSheetSerialNo           VARCHAR(24)    NOT NULL COMMENT '申请单编号',
@@ -551,7 +561,7 @@ create table if not exists transaction_application
   default charset = utf8;
 
 
-drop table transaction_confirmation;
+
 create table if not exists transaction_confirmation
 (
     ConfirmID                         INT            NOT NULL AUTO_INCREMENT COMMENT '确认ID',
@@ -624,7 +634,7 @@ create table if not exists transaction_confirmation
   default charset = utf8;
 
 
-drop table transaction_expectation;
+
 create table if not exists transaction_expectation
 (
     AppSheetSerialNo                  VARCHAR(24)    NOT NULL COMMENT '申请单编号',

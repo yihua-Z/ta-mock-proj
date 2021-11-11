@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TransactionConfirmation {
-	private int ConfirmID;
+	private int    ConfirmID;
 	private String TransactionCfmDate;
 	private Double ConfirmedVol;
 	private Double ConfirmedAmount;
@@ -69,5 +69,5 @@ public class TransactionConfirmation {
 	private String TransferDateThroughClearingAgency;
 	private String AppSheetSerialNo;
 	private String DistributorCode;
-	private int ReferenceNumber;
+	private int    ReferenceNumber;
 }

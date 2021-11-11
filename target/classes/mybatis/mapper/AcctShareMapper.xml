@@ -6,37 +6,37 @@
 
     <select id="selectByPrimaryKey" resultType="AcctShare">
         select *
-        from acct_share
+        from mybatis.account_info
         where TAAccountID = #{id}
     </select>
 
 
     <delete id="deleteByPrimaryKey">
         delete
-        from acct_share
+        from mybatis.account_info
         where TAAccountID = #{id}
     </delete>
 
 
     <insert id="insert" parameterType="com.psbc.pojo.AcctShare">
-        insert into acct_share (TAAccountID,
-                                        DistributorCode,
-                                        TACode,
-                                        TotalVolOfDistributorInTA,
-                                        TotalFrozenVol,
-                                        TransactionCfmDate)
-
-        values (#{TAAccountID},
-                #{DistributorCode},
-                #{TACode},
-                #{TotalVolOfDistributorInTA},
-                #{TotalFrozenVol},
-                #{TransactionCfmDate})
+        insert into mybatis.account_info (TAAccountID,
+                                          DistributorCode,
+                                          TACode,
+                                          TotalVolOfDistributorInTA,
+                                          TotalFrozenVol,
+                                          TransactionCfmDate,
+                                          values ( #{TAAccountID},
+                                              #{DistributorCode},
+                                              #{TACode},
+                                              #{TotalVolOfDistributorInTA},
+                                              #{TotalFrozenVol},
+                                              #{TransactionCfmDate}
+                                              )
 
     </insert>
 
     <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AcctShare">
-        update acct_share
+        update mybatis.account_info
         set DistributorCode= #{DistributorCode},
             TACode= #{TACode},
             TotalVolOfDistributorInTA= #{TotalVolOfDistributorInTA},

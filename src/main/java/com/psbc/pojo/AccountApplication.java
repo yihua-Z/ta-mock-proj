@@ -7,8 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AccountApplication {
+public class AccountApplication implements DatabaseModel {
     private String AppSheetSerialNo;
+    private Double Penates;
     private String Address;
     private String InstReprIDCode;
     private String InstReprIDType;
@@ -94,4 +95,8 @@ public class AccountApplication {
     private String TACode;
     private int ReferenceNumber;
 
+    @Override
+    public DatabaseModel newInstanceWithoutArgs() {
+        return new AccountApplication();
+    }
 }

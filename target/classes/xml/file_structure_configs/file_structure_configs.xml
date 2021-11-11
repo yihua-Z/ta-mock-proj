@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files>
+    <file name="index">
+        <field fieldName="identifier" length="8" align="left"/>
+        <field fieldName="version" length="4" align="right"/>
+        <field fieldName="creator" length="9" align="left"/>
+        <field fieldName="receiver" length="9" align="left"/>
+        <field fieldName="date" length="8" align="left"/>
+        <field fieldName="fileNumber" length="3" align="right"/>
+        <!--此处为全部文件名-->
+        <field fieldName="terminator" length="8" align="left"/>
+    </file>
+    <file name="data">
+        <field fieldName="identifier" length="8" align="left"/>
+        <field fieldName="version" length="4" align="right"/>
+        <field fieldName="fileCreator" length="9" align="left"/>
+        <field fieldName="fileReceiver" length="9" align="left"/>
+        <field fieldName="date" length="8" align="left"/>
+        <field fieldName="summaryCode" length="3" align="right"/>
+        <field fieldName="fileTypeCode" length="3" align="right"/>
+        <field fieldName="sender" length="8" align="left"/>
+        <field fieldName="receiver" length="8" align="left"/>
+        <field fieldName="fieldNum" length="3" align="right"/>
+        <!--此处为全部字段名-->
+        <field fieldName="recordNum" length="8" align="right"/>
+        <!--此处为全部记录-->
+        <field fieldName="terminator" length="8" align="left"/>
+    </file>
+</files>

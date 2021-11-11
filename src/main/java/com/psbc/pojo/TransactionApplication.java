@@ -27,13 +27,13 @@ public class TransactionApplication {
 	private String OriginalAppSheetNo;
 	private String OriginalSubsDate;
 	private String IndividualOrInstitution;
-	private int ValidPeriod;
-	private int DaysRedemptionInAdvance;
+	private int    ValidPeriod;
+	private int    DaysRedemptionInAdvance;
 	private String RedemptionDateInAdvance;
 	private String OriginalSerialNo;
 	private String DateOfPeriodicSubs;
 	private String TASerialNO;
-	private int TermOfPeriodicSubs;
+	private int    TermOfPeriodicSubs;
 	private String FutureBuyDate;
 	private String TargetDistributorCode;
 	private Double Charge;
@@ -62,7 +62,7 @@ public class TransactionApplication {
 	private String RationProtocolNo;
 	private String BeginDateOfPeriodicSubs;
 	private String EndDateOfPeriodicSubs;
-	private int SendDayOfPeriodicSubs;
+	private int    SendDayOfPeriodicSubs;
 	private String Broker;
 	private String SalesPromotion;
 	private String AcceptMethod;
@@ -83,5 +83,5 @@ public class TransactionApplication {
 	private Double SpecifyRateFee;
 	private Double SpecifyFee;
 	private String TACode;
-	private int ReferenceNumber;
+	private int    ReferenceNumber;
 }

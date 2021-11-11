@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <!--配置数据量以创建合适的线程数-->
+    <environment threadSize="1"/>
+
+    <!--目前只支持恒生接口-->
+    <batch targetPath="./src/main/resources/zhang/target/confirmation/test/"
+           fileConfigPath="./src/main/resources/zhang/xml/file_structure_configs/file_structure_configs.xml">
+        <file applicationBusinessCode="022"
+              applicationFilePath="./src/main/resources/zhang/target/OFD_037_999_20211025_03 - 备份.TXT"/>
+        <!--file-->
+    </batch>
+
+</config>

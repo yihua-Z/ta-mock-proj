@@ -4,20 +4,20 @@
     <!--    AcctReconciliationMapper.xml-->
     <select id="selectByPrimaryKey" resultType="AcctReconciliation">
         select *
-        from acct_reconciliation
-        where ReconciliationID = #{id}
+        from mybatis.acct_reconciliation
+        where TAAccountID = #{id}
     </select>
 
 
     <delete id="deleteByPrimaryKey">
         delete
-        from acct_reconciliation
-        where ReconciliationID = #{id}
+        from mybatis.acct_reconciliation
+        where TAAccountID = #{id}
     </delete>
 
 
     <insert id="insert" parameterType="com.psbc.pojo.AcctReconciliation">
-        insert into acct_reconciliation (ReconciliationID,
+        insert into mybatis.acct_reconciliation (ReconciliationID,
                                                 AvailableVol,
                                                 TotalVolOfDistributorInTA,
                                                 TransactionCfmDate,
@@ -34,7 +34,7 @@
                                                 FundCode,
                                                 TAAccountID,
                                                 TACode,
-                                                DistributorCode)
+                                                DistributorCode,)
         values (#{ReconciliationID},
                 #{AvailableVol},
                 #{TotalVolOfDistributorInTA},
@@ -57,7 +57,7 @@
     </insert>
 
     <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AcctReconciliation">
-        update acct_reconciliation
+        update mybatis.acct_reconciliation
         set AvailableVol                   = #{AvailableVol},
             TotalVolOfDistributorInTA      = #{TotalVolOfDistributorInTA},
             TransactionCfmDate             = #{TransactionCfmDate},
@@ -75,6 +75,6 @@
             TAAccountID                    = #{TAAccountID},
             TACode                         = #{TACode},
             DistributorCode                = #{DistributorCode}
-        where ReconciliationID = #{ReconciliationID}
+        where TAAccountID = #{TAAccountID}
     </update>
 </mapper>

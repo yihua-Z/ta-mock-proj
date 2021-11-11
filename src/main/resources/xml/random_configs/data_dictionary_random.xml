@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fields>
+	<field fieldName="AcctManFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="InstAppSubsAmnt" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="InstAppSubsVol" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="Address" length="120" randomType="AddressRandom"/>
+	<field fieldName="InstReprIDCode" length="30" randomType="SerialRandom"/>
+	<field fieldName="InstReprIDType" length="1" randomType="ItemRandom" randomRange="身份证,护照,军官证"/>
+	<field fieldName="InstReprName" length="20" randomType="NameRandom"/>
+	<field fieldName="AppSheetSerialNo" length="24" randomType="SerialRandom"/>
+	<field fieldName="TotalSubsAmnt" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TotalAccptdSubsVol" length="10" randomType="NumRandom"/>
+	<field fieldName="TotalSubsCharge" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TotalSubsVol" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="AvailableVol" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="IssueType" length="1" randomType="ItemRandom" randomRange="1,2,3"/>
+	<field fieldName="AmntReinbursed" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="BackendLoad" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="AcctBalanceInIndividualDistributor" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TotalVolOfDistributorInTA" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="AcctNoOfFMInClearingAgency" length="28" randomType="SerialRandom"/>
+	<field fieldName="AcctNameOfFMInClearingAgency" length="60" randomType="NameRandom"/>
+	<field fieldName="ClearingAgencyCode" length="9" randomType="SerialRandom"/>
+	<field fieldName="BasisforCalculatingDividend" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="InvestorsBirthday" length="8" randomType="DateRandom"/>
+	<field fieldName="DefDividendMethod" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="DiscountRateOfCommission" length="5" precision="4" randomType="RateRandom"/>
+	<field fieldName="CertificateType" length="1" randomType="ItemRandom" randomRange="0,1,2,3,4,5,6,7,8,9"/>
+	<field fieldName="DepositAcct" length="19" randomType="SerialRandom"/>
+	<field fieldName="RegionCode" length="4" randomType="SerialRandom"/>
+	<field fieldName="TransferDateFromCustodian" length="8" randomType="DateRandom"/>
+	<field fieldName="TransferDateThroughClearingAgency" length="8" randomType="DateRandom"/>
+	<field fieldName="TransactionCfmDate" length="8" randomType="DateRandom"/>
+	<field fieldName="AnnContent" randomType="TextRandom"/>
+	<field fieldName="CodeOfTargetFund" length="20" randomType="SerialRandom"/>
+	<field fieldName="MinAmountByInst" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="MinVolByInst" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="CurrencyType" length="3" randomType="ItemRandom" randomRange="001,002,003,004,005,006"/>
+	<field fieldName="CustodianCode" length="3" randomType="SerialRandom"/>
+	<field fieldName="AmountOfPeriodicSubs" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="DateOfPeriodicSubs" length="8" randomType="DateRandom"/>
+	<field fieldName="VolOfDividendforReinvestment" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="DividentDate" length="8" randomType="DateRandom"/>
+	<field fieldName="DividendAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TotalDividendAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="DividendOrShare" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="XRDate" length="8" randomType="DateRandom"/>
+	<field fieldName="DownLoaddate" length="8" randomType="DateRandom"/>
+	<field fieldName="EducationLevel" length="3" randomType="ItemRandom" randomRange="01,02,03,04,05,06,07,08,09"/>
+	<field fieldName="EmailAddress" length="40" randomType="EmailRandom"/>
+	<field fieldName="TotalDividendIndeed" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="FaxNo" length="24" randomType="SerialRandom"/>
+	<field fieldName="Charge" length="10" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="AgencyFee" length="10" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="ChargeRate" length="6" precision="4" randomType="RateRandom"/>
+	<field fieldName="TotalTransFee" length="10" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TotalFeeForDividend" length="10" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="AnnouncementNo" length="13" randomType="SerialRandom"/>
+	<field fieldName="FreezingDeadline" length="8" randomType="DateRandom"/>
+	<field fieldName="TotalFrozenVol" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="FrozenCause" length="1" randomType="ItemRandom" randomRange="0,1,2,3,4"/>
+	<field fieldName="FrontendFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="ConfirmedVol" length="16" precision="2" randomType="KeepSame" mapper="ApplicationVol"/>
+	<field fieldName="FundName" length="60" randomType="NameRandom"/>
+	<field fieldName="ConfirmedAmount" length="16" precision="2" randomType="KeepSame" mapper="ApplicationAmount"/>
+	<field fieldName="VocationCode" length="3" randomType="ItemRandom" randomRange="1,2,3,4,5,6,7,8,9,10,11,12"/>
+	<field fieldName="TotalFundVol" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="FundCode" length="20" randomType="SerialRandom"/>
+	<field fieldName="FundStatus" length="1" randomType="ItemRandom" randomRange="0,1,4,5,6,8,9"/>
+	<field fieldName="HomeTelNo" length="22" randomType="SerialRandom"/>
+	<field fieldName="MaxRedemptionVol" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="MinAccountBalance" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="CertificateNo" length="30" randomType="SerialRandom"/>
+	<field fieldName="AnnualIncome" length="8" randomType="MoneyRandom"/>
+	<field fieldName="AnnouncementDate" length="8" randomType="DateRandom"/>
+	<field fieldName="AnnouncementType" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="Interest" length="10" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="BackAmountByInvalid" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="IPOStartDate" length="8" randomType="DateRandom"/>
+	<field fieldName="IPOEndDate" length="8" randomType="DateRandom"/>
+	<field fieldName="LargeRedemptionFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="LengthOfAnnouncement" length="10" randomType="NumRandom" randomRange="100-1000"/>
+	<field fieldName="FundManagerCode" length="3" randomType="SerialRandom"/>
+	<field fieldName="MobileTelNo" length="24" randomType="SerialRandom"/>
+	<field fieldName="MultiAcctFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="InvestorName" length="120" randomType="NameRandom"/>
+	<field fieldName="NAV" length="9" precision="6" randomType="MoneyRandom"/>
+	<field fieldName="BranchCode" length="16" randomType="SerialRandom"/>
+	<field fieldName="OfficeTelNo" length="22" randomType="SerialRandom"/>
+	<field fieldName="OriginalSerialNo" length="20" randomType="SerialRandom"/>
+	<field fieldName="OriginalAppSheetNo" length="24" randomType="SerialRandom"/>
+	<field fieldName="OriginalSubsDate" length="8" randomType="DateRandom"/>
+	<field fieldName="TransactionDate" length="8" randomType="DateRandom"/>
+	<field fieldName="TransactionTime" length="6" randomType="DateRandom"/>
+	<field fieldName="OtherFee1" length="10" precision="2" randomType="ItemRandom" randomRange="10,20"/>
+	<field fieldName="OtherFee2" length="16" precision="2" randomType="ItemRandom" randomRange="20,30"/>
+	<field fieldName="OtherFee3" length="16" precision="2" randomType="ItemRandom" randomRange="30,40"/>
+	<field fieldName="TargetDistributorCode" length="9" randomType="SerialRandom"/>
+	<field fieldName="IndividualOrInstitution" length="1" randomType="ItemRandom" randomRange="0,1,2"/>
+	<field fieldName="IndiAppSubsVol" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="IndiAppSubsAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="PostCode" length="6" randomType="SerialRandom"/>
+	<field fieldName="RedemptionDateInAdvance" length="8" randomType="DateRandom"/>
+	<field fieldName="IPOPrice" length="7" precision="4" randomType="MoneyRandom"/>
+	<field fieldName="MinSubsVolByIndi" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="MinSubsAmountByIndi" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TransactorCertNo" length="30" randomType="SerialRandom"/>
+	<field fieldName="TransactorCertType" length="1" randomType="ItemRandom" randomRange="0,1,2,3,4,5,6,7,8,9,A,B"/>
+	<field fieldName="TransactorName" length="20" randomType="NameRandom"/>
+	<field fieldName="TotalRedemptionAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TotalTransactionOfSuccessfulRedemption" length="10" randomType="NumRandom"/>
+	<field fieldName="TotalFeeOfRedemption" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="VolOnRegistraionDate" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="RegistrationDate" length="8" randomType="DateRandom"/>
+	<field fieldName="RegistrarCode" length="2" randomType="SerialRandom"/>
+	<field fieldName="RegistrationFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TotalReinvestmentDividend" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="BackAmountByExcess" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TotalRedemptionVol" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="ReturnCode" length="4" randomType="ItemRandom" randomRange="0000"/>
+	<field fieldName="TransactionAccountID" length="17" randomType="SerialRandom"/>
+	<field fieldName="DistributorCode" length="9" randomType="SerialRandom"/>
+	<field fieldName="AccountAbbr" length="12" randomType="NameRandom"/>
+	<field fieldName="DividendRatio" length="16" precision="2" randomType="RateRandom"/>
+	<field fieldName="ConfidentialDocumentCode" length="8" randomType="SerialRandom"/>
+	<field fieldName="DocumentSendDate" length="8" randomType="DateRandom"/>
+	<field fieldName="Sex" length="1" randomType="ItemRandom" randomRange="1,2"/>
+	<field fieldName="SHSecuritiesAccountID" length="10" randomType="SerialRandom"/>
+	<field fieldName="SZSecuritiesAccountID" length="10" randomType="SerialRandom"/>
+	<field fieldName="FundSize" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="FundSponsor" length="3" randomType="NameRandom"/>
+	<field fieldName="AnnouncementTitle" length="100" randomType="TextRandom"/>
+	<field fieldName="ApplicationVol" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TradingPrice" length="7" precision="4" randomType="MoneyRandom"/>
+	<field fieldName="ApplicationAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="BusinessCode" length="3" randomType="ItemRandom" randomRange="001,002,003,004,005,008"/>
+	<field fieldName="TAAccountID" length="12" randomType="KeepSame,SerialRandom" mapper="TAAccountID"/>
+	<field fieldName="TASerialNO" length="20" randomType="SerialRandom"/>
+	<field fieldName="StampDuty" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="Tax" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TelNo" length="22" randomType="SerialRandom"/>
+	<field fieldName="TargetBranchCode" length="16" randomType="SerialRandom"/>
+	<field fieldName="TargetTransactionAccountID" length="17" randomType="SerialRandom"/>
+	<field fieldName="AggregationOfTransactionByBusinessType" length="8" randomType="NumRandom"/>
+	<field fieldName="AggregationDate" length="8" randomType="DateRandom"/>
+	<field fieldName="TotalVol" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TotalAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TargetTAAccountID" length="12" randomType="SerialRandom"/>
+	<field fieldName="TrailCommission" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="UpdateDate" length="8" randomType="DateRandom"/>
+	<field fieldName="ValidPeriod" length="2" randomType="NumRandom" randomRange="1-30"/>
+	<field fieldName="FaceValue" length="7" precision="4" randomType="MoneyRandom"/>
+	<field fieldName="TargetRegionCode" length="4" randomType="SerialRandom"/>
+	<field fieldName="TotalFailingVol" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TotalSuccessfulVol" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="DividendPerUnit" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="InterestTax" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="FundVolBalance" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="BeginAllotNo" length="12" randomType="NumRandom" randomRange="1-1000"/>
+	<field fieldName="EndAllotNo" length="12" randomType="NumRandom" randomRange="1001-2000"/>
+	<field fieldName="TotalAllotNo" length="12" randomType="NumRandom" randomRange="1-1999"/>
+	<field fieldName="CfmVolOfTargetFund" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TargetNAV" length="9" precision="6" randomType="MoneyRandom"/>
+	<field fieldName="TargetFundPrice" length="7" precision="4" randomType="MoneyRandom"/>
+	<field fieldName="TradingMethod" length="8" randomType="ItemRandom" randomRange="10101010,01010101,11111111,00000000"/>
+	<field fieldName="ContractNo" length="20" randomType="SerialRandom"/>
+	<field fieldName="SelfHelp" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="MinorFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="DeliverType" length="1" randomType="ItemRandom" randomRange="标准快递,自取,特快"/>
+	<field fieldName="TransactorIDType" length="1" randomType="ItemRandom" randomRange="1,2,3,4"/>
+	<field fieldName="AccountCardID" length="8" randomType="SerialRandom"/>
+	<field fieldName="TotalFrontendFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TotalBackendLoad" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TotalFailingAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TotalSuccessfulAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TransferDirection" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="BusinessFinishFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="TotalFailingDealingNum" length="6" randomType="NumRandom"/>
+	<field fieldName="TotalSuccessfulDealingNum" length="6" randomType="NumRandom"/>
+	<field fieldName="ConvertStatus" length="1" randomType="ItemRandom" randomRange="0,1,2,3"/>
+	<field fieldName="AcctNameOfInvestorInClearingAgency" length="60" randomType="NameRandom"/>
+	<field fieldName="AcctNoOfInvestorInClearingAgency" length="28" randomType="SerialRandom"/>
+	<field fieldName="ClearingAgency" length="9" randomType="SerialRandom"/>
+	<field fieldName="UnFrozenBalance" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="BusinessOrganiger" length="3" randomType="SerialRandom"/>
+	<field fieldName="AccountType" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="FrozenBalance" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="FrozenShares" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TotalFare" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="VastRedeemFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="TermOfPeriodicSubs" length="5" randomType="NumRandom" randomRange="1-100"/>
+	<field fieldName="FutureBuyDate" length="8" randomType="DateRandom"/>
+	<field fieldName="RateFee" length="9" precision="8" randomType="RateRandom"/>
+	<field fieldName="MinFee" length="10" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="DaysRedemptionInAdvance" length="5" randomType="NumRandom" randomRange="1-100"/>
+	<field fieldName="MaxSubsVolByIndi" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="MaxSubsAmountByIndi" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="MaxSubsVolByInst" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="MaxSubsAmountByInst" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="UnitSubsVolByIndi" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="UnitSubsAmountByIndi" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="UnitSubsVolByInst" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="UnitSubsAmountByInst" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="MinBidsAmountByIndi" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="MinBidsAmountByInst" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="MinAppBidsAmountByIndi" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="MinAppBidsAmountByInst" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="MinRedemptionVol" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="MinInterconvertVol" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="IssueTypeByIndi" length="1" randomType="ItemRandom" randomRange="1,2,3"/>
+	<field fieldName="IssueTypeByInst" length="1" randomType="ItemRandom" randomRange="1,2,3"/>
+	<field fieldName="SubsType" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="CollectFeeType" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="NextTradeDate" length="8" randomType="DateRandom"/>
+	<field fieldName="SalerNetReceivableAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="SalerNetPayableAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="SalerTotalFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="SalerBuyFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="SalerBidFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="FundTotalFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="RaiseTotalAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="AccumulativeTotalRaiseAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="RaiseInterest" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="SalerRaiseFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="ConversionInAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="ConvertingToAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="SalerExchangeFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="BidTax" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="RedemptionTax" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="IndividualCapitalGainTax" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="InstituteCapitalGainTax" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="IndividualIncomeTax" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="InstituteIncomeTax" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="SalerReinvestmentFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="SubFeeRetTA" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="RedemFeeRetTA" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TotalTransInAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TotalFeeOfTransInAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TotalTransInVol" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TotalTransOutAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TotalFeeOfTransOutAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TotalTransOutVol" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="BidTrade" length="13" randomType="NumRandom" randomRange="1-300"/>
+	<field fieldName="RedeemTrade" length="13" randomType="NumRandom" randomRange="1-300"/>
+	<field fieldName="FreezeTotal" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="ManagerCode" length="3" randomType="SerialRandom"/>
+	<field fieldName="NetBidTotalAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="NetRedeemTotalAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="CreditDebit" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="RedemptionFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="NetSettlement" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="Specification" length="60" randomType="TextRandom"/>
+	<field fieldName="TransferFee" length="10" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="FromTAFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="FrozenMethod" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="OriginalAppDate" length="8" randomType="DateRandom"/>
+	<field fieldName="TotalBackendLoadVol" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="ShareClass" length="1" randomType="ItemRandom" randomRange="0,1,2"/>
+	<field fieldName="OriginalCfmDate" length="8" randomType="DateRandom"/>
+	<field fieldName="RedemptionInAdvanceFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="RedemptionReason" length="1" randomType="ItemRandom" randomRange="0,1,2,3"/>
+	<field fieldName="DetailFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="DeliverWay" length="8" randomType="ItemRandom" randomRange="01010101,10101010,00000000,11111111"/>
+	<field fieldName="VolumeByInterest" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="ValueLine" length="7" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="AccountStatus" length="1" randomType="ItemRandom" randomRange="0,1,2"/>
+	<field fieldName="BeginDateOfPeriodicSubs" length="8" randomType="DateRandom"/>
+	<field fieldName="EndDateOfPeriodicSubs" length="8" randomType="DateRandom"/>
+	<field fieldName="SendDayOfPeriodicSubs" length="2" randomType="NumRandom" randomRange="1-30"/>
+	<field fieldName="TotalVolumeofReinvestmentDividend" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="AccumulativeNAV" length="9" precision="6" randomType="MoneyRandom"/>
+	<field fieldName="ShareRegisterDate" length="8" randomType="DateRandom"/>
+	<field fieldName="LargeBuyFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="FeeCalculator" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="IndiAcctCfmRate" length="5" precision="4" randomType="RateRandom"/>
+	<field fieldName="InstAcctCfmRate" length="5" precision="4" randomType="RateRandom"/>
+	<field fieldName="GenAcctCfmRate" length="5" precision="4" randomType="RateRandom"/>
+	<field fieldName="VarietyCodeOfPeriodicSubs" length="5" randomType="SerialRandom"/>
+	<field fieldName="SerialNoOfPeriodicSubs" length="5" randomType="SerialRandom"/>
+	<field fieldName="CorpName" length="40" randomType="NameRandom"/>
+	<field fieldName="RefundAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="SecuritiesAccountID" length="10" randomType="SerialRandom"/>
+	<field fieldName="SalePercent" length="8" precision="5" randomType="RateRandom"/>
+	<field fieldName="CertValidDate" length="8" randomType="DateRandom"/>
+	<field fieldName="InstTranCertValidDate" length="8" randomType="DateRandom"/>
+	<field fieldName="InstReprCertValidDate" length="8" randomType="DateRandom"/>
+	<field fieldName="ClientRiskRate" length="1" randomType="ItemRandom" randomRange="1,2,3,4,5"/>
+	<field fieldName="InstReprManageRange" length="2" randomType="ItemRandom" randomRange="01,02,03,04,05,06,07,08,09,10,11,12,13,14,15"/>
+	<field fieldName="ControlHolder" length="80" randomType="NameRandom"/>
+	<field fieldName="ActualController" length="80" randomType="NameRandom"/>
+	<field fieldName="MarriageStatus" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="FamilyNum" length="2" randomType="NumRandom" randomRange="1-5"/>
+	<field fieldName="Penates" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="MediaHobby" length="1" randomType="ItemRandom" randomRange="0,1,2,3,4"/>
+	<field fieldName="CustomerNo" length="12" randomType="SerialRandom"/>
+	<field fieldName="RationProtocolNo" length="20" randomType="SerialRandom"/>
+	<field fieldName="RationType" length="1" randomType="ItemRandom" randomRange="0,1,2,3,4"/>
+	<field fieldName="BreachFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="SalesPromotion" length="3" randomType="SerialRandom"/>
+	<field fieldName="AcceptMethod" length="1" randomType="ItemRandom" randomRange="0,1,2,3,4,5"/>
+	<field fieldName="ForceRedemptionType" length="1" randomType="ItemRandom" randomRange="0,1,2"/>
+	<field fieldName="AllowBreachRedempt" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="PunishFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="BreachFeeBackToFund" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="FutureSubscribeDate" length="8" randomType="DateRandom"/>
+	<field fieldName="TotalDivident" length="8" precision="5" randomType="MoneyRandom"/>
+	<field fieldName="ErrorDetail" length="60" randomType="TextRandom"/>
+	<field fieldName="FundType" length="2" randomType="ItemRandom" randomRange="01,02,03,04"/>
+	<field fieldName="PointsType" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="Points" length="15" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="FundCorpCode" length="8" randomType="SerialRandom"/>
+	<field fieldName="FundServerTel" length="30" randomType="SerialRandom"/>
+	<field fieldName="FundInternetAddress" length="40" randomType="SerialRandom"/>
+	<field fieldName="PointsStatus" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="AnnouncFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="TransferPermitFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="InstAccount" length="30" randomType="SerialRandom"/>
+	<field fieldName="CapitalType" length="3" randomType="ItemRandom" randomRange="银行汇票存款,银行本票存款,信用证保证金存款"/>
+	<field fieldName="ReceOrPayFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="CalculateDate" length="8" randomType="DateRandom"/>
+	<field fieldName="PayDate" length="8" randomType="DateRandom"/>
+	<field fieldName="SeatCode" length="6" randomType="SerialRandom"/>
+	<field fieldName="InstitutionType" length="1" randomType="ItemRandom" randomRange="0,1,2,3,4,8,9,A,B,C,D,E,F"/>
+	<field fieldName="DistributorName" length="80" randomType="NameRandom"/>
+	<field fieldName="TakeIncomeFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="PurposeOfPeSubs" length="40" randomType="TextRandom"/>
+	<field fieldName="FrequencyOfPeSubs" length="5" randomType="NumRandom" randomRange="1-10000"/>
+	<field fieldName="BatchNumOfPeSubs" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="FundTypeName" length="30" randomType="NameRandom"/>
+	<field fieldName="RegistrarName" length="40" randomType="NameRandom"/>
+	<field fieldName="FundManagerName" length="40" randomType="NameRandom"/>
+	<field fieldName="EnglishFirstName" length="20" randomType="NameRandom"/>
+	<field fieldName="EnglishFamliyName" length="20" randomType="NameRandom"/>
+	<field fieldName="Vocation" length="4" randomType="ItemRandom" randomRange="A,B,C,D,E,F,G"/>
+	<field fieldName="CorpoProperty" length="2" randomType="ItemRandom" randomRange="0,1,2,3"/>
+	<field fieldName="StaffNum" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="Hobbytype" length="2" randomType="ItemRandom" randomRange="0,1,2,3"/>
+	<field fieldName="Province" length="6" randomType="NameRandom"/>
+	<field fieldName="City" length="6" randomType="NameRandom"/>
+	<field fieldName="County" length="6" randomType="NameRandom"/>
+	<field fieldName="CommendPerson" length="40" randomType="NameRandom"/>
+	<field fieldName="CommendPersonType" length="1" randomType="ItemRandom" randomRange="0,1,2,3,4,5"/>
+	<field fieldName="CapitalMode" length="2" randomType="ItemRandom" randomRange="1,2,3,4,5,6,7,8,9,A,B,C,D"/>
+	<field fieldName="DetailCapticalMode" length="2" randomType="ItemRandom" randomRange="现金,存款"/>
+	<field fieldName="BackenloadDiscount" length="5" precision="4" randomType="RateRandom"/>
+	<field fieldName="CombineNum" length="6" randomType="SerialRandom"/>
+	<field fieldName="AlternationDate" length="8" randomType="DateRandom"/>
+	<field fieldName="TargetDistributorType" length="1" randomType="ItemRandom" randomRange="A,B,C,D,E,F,G"/>
+	<field fieldName="XRValue" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="XRValueFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="XRType" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="DividendType" length="1" randomType="ItemRandom" randomRange="0,1,2,3,4"/>
+	<field fieldName="SequenceNO" length="20" randomType="SerialRandom"/>
+	<field fieldName="OperateDate" length="8" randomType="DateRandom"/>
+	<field fieldName="VolLowerLimit" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="VolUpperLimit" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="AmountLowerLimit" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="AmountUpperLimit" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="DaysLowerLimit" length="5" randomType="NumRandom" randomRange="1-10"/>
+	<field fieldName="DaysUpperLimit" length="5" randomType="NumRandom" randomRange="10-30"/>
+	<field fieldName="MaxFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="GetFeeRateMethod" length="1" randomType="ItemRandom" randomRange="0,1,2,3"/>
+	<field fieldName="FeeRateFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="FundNameAbbr" length="20" randomType="NameRandom"/>
+	<field fieldName="IsGuaranteedFund" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="IsLOFFund" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="IsQDIIFund" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="IsETFFund" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="RedeemFeeBackRatio" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="FundEstablishDate" length="8" randomType="DateRandom"/>
+	<field fieldName="ConstantFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="IsDiscount" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="BuyPayPeriod" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="RedemptionPayPeriod" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="ConversionPayPeriod" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="ChargePayMethod" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="CompareProportion" length="16" precision="8" randomType="RateRandom"/>
+	<field fieldName="CompareCapitalType" length="3" randomType="ItemRandom" randomRange="0,1,2,3,4,5"/>
+	<field fieldName="SubPayBackPeriod" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="DividendPayPeriod" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="WholeFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="ModifyWay" length="1" randomType="ItemRandom" randomRange="0,1,2"/>
+	<field fieldName="ChangeAgencyFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="RecuperateAgencyFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="RedemptionSequence" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="BuyUpperAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="CovertInUpperAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="PeriodSubUpperAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="ChargeType" length="1" randomType="ItemRandom" randomRange="0,1,2,3,4,5"/>
+	<field fieldName="SpecifyRateFee" length="9" precision="8" randomType="RateRandom"/>
+	<field fieldName="SpecifyFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="PeriodSubTimeUnit" length="1" randomType="ItemRandom" randomRange="1,5,10,20"/>
+	<field fieldName="FundIncome" length="8" precision="5" randomType="RateRandom"/>
+	<field fieldName="FundIncomeFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="Yield" length="8" precision="5" randomType="MoneyRandom"/>
+	<field fieldName="YieldFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="GuaranteedNAV" length="9" precision="6" randomType="MoneyRandom"/>
+	<field fieldName="HandleCharge" length="10" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="UndistributeMonetaryIncome" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="GuaranteedAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="ExchangeFlag" length="1" randomType="ItemRandom" randomRange="0,1,2"/>
+	<field fieldName="UndistributeMonetaryIncomeFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="Ref" length="10" randomType="SerialRandom"/>
+	<field fieldName="Internet" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="ShareType" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="Nationality" length="3" randomType="ItemRandom" randomRange="1,2,3,4,5,6,7,8,9,10"/>
+	<field fieldName="NetNo" length="9" randomType="SerialRandom"/>
+	<field fieldName="TargetShareType" length="1" randomType="ItemRandom" randomRange="0,1,2"/>
+	<field fieldName="SourceType" length="1" randomType="ItemRandom" randomRange="0,1,2,3"/>
+	<field fieldName="VastRedeemRatio" length="9" precision="8" randomType="RateRandom"/>
+	<field fieldName="Broker" length="12" randomType="NameRandom"/>
+	<field fieldName="ProtocalEndDate" length="8" randomType="DateRandom"/>
+	<field fieldName="RationDate" length="5" randomType="DateRandom"/>
+	<field fieldName="FundDayIncomeFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="FundDayIncome" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="CustomerID" length="12" randomType="SerialRandom"/>
+	<field fieldName="RationKind" length="3" randomType="SerialRandom"/>
+	<field fieldName="BelongFundAssetFare" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="BackFare" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="RecuperateFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="ChangeFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="AchievementPay" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="AchievementCompen" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="OverAmount" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="OverShares" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="CapitalGainTax" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="CashDividendFee" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="ConfirmPayDate" length="8" randomType="DateRandom"/>
+	<field fieldName="NetValueDate" length="8" randomType="DateRandom"/>
+	<field fieldName="NetValueType" length="1" randomType="ItemRandom" randomRange="0,1,2"/>
+	<field fieldName="FundYearIncomeRate" length="8" precision="5" randomType="RateRandom"/>
+	<field fieldName="FundYearIncomeRateFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="BeginInterestDate" length="8" randomType="DateRandom"/>
+	<field fieldName="LofDataType" length="1" randomType="ItemRandom" randomRange="0,1,2"/>
+	<field fieldName="ManagerRealRatio" length="7" precision="4" randomType="RateRandom"/>
+	<field fieldName="CostPrice" length="7" precision="4" randomType="MoneyRandom"/>
+	<field fieldName="GeneralTASerialNO" length="20" randomType="SerialRandom"/>
+	<field fieldName="DrawBonusUnit" length="10" randomType="ItemRandom" randomRange="10,1000,10000"/>
+	<field fieldName="FrozenSharesforReinvest" length="16" precision="2" randomType="Money"/>
+	<field fieldName="SharesAdjustmentFlag" length="1" randomType="ItemRandom" randomRange="0,1,2,3,4,5,6,7,8,9,A,B,C,D"/>
+	<field fieldName="PeriodicStatus" length="1" randomType="ItemRandom" randomRange="0,1,2,3"/>
+	<field fieldName="TransferAgencyStatus" length="1" randomType="ItemRandom" randomRange="0,1,2,3"/>
+	<field fieldName="TransactionAccountStatus" length="1" randomType="ItemRandom" randomRange="0,3"/>
+	<field fieldName="RationNo" length="3" randomType="SerialRandom"/>
+	<field fieldName="AchievementPayFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="IndiMaxPurchase" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="InstMaxPurchase" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="IndiDayMaxSumBuy" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="InstDayMaxSumBuy" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="IndiDayMaxSumRedeem" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="InstDayMaxSumRedeem" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="IndiMaxRedeem" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="InstMaxRedeem" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="TargetRegistrarCode" length="9" randomType="SerialRandom"/>
+	<field fieldName="AllowRedemptDate" length="8" randomType="DateRandom"/>
+	<field fieldName="AddFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="ContractType" length="1" randomType="ItemRandom" randomRange="1,2"/>
+	<field fieldName="SerialNo" length="26" randomType="SerialRandom"/>
+	<field fieldName="Version" length="3" randomType="SerialRandom"/>
+	<field fieldName="SignType" length="1" randomType="ItemRandom" randomRange="0,1,2,3,4"/>
+	<field fieldName="AcceptPlace" length="40" randomType="NameRandom"/>
+	<field fieldName="Notes" length="64" randomType="TextRandom"/>
+	<field fieldName="SignRiskNotice" length="1" randomType="ItemRandom" randomRange="0,1,2,3,4"/>
+	<field fieldName="RiskMatching" length="1" randomType="ItemRandom" randomRange="0,1,2,3,4"/>
+	<field fieldName="CardNo" length="C" randomType="SerialRandom"/>
+	<field fieldName="SecondStatus" length="C" randomType="ItemRandom" randomRange="0,1,2,3,4"/>
+	<field fieldName="ThirdStatus" length="C" randomType="ItemRandom" randomRange="0,1,2,3,4"/>
+	<field fieldName="SecondNotes" length="C" randomType="TextRandom"/>
+	<field fieldName="ThirdNotes" length="C" randomType="TextRandom"/>
+	<field fieldName="SecondDate" length="C" randomType="DateRandom"/>
+	<field fieldName="ThirdDate" length="C" randomType="DateRandom"/>
+	<field fieldName="ReservedField1" length="C" randomType="TextRandom"/>
+	<field fieldName="ReservedField2" length="C" randomType="TextRandom"/>
+	<field fieldName="ReservedField3" length="C" randomType="TextRandom"/>
+	<field fieldName="ReservedField4" length="N" randomType="MoneyRandom"/>
+	<field fieldName="ReservedField5" length="N" randomType="MoneyRandom"/>
+	<field fieldName="TAAccountID2" length="C" randomType="SerialRandom"/>
+	<field fieldName="FundCode2" length="C" randomType="SerialRandom"/>
+	<field fieldName="CodeOfTargetFund2" length="C" randomType="SerialRandom"/>
+	<field fieldName="Charge2" length="" randomType="MoneyRandom"/>
+	<field fieldName="AgencyFee2" length="" randomType="MoneyRandom"/>
+	<field fieldName="PayAmount" length="N" randomType="MoneyRandom"/>
+	<field fieldName="FundManagerCode2" length="C" randomType="SerialRandom"/>
+	<field fieldName="CustodianCode2" length="C" randomType="SerialRandom"/>
+	<field fieldName="RegistrarCode2" length="C" randomType="SerialRandom"/>
+	<field fieldName="RegRegionCode" length="C" randomType="SerialRandom"/>
+	<field fieldName="SaleRegionCode" length="C" randomType="SerialRandom"/>
+	<field fieldName="MainFundCode" length="C" randomType="SerialRandom"/>
+	<field fieldName="ClassFlag" length="C" randomType="ItemRandom" randomRange="0,1,2,3,4"/>
+	<field fieldName="PriorFlag" length="C" randomType="ItemRandom" randomRange="0,1,2,3,4"/>
+	<field fieldName="FundEndDate" length="C" randomType="DateRandom"/>
+	<field fieldName="RelationUsage" length="C" randomType="TextRandom"/>
+	<field fieldName="AccumulativePerDiv" length="N" randomType="MoneyRandom"/>
+	<field fieldName="MarketFlag" length="C" randomType="ItemRandom" randomRange="0,1,2,3,4"/>
+	<field fieldName="StockAccount" length="C" randomType="SerialRandom"/>
+	<field fieldName="TaxRatio" length="N" randomType="RateRandom"/>
+	<field fieldName="RatioDate" length="C" randomType="DateRandom"/>
+	<field fieldName="DestinationCode" length="6" randomType="SerialRandom"/>
+	<field fieldName="PublicFlag" length="1" randomType="ItemRandom" randomRange="0,1,2,3,4"/>
+	<field fieldName="DistributorCode2" length="18" randomType="SerialRandom"/>
+	<field fieldName="InvestorType" length="3" randomType="ItemRandom" randomRange="001,002,101,102,103,104,105,106,107"/>
+	<field fieldName="InvestorProCode" length="6" randomType="SerialRandom"/>
+	<field fieldName="PriorSequence" length="2" randomType="ItemRandom" randomRange="01,02,03,04,05,06,07,08,09"/>
+	<field fieldName="TargetDistributorCode2" length="18" randomType="SerialRandom"/>
+	<field fieldName="LeverageMultiple" length="10" precision="4" randomType="RateRandom"/>
+	<field fieldName="FormalFundCode" length="6" randomType="SerialRandom"/>
+	<field fieldName="InvestAdName" length="80" randomType="NameRandom"/>
+	<field fieldName="InvestAdBusCode" length="18" randomType="SerialRandom"/>
+	<field fieldName="InvestAdManCode" length="18" randomType="SerialRandom"/>
+	<field fieldName="LeverageRate" length="16" precision="4" randomType="Rate"/>
+	<field fieldName="SurveyMethod" length="1" randomType="ItemRandom" randomRange="0,1,2,3,4"/>
+	<field fieldName="GetInvestCerFlag" length="1" randomType="ItemRandom" randomRange="0,1,2,3,4"/>
+	<field fieldName="NonResiFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="ChineseName" length="100" randomType="NameRandom"/>
+	<field fieldName="EnglishFirstName2" length="100" randomType="NameRandom"/>
+	<field fieldName="EnglishFamliyName2" length="100" randomType="NameRandom"/>
+	<field fieldName="EnglishName" length="200" randomType="NameRandom"/>
+	<field fieldName="LivingCountry" length="3" randomType="NameRandom"/>
+	<field fieldName="LivingAddress" length="300" randomType="NameRandom"/>
+	<field fieldName="LivingAddress2" length="300" randomType="NameRandom"/>
+	<field fieldName="LivingAddress3" length="300" randomType="NameRandom"/>
+	<field fieldName="LivingAddress4" length="300" randomType="NameRandom"/>
+	<field fieldName="BirthDate" length="8" randomType="DateRandom"/>
+	<field fieldName="BirthCountry" length="3" randomType="NameRandom"/>
+	<field fieldName="BirthCountryEngName" length="200" randomType="NameRandom"/>
+	<field fieldName="BirthCity" length="200" randomType="NameRandom"/>
+	<field fieldName="AddressType" length="3" randomType="ItemRandom" randomRange="0,1,2,3,4"/>
+	<field fieldName="TaxCountry" length="3" randomType="NameRandom"/>
+	<field fieldName="TaxID" length="200" randomType="SerialRandom"/>
+	<field fieldName="PassiveNonFinFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="HaveNonResConFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="ChineseName2" length="100" randomType="NameRandom"/>
+	<field fieldName="EnglishFirstName3" length="100" randomType="NameRandom"/>
+	<field fieldName="EnglishFamliyName3" length="100" randomType="NameRandom"/>
+	<field fieldName="ControllerType" length="6" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="ConNonResiFlag" length="1" randomType="ItemRandom" randomRange="0,1"/>
+	<field fieldName="ConShareRatio" length="7" precision="4" randomType="RateRandom"/>
+	<field fieldName="LivingCountry2" length="3" randomType="NameRandom"/>
+	<field fieldName="LivingAddress5" length="300" randomType="NameRandom"/>
+	<field fieldName="LivingAddress6" length="300" randomType="NameRandom"/>
+	<field fieldName="LivingAddress7" length="300" randomType="NameRandom"/>
+	<field fieldName="LivingAddress8" length="300" randomType="NameRandom"/>
+	<field fieldName="RegRegionCode2" length="2" randomType="SerialRandom"/>
+	<field fieldName="BirthDate2" length="8" randomType="DateRandom"/>
+	<field fieldName="BirthCountry2" length="3" randomType="NameRandom"/>
+	<field fieldName="BirthCouEngName2" length="200" randomType="NameRandom"/>
+	<field fieldName="BirthCity2" length="120" randomType="NameRandom"/>
+	<field fieldName="TaxCountry2" length="3" randomType="NameRandom"/>
+	<field fieldName="TaxID2" length="200" randomType="SerialRandom"/>
+	<field fieldName="Specification2" length="60" randomType="TextRandom"/>
+	<field fieldName="ReservedField6" length="300" randomType="TextRandom"/>
+	<field fieldName="ContFrozenAmt" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="FrozenIncome" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="IncomeNew" length="16" precision="2" randomType="MoneyRandom"/>
+	<field fieldName="ClientClass" length="2" randomType="ItemRandom" randomRange="01,02,03,04,05,06,07,08,09,10,11,12"/>
+	<field fieldName="OtherCode" length="60" randomType="NameRandom"/>
+	<field fieldName="SpvBranch" length="6" randomType="ItemRandom" randomRange="C10102,C10103,C10104,C10105,C10106"/>
+	<field fieldName="OtherBranch" length="60" randomType="NameRandom"/>
+	<field fieldName="QualifiedInvestor" length="1" randomType="ItemRandom" randomRange="7,8"/>
+	<field fieldName="Benchmark" length="60" randomType="TextRandom"/>
+	<field fieldName="X3ControlHolder" length="2000" randomType="TextRandom"/>
+	<field fieldName="X3ActualController" length="2000" randomType="NameRandom"/>
+</fields>

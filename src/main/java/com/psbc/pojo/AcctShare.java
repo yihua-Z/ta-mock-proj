@@ -12,6 +12,5 @@ public class AcctShare {
 	private String DistributorCode;
 	private Double TotalVolOfDistributorInTA;
 	private Double TotalFrozenVol;
-	private String TACode;
 	private String TransactionCfmDate;
 }
