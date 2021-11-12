@@ -11,6 +11,7 @@ drop table transaction_application;
 drop table transaction_confirmation;
 drop table transaction_expectation;
 
+drop table fund_date;
 create table if not exists account_info
 (
     TAAccountID          VARCHAR(12)  NOT NULL COMMENT '投资人理财账号',
@@ -695,3 +696,16 @@ create table if not exists transaction_expectation
     primary key (AppSheetSerialNo)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+
+
+
+CREATE TABLE IF NOT EXISTS FUND_DATE (
+                                         TACode							VARCHAR(9)	NOT NULL COMMENT "TA代码",
+                                         FundCode						VARCHAR(20)	NOT NULL COMMENT "理财产品代码",
+                                         DistributorCode					VARCHAR(9)	NOT NULL COMMENT "销售人代码",
+                                         DateType						VARCHAR(1)	NOT NULL COMMENT "日期类型",
+                                         CorrCfmDate						DECIMAL(8)	NOT NULL COMMENT "对应确认日",
+                                         TransactionCfmDate				VARCHAR(8)	NOT NULL COMMENT "交易确认日期",
+                                         primary key (TACode,FundCode,CorrCfmDate),
+                                         foreign key (FundCode) references fund_info(FundCode)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

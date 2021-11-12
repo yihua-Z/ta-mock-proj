@@ -1,11 +1,12 @@
 package com.psbc.business.processor;
 
+import com.psbc.business.service.BusinessCodeChecker;
+import com.psbc.business.service.RecordOperator;
 import com.psbc.pojo.TableModel;
 import com.psbc.pojo.AccountApplication;
 import com.psbc.reader.DataFileReader;
 import lombok.Data;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -18,14 +19,13 @@ public class Processor_001 {
 
     private String applicationFilePath = "";
 
-    private BusinessCodeChecker businessCodeChecker;
+    private BusinessCodeChecker businessCodeChecker = new BusinessCodeChecker();
 
-    private RecordOperator recordOperator;
+    private RecordOperator recordOperator = new RecordOperator();
 
     public AccountApplication processor() {
 
-        this.applicationFilePath = applicationFilePath;
-        DataFileReader applyReader = new DataFileReader(new File(applicationFilePath));
+        DataFileReader applyReader = new DataFileReader(new File(this.applicationFilePath));
         List<TableModel> applyRecords = applyReader.read();
         AccountApplication accountApplication = new AccountApplication();
         boolean checkerFiledValue = false;
@@ -53,11 +53,6 @@ public class Processor_001 {
 
         Processor_001 processor_001 = new Processor_001();
 
-        RecordOperator recordOperator = new RecordOperator();
-        BusinessCodeChecker businessCodeChecker = new BusinessCodeChecker();
-
-        processor_001.setRecordOperator(recordOperator);
-        processor_001.setBusinessCodeChecker(businessCodeChecker);
         processor_001.setApplicationFilePath(applicationFilePath);
 
 

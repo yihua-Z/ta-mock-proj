@@ -5,7 +5,7 @@
     <!--    AccountApplication-->
     <select id="selectByPrimaryKey" resultType="AccountApplication">
         select *
-        from mybatis.account_application
+        from account_application
         where AppSheetSerialNo = #{id}
     </select>
 

@@ -3,5 +3,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/data/OFD_037_999_20211025_01.TXT" charset="GBK" />
+    <file url="PROJECT" charset="GBK" />
   </component>
 </project>

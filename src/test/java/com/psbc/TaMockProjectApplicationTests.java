@@ -1,17 +1,18 @@
 package com.psbc;
 
-import com.psbc.business.processor.BusinessCodeChecker;
 import com.psbc.business.processor.Processor_001;
-import com.psbc.business.processor.RecordOperator;
 import com.psbc.mapper.AccountApplicationMapper;
+import com.psbc.mapper.AccountExpectationMapper;
 import com.psbc.mapper.AccountInfoMapper;
 import com.psbc.pojo.AccountApplication;
+import com.psbc.pojo.AccountExpectation;
 import com.psbc.pojo.AccountInfo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.sql.DataSource;
+import java.util.ArrayList;
+import java.util.List;
 
 @SpringBootTest
 class TaMockProjectApplicationTests {
@@ -20,25 +21,48 @@ class TaMockProjectApplicationTests {
     @Autowired
     AccountApplicationMapper accountApplicationMapper;
 
+    @Autowired
+    AccountExpectationMapper accountExpectationMapper;
+
     @Test
     void testController() {
 
         String applicationFilePath = ".\\src\\main\\resources\\data\\OFD_037_999_20211025_01.TXT";
 
         Processor_001 processor_001 = new Processor_001();
-
-        RecordOperator recordOperator = new RecordOperator();
-        BusinessCodeChecker businessCodeChecker = new BusinessCodeChecker();
-
-        processor_001.setRecordOperator(recordOperator);
-        processor_001.setBusinessCodeChecker(businessCodeChecker);
         processor_001.setApplicationFilePath(applicationFilePath);
 
+        AccountApplication processor = processor_001.processor();
+        accountApplicationMapper.insert(processor);
+
+
+    }
+
+    @Test
+    public void accountExpectationMapper() {
+
+
+        String applicationFilePath = ".\\src\\main\\resources\\data\\OFD_037_999_20211025_01.TXT";
+
+        Processor_001 processor_001 = new Processor_001();
+        processor_001.setApplicationFilePath(applicationFilePath);
 
         AccountApplication processor = processor_001.processor();
-        processor.setTAAccountID("1");
         accountApplicationMapper.insert(processor);
+
+        List<AccountExpectation> expectations = accountExpectationMapper.selectAll();
+        List<String> appSheetSerialNoList = new ArrayList<>();
+        for (AccountExpectation e : expectations
+        ) {
+            appSheetSerialNoList.add(e.getAppSheetSerialNo());
+        }
+
+        if (appSheetSerialNoList.contains(processor.getAppSheetSerialNo())) {
+            System.out.println();
+        }
+
     }
+
 
     @Autowired
     AccountInfoMapper accountInfoMapper;
@@ -47,7 +71,7 @@ class TaMockProjectApplicationTests {
     void testMybatis() {
 
         AccountInfo accountInfo = new AccountInfo();
-        String data="5";
+        String data = "5";
         accountInfo.setTAAccountID(data);
         accountInfo.setName(data);
         accountInfo.setSex(data);
@@ -74,8 +98,6 @@ class TaMockProjectApplicationTests {
 
 
     }
-
-
 
 
 }

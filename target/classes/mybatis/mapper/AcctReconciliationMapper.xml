@@ -4,20 +4,20 @@
     <!--    AcctReconciliationMapper.xml-->
     <select id="selectByPrimaryKey" resultType="AcctReconciliation">
         select *
-        from mybatis.AcctReconciliation
+        from mybatis.acct_reconciliation
         where TAAccountID = #{id}
     </select>
 
 
     <delete id="deleteByPrimaryKey">
         delete
-        from mybatis.AcctReconciliation
+        from mybatis.acct_reconciliation
         where TAAccountID = #{id}
     </delete>
 
 
     <insert id="insert" parameterType="com.psbc.pojo.AcctReconciliation">
-        insert into mybatis.AcctReconciliation (ReconciliationID,
+        insert into mybatis.acct_reconciliation (ReconciliationID,
                                                 AvailableVol,
                                                 TotalVolOfDistributorInTA,
                                                 TransactionCfmDate,
@@ -57,7 +57,7 @@
     </insert>
 
     <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AcctReconciliation">
-        update mybatis.AcctReconciliation
+        update mybatis.acct_reconciliation
         set AvailableVol                   = #{AvailableVol},
             TotalVolOfDistributorInTA      = #{TotalVolOfDistributorInTA},
             TransactionCfmDate             = #{TransactionCfmDate},
