@@ -14,7 +14,7 @@
     <delete id="deleteByPrimaryKey">
         delete
         from fundDate
-        where TAAccountID = #{id}
+        where TACode = #{id}
     </delete>
 
 
@@ -36,11 +36,10 @@
 
     <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.FundDate">
         update fundDate
-        set TACode, = #{TACode},
-            FundCode, = #{FundCode},
+        set FundCode, = #{FundCode},
             DistributorCode, = #{DistributorCode},
             DateType, = #{DateType},
             CorrCfmDate, = #{CorrCfmDate},
-        where TAAccountID = #{TAAccountID}
+        where TACode = #{TACode}
     </update>
 </mapper>

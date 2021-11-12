@@ -7,7 +7,7 @@
     <select id="selectByPrimaryKey" resultType="FundInfo">
         select *
         from fund_info
-        where TAAccountID = #{id}
+        where FundCode = #{id}
     </select>
 
 
@@ -192,8 +192,7 @@
 
     <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.FundInfo">
         update fund_info
-        set FundCode               = #{FundCode},
-            FundName               = #{FundName},
+        set FundName               = #{FundName},
             TotalFundVol           = #{TotalFundVol},
             FundStatus             = #{FundStatus},
             NAV                    = #{NAV},

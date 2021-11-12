@@ -7,14 +7,14 @@
     <select id="selectByPrimaryKey" resultType="TransactionConfirmation">
         select *
         from transaction_confirmation
-        where TAAccountID = #{id}
+        where ConfirmID = #{id}
     </select>
 
 
     <delete id="deleteByPrimaryKey">
         delete
         from transaction_confirmation
-        where TAAccountID = #{id}
+        where ConfirmID = #{id}
     </delete>
 
 
@@ -148,7 +148,7 @@
 
     <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.TransactionConfirmation">
         update transaction_confirmation
-        set ConfirmID                        = #{ConfirmID},
+        set
             TransactionCfmDate               = #{TransactionCfmDate},
             ConfirmedVol                     = #{ConfirmedVol},
             ConfirmedAmount                  = #{ConfirmedAmount},
@@ -210,6 +210,6 @@
             AppSheetSerialNo                 = #{AppSheetSerialNo},
             DistributorCode                  = #{DistributorCode},
             ReferenceNumber                  = #{ReferenceNumber}
-        where TAAccountID = #{TAAccountID}
+        where ConfirmID = #{ConfirmID}
     </update>
 </mapper>

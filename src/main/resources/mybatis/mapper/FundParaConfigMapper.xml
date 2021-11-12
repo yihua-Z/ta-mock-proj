@@ -7,14 +7,14 @@
     <select id="selectByPrimaryKey" resultType="FundParaConfig">
         select *
         from fund_para_config
-        where TAAccountID = #{id}
+        where FundParaID = #{id}
     </select>
 
 
     <delete id="deleteByPrimaryKey">
         delete
         from fund_para_config
-        where TAAccountID = #{id}
+        where FundParaID = #{id}
     </delete>
 
 
@@ -238,7 +238,7 @@
 
     <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.FundParaConfig">
         update fund_para_config
-        set FundParaID                 = #{FundParaID},
+        set
             DistributorCode            = #{DistributorCode},
             FundCode                   = #{FundCode},
             DownLoaddate               = #{DownLoaddate},
@@ -345,6 +345,6 @@
             CycleAllottedDays          = #{CycleAllottedDays},
             FundBuyAccount             = #{FundBuyAccount},
             TACode                     = #{TACode}
-        where TAAccountID = #{TAAccountID}
+        where FundParaID = #{FundParaID}
     </update>
 </mapper>

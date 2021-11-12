@@ -7,14 +7,14 @@
     <select id="selectByPrimaryKey" resultType="TransactionExpectation">
         select *
         from transaction_expectation
-        where TAAccountID = #{id}
+        where AppSheetSerialNo = #{id}
     </select>
 
 
     <delete id="deleteByPrimaryKey">
         delete
         from transaction_expectation
-        where TAAccountID = #{id}
+        where AppSheetSerialNo = #{id}
     </delete>
 
 
@@ -134,7 +134,7 @@
 
     <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.TransactionExpectation">
         update transaction_expectation
-        set AppSheetSerialNo                  = #{AppSheetSerialNo},
+        set
             TransactionCfmDate                = #{TransactionCfmDate},
             ConfirmedVol                      = #{ConfirmedVol},
             ConfirmedAmount                   = #{ConfirmedAmount},
@@ -189,6 +189,6 @@
             FrozenBalance                     = #{FrozenBalance},
             TransferDateThroughClearingAgency = #{TransferDateThroughClearingAgency},
             Status                            = #{Status}
-        where TAAccountID = #{TAAccountID}
+        where AppSheetSerialNo = #{AppSheetSerialNo}
     </update>
 </mapper>
