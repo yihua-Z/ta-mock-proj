@@ -6,20 +6,20 @@
 
     <select id="selectByPrimaryKey" resultType="AcctShare">
         select *
-        from mybatis.acct_share
+        from acct_share
         where TAAccountID = #{id}
     </select>
 
 
     <delete id="deleteByPrimaryKey">
         delete
-        from mybatis.acct_share
+        from acct_share
         where TAAccountID = #{id}
     </delete>
 
 
     <insert id="insert" parameterType="com.psbc.pojo.AcctShare">
-        insert into mybatis.acct_share (TAAccountID,
+        insert into acct_share (TAAccountID,
                                           DistributorCode,
                                           TACode,
                                           TotalVolOfDistributorInTA,
@@ -36,7 +36,7 @@
     </insert>
 
     <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AcctShare">
-        update mybatis.acct_share
+        update acct_share
         set DistributorCode= #{DistributorCode},
             TACode= #{TACode},
             TotalVolOfDistributorInTA= #{TotalVolOfDistributorInTA},

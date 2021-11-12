@@ -12,13 +12,13 @@
 
     <delete id="deleteByPrimaryKey">
         delete
-        from mybatis.account_application
+        from account_application
         where AppSheetSerialNo = #{id}
     </delete>
 
 
     <insert id="insert" parameterType="com.psbc.pojo.AccountApplication">
-        insert into mybatis.account_application (AppSheetSerialNo,
+        insert into account_application (AppSheetSerialNo,
                                                  Address,
                                                  InstReprIDCode,
                                                  InstReprIDType,
@@ -194,7 +194,7 @@
     </insert>
 
     <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AccountApplication">
-        update mybatis.account_application
+        update account_application
         set Address                            = #{Address                            },
             InstReprIDCode                     = #{InstReprIDCode                     },
             InstReprIDType                     = #{InstReprIDType                     },
