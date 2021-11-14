@@ -6,44 +6,40 @@
 
     <select id="selectByPrimaryKey" resultType="FundDate">
         select *
-        from mybatis.fundDate
+        from fundDate
         where TAAccountID = #{id}
     </select>
 
 
     <delete id="deleteByPrimaryKey">
         delete
-        from mybatis.fundDate
-        where TAAccountID = #{id}
+        from fundDate
+        where TACode = #{id}
     </delete>
 
 
     <insert id="insert" parameterType="com.psbc.pojo.FundDate">
-        insert into mybatis.fundDate (
-        TACode,
-        FundCode,
-        DistributorCode,
-        DateType,
-        CorrCfmDate,
-        TransactionCfmDate
-            values (
-        #{TACode},
-        #{FundCode},
-        #{DistributorCode},
-        #{DateType},
-        #{CorrCfmDate},
-        #{TransactionCfmDate}
-        )
+        insert into mybatis.fundDate (TACode,
+                                      FundCode,
+                                      DistributorCode,
+                                      DateType,
+                                      CorrCfmDate,
+                                      TransactionCfmDate)
+        values (#{TACode},
+                #{FundCode},
+                #{DistributorCode},
+                #{DateType},
+                #{CorrCfmDate},
+                #{TransactionCfmDate})
 
     </insert>
 
     <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.FundDate">
-        update mybatis.fundDate
-        set TACode,           =   #{TACode},
-            FundCode,         =   #{FundCode},
-            DistributorCode,  =   #{DistributorCode},
-            DateType,         =   #{DateType},
-            CorrCfmDate,      =   #{CorrCfmDate},
-        where TAAccountID = #{TAAccountID}
+        update fundDate
+        set FundCode, = #{FundCode},
+            DistributorCode, = #{DistributorCode},
+            DateType, = #{DateType},
+            CorrCfmDate, = #{CorrCfmDate},
+        where TACode = #{TACode}
     </update>
 </mapper>

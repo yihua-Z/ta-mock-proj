@@ -32,9 +32,6 @@ class TaMockProjectApplicationTests {
         Processor_001 processor_001 = new Processor_001();
         processor_001.setApplicationFilePath(applicationFilePath);
 
-        AccountApplication processor = processor_001.processor();
-        accountApplicationMapper.insert(processor);
-
 
     }
 
@@ -47,19 +44,8 @@ class TaMockProjectApplicationTests {
         Processor_001 processor_001 = new Processor_001();
         processor_001.setApplicationFilePath(applicationFilePath);
 
-        AccountApplication processor = processor_001.processor();
-        accountApplicationMapper.insert(processor);
+        List<AccountApplication> processor = processor_001.processor();
 
-        List<AccountExpectation> expectations = accountExpectationMapper.selectAll();
-        List<String> appSheetSerialNoList = new ArrayList<>();
-        for (AccountExpectation e : expectations
-        ) {
-            appSheetSerialNoList.add(e.getAppSheetSerialNo());
-        }
-
-        if (appSheetSerialNoList.contains(processor.getAppSheetSerialNo())) {
-            System.out.println();
-        }
 
     }
 
