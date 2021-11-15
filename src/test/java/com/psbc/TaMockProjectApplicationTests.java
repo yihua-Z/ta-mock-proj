@@ -15,7 +15,11 @@ import java.util.List;
 class TaMockProjectApplicationTests {
 
 
+    @Autowired
+    AccountExpectationMapper accountExpectationMapper;
 
+    @Autowired
+    AccountInfoMapper accountInfoMapper;
 
     @Test
     void testController() {
@@ -28,8 +32,6 @@ class TaMockProjectApplicationTests {
 
     }
 
-    @Autowired
-    AccountExpectationMapper accountExpectationMapper;
     @Test
     public void accountExpectationMapper() {
 
@@ -38,16 +40,8 @@ class TaMockProjectApplicationTests {
         System.out.println();
     }
 
-
-    @Autowired
-    AccountInfoMapper accountInfoMapper;
-
     @Test
     void testMybatis() {
-
-        AccountInfo accountInfo = new AccountInfo();
-        String data = "5";
-
 
 
     }

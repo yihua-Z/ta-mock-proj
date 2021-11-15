@@ -1,16 +1,19 @@
 package com.psbc.mapper;
 
-
 import com.psbc.pojo.FundInfo;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
+@Mapper
+@Repository
 public interface FundInfoMapper {
-    int deleteByPrimaryKey(Integer confirmid);
+    int deleteByPrimaryKey(String appsheetserialno);
 
     int insert(FundInfo record);
 
     int insertSelective(FundInfo record);
 
-    FundInfo selectByPrimaryKey(Integer confirmid);
+    FundInfo selectByPrimaryKey(String appsheetserialno);
 
     int updateByPrimaryKeySelective(FundInfo record);
 

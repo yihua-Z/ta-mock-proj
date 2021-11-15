@@ -1,20 +1,19 @@
 package com.psbc.mapper;
 
 import com.psbc.pojo.AccountExpectation;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
-
+@Mapper
+@Repository
 public interface AccountExpectationMapper {
-    int deleteByPrimaryKey(Integer confirmid);
+    int deleteByPrimaryKey(String appsheetserialno);
 
     int insert(AccountExpectation record);
 
     int insertSelective(AccountExpectation record);
 
-    AccountExpectation selectByPrimaryKey(Integer confirmid);
-
-    List<AccountExpectation> selectAll();
+    AccountExpectation selectByPrimaryKey(String appsheetserialno);
 
     int updateByPrimaryKeySelective(AccountExpectation record);
 
