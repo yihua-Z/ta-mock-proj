@@ -1,87 +1,104 @@
 package com.psbc.pojo;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
+/**
+ * account_confirmation
+ * @author 
+ */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class TransactionApplication {
-	private String AppSheetSerialNo;
-	private String FundCode;
-	private String LargeRedemptionFlag;
-	private String TransactionDate;
-	private String TransactionTime;
-	private String TransactionAccountID;
-	private String DistributorCode;
-	private Double ApplicationVol;
-	private Double ApplicationAmount;
-	private String BusinessCode;
-	private String TAAccountID;
-	private Double DiscountRateOfCommission;
-	private String DepositAcct;
-	private String RegionCode;
-	private String CurrencyType;
-	private String BranchCode;
-	private String OriginalAppSheetNo;
-	private String OriginalSubsDate;
-	private String IndividualOrInstitution;
-	private int    ValidPeriod;
-	private int    DaysRedemptionInAdvance;
-	private String RedemptionDateInAdvance;
-	private String OriginalSerialNo;
-	private String DateOfPeriodicSubs;
-	private String TASerialNO;
-	private int    TermOfPeriodicSubs;
-	private String FutureBuyDate;
-	private String TargetDistributorCode;
-	private Double Charge;
-	private String TargetBranchCode;
-	private String TargetTransactionAccountID;
-	private String TargetRegionCode;
-	private Double DividendRatio;
-	private String Specification;
-	private String CodeOfTargetFund;
-	private Double TotalBackendLoa;
-	private String ShareClass;
-	private String OriginalCfmDate;
-	private String DetailFlag;
-	private String OriginalAppDate;
-	private String DefDividendMethod;
-	private String FrozenCause;
-	private String FreezingDeadline;
-	private String VarietyCodeOfPeriodicSubs;
-	private String SerialNoOfPeriodicSubs;
-	private String RationType;
-	private String TargetTAAccountID;
-	private String TargetRegistrarCode;
-	private String NetNo;
-	private String CustomerNo;
-	private String TargetShareType;
-	private String RationProtocolNo;
-	private String BeginDateOfPeriodicSubs;
-	private String EndDateOfPeriodicSubs;
-	private int    SendDayOfPeriodicSubs;
-	private String Broker;
-	private String SalesPromotion;
-	private String AcceptMethod;
-	private String ForceRedemptionType;
-	private String TakeIncomeFlag;
-	private String PurposeOfPeSubs;
-	private Double FrequencyOfPeSubs;
-	private String PeriodSubTimeUnit;
-	private Double BatchNumOfPeSubs;
-	private String CapitalMode;
-	private String DetailCapitalMode;
-	private Double BackenloadDiscount;
-	private String CombineNum;
-	private String FutureSubscribeDate;
-	private String TradingMethod;
-	private String LargeBuyFlag;
-	private String ChargeType;
-	private Double SpecifyRateFee;
-	private Double SpecifyFee;
-	private String TACode;
-	private int    ReferenceNumber;
+public class TransactionApplication implements Serializable {
+    /**
+     * 确认ID
+     */
+    private Integer confirmid;
+
+    /**
+     * 交易确认日期
+     */
+    private String transactioncfmdate;
+
+    /**
+     * 交易处理返回代码
+     */
+    private String returncode;
+
+    /**
+     * 业务代码
+     */
+    private String businesscode;
+
+    /**
+     * 交易发生日期
+     */
+    private String transactiondate;
+
+    /**
+     * 交易发生时间
+     */
+    private String transactiontime;
+
+    /**
+     * TA确认交易流水号
+     */
+    private String taserialno;
+
+    /**
+     * 是否注册登记人发起业务标志
+     */
+    private String fromtaflag;
+
+    /**
+     * 交易所在地区编号
+     */
+    private String regioncode;
+
+    /**
+     * 操作（清算）网点编号
+     */
+    private String netno;
+
+    /**
+     * 摘要/说明
+     */
+    private String specification;
+
+    /**
+     * TA客户编号
+     */
+    private String customerno;
+
+    /**
+     * 出错详细信息
+     */
+    private String errordetail;
+
+    /**
+     * 申请单编号
+     */
+    private String appsheetserialno;
+
+    /**
+     * TA代码
+     */
+    private String tacode;
+
+    /**
+     * 投资人理财账号
+     */
+    private String taaccountid;
+
+    /**
+     * 销售人代码
+     */
+    private String distributorcode;
+
+    /**
+     * 同一个确认的序列号
+     */
+    private Integer referencenumber;
+
+    private static final long serialVersionUID = 1L;
 }

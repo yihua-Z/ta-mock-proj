@@ -1,17 +1,18 @@
 package com.psbc.mapper;
 
-import com.psbc.pojo.TransactionExpectation;
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
 
-@Mapper
-@Repository
+import com.psbc.pojo.TransactionExpectation;
+
 public interface TransactionExpectationMapper {
-    int deleteByPrimaryKey(String id);
+    int deleteByPrimaryKey(Integer confirmid);
 
     int insert(TransactionExpectation record);
 
-    TransactionExpectation selectByPrimaryKey(String id);
+    int insertSelective(TransactionExpectation record);
+
+    TransactionExpectation selectByPrimaryKey(Integer confirmid);
+
+    int updateByPrimaryKeySelective(TransactionExpectation record);
 
     int updateByPrimaryKey(TransactionExpectation record);
 }

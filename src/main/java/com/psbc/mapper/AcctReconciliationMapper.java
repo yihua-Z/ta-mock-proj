@@ -1,17 +1,17 @@
 package com.psbc.mapper;
 
 import com.psbc.pojo.AcctReconciliation;
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
 
-@Mapper
-@Repository
 public interface AcctReconciliationMapper {
-    int deleteByPrimaryKey(String id);
+    int deleteByPrimaryKey(Integer confirmid);
 
     int insert(AcctReconciliation record);
 
-    AcctReconciliation selectByPrimaryKey(String id);
+    int insertSelective(AcctReconciliation record);
+
+    AcctReconciliation selectByPrimaryKey(Integer confirmid);
+
+    int updateByPrimaryKeySelective(AcctReconciliation record);
 
     int updateByPrimaryKey(AcctReconciliation record);
 }

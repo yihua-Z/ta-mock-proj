@@ -1,17 +1,18 @@
 package com.psbc.mapper;
 
-import com.psbc.pojo.Dividend;
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
 
-@Mapper
-@Repository
+import com.psbc.pojo.Dividend;
+
 public interface DividendMapper {
-    int deleteByPrimaryKey(String id);
+    int deleteByPrimaryKey(Integer confirmid);
 
     int insert(Dividend record);
 
-    Dividend selectByPrimaryKey(String id);
+    int insertSelective(Dividend record);
+
+    Dividend selectByPrimaryKey(Integer confirmid);
+
+    int updateByPrimaryKeySelective(Dividend record);
 
     int updateByPrimaryKey(Dividend record);
 }

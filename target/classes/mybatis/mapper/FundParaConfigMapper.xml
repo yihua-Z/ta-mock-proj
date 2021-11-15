@@ -1,350 +1,250 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.psbc.mapper.FundParaConfigMapper">
-
-    <!--    FundParaConfigMapper.xml-->
-
-    <select id="selectByPrimaryKey" resultType="FundParaConfig">
-        select *
-        from fund_para_config
-        where FundParaID = #{id}
+    <resultMap id="BaseResultMap" type="com.psbc.pojo.FundParaConfig">
+        <id column="ConfirmID" jdbcType="INTEGER" property="confirmid"/>
+        <result column="TransactionCfmDate" jdbcType="VARCHAR" property="transactioncfmdate"/>
+        <result column="ReturnCode" jdbcType="VARCHAR" property="returncode"/>
+        <result column="BusinessCode" jdbcType="VARCHAR" property="businesscode"/>
+        <result column="TransactionDate" jdbcType="VARCHAR" property="transactiondate"/>
+        <result column="TransactionTime" jdbcType="VARCHAR" property="transactiontime"/>
+        <result column="TASerialNO" jdbcType="VARCHAR" property="taserialno"/>
+        <result column="FromTAFlag" jdbcType="VARCHAR" property="fromtaflag"/>
+        <result column="RegionCode" jdbcType="VARCHAR" property="regioncode"/>
+        <result column="NetNo" jdbcType="VARCHAR" property="netno"/>
+        <result column="Specification" jdbcType="VARCHAR" property="specification"/>
+        <result column="CustomerNo" jdbcType="VARCHAR" property="customerno"/>
+        <result column="ErrorDetail" jdbcType="VARCHAR" property="errordetail"/>
+        <result column="AppSheetSerialNo" jdbcType="VARCHAR" property="appsheetserialno"/>
+        <result column="TACode" jdbcType="VARCHAR" property="tacode"/>
+        <result column="TAAccountID" jdbcType="VARCHAR" property="taaccountid"/>
+        <result column="DistributorCode" jdbcType="VARCHAR" property="distributorcode"/>
+        <result column="ReferenceNumber" jdbcType="INTEGER" property="referencenumber"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        ConfirmID
+        , TransactionCfmDate, ReturnCode, BusinessCode, TransactionDate, TransactionTime,
+    TASerialNO, FromTAFlag, RegionCode, NetNo, Specification, CustomerNo, ErrorDetail, 
+    AppSheetSerialNo, TACode, TAAccountID, DistributorCode, ReferenceNumber
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from account_confirmation
+        where ConfirmID = #{confirmid,jdbcType=INTEGER}
     </select>
-
-
-    <delete id="deleteByPrimaryKey">
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
         delete
-        from fund_para_config
-        where FundParaID = #{id}
+        from account_confirmation
+        where ConfirmID = #{confirmid,jdbcType=INTEGER}
     </delete>
-
-
     <insert id="insert" parameterType="com.psbc.pojo.FundParaConfig">
-        insert into fund_para_config (FundParaID,
-                                      DistributorCode,
-                                      FundCode,
-                                      DownLoaddate,
-                                      PrdRiskRate,
-                                      DebtFundType,
-                                      AllowClientGroup,
-                                      FinancialRegistrationCode,
-                                      SaleObject,
-                                      IsCycleFund,
-                                      CycleDays,
-                                      CycleNums,
-                                      DefCycleNums,
-                                      BreachOfContractFee,
-                                      LCFundType,
-                                      IPOType,
-                                      InvestmentTargets,
-                                      ClearDays,
-                                      RedeemAmtDays,
-                                      DivAmtDays,
-                                      FundEndDays,
-                                      FundIssuanceFailDays,
-                                      CashFlag,
-                                      IncomeEndDate,
-                                      IncomeCurrType,
-                                      CostCurrType,
-                                      ChoiceBonusType,
-                                      CancelOrderType,
-                                      BuyUpperLimitday,
-                                      IsPartRedeem,
-                                      LargeRedeemRatio,
-                                      RedeemAmtReturn,
-                                      FundMinBala,
-                                      FundMaXBala,
-                                      Subscribemode,
-                                      Purchasemode,
-                                      RealRedeemRatio,
-                                      RealRedeemUpperLimitOfDay,
-                                      RealRedeemUpperLimitOfSolo,
-                                      ShareDoMethod,
-                                      OrgRedeemBase,
-                                      PerRedeemBase,
-                                      ComparisonRatio,
-                                      FundIssuer,
-                                      ManagementBasic,
-                                      ExcessiveRtio,
-                                      SubBasic,
-                                      SubDelayedDays,
-                                      FundCollectAccount,
-                                      ExcessiveSubRtio,
-                                      InterestRate,
-                                      OpenTime,
-                                      CloseTime,
-                                      ShareClass,
-                                      FundNameAbbr,
-                                      FinancType,
-                                      IsGuaranteedFund,
-                                      IsLOFFund,
-                                      IsQDIIFund,
-                                      IsETFFund,
-                                      LxRedeemFeeBackRatio,
-                                      RedemptionSequence,
-                                      BuyUpperAmount,
-                                      CovertInUpperAmount,
-                                      PeriodSubUpperAmount,
-                                      FundEstablishDate,
-                                      ExchangeFlag,
-                                      Specification,
-                                      WholeFlag,
-                                      ModifyWay,
-                                      OperateDate,
-                                      IssPrice,
-                                      IncomeDate,
-                                      OMinAccountBalance,
-                                      PMinRedemptionVol,
-                                      PMinInterconvertVol,
-                                      OMinRedemptionVol,
-                                      OMinInterconvertVol,
-                                      SubcancelFlag,
-                                      InterestWay,
-                                      PrdProfitKind,
-                                      IsAllowPrdRealTimeRansom,
-                                      BaseDays,
-                                      TransWay,
-                                      ParentsPrdCode,
-                                      PrdTemplateCode,
-                                      AlimitEndDate,
-                                      ORedUnit,
-                                      OMaxAccuAmt,
-                                      PRedUnit,
-                                      PMaxAccuAmt,
-                                      ModelCOMMENT,
-                                      DayBeforeCfm,
-                                      BuyIsControlConfirmFlag,
-                                      RedeemIsControlConfirmFlag,
-                                      ZeroSetUpFlag,
-                                      LimitFlag,
-                                      AgioType,
-                                      SellerLimit,
-                                      LockDays,
-                                      IsCheckInvester,
-                                      ClientCycleMode,
-                                      MinCycleDays,
-                                      MaxCyleDays,
-                                      CycleAllottedDays,
-                                      FundBuyAccount,
-                                      TACode)
-        values (#{FundParaID},
-                #{DistributorCode},
-                #{FundCode},
-                #{DownLoaddate},
-                #{PrdRiskRate},
-                #{DebtFundType},
-                #{AllowClientGroup},
-                #{FinancialRegistrationCode},
-                #{SaleObject},
-                #{IsCycleFund},
-                #{CycleDays},
-                #{CycleNums},
-                #{DefCycleNums},
-                #{BreachOfContractFee},
-                #{LCFundType},
-                #{IPOType},
-                #{InvestmentTargets},
-                #{ClearDays},
-                #{RedeemAmtDays},
-                #{DivAmtDays},
-                #{FundEndDays},
-                #{FundIssuanceFailDays},
-                #{CashFlag},
-                #{IncomeEndDate},
-                #{IncomeCurrType},
-                #{CostCurrType},
-                #{ChoiceBonusType},
-                #{CancelOrderType},
-                #{BuyUpperLimitday},
-                #{IsPartRedeem},
-                #{LargeRedeemRatio},
-                #{RedeemAmtReturn},
-                #{FundMinBala},
-                #{FundMaXBala},
-                #{Subscribemode},
-                #{Purchasemode},
-                #{RealRedeemRatio},
-                #{RealRedeemUpperLimitOfDay},
-                #{RealRedeemUpperLimitOfSolo},
-                #{ShareDoMethod},
-                #{OrgRedeemBase},
-                #{PerRedeemBase},
-                #{ComparisonRatio},
-                #{FundIssuer},
-                #{ManagementBasic},
-                #{ExcessiveRtio},
-                #{SubBasic},
-                #{SubDelayedDays},
-                #{FundCollectAccount},
-                #{ExcessiveSubRtio},
-                #{InterestRate},
-                #{OpenTime},
-                #{CloseTime},
-                #{ShareClass},
-                #{FundNameAbbr},
-                #{FinancType},
-                #{IsGuaranteedFund},
-                #{IsLOFFund},
-                #{IsQDIIFund},
-                #{IsETFFund},
-                #{LxRedeemFeeBackRatio},
-                #{RedemptionSequence},
-                #{BuyUpperAmount},
-                #{CovertInUpperAmount},
-                #{PeriodSubUpperAmount},
-                #{FundEstablishDate},
-                #{ExchangeFlag},
-                #{Specification},
-                #{WholeFlag},
-                #{ModifyWay},
-                #{OperateDate},
-                #{IssPrice},
-                #{IncomeDate},
-                #{OMinAccountBalance},
-                #{PMinRedemptionVol},
-                #{PMinInterconvertVol},
-                #{OMinRedemptionVol},
-                #{OMinInterconvertVol},
-                #{SubcancelFlag},
-                #{InterestWay},
-                #{PrdProfitKind},
-                #{IsAllowPrdRealTimeRansom},
-                #{BaseDays},
-                #{TransWay},
-                #{ParentsPrdCode},
-                #{PrdTemplateCode},
-                #{AlimitEndDate},
-                #{ORedUnit},
-                #{OMaxAccuAmt},
-                #{PRedUnit},
-                #{PMaxAccuAmt},
-                #{ModelCOMMENT},
-                #{DayBeforeCfm},
-                #{BuyIsControlConfirmFlag},
-                #{RedeemIsControlConfirmFlag},
-                #{ZeroSetUpFlag},
-                #{LimitFlag},
-                #{AgioType},
-                #{SellerLimit},
-                #{LockDays},
-                #{IsCheckInvester},
-                #{ClientCycleMode},
-                #{MinCycleDays},
-                #{MaxCyleDays},
-                #{CycleAllottedDays},
-                #{FundBuyAccount},
-                #{TACode})
-
+        insert into account_confirmation (ConfirmID, TransactionCfmDate, ReturnCode,
+                                          BusinessCode, TransactionDate, TransactionTime,
+                                          TASerialNO, FromTAFlag, RegionCode,
+                                          NetNo, Specification, CustomerNo,
+                                          ErrorDetail, AppSheetSerialNo, TACode,
+                                          TAAccountID, DistributorCode, ReferenceNumber)
+        values (#{confirmid,jdbcType=INTEGER}, #{transactioncfmdate,jdbcType=VARCHAR}, #{returncode,jdbcType=VARCHAR},
+                #{businesscode,jdbcType=VARCHAR}, #{transactiondate,jdbcType=VARCHAR},
+                #{transactiontime,jdbcType=VARCHAR},
+                #{taserialno,jdbcType=VARCHAR}, #{fromtaflag,jdbcType=VARCHAR}, #{regioncode,jdbcType=VARCHAR},
+                #{netno,jdbcType=VARCHAR}, #{specification,jdbcType=VARCHAR}, #{customerno,jdbcType=VARCHAR},
+                #{errordetail,jdbcType=VARCHAR}, #{appsheetserialno,jdbcType=VARCHAR}, #{tacode,jdbcType=VARCHAR},
+                #{taaccountid,jdbcType=VARCHAR}, #{distributorcode,jdbcType=VARCHAR},
+                #{referencenumber,jdbcType=INTEGER})
     </insert>
-
+    <insert id="insertSelective" parameterType="com.psbc.pojo.FundParaConfig">
+        insert into account_confirmation
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="confirmid != null">
+                ConfirmID,
+            </if>
+            <if test="transactioncfmdate != null">
+                TransactionCfmDate,
+            </if>
+            <if test="returncode != null">
+                ReturnCode,
+            </if>
+            <if test="businesscode != null">
+                BusinessCode,
+            </if>
+            <if test="transactiondate != null">
+                TransactionDate,
+            </if>
+            <if test="transactiontime != null">
+                TransactionTime,
+            </if>
+            <if test="taserialno != null">
+                TASerialNO,
+            </if>
+            <if test="fromtaflag != null">
+                FromTAFlag,
+            </if>
+            <if test="regioncode != null">
+                RegionCode,
+            </if>
+            <if test="netno != null">
+                NetNo,
+            </if>
+            <if test="specification != null">
+                Specification,
+            </if>
+            <if test="customerno != null">
+                CustomerNo,
+            </if>
+            <if test="errordetail != null">
+                ErrorDetail,
+            </if>
+            <if test="appsheetserialno != null">
+                AppSheetSerialNo,
+            </if>
+            <if test="tacode != null">
+                TACode,
+            </if>
+            <if test="taaccountid != null">
+                TAAccountID,
+            </if>
+            <if test="distributorcode != null">
+                DistributorCode,
+            </if>
+            <if test="referencenumber != null">
+                ReferenceNumber,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="confirmid != null">
+                #{confirmid,jdbcType=INTEGER},
+            </if>
+            <if test="transactioncfmdate != null">
+                #{transactioncfmdate,jdbcType=VARCHAR},
+            </if>
+            <if test="returncode != null">
+                #{returncode,jdbcType=VARCHAR},
+            </if>
+            <if test="businesscode != null">
+                #{businesscode,jdbcType=VARCHAR},
+            </if>
+            <if test="transactiondate != null">
+                #{transactiondate,jdbcType=VARCHAR},
+            </if>
+            <if test="transactiontime != null">
+                #{transactiontime,jdbcType=VARCHAR},
+            </if>
+            <if test="taserialno != null">
+                #{taserialno,jdbcType=VARCHAR},
+            </if>
+            <if test="fromtaflag != null">
+                #{fromtaflag,jdbcType=VARCHAR},
+            </if>
+            <if test="regioncode != null">
+                #{regioncode,jdbcType=VARCHAR},
+            </if>
+            <if test="netno != null">
+                #{netno,jdbcType=VARCHAR},
+            </if>
+            <if test="specification != null">
+                #{specification,jdbcType=VARCHAR},
+            </if>
+            <if test="customerno != null">
+                #{customerno,jdbcType=VARCHAR},
+            </if>
+            <if test="errordetail != null">
+                #{errordetail,jdbcType=VARCHAR},
+            </if>
+            <if test="appsheetserialno != null">
+                #{appsheetserialno,jdbcType=VARCHAR},
+            </if>
+            <if test="tacode != null">
+                #{tacode,jdbcType=VARCHAR},
+            </if>
+            <if test="taaccountid != null">
+                #{taaccountid,jdbcType=VARCHAR},
+            </if>
+            <if test="distributorcode != null">
+                #{distributorcode,jdbcType=VARCHAR},
+            </if>
+            <if test="referencenumber != null">
+                #{referencenumber,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.psbc.pojo.FundParaConfig">
+        update account_confirmation
+        <set>
+            <if test="transactioncfmdate != null">
+                TransactionCfmDate = #{transactioncfmdate,jdbcType=VARCHAR},
+            </if>
+            <if test="returncode != null">
+                ReturnCode = #{returncode,jdbcType=VARCHAR},
+            </if>
+            <if test="businesscode != null">
+                BusinessCode = #{businesscode,jdbcType=VARCHAR},
+            </if>
+            <if test="transactiondate != null">
+                TransactionDate = #{transactiondate,jdbcType=VARCHAR},
+            </if>
+            <if test="transactiontime != null">
+                TransactionTime = #{transactiontime,jdbcType=VARCHAR},
+            </if>
+            <if test="taserialno != null">
+                TASerialNO = #{taserialno,jdbcType=VARCHAR},
+            </if>
+            <if test="fromtaflag != null">
+                FromTAFlag = #{fromtaflag,jdbcType=VARCHAR},
+            </if>
+            <if test="regioncode != null">
+                RegionCode = #{regioncode,jdbcType=VARCHAR},
+            </if>
+            <if test="netno != null">
+                NetNo = #{netno,jdbcType=VARCHAR},
+            </if>
+            <if test="specification != null">
+                Specification = #{specification,jdbcType=VARCHAR},
+            </if>
+            <if test="customerno != null">
+                CustomerNo = #{customerno,jdbcType=VARCHAR},
+            </if>
+            <if test="errordetail != null">
+                ErrorDetail = #{errordetail,jdbcType=VARCHAR},
+            </if>
+            <if test="appsheetserialno != null">
+                AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR},
+            </if>
+            <if test="tacode != null">
+                TACode = #{tacode,jdbcType=VARCHAR},
+            </if>
+            <if test="taaccountid != null">
+                TAAccountID = #{taaccountid,jdbcType=VARCHAR},
+            </if>
+            <if test="distributorcode != null">
+                DistributorCode = #{distributorcode,jdbcType=VARCHAR},
+            </if>
+            <if test="referencenumber != null">
+                ReferenceNumber = #{referencenumber,jdbcType=INTEGER},
+            </if>
+        </set>
+        where ConfirmID = #{confirmid,jdbcType=INTEGER}
+    </update>
     <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.FundParaConfig">
-        update fund_para_config
-        set
-            DistributorCode            = #{DistributorCode},
-            FundCode                   = #{FundCode},
-            DownLoaddate               = #{DownLoaddate},
-            PrdRiskRate                = #{PrdRiskRate},
-            DebtFundType               = #{DebtFundType},
-            AllowClientGroup           = #{AllowClientGroup},
-            FinancialRegistrationCode  = #{FinancialRegistrationCode},
-            SaleObject                 = #{SaleObject},
-            IsCycleFund                = #{IsCycleFund},
-            CycleDays                  = #{CycleDays},
-            CycleNums                  = #{CycleNums},
-            DefCycleNums               = #{DefCycleNums},
-            BreachOfContractFee        = #{BreachOfContractFee},
-            LCFundType                 = #{LCFundType},
-            IPOType                    = #{IPOType},
-            InvestmentTargets          = #{InvestmentTargets},
-            ClearDays                  = #{ClearDays},
-            RedeemAmtDays              = #{RedeemAmtDays},
-            DivAmtDays                 = #{DivAmtDays},
-            FundEndDays                = #{FundEndDays},
-            FundIssuanceFailDays       = #{FundIssuanceFailDays},
-            CashFlag                   = #{CashFlag},
-            IncomeEndDate              = #{IncomeEndDate},
-            IncomeCurrType             = #{IncomeCurrType},
-            CostCurrType               = #{CostCurrType},
-            ChoiceBonusType            = #{ChoiceBonusType},
-            CancelOrderType            = #{CancelOrderType},
-            BuyUpperLimitday           = #{BuyUpperLimitday},
-            IsPartRedeem               = #{IsPartRedeem},
-            LargeRedeemRatio           = #{LargeRedeemRatio},
-            RedeemAmtReturn            = #{RedeemAmtReturn},
-            FundMinBala                = #{FundMinBala},
-            FundMaXBala                = #{FundMaXBala},
-            Subscribemode              = #{Subscribemode},
-            Purchasemode               = #{Purchasemode},
-            RealRedeemRatio            = #{RealRedeemRatio},
-            RealRedeemUpperLimitOfDay  = #{RealRedeemUpperLimitOfDay},
-            RealRedeemUpperLimitOfSolo = #{RealRedeemUpperLimitOfSolo},
-            ShareDoMethod              = #{ShareDoMethod},
-            OrgRedeemBase              = #{OrgRedeemBase},
-            PerRedeemBase              = #{PerRedeemBase},
-            ComparisonRatio            = #{ComparisonRatio},
-            FundIssuer                 = #{FundIssuer},
-            ManagementBasic            = #{ManagementBasic},
-            ExcessiveRtio              = #{ExcessiveRtio},
-            SubBasic                   = #{SubBasic},
-            SubDelayedDays             = #{SubDelayedDays},
-            FundCollectAccount         = #{FundCollectAccount},
-            ExcessiveSubRtio           = #{ExcessiveSubRtio},
-            InterestRate               = #{InterestRate},
-            OpenTime                   = #{OpenTime},
-            CloseTime                  = #{CloseTime},
-            ShareClass                 = #{ShareClass},
-            FundNameAbbr               = #{FundNameAbbr},
-            FinancType                 = #{FinancType},
-            IsGuaranteedFund           = #{IsGuaranteedFund},
-            IsLOFFund                  = #{IsLOFFund},
-            IsQDIIFund                 = #{IsQDIIFund},
-            IsETFFund                  = #{IsETFFund},
-            LxRedeemFeeBackRatio       = #{LxRedeemFeeBackRatio},
-            RedemptionSequence         = #{RedemptionSequence},
-            BuyUpperAmount             = #{BuyUpperAmount},
-            CovertInUpperAmount        = #{CovertInUpperAmount},
-            PeriodSubUpperAmount       = #{PeriodSubUpperAmount},
-            FundEstablishDate          = #{FundEstablishDate},
-            ExchangeFlag               = #{ExchangeFlag},
-            Specification              = #{Specification},
-            WholeFlag                  = #{WholeFlag},
-            ModifyWay                  = #{ModifyWay},
-            OperateDate                = #{OperateDate},
-            IssPrice                   = #{IssPrice},
-            IncomeDate                 = #{IncomeDate},
-            OMinAccountBalance         = #{OMinAccountBalance},
-            PMinRedemptionVol          = #{PMinRedemptionVol},
-            PMinInterconvertVol        = #{PMinInterconvertVol},
-            OMinRedemptionVol          = #{OMinRedemptionVol},
-            OMinInterconvertVol        = #{OMinInterconvertVol},
-            SubcancelFlag              = #{SubcancelFlag},
-            InterestWay                = #{InterestWay},
-            PrdProfitKind              = #{PrdProfitKind},
-            IsAllowPrdRealTimeRansom   = #{IsAllowPrdRealTimeRansom},
-            BaseDays                   = #{BaseDays},
-            TransWay                   = #{TransWay},
-            ParentsPrdCode             = #{ParentsPrdCode},
-            PrdTemplateCode            = #{PrdTemplateCode},
-            AlimitEndDate              = #{AlimitEndDate},
-            ORedUnit                   = #{ORedUnit},
-            OMaxAccuAmt                = #{OMaxAccuAmt},
-            PRedUnit                   = #{PRedUnit},
-            PMaxAccuAmt                = #{PMaxAccuAmt},
-            ModelCOMMENT               = #{ModelCOMMENT},
-            DayBeforeCfm               = #{DayBeforeCfm},
-            BuyIsControlConfirmFlag    = #{BuyIsControlConfirmFlag},
-            RedeemIsControlConfirmFlag = #{RedeemIsControlConfirmFlag},
-            ZeroSetUpFlag              = #{ZeroSetUpFlag},
-            LimitFlag                  = #{LimitFlag},
-            AgioType                   = #{AgioType},
-            SellerLimit                = #{SellerLimit},
-            LockDays                   = #{LockDays},
-            IsCheckInvester            = #{IsCheckInvester},
-            ClientCycleMode            = #{ClientCycleMode},
-            MinCycleDays               = #{MinCycleDays},
-            MaxCyleDays                = #{MaxCyleDays},
-            CycleAllottedDays          = #{CycleAllottedDays},
-            FundBuyAccount             = #{FundBuyAccount},
-            TACode                     = #{TACode}
-        where FundParaID = #{FundParaID}
+        update account_confirmation
+        set TransactionCfmDate = #{transactioncfmdate,jdbcType=VARCHAR},
+            ReturnCode         = #{returncode,jdbcType=VARCHAR},
+            BusinessCode       = #{businesscode,jdbcType=VARCHAR},
+            TransactionDate    = #{transactiondate,jdbcType=VARCHAR},
+            TransactionTime    = #{transactiontime,jdbcType=VARCHAR},
+            TASerialNO         = #{taserialno,jdbcType=VARCHAR},
+            FromTAFlag         = #{fromtaflag,jdbcType=VARCHAR},
+            RegionCode         = #{regioncode,jdbcType=VARCHAR},
+            NetNo              = #{netno,jdbcType=VARCHAR},
+            Specification      = #{specification,jdbcType=VARCHAR},
+            CustomerNo         = #{customerno,jdbcType=VARCHAR},
+            ErrorDetail        = #{errordetail,jdbcType=VARCHAR},
+            AppSheetSerialNo   = #{appsheetserialno,jdbcType=VARCHAR},
+            TACode             = #{tacode,jdbcType=VARCHAR},
+            TAAccountID        = #{taaccountid,jdbcType=VARCHAR},
+            DistributorCode    = #{distributorcode,jdbcType=VARCHAR},
+            ReferenceNumber    = #{referencenumber,jdbcType=INTEGER}
+        where ConfirmID = #{confirmid,jdbcType=INTEGER}
     </update>
 </mapper>

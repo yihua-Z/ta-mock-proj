@@ -1,118 +1,104 @@
 package com.psbc.pojo;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
+/**
+ * account_confirmation
+ * @author 
+ */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class FundParaConfig {
-	private int FundParaID;
-	private String DistributorCode;
-	private String FundCode;
-	private String DownLoaddate;
-	private String PrdRiskRate;
-	private String DebtFundType;
-	private String AllowClientGroup;
-	private String FinancialRegistrationCode;
-	private String SaleObject;
-	private String IsCycleFund;
-	private String CycleDays;
-	private String CycleNums;
-	private String DefCycleNums;
-	private Double BreachOfContractFee;
-	private String LCFundType;
-	private String IPOType;
-	private String InvestmentTargets;
-	private String ClearDays;
-	private String RedeemAmtDays;
-	private String DivAmtDays;
-	private String FundEndDays;
-	private String FundIssuanceFailDays;
-	private String CashFlag;
-	private String IncomeEndDate;
-	private String IncomeCurrType;
-	private String CostCurrType;
-	private String ChoiceBonusType;
-	private String CancelOrderType;
-	private Double BuyUpperLimitday;
-	private String IsPartRedeem;
-	private Double LargeRedeemRatio;
-	private String RedeemAmtReturn;
-	private String FundMinBala;
-	private Double FundMaXBala;
-	private String Subscribemode;
-	private String Purchasemode;
-	private Double RealRedeemRatio;
-	private Double RealRedeemUpperLimitOfDay;
-	private Double RealRedeemUpperLimitOfSolo;
-	private String ShareDoMethod;
-	private Double OrgRedeemBase;
-	private Double PerRedeemBase;
-	private Double ComparisonRatio;
-	private String FundIssuer;
-	private String ManagementBasic;
-	private Double ExcessiveRtio;
-	private String SubBasic;
-	private String SubDelayedDays;
-	private String FundCollectAccount;
-	private String ExcessiveSubRtio;
-	private Double InterestRate;
-	private String OpenTime;
-	private String CloseTime;
-	private String ShareClass;
-	private String FundNameAbbr;
-	private String FinancType;
-	private String IsGuaranteedFund;
-	private String IsLOFFund;
-	private String IsQDIIFund;
-	private String IsETFFund;
-	private Double LxRedeemFeeBackRatio;
-	private String RedemptionSequence;
-	private Double BuyUpperAmount;
-	private Double CovertInUpperAmount;
-	private Double PeriodSubUpperAmount;
-	private String FundEstablishDate;
-	private String ExchangeFlag;
-	private String Specification;
-	private String WholeFlag;
-	private String ModifyWay;
-	private String OperateDate;
-	private Double IssPrice;
-	private String IncomeDate;
-	private Double OMinAccountBalance;
-	private Double PMinRedemptionVol;
-	private Double PMinInterconvertVol;
-	private Double OMinRedemptionVol;
-	private Double OMinInterconvertVol;
-	private String SubcancelFlag;
-	private String InterestWay;
-	private String PrdProfitKind;
-	private String IsAllowPrdRealTimeRansom;
-	private String BaseDays;
-	private String TransWay;
-	private String ParentsPrdCode;
-	private String PrdTemplateCode;
-	private String AlimitEndDate;
-	private Double ORedUnit;
-	private Double OMaxAccuAmt;
-	private Double PRedUnit;
-	private Double PMaxAccuAmt;
-	private String ModelCOMMENT;
-	private String DayBeforeCfm;
-	private String BuyIsControlConfirmFlag;
-	private String RedeemIsControlConfirmFlag;
-	private String ZeroSetUpFlag;
-	private String LimitFlag;
-	private String AgioType;
-	private Double SellerLimit;
-	private Double LockDays;
-	private String IsCheckInvester;
-	private String ClientCycleMode;
-	private Double MinCycleDays;
-	private Double MaxCyleDays;
-	private String CycleAllottedDays;
-	private String FundBuyAccount;
-	private String TACode;
+public class FundParaConfig implements Serializable {
+    /**
+     * 确认ID
+     */
+    private Integer confirmid;
+
+    /**
+     * 交易确认日期
+     */
+    private String transactioncfmdate;
+
+    /**
+     * 交易处理返回代码
+     */
+    private String returncode;
+
+    /**
+     * 业务代码
+     */
+    private String businesscode;
+
+    /**
+     * 交易发生日期
+     */
+    private String transactiondate;
+
+    /**
+     * 交易发生时间
+     */
+    private String transactiontime;
+
+    /**
+     * TA确认交易流水号
+     */
+    private String taserialno;
+
+    /**
+     * 是否注册登记人发起业务标志
+     */
+    private String fromtaflag;
+
+    /**
+     * 交易所在地区编号
+     */
+    private String regioncode;
+
+    /**
+     * 操作（清算）网点编号
+     */
+    private String netno;
+
+    /**
+     * 摘要/说明
+     */
+    private String specification;
+
+    /**
+     * TA客户编号
+     */
+    private String customerno;
+
+    /**
+     * 出错详细信息
+     */
+    private String errordetail;
+
+    /**
+     * 申请单编号
+     */
+    private String appsheetserialno;
+
+    /**
+     * TA代码
+     */
+    private String tacode;
+
+    /**
+     * 投资人理财账号
+     */
+    private String taaccountid;
+
+    /**
+     * 销售人代码
+     */
+    private String distributorcode;
+
+    /**
+     * 同一个确认的序列号
+     */
+    private Integer referencenumber;
+
+    private static final long serialVersionUID = 1L;
 }

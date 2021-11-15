@@ -1,17 +1,18 @@
 package com.psbc.mapper;
 
-import com.psbc.pojo.FundDate;
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
 
-@Mapper
-@Repository
+import com.psbc.pojo.FundDate;
+
 public interface FundDateMapper {
-    int deleteByPrimaryKey(String id);
+    int deleteByPrimaryKey(Integer confirmid);
 
     int insert(FundDate record);
 
-    FundDate selectByPrimaryKey(String id);
+    int insertSelective(FundDate record);
+
+    FundDate selectByPrimaryKey(Integer confirmid);
+
+    int updateByPrimaryKeySelective(FundDate record);
 
     int updateByPrimaryKey(FundDate record);
 }

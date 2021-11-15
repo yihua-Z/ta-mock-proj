@@ -1,17 +1,18 @@
 package com.psbc.mapper;
 
-import com.psbc.pojo.FundParaConfig;
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
 
-@Mapper
-@Repository
+import com.psbc.pojo.FundParaConfig;
+
 public interface FundParaConfigMapper {
-    int deleteByPrimaryKey(String id);
+    int deleteByPrimaryKey(Integer confirmid);
 
     int insert(FundParaConfig record);
 
-    FundParaConfig selectByPrimaryKey(String id);
+    int insertSelective(FundParaConfig record);
+
+    FundParaConfig selectByPrimaryKey(Integer confirmid);
+
+    int updateByPrimaryKeySelective(FundParaConfig record);
 
     int updateByPrimaryKey(FundParaConfig record);
 }

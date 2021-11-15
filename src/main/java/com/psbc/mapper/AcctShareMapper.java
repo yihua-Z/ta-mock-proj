@@ -1,17 +1,18 @@
 package com.psbc.mapper;
 
-import com.psbc.pojo.AcctShare;
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
 
-@Mapper
-@Repository
+import com.psbc.pojo.AcctShare;
+
 public interface AcctShareMapper {
-    int deleteByPrimaryKey(String id);
+    int deleteByPrimaryKey(Integer confirmid);
 
     int insert(AcctShare record);
 
-    AcctShare selectByPrimaryKey(String id);
+    int insertSelective(AcctShare record);
+
+    AcctShare selectByPrimaryKey(Integer confirmid);
+
+    int updateByPrimaryKeySelective(AcctShare record);
 
     int updateByPrimaryKey(AcctShare record);
 }

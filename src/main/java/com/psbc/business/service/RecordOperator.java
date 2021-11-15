@@ -93,7 +93,6 @@ public class RecordOperator {
     }
 
     private Object objectToObject(Object sourceObject, Object targetObject) {
-        HashMap<String, String[]> stringHashMap = null;
 
         List<Field> tableModelDeclaredFields = Arrays.asList(sourceObject.getClass().getDeclaredFields());
         List<Field> databaseModelDeclaredFields = Arrays.asList(targetObject.getClass().getDeclaredFields());

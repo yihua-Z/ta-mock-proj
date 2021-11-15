@@ -1,95 +1,104 @@
 package com.psbc.pojo;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
+/**
+ * account_confirmation
+ * @author 
+ */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class FundInfo {
-	private String FundCode;
-	private String FundName;
-	private Double TotalFundVol;
-	private String FundStatus;
-	private Double NAV;
-	private String UpdateDate;
-	private String NetValueType;
-	private Double AccumulativeNAV;
-	private String ConvertStatus;
-	private String PeriodicStatus;
-	private String TransferAgencyStatus;
-	private Double FundSize;
-	private String CurrencyType;
-	private String AnnouncFlag;
-	private String DefDividendMethod;
-	private Double InstAppSubsAmnt;
-	private Double InstAppSubsVol;
-	private Double MinAmountByInst;
-	private Double MinVolByInst;
-	private String CustodianCode;
-	private Double AmountOfPeriodicSubs;
-	private String DateOfPeriodicSubs;
-	private Double MaxRedemptionVol;
-	private Double MinAccountBalance;
-	private String IPOStartDate;
-	private String IPOEndDate;
-	private String FundManagerCode;
-	private Double IndiAppSubsVol;
-	private Double IndiAppSubsAmount;
-	private Double MinSubsVolByIndi;
-	private Double MinSubsAmountByIndi;
-	private String RegistrarCode;
-	private String FundSponsor;
-	private Double TradingPrice;
-	private Double FaceValue;
-	private String DividentDate;
-	private String RegistrationDate;
-	private String XRDate;
-	private Double MaxSubsVolByIndi;
-	private Double MaxSubsAmountByIndi;
-	private Double MaxSubsVolByInst;
-	private Double MaxSubsAmountByInst;
-	private Double UnitSubsVolByIndi;
-	private Double UnitSubsAmountByIndi;
-	private Double UnitSubsVolByInst;
-	private Double UnitSubsAmountByInst;
-	private Double MinBidsAmountByIndi;
-	private Double MinBidsAmountByInst;
-	private Double MinAppBidsAmountByIndi;
-	private Double MinAppBidsAmountByInst;
-	private Double MinRedemptionVol;
-	private Double MinInterconvertVol;
-	private String IssueTypeByIndi;
-	private String IssueTypeByInst;
-	private String SubsType;
-	private String CollectFeeType;
-	private String NextTradeDate;
-	private Double ValueLine;
-	private Double TotalDivident;
-	private Double FundIncome;
-	private String FundIncomeFlag;
-	private Double Yield;
-	private String YieldFlag;
-	private Double GuaranteedNAV;
-	private Double FundYearIncomeRate;
-	private String FundYearIncomeRateFlag;
-	private Double IndiMaxPurchase;
-	private Double InstMaxPurchase;
-	private Double IndiDayMaxSumBuy;
-	private Double InstDayMaxSumBuy;
-	private Double IndiDayMaxSumRedeem;
-	private Double InstDayMaxSumRedeem;
-	private Double IndiMaxRedeem;
-	private Double InstMaxRedeem;
-	private String FundDayIncomeFlag;
-	private Double FundDayIncome;
-	private String AllowBreachRedempt;
-	private String FundType;
-	private String FundTypeName;
-	private String RegistrarName;
-	private String FundManagerName;
-	private String FundServerTel;
-	private String FundInternetAddress;
-	private String DistributorCode;
+public class FundInfo implements Serializable {
+    /**
+     * 确认ID
+     */
+    private Integer confirmid;
+
+    /**
+     * 交易确认日期
+     */
+    private String transactioncfmdate;
+
+    /**
+     * 交易处理返回代码
+     */
+    private String returncode;
+
+    /**
+     * 业务代码
+     */
+    private String businesscode;
+
+    /**
+     * 交易发生日期
+     */
+    private String transactiondate;
+
+    /**
+     * 交易发生时间
+     */
+    private String transactiontime;
+
+    /**
+     * TA确认交易流水号
+     */
+    private String taserialno;
+
+    /**
+     * 是否注册登记人发起业务标志
+     */
+    private String fromtaflag;
+
+    /**
+     * 交易所在地区编号
+     */
+    private String regioncode;
+
+    /**
+     * 操作（清算）网点编号
+     */
+    private String netno;
+
+    /**
+     * 摘要/说明
+     */
+    private String specification;
+
+    /**
+     * TA客户编号
+     */
+    private String customerno;
+
+    /**
+     * 出错详细信息
+     */
+    private String errordetail;
+
+    /**
+     * 申请单编号
+     */
+    private String appsheetserialno;
+
+    /**
+     * TA代码
+     */
+    private String tacode;
+
+    /**
+     * 投资人理财账号
+     */
+    private String taaccountid;
+
+    /**
+     * 销售人代码
+     */
+    private String distributorcode;
+
+    /**
+     * 同一个确认的序列号
+     */
+    private Integer referencenumber;
+
+    private static final long serialVersionUID = 1L;
 }

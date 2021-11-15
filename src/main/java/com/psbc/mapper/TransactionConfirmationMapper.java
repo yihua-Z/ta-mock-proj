@@ -1,17 +1,18 @@
 package com.psbc.mapper;
 
-import com.psbc.pojo.TransactionConfirmation;
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
 
-@Mapper
-@Repository
+import com.psbc.pojo.TransactionConfirmation;
+
 public interface TransactionConfirmationMapper {
-    int deleteByPrimaryKey(String id);
+    int deleteByPrimaryKey(Integer confirmid);
 
     int insert(TransactionConfirmation record);
 
-    TransactionConfirmation selectByPrimaryKey(String id);
+    int insertSelective(TransactionConfirmation record);
+
+    TransactionConfirmation selectByPrimaryKey(Integer confirmid);
+
+    int updateByPrimaryKeySelective(TransactionConfirmation record);
 
     int updateByPrimaryKey(TransactionConfirmation record);
 }

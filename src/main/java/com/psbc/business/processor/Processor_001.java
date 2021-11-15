@@ -2,19 +2,14 @@ package com.psbc.business.processor;
 
 import com.psbc.business.service.BusinessCodeChecker;
 import com.psbc.business.service.RecordOperator;
-import com.psbc.business.service.SpringContextUtil;
 import com.psbc.mapper.AccountApplicationMapper;
-import com.psbc.pojo.TableModel;
 import com.psbc.pojo.AccountApplication;
+import com.psbc.pojo.TableModel;
 import com.psbc.reader.DataFileReader;
 import lombok.Data;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +18,7 @@ import java.util.List;
 @Data
 @Component
 public class Processor_001 {
+
     @Autowired
     AccountApplicationMapper applicationMapper;
 
@@ -32,9 +28,10 @@ public class Processor_001 {
 
     private RecordOperator recordOperator = new RecordOperator();
 
-    public List<AccountApplication> processor() {
+    private List<AccountApplication> accountApplicationList = new ArrayList<>();
 
-        List<AccountApplication> accountApplicationList = new ArrayList<>();
+    public List<AccountApplication> accountApplicationProcessor() {
+
         DataFileReader applyReader = new DataFileReader(new File(this.applicationFilePath));
         List<TableModel> applyRecords = applyReader.read();
         AccountApplication accountApplication = new AccountApplication();
@@ -44,17 +41,20 @@ public class Processor_001 {
             String businessCode = this.businessCodeChecker.businessCodeChecker(tableModel);
             if (businessCode != null) {
                 this.recordOperator.setBusinessCode(businessCode);
+//                检查业务值是否合法
                 checkerFiledValue = this.recordOperator.checkerFiledValue(tableModel);
                 if (checkerFiledValue) {
+//                    检查字段是否合法，合法返回对应的AccountApplication
                     accountApplication = (AccountApplication) this.recordOperator.getTargetObject(tableModel, accountApplication.newInstanceWithoutArgs());
+//                    插入记录到 account_application
                     this.applicationMapper.insert(accountApplication);
-                    accountApplicationList.add(accountApplication);
+                    this.accountApplicationList.add(accountApplication);
 
                 }
             }
 
         }
-        return accountApplicationList;
+        return this.accountApplicationList;
     }
 
 

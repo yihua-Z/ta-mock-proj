@@ -1,66 +1,104 @@
 package com.psbc.pojo;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
+/**
+ * account_confirmation
+ * @author 
+ */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class TransactionExpectation {
-	private String AppSheetSerialNo;
-	private String TransactionCfmDate;
-	private Double ConfirmedVol;
-	private Double ConfirmedAmount;
-	private String ReturnCode;
-	private String BusinessFinishFlag;
-	private String RegionCode;
-	private Double AgencyFee;
-	private Double NAV;
-	private Double OtherFee1;
-	private Double StampDuty;
-	private Double RateFee;
-	private String Specification;
-	private String TransferDirection;
-	private Double Interest;
-	private Double VolumeByInterest;
-	private Double InterestTax;
-	private Double TradingPrice;
-	private Double Tax;
-	private Double TargetNAV;
-	private Double TargetFundPrice;
-	private Double CfmVolOfTargetFund;
-	private Double MinFee;
-	private Double OtherFee2;
-	private Double TransferFee;
-	private String FromTAFlag;
-	private String RedemptionInAdvanceFlag;
-	private String FrozenMethod;
-	private String RedemptionReason;
-	private Double TotalTransFee;
-	private String AlternationDate;
-	private Double RefundAmount;
-	private Double SalePercent;
-	private Double ManagerRealRatio;
-	private Double ChangeFee;
-	private Double RecuperateFee;
-	private Double AchievementPay;
-	private Double AchievementCompen;
-	private String SharesAdjustmentFlag;
-	private Double UndistributeMonetaryIncome;
-	private String UndistributeMonetaryIncomeFlag;
-	private Double BreachFee;
-	private Double BreachFeeBackToFund;
-	private Double PunishFee;
-	private Double ChangeAgencyFee;
-	private Double RecuperateAgencyFee;
-	private String ErrorDetail;
-	private Double RaiseInterest;
-	private String FeeCalculator;
-	private String ShareRegisterDate;
-	private Double TotalFrozenVol;
-	private Double FundVolBalance;
-	private Double FrozenBalance;
-	private String TransferDateThroughClearingAgency;
-	private String Status;
+public class TransactionExpectation implements Serializable {
+    /**
+     * 确认ID
+     */
+    private Integer confirmid;
+
+    /**
+     * 交易确认日期
+     */
+    private String transactioncfmdate;
+
+    /**
+     * 交易处理返回代码
+     */
+    private String returncode;
+
+    /**
+     * 业务代码
+     */
+    private String businesscode;
+
+    /**
+     * 交易发生日期
+     */
+    private String transactiondate;
+
+    /**
+     * 交易发生时间
+     */
+    private String transactiontime;
+
+    /**
+     * TA确认交易流水号
+     */
+    private String taserialno;
+
+    /**
+     * 是否注册登记人发起业务标志
+     */
+    private String fromtaflag;
+
+    /**
+     * 交易所在地区编号
+     */
+    private String regioncode;
+
+    /**
+     * 操作（清算）网点编号
+     */
+    private String netno;
+
+    /**
+     * 摘要/说明
+     */
+    private String specification;
+
+    /**
+     * TA客户编号
+     */
+    private String customerno;
+
+    /**
+     * 出错详细信息
+     */
+    private String errordetail;
+
+    /**
+     * 申请单编号
+     */
+    private String appsheetserialno;
+
+    /**
+     * TA代码
+     */
+    private String tacode;
+
+    /**
+     * 投资人理财账号
+     */
+    private String taaccountid;
+
+    /**
+     * 销售人代码
+     */
+    private String distributorcode;
+
+    /**
+     * 同一个确认的序列号
+     */
+    private Integer referencenumber;
+
+    private static final long serialVersionUID = 1L;
 }

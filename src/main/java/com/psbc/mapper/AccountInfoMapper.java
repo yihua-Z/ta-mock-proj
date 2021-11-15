@@ -1,20 +1,18 @@
 package com.psbc.mapper;
 
+
 import com.psbc.pojo.AccountInfo;
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
 
-@Mapper
-@Repository
 public interface AccountInfoMapper {
-
-    int deleteByPrimaryKey(String id);
+    int deleteByPrimaryKey(Integer confirmid);
 
     int insert(AccountInfo record);
 
-    AccountInfo selectByPrimaryKey(String id);
+    int insertSelective(AccountInfo record);
+
+    AccountInfo selectByPrimaryKey(Integer confirmid);
+
+    int updateByPrimaryKeySelective(AccountInfo record);
 
     int updateByPrimaryKey(AccountInfo record);
-
-
 }

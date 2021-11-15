@@ -1,48 +1,104 @@
 package com.psbc.pojo;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
+/**
+ * account_confirmation
+ * @author 
+ */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class Dividend {
-	private int DividendID;
-	private Double BasisforCalculatingDividend;
-	private Double VolOfDividendforReinvestment;
-	private String DividentDate;
-	private Double DividendAmount;
-	private Double ConfirmedAmount;
-	private String ReturnCode;
-	private String TransactionAccountID;
-	private String DistributorCode;
-	private String BusinessCode;
-	private String TAAccountID;
-	private Double DividendPerUnit;
-	private String DepositAcct;
-	private String RegionCode;
-	private String DownLoaddate;
-	private Double Charge;
-	private Double AgencyFee;
-	private Double TotalFrozenVol;
-	private String BranchCode;
-	private Double OtherFee1;
-	private Double OtherFee2;
-	private String IndividualOrInstitution;
-	private Double DividendRatio;
-	private Double StampDuty;
-	private Double FrozenBalance;
-	private Double TransferFee;
-	private String ShareClass;
-	private String FeeCalculator;
-	private Double DrawBonusUnit;
-	private Double FrozenSharesforReinvest;
-	private String DividendType;
-	private String OriginalAppSheetNo;
-	private Double AchievementPay;
-	private Double AchievementCompen;
-	private String TACode;
-	private String TransactionCfmDate;
-	private String FundCode;
+public class Dividend implements Serializable {
+    /**
+     * 确认ID
+     */
+    private Integer confirmid;
+
+    /**
+     * 交易确认日期
+     */
+    private String transactioncfmdate;
+
+    /**
+     * 交易处理返回代码
+     */
+    private String returncode;
+
+    /**
+     * 业务代码
+     */
+    private String businesscode;
+
+    /**
+     * 交易发生日期
+     */
+    private String transactiondate;
+
+    /**
+     * 交易发生时间
+     */
+    private String transactiontime;
+
+    /**
+     * TA确认交易流水号
+     */
+    private String taserialno;
+
+    /**
+     * 是否注册登记人发起业务标志
+     */
+    private String fromtaflag;
+
+    /**
+     * 交易所在地区编号
+     */
+    private String regioncode;
+
+    /**
+     * 操作（清算）网点编号
+     */
+    private String netno;
+
+    /**
+     * 摘要/说明
+     */
+    private String specification;
+
+    /**
+     * TA客户编号
+     */
+    private String customerno;
+
+    /**
+     * 出错详细信息
+     */
+    private String errordetail;
+
+    /**
+     * 申请单编号
+     */
+    private String appsheetserialno;
+
+    /**
+     * TA代码
+     */
+    private String tacode;
+
+    /**
+     * 投资人理财账号
+     */
+    private String taaccountid;
+
+    /**
+     * 销售人代码
+     */
+    private String distributorcode;
+
+    /**
+     * 同一个确认的序列号
+     */
+    private Integer referencenumber;
+
+    private static final long serialVersionUID = 1L;
 }
