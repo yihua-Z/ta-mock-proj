@@ -102,7 +102,10 @@ public class RecordOperator {
             for (Field c : databaseModelDeclaredFields
             ) {
                 c.setAccessible(true);
-                if (a.getName().equals(c.getName())) {
+                String lowa = a.getName().toLowerCase();
+                String lowc = c.getName().toLowerCase();
+
+                if (lowa.equals(lowc)) {
                     try {
                         if (c.getType().getSimpleName().equals("String")) {
                             c.set(targetObject, value.toString());
