@@ -34,7 +34,6 @@ public class Processor_001 {
 
         DataFileReader applyReader = new DataFileReader(new File(this.applicationFilePath));
         List<TableModel> applyRecords = applyReader.read();
-        AccountApplication accountApplication = new AccountApplication();
         boolean checkerFiledValue = false;
         for (TableModel tableModel : applyRecords
         ) {
@@ -45,6 +44,7 @@ public class Processor_001 {
                 checkerFiledValue = this.recordOperator.checkerFiledValue(tableModel);
                 if (checkerFiledValue) {
 //                    检查字段是否合法，合法返回对应的AccountApplication
+                    AccountApplication accountApplication = new AccountApplication();
                     accountApplication = (AccountApplication) this.recordOperator.getTargetObject(tableModel, accountApplication.newInstanceWithoutArgs());
 //                    插入记录到 account_application
                     this.applicationMapper.insert(accountApplication);

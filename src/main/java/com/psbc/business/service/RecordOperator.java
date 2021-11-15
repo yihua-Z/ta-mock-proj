@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.math.BigDecimal;
 import java.util.*;
 
 @Data
@@ -113,6 +114,12 @@ public class RecordOperator {
                         if (c.getType().getSimpleName().equals("Double")) {
                             c.set(targetObject, Double.valueOf(value.toString()));
                         }
+                        if (c.getType().getSimpleName().equals("Integer")) {
+                            c.set(targetObject, Integer.valueOf(value.toString()));
+                        }
+                        if (c.getType().getSimpleName().equals("BigDecimal")) {
+                            c.set(targetObject, BigDecimal.valueOf(Long.parseLong(value.toString())));
+                        }
 
 
                     } catch (IllegalAccessException e) {
@@ -122,18 +129,18 @@ public class RecordOperator {
             }
         }
 
-        for (Field c : databaseModelDeclaredFields) {
-            Object o = null;
-            try {
-                c.setAccessible(true);
-                o = c.get(targetObject);
-                if (o == null) {
-                    c.set(targetObject, "");
-                }
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-        }
+//        for (Field c : databaseModelDeclaredFields) {
+//            Object o = null;
+//            try {
+//                c.setAccessible(true);
+//                o = c.get(targetObject);
+//                if (o == null) {
+//                    c.set(targetObject, "");
+//                }
+//            } catch (IllegalAccessException e) {
+//                e.printStackTrace();
+//            }
+//        }
 
         this.targetObject = targetObject;
         //        记录入库(所有字段到account_application
