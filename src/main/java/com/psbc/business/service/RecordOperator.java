@@ -143,10 +143,7 @@ public class RecordOperator {
 //        }
 
         this.targetObject = targetObject;
-        //        记录入库(所有字段到account_application
-        //        读取“account_expectation”, 根据主键判断是否有其对应的期望的确认条目
-
-
+        
         return this.targetObject;
 
     }
