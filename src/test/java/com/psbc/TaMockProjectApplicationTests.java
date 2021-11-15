@@ -1,7 +1,6 @@
 package com.psbc;
 
 import com.psbc.business.processor.Processor_001;
-import com.psbc.mapper.AccountApplicationMapper;
 import com.psbc.mapper.AccountExpectationMapper;
 import com.psbc.mapper.AccountInfoMapper;
 import com.psbc.pojo.AccountExpectation;
@@ -49,13 +48,6 @@ class TaMockProjectApplicationTests {
         AccountInfo accountInfo = new AccountInfo();
         String data = "5";
 
-
-//        AccountInfo info = accountInfoMapper.selectByPrimaryKey("1");
-//        System.out.println(info.toString());
-        int insert = accountInfoMapper.insert(accountInfo);
-//        accountInfoMapper.deleteByPrimaryKey("2");
-//        accountInfoMapper.updateByPrimaryKey(accountInfo);
-//        AccountInfo a = accountInfoMapper.selectByPrimaryKey("5");
 
 
     }
