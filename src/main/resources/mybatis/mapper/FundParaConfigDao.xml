@@ -1,0 +1,1299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.psbc.mapper.FundParaConfigDao">
+  <resultMap id="BaseResultMap" type="com.psbc.pojo.FundParaConfig">
+    <id column="FundParaID" jdbcType="INTEGER" property="fundparaid" />
+    <result column="DistributorCode" jdbcType="VARCHAR" property="distributorcode" />
+    <result column="FundCode" jdbcType="VARCHAR" property="fundcode" />
+    <result column="DownLoaddate" jdbcType="VARCHAR" property="downloaddate" />
+    <result column="PrdRiskRate" jdbcType="VARCHAR" property="prdriskrate" />
+    <result column="DebtFundType" jdbcType="VARCHAR" property="debtfundtype" />
+    <result column="AllowClientGroup" jdbcType="VARCHAR" property="allowclientgroup" />
+    <result column="FinancialRegistrationCode" jdbcType="VARCHAR" property="financialregistrationcode" />
+    <result column="SaleObject" jdbcType="VARCHAR" property="saleobject" />
+    <result column="IsCycleFund" jdbcType="VARCHAR" property="iscyclefund" />
+    <result column="CycleDays" jdbcType="VARCHAR" property="cycledays" />
+    <result column="CycleNums" jdbcType="VARCHAR" property="cyclenums" />
+    <result column="DefCycleNums" jdbcType="VARCHAR" property="defcyclenums" />
+    <result column="BreachOfContractFee" jdbcType="DECIMAL" property="breachofcontractfee" />
+    <result column="LCFundType" jdbcType="VARCHAR" property="lcfundtype" />
+    <result column="IPOType" jdbcType="VARCHAR" property="ipotype" />
+    <result column="InvestmentTargets" jdbcType="VARCHAR" property="investmenttargets" />
+    <result column="ClearDays" jdbcType="VARCHAR" property="cleardays" />
+    <result column="RedeemAmtDays" jdbcType="VARCHAR" property="redeemamtdays" />
+    <result column="DivAmtDays" jdbcType="VARCHAR" property="divamtdays" />
+    <result column="FundEndDays" jdbcType="VARCHAR" property="fundenddays" />
+    <result column="FundIssuanceFailDays" jdbcType="VARCHAR" property="fundissuancefaildays" />
+    <result column="CashFlag" jdbcType="VARCHAR" property="cashflag" />
+    <result column="IncomeEndDate" jdbcType="VARCHAR" property="incomeenddate" />
+    <result column="IncomeCurrType" jdbcType="VARCHAR" property="incomecurrtype" />
+    <result column="CostCurrType" jdbcType="VARCHAR" property="costcurrtype" />
+    <result column="ChoiceBonusType" jdbcType="VARCHAR" property="choicebonustype" />
+    <result column="CancelOrderType" jdbcType="VARCHAR" property="cancelordertype" />
+    <result column="BuyUpperLimitday" jdbcType="DECIMAL" property="buyupperlimitday" />
+    <result column="IsPartRedeem" jdbcType="VARCHAR" property="ispartredeem" />
+    <result column="LargeRedeemRatio" jdbcType="DECIMAL" property="largeredeemratio" />
+    <result column="RedeemAmtReturn" jdbcType="VARCHAR" property="redeemamtreturn" />
+    <result column="FundMinBala" jdbcType="VARCHAR" property="fundminbala" />
+    <result column="FundMaXBala" jdbcType="DECIMAL" property="fundmaxbala" />
+    <result column="Subscribemode" jdbcType="VARCHAR" property="subscribemode" />
+    <result column="Purchasemode" jdbcType="VARCHAR" property="purchasemode" />
+    <result column="RealRedeemRatio" jdbcType="DECIMAL" property="realredeemratio" />
+    <result column="RealRedeemUpperLimitOfDay" jdbcType="DECIMAL" property="realredeemupperlimitofday" />
+    <result column="RealRedeemUpperLimitOfSolo" jdbcType="DECIMAL" property="realredeemupperlimitofsolo" />
+    <result column="ShareDoMethod" jdbcType="VARCHAR" property="sharedomethod" />
+    <result column="OrgRedeemBase" jdbcType="DECIMAL" property="orgredeembase" />
+    <result column="PerRedeemBase" jdbcType="DECIMAL" property="perredeembase" />
+    <result column="ComparisonRatio" jdbcType="DECIMAL" property="comparisonratio" />
+    <result column="FundIssuer" jdbcType="VARCHAR" property="fundissuer" />
+    <result column="ManagementBasic" jdbcType="VARCHAR" property="managementbasic" />
+    <result column="ExcessiveRtio" jdbcType="DECIMAL" property="excessivertio" />
+    <result column="SubBasic" jdbcType="VARCHAR" property="subbasic" />
+    <result column="SubDelayedDays" jdbcType="VARCHAR" property="subdelayeddays" />
+    <result column="FundCollectAccount" jdbcType="VARCHAR" property="fundcollectaccount" />
+    <result column="ExcessiveSubRtio" jdbcType="VARCHAR" property="excessivesubrtio" />
+    <result column="InterestRate" jdbcType="DECIMAL" property="interestrate" />
+    <result column="OpenTime" jdbcType="VARCHAR" property="opentime" />
+    <result column="CloseTime" jdbcType="VARCHAR" property="closetime" />
+    <result column="ShareClass" jdbcType="VARCHAR" property="shareclass" />
+    <result column="FundNameAbbr" jdbcType="VARCHAR" property="fundnameabbr" />
+    <result column="FinancType" jdbcType="VARCHAR" property="financtype" />
+    <result column="IsGuaranteedFund" jdbcType="VARCHAR" property="isguaranteedfund" />
+    <result column="IsLOFFund" jdbcType="VARCHAR" property="isloffund" />
+    <result column="IsQDIIFund" jdbcType="VARCHAR" property="isqdiifund" />
+    <result column="IsETFFund" jdbcType="VARCHAR" property="isetffund" />
+    <result column="LxRedeemFeeBackRatio" jdbcType="DECIMAL" property="lxredeemfeebackratio" />
+    <result column="RedemptionSequence" jdbcType="VARCHAR" property="redemptionsequence" />
+    <result column="BuyUpperAmount" jdbcType="DECIMAL" property="buyupperamount" />
+    <result column="CovertInUpperAmount" jdbcType="DECIMAL" property="covertinupperamount" />
+    <result column="PeriodSubUpperAmount" jdbcType="DECIMAL" property="periodsubupperamount" />
+    <result column="FundEstablishDate" jdbcType="VARCHAR" property="fundestablishdate" />
+    <result column="ExchangeFlag" jdbcType="VARCHAR" property="exchangeflag" />
+    <result column="Specification" jdbcType="VARCHAR" property="specification" />
+    <result column="WholeFlag" jdbcType="VARCHAR" property="wholeflag" />
+    <result column="ModifyWay" jdbcType="VARCHAR" property="modifyway" />
+    <result column="OperateDate" jdbcType="VARCHAR" property="operatedate" />
+    <result column="IssPrice" jdbcType="DECIMAL" property="issprice" />
+    <result column="IncomeDate" jdbcType="VARCHAR" property="incomedate" />
+    <result column="OMinAccountBalance" jdbcType="DECIMAL" property="ominaccountbalance" />
+    <result column="PMinRedemptionVol" jdbcType="DECIMAL" property="pminredemptionvol" />
+    <result column="PMinInterconvertVol" jdbcType="DECIMAL" property="pmininterconvertvol" />
+    <result column="OMinRedemptionVol" jdbcType="DECIMAL" property="ominredemptionvol" />
+    <result column="OMinInterconvertVol" jdbcType="DECIMAL" property="omininterconvertvol" />
+    <result column="SubcancelFlag" jdbcType="VARCHAR" property="subcancelflag" />
+    <result column="InterestWay" jdbcType="VARCHAR" property="interestway" />
+    <result column="PrdProfitKind" jdbcType="VARCHAR" property="prdprofitkind" />
+    <result column="IsAllowPrdRealTimeRansom" jdbcType="VARCHAR" property="isallowprdrealtimeransom" />
+    <result column="BaseDays" jdbcType="VARCHAR" property="basedays" />
+    <result column="TransWay" jdbcType="VARCHAR" property="transway" />
+    <result column="ParentsPrdCode" jdbcType="VARCHAR" property="parentsprdcode" />
+    <result column="PrdTemplateCode" jdbcType="VARCHAR" property="prdtemplatecode" />
+    <result column="AlimitEndDate" jdbcType="VARCHAR" property="alimitenddate" />
+    <result column="ORedUnit" jdbcType="DECIMAL" property="oredunit" />
+    <result column="OMaxAccuAmt" jdbcType="DECIMAL" property="omaxaccuamt" />
+    <result column="PRedUnit" jdbcType="DECIMAL" property="predunit" />
+    <result column="PMaxAccuAmt" jdbcType="DECIMAL" property="pmaxaccuamt" />
+    <result column="ModelCOMMENT" jdbcType="VARCHAR" property="modelcomment" />
+    <result column="DayBeforeCfm" jdbcType="VARCHAR" property="daybeforecfm" />
+    <result column="BuyIsControlConfirmFlag" jdbcType="VARCHAR" property="buyiscontrolconfirmflag" />
+    <result column="RedeemIsControlConfirmFlag" jdbcType="VARCHAR" property="redeemiscontrolconfirmflag" />
+    <result column="ZeroSetUpFlag" jdbcType="VARCHAR" property="zerosetupflag" />
+    <result column="LimitFlag" jdbcType="VARCHAR" property="limitflag" />
+    <result column="AgioType" jdbcType="VARCHAR" property="agiotype" />
+    <result column="SellerLimit" jdbcType="DECIMAL" property="sellerlimit" />
+    <result column="LockDays" jdbcType="DECIMAL" property="lockdays" />
+    <result column="IsCheckInvester" jdbcType="VARCHAR" property="ischeckinvester" />
+    <result column="ClientCycleMode" jdbcType="VARCHAR" property="clientcyclemode" />
+    <result column="MinCycleDays" jdbcType="DECIMAL" property="mincycledays" />
+    <result column="MaxCyleDays" jdbcType="DECIMAL" property="maxcyledays" />
+    <result column="CycleAllottedDays" jdbcType="VARCHAR" property="cycleallotteddays" />
+    <result column="FundBuyAccount" jdbcType="VARCHAR" property="fundbuyaccount" />
+    <result column="TACode" jdbcType="VARCHAR" property="tacode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    FundParaID, DistributorCode, FundCode, DownLoaddate, PrdRiskRate, DebtFundType, AllowClientGroup, 
+    FinancialRegistrationCode, SaleObject, IsCycleFund, CycleDays, CycleNums, DefCycleNums, 
+    BreachOfContractFee, LCFundType, IPOType, InvestmentTargets, ClearDays, RedeemAmtDays, 
+    DivAmtDays, FundEndDays, FundIssuanceFailDays, CashFlag, IncomeEndDate, IncomeCurrType, 
+    CostCurrType, ChoiceBonusType, CancelOrderType, BuyUpperLimitday, IsPartRedeem, LargeRedeemRatio, 
+    RedeemAmtReturn, FundMinBala, FundMaXBala, Subscribemode, Purchasemode, RealRedeemRatio, 
+    RealRedeemUpperLimitOfDay, RealRedeemUpperLimitOfSolo, ShareDoMethod, OrgRedeemBase, 
+    PerRedeemBase, ComparisonRatio, FundIssuer, ManagementBasic, ExcessiveRtio, SubBasic, 
+    SubDelayedDays, FundCollectAccount, ExcessiveSubRtio, InterestRate, OpenTime, CloseTime, 
+    ShareClass, FundNameAbbr, FinancType, IsGuaranteedFund, IsLOFFund, IsQDIIFund, IsETFFund, 
+    LxRedeemFeeBackRatio, RedemptionSequence, BuyUpperAmount, CovertInUpperAmount, PeriodSubUpperAmount, 
+    FundEstablishDate, ExchangeFlag, Specification, WholeFlag, ModifyWay, OperateDate, 
+    IssPrice, IncomeDate, OMinAccountBalance, PMinRedemptionVol, PMinInterconvertVol, 
+    OMinRedemptionVol, OMinInterconvertVol, SubcancelFlag, InterestWay, PrdProfitKind, 
+    IsAllowPrdRealTimeRansom, BaseDays, TransWay, ParentsPrdCode, PrdTemplateCode, AlimitEndDate, 
+    ORedUnit, OMaxAccuAmt, PRedUnit, PMaxAccuAmt, ModelCOMMENT, DayBeforeCfm, BuyIsControlConfirmFlag, 
+    RedeemIsControlConfirmFlag, ZeroSetUpFlag, LimitFlag, AgioType, SellerLimit, LockDays, 
+    IsCheckInvester, ClientCycleMode, MinCycleDays, MaxCyleDays, CycleAllottedDays, FundBuyAccount, 
+    TACode
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from fund_para_config
+    where FundParaID = #{fundparaid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from fund_para_config
+    where FundParaID = #{fundparaid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="FundParaID" keyProperty="fundparaid" parameterType="com.psbc.pojo.FundParaConfig" useGeneratedKeys="true">
+    insert into fund_para_config (DistributorCode, FundCode, DownLoaddate, 
+      PrdRiskRate, DebtFundType, AllowClientGroup, 
+      FinancialRegistrationCode, SaleObject, 
+      IsCycleFund, CycleDays, CycleNums, 
+      DefCycleNums, BreachOfContractFee, LCFundType, 
+      IPOType, InvestmentTargets, ClearDays, 
+      RedeemAmtDays, DivAmtDays, FundEndDays, 
+      FundIssuanceFailDays, CashFlag, IncomeEndDate, 
+      IncomeCurrType, CostCurrType, ChoiceBonusType, 
+      CancelOrderType, BuyUpperLimitday, IsPartRedeem, 
+      LargeRedeemRatio, RedeemAmtReturn, FundMinBala, 
+      FundMaXBala, Subscribemode, Purchasemode, 
+      RealRedeemRatio, RealRedeemUpperLimitOfDay, 
+      RealRedeemUpperLimitOfSolo, ShareDoMethod, 
+      OrgRedeemBase, PerRedeemBase, ComparisonRatio, 
+      FundIssuer, ManagementBasic, ExcessiveRtio, 
+      SubBasic, SubDelayedDays, FundCollectAccount, 
+      ExcessiveSubRtio, InterestRate, OpenTime, 
+      CloseTime, ShareClass, FundNameAbbr, 
+      FinancType, IsGuaranteedFund, IsLOFFund, 
+      IsQDIIFund, IsETFFund, LxRedeemFeeBackRatio, 
+      RedemptionSequence, BuyUpperAmount, CovertInUpperAmount, 
+      PeriodSubUpperAmount, FundEstablishDate, 
+      ExchangeFlag, Specification, WholeFlag, 
+      ModifyWay, OperateDate, IssPrice, 
+      IncomeDate, OMinAccountBalance, PMinRedemptionVol, 
+      PMinInterconvertVol, OMinRedemptionVol, 
+      OMinInterconvertVol, SubcancelFlag, InterestWay, 
+      PrdProfitKind, IsAllowPrdRealTimeRansom, 
+      BaseDays, TransWay, ParentsPrdCode, 
+      PrdTemplateCode, AlimitEndDate, ORedUnit, 
+      OMaxAccuAmt, PRedUnit, PMaxAccuAmt, 
+      ModelCOMMENT, DayBeforeCfm, BuyIsControlConfirmFlag, 
+      RedeemIsControlConfirmFlag, ZeroSetUpFlag, 
+      LimitFlag, AgioType, SellerLimit, 
+      LockDays, IsCheckInvester, ClientCycleMode, 
+      MinCycleDays, MaxCyleDays, CycleAllottedDays, 
+      FundBuyAccount, TACode)
+    values (#{distributorcode,jdbcType=VARCHAR}, #{fundcode,jdbcType=VARCHAR}, #{downloaddate,jdbcType=VARCHAR}, 
+      #{prdriskrate,jdbcType=VARCHAR}, #{debtfundtype,jdbcType=VARCHAR}, #{allowclientgroup,jdbcType=VARCHAR}, 
+      #{financialregistrationcode,jdbcType=VARCHAR}, #{saleobject,jdbcType=VARCHAR}, 
+      #{iscyclefund,jdbcType=VARCHAR}, #{cycledays,jdbcType=VARCHAR}, #{cyclenums,jdbcType=VARCHAR}, 
+      #{defcyclenums,jdbcType=VARCHAR}, #{breachofcontractfee,jdbcType=DECIMAL}, #{lcfundtype,jdbcType=VARCHAR}, 
+      #{ipotype,jdbcType=VARCHAR}, #{investmenttargets,jdbcType=VARCHAR}, #{cleardays,jdbcType=VARCHAR}, 
+      #{redeemamtdays,jdbcType=VARCHAR}, #{divamtdays,jdbcType=VARCHAR}, #{fundenddays,jdbcType=VARCHAR}, 
+      #{fundissuancefaildays,jdbcType=VARCHAR}, #{cashflag,jdbcType=VARCHAR}, #{incomeenddate,jdbcType=VARCHAR}, 
+      #{incomecurrtype,jdbcType=VARCHAR}, #{costcurrtype,jdbcType=VARCHAR}, #{choicebonustype,jdbcType=VARCHAR}, 
+      #{cancelordertype,jdbcType=VARCHAR}, #{buyupperlimitday,jdbcType=DECIMAL}, #{ispartredeem,jdbcType=VARCHAR}, 
+      #{largeredeemratio,jdbcType=DECIMAL}, #{redeemamtreturn,jdbcType=VARCHAR}, #{fundminbala,jdbcType=VARCHAR}, 
+      #{fundmaxbala,jdbcType=DECIMAL}, #{subscribemode,jdbcType=VARCHAR}, #{purchasemode,jdbcType=VARCHAR}, 
+      #{realredeemratio,jdbcType=DECIMAL}, #{realredeemupperlimitofday,jdbcType=DECIMAL}, 
+      #{realredeemupperlimitofsolo,jdbcType=DECIMAL}, #{sharedomethod,jdbcType=VARCHAR}, 
+      #{orgredeembase,jdbcType=DECIMAL}, #{perredeembase,jdbcType=DECIMAL}, #{comparisonratio,jdbcType=DECIMAL}, 
+      #{fundissuer,jdbcType=VARCHAR}, #{managementbasic,jdbcType=VARCHAR}, #{excessivertio,jdbcType=DECIMAL}, 
+      #{subbasic,jdbcType=VARCHAR}, #{subdelayeddays,jdbcType=VARCHAR}, #{fundcollectaccount,jdbcType=VARCHAR}, 
+      #{excessivesubrtio,jdbcType=VARCHAR}, #{interestrate,jdbcType=DECIMAL}, #{opentime,jdbcType=VARCHAR}, 
+      #{closetime,jdbcType=VARCHAR}, #{shareclass,jdbcType=VARCHAR}, #{fundnameabbr,jdbcType=VARCHAR}, 
+      #{financtype,jdbcType=VARCHAR}, #{isguaranteedfund,jdbcType=VARCHAR}, #{isloffund,jdbcType=VARCHAR}, 
+      #{isqdiifund,jdbcType=VARCHAR}, #{isetffund,jdbcType=VARCHAR}, #{lxredeemfeebackratio,jdbcType=DECIMAL}, 
+      #{redemptionsequence,jdbcType=VARCHAR}, #{buyupperamount,jdbcType=DECIMAL}, #{covertinupperamount,jdbcType=DECIMAL}, 
+      #{periodsubupperamount,jdbcType=DECIMAL}, #{fundestablishdate,jdbcType=VARCHAR}, 
+      #{exchangeflag,jdbcType=VARCHAR}, #{specification,jdbcType=VARCHAR}, #{wholeflag,jdbcType=VARCHAR}, 
+      #{modifyway,jdbcType=VARCHAR}, #{operatedate,jdbcType=VARCHAR}, #{issprice,jdbcType=DECIMAL}, 
+      #{incomedate,jdbcType=VARCHAR}, #{ominaccountbalance,jdbcType=DECIMAL}, #{pminredemptionvol,jdbcType=DECIMAL}, 
+      #{pmininterconvertvol,jdbcType=DECIMAL}, #{ominredemptionvol,jdbcType=DECIMAL}, 
+      #{omininterconvertvol,jdbcType=DECIMAL}, #{subcancelflag,jdbcType=VARCHAR}, #{interestway,jdbcType=VARCHAR}, 
+      #{prdprofitkind,jdbcType=VARCHAR}, #{isallowprdrealtimeransom,jdbcType=VARCHAR}, 
+      #{basedays,jdbcType=VARCHAR}, #{transway,jdbcType=VARCHAR}, #{parentsprdcode,jdbcType=VARCHAR}, 
+      #{prdtemplatecode,jdbcType=VARCHAR}, #{alimitenddate,jdbcType=VARCHAR}, #{oredunit,jdbcType=DECIMAL}, 
+      #{omaxaccuamt,jdbcType=DECIMAL}, #{predunit,jdbcType=DECIMAL}, #{pmaxaccuamt,jdbcType=DECIMAL}, 
+      #{modelcomment,jdbcType=VARCHAR}, #{daybeforecfm,jdbcType=VARCHAR}, #{buyiscontrolconfirmflag,jdbcType=VARCHAR}, 
+      #{redeemiscontrolconfirmflag,jdbcType=VARCHAR}, #{zerosetupflag,jdbcType=VARCHAR}, 
+      #{limitflag,jdbcType=VARCHAR}, #{agiotype,jdbcType=VARCHAR}, #{sellerlimit,jdbcType=DECIMAL}, 
+      #{lockdays,jdbcType=DECIMAL}, #{ischeckinvester,jdbcType=VARCHAR}, #{clientcyclemode,jdbcType=VARCHAR}, 
+      #{mincycledays,jdbcType=DECIMAL}, #{maxcyledays,jdbcType=DECIMAL}, #{cycleallotteddays,jdbcType=VARCHAR}, 
+      #{fundbuyaccount,jdbcType=VARCHAR}, #{tacode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="FundParaID" keyProperty="fundparaid" parameterType="com.psbc.pojo.FundParaConfig" useGeneratedKeys="true">
+    insert into fund_para_config
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="distributorcode != null">
+        DistributorCode,
+      </if>
+      <if test="fundcode != null">
+        FundCode,
+      </if>
+      <if test="downloaddate != null">
+        DownLoaddate,
+      </if>
+      <if test="prdriskrate != null">
+        PrdRiskRate,
+      </if>
+      <if test="debtfundtype != null">
+        DebtFundType,
+      </if>
+      <if test="allowclientgroup != null">
+        AllowClientGroup,
+      </if>
+      <if test="financialregistrationcode != null">
+        FinancialRegistrationCode,
+      </if>
+      <if test="saleobject != null">
+        SaleObject,
+      </if>
+      <if test="iscyclefund != null">
+        IsCycleFund,
+      </if>
+      <if test="cycledays != null">
+        CycleDays,
+      </if>
+      <if test="cyclenums != null">
+        CycleNums,
+      </if>
+      <if test="defcyclenums != null">
+        DefCycleNums,
+      </if>
+      <if test="breachofcontractfee != null">
+        BreachOfContractFee,
+      </if>
+      <if test="lcfundtype != null">
+        LCFundType,
+      </if>
+      <if test="ipotype != null">
+        IPOType,
+      </if>
+      <if test="investmenttargets != null">
+        InvestmentTargets,
+      </if>
+      <if test="cleardays != null">
+        ClearDays,
+      </if>
+      <if test="redeemamtdays != null">
+        RedeemAmtDays,
+      </if>
+      <if test="divamtdays != null">
+        DivAmtDays,
+      </if>
+      <if test="fundenddays != null">
+        FundEndDays,
+      </if>
+      <if test="fundissuancefaildays != null">
+        FundIssuanceFailDays,
+      </if>
+      <if test="cashflag != null">
+        CashFlag,
+      </if>
+      <if test="incomeenddate != null">
+        IncomeEndDate,
+      </if>
+      <if test="incomecurrtype != null">
+        IncomeCurrType,
+      </if>
+      <if test="costcurrtype != null">
+        CostCurrType,
+      </if>
+      <if test="choicebonustype != null">
+        ChoiceBonusType,
+      </if>
+      <if test="cancelordertype != null">
+        CancelOrderType,
+      </if>
+      <if test="buyupperlimitday != null">
+        BuyUpperLimitday,
+      </if>
+      <if test="ispartredeem != null">
+        IsPartRedeem,
+      </if>
+      <if test="largeredeemratio != null">
+        LargeRedeemRatio,
+      </if>
+      <if test="redeemamtreturn != null">
+        RedeemAmtReturn,
+      </if>
+      <if test="fundminbala != null">
+        FundMinBala,
+      </if>
+      <if test="fundmaxbala != null">
+        FundMaXBala,
+      </if>
+      <if test="subscribemode != null">
+        Subscribemode,
+      </if>
+      <if test="purchasemode != null">
+        Purchasemode,
+      </if>
+      <if test="realredeemratio != null">
+        RealRedeemRatio,
+      </if>
+      <if test="realredeemupperlimitofday != null">
+        RealRedeemUpperLimitOfDay,
+      </if>
+      <if test="realredeemupperlimitofsolo != null">
+        RealRedeemUpperLimitOfSolo,
+      </if>
+      <if test="sharedomethod != null">
+        ShareDoMethod,
+      </if>
+      <if test="orgredeembase != null">
+        OrgRedeemBase,
+      </if>
+      <if test="perredeembase != null">
+        PerRedeemBase,
+      </if>
+      <if test="comparisonratio != null">
+        ComparisonRatio,
+      </if>
+      <if test="fundissuer != null">
+        FundIssuer,
+      </if>
+      <if test="managementbasic != null">
+        ManagementBasic,
+      </if>
+      <if test="excessivertio != null">
+        ExcessiveRtio,
+      </if>
+      <if test="subbasic != null">
+        SubBasic,
+      </if>
+      <if test="subdelayeddays != null">
+        SubDelayedDays,
+      </if>
+      <if test="fundcollectaccount != null">
+        FundCollectAccount,
+      </if>
+      <if test="excessivesubrtio != null">
+        ExcessiveSubRtio,
+      </if>
+      <if test="interestrate != null">
+        InterestRate,
+      </if>
+      <if test="opentime != null">
+        OpenTime,
+      </if>
+      <if test="closetime != null">
+        CloseTime,
+      </if>
+      <if test="shareclass != null">
+        ShareClass,
+      </if>
+      <if test="fundnameabbr != null">
+        FundNameAbbr,
+      </if>
+      <if test="financtype != null">
+        FinancType,
+      </if>
+      <if test="isguaranteedfund != null">
+        IsGuaranteedFund,
+      </if>
+      <if test="isloffund != null">
+        IsLOFFund,
+      </if>
+      <if test="isqdiifund != null">
+        IsQDIIFund,
+      </if>
+      <if test="isetffund != null">
+        IsETFFund,
+      </if>
+      <if test="lxredeemfeebackratio != null">
+        LxRedeemFeeBackRatio,
+      </if>
+      <if test="redemptionsequence != null">
+        RedemptionSequence,
+      </if>
+      <if test="buyupperamount != null">
+        BuyUpperAmount,
+      </if>
+      <if test="covertinupperamount != null">
+        CovertInUpperAmount,
+      </if>
+      <if test="periodsubupperamount != null">
+        PeriodSubUpperAmount,
+      </if>
+      <if test="fundestablishdate != null">
+        FundEstablishDate,
+      </if>
+      <if test="exchangeflag != null">
+        ExchangeFlag,
+      </if>
+      <if test="specification != null">
+        Specification,
+      </if>
+      <if test="wholeflag != null">
+        WholeFlag,
+      </if>
+      <if test="modifyway != null">
+        ModifyWay,
+      </if>
+      <if test="operatedate != null">
+        OperateDate,
+      </if>
+      <if test="issprice != null">
+        IssPrice,
+      </if>
+      <if test="incomedate != null">
+        IncomeDate,
+      </if>
+      <if test="ominaccountbalance != null">
+        OMinAccountBalance,
+      </if>
+      <if test="pminredemptionvol != null">
+        PMinRedemptionVol,
+      </if>
+      <if test="pmininterconvertvol != null">
+        PMinInterconvertVol,
+      </if>
+      <if test="ominredemptionvol != null">
+        OMinRedemptionVol,
+      </if>
+      <if test="omininterconvertvol != null">
+        OMinInterconvertVol,
+      </if>
+      <if test="subcancelflag != null">
+        SubcancelFlag,
+      </if>
+      <if test="interestway != null">
+        InterestWay,
+      </if>
+      <if test="prdprofitkind != null">
+        PrdProfitKind,
+      </if>
+      <if test="isallowprdrealtimeransom != null">
+        IsAllowPrdRealTimeRansom,
+      </if>
+      <if test="basedays != null">
+        BaseDays,
+      </if>
+      <if test="transway != null">
+        TransWay,
+      </if>
+      <if test="parentsprdcode != null">
+        ParentsPrdCode,
+      </if>
+      <if test="prdtemplatecode != null">
+        PrdTemplateCode,
+      </if>
+      <if test="alimitenddate != null">
+        AlimitEndDate,
+      </if>
+      <if test="oredunit != null">
+        ORedUnit,
+      </if>
+      <if test="omaxaccuamt != null">
+        OMaxAccuAmt,
+      </if>
+      <if test="predunit != null">
+        PRedUnit,
+      </if>
+      <if test="pmaxaccuamt != null">
+        PMaxAccuAmt,
+      </if>
+      <if test="modelcomment != null">
+        ModelCOMMENT,
+      </if>
+      <if test="daybeforecfm != null">
+        DayBeforeCfm,
+      </if>
+      <if test="buyiscontrolconfirmflag != null">
+        BuyIsControlConfirmFlag,
+      </if>
+      <if test="redeemiscontrolconfirmflag != null">
+        RedeemIsControlConfirmFlag,
+      </if>
+      <if test="zerosetupflag != null">
+        ZeroSetUpFlag,
+      </if>
+      <if test="limitflag != null">
+        LimitFlag,
+      </if>
+      <if test="agiotype != null">
+        AgioType,
+      </if>
+      <if test="sellerlimit != null">
+        SellerLimit,
+      </if>
+      <if test="lockdays != null">
+        LockDays,
+      </if>
+      <if test="ischeckinvester != null">
+        IsCheckInvester,
+      </if>
+      <if test="clientcyclemode != null">
+        ClientCycleMode,
+      </if>
+      <if test="mincycledays != null">
+        MinCycleDays,
+      </if>
+      <if test="maxcyledays != null">
+        MaxCyleDays,
+      </if>
+      <if test="cycleallotteddays != null">
+        CycleAllottedDays,
+      </if>
+      <if test="fundbuyaccount != null">
+        FundBuyAccount,
+      </if>
+      <if test="tacode != null">
+        TACode,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="distributorcode != null">
+        #{distributorcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fundcode != null">
+        #{fundcode,jdbcType=VARCHAR},
+      </if>
+      <if test="downloaddate != null">
+        #{downloaddate,jdbcType=VARCHAR},
+      </if>
+      <if test="prdriskrate != null">
+        #{prdriskrate,jdbcType=VARCHAR},
+      </if>
+      <if test="debtfundtype != null">
+        #{debtfundtype,jdbcType=VARCHAR},
+      </if>
+      <if test="allowclientgroup != null">
+        #{allowclientgroup,jdbcType=VARCHAR},
+      </if>
+      <if test="financialregistrationcode != null">
+        #{financialregistrationcode,jdbcType=VARCHAR},
+      </if>
+      <if test="saleobject != null">
+        #{saleobject,jdbcType=VARCHAR},
+      </if>
+      <if test="iscyclefund != null">
+        #{iscyclefund,jdbcType=VARCHAR},
+      </if>
+      <if test="cycledays != null">
+        #{cycledays,jdbcType=VARCHAR},
+      </if>
+      <if test="cyclenums != null">
+        #{cyclenums,jdbcType=VARCHAR},
+      </if>
+      <if test="defcyclenums != null">
+        #{defcyclenums,jdbcType=VARCHAR},
+      </if>
+      <if test="breachofcontractfee != null">
+        #{breachofcontractfee,jdbcType=DECIMAL},
+      </if>
+      <if test="lcfundtype != null">
+        #{lcfundtype,jdbcType=VARCHAR},
+      </if>
+      <if test="ipotype != null">
+        #{ipotype,jdbcType=VARCHAR},
+      </if>
+      <if test="investmenttargets != null">
+        #{investmenttargets,jdbcType=VARCHAR},
+      </if>
+      <if test="cleardays != null">
+        #{cleardays,jdbcType=VARCHAR},
+      </if>
+      <if test="redeemamtdays != null">
+        #{redeemamtdays,jdbcType=VARCHAR},
+      </if>
+      <if test="divamtdays != null">
+        #{divamtdays,jdbcType=VARCHAR},
+      </if>
+      <if test="fundenddays != null">
+        #{fundenddays,jdbcType=VARCHAR},
+      </if>
+      <if test="fundissuancefaildays != null">
+        #{fundissuancefaildays,jdbcType=VARCHAR},
+      </if>
+      <if test="cashflag != null">
+        #{cashflag,jdbcType=VARCHAR},
+      </if>
+      <if test="incomeenddate != null">
+        #{incomeenddate,jdbcType=VARCHAR},
+      </if>
+      <if test="incomecurrtype != null">
+        #{incomecurrtype,jdbcType=VARCHAR},
+      </if>
+      <if test="costcurrtype != null">
+        #{costcurrtype,jdbcType=VARCHAR},
+      </if>
+      <if test="choicebonustype != null">
+        #{choicebonustype,jdbcType=VARCHAR},
+      </if>
+      <if test="cancelordertype != null">
+        #{cancelordertype,jdbcType=VARCHAR},
+      </if>
+      <if test="buyupperlimitday != null">
+        #{buyupperlimitday,jdbcType=DECIMAL},
+      </if>
+      <if test="ispartredeem != null">
+        #{ispartredeem,jdbcType=VARCHAR},
+      </if>
+      <if test="largeredeemratio != null">
+        #{largeredeemratio,jdbcType=DECIMAL},
+      </if>
+      <if test="redeemamtreturn != null">
+        #{redeemamtreturn,jdbcType=VARCHAR},
+      </if>
+      <if test="fundminbala != null">
+        #{fundminbala,jdbcType=VARCHAR},
+      </if>
+      <if test="fundmaxbala != null">
+        #{fundmaxbala,jdbcType=DECIMAL},
+      </if>
+      <if test="subscribemode != null">
+        #{subscribemode,jdbcType=VARCHAR},
+      </if>
+      <if test="purchasemode != null">
+        #{purchasemode,jdbcType=VARCHAR},
+      </if>
+      <if test="realredeemratio != null">
+        #{realredeemratio,jdbcType=DECIMAL},
+      </if>
+      <if test="realredeemupperlimitofday != null">
+        #{realredeemupperlimitofday,jdbcType=DECIMAL},
+      </if>
+      <if test="realredeemupperlimitofsolo != null">
+        #{realredeemupperlimitofsolo,jdbcType=DECIMAL},
+      </if>
+      <if test="sharedomethod != null">
+        #{sharedomethod,jdbcType=VARCHAR},
+      </if>
+      <if test="orgredeembase != null">
+        #{orgredeembase,jdbcType=DECIMAL},
+      </if>
+      <if test="perredeembase != null">
+        #{perredeembase,jdbcType=DECIMAL},
+      </if>
+      <if test="comparisonratio != null">
+        #{comparisonratio,jdbcType=DECIMAL},
+      </if>
+      <if test="fundissuer != null">
+        #{fundissuer,jdbcType=VARCHAR},
+      </if>
+      <if test="managementbasic != null">
+        #{managementbasic,jdbcType=VARCHAR},
+      </if>
+      <if test="excessivertio != null">
+        #{excessivertio,jdbcType=DECIMAL},
+      </if>
+      <if test="subbasic != null">
+        #{subbasic,jdbcType=VARCHAR},
+      </if>
+      <if test="subdelayeddays != null">
+        #{subdelayeddays,jdbcType=VARCHAR},
+      </if>
+      <if test="fundcollectaccount != null">
+        #{fundcollectaccount,jdbcType=VARCHAR},
+      </if>
+      <if test="excessivesubrtio != null">
+        #{excessivesubrtio,jdbcType=VARCHAR},
+      </if>
+      <if test="interestrate != null">
+        #{interestrate,jdbcType=DECIMAL},
+      </if>
+      <if test="opentime != null">
+        #{opentime,jdbcType=VARCHAR},
+      </if>
+      <if test="closetime != null">
+        #{closetime,jdbcType=VARCHAR},
+      </if>
+      <if test="shareclass != null">
+        #{shareclass,jdbcType=VARCHAR},
+      </if>
+      <if test="fundnameabbr != null">
+        #{fundnameabbr,jdbcType=VARCHAR},
+      </if>
+      <if test="financtype != null">
+        #{financtype,jdbcType=VARCHAR},
+      </if>
+      <if test="isguaranteedfund != null">
+        #{isguaranteedfund,jdbcType=VARCHAR},
+      </if>
+      <if test="isloffund != null">
+        #{isloffund,jdbcType=VARCHAR},
+      </if>
+      <if test="isqdiifund != null">
+        #{isqdiifund,jdbcType=VARCHAR},
+      </if>
+      <if test="isetffund != null">
+        #{isetffund,jdbcType=VARCHAR},
+      </if>
+      <if test="lxredeemfeebackratio != null">
+        #{lxredeemfeebackratio,jdbcType=DECIMAL},
+      </if>
+      <if test="redemptionsequence != null">
+        #{redemptionsequence,jdbcType=VARCHAR},
+      </if>
+      <if test="buyupperamount != null">
+        #{buyupperamount,jdbcType=DECIMAL},
+      </if>
+      <if test="covertinupperamount != null">
+        #{covertinupperamount,jdbcType=DECIMAL},
+      </if>
+      <if test="periodsubupperamount != null">
+        #{periodsubupperamount,jdbcType=DECIMAL},
+      </if>
+      <if test="fundestablishdate != null">
+        #{fundestablishdate,jdbcType=VARCHAR},
+      </if>
+      <if test="exchangeflag != null">
+        #{exchangeflag,jdbcType=VARCHAR},
+      </if>
+      <if test="specification != null">
+        #{specification,jdbcType=VARCHAR},
+      </if>
+      <if test="wholeflag != null">
+        #{wholeflag,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyway != null">
+        #{modifyway,jdbcType=VARCHAR},
+      </if>
+      <if test="operatedate != null">
+        #{operatedate,jdbcType=VARCHAR},
+      </if>
+      <if test="issprice != null">
+        #{issprice,jdbcType=DECIMAL},
+      </if>
+      <if test="incomedate != null">
+        #{incomedate,jdbcType=VARCHAR},
+      </if>
+      <if test="ominaccountbalance != null">
+        #{ominaccountbalance,jdbcType=DECIMAL},
+      </if>
+      <if test="pminredemptionvol != null">
+        #{pminredemptionvol,jdbcType=DECIMAL},
+      </if>
+      <if test="pmininterconvertvol != null">
+        #{pmininterconvertvol,jdbcType=DECIMAL},
+      </if>
+      <if test="ominredemptionvol != null">
+        #{ominredemptionvol,jdbcType=DECIMAL},
+      </if>
+      <if test="omininterconvertvol != null">
+        #{omininterconvertvol,jdbcType=DECIMAL},
+      </if>
+      <if test="subcancelflag != null">
+        #{subcancelflag,jdbcType=VARCHAR},
+      </if>
+      <if test="interestway != null">
+        #{interestway,jdbcType=VARCHAR},
+      </if>
+      <if test="prdprofitkind != null">
+        #{prdprofitkind,jdbcType=VARCHAR},
+      </if>
+      <if test="isallowprdrealtimeransom != null">
+        #{isallowprdrealtimeransom,jdbcType=VARCHAR},
+      </if>
+      <if test="basedays != null">
+        #{basedays,jdbcType=VARCHAR},
+      </if>
+      <if test="transway != null">
+        #{transway,jdbcType=VARCHAR},
+      </if>
+      <if test="parentsprdcode != null">
+        #{parentsprdcode,jdbcType=VARCHAR},
+      </if>
+      <if test="prdtemplatecode != null">
+        #{prdtemplatecode,jdbcType=VARCHAR},
+      </if>
+      <if test="alimitenddate != null">
+        #{alimitenddate,jdbcType=VARCHAR},
+      </if>
+      <if test="oredunit != null">
+        #{oredunit,jdbcType=DECIMAL},
+      </if>
+      <if test="omaxaccuamt != null">
+        #{omaxaccuamt,jdbcType=DECIMAL},
+      </if>
+      <if test="predunit != null">
+        #{predunit,jdbcType=DECIMAL},
+      </if>
+      <if test="pmaxaccuamt != null">
+        #{pmaxaccuamt,jdbcType=DECIMAL},
+      </if>
+      <if test="modelcomment != null">
+        #{modelcomment,jdbcType=VARCHAR},
+      </if>
+      <if test="daybeforecfm != null">
+        #{daybeforecfm,jdbcType=VARCHAR},
+      </if>
+      <if test="buyiscontrolconfirmflag != null">
+        #{buyiscontrolconfirmflag,jdbcType=VARCHAR},
+      </if>
+      <if test="redeemiscontrolconfirmflag != null">
+        #{redeemiscontrolconfirmflag,jdbcType=VARCHAR},
+      </if>
+      <if test="zerosetupflag != null">
+        #{zerosetupflag,jdbcType=VARCHAR},
+      </if>
+      <if test="limitflag != null">
+        #{limitflag,jdbcType=VARCHAR},
+      </if>
+      <if test="agiotype != null">
+        #{agiotype,jdbcType=VARCHAR},
+      </if>
+      <if test="sellerlimit != null">
+        #{sellerlimit,jdbcType=DECIMAL},
+      </if>
+      <if test="lockdays != null">
+        #{lockdays,jdbcType=DECIMAL},
+      </if>
+      <if test="ischeckinvester != null">
+        #{ischeckinvester,jdbcType=VARCHAR},
+      </if>
+      <if test="clientcyclemode != null">
+        #{clientcyclemode,jdbcType=VARCHAR},
+      </if>
+      <if test="mincycledays != null">
+        #{mincycledays,jdbcType=DECIMAL},
+      </if>
+      <if test="maxcyledays != null">
+        #{maxcyledays,jdbcType=DECIMAL},
+      </if>
+      <if test="cycleallotteddays != null">
+        #{cycleallotteddays,jdbcType=VARCHAR},
+      </if>
+      <if test="fundbuyaccount != null">
+        #{fundbuyaccount,jdbcType=VARCHAR},
+      </if>
+      <if test="tacode != null">
+        #{tacode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.psbc.pojo.FundParaConfig">
+    update fund_para_config
+    <set>
+      <if test="distributorcode != null">
+        DistributorCode = #{distributorcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fundcode != null">
+        FundCode = #{fundcode,jdbcType=VARCHAR},
+      </if>
+      <if test="downloaddate != null">
+        DownLoaddate = #{downloaddate,jdbcType=VARCHAR},
+      </if>
+      <if test="prdriskrate != null">
+        PrdRiskRate = #{prdriskrate,jdbcType=VARCHAR},
+      </if>
+      <if test="debtfundtype != null">
+        DebtFundType = #{debtfundtype,jdbcType=VARCHAR},
+      </if>
+      <if test="allowclientgroup != null">
+        AllowClientGroup = #{allowclientgroup,jdbcType=VARCHAR},
+      </if>
+      <if test="financialregistrationcode != null">
+        FinancialRegistrationCode = #{financialregistrationcode,jdbcType=VARCHAR},
+      </if>
+      <if test="saleobject != null">
+        SaleObject = #{saleobject,jdbcType=VARCHAR},
+      </if>
+      <if test="iscyclefund != null">
+        IsCycleFund = #{iscyclefund,jdbcType=VARCHAR},
+      </if>
+      <if test="cycledays != null">
+        CycleDays = #{cycledays,jdbcType=VARCHAR},
+      </if>
+      <if test="cyclenums != null">
+        CycleNums = #{cyclenums,jdbcType=VARCHAR},
+      </if>
+      <if test="defcyclenums != null">
+        DefCycleNums = #{defcyclenums,jdbcType=VARCHAR},
+      </if>
+      <if test="breachofcontractfee != null">
+        BreachOfContractFee = #{breachofcontractfee,jdbcType=DECIMAL},
+      </if>
+      <if test="lcfundtype != null">
+        LCFundType = #{lcfundtype,jdbcType=VARCHAR},
+      </if>
+      <if test="ipotype != null">
+        IPOType = #{ipotype,jdbcType=VARCHAR},
+      </if>
+      <if test="investmenttargets != null">
+        InvestmentTargets = #{investmenttargets,jdbcType=VARCHAR},
+      </if>
+      <if test="cleardays != null">
+        ClearDays = #{cleardays,jdbcType=VARCHAR},
+      </if>
+      <if test="redeemamtdays != null">
+        RedeemAmtDays = #{redeemamtdays,jdbcType=VARCHAR},
+      </if>
+      <if test="divamtdays != null">
+        DivAmtDays = #{divamtdays,jdbcType=VARCHAR},
+      </if>
+      <if test="fundenddays != null">
+        FundEndDays = #{fundenddays,jdbcType=VARCHAR},
+      </if>
+      <if test="fundissuancefaildays != null">
+        FundIssuanceFailDays = #{fundissuancefaildays,jdbcType=VARCHAR},
+      </if>
+      <if test="cashflag != null">
+        CashFlag = #{cashflag,jdbcType=VARCHAR},
+      </if>
+      <if test="incomeenddate != null">
+        IncomeEndDate = #{incomeenddate,jdbcType=VARCHAR},
+      </if>
+      <if test="incomecurrtype != null">
+        IncomeCurrType = #{incomecurrtype,jdbcType=VARCHAR},
+      </if>
+      <if test="costcurrtype != null">
+        CostCurrType = #{costcurrtype,jdbcType=VARCHAR},
+      </if>
+      <if test="choicebonustype != null">
+        ChoiceBonusType = #{choicebonustype,jdbcType=VARCHAR},
+      </if>
+      <if test="cancelordertype != null">
+        CancelOrderType = #{cancelordertype,jdbcType=VARCHAR},
+      </if>
+      <if test="buyupperlimitday != null">
+        BuyUpperLimitday = #{buyupperlimitday,jdbcType=DECIMAL},
+      </if>
+      <if test="ispartredeem != null">
+        IsPartRedeem = #{ispartredeem,jdbcType=VARCHAR},
+      </if>
+      <if test="largeredeemratio != null">
+        LargeRedeemRatio = #{largeredeemratio,jdbcType=DECIMAL},
+      </if>
+      <if test="redeemamtreturn != null">
+        RedeemAmtReturn = #{redeemamtreturn,jdbcType=VARCHAR},
+      </if>
+      <if test="fundminbala != null">
+        FundMinBala = #{fundminbala,jdbcType=VARCHAR},
+      </if>
+      <if test="fundmaxbala != null">
+        FundMaXBala = #{fundmaxbala,jdbcType=DECIMAL},
+      </if>
+      <if test="subscribemode != null">
+        Subscribemode = #{subscribemode,jdbcType=VARCHAR},
+      </if>
+      <if test="purchasemode != null">
+        Purchasemode = #{purchasemode,jdbcType=VARCHAR},
+      </if>
+      <if test="realredeemratio != null">
+        RealRedeemRatio = #{realredeemratio,jdbcType=DECIMAL},
+      </if>
+      <if test="realredeemupperlimitofday != null">
+        RealRedeemUpperLimitOfDay = #{realredeemupperlimitofday,jdbcType=DECIMAL},
+      </if>
+      <if test="realredeemupperlimitofsolo != null">
+        RealRedeemUpperLimitOfSolo = #{realredeemupperlimitofsolo,jdbcType=DECIMAL},
+      </if>
+      <if test="sharedomethod != null">
+        ShareDoMethod = #{sharedomethod,jdbcType=VARCHAR},
+      </if>
+      <if test="orgredeembase != null">
+        OrgRedeemBase = #{orgredeembase,jdbcType=DECIMAL},
+      </if>
+      <if test="perredeembase != null">
+        PerRedeemBase = #{perredeembase,jdbcType=DECIMAL},
+      </if>
+      <if test="comparisonratio != null">
+        ComparisonRatio = #{comparisonratio,jdbcType=DECIMAL},
+      </if>
+      <if test="fundissuer != null">
+        FundIssuer = #{fundissuer,jdbcType=VARCHAR},
+      </if>
+      <if test="managementbasic != null">
+        ManagementBasic = #{managementbasic,jdbcType=VARCHAR},
+      </if>
+      <if test="excessivertio != null">
+        ExcessiveRtio = #{excessivertio,jdbcType=DECIMAL},
+      </if>
+      <if test="subbasic != null">
+        SubBasic = #{subbasic,jdbcType=VARCHAR},
+      </if>
+      <if test="subdelayeddays != null">
+        SubDelayedDays = #{subdelayeddays,jdbcType=VARCHAR},
+      </if>
+      <if test="fundcollectaccount != null">
+        FundCollectAccount = #{fundcollectaccount,jdbcType=VARCHAR},
+      </if>
+      <if test="excessivesubrtio != null">
+        ExcessiveSubRtio = #{excessivesubrtio,jdbcType=VARCHAR},
+      </if>
+      <if test="interestrate != null">
+        InterestRate = #{interestrate,jdbcType=DECIMAL},
+      </if>
+      <if test="opentime != null">
+        OpenTime = #{opentime,jdbcType=VARCHAR},
+      </if>
+      <if test="closetime != null">
+        CloseTime = #{closetime,jdbcType=VARCHAR},
+      </if>
+      <if test="shareclass != null">
+        ShareClass = #{shareclass,jdbcType=VARCHAR},
+      </if>
+      <if test="fundnameabbr != null">
+        FundNameAbbr = #{fundnameabbr,jdbcType=VARCHAR},
+      </if>
+      <if test="financtype != null">
+        FinancType = #{financtype,jdbcType=VARCHAR},
+      </if>
+      <if test="isguaranteedfund != null">
+        IsGuaranteedFund = #{isguaranteedfund,jdbcType=VARCHAR},
+      </if>
+      <if test="isloffund != null">
+        IsLOFFund = #{isloffund,jdbcType=VARCHAR},
+      </if>
+      <if test="isqdiifund != null">
+        IsQDIIFund = #{isqdiifund,jdbcType=VARCHAR},
+      </if>
+      <if test="isetffund != null">
+        IsETFFund = #{isetffund,jdbcType=VARCHAR},
+      </if>
+      <if test="lxredeemfeebackratio != null">
+        LxRedeemFeeBackRatio = #{lxredeemfeebackratio,jdbcType=DECIMAL},
+      </if>
+      <if test="redemptionsequence != null">
+        RedemptionSequence = #{redemptionsequence,jdbcType=VARCHAR},
+      </if>
+      <if test="buyupperamount != null">
+        BuyUpperAmount = #{buyupperamount,jdbcType=DECIMAL},
+      </if>
+      <if test="covertinupperamount != null">
+        CovertInUpperAmount = #{covertinupperamount,jdbcType=DECIMAL},
+      </if>
+      <if test="periodsubupperamount != null">
+        PeriodSubUpperAmount = #{periodsubupperamount,jdbcType=DECIMAL},
+      </if>
+      <if test="fundestablishdate != null">
+        FundEstablishDate = #{fundestablishdate,jdbcType=VARCHAR},
+      </if>
+      <if test="exchangeflag != null">
+        ExchangeFlag = #{exchangeflag,jdbcType=VARCHAR},
+      </if>
+      <if test="specification != null">
+        Specification = #{specification,jdbcType=VARCHAR},
+      </if>
+      <if test="wholeflag != null">
+        WholeFlag = #{wholeflag,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyway != null">
+        ModifyWay = #{modifyway,jdbcType=VARCHAR},
+      </if>
+      <if test="operatedate != null">
+        OperateDate = #{operatedate,jdbcType=VARCHAR},
+      </if>
+      <if test="issprice != null">
+        IssPrice = #{issprice,jdbcType=DECIMAL},
+      </if>
+      <if test="incomedate != null">
+        IncomeDate = #{incomedate,jdbcType=VARCHAR},
+      </if>
+      <if test="ominaccountbalance != null">
+        OMinAccountBalance = #{ominaccountbalance,jdbcType=DECIMAL},
+      </if>
+      <if test="pminredemptionvol != null">
+        PMinRedemptionVol = #{pminredemptionvol,jdbcType=DECIMAL},
+      </if>
+      <if test="pmininterconvertvol != null">
+        PMinInterconvertVol = #{pmininterconvertvol,jdbcType=DECIMAL},
+      </if>
+      <if test="ominredemptionvol != null">
+        OMinRedemptionVol = #{ominredemptionvol,jdbcType=DECIMAL},
+      </if>
+      <if test="omininterconvertvol != null">
+        OMinInterconvertVol = #{omininterconvertvol,jdbcType=DECIMAL},
+      </if>
+      <if test="subcancelflag != null">
+        SubcancelFlag = #{subcancelflag,jdbcType=VARCHAR},
+      </if>
+      <if test="interestway != null">
+        InterestWay = #{interestway,jdbcType=VARCHAR},
+      </if>
+      <if test="prdprofitkind != null">
+        PrdProfitKind = #{prdprofitkind,jdbcType=VARCHAR},
+      </if>
+      <if test="isallowprdrealtimeransom != null">
+        IsAllowPrdRealTimeRansom = #{isallowprdrealtimeransom,jdbcType=VARCHAR},
+      </if>
+      <if test="basedays != null">
+        BaseDays = #{basedays,jdbcType=VARCHAR},
+      </if>
+      <if test="transway != null">
+        TransWay = #{transway,jdbcType=VARCHAR},
+      </if>
+      <if test="parentsprdcode != null">
+        ParentsPrdCode = #{parentsprdcode,jdbcType=VARCHAR},
+      </if>
+      <if test="prdtemplatecode != null">
+        PrdTemplateCode = #{prdtemplatecode,jdbcType=VARCHAR},
+      </if>
+      <if test="alimitenddate != null">
+        AlimitEndDate = #{alimitenddate,jdbcType=VARCHAR},
+      </if>
+      <if test="oredunit != null">
+        ORedUnit = #{oredunit,jdbcType=DECIMAL},
+      </if>
+      <if test="omaxaccuamt != null">
+        OMaxAccuAmt = #{omaxaccuamt,jdbcType=DECIMAL},
+      </if>
+      <if test="predunit != null">
+        PRedUnit = #{predunit,jdbcType=DECIMAL},
+      </if>
+      <if test="pmaxaccuamt != null">
+        PMaxAccuAmt = #{pmaxaccuamt,jdbcType=DECIMAL},
+      </if>
+      <if test="modelcomment != null">
+        ModelCOMMENT = #{modelcomment,jdbcType=VARCHAR},
+      </if>
+      <if test="daybeforecfm != null">
+        DayBeforeCfm = #{daybeforecfm,jdbcType=VARCHAR},
+      </if>
+      <if test="buyiscontrolconfirmflag != null">
+        BuyIsControlConfirmFlag = #{buyiscontrolconfirmflag,jdbcType=VARCHAR},
+      </if>
+      <if test="redeemiscontrolconfirmflag != null">
+        RedeemIsControlConfirmFlag = #{redeemiscontrolconfirmflag,jdbcType=VARCHAR},
+      </if>
+      <if test="zerosetupflag != null">
+        ZeroSetUpFlag = #{zerosetupflag,jdbcType=VARCHAR},
+      </if>
+      <if test="limitflag != null">
+        LimitFlag = #{limitflag,jdbcType=VARCHAR},
+      </if>
+      <if test="agiotype != null">
+        AgioType = #{agiotype,jdbcType=VARCHAR},
+      </if>
+      <if test="sellerlimit != null">
+        SellerLimit = #{sellerlimit,jdbcType=DECIMAL},
+      </if>
+      <if test="lockdays != null">
+        LockDays = #{lockdays,jdbcType=DECIMAL},
+      </if>
+      <if test="ischeckinvester != null">
+        IsCheckInvester = #{ischeckinvester,jdbcType=VARCHAR},
+      </if>
+      <if test="clientcyclemode != null">
+        ClientCycleMode = #{clientcyclemode,jdbcType=VARCHAR},
+      </if>
+      <if test="mincycledays != null">
+        MinCycleDays = #{mincycledays,jdbcType=DECIMAL},
+      </if>
+      <if test="maxcyledays != null">
+        MaxCyleDays = #{maxcyledays,jdbcType=DECIMAL},
+      </if>
+      <if test="cycleallotteddays != null">
+        CycleAllottedDays = #{cycleallotteddays,jdbcType=VARCHAR},
+      </if>
+      <if test="fundbuyaccount != null">
+        FundBuyAccount = #{fundbuyaccount,jdbcType=VARCHAR},
+      </if>
+      <if test="tacode != null">
+        TACode = #{tacode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where FundParaID = #{fundparaid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.FundParaConfig">
+    update fund_para_config
+    set DistributorCode = #{distributorcode,jdbcType=VARCHAR},
+      FundCode = #{fundcode,jdbcType=VARCHAR},
+      DownLoaddate = #{downloaddate,jdbcType=VARCHAR},
+      PrdRiskRate = #{prdriskrate,jdbcType=VARCHAR},
+      DebtFundType = #{debtfundtype,jdbcType=VARCHAR},
+      AllowClientGroup = #{allowclientgroup,jdbcType=VARCHAR},
+      FinancialRegistrationCode = #{financialregistrationcode,jdbcType=VARCHAR},
+      SaleObject = #{saleobject,jdbcType=VARCHAR},
+      IsCycleFund = #{iscyclefund,jdbcType=VARCHAR},
+      CycleDays = #{cycledays,jdbcType=VARCHAR},
+      CycleNums = #{cyclenums,jdbcType=VARCHAR},
+      DefCycleNums = #{defcyclenums,jdbcType=VARCHAR},
+      BreachOfContractFee = #{breachofcontractfee,jdbcType=DECIMAL},
+      LCFundType = #{lcfundtype,jdbcType=VARCHAR},
+      IPOType = #{ipotype,jdbcType=VARCHAR},
+      InvestmentTargets = #{investmenttargets,jdbcType=VARCHAR},
+      ClearDays = #{cleardays,jdbcType=VARCHAR},
+      RedeemAmtDays = #{redeemamtdays,jdbcType=VARCHAR},
+      DivAmtDays = #{divamtdays,jdbcType=VARCHAR},
+      FundEndDays = #{fundenddays,jdbcType=VARCHAR},
+      FundIssuanceFailDays = #{fundissuancefaildays,jdbcType=VARCHAR},
+      CashFlag = #{cashflag,jdbcType=VARCHAR},
+      IncomeEndDate = #{incomeenddate,jdbcType=VARCHAR},
+      IncomeCurrType = #{incomecurrtype,jdbcType=VARCHAR},
+      CostCurrType = #{costcurrtype,jdbcType=VARCHAR},
+      ChoiceBonusType = #{choicebonustype,jdbcType=VARCHAR},
+      CancelOrderType = #{cancelordertype,jdbcType=VARCHAR},
+      BuyUpperLimitday = #{buyupperlimitday,jdbcType=DECIMAL},
+      IsPartRedeem = #{ispartredeem,jdbcType=VARCHAR},
+      LargeRedeemRatio = #{largeredeemratio,jdbcType=DECIMAL},
+      RedeemAmtReturn = #{redeemamtreturn,jdbcType=VARCHAR},
+      FundMinBala = #{fundminbala,jdbcType=VARCHAR},
+      FundMaXBala = #{fundmaxbala,jdbcType=DECIMAL},
+      Subscribemode = #{subscribemode,jdbcType=VARCHAR},
+      Purchasemode = #{purchasemode,jdbcType=VARCHAR},
+      RealRedeemRatio = #{realredeemratio,jdbcType=DECIMAL},
+      RealRedeemUpperLimitOfDay = #{realredeemupperlimitofday,jdbcType=DECIMAL},
+      RealRedeemUpperLimitOfSolo = #{realredeemupperlimitofsolo,jdbcType=DECIMAL},
+      ShareDoMethod = #{sharedomethod,jdbcType=VARCHAR},
+      OrgRedeemBase = #{orgredeembase,jdbcType=DECIMAL},
+      PerRedeemBase = #{perredeembase,jdbcType=DECIMAL},
+      ComparisonRatio = #{comparisonratio,jdbcType=DECIMAL},
+      FundIssuer = #{fundissuer,jdbcType=VARCHAR},
+      ManagementBasic = #{managementbasic,jdbcType=VARCHAR},
+      ExcessiveRtio = #{excessivertio,jdbcType=DECIMAL},
+      SubBasic = #{subbasic,jdbcType=VARCHAR},
+      SubDelayedDays = #{subdelayeddays,jdbcType=VARCHAR},
+      FundCollectAccount = #{fundcollectaccount,jdbcType=VARCHAR},
+      ExcessiveSubRtio = #{excessivesubrtio,jdbcType=VARCHAR},
+      InterestRate = #{interestrate,jdbcType=DECIMAL},
+      OpenTime = #{opentime,jdbcType=VARCHAR},
+      CloseTime = #{closetime,jdbcType=VARCHAR},
+      ShareClass = #{shareclass,jdbcType=VARCHAR},
+      FundNameAbbr = #{fundnameabbr,jdbcType=VARCHAR},
+      FinancType = #{financtype,jdbcType=VARCHAR},
+      IsGuaranteedFund = #{isguaranteedfund,jdbcType=VARCHAR},
+      IsLOFFund = #{isloffund,jdbcType=VARCHAR},
+      IsQDIIFund = #{isqdiifund,jdbcType=VARCHAR},
+      IsETFFund = #{isetffund,jdbcType=VARCHAR},
+      LxRedeemFeeBackRatio = #{lxredeemfeebackratio,jdbcType=DECIMAL},
+      RedemptionSequence = #{redemptionsequence,jdbcType=VARCHAR},
+      BuyUpperAmount = #{buyupperamount,jdbcType=DECIMAL},
+      CovertInUpperAmount = #{covertinupperamount,jdbcType=DECIMAL},
+      PeriodSubUpperAmount = #{periodsubupperamount,jdbcType=DECIMAL},
+      FundEstablishDate = #{fundestablishdate,jdbcType=VARCHAR},
+      ExchangeFlag = #{exchangeflag,jdbcType=VARCHAR},
+      Specification = #{specification,jdbcType=VARCHAR},
+      WholeFlag = #{wholeflag,jdbcType=VARCHAR},
+      ModifyWay = #{modifyway,jdbcType=VARCHAR},
+      OperateDate = #{operatedate,jdbcType=VARCHAR},
+      IssPrice = #{issprice,jdbcType=DECIMAL},
+      IncomeDate = #{incomedate,jdbcType=VARCHAR},
+      OMinAccountBalance = #{ominaccountbalance,jdbcType=DECIMAL},
+      PMinRedemptionVol = #{pminredemptionvol,jdbcType=DECIMAL},
+      PMinInterconvertVol = #{pmininterconvertvol,jdbcType=DECIMAL},
+      OMinRedemptionVol = #{ominredemptionvol,jdbcType=DECIMAL},
+      OMinInterconvertVol = #{omininterconvertvol,jdbcType=DECIMAL},
+      SubcancelFlag = #{subcancelflag,jdbcType=VARCHAR},
+      InterestWay = #{interestway,jdbcType=VARCHAR},
+      PrdProfitKind = #{prdprofitkind,jdbcType=VARCHAR},
+      IsAllowPrdRealTimeRansom = #{isallowprdrealtimeransom,jdbcType=VARCHAR},
+      BaseDays = #{basedays,jdbcType=VARCHAR},
+      TransWay = #{transway,jdbcType=VARCHAR},
+      ParentsPrdCode = #{parentsprdcode,jdbcType=VARCHAR},
+      PrdTemplateCode = #{prdtemplatecode,jdbcType=VARCHAR},
+      AlimitEndDate = #{alimitenddate,jdbcType=VARCHAR},
+      ORedUnit = #{oredunit,jdbcType=DECIMAL},
+      OMaxAccuAmt = #{omaxaccuamt,jdbcType=DECIMAL},
+      PRedUnit = #{predunit,jdbcType=DECIMAL},
+      PMaxAccuAmt = #{pmaxaccuamt,jdbcType=DECIMAL},
+      ModelCOMMENT = #{modelcomment,jdbcType=VARCHAR},
+      DayBeforeCfm = #{daybeforecfm,jdbcType=VARCHAR},
+      BuyIsControlConfirmFlag = #{buyiscontrolconfirmflag,jdbcType=VARCHAR},
+      RedeemIsControlConfirmFlag = #{redeemiscontrolconfirmflag,jdbcType=VARCHAR},
+      ZeroSetUpFlag = #{zerosetupflag,jdbcType=VARCHAR},
+      LimitFlag = #{limitflag,jdbcType=VARCHAR},
+      AgioType = #{agiotype,jdbcType=VARCHAR},
+      SellerLimit = #{sellerlimit,jdbcType=DECIMAL},
+      LockDays = #{lockdays,jdbcType=DECIMAL},
+      IsCheckInvester = #{ischeckinvester,jdbcType=VARCHAR},
+      ClientCycleMode = #{clientcyclemode,jdbcType=VARCHAR},
+      MinCycleDays = #{mincycledays,jdbcType=DECIMAL},
+      MaxCyleDays = #{maxcyledays,jdbcType=DECIMAL},
+      CycleAllottedDays = #{cycleallotteddays,jdbcType=VARCHAR},
+      FundBuyAccount = #{fundbuyaccount,jdbcType=VARCHAR},
+      TACode = #{tacode,jdbcType=VARCHAR}
+    where FundParaID = #{fundparaid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,10 +1,9 @@
 package com.psbc;
 
 import com.psbc.business.processor.Processor_001;
-import com.psbc.mapper.AccountExpectationMapper;
-import com.psbc.mapper.AccountInfoMapper;
-import com.psbc.pojo.AccountExpectation;
-import com.psbc.pojo.AccountInfo;
+import com.psbc.mapper.AccountExpectationDao;
+import com.psbc.mapper.AccountInfoDao;
+import com.psbc.pojo.AccountExpectation;;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,10 +15,10 @@ class TaMockProjectApplicationTests {
 
 
     @Autowired
-    AccountExpectationMapper accountExpectationMapper;
+    AccountExpectationDao accountExpectationDao;
 
     @Autowired
-    AccountInfoMapper accountInfoMapper;
+    AccountInfoDao accountInfoDao;
 
     @Test
     void testController() {
@@ -33,10 +32,10 @@ class TaMockProjectApplicationTests {
     }
 
     @Test
-    public void accountExpectationMapper() {
+    public void accountExpectationDao() {
 
 
-        List<AccountExpectation> accountExpectations = accountExpectationMapper.selectAll();
+        List<AccountExpectation> accountExpectations = accountExpectationDao.selectAll();
         System.out.println();
     }
 

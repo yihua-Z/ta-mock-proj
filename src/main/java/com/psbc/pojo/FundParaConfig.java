@@ -5,437 +5,545 @@ import java.math.BigDecimal;
 import lombok.Data;
 
 /**
- * account_application
+ * fund_para_config
  * @author 
  */
 @Data
 public class FundParaConfig implements Serializable {
     /**
-     * 申请单编
+     * 产品参数ID
      */
-    private String appsheetserialno;
+    private Integer fundparaid;
 
     /**
-     * 通讯地
-     */
-    private String address;
-
-    /**
-     * 法人代表身份证件代
-     */
-    private String instrepridcode;
-
-    /**
-     * 法人代表证件类
-     */
-    private String instrepridtype;
-
-    /**
-     * 法人代表姓
-     */
-    private String instreprname;
-
-    /**
-     * 个人证件类型及机构证件类
-     */
-    private String certificatetype;
-
-    /**
-     * 投资人证件号
-     */
-    private String certificateno;
-
-    /**
-     * 投资人姓
-     */
-    private String investorname;
-
-    /**
-     * 交易发生日
-     */
-    private String transactiondate;
-
-    /**
-     * 交易发生时
-     */
-    private String transactiontime;
-
-    /**
-     * 个人/机构标
-     */
-    private String individualorinstitution;
-
-    /**
-     * 机构类
-     */
-    private String institutiontype;
-
-    /**
-     * 投资人邮政编
-     */
-    private String postcode;
-
-    /**
-     * 经办人证件号
-     */
-    private String transactorcertno;
-
-    /**
-     * 经办人证件类
-     */
-    private String transactorcerttype;
-
-    /**
-     * 经办人姓
-     */
-    private String transactorname;
-
-    /**
-     * 投资人理财交易账
-     */
-    private String transactionaccountid;
-
-    /**
-     * 销售人代
+     * 销售人代码
      */
     private String distributorcode;
 
     /**
-     * 业务代
+     * 理财产品代码
      */
-    private String businesscode;
+    private String fundcode;
 
     /**
-     * 对方销售人处投资人理财交易账
+     * 交易数据下传日期
      */
-    private String targettransactionaccountid;
+    private String downloaddate;
 
     /**
-     * 理财产品总份数在资金清算机构的交收账
+     * 产品风险等级
      */
-    private String acctnooffminclearingagency;
+    private String prdriskrate;
 
     /**
-     * 理财产品总份数在资金清算机构的交收账户
+     * 中债产品划分
      */
-    private String acctnameoffminclearingagency;
+    private String debtfundtype;
 
     /**
-     * 理财资金清算机构代
+     * 允许销售的中债客户组别
      */
-    private String clearingagencycode;
+    private String allowclientgroup;
 
     /**
-     * 投资人出生日
+     * 理财登记编码
      */
-    private String investorsbirthday;
+    private String financialregistrationcode;
 
     /**
-     * 投资人在销售人处用于交易的资金账
+     * 销售对象（发售对象）
      */
-    private String depositacct;
+    private String saleobject;
 
     /**
-     * 交易所在地区编
+     * 是否周期产品
      */
-    private String regioncode;
+    private String iscyclefund;
 
     /**
-     * 投资人学
+     * 周期天数
      */
-    private String educationlevel;
+    private String cycledays;
 
     /**
-     * 投资人E-MAIL地
+     * 最长周期数
      */
-    private String emailaddress;
+    private String cyclenums;
 
     /**
-     * 投资人传真号
+     * 默认期数
      */
-    private String faxno;
+    private String defcyclenums;
 
     /**
-     * 投资人职业代
+     * 违约赎回费率
      */
-    private String vocationcode;
+    private BigDecimal breachofcontractfee;
 
     /**
-     * 投资人住址电
+     * 理财产品类型
      */
-    private String hometelno;
+    private String lcfundtype;
 
     /**
-     * 投资人年收
+     * 产品募集方式
      */
-    private Integer annualincome;
+    private String ipotype;
 
     /**
-     * 投资人手机号
+     * 投资标的（投资性质）
      */
-    private String mobiletelno;
+    private String investmenttargets;
 
     /**
-     * 多渠道开户标
+     * 结算天数
      */
-    private String multiacctflag;
+    private String cleardays;
 
     /**
-     * 网点号
+     * 赎回资金到账天数（结算天数）
      */
-    private String branchcode;
+    private String redeemamtdays;
 
     /**
-     * 投资人单位电话号
+     * 分红资金到账天数（结算天数）
      */
-    private String officetelno;
+    private String divamtdays;
 
     /**
-     * 投资人户名简
+     * 产品到期资金到账天数结算天数
      */
-    private String accountabbr;
+    private String fundenddays;
 
     /**
-     * 密函编
+     * 发行失败/比例退款天数
      */
-    private String confidentialdocumentcode;
+    private String fundissuancefaildays;
 
     /**
-     * 投资人性
+     * 钞汇标志
      */
-    private String sex;
+    private String cashflag;
 
     /**
-     * 上交所证券账
+     * 产品收益到期日
      */
-    private String shsecuritiesaccountid;
+    private String incomeenddate;
 
     /**
-     * 深交所证券账
+     * 产品收益币种
      */
-    private String szsecuritiesaccountid;
+    private String incomecurrtype;
 
     /**
-     * 投资人理财账
+     * 本金返还币种
      */
-    private String taaccountid;
+    private String costcurrtype;
 
     /**
-     * 投资人电话号
+     * 可选分红方式
      */
-    private String telno;
+    private String choicebonustype;
 
     /**
-     * 使用的交易手
+     * 购买（认购）撤单
      */
-    private String tradingmethod;
+    private String cancelordertype;
 
     /**
-     * 未成年人标
+     * 单日申购上限
      */
-    private String minorflag;
+    private BigDecimal buyupperlimitday;
 
     /**
-     * 对账单寄送选
+     * 允许部分赎回
      */
-    private String delivertype;
+    private String ispartredeem;
 
     /**
-     * 经办人识别方
+     * 巨额赎回比例
      */
-    private String transactoridtype;
+    private BigDecimal largeredeemratio;
 
     /**
-     * 理财账户卡的凭证
+     * 赎回本金返还方式
      */
-    private String accountcardid;
+    private String redeemamtreturn;
 
     /**
-     * 对账单寄送方
+     * 产品最低募集额
      */
-    private String deliverway;
+    private String fundminbala;
 
     /**
-     * 投资者国
+     * 产品最高募集额
      */
-    private String nationality;
+    private BigDecimal fundmaxbala;
 
     /**
-     * 操作（清算）网点编
+     * 认购帐务模式
      */
-    private String netno;
+    private String subscribemode;
 
     /**
-     * 经纪
+     * 申购帐务模式
      */
-    private String broker;
+    private String purchasemode;
 
     /**
-     * 工作单位名
+     * 实时赎回资金比例
      */
-    private String corpname;
+    private BigDecimal realredeemratio;
 
     /**
-     * 证件有效日
+     * 当日实时赎回份额上限
      */
-    private String certvaliddate;
+    private BigDecimal realredeemupperlimitofday;
 
     /**
-     * 机构经办人身份证件有效日
+     * 单人单日快速赎回上限
      */
-    private String insttrancertvaliddate;
+    private BigDecimal realredeemupperlimitofsolo;
 
     /**
-     * 机构法人身份证件有效日
+     * 份额计算方式
      */
-    private String instreprcertvaliddate;
+    private String sharedomethod;
 
     /**
-     * 客户风险等
+     * 对公赎回基数
      */
-    private String clientriskrate;
+    private BigDecimal orgredeembase;
 
     /**
-     * 机构法人经营范
+     * 对私赎回基数
      */
-    private String instreprmanagerange;
+    private BigDecimal perredeembase;
 
     /**
-     * 控股股
+     * 业绩基准
      */
-    private String controlholder;
+    private BigDecimal comparisonratio;
 
     /**
-     * 实际控制
+     * 产品发行人
      */
-    private String actualcontroller;
+    private String fundissuer;
 
     /**
-     * 婚姻状
+     * 浮动管理费年化基数
      */
-    private String marriagestatus;
+    private String managementbasic;
 
     /**
-     * 家庭人口
+     * 超额分层比例
      */
-    private Integer familynum;
+    private BigDecimal excessivertio;
 
     /**
-     * 家庭资
+     * 认购利息年化基础
      */
-    private BigDecimal penates;
+    private String subbasic;
 
     /**
-     * 媒体偏
+     * 认购计息天数
      */
-    private String mediahobby;
+    private String subdelayeddays;
 
     /**
-     * 投资人英文
+     * 产品募集账户
      */
-    private String englishfirstname;
+    private String fundcollectaccount;
 
     /**
-     * 投资人英文
+     * 超额认购比例确认
      */
-    private String englishfamliyname;
+    private String excessivesubrtio;
 
     /**
-     * 行
+     * 认购利息利率
      */
-    private String vocation;
+    private BigDecimal interestrate;
 
     /**
-     * 企业性
+     * 开市时间
      */
-    private String corpoproperty;
+    private String opentime;
 
     /**
-     * 员工人
+     * 闭市时间
      */
-    private Integer staffnum;
+    private String closetime;
 
     /**
-     * 兴趣爱好类
+     * 收费方式
      */
-    private String hobbytype;
+    private String shareclass;
 
     /**
-     * 省/直辖
+     * 理财产品简称
      */
-    private String province;
+    private String fundnameabbr;
 
-    private String city;
+    /**
+     * 理财产品类型
+     */
+    private String financtype;
 
     /**
-     * 县/
+     * 是否保本理财
      */
-    private String county;
+    private String isguaranteedfund;
 
     /**
-     * 推荐
+     * 是否LOF
      */
-    private String commendperson;
+    private String isloffund;
 
     /**
-     * 推荐人类
+     * 是否QDII
      */
-    private String commendpersontype;
+    private String isqdiifund;
 
     /**
-     * 投资人收款银行账户户
+     * 是否ETF
      */
-    private String acctnameofinvestorinclearingagency;
+    private String isetffund;
 
     /**
-     * 投资人收款银行账户账
+     * 赎回费归理财资产比例
      */
-    private String acctnoofinvestorinclearingagency;
+    private BigDecimal lxredeemfeebackratio;
 
     /**
-     * 投资人收款银行账户开户
+     * 指定赎回方式
      */
-    private String clearingagency;
+    private String redemptionsequence;
 
     /**
-     * 受理方
+     * 申购金额上限
      */
-    private String acceptmethod;
+    private BigDecimal buyupperamount;
 
     /**
-     * 冻结原
+     * 理财产品转换转入金额上限
      */
-    private String frozencause;
+    private BigDecimal covertinupperamount;
 
     /**
-     * 冻结截止日
+     * 定时定额申购金额上限
      */
-    private String freezingdeadline;
+    private BigDecimal periodsubupperamount;
 
     /**
-     * TA的原确认流水
+     * 理财产品成立日期
      */
-    private String originalserialno;
+    private String fundestablishdate;
 
     /**
-     * 原申请单编
+     * 交易所标志
      */
-    private String originalappsheetno;
+    private String exchangeflag;
 
     /**
-     * 摘要/说
+     * 摘要/说明
      */
     private String specification;
 
     /**
-     * TA代
+     * 全量标志
      */
-    private String tacode;
+    private String wholeflag;
 
     /**
-     * 同一个申请的序列
+     * 修改方式
      */
-    private Integer referencenumber;
+    private String modifyway;
+
+    /**
+     * 生效日期
+     */
+    private String operatedate;
+
+    /**
+     * 发行价格
+     */
+    private BigDecimal issprice;
+
+    /**
+     * 产品起息日期
+     */
+    private String incomedate;
+
+    /**
+     * 机构最低持有份额
+     */
+    private BigDecimal ominaccountbalance;
+
+    /**
+     * 个人单笔最少赎回份额
+     */
+    private BigDecimal pminredemptionvol;
+
+    /**
+     * 个人最低产品转换份额
+     */
+    private BigDecimal pmininterconvertvol;
+
+    /**
+     * 机构单笔最少赎回份额
+     */
+    private BigDecimal ominredemptionvol;
+
+    /**
+     * 机构最低产品转换份额
+     */
+    private BigDecimal omininterconvertvol;
+
+    /**
+     * 认购隔日撤单标志
+     */
+    private String subcancelflag;
+
+    /**
+     * 产品收益方式
+     */
+    private String interestway;
+
+    /**
+     * 收益特征
+     */
+    private String prdprofitkind;
+
+    /**
+     * 是否允许实时赎回
+     */
+    private String isallowprdrealtimeransom;
+
+    /**
+     * 产品计息基数
+     */
+    private String basedays;
+
+    /**
+     * 交易方式
+     */
+    private String transway;
+
+    /**
+     * 对应资产池代码
+     */
+    private String parentsprdcode;
+
+    /**
+     * 产品模板号
+     */
+    private String prdtemplatecode;
+
+    /**
+     * 封闭到期日
+     */
+    private String alimitenddate;
+
+    /**
+     * 机构赎回单位
+     */
+    private BigDecimal oredunit;
+
+    /**
+     * 机构单户累计最大购买金额
+     */
+    private BigDecimal omaxaccuamt;
+
+    /**
+     * 个人赎回单位
+     */
+    private BigDecimal predunit;
+
+    /**
+     * 个人单户累计最大购买金额
+     */
+    private BigDecimal pmaxaccuamt;
+
+    /**
+     * 预期收益率说明/业绩比较基准
+     */
+    private String modelcomment;
+
+    /**
+     * 周期清算前N天允许交易
+     */
+    private String daybeforecfm;
+
+    /**
+     * 购买确认起息天数
+     */
+    private String buyiscontrolconfirmflag;
+
+    /**
+     * 赎回确认延迟天数
+     */
+    private String redeemiscontrolconfirmflag;
+
+    /**
+     * 是否零认购成立
+     */
+    private String zerosetupflag;
+
+    /**
+     * 额度控制标志
+     */
+    private String limitflag;
+
+    /**
+     * 折扣率方式
+     */
+    private String agiotype;
+
+    /**
+     * 销售商最大限额
+     */
+    private BigDecimal sellerlimit;
+
+    /**
+     * 锁定期天数
+     */
+    private Short lockdays;
+
+    /**
+     * 是否校验合格投资者
+     */
+    private String ischeckinvester;
+
+    /**
+     * 客户周期模式
+     */
+    private String clientcyclemode;
+
+    /**
+     * 最小周期天数
+     */
+    private Short mincycledays;
+
+    /**
+     * 最大周期天数
+     */
+    private Short maxcyledays;
+
+    /**
+     * 周期期限集合
+     */
+    private String cycleallotteddays;
+
+    /**
+     * 产品申购款过渡户
+     */
+    private String fundbuyaccount;
+
+    /**
+     * TA代码
+     */
+    private String tacode;
 
     private static final long serialVersionUID = 1L;
 }

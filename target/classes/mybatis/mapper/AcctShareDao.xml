@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.psbc.mapper.AcctShareDao">
+  <resultMap id="BaseResultMap" type="com.psbc.pojo.AcctShare">
+    <id column="TAAccountID" jdbcType="VARCHAR" property="taaccountid" />
+    <result column="DistributorCode" jdbcType="VARCHAR" property="distributorcode" />
+    <result column="TACode" jdbcType="VARCHAR" property="tacode" />
+    <result column="TotalVolOfDistributorInTA" jdbcType="DECIMAL" property="totalvolofdistributorinta" />
+    <result column="TotalFrozenVol" jdbcType="DECIMAL" property="totalfrozenvol" />
+    <result column="TransactionCfmDate" jdbcType="VARCHAR" property="transactioncfmdate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    TAAccountID, DistributorCode, TACode, TotalVolOfDistributorInTA, TotalFrozenVol, 
+    TransactionCfmDate
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from acct_share
+    where TAAccountID = #{taaccountid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from acct_share
+    where TAAccountID = #{taaccountid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" keyColumn="TAAccountID" keyProperty="taaccountid" parameterType="com.psbc.pojo.AcctShare" useGeneratedKeys="true">
+    insert into acct_share (DistributorCode, TACode, TotalVolOfDistributorInTA, 
+      TotalFrozenVol, TransactionCfmDate)
+    values (#{distributorcode,jdbcType=VARCHAR}, #{tacode,jdbcType=VARCHAR}, #{totalvolofdistributorinta,jdbcType=DECIMAL}, 
+      #{totalfrozenvol,jdbcType=DECIMAL}, #{transactioncfmdate,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="TAAccountID" keyProperty="taaccountid" parameterType="com.psbc.pojo.AcctShare" useGeneratedKeys="true">
+    insert into acct_share
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="distributorcode != null">
+        DistributorCode,
+      </if>
+      <if test="tacode != null">
+        TACode,
+      </if>
+      <if test="totalvolofdistributorinta != null">
+        TotalVolOfDistributorInTA,
+      </if>
+      <if test="totalfrozenvol != null">
+        TotalFrozenVol,
+      </if>
+      <if test="transactioncfmdate != null">
+        TransactionCfmDate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="distributorcode != null">
+        #{distributorcode,jdbcType=VARCHAR},
+      </if>
+      <if test="tacode != null">
+        #{tacode,jdbcType=VARCHAR},
+      </if>
+      <if test="totalvolofdistributorinta != null">
+        #{totalvolofdistributorinta,jdbcType=DECIMAL},
+      </if>
+      <if test="totalfrozenvol != null">
+        #{totalfrozenvol,jdbcType=DECIMAL},
+      </if>
+      <if test="transactioncfmdate != null">
+        #{transactioncfmdate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.psbc.pojo.AcctShare">
+    update acct_share
+    <set>
+      <if test="distributorcode != null">
+        DistributorCode = #{distributorcode,jdbcType=VARCHAR},
+      </if>
+      <if test="tacode != null">
+        TACode = #{tacode,jdbcType=VARCHAR},
+      </if>
+      <if test="totalvolofdistributorinta != null">
+        TotalVolOfDistributorInTA = #{totalvolofdistributorinta,jdbcType=DECIMAL},
+      </if>
+      <if test="totalfrozenvol != null">
+        TotalFrozenVol = #{totalfrozenvol,jdbcType=DECIMAL},
+      </if>
+      <if test="transactioncfmdate != null">
+        TransactionCfmDate = #{transactioncfmdate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where TAAccountID = #{taaccountid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AcctShare">
+    update acct_share
+    set DistributorCode = #{distributorcode,jdbcType=VARCHAR},
+      TACode = #{tacode,jdbcType=VARCHAR},
+      TotalVolOfDistributorInTA = #{totalvolofdistributorinta,jdbcType=DECIMAL},
+      TotalFrozenVol = #{totalfrozenvol,jdbcType=DECIMAL},
+      TransactionCfmDate = #{transactioncfmdate,jdbcType=VARCHAR}
+    where TAAccountID = #{taaccountid,jdbcType=VARCHAR}
+  </update>
+</mapper>

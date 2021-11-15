@@ -1,0 +1,934 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.psbc.mapper.TransactionApplicationDao">
+  <resultMap id="BaseResultMap" type="com.psbc.pojo.TransactionApplication">
+    <id column="AppSheetSerialNo" jdbcType="VARCHAR" property="appsheetserialno" />
+    <result column="FundCode" jdbcType="VARCHAR" property="fundcode" />
+    <result column="LargeRedemptionFlag" jdbcType="VARCHAR" property="largeredemptionflag" />
+    <result column="TransactionDate" jdbcType="VARCHAR" property="transactiondate" />
+    <result column="TransactionTime" jdbcType="VARCHAR" property="transactiontime" />
+    <result column="TransactionAccountID" jdbcType="VARCHAR" property="transactionaccountid" />
+    <result column="DistributorCode" jdbcType="VARCHAR" property="distributorcode" />
+    <result column="ApplicationVol" jdbcType="DECIMAL" property="applicationvol" />
+    <result column="ApplicationAmount" jdbcType="DECIMAL" property="applicationamount" />
+    <result column="BusinessCode" jdbcType="VARCHAR" property="businesscode" />
+    <result column="TAAccountID" jdbcType="VARCHAR" property="taaccountid" />
+    <result column="DiscountRateOfCommission" jdbcType="DECIMAL" property="discountrateofcommission" />
+    <result column="DepositAcct" jdbcType="VARCHAR" property="depositacct" />
+    <result column="RegionCode" jdbcType="VARCHAR" property="regioncode" />
+    <result column="CurrencyType" jdbcType="VARCHAR" property="currencytype" />
+    <result column="BranchCode" jdbcType="VARCHAR" property="branchcode" />
+    <result column="OriginalAppSheetNo" jdbcType="VARCHAR" property="originalappsheetno" />
+    <result column="OriginalSubsDate" jdbcType="VARCHAR" property="originalsubsdate" />
+    <result column="IndividualOrInstitution" jdbcType="VARCHAR" property="individualorinstitution" />
+    <result column="ValidPeriod" jdbcType="INTEGER" property="validperiod" />
+    <result column="DaysRedemptionInAdvance" jdbcType="INTEGER" property="daysredemptioninadvance" />
+    <result column="RedemptionDateInAdvance" jdbcType="VARCHAR" property="redemptiondateinadvance" />
+    <result column="OriginalSerialNo" jdbcType="VARCHAR" property="originalserialno" />
+    <result column="DateOfPeriodicSubs" jdbcType="VARCHAR" property="dateofperiodicsubs" />
+    <result column="TASerialNO" jdbcType="VARCHAR" property="taserialno" />
+    <result column="TermOfPeriodicSubs" jdbcType="INTEGER" property="termofperiodicsubs" />
+    <result column="FutureBuyDate" jdbcType="VARCHAR" property="futurebuydate" />
+    <result column="TargetDistributorCode" jdbcType="VARCHAR" property="targetdistributorcode" />
+    <result column="Charge" jdbcType="DECIMAL" property="charge" />
+    <result column="TargetBranchCode" jdbcType="VARCHAR" property="targetbranchcode" />
+    <result column="TargetTransactionAccountID" jdbcType="VARCHAR" property="targettransactionaccountid" />
+    <result column="TargetRegionCode" jdbcType="VARCHAR" property="targetregioncode" />
+    <result column="DividendRatio" jdbcType="DECIMAL" property="dividendratio" />
+    <result column="Specification" jdbcType="VARCHAR" property="specification" />
+    <result column="CodeOfTargetFund" jdbcType="VARCHAR" property="codeoftargetfund" />
+    <result column="TotalBackendLoa" jdbcType="DECIMAL" property="totalbackendloa" />
+    <result column="ShareClass" jdbcType="VARCHAR" property="shareclass" />
+    <result column="OriginalCfmDate" jdbcType="VARCHAR" property="originalcfmdate" />
+    <result column="DetailFlag" jdbcType="VARCHAR" property="detailflag" />
+    <result column="OriginalAppDate" jdbcType="VARCHAR" property="originalappdate" />
+    <result column="DefDividendMethod" jdbcType="VARCHAR" property="defdividendmethod" />
+    <result column="FrozenCause" jdbcType="VARCHAR" property="frozencause" />
+    <result column="FreezingDeadline" jdbcType="VARCHAR" property="freezingdeadline" />
+    <result column="VarietyCodeOfPeriodicSubs" jdbcType="VARCHAR" property="varietycodeofperiodicsubs" />
+    <result column="SerialNoOfPeriodicSubs" jdbcType="VARCHAR" property="serialnoofperiodicsubs" />
+    <result column="RationType" jdbcType="VARCHAR" property="rationtype" />
+    <result column="TargetTAAccountID" jdbcType="VARCHAR" property="targettaaccountid" />
+    <result column="TargetRegistrarCode" jdbcType="VARCHAR" property="targetregistrarcode" />
+    <result column="NetNo" jdbcType="VARCHAR" property="netno" />
+    <result column="CustomerNo" jdbcType="VARCHAR" property="customerno" />
+    <result column="TargetShareType" jdbcType="VARCHAR" property="targetsharetype" />
+    <result column="RationProtocolNo" jdbcType="VARCHAR" property="rationprotocolno" />
+    <result column="BeginDateOfPeriodicSubs" jdbcType="VARCHAR" property="begindateofperiodicsubs" />
+    <result column="EndDateOfPeriodicSubs" jdbcType="VARCHAR" property="enddateofperiodicsubs" />
+    <result column="SendDayOfPeriodicSubs" jdbcType="INTEGER" property="senddayofperiodicsubs" />
+    <result column="Broker" jdbcType="VARCHAR" property="broker" />
+    <result column="SalesPromotion" jdbcType="VARCHAR" property="salespromotion" />
+    <result column="AcceptMethod" jdbcType="VARCHAR" property="acceptmethod" />
+    <result column="ForceRedemptionType" jdbcType="VARCHAR" property="forceredemptiontype" />
+    <result column="TakeIncomeFlag" jdbcType="VARCHAR" property="takeincomeflag" />
+    <result column="PurposeOfPeSubs" jdbcType="VARCHAR" property="purposeofpesubs" />
+    <result column="FrequencyOfPeSubs" jdbcType="DECIMAL" property="frequencyofpesubs" />
+    <result column="PeriodSubTimeUnit" jdbcType="VARCHAR" property="periodsubtimeunit" />
+    <result column="BatchNumOfPeSubs" jdbcType="DECIMAL" property="batchnumofpesubs" />
+    <result column="CapitalMode" jdbcType="VARCHAR" property="capitalmode" />
+    <result column="DetailCapitalMode" jdbcType="VARCHAR" property="detailcapitalmode" />
+    <result column="BackenloadDiscount" jdbcType="DECIMAL" property="backenloaddiscount" />
+    <result column="CombineNum" jdbcType="VARCHAR" property="combinenum" />
+    <result column="FutureSubscribeDate" jdbcType="VARCHAR" property="futuresubscribedate" />
+    <result column="TradingMethod" jdbcType="VARCHAR" property="tradingmethod" />
+    <result column="LargeBuyFlag" jdbcType="VARCHAR" property="largebuyflag" />
+    <result column="ChargeType" jdbcType="VARCHAR" property="chargetype" />
+    <result column="SpecifyRateFee" jdbcType="DECIMAL" property="specifyratefee" />
+    <result column="SpecifyFee" jdbcType="DECIMAL" property="specifyfee" />
+    <result column="TACode" jdbcType="VARCHAR" property="tacode" />
+    <result column="ReferenceNumber" jdbcType="INTEGER" property="referencenumber" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    AppSheetSerialNo, FundCode, LargeRedemptionFlag, TransactionDate, TransactionTime, 
+    TransactionAccountID, DistributorCode, ApplicationVol, ApplicationAmount, BusinessCode, 
+    TAAccountID, DiscountRateOfCommission, DepositAcct, RegionCode, CurrencyType, BranchCode, 
+    OriginalAppSheetNo, OriginalSubsDate, IndividualOrInstitution, ValidPeriod, DaysRedemptionInAdvance, 
+    RedemptionDateInAdvance, OriginalSerialNo, DateOfPeriodicSubs, TASerialNO, TermOfPeriodicSubs, 
+    FutureBuyDate, TargetDistributorCode, Charge, TargetBranchCode, TargetTransactionAccountID, 
+    TargetRegionCode, DividendRatio, Specification, CodeOfTargetFund, TotalBackendLoa, 
+    ShareClass, OriginalCfmDate, DetailFlag, OriginalAppDate, DefDividendMethod, FrozenCause, 
+    FreezingDeadline, VarietyCodeOfPeriodicSubs, SerialNoOfPeriodicSubs, RationType, 
+    TargetTAAccountID, TargetRegistrarCode, NetNo, CustomerNo, TargetShareType, RationProtocolNo, 
+    BeginDateOfPeriodicSubs, EndDateOfPeriodicSubs, SendDayOfPeriodicSubs, Broker, SalesPromotion, 
+    AcceptMethod, ForceRedemptionType, TakeIncomeFlag, PurposeOfPeSubs, FrequencyOfPeSubs, 
+    PeriodSubTimeUnit, BatchNumOfPeSubs, CapitalMode, DetailCapitalMode, BackenloadDiscount, 
+    CombineNum, FutureSubscribeDate, TradingMethod, LargeBuyFlag, ChargeType, SpecifyRateFee, 
+    SpecifyFee, TACode, ReferenceNumber
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from transaction_application
+    where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from transaction_application
+    where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno" parameterType="com.psbc.pojo.TransactionApplication" useGeneratedKeys="true">
+    insert into transaction_application (FundCode, LargeRedemptionFlag, TransactionDate, 
+      TransactionTime, TransactionAccountID, 
+      DistributorCode, ApplicationVol, ApplicationAmount, 
+      BusinessCode, TAAccountID, DiscountRateOfCommission, 
+      DepositAcct, RegionCode, CurrencyType, 
+      BranchCode, OriginalAppSheetNo, OriginalSubsDate, 
+      IndividualOrInstitution, ValidPeriod, DaysRedemptionInAdvance, 
+      RedemptionDateInAdvance, OriginalSerialNo, 
+      DateOfPeriodicSubs, TASerialNO, TermOfPeriodicSubs, 
+      FutureBuyDate, TargetDistributorCode, Charge, 
+      TargetBranchCode, TargetTransactionAccountID, 
+      TargetRegionCode, DividendRatio, Specification, 
+      CodeOfTargetFund, TotalBackendLoa, ShareClass, 
+      OriginalCfmDate, DetailFlag, OriginalAppDate, 
+      DefDividendMethod, FrozenCause, FreezingDeadline, 
+      VarietyCodeOfPeriodicSubs, SerialNoOfPeriodicSubs, 
+      RationType, TargetTAAccountID, TargetRegistrarCode, 
+      NetNo, CustomerNo, TargetShareType, 
+      RationProtocolNo, BeginDateOfPeriodicSubs, 
+      EndDateOfPeriodicSubs, SendDayOfPeriodicSubs, 
+      Broker, SalesPromotion, AcceptMethod, 
+      ForceRedemptionType, TakeIncomeFlag, PurposeOfPeSubs, 
+      FrequencyOfPeSubs, PeriodSubTimeUnit, BatchNumOfPeSubs, 
+      CapitalMode, DetailCapitalMode, BackenloadDiscount, 
+      CombineNum, FutureSubscribeDate, TradingMethod, 
+      LargeBuyFlag, ChargeType, SpecifyRateFee, 
+      SpecifyFee, TACode, ReferenceNumber
+      )
+    values (#{fundcode,jdbcType=VARCHAR}, #{largeredemptionflag,jdbcType=VARCHAR}, #{transactiondate,jdbcType=VARCHAR}, 
+      #{transactiontime,jdbcType=VARCHAR}, #{transactionaccountid,jdbcType=VARCHAR}, 
+      #{distributorcode,jdbcType=VARCHAR}, #{applicationvol,jdbcType=DECIMAL}, #{applicationamount,jdbcType=DECIMAL}, 
+      #{businesscode,jdbcType=VARCHAR}, #{taaccountid,jdbcType=VARCHAR}, #{discountrateofcommission,jdbcType=DECIMAL}, 
+      #{depositacct,jdbcType=VARCHAR}, #{regioncode,jdbcType=VARCHAR}, #{currencytype,jdbcType=VARCHAR}, 
+      #{branchcode,jdbcType=VARCHAR}, #{originalappsheetno,jdbcType=VARCHAR}, #{originalsubsdate,jdbcType=VARCHAR}, 
+      #{individualorinstitution,jdbcType=VARCHAR}, #{validperiod,jdbcType=INTEGER}, #{daysredemptioninadvance,jdbcType=INTEGER}, 
+      #{redemptiondateinadvance,jdbcType=VARCHAR}, #{originalserialno,jdbcType=VARCHAR}, 
+      #{dateofperiodicsubs,jdbcType=VARCHAR}, #{taserialno,jdbcType=VARCHAR}, #{termofperiodicsubs,jdbcType=INTEGER}, 
+      #{futurebuydate,jdbcType=VARCHAR}, #{targetdistributorcode,jdbcType=VARCHAR}, #{charge,jdbcType=DECIMAL}, 
+      #{targetbranchcode,jdbcType=VARCHAR}, #{targettransactionaccountid,jdbcType=VARCHAR}, 
+      #{targetregioncode,jdbcType=VARCHAR}, #{dividendratio,jdbcType=DECIMAL}, #{specification,jdbcType=VARCHAR}, 
+      #{codeoftargetfund,jdbcType=VARCHAR}, #{totalbackendloa,jdbcType=DECIMAL}, #{shareclass,jdbcType=VARCHAR}, 
+      #{originalcfmdate,jdbcType=VARCHAR}, #{detailflag,jdbcType=VARCHAR}, #{originalappdate,jdbcType=VARCHAR}, 
+      #{defdividendmethod,jdbcType=VARCHAR}, #{frozencause,jdbcType=VARCHAR}, #{freezingdeadline,jdbcType=VARCHAR}, 
+      #{varietycodeofperiodicsubs,jdbcType=VARCHAR}, #{serialnoofperiodicsubs,jdbcType=VARCHAR}, 
+      #{rationtype,jdbcType=VARCHAR}, #{targettaaccountid,jdbcType=VARCHAR}, #{targetregistrarcode,jdbcType=VARCHAR}, 
+      #{netno,jdbcType=VARCHAR}, #{customerno,jdbcType=VARCHAR}, #{targetsharetype,jdbcType=VARCHAR}, 
+      #{rationprotocolno,jdbcType=VARCHAR}, #{begindateofperiodicsubs,jdbcType=VARCHAR}, 
+      #{enddateofperiodicsubs,jdbcType=VARCHAR}, #{senddayofperiodicsubs,jdbcType=INTEGER}, 
+      #{broker,jdbcType=VARCHAR}, #{salespromotion,jdbcType=VARCHAR}, #{acceptmethod,jdbcType=VARCHAR}, 
+      #{forceredemptiontype,jdbcType=VARCHAR}, #{takeincomeflag,jdbcType=VARCHAR}, #{purposeofpesubs,jdbcType=VARCHAR}, 
+      #{frequencyofpesubs,jdbcType=DECIMAL}, #{periodsubtimeunit,jdbcType=VARCHAR}, #{batchnumofpesubs,jdbcType=DECIMAL}, 
+      #{capitalmode,jdbcType=VARCHAR}, #{detailcapitalmode,jdbcType=VARCHAR}, #{backenloaddiscount,jdbcType=DECIMAL}, 
+      #{combinenum,jdbcType=VARCHAR}, #{futuresubscribedate,jdbcType=VARCHAR}, #{tradingmethod,jdbcType=VARCHAR}, 
+      #{largebuyflag,jdbcType=VARCHAR}, #{chargetype,jdbcType=VARCHAR}, #{specifyratefee,jdbcType=DECIMAL}, 
+      #{specifyfee,jdbcType=DECIMAL}, #{tacode,jdbcType=VARCHAR}, #{referencenumber,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno" parameterType="com.psbc.pojo.TransactionApplication" useGeneratedKeys="true">
+    insert into transaction_application
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fundcode != null">
+        FundCode,
+      </if>
+      <if test="largeredemptionflag != null">
+        LargeRedemptionFlag,
+      </if>
+      <if test="transactiondate != null">
+        TransactionDate,
+      </if>
+      <if test="transactiontime != null">
+        TransactionTime,
+      </if>
+      <if test="transactionaccountid != null">
+        TransactionAccountID,
+      </if>
+      <if test="distributorcode != null">
+        DistributorCode,
+      </if>
+      <if test="applicationvol != null">
+        ApplicationVol,
+      </if>
+      <if test="applicationamount != null">
+        ApplicationAmount,
+      </if>
+      <if test="businesscode != null">
+        BusinessCode,
+      </if>
+      <if test="taaccountid != null">
+        TAAccountID,
+      </if>
+      <if test="discountrateofcommission != null">
+        DiscountRateOfCommission,
+      </if>
+      <if test="depositacct != null">
+        DepositAcct,
+      </if>
+      <if test="regioncode != null">
+        RegionCode,
+      </if>
+      <if test="currencytype != null">
+        CurrencyType,
+      </if>
+      <if test="branchcode != null">
+        BranchCode,
+      </if>
+      <if test="originalappsheetno != null">
+        OriginalAppSheetNo,
+      </if>
+      <if test="originalsubsdate != null">
+        OriginalSubsDate,
+      </if>
+      <if test="individualorinstitution != null">
+        IndividualOrInstitution,
+      </if>
+      <if test="validperiod != null">
+        ValidPeriod,
+      </if>
+      <if test="daysredemptioninadvance != null">
+        DaysRedemptionInAdvance,
+      </if>
+      <if test="redemptiondateinadvance != null">
+        RedemptionDateInAdvance,
+      </if>
+      <if test="originalserialno != null">
+        OriginalSerialNo,
+      </if>
+      <if test="dateofperiodicsubs != null">
+        DateOfPeriodicSubs,
+      </if>
+      <if test="taserialno != null">
+        TASerialNO,
+      </if>
+      <if test="termofperiodicsubs != null">
+        TermOfPeriodicSubs,
+      </if>
+      <if test="futurebuydate != null">
+        FutureBuyDate,
+      </if>
+      <if test="targetdistributorcode != null">
+        TargetDistributorCode,
+      </if>
+      <if test="charge != null">
+        Charge,
+      </if>
+      <if test="targetbranchcode != null">
+        TargetBranchCode,
+      </if>
+      <if test="targettransactionaccountid != null">
+        TargetTransactionAccountID,
+      </if>
+      <if test="targetregioncode != null">
+        TargetRegionCode,
+      </if>
+      <if test="dividendratio != null">
+        DividendRatio,
+      </if>
+      <if test="specification != null">
+        Specification,
+      </if>
+      <if test="codeoftargetfund != null">
+        CodeOfTargetFund,
+      </if>
+      <if test="totalbackendloa != null">
+        TotalBackendLoa,
+      </if>
+      <if test="shareclass != null">
+        ShareClass,
+      </if>
+      <if test="originalcfmdate != null">
+        OriginalCfmDate,
+      </if>
+      <if test="detailflag != null">
+        DetailFlag,
+      </if>
+      <if test="originalappdate != null">
+        OriginalAppDate,
+      </if>
+      <if test="defdividendmethod != null">
+        DefDividendMethod,
+      </if>
+      <if test="frozencause != null">
+        FrozenCause,
+      </if>
+      <if test="freezingdeadline != null">
+        FreezingDeadline,
+      </if>
+      <if test="varietycodeofperiodicsubs != null">
+        VarietyCodeOfPeriodicSubs,
+      </if>
+      <if test="serialnoofperiodicsubs != null">
+        SerialNoOfPeriodicSubs,
+      </if>
+      <if test="rationtype != null">
+        RationType,
+      </if>
+      <if test="targettaaccountid != null">
+        TargetTAAccountID,
+      </if>
+      <if test="targetregistrarcode != null">
+        TargetRegistrarCode,
+      </if>
+      <if test="netno != null">
+        NetNo,
+      </if>
+      <if test="customerno != null">
+        CustomerNo,
+      </if>
+      <if test="targetsharetype != null">
+        TargetShareType,
+      </if>
+      <if test="rationprotocolno != null">
+        RationProtocolNo,
+      </if>
+      <if test="begindateofperiodicsubs != null">
+        BeginDateOfPeriodicSubs,
+      </if>
+      <if test="enddateofperiodicsubs != null">
+        EndDateOfPeriodicSubs,
+      </if>
+      <if test="senddayofperiodicsubs != null">
+        SendDayOfPeriodicSubs,
+      </if>
+      <if test="broker != null">
+        Broker,
+      </if>
+      <if test="salespromotion != null">
+        SalesPromotion,
+      </if>
+      <if test="acceptmethod != null">
+        AcceptMethod,
+      </if>
+      <if test="forceredemptiontype != null">
+        ForceRedemptionType,
+      </if>
+      <if test="takeincomeflag != null">
+        TakeIncomeFlag,
+      </if>
+      <if test="purposeofpesubs != null">
+        PurposeOfPeSubs,
+      </if>
+      <if test="frequencyofpesubs != null">
+        FrequencyOfPeSubs,
+      </if>
+      <if test="periodsubtimeunit != null">
+        PeriodSubTimeUnit,
+      </if>
+      <if test="batchnumofpesubs != null">
+        BatchNumOfPeSubs,
+      </if>
+      <if test="capitalmode != null">
+        CapitalMode,
+      </if>
+      <if test="detailcapitalmode != null">
+        DetailCapitalMode,
+      </if>
+      <if test="backenloaddiscount != null">
+        BackenloadDiscount,
+      </if>
+      <if test="combinenum != null">
+        CombineNum,
+      </if>
+      <if test="futuresubscribedate != null">
+        FutureSubscribeDate,
+      </if>
+      <if test="tradingmethod != null">
+        TradingMethod,
+      </if>
+      <if test="largebuyflag != null">
+        LargeBuyFlag,
+      </if>
+      <if test="chargetype != null">
+        ChargeType,
+      </if>
+      <if test="specifyratefee != null">
+        SpecifyRateFee,
+      </if>
+      <if test="specifyfee != null">
+        SpecifyFee,
+      </if>
+      <if test="tacode != null">
+        TACode,
+      </if>
+      <if test="referencenumber != null">
+        ReferenceNumber,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="fundcode != null">
+        #{fundcode,jdbcType=VARCHAR},
+      </if>
+      <if test="largeredemptionflag != null">
+        #{largeredemptionflag,jdbcType=VARCHAR},
+      </if>
+      <if test="transactiondate != null">
+        #{transactiondate,jdbcType=VARCHAR},
+      </if>
+      <if test="transactiontime != null">
+        #{transactiontime,jdbcType=VARCHAR},
+      </if>
+      <if test="transactionaccountid != null">
+        #{transactionaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="distributorcode != null">
+        #{distributorcode,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationvol != null">
+        #{applicationvol,jdbcType=DECIMAL},
+      </if>
+      <if test="applicationamount != null">
+        #{applicationamount,jdbcType=DECIMAL},
+      </if>
+      <if test="businesscode != null">
+        #{businesscode,jdbcType=VARCHAR},
+      </if>
+      <if test="taaccountid != null">
+        #{taaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="discountrateofcommission != null">
+        #{discountrateofcommission,jdbcType=DECIMAL},
+      </if>
+      <if test="depositacct != null">
+        #{depositacct,jdbcType=VARCHAR},
+      </if>
+      <if test="regioncode != null">
+        #{regioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="currencytype != null">
+        #{currencytype,jdbcType=VARCHAR},
+      </if>
+      <if test="branchcode != null">
+        #{branchcode,jdbcType=VARCHAR},
+      </if>
+      <if test="originalappsheetno != null">
+        #{originalappsheetno,jdbcType=VARCHAR},
+      </if>
+      <if test="originalsubsdate != null">
+        #{originalsubsdate,jdbcType=VARCHAR},
+      </if>
+      <if test="individualorinstitution != null">
+        #{individualorinstitution,jdbcType=VARCHAR},
+      </if>
+      <if test="validperiod != null">
+        #{validperiod,jdbcType=INTEGER},
+      </if>
+      <if test="daysredemptioninadvance != null">
+        #{daysredemptioninadvance,jdbcType=INTEGER},
+      </if>
+      <if test="redemptiondateinadvance != null">
+        #{redemptiondateinadvance,jdbcType=VARCHAR},
+      </if>
+      <if test="originalserialno != null">
+        #{originalserialno,jdbcType=VARCHAR},
+      </if>
+      <if test="dateofperiodicsubs != null">
+        #{dateofperiodicsubs,jdbcType=VARCHAR},
+      </if>
+      <if test="taserialno != null">
+        #{taserialno,jdbcType=VARCHAR},
+      </if>
+      <if test="termofperiodicsubs != null">
+        #{termofperiodicsubs,jdbcType=INTEGER},
+      </if>
+      <if test="futurebuydate != null">
+        #{futurebuydate,jdbcType=VARCHAR},
+      </if>
+      <if test="targetdistributorcode != null">
+        #{targetdistributorcode,jdbcType=VARCHAR},
+      </if>
+      <if test="charge != null">
+        #{charge,jdbcType=DECIMAL},
+      </if>
+      <if test="targetbranchcode != null">
+        #{targetbranchcode,jdbcType=VARCHAR},
+      </if>
+      <if test="targettransactionaccountid != null">
+        #{targettransactionaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="targetregioncode != null">
+        #{targetregioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="dividendratio != null">
+        #{dividendratio,jdbcType=DECIMAL},
+      </if>
+      <if test="specification != null">
+        #{specification,jdbcType=VARCHAR},
+      </if>
+      <if test="codeoftargetfund != null">
+        #{codeoftargetfund,jdbcType=VARCHAR},
+      </if>
+      <if test="totalbackendloa != null">
+        #{totalbackendloa,jdbcType=DECIMAL},
+      </if>
+      <if test="shareclass != null">
+        #{shareclass,jdbcType=VARCHAR},
+      </if>
+      <if test="originalcfmdate != null">
+        #{originalcfmdate,jdbcType=VARCHAR},
+      </if>
+      <if test="detailflag != null">
+        #{detailflag,jdbcType=VARCHAR},
+      </if>
+      <if test="originalappdate != null">
+        #{originalappdate,jdbcType=VARCHAR},
+      </if>
+      <if test="defdividendmethod != null">
+        #{defdividendmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="frozencause != null">
+        #{frozencause,jdbcType=VARCHAR},
+      </if>
+      <if test="freezingdeadline != null">
+        #{freezingdeadline,jdbcType=VARCHAR},
+      </if>
+      <if test="varietycodeofperiodicsubs != null">
+        #{varietycodeofperiodicsubs,jdbcType=VARCHAR},
+      </if>
+      <if test="serialnoofperiodicsubs != null">
+        #{serialnoofperiodicsubs,jdbcType=VARCHAR},
+      </if>
+      <if test="rationtype != null">
+        #{rationtype,jdbcType=VARCHAR},
+      </if>
+      <if test="targettaaccountid != null">
+        #{targettaaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="targetregistrarcode != null">
+        #{targetregistrarcode,jdbcType=VARCHAR},
+      </if>
+      <if test="netno != null">
+        #{netno,jdbcType=VARCHAR},
+      </if>
+      <if test="customerno != null">
+        #{customerno,jdbcType=VARCHAR},
+      </if>
+      <if test="targetsharetype != null">
+        #{targetsharetype,jdbcType=VARCHAR},
+      </if>
+      <if test="rationprotocolno != null">
+        #{rationprotocolno,jdbcType=VARCHAR},
+      </if>
+      <if test="begindateofperiodicsubs != null">
+        #{begindateofperiodicsubs,jdbcType=VARCHAR},
+      </if>
+      <if test="enddateofperiodicsubs != null">
+        #{enddateofperiodicsubs,jdbcType=VARCHAR},
+      </if>
+      <if test="senddayofperiodicsubs != null">
+        #{senddayofperiodicsubs,jdbcType=INTEGER},
+      </if>
+      <if test="broker != null">
+        #{broker,jdbcType=VARCHAR},
+      </if>
+      <if test="salespromotion != null">
+        #{salespromotion,jdbcType=VARCHAR},
+      </if>
+      <if test="acceptmethod != null">
+        #{acceptmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="forceredemptiontype != null">
+        #{forceredemptiontype,jdbcType=VARCHAR},
+      </if>
+      <if test="takeincomeflag != null">
+        #{takeincomeflag,jdbcType=VARCHAR},
+      </if>
+      <if test="purposeofpesubs != null">
+        #{purposeofpesubs,jdbcType=VARCHAR},
+      </if>
+      <if test="frequencyofpesubs != null">
+        #{frequencyofpesubs,jdbcType=DECIMAL},
+      </if>
+      <if test="periodsubtimeunit != null">
+        #{periodsubtimeunit,jdbcType=VARCHAR},
+      </if>
+      <if test="batchnumofpesubs != null">
+        #{batchnumofpesubs,jdbcType=DECIMAL},
+      </if>
+      <if test="capitalmode != null">
+        #{capitalmode,jdbcType=VARCHAR},
+      </if>
+      <if test="detailcapitalmode != null">
+        #{detailcapitalmode,jdbcType=VARCHAR},
+      </if>
+      <if test="backenloaddiscount != null">
+        #{backenloaddiscount,jdbcType=DECIMAL},
+      </if>
+      <if test="combinenum != null">
+        #{combinenum,jdbcType=VARCHAR},
+      </if>
+      <if test="futuresubscribedate != null">
+        #{futuresubscribedate,jdbcType=VARCHAR},
+      </if>
+      <if test="tradingmethod != null">
+        #{tradingmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="largebuyflag != null">
+        #{largebuyflag,jdbcType=VARCHAR},
+      </if>
+      <if test="chargetype != null">
+        #{chargetype,jdbcType=VARCHAR},
+      </if>
+      <if test="specifyratefee != null">
+        #{specifyratefee,jdbcType=DECIMAL},
+      </if>
+      <if test="specifyfee != null">
+        #{specifyfee,jdbcType=DECIMAL},
+      </if>
+      <if test="tacode != null">
+        #{tacode,jdbcType=VARCHAR},
+      </if>
+      <if test="referencenumber != null">
+        #{referencenumber,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.psbc.pojo.TransactionApplication">
+    update transaction_application
+    <set>
+      <if test="fundcode != null">
+        FundCode = #{fundcode,jdbcType=VARCHAR},
+      </if>
+      <if test="largeredemptionflag != null">
+        LargeRedemptionFlag = #{largeredemptionflag,jdbcType=VARCHAR},
+      </if>
+      <if test="transactiondate != null">
+        TransactionDate = #{transactiondate,jdbcType=VARCHAR},
+      </if>
+      <if test="transactiontime != null">
+        TransactionTime = #{transactiontime,jdbcType=VARCHAR},
+      </if>
+      <if test="transactionaccountid != null">
+        TransactionAccountID = #{transactionaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="distributorcode != null">
+        DistributorCode = #{distributorcode,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationvol != null">
+        ApplicationVol = #{applicationvol,jdbcType=DECIMAL},
+      </if>
+      <if test="applicationamount != null">
+        ApplicationAmount = #{applicationamount,jdbcType=DECIMAL},
+      </if>
+      <if test="businesscode != null">
+        BusinessCode = #{businesscode,jdbcType=VARCHAR},
+      </if>
+      <if test="taaccountid != null">
+        TAAccountID = #{taaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="discountrateofcommission != null">
+        DiscountRateOfCommission = #{discountrateofcommission,jdbcType=DECIMAL},
+      </if>
+      <if test="depositacct != null">
+        DepositAcct = #{depositacct,jdbcType=VARCHAR},
+      </if>
+      <if test="regioncode != null">
+        RegionCode = #{regioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="currencytype != null">
+        CurrencyType = #{currencytype,jdbcType=VARCHAR},
+      </if>
+      <if test="branchcode != null">
+        BranchCode = #{branchcode,jdbcType=VARCHAR},
+      </if>
+      <if test="originalappsheetno != null">
+        OriginalAppSheetNo = #{originalappsheetno,jdbcType=VARCHAR},
+      </if>
+      <if test="originalsubsdate != null">
+        OriginalSubsDate = #{originalsubsdate,jdbcType=VARCHAR},
+      </if>
+      <if test="individualorinstitution != null">
+        IndividualOrInstitution = #{individualorinstitution,jdbcType=VARCHAR},
+      </if>
+      <if test="validperiod != null">
+        ValidPeriod = #{validperiod,jdbcType=INTEGER},
+      </if>
+      <if test="daysredemptioninadvance != null">
+        DaysRedemptionInAdvance = #{daysredemptioninadvance,jdbcType=INTEGER},
+      </if>
+      <if test="redemptiondateinadvance != null">
+        RedemptionDateInAdvance = #{redemptiondateinadvance,jdbcType=VARCHAR},
+      </if>
+      <if test="originalserialno != null">
+        OriginalSerialNo = #{originalserialno,jdbcType=VARCHAR},
+      </if>
+      <if test="dateofperiodicsubs != null">
+        DateOfPeriodicSubs = #{dateofperiodicsubs,jdbcType=VARCHAR},
+      </if>
+      <if test="taserialno != null">
+        TASerialNO = #{taserialno,jdbcType=VARCHAR},
+      </if>
+      <if test="termofperiodicsubs != null">
+        TermOfPeriodicSubs = #{termofperiodicsubs,jdbcType=INTEGER},
+      </if>
+      <if test="futurebuydate != null">
+        FutureBuyDate = #{futurebuydate,jdbcType=VARCHAR},
+      </if>
+      <if test="targetdistributorcode != null">
+        TargetDistributorCode = #{targetdistributorcode,jdbcType=VARCHAR},
+      </if>
+      <if test="charge != null">
+        Charge = #{charge,jdbcType=DECIMAL},
+      </if>
+      <if test="targetbranchcode != null">
+        TargetBranchCode = #{targetbranchcode,jdbcType=VARCHAR},
+      </if>
+      <if test="targettransactionaccountid != null">
+        TargetTransactionAccountID = #{targettransactionaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="targetregioncode != null">
+        TargetRegionCode = #{targetregioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="dividendratio != null">
+        DividendRatio = #{dividendratio,jdbcType=DECIMAL},
+      </if>
+      <if test="specification != null">
+        Specification = #{specification,jdbcType=VARCHAR},
+      </if>
+      <if test="codeoftargetfund != null">
+        CodeOfTargetFund = #{codeoftargetfund,jdbcType=VARCHAR},
+      </if>
+      <if test="totalbackendloa != null">
+        TotalBackendLoa = #{totalbackendloa,jdbcType=DECIMAL},
+      </if>
+      <if test="shareclass != null">
+        ShareClass = #{shareclass,jdbcType=VARCHAR},
+      </if>
+      <if test="originalcfmdate != null">
+        OriginalCfmDate = #{originalcfmdate,jdbcType=VARCHAR},
+      </if>
+      <if test="detailflag != null">
+        DetailFlag = #{detailflag,jdbcType=VARCHAR},
+      </if>
+      <if test="originalappdate != null">
+        OriginalAppDate = #{originalappdate,jdbcType=VARCHAR},
+      </if>
+      <if test="defdividendmethod != null">
+        DefDividendMethod = #{defdividendmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="frozencause != null">
+        FrozenCause = #{frozencause,jdbcType=VARCHAR},
+      </if>
+      <if test="freezingdeadline != null">
+        FreezingDeadline = #{freezingdeadline,jdbcType=VARCHAR},
+      </if>
+      <if test="varietycodeofperiodicsubs != null">
+        VarietyCodeOfPeriodicSubs = #{varietycodeofperiodicsubs,jdbcType=VARCHAR},
+      </if>
+      <if test="serialnoofperiodicsubs != null">
+        SerialNoOfPeriodicSubs = #{serialnoofperiodicsubs,jdbcType=VARCHAR},
+      </if>
+      <if test="rationtype != null">
+        RationType = #{rationtype,jdbcType=VARCHAR},
+      </if>
+      <if test="targettaaccountid != null">
+        TargetTAAccountID = #{targettaaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="targetregistrarcode != null">
+        TargetRegistrarCode = #{targetregistrarcode,jdbcType=VARCHAR},
+      </if>
+      <if test="netno != null">
+        NetNo = #{netno,jdbcType=VARCHAR},
+      </if>
+      <if test="customerno != null">
+        CustomerNo = #{customerno,jdbcType=VARCHAR},
+      </if>
+      <if test="targetsharetype != null">
+        TargetShareType = #{targetsharetype,jdbcType=VARCHAR},
+      </if>
+      <if test="rationprotocolno != null">
+        RationProtocolNo = #{rationprotocolno,jdbcType=VARCHAR},
+      </if>
+      <if test="begindateofperiodicsubs != null">
+        BeginDateOfPeriodicSubs = #{begindateofperiodicsubs,jdbcType=VARCHAR},
+      </if>
+      <if test="enddateofperiodicsubs != null">
+        EndDateOfPeriodicSubs = #{enddateofperiodicsubs,jdbcType=VARCHAR},
+      </if>
+      <if test="senddayofperiodicsubs != null">
+        SendDayOfPeriodicSubs = #{senddayofperiodicsubs,jdbcType=INTEGER},
+      </if>
+      <if test="broker != null">
+        Broker = #{broker,jdbcType=VARCHAR},
+      </if>
+      <if test="salespromotion != null">
+        SalesPromotion = #{salespromotion,jdbcType=VARCHAR},
+      </if>
+      <if test="acceptmethod != null">
+        AcceptMethod = #{acceptmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="forceredemptiontype != null">
+        ForceRedemptionType = #{forceredemptiontype,jdbcType=VARCHAR},
+      </if>
+      <if test="takeincomeflag != null">
+        TakeIncomeFlag = #{takeincomeflag,jdbcType=VARCHAR},
+      </if>
+      <if test="purposeofpesubs != null">
+        PurposeOfPeSubs = #{purposeofpesubs,jdbcType=VARCHAR},
+      </if>
+      <if test="frequencyofpesubs != null">
+        FrequencyOfPeSubs = #{frequencyofpesubs,jdbcType=DECIMAL},
+      </if>
+      <if test="periodsubtimeunit != null">
+        PeriodSubTimeUnit = #{periodsubtimeunit,jdbcType=VARCHAR},
+      </if>
+      <if test="batchnumofpesubs != null">
+        BatchNumOfPeSubs = #{batchnumofpesubs,jdbcType=DECIMAL},
+      </if>
+      <if test="capitalmode != null">
+        CapitalMode = #{capitalmode,jdbcType=VARCHAR},
+      </if>
+      <if test="detailcapitalmode != null">
+        DetailCapitalMode = #{detailcapitalmode,jdbcType=VARCHAR},
+      </if>
+      <if test="backenloaddiscount != null">
+        BackenloadDiscount = #{backenloaddiscount,jdbcType=DECIMAL},
+      </if>
+      <if test="combinenum != null">
+        CombineNum = #{combinenum,jdbcType=VARCHAR},
+      </if>
+      <if test="futuresubscribedate != null">
+        FutureSubscribeDate = #{futuresubscribedate,jdbcType=VARCHAR},
+      </if>
+      <if test="tradingmethod != null">
+        TradingMethod = #{tradingmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="largebuyflag != null">
+        LargeBuyFlag = #{largebuyflag,jdbcType=VARCHAR},
+      </if>
+      <if test="chargetype != null">
+        ChargeType = #{chargetype,jdbcType=VARCHAR},
+      </if>
+      <if test="specifyratefee != null">
+        SpecifyRateFee = #{specifyratefee,jdbcType=DECIMAL},
+      </if>
+      <if test="specifyfee != null">
+        SpecifyFee = #{specifyfee,jdbcType=DECIMAL},
+      </if>
+      <if test="tacode != null">
+        TACode = #{tacode,jdbcType=VARCHAR},
+      </if>
+      <if test="referencenumber != null">
+        ReferenceNumber = #{referencenumber,jdbcType=INTEGER},
+      </if>
+    </set>
+    where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.TransactionApplication">
+    update transaction_application
+    set FundCode = #{fundcode,jdbcType=VARCHAR},
+      LargeRedemptionFlag = #{largeredemptionflag,jdbcType=VARCHAR},
+      TransactionDate = #{transactiondate,jdbcType=VARCHAR},
+      TransactionTime = #{transactiontime,jdbcType=VARCHAR},
+      TransactionAccountID = #{transactionaccountid,jdbcType=VARCHAR},
+      DistributorCode = #{distributorcode,jdbcType=VARCHAR},
+      ApplicationVol = #{applicationvol,jdbcType=DECIMAL},
+      ApplicationAmount = #{applicationamount,jdbcType=DECIMAL},
+      BusinessCode = #{businesscode,jdbcType=VARCHAR},
+      TAAccountID = #{taaccountid,jdbcType=VARCHAR},
+      DiscountRateOfCommission = #{discountrateofcommission,jdbcType=DECIMAL},
+      DepositAcct = #{depositacct,jdbcType=VARCHAR},
+      RegionCode = #{regioncode,jdbcType=VARCHAR},
+      CurrencyType = #{currencytype,jdbcType=VARCHAR},
+      BranchCode = #{branchcode,jdbcType=VARCHAR},
+      OriginalAppSheetNo = #{originalappsheetno,jdbcType=VARCHAR},
+      OriginalSubsDate = #{originalsubsdate,jdbcType=VARCHAR},
+      IndividualOrInstitution = #{individualorinstitution,jdbcType=VARCHAR},
+      ValidPeriod = #{validperiod,jdbcType=INTEGER},
+      DaysRedemptionInAdvance = #{daysredemptioninadvance,jdbcType=INTEGER},
+      RedemptionDateInAdvance = #{redemptiondateinadvance,jdbcType=VARCHAR},
+      OriginalSerialNo = #{originalserialno,jdbcType=VARCHAR},
+      DateOfPeriodicSubs = #{dateofperiodicsubs,jdbcType=VARCHAR},
+      TASerialNO = #{taserialno,jdbcType=VARCHAR},
+      TermOfPeriodicSubs = #{termofperiodicsubs,jdbcType=INTEGER},
+      FutureBuyDate = #{futurebuydate,jdbcType=VARCHAR},
+      TargetDistributorCode = #{targetdistributorcode,jdbcType=VARCHAR},
+      Charge = #{charge,jdbcType=DECIMAL},
+      TargetBranchCode = #{targetbranchcode,jdbcType=VARCHAR},
+      TargetTransactionAccountID = #{targettransactionaccountid,jdbcType=VARCHAR},
+      TargetRegionCode = #{targetregioncode,jdbcType=VARCHAR},
+      DividendRatio = #{dividendratio,jdbcType=DECIMAL},
+      Specification = #{specification,jdbcType=VARCHAR},
+      CodeOfTargetFund = #{codeoftargetfund,jdbcType=VARCHAR},
+      TotalBackendLoa = #{totalbackendloa,jdbcType=DECIMAL},
+      ShareClass = #{shareclass,jdbcType=VARCHAR},
+      OriginalCfmDate = #{originalcfmdate,jdbcType=VARCHAR},
+      DetailFlag = #{detailflag,jdbcType=VARCHAR},
+      OriginalAppDate = #{originalappdate,jdbcType=VARCHAR},
+      DefDividendMethod = #{defdividendmethod,jdbcType=VARCHAR},
+      FrozenCause = #{frozencause,jdbcType=VARCHAR},
+      FreezingDeadline = #{freezingdeadline,jdbcType=VARCHAR},
+      VarietyCodeOfPeriodicSubs = #{varietycodeofperiodicsubs,jdbcType=VARCHAR},
+      SerialNoOfPeriodicSubs = #{serialnoofperiodicsubs,jdbcType=VARCHAR},
+      RationType = #{rationtype,jdbcType=VARCHAR},
+      TargetTAAccountID = #{targettaaccountid,jdbcType=VARCHAR},
+      TargetRegistrarCode = #{targetregistrarcode,jdbcType=VARCHAR},
+      NetNo = #{netno,jdbcType=VARCHAR},
+      CustomerNo = #{customerno,jdbcType=VARCHAR},
+      TargetShareType = #{targetsharetype,jdbcType=VARCHAR},
+      RationProtocolNo = #{rationprotocolno,jdbcType=VARCHAR},
+      BeginDateOfPeriodicSubs = #{begindateofperiodicsubs,jdbcType=VARCHAR},
+      EndDateOfPeriodicSubs = #{enddateofperiodicsubs,jdbcType=VARCHAR},
+      SendDayOfPeriodicSubs = #{senddayofperiodicsubs,jdbcType=INTEGER},
+      Broker = #{broker,jdbcType=VARCHAR},
+      SalesPromotion = #{salespromotion,jdbcType=VARCHAR},
+      AcceptMethod = #{acceptmethod,jdbcType=VARCHAR},
+      ForceRedemptionType = #{forceredemptiontype,jdbcType=VARCHAR},
+      TakeIncomeFlag = #{takeincomeflag,jdbcType=VARCHAR},
+      PurposeOfPeSubs = #{purposeofpesubs,jdbcType=VARCHAR},
+      FrequencyOfPeSubs = #{frequencyofpesubs,jdbcType=DECIMAL},
+      PeriodSubTimeUnit = #{periodsubtimeunit,jdbcType=VARCHAR},
+      BatchNumOfPeSubs = #{batchnumofpesubs,jdbcType=DECIMAL},
+      CapitalMode = #{capitalmode,jdbcType=VARCHAR},
+      DetailCapitalMode = #{detailcapitalmode,jdbcType=VARCHAR},
+      BackenloadDiscount = #{backenloaddiscount,jdbcType=DECIMAL},
+      CombineNum = #{combinenum,jdbcType=VARCHAR},
+      FutureSubscribeDate = #{futuresubscribedate,jdbcType=VARCHAR},
+      TradingMethod = #{tradingmethod,jdbcType=VARCHAR},
+      LargeBuyFlag = #{largebuyflag,jdbcType=VARCHAR},
+      ChargeType = #{chargetype,jdbcType=VARCHAR},
+      SpecifyRateFee = #{specifyratefee,jdbcType=DECIMAL},
+      SpecifyFee = #{specifyfee,jdbcType=DECIMAL},
+      TACode = #{tacode,jdbcType=VARCHAR},
+      ReferenceNumber = #{referencenumber,jdbcType=INTEGER}
+    where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
+  </update>
+</mapper>

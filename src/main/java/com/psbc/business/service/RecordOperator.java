@@ -1,7 +1,6 @@
 package com.psbc.business.service;
 
-import com.psbc.mapper.AccountApplicationMapper;
-import com.psbc.pojo.AccountApplication;
+import com.psbc.mapper.AccountApplicationDao;
 import com.psbc.pojo.TableModel;
 import com.psbc.reader.xmlModel.XMLNode;
 import com.psbc.utils.StringProcessor;
@@ -19,7 +18,7 @@ import java.util.*;
 public class RecordOperator {
 
     @Autowired
-    AccountApplicationMapper accountApplicationMapper;
+    AccountApplicationDao accountApplicationDao;
     private Object targetObject;
 
     private String businessCode;

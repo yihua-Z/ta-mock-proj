@@ -1,6 +1,6 @@
 package com.psbc.business.service;
 
-import com.psbc.mapper.AccountExpectationMapper;
+import com.psbc.mapper.AccountExpectationDao;
 import com.psbc.pojo.AccountApplication;
 import com.psbc.pojo.AccountConfirmation;
 import com.psbc.pojo.AccountExpectation;
@@ -13,7 +13,7 @@ import java.util.List;
 @Component
 public class AccountExpectationChecker {
     @Autowired
-    AccountExpectationMapper accountExpectationMapper;
+    AccountExpectationDao AccountExpectationDao;
 
     private RecordOperator operator = new RecordOperator();
     private AccountConfirmation accountConfirmation = new AccountConfirmation();
@@ -27,14 +27,14 @@ public class AccountExpectationChecker {
     }
 
     public List<AccountExpectation> getAllAccountExpectation() {
-        List<AccountExpectation> accountExpectations = accountExpectationMapper.selectAll();
+        List<AccountExpectation> accountExpectations = AccountExpectationDao.selectAll();
         return accountExpectations;
 
     }
 
     public List<String> getExpectationList() {
 
-        List<AccountExpectation> accountExpectations = accountExpectationMapper.selectAll();
+        List<AccountExpectation> accountExpectations = AccountExpectationDao.selectAll();
 
         List<String> expectations = new ArrayList<>();
 

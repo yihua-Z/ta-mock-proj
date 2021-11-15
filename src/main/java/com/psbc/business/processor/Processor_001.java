@@ -2,7 +2,7 @@ package com.psbc.business.processor;
 
 import com.psbc.business.service.BusinessCodeChecker;
 import com.psbc.business.service.RecordOperator;
-import com.psbc.mapper.AccountApplicationMapper;
+import com.psbc.mapper.AccountApplicationDao;
 import com.psbc.pojo.AccountApplication;
 import com.psbc.pojo.TableModel;
 import com.psbc.reader.DataFileReader;
@@ -20,7 +20,7 @@ import java.util.List;
 public class Processor_001 {
 
     @Autowired
-    AccountApplicationMapper applicationMapper;
+    AccountApplicationDao applicationMapper;
 
     private String applicationFilePath = "";
 

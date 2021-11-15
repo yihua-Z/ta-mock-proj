@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.psbc.mapper.TransactionConfirmationDao">
+  <resultMap id="BaseResultMap" type="com.psbc.pojo.TransactionConfirmation">
+    <id column="ConfirmID" jdbcType="INTEGER" property="confirmid" />
+    <result column="TransactionCfmDate" jdbcType="VARCHAR" property="transactioncfmdate" />
+    <result column="ConfirmedVol" jdbcType="DECIMAL" property="confirmedvol" />
+    <result column="ConfirmedAmount" jdbcType="DECIMAL" property="confirmedamount" />
+    <result column="TransactionDate" jdbcType="VARCHAR" property="transactiondate" />
+    <result column="TransactionTime" jdbcType="VARCHAR" property="transactiontime" />
+    <result column="ReturnCode" jdbcType="VARCHAR" property="returncode" />
+    <result column="BusinessCode" jdbcType="VARCHAR" property="businesscode" />
+    <result column="BusinessFinishFlag" jdbcType="VARCHAR" property="businessfinishflag" />
+    <result column="RegionCode" jdbcType="VARCHAR" property="regioncode" />
+    <result column="DownLoaddate" jdbcType="VARCHAR" property="downloaddate" />
+    <result column="AgencyFee" jdbcType="DECIMAL" property="agencyfee" />
+    <result column="NAV" jdbcType="DECIMAL" property="nav" />
+    <result column="OtherFee1" jdbcType="DECIMAL" property="otherfee1" />
+    <result column="StampDuty" jdbcType="DECIMAL" property="stampduty" />
+    <result column="RateFee" jdbcType="DECIMAL" property="ratefee" />
+    <result column="Specification" jdbcType="VARCHAR" property="specification" />
+    <result column="TransferDirection" jdbcType="VARCHAR" property="transferdirection" />
+    <result column="Interest" jdbcType="DECIMAL" property="interest" />
+    <result column="VolumeByInterest" jdbcType="DECIMAL" property="volumebyinterest" />
+    <result column="InterestTax" jdbcType="DECIMAL" property="interesttax" />
+    <result column="TradingPrice" jdbcType="DECIMAL" property="tradingprice" />
+    <result column="Tax" jdbcType="DECIMAL" property="tax" />
+    <result column="TargetNAV" jdbcType="DECIMAL" property="targetnav" />
+    <result column="TargetFundPrice" jdbcType="DECIMAL" property="targetfundprice" />
+    <result column="CfmVolOfTargetFund" jdbcType="DECIMAL" property="cfmvoloftargetfund" />
+    <result column="MinFee" jdbcType="DECIMAL" property="minfee" />
+    <result column="OtherFee2" jdbcType="DECIMAL" property="otherfee2" />
+    <result column="TransferFee" jdbcType="DECIMAL" property="transferfee" />
+    <result column="FromTAFlag" jdbcType="VARCHAR" property="fromtaflag" />
+    <result column="RedemptionInAdvanceFlag" jdbcType="VARCHAR" property="redemptioninadvanceflag" />
+    <result column="FrozenMethod" jdbcType="VARCHAR" property="frozenmethod" />
+    <result column="RedemptionReason" jdbcType="VARCHAR" property="redemptionreason" />
+    <result column="TotalTransFee" jdbcType="DECIMAL" property="totaltransfee" />
+    <result column="AlternationDate" jdbcType="VARCHAR" property="alternationdate" />
+    <result column="RefundAmount" jdbcType="DECIMAL" property="refundamount" />
+    <result column="SalePercent" jdbcType="DECIMAL" property="salepercent" />
+    <result column="ManagerRealRatio" jdbcType="DECIMAL" property="managerrealratio" />
+    <result column="ChangeFee" jdbcType="DECIMAL" property="changefee" />
+    <result column="RecuperateFee" jdbcType="DECIMAL" property="recuperatefee" />
+    <result column="AchievementPay" jdbcType="DECIMAL" property="achievementpay" />
+    <result column="AchievementCompen" jdbcType="DECIMAL" property="achievementcompen" />
+    <result column="SharesAdjustmentFlag" jdbcType="VARCHAR" property="sharesadjustmentflag" />
+    <result column="GeneralTASerialNO" jdbcType="VARCHAR" property="generaltaserialno" />
+    <result column="UndistributeMonetaryIncome" jdbcType="DECIMAL" property="undistributemonetaryincome" />
+    <result column="UndistributeMonetaryIncomeFlag" jdbcType="VARCHAR" property="undistributemonetaryincomeflag" />
+    <result column="BreachFee" jdbcType="DECIMAL" property="breachfee" />
+    <result column="BreachFeeBackToFund" jdbcType="DECIMAL" property="breachfeebacktofund" />
+    <result column="PunishFee" jdbcType="DECIMAL" property="punishfee" />
+    <result column="ChangeAgencyFee" jdbcType="DECIMAL" property="changeagencyfee" />
+    <result column="RecuperateAgencyFee" jdbcType="DECIMAL" property="recuperateagencyfee" />
+    <result column="ErrorDetail" jdbcType="VARCHAR" property="errordetail" />
+    <result column="RaiseInterest" jdbcType="DECIMAL" property="raiseinterest" />
+    <result column="FeeCalculator" jdbcType="VARCHAR" property="feecalculator" />
+    <result column="ShareRegisterDate" jdbcType="VARCHAR" property="shareregisterdate" />
+    <result column="TotalFrozenVol" jdbcType="DECIMAL" property="totalfrozenvol" />
+    <result column="FundVolBalance" jdbcType="DECIMAL" property="fundvolbalance" />
+    <result column="FrozenBalance" jdbcType="DECIMAL" property="frozenbalance" />
+    <result column="TransferDateThroughClearingAgency" jdbcType="VARCHAR" property="transferdatethroughclearingagency" />
+    <result column="AppSheetSerialNo" jdbcType="VARCHAR" property="appsheetserialno" />
+    <result column="TACode" jdbcType="VARCHAR" property="tacode" />
+    <result column="DistributorCode" jdbcType="VARCHAR" property="distributorcode" />
+    <result column="ReferenceNumber" jdbcType="INTEGER" property="referencenumber" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ConfirmID, TransactionCfmDate, ConfirmedVol, ConfirmedAmount, TransactionDate, TransactionTime, 
+    ReturnCode, BusinessCode, BusinessFinishFlag, RegionCode, DownLoaddate, AgencyFee, 
+    NAV, OtherFee1, StampDuty, RateFee, Specification, TransferDirection, Interest, VolumeByInterest, 
+    InterestTax, TradingPrice, Tax, TargetNAV, TargetFundPrice, CfmVolOfTargetFund, MinFee, 
+    OtherFee2, TransferFee, FromTAFlag, RedemptionInAdvanceFlag, FrozenMethod, RedemptionReason, 
+    TotalTransFee, AlternationDate, RefundAmount, SalePercent, ManagerRealRatio, ChangeFee, 
+    RecuperateFee, AchievementPay, AchievementCompen, SharesAdjustmentFlag, GeneralTASerialNO, 
+    UndistributeMonetaryIncome, UndistributeMonetaryIncomeFlag, BreachFee, BreachFeeBackToFund, 
+    PunishFee, ChangeAgencyFee, RecuperateAgencyFee, ErrorDetail, RaiseInterest, FeeCalculator, 
+    ShareRegisterDate, TotalFrozenVol, FundVolBalance, FrozenBalance, TransferDateThroughClearingAgency, 
+    AppSheetSerialNo, TACode, DistributorCode, ReferenceNumber
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from transaction_confirmation
+    where ConfirmID = #{confirmid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from transaction_confirmation
+    where ConfirmID = #{confirmid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="ConfirmID" keyProperty="confirmid" parameterType="com.psbc.pojo.TransactionConfirmation" useGeneratedKeys="true">
+    insert into transaction_confirmation (TransactionCfmDate, ConfirmedVol, 
+      ConfirmedAmount, TransactionDate, TransactionTime, 
+      ReturnCode, BusinessCode, BusinessFinishFlag, 
+      RegionCode, DownLoaddate, AgencyFee, 
+      NAV, OtherFee1, StampDuty, 
+      RateFee, Specification, TransferDirection, 
+      Interest, VolumeByInterest, InterestTax, 
+      TradingPrice, Tax, TargetNAV, 
+      TargetFundPrice, CfmVolOfTargetFund, MinFee, 
+      OtherFee2, TransferFee, FromTAFlag, 
+      RedemptionInAdvanceFlag, FrozenMethod, 
+      RedemptionReason, TotalTransFee, AlternationDate, 
+      RefundAmount, SalePercent, ManagerRealRatio, 
+      ChangeFee, RecuperateFee, AchievementPay, 
+      AchievementCompen, SharesAdjustmentFlag, 
+      GeneralTASerialNO, UndistributeMonetaryIncome, 
+      UndistributeMonetaryIncomeFlag, BreachFee, 
+      BreachFeeBackToFund, PunishFee, ChangeAgencyFee, 
+      RecuperateAgencyFee, ErrorDetail, RaiseInterest, 
+      FeeCalculator, ShareRegisterDate, TotalFrozenVol, 
+      FundVolBalance, FrozenBalance, TransferDateThroughClearingAgency, 
+      AppSheetSerialNo, TACode, DistributorCode, 
+      ReferenceNumber)
+    values (#{transactioncfmdate,jdbcType=VARCHAR}, #{confirmedvol,jdbcType=DECIMAL}, 
+      #{confirmedamount,jdbcType=DECIMAL}, #{transactiondate,jdbcType=VARCHAR}, #{transactiontime,jdbcType=VARCHAR}, 
+      #{returncode,jdbcType=VARCHAR}, #{businesscode,jdbcType=VARCHAR}, #{businessfinishflag,jdbcType=VARCHAR}, 
+      #{regioncode,jdbcType=VARCHAR}, #{downloaddate,jdbcType=VARCHAR}, #{agencyfee,jdbcType=DECIMAL}, 
+      #{nav,jdbcType=DECIMAL}, #{otherfee1,jdbcType=DECIMAL}, #{stampduty,jdbcType=DECIMAL}, 
+      #{ratefee,jdbcType=DECIMAL}, #{specification,jdbcType=VARCHAR}, #{transferdirection,jdbcType=VARCHAR}, 
+      #{interest,jdbcType=DECIMAL}, #{volumebyinterest,jdbcType=DECIMAL}, #{interesttax,jdbcType=DECIMAL}, 
+      #{tradingprice,jdbcType=DECIMAL}, #{tax,jdbcType=DECIMAL}, #{targetnav,jdbcType=DECIMAL}, 
+      #{targetfundprice,jdbcType=DECIMAL}, #{cfmvoloftargetfund,jdbcType=DECIMAL}, #{minfee,jdbcType=DECIMAL}, 
+      #{otherfee2,jdbcType=DECIMAL}, #{transferfee,jdbcType=DECIMAL}, #{fromtaflag,jdbcType=VARCHAR}, 
+      #{redemptioninadvanceflag,jdbcType=VARCHAR}, #{frozenmethod,jdbcType=VARCHAR}, 
+      #{redemptionreason,jdbcType=VARCHAR}, #{totaltransfee,jdbcType=DECIMAL}, #{alternationdate,jdbcType=VARCHAR}, 
+      #{refundamount,jdbcType=DECIMAL}, #{salepercent,jdbcType=DECIMAL}, #{managerrealratio,jdbcType=DECIMAL}, 
+      #{changefee,jdbcType=DECIMAL}, #{recuperatefee,jdbcType=DECIMAL}, #{achievementpay,jdbcType=DECIMAL}, 
+      #{achievementcompen,jdbcType=DECIMAL}, #{sharesadjustmentflag,jdbcType=VARCHAR}, 
+      #{generaltaserialno,jdbcType=VARCHAR}, #{undistributemonetaryincome,jdbcType=DECIMAL}, 
+      #{undistributemonetaryincomeflag,jdbcType=VARCHAR}, #{breachfee,jdbcType=DECIMAL}, 
+      #{breachfeebacktofund,jdbcType=DECIMAL}, #{punishfee,jdbcType=DECIMAL}, #{changeagencyfee,jdbcType=DECIMAL}, 
+      #{recuperateagencyfee,jdbcType=DECIMAL}, #{errordetail,jdbcType=VARCHAR}, #{raiseinterest,jdbcType=DECIMAL}, 
+      #{feecalculator,jdbcType=VARCHAR}, #{shareregisterdate,jdbcType=VARCHAR}, #{totalfrozenvol,jdbcType=DECIMAL}, 
+      #{fundvolbalance,jdbcType=DECIMAL}, #{frozenbalance,jdbcType=DECIMAL}, #{transferdatethroughclearingagency,jdbcType=VARCHAR}, 
+      #{appsheetserialno,jdbcType=VARCHAR}, #{tacode,jdbcType=VARCHAR}, #{distributorcode,jdbcType=VARCHAR}, 
+      #{referencenumber,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" keyColumn="ConfirmID" keyProperty="confirmid" parameterType="com.psbc.pojo.TransactionConfirmation" useGeneratedKeys="true">
+    insert into transaction_confirmation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="transactioncfmdate != null">
+        TransactionCfmDate,
+      </if>
+      <if test="confirmedvol != null">
+        ConfirmedVol,
+      </if>
+      <if test="confirmedamount != null">
+        ConfirmedAmount,
+      </if>
+      <if test="transactiondate != null">
+        TransactionDate,
+      </if>
+      <if test="transactiontime != null">
+        TransactionTime,
+      </if>
+      <if test="returncode != null">
+        ReturnCode,
+      </if>
+      <if test="businesscode != null">
+        BusinessCode,
+      </if>
+      <if test="businessfinishflag != null">
+        BusinessFinishFlag,
+      </if>
+      <if test="regioncode != null">
+        RegionCode,
+      </if>
+      <if test="downloaddate != null">
+        DownLoaddate,
+      </if>
+      <if test="agencyfee != null">
+        AgencyFee,
+      </if>
+      <if test="nav != null">
+        NAV,
+      </if>
+      <if test="otherfee1 != null">
+        OtherFee1,
+      </if>
+      <if test="stampduty != null">
+        StampDuty,
+      </if>
+      <if test="ratefee != null">
+        RateFee,
+      </if>
+      <if test="specification != null">
+        Specification,
+      </if>
+      <if test="transferdirection != null">
+        TransferDirection,
+      </if>
+      <if test="interest != null">
+        Interest,
+      </if>
+      <if test="volumebyinterest != null">
+        VolumeByInterest,
+      </if>
+      <if test="interesttax != null">
+        InterestTax,
+      </if>
+      <if test="tradingprice != null">
+        TradingPrice,
+      </if>
+      <if test="tax != null">
+        Tax,
+      </if>
+      <if test="targetnav != null">
+        TargetNAV,
+      </if>
+      <if test="targetfundprice != null">
+        TargetFundPrice,
+      </if>
+      <if test="cfmvoloftargetfund != null">
+        CfmVolOfTargetFund,
+      </if>
+      <if test="minfee != null">
+        MinFee,
+      </if>
+      <if test="otherfee2 != null">
+        OtherFee2,
+      </if>
+      <if test="transferfee != null">
+        TransferFee,
+      </if>
+      <if test="fromtaflag != null">
+        FromTAFlag,
+      </if>
+      <if test="redemptioninadvanceflag != null">
+        RedemptionInAdvanceFlag,
+      </if>
+      <if test="frozenmethod != null">
+        FrozenMethod,
+      </if>
+      <if test="redemptionreason != null">
+        RedemptionReason,
+      </if>
+      <if test="totaltransfee != null">
+        TotalTransFee,
+      </if>
+      <if test="alternationdate != null">
+        AlternationDate,
+      </if>
+      <if test="refundamount != null">
+        RefundAmount,
+      </if>
+      <if test="salepercent != null">
+        SalePercent,
+      </if>
+      <if test="managerrealratio != null">
+        ManagerRealRatio,
+      </if>
+      <if test="changefee != null">
+        ChangeFee,
+      </if>
+      <if test="recuperatefee != null">
+        RecuperateFee,
+      </if>
+      <if test="achievementpay != null">
+        AchievementPay,
+      </if>
+      <if test="achievementcompen != null">
+        AchievementCompen,
+      </if>
+      <if test="sharesadjustmentflag != null">
+        SharesAdjustmentFlag,
+      </if>
+      <if test="generaltaserialno != null">
+        GeneralTASerialNO,
+      </if>
+      <if test="undistributemonetaryincome != null">
+        UndistributeMonetaryIncome,
+      </if>
+      <if test="undistributemonetaryincomeflag != null">
+        UndistributeMonetaryIncomeFlag,
+      </if>
+      <if test="breachfee != null">
+        BreachFee,
+      </if>
+      <if test="breachfeebacktofund != null">
+        BreachFeeBackToFund,
+      </if>
+      <if test="punishfee != null">
+        PunishFee,
+      </if>
+      <if test="changeagencyfee != null">
+        ChangeAgencyFee,
+      </if>
+      <if test="recuperateagencyfee != null">
+        RecuperateAgencyFee,
+      </if>
+      <if test="errordetail != null">
+        ErrorDetail,
+      </if>
+      <if test="raiseinterest != null">
+        RaiseInterest,
+      </if>
+      <if test="feecalculator != null">
+        FeeCalculator,
+      </if>
+      <if test="shareregisterdate != null">
+        ShareRegisterDate,
+      </if>
+      <if test="totalfrozenvol != null">
+        TotalFrozenVol,
+      </if>
+      <if test="fundvolbalance != null">
+        FundVolBalance,
+      </if>
+      <if test="frozenbalance != null">
+        FrozenBalance,
+      </if>
+      <if test="transferdatethroughclearingagency != null">
+        TransferDateThroughClearingAgency,
+      </if>
+      <if test="appsheetserialno != null">
+        AppSheetSerialNo,
+      </if>
+      <if test="tacode != null">
+        TACode,
+      </if>
+      <if test="distributorcode != null">
+        DistributorCode,
+      </if>
+      <if test="referencenumber != null">
+        ReferenceNumber,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="transactioncfmdate != null">
+        #{transactioncfmdate,jdbcType=VARCHAR},
+      </if>
+      <if test="confirmedvol != null">
+        #{confirmedvol,jdbcType=DECIMAL},
+      </if>
+      <if test="confirmedamount != null">
+        #{confirmedamount,jdbcType=DECIMAL},
+      </if>
+      <if test="transactiondate != null">
+        #{transactiondate,jdbcType=VARCHAR},
+      </if>
+      <if test="transactiontime != null">
+        #{transactiontime,jdbcType=VARCHAR},
+      </if>
+      <if test="returncode != null">
+        #{returncode,jdbcType=VARCHAR},
+      </if>
+      <if test="businesscode != null">
+        #{businesscode,jdbcType=VARCHAR},
+      </if>
+      <if test="businessfinishflag != null">
+        #{businessfinishflag,jdbcType=VARCHAR},
+      </if>
+      <if test="regioncode != null">
+        #{regioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="downloaddate != null">
+        #{downloaddate,jdbcType=VARCHAR},
+      </if>
+      <if test="agencyfee != null">
+        #{agencyfee,jdbcType=DECIMAL},
+      </if>
+      <if test="nav != null">
+        #{nav,jdbcType=DECIMAL},
+      </if>
+      <if test="otherfee1 != null">
+        #{otherfee1,jdbcType=DECIMAL},
+      </if>
+      <if test="stampduty != null">
+        #{stampduty,jdbcType=DECIMAL},
+      </if>
+      <if test="ratefee != null">
+        #{ratefee,jdbcType=DECIMAL},
+      </if>
+      <if test="specification != null">
+        #{specification,jdbcType=VARCHAR},
+      </if>
+      <if test="transferdirection != null">
+        #{transferdirection,jdbcType=VARCHAR},
+      </if>
+      <if test="interest != null">
+        #{interest,jdbcType=DECIMAL},
+      </if>
+      <if test="volumebyinterest != null">
+        #{volumebyinterest,jdbcType=DECIMAL},
+      </if>
+      <if test="interesttax != null">
+        #{interesttax,jdbcType=DECIMAL},
+      </if>
+      <if test="tradingprice != null">
+        #{tradingprice,jdbcType=DECIMAL},
+      </if>
+      <if test="tax != null">
+        #{tax,jdbcType=DECIMAL},
+      </if>
+      <if test="targetnav != null">
+        #{targetnav,jdbcType=DECIMAL},
+      </if>
+      <if test="targetfundprice != null">
+        #{targetfundprice,jdbcType=DECIMAL},
+      </if>
+      <if test="cfmvoloftargetfund != null">
+        #{cfmvoloftargetfund,jdbcType=DECIMAL},
+      </if>
+      <if test="minfee != null">
+        #{minfee,jdbcType=DECIMAL},
+      </if>
+      <if test="otherfee2 != null">
+        #{otherfee2,jdbcType=DECIMAL},
+      </if>
+      <if test="transferfee != null">
+        #{transferfee,jdbcType=DECIMAL},
+      </if>
+      <if test="fromtaflag != null">
+        #{fromtaflag,jdbcType=VARCHAR},
+      </if>
+      <if test="redemptioninadvanceflag != null">
+        #{redemptioninadvanceflag,jdbcType=VARCHAR},
+      </if>
+      <if test="frozenmethod != null">
+        #{frozenmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="redemptionreason != null">
+        #{redemptionreason,jdbcType=VARCHAR},
+      </if>
+      <if test="totaltransfee != null">
+        #{totaltransfee,jdbcType=DECIMAL},
+      </if>
+      <if test="alternationdate != null">
+        #{alternationdate,jdbcType=VARCHAR},
+      </if>
+      <if test="refundamount != null">
+        #{refundamount,jdbcType=DECIMAL},
+      </if>
+      <if test="salepercent != null">
+        #{salepercent,jdbcType=DECIMAL},
+      </if>
+      <if test="managerrealratio != null">
+        #{managerrealratio,jdbcType=DECIMAL},
+      </if>
+      <if test="changefee != null">
+        #{changefee,jdbcType=DECIMAL},
+      </if>
+      <if test="recuperatefee != null">
+        #{recuperatefee,jdbcType=DECIMAL},
+      </if>
+      <if test="achievementpay != null">
+        #{achievementpay,jdbcType=DECIMAL},
+      </if>
+      <if test="achievementcompen != null">
+        #{achievementcompen,jdbcType=DECIMAL},
+      </if>
+      <if test="sharesadjustmentflag != null">
+        #{sharesadjustmentflag,jdbcType=VARCHAR},
+      </if>
+      <if test="generaltaserialno != null">
+        #{generaltaserialno,jdbcType=VARCHAR},
+      </if>
+      <if test="undistributemonetaryincome != null">
+        #{undistributemonetaryincome,jdbcType=DECIMAL},
+      </if>
+      <if test="undistributemonetaryincomeflag != null">
+        #{undistributemonetaryincomeflag,jdbcType=VARCHAR},
+      </if>
+      <if test="breachfee != null">
+        #{breachfee,jdbcType=DECIMAL},
+      </if>
+      <if test="breachfeebacktofund != null">
+        #{breachfeebacktofund,jdbcType=DECIMAL},
+      </if>
+      <if test="punishfee != null">
+        #{punishfee,jdbcType=DECIMAL},
+      </if>
+      <if test="changeagencyfee != null">
+        #{changeagencyfee,jdbcType=DECIMAL},
+      </if>
+      <if test="recuperateagencyfee != null">
+        #{recuperateagencyfee,jdbcType=DECIMAL},
+      </if>
+      <if test="errordetail != null">
+        #{errordetail,jdbcType=VARCHAR},
+      </if>
+      <if test="raiseinterest != null">
+        #{raiseinterest,jdbcType=DECIMAL},
+      </if>
+      <if test="feecalculator != null">
+        #{feecalculator,jdbcType=VARCHAR},
+      </if>
+      <if test="shareregisterdate != null">
+        #{shareregisterdate,jdbcType=VARCHAR},
+      </if>
+      <if test="totalfrozenvol != null">
+        #{totalfrozenvol,jdbcType=DECIMAL},
+      </if>
+      <if test="fundvolbalance != null">
+        #{fundvolbalance,jdbcType=DECIMAL},
+      </if>
+      <if test="frozenbalance != null">
+        #{frozenbalance,jdbcType=DECIMAL},
+      </if>
+      <if test="transferdatethroughclearingagency != null">
+        #{transferdatethroughclearingagency,jdbcType=VARCHAR},
+      </if>
+      <if test="appsheetserialno != null">
+        #{appsheetserialno,jdbcType=VARCHAR},
+      </if>
+      <if test="tacode != null">
+        #{tacode,jdbcType=VARCHAR},
+      </if>
+      <if test="distributorcode != null">
+        #{distributorcode,jdbcType=VARCHAR},
+      </if>
+      <if test="referencenumber != null">
+        #{referencenumber,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.psbc.pojo.TransactionConfirmation">
+    update transaction_confirmation
+    <set>
+      <if test="transactioncfmdate != null">
+        TransactionCfmDate = #{transactioncfmdate,jdbcType=VARCHAR},
+      </if>
+      <if test="confirmedvol != null">
+        ConfirmedVol = #{confirmedvol,jdbcType=DECIMAL},
+      </if>
+      <if test="confirmedamount != null">
+        ConfirmedAmount = #{confirmedamount,jdbcType=DECIMAL},
+      </if>
+      <if test="transactiondate != null">
+        TransactionDate = #{transactiondate,jdbcType=VARCHAR},
+      </if>
+      <if test="transactiontime != null">
+        TransactionTime = #{transactiontime,jdbcType=VARCHAR},
+      </if>
+      <if test="returncode != null">
+        ReturnCode = #{returncode,jdbcType=VARCHAR},
+      </if>
+      <if test="businesscode != null">
+        BusinessCode = #{businesscode,jdbcType=VARCHAR},
+      </if>
+      <if test="businessfinishflag != null">
+        BusinessFinishFlag = #{businessfinishflag,jdbcType=VARCHAR},
+      </if>
+      <if test="regioncode != null">
+        RegionCode = #{regioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="downloaddate != null">
+        DownLoaddate = #{downloaddate,jdbcType=VARCHAR},
+      </if>
+      <if test="agencyfee != null">
+        AgencyFee = #{agencyfee,jdbcType=DECIMAL},
+      </if>
+      <if test="nav != null">
+        NAV = #{nav,jdbcType=DECIMAL},
+      </if>
+      <if test="otherfee1 != null">
+        OtherFee1 = #{otherfee1,jdbcType=DECIMAL},
+      </if>
+      <if test="stampduty != null">
+        StampDuty = #{stampduty,jdbcType=DECIMAL},
+      </if>
+      <if test="ratefee != null">
+        RateFee = #{ratefee,jdbcType=DECIMAL},
+      </if>
+      <if test="specification != null">
+        Specification = #{specification,jdbcType=VARCHAR},
+      </if>
+      <if test="transferdirection != null">
+        TransferDirection = #{transferdirection,jdbcType=VARCHAR},
+      </if>
+      <if test="interest != null">
+        Interest = #{interest,jdbcType=DECIMAL},
+      </if>
+      <if test="volumebyinterest != null">
+        VolumeByInterest = #{volumebyinterest,jdbcType=DECIMAL},
+      </if>
+      <if test="interesttax != null">
+        InterestTax = #{interesttax,jdbcType=DECIMAL},
+      </if>
+      <if test="tradingprice != null">
+        TradingPrice = #{tradingprice,jdbcType=DECIMAL},
+      </if>
+      <if test="tax != null">
+        Tax = #{tax,jdbcType=DECIMAL},
+      </if>
+      <if test="targetnav != null">
+        TargetNAV = #{targetnav,jdbcType=DECIMAL},
+      </if>
+      <if test="targetfundprice != null">
+        TargetFundPrice = #{targetfundprice,jdbcType=DECIMAL},
+      </if>
+      <if test="cfmvoloftargetfund != null">
+        CfmVolOfTargetFund = #{cfmvoloftargetfund,jdbcType=DECIMAL},
+      </if>
+      <if test="minfee != null">
+        MinFee = #{minfee,jdbcType=DECIMAL},
+      </if>
+      <if test="otherfee2 != null">
+        OtherFee2 = #{otherfee2,jdbcType=DECIMAL},
+      </if>
+      <if test="transferfee != null">
+        TransferFee = #{transferfee,jdbcType=DECIMAL},
+      </if>
+      <if test="fromtaflag != null">
+        FromTAFlag = #{fromtaflag,jdbcType=VARCHAR},
+      </if>
+      <if test="redemptioninadvanceflag != null">
+        RedemptionInAdvanceFlag = #{redemptioninadvanceflag,jdbcType=VARCHAR},
+      </if>
+      <if test="frozenmethod != null">
+        FrozenMethod = #{frozenmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="redemptionreason != null">
+        RedemptionReason = #{redemptionreason,jdbcType=VARCHAR},
+      </if>
+      <if test="totaltransfee != null">
+        TotalTransFee = #{totaltransfee,jdbcType=DECIMAL},
+      </if>
+      <if test="alternationdate != null">
+        AlternationDate = #{alternationdate,jdbcType=VARCHAR},
+      </if>
+      <if test="refundamount != null">
+        RefundAmount = #{refundamount,jdbcType=DECIMAL},
+      </if>
+      <if test="salepercent != null">
+        SalePercent = #{salepercent,jdbcType=DECIMAL},
+      </if>
+      <if test="managerrealratio != null">
+        ManagerRealRatio = #{managerrealratio,jdbcType=DECIMAL},
+      </if>
+      <if test="changefee != null">
+        ChangeFee = #{changefee,jdbcType=DECIMAL},
+      </if>
+      <if test="recuperatefee != null">
+        RecuperateFee = #{recuperatefee,jdbcType=DECIMAL},
+      </if>
+      <if test="achievementpay != null">
+        AchievementPay = #{achievementpay,jdbcType=DECIMAL},
+      </if>
+      <if test="achievementcompen != null">
+        AchievementCompen = #{achievementcompen,jdbcType=DECIMAL},
+      </if>
+      <if test="sharesadjustmentflag != null">
+        SharesAdjustmentFlag = #{sharesadjustmentflag,jdbcType=VARCHAR},
+      </if>
+      <if test="generaltaserialno != null">
+        GeneralTASerialNO = #{generaltaserialno,jdbcType=VARCHAR},
+      </if>
+      <if test="undistributemonetaryincome != null">
+        UndistributeMonetaryIncome = #{undistributemonetaryincome,jdbcType=DECIMAL},
+      </if>
+      <if test="undistributemonetaryincomeflag != null">
+        UndistributeMonetaryIncomeFlag = #{undistributemonetaryincomeflag,jdbcType=VARCHAR},
+      </if>
+      <if test="breachfee != null">
+        BreachFee = #{breachfee,jdbcType=DECIMAL},
+      </if>
+      <if test="breachfeebacktofund != null">
+        BreachFeeBackToFund = #{breachfeebacktofund,jdbcType=DECIMAL},
+      </if>
+      <if test="punishfee != null">
+        PunishFee = #{punishfee,jdbcType=DECIMAL},
+      </if>
+      <if test="changeagencyfee != null">
+        ChangeAgencyFee = #{changeagencyfee,jdbcType=DECIMAL},
+      </if>
+      <if test="recuperateagencyfee != null">
+        RecuperateAgencyFee = #{recuperateagencyfee,jdbcType=DECIMAL},
+      </if>
+      <if test="errordetail != null">
+        ErrorDetail = #{errordetail,jdbcType=VARCHAR},
+      </if>
+      <if test="raiseinterest != null">
+        RaiseInterest = #{raiseinterest,jdbcType=DECIMAL},
+      </if>
+      <if test="feecalculator != null">
+        FeeCalculator = #{feecalculator,jdbcType=VARCHAR},
+      </if>
+      <if test="shareregisterdate != null">
+        ShareRegisterDate = #{shareregisterdate,jdbcType=VARCHAR},
+      </if>
+      <if test="totalfrozenvol != null">
+        TotalFrozenVol = #{totalfrozenvol,jdbcType=DECIMAL},
+      </if>
+      <if test="fundvolbalance != null">
+        FundVolBalance = #{fundvolbalance,jdbcType=DECIMAL},
+      </if>
+      <if test="frozenbalance != null">
+        FrozenBalance = #{frozenbalance,jdbcType=DECIMAL},
+      </if>
+      <if test="transferdatethroughclearingagency != null">
+        TransferDateThroughClearingAgency = #{transferdatethroughclearingagency,jdbcType=VARCHAR},
+      </if>
+      <if test="appsheetserialno != null">
+        AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR},
+      </if>
+      <if test="tacode != null">
+        TACode = #{tacode,jdbcType=VARCHAR},
+      </if>
+      <if test="distributorcode != null">
+        DistributorCode = #{distributorcode,jdbcType=VARCHAR},
+      </if>
+      <if test="referencenumber != null">
+        ReferenceNumber = #{referencenumber,jdbcType=INTEGER},
+      </if>
+    </set>
+    where ConfirmID = #{confirmid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.TransactionConfirmation">
+    update transaction_confirmation
+    set TransactionCfmDate = #{transactioncfmdate,jdbcType=VARCHAR},
+      ConfirmedVol = #{confirmedvol,jdbcType=DECIMAL},
+      ConfirmedAmount = #{confirmedamount,jdbcType=DECIMAL},
+      TransactionDate = #{transactiondate,jdbcType=VARCHAR},
+      TransactionTime = #{transactiontime,jdbcType=VARCHAR},
+      ReturnCode = #{returncode,jdbcType=VARCHAR},
+      BusinessCode = #{businesscode,jdbcType=VARCHAR},
+      BusinessFinishFlag = #{businessfinishflag,jdbcType=VARCHAR},
+      RegionCode = #{regioncode,jdbcType=VARCHAR},
+      DownLoaddate = #{downloaddate,jdbcType=VARCHAR},
+      AgencyFee = #{agencyfee,jdbcType=DECIMAL},
+      NAV = #{nav,jdbcType=DECIMAL},
+      OtherFee1 = #{otherfee1,jdbcType=DECIMAL},
+      StampDuty = #{stampduty,jdbcType=DECIMAL},
+      RateFee = #{ratefee,jdbcType=DECIMAL},
+      Specification = #{specification,jdbcType=VARCHAR},
+      TransferDirection = #{transferdirection,jdbcType=VARCHAR},
+      Interest = #{interest,jdbcType=DECIMAL},
+      VolumeByInterest = #{volumebyinterest,jdbcType=DECIMAL},
+      InterestTax = #{interesttax,jdbcType=DECIMAL},
+      TradingPrice = #{tradingprice,jdbcType=DECIMAL},
+      Tax = #{tax,jdbcType=DECIMAL},
+      TargetNAV = #{targetnav,jdbcType=DECIMAL},
+      TargetFundPrice = #{targetfundprice,jdbcType=DECIMAL},
+      CfmVolOfTargetFund = #{cfmvoloftargetfund,jdbcType=DECIMAL},
+      MinFee = #{minfee,jdbcType=DECIMAL},
+      OtherFee2 = #{otherfee2,jdbcType=DECIMAL},
+      TransferFee = #{transferfee,jdbcType=DECIMAL},
+      FromTAFlag = #{fromtaflag,jdbcType=VARCHAR},
+      RedemptionInAdvanceFlag = #{redemptioninadvanceflag,jdbcType=VARCHAR},
+      FrozenMethod = #{frozenmethod,jdbcType=VARCHAR},
+      RedemptionReason = #{redemptionreason,jdbcType=VARCHAR},
+      TotalTransFee = #{totaltransfee,jdbcType=DECIMAL},
+      AlternationDate = #{alternationdate,jdbcType=VARCHAR},
+      RefundAmount = #{refundamount,jdbcType=DECIMAL},
+      SalePercent = #{salepercent,jdbcType=DECIMAL},
+      ManagerRealRatio = #{managerrealratio,jdbcType=DECIMAL},
+      ChangeFee = #{changefee,jdbcType=DECIMAL},
+      RecuperateFee = #{recuperatefee,jdbcType=DECIMAL},
+      AchievementPay = #{achievementpay,jdbcType=DECIMAL},
+      AchievementCompen = #{achievementcompen,jdbcType=DECIMAL},
+      SharesAdjustmentFlag = #{sharesadjustmentflag,jdbcType=VARCHAR},
+      GeneralTASerialNO = #{generaltaserialno,jdbcType=VARCHAR},
+      UndistributeMonetaryIncome = #{undistributemonetaryincome,jdbcType=DECIMAL},
+      UndistributeMonetaryIncomeFlag = #{undistributemonetaryincomeflag,jdbcType=VARCHAR},
+      BreachFee = #{breachfee,jdbcType=DECIMAL},
+      BreachFeeBackToFund = #{breachfeebacktofund,jdbcType=DECIMAL},
+      PunishFee = #{punishfee,jdbcType=DECIMAL},
+      ChangeAgencyFee = #{changeagencyfee,jdbcType=DECIMAL},
+      RecuperateAgencyFee = #{recuperateagencyfee,jdbcType=DECIMAL},
+      ErrorDetail = #{errordetail,jdbcType=VARCHAR},
+      RaiseInterest = #{raiseinterest,jdbcType=DECIMAL},
+      FeeCalculator = #{feecalculator,jdbcType=VARCHAR},
+      ShareRegisterDate = #{shareregisterdate,jdbcType=VARCHAR},
+      TotalFrozenVol = #{totalfrozenvol,jdbcType=DECIMAL},
+      FundVolBalance = #{fundvolbalance,jdbcType=DECIMAL},
+      FrozenBalance = #{frozenbalance,jdbcType=DECIMAL},
+      TransferDateThroughClearingAgency = #{transferdatethroughclearingagency,jdbcType=VARCHAR},
+      AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR},
+      TACode = #{tacode,jdbcType=VARCHAR},
+      DistributorCode = #{distributorcode,jdbcType=VARCHAR},
+      ReferenceNumber = #{referencenumber,jdbcType=INTEGER}
+    where ConfirmID = #{confirmid,jdbcType=INTEGER}
+  </update>
+</mapper>

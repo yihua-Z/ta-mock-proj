@@ -5,437 +5,285 @@ import java.math.BigDecimal;
 import lombok.Data;
 
 /**
- * account_application
+ * transaction_expectation
  * @author 
  */
 @Data
 public class TransactionExpectation implements Serializable {
     /**
-     * 申请单编
+     * 申请单编号
      */
     private String appsheetserialno;
 
     /**
-     * 通讯地
+     * 交易确认日期
      */
-    private String address;
+    private String transactioncfmdate;
 
     /**
-     * 法人代表身份证件代
+     * 理财账户交易确认份数
      */
-    private String instrepridcode;
+    private BigDecimal confirmedvol;
 
     /**
-     * 法人代表证件类
+     * 每笔交易确认金额
      */
-    private String instrepridtype;
+    private BigDecimal confirmedamount;
 
     /**
-     * 法人代表姓
+     * 交易处理返回代码
      */
-    private String instreprname;
+    private String returncode;
 
     /**
-     * 个人证件类型及机构证件类
+     * 业务过程完全结束标识
      */
-    private String certificatetype;
+    private String businessfinishflag;
 
     /**
-     * 投资人证件号
-     */
-    private String certificateno;
-
-    /**
-     * 投资人姓
-     */
-    private String investorname;
-
-    /**
-     * 交易发生日
-     */
-    private String transactiondate;
-
-    /**
-     * 交易发生时
-     */
-    private String transactiontime;
-
-    /**
-     * 个人/机构标
-     */
-    private String individualorinstitution;
-
-    /**
-     * 机构类
-     */
-    private String institutiontype;
-
-    /**
-     * 投资人邮政编
-     */
-    private String postcode;
-
-    /**
-     * 经办人证件号
-     */
-    private String transactorcertno;
-
-    /**
-     * 经办人证件类
-     */
-    private String transactorcerttype;
-
-    /**
-     * 经办人姓
-     */
-    private String transactorname;
-
-    /**
-     * 投资人理财交易账
-     */
-    private String transactionaccountid;
-
-    /**
-     * 销售人代
-     */
-    private String distributorcode;
-
-    /**
-     * 业务代
-     */
-    private String businesscode;
-
-    /**
-     * 对方销售人处投资人理财交易账
-     */
-    private String targettransactionaccountid;
-
-    /**
-     * 理财产品总份数在资金清算机构的交收账
-     */
-    private String acctnooffminclearingagency;
-
-    /**
-     * 理财产品总份数在资金清算机构的交收账户
-     */
-    private String acctnameoffminclearingagency;
-
-    /**
-     * 理财资金清算机构代
-     */
-    private String clearingagencycode;
-
-    /**
-     * 投资人出生日
-     */
-    private String investorsbirthday;
-
-    /**
-     * 投资人在销售人处用于交易的资金账
-     */
-    private String depositacct;
-
-    /**
-     * 交易所在地区编
+     * 交易所在地区编号
      */
     private String regioncode;
 
     /**
-     * 投资人学
+     * 代理费
      */
-    private String educationlevel;
+    private BigDecimal agencyfee;
 
     /**
-     * 投资人E-MAIL地
+     * 单位净值
      */
-    private String emailaddress;
+    private BigDecimal nav;
 
     /**
-     * 投资人传真号
+     * 其他费用1
      */
-    private String faxno;
+    private BigDecimal otherfee1;
 
     /**
-     * 投资人职业代
+     * 印花税
      */
-    private String vocationcode;
+    private BigDecimal stampduty;
 
     /**
-     * 投资人住址电
+     * 费率
      */
-    private String hometelno;
+    private BigDecimal ratefee;
 
     /**
-     * 投资人年收
-     */
-    private Integer annualincome;
-
-    /**
-     * 投资人手机号
-     */
-    private String mobiletelno;
-
-    /**
-     * 多渠道开户标
-     */
-    private String multiacctflag;
-
-    /**
-     * 网点号
-     */
-    private String branchcode;
-
-    /**
-     * 投资人单位电话号
-     */
-    private String officetelno;
-
-    /**
-     * 投资人户名简
-     */
-    private String accountabbr;
-
-    /**
-     * 密函编
-     */
-    private String confidentialdocumentcode;
-
-    /**
-     * 投资人性
-     */
-    private String sex;
-
-    /**
-     * 上交所证券账
-     */
-    private String shsecuritiesaccountid;
-
-    /**
-     * 深交所证券账
-     */
-    private String szsecuritiesaccountid;
-
-    /**
-     * 投资人理财账
-     */
-    private String taaccountid;
-
-    /**
-     * 投资人电话号
-     */
-    private String telno;
-
-    /**
-     * 使用的交易手
-     */
-    private String tradingmethod;
-
-    /**
-     * 未成年人标
-     */
-    private String minorflag;
-
-    /**
-     * 对账单寄送选
-     */
-    private String delivertype;
-
-    /**
-     * 经办人识别方
-     */
-    private String transactoridtype;
-
-    /**
-     * 理财账户卡的凭证
-     */
-    private String accountcardid;
-
-    /**
-     * 对账单寄送方
-     */
-    private String deliverway;
-
-    /**
-     * 投资者国
-     */
-    private String nationality;
-
-    /**
-     * 操作（清算）网点编
-     */
-    private String netno;
-
-    /**
-     * 经纪
-     */
-    private String broker;
-
-    /**
-     * 工作单位名
-     */
-    private String corpname;
-
-    /**
-     * 证件有效日
-     */
-    private String certvaliddate;
-
-    /**
-     * 机构经办人身份证件有效日
-     */
-    private String insttrancertvaliddate;
-
-    /**
-     * 机构法人身份证件有效日
-     */
-    private String instreprcertvaliddate;
-
-    /**
-     * 客户风险等
-     */
-    private String clientriskrate;
-
-    /**
-     * 机构法人经营范
-     */
-    private String instreprmanagerange;
-
-    /**
-     * 控股股
-     */
-    private String controlholder;
-
-    /**
-     * 实际控制
-     */
-    private String actualcontroller;
-
-    /**
-     * 婚姻状
-     */
-    private String marriagestatus;
-
-    /**
-     * 家庭人口
-     */
-    private Integer familynum;
-
-    /**
-     * 家庭资
-     */
-    private BigDecimal penates;
-
-    /**
-     * 媒体偏
-     */
-    private String mediahobby;
-
-    /**
-     * 投资人英文
-     */
-    private String englishfirstname;
-
-    /**
-     * 投资人英文
-     */
-    private String englishfamliyname;
-
-    /**
-     * 行
-     */
-    private String vocation;
-
-    /**
-     * 企业性
-     */
-    private String corpoproperty;
-
-    /**
-     * 员工人
-     */
-    private Integer staffnum;
-
-    /**
-     * 兴趣爱好类
-     */
-    private String hobbytype;
-
-    /**
-     * 省/直辖
-     */
-    private String province;
-
-    private String city;
-
-    /**
-     * 县/
-     */
-    private String county;
-
-    /**
-     * 推荐
-     */
-    private String commendperson;
-
-    /**
-     * 推荐人类
-     */
-    private String commendpersontype;
-
-    /**
-     * 投资人收款银行账户户
-     */
-    private String acctnameofinvestorinclearingagency;
-
-    /**
-     * 投资人收款银行账户账
-     */
-    private String acctnoofinvestorinclearingagency;
-
-    /**
-     * 投资人收款银行账户开户
-     */
-    private String clearingagency;
-
-    /**
-     * 受理方
-     */
-    private String acceptmethod;
-
-    /**
-     * 冻结原
-     */
-    private String frozencause;
-
-    /**
-     * 冻结截止日
-     */
-    private String freezingdeadline;
-
-    /**
-     * TA的原确认流水
-     */
-    private String originalserialno;
-
-    /**
-     * 原申请单编
-     */
-    private String originalappsheetno;
-
-    /**
-     * 摘要/说
+     * 摘要/说明
      */
     private String specification;
 
     /**
-     * TA代
+     * 转入/转出标识
      */
-    private String tacode;
+    private String transferdirection;
 
     /**
-     * 同一个申请的序列
+     * 理财账户利息金额
      */
-    private Integer referencenumber;
+    private BigDecimal interest;
+
+    /**
+     * 利息产生的理财产品份数
+     */
+    private BigDecimal volumebyinterest;
+
+    /**
+     * 利息税
+     */
+    private BigDecimal interesttax;
+
+    /**
+     * 交易价格
+     */
+    private BigDecimal tradingprice;
+
+    /**
+     * 税金
+     */
+    private BigDecimal tax;
+
+    /**
+     * 目标理财产品的单位净值
+     */
+    private BigDecimal targetnav;
+
+    /**
+     * 目标理财产品的价格
+     */
+    private BigDecimal targetfundprice;
+
+    /**
+     * 目标理财产品的确认份数
+     */
+    private BigDecimal cfmvoloftargetfund;
+
+    /**
+     * 最少收费
+     */
+    private BigDecimal minfee;
+
+    /**
+     * 其他费用2
+     */
+    private BigDecimal otherfee2;
+
+    /**
+     * 过户费
+     */
+    private BigDecimal transferfee;
+
+    /**
+     * 是否注册登记人发起业务标志
+     */
+    private String fromtaflag;
+
+    /**
+     * 预约赎回标志
+     */
+    private String redemptioninadvanceflag;
+
+    /**
+     * 冻结方式
+     */
+    private String frozenmethod;
+
+    /**
+     * 强行赎回原因
+     */
+    private String redemptionreason;
+
+    /**
+     * 交易确认费用合计
+     */
+    private BigDecimal totaltransfee;
+
+    /**
+     * 最后更新日
+     */
+    private String alternationdate;
+
+    /**
+     * 退款金额
+     */
+    private BigDecimal refundamount;
+
+    /**
+     * 配售比例
+     */
+    private BigDecimal salepercent;
+
+    /**
+     * 实际计算折扣
+     */
+    private BigDecimal managerrealratio;
+
+    /**
+     * 转换费
+     */
+    private BigDecimal changefee;
+
+    /**
+     * 补差费
+     */
+    private BigDecimal recuperatefee;
+
+    /**
+     * 业绩报酬
+     */
+    private BigDecimal achievementpay;
+
+    /**
+     * 业绩补偿
+     */
+    private BigDecimal achievementcompen;
+
+    /**
+     * 份额强制调整标志
+     */
+    private String sharesadjustmentflag;
+
+    /**
+     * 货币式理财未付收益金额
+     */
+    private BigDecimal undistributemonetaryincome;
+
+    /**
+     * 货币式理财未付收益金额正负
+     */
+    private String undistributemonetaryincomeflag;
+
+    /**
+     * 违约金
+     */
+    private BigDecimal breachfee;
+
+    /**
+     * 违约金归理财资产金额
+     */
+    private BigDecimal breachfeebacktofund;
+
+    /**
+     * 惩罚性费用
+     */
+    private BigDecimal punishfee;
+
+    /**
+     * 转换代理费
+     */
+    private BigDecimal changeagencyfee;
+
+    /**
+     * 补差代理费
+     */
+    private BigDecimal recuperateagencyfee;
+
+    /**
+     * 出错详细信息
+     */
+    private String errordetail;
+
+    /**
+     * 认购期间利息
+     */
+    private BigDecimal raiseinterest;
+
+    /**
+     * 计费人
+     */
+    private String feecalculator;
+
+    /**
+     * 份额注册日期
+     */
+    private String shareregisterdate;
+
+    /**
+     * 理财产品冻结总份数
+     */
+    private BigDecimal totalfrozenvol;
+
+    /**
+     * 理财产品份数余额
+     */
+    private BigDecimal fundvolbalance;
+
+    /**
+     * 冻结金额
+     */
+    private BigDecimal frozenbalance;
+
+    /**
+     * 清算资金经清算人划出日期
+     */
+    private String transferdatethroughclearingagency;
+
+    /**
+     * 表状态
+     */
+    private String status;
 
     private static final long serialVersionUID = 1L;
 }
