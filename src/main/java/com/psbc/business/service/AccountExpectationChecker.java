@@ -21,34 +21,40 @@ public class AccountExpectationChecker {
     private AccountInfo accountInfo = new AccountInfo();
     private AcctShare acctShare = new AcctShare();
 
-    private checkAppSheetSeriaNo
+    private boolean checkAppSheetSeriaNo = false;
 
 
-    public boolean ExpectationOperate(List<AccountApplication> accountApplications) {
-        boolean checkAppSheetSeriaNo = false;
+    public void ExpectationOperate(List<AccountApplication> accountApplications) {
+
         for (AccountApplication accountApplication : accountApplications
         ) {
 
-            boolean checkAppSheetSeriaNo1 = checkAppSheetSeriaNo(accountApplication);
+            this.checkAppSheetSeriaNo = checkAppSheetSeriaNo(accountApplication);
+            if(checkAppSheetSeriaNo){
+
+            }
         }
 
-        return checkAppSheetSeriaNo;
+
 
     }
 
     @Autowired
     AccountApplicationDao accountApplicationDao;
 
-    public boolean ExpectationOperate() {
-        boolean checkAppSheetSeriaNo;
+    public void ExpectationOperate() {
+
         List<AccountApplication> accountApplications = accountApplicationDao.selectAll();
 
         for (AccountApplication accountApplication : accountApplications
         ) {
 
-            checkAppSheetSeriaNo = checkAppSheetSeriaNo(accountApplication);
+            this.checkAppSheetSeriaNo = checkAppSheetSeriaNo(accountApplication);
+            if(checkAppSheetSeriaNo){
+
+            }
         }
-        return checkAppSheetSeriaNo;
+
     }
 
     private boolean checkAppSheetSeriaNo(AccountApplication application) {
