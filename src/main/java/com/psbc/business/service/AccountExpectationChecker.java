@@ -3,12 +3,13 @@ package com.psbc.business.service;
 import com.psbc.mapper.AccountApplicationDao;
 import com.psbc.mapper.AccountExpectationDao;
 import com.psbc.pojo.*;
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Data
 @Component
 public class AccountExpectationChecker {
     @Autowired
