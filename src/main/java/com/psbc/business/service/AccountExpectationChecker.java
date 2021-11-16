@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Data
 @Component
 public class AccountExpectationChecker {
@@ -20,44 +21,53 @@ public class AccountExpectationChecker {
     private AccountInfo accountInfo = new AccountInfo();
     private AcctShare acctShare = new AcctShare();
 
-    public void ExpectationOperate(List<AccountApplication> accountApplications) {
+    private checkAppSheetSeriaNo
 
 
-        checkAppSheetSeriaNo(accountApplications);
+    public boolean ExpectationOperate(List<AccountApplication> accountApplications) {
+        boolean checkAppSheetSeriaNo = false;
+        for (AccountApplication accountApplication : accountApplications
+        ) {
+
+            boolean checkAppSheetSeriaNo1 = checkAppSheetSeriaNo(accountApplication);
+        }
+
+        return checkAppSheetSeriaNo;
 
     }
 
     @Autowired
     AccountApplicationDao accountApplicationDao;
 
-    public void ExpectationOperate() {
-
+    public boolean ExpectationOperate() {
+        boolean checkAppSheetSeriaNo;
         List<AccountApplication> accountApplications = accountApplicationDao.selectAll();
 
-        checkAppSheetSeriaNo(accountApplications);
-    }
-
-    private void checkAppSheetSeriaNo(List<AccountApplication> accountApplications) {
-
-
-        for (AccountApplication application : accountApplications
+        for (AccountApplication accountApplication : accountApplications
         ) {
-            String appsheetserialno = application.getAppsheetserialno();
 
-            AccountExpectation expectation = accountExpectationDao.selectByPrimaryKey(appsheetserialno);
-
-            if (expectation != null) {
-                AccountConfirmation accountConfirmation;
-
-                String returncode = expectation.getReturncode();
-
-                AccountConfirmation targetObject = (AccountConfirmation) this.operator.getTargetObject(application, this.accountConfirmation);
-
-
-            }
+            checkAppSheetSeriaNo = checkAppSheetSeriaNo(accountApplication);
         }
+        return checkAppSheetSeriaNo;
     }
 
+    private boolean checkAppSheetSeriaNo(AccountApplication application) {
+
+        boolean exists = false;
+
+        String appsheetserialno = application.getAppsheetserialno();
+
+        AccountExpectation expectation = accountExpectationDao.selectByPrimaryKey(appsheetserialno);
+
+        if (expectation != null) {
+            AccountConfirmation accountConfirmation;
+            String returncode = expectation.getReturncode();
+
+            exists = true;
+        }
+
+        return exists;
+    }
 
     public List<AccountExpectation> getAllAccountExpectation() {
         List<AccountExpectation> accountExpectations = accountExpectationDao.selectAll();
