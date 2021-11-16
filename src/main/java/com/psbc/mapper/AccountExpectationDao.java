@@ -1,9 +1,13 @@
 package com.psbc.mapper;
 
 import com.psbc.pojo.AccountExpectation;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Mapper
+@Repository
 public interface AccountExpectationDao {
     int deleteByPrimaryKey(String appsheetserialno);
 

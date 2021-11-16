@@ -2,7 +2,11 @@ package com.psbc.mapper;
 
 import com.psbc.pojo.FundDate;
 import com.psbc.pojo.FundDateKey;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
+@Mapper
+@Repository
 public interface FundDateDao {
     int deleteByPrimaryKey(FundDateKey key);
 

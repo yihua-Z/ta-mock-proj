@@ -2,7 +2,11 @@ package com.psbc.mapper;
 
 import com.psbc.pojo.TransactionApplication;
 import com.psbc.pojo.TransactionApplicationKey;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
+@Mapper
+@Repository
 public interface TransactionApplicationDao {
     int deleteByPrimaryKey(TransactionApplicationKey key);
 

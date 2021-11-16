@@ -1,7 +1,11 @@
 package com.psbc.mapper;
 
 import com.psbc.pojo.TaBusinessConfig;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
+@Mapper
+@Repository
 public interface TaBusinessConfigDao {
     int deleteByPrimaryKey(String tacode);
 

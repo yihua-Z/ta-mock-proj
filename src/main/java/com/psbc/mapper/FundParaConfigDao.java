@@ -1,7 +1,11 @@
 package com.psbc.mapper;
 
 import com.psbc.pojo.FundParaConfig;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
+@Mapper
+@Repository
 public interface FundParaConfigDao {
     int deleteByPrimaryKey(Integer fundparaid);
 

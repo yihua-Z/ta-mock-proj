@@ -1,7 +1,11 @@
 package com.psbc.mapper;
 
 import com.psbc.pojo.AccountInfo;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
+@Mapper
+@Repository
 public interface AccountInfoDao {
     int deleteByPrimaryKey(Integer transactionaccountid);
 

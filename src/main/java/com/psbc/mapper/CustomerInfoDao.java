@@ -1,7 +1,11 @@
 package com.psbc.mapper;
 
 import com.psbc.pojo.CustomerInfo;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
+@Mapper
+@Repository
 public interface CustomerInfoDao {
     int deleteByPrimaryKey(Integer taaccountid);
 

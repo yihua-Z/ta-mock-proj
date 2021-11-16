@@ -1,7 +1,11 @@
 package com.psbc.mapper;
 
 import com.psbc.pojo.FundInfo;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
+@Mapper
+@Repository
 public interface FundInfoDao {
     int deleteByPrimaryKey(String fundcode);
 
