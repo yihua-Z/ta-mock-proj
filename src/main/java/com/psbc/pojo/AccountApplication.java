@@ -11,7 +11,12 @@ import lombok.Data;
  * @author
  */
 @Data
-public class AccountApplication extends AccountApplicationKey implements DatabaseModel {
+public class AccountApplication implements DatabaseModel {
+    /**
+     * 申请单编号
+     */
+    private String appsheetserialno;
+
     /**
      * 通讯地址
      */
@@ -91,6 +96,11 @@ public class AccountApplication extends AccountApplicationKey implements Databas
      * 投资人理财交易帐号
      */
     private String transactionaccountid;
+
+    /**
+     * 销售人代码
+     */
+    private String distributorcode;
 
     /**
      * 业务代码
@@ -421,6 +431,16 @@ public class AccountApplication extends AccountApplicationKey implements Databas
      * 摘要/说明
      */
     private String specification;
+
+    /**
+     * TA代码
+     */
+    private String tacode;
+
+    /**
+     * 同一交易序列码
+     */
+    private Integer referenceno;
 
     private static final long serialVersionUID = 1L;
 

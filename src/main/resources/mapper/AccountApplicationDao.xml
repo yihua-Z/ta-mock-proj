@@ -3,9 +3,6 @@
 <mapper namespace="com.psbc.mapper.AccountApplicationDao">
     <resultMap id="BaseResultMap" type="com.psbc.pojo.AccountApplication">
         <id column="AppSheetSerialNo" jdbcType="VARCHAR" property="appsheetserialno"/>
-        <id column="TACode" jdbcType="VARCHAR" property="tacode"/>
-        <id column="DistributorCode" jdbcType="VARCHAR" property="distributorcode"/>
-        <id column="ReferenceNo" jdbcType="INTEGER" property="referenceno"/>
         <result column="Address" jdbcType="VARCHAR" property="address"/>
         <result column="InstReprIDCode" jdbcType="VARCHAR" property="instrepridcode"/>
         <result column="InstReprIDType" jdbcType="OTHER" property="instrepridtype"/>
@@ -22,6 +19,7 @@
         <result column="TransactorCertType" jdbcType="OTHER" property="transactorcerttype"/>
         <result column="TransactorName" jdbcType="VARCHAR" property="transactorname"/>
         <result column="TransactionAccountID" jdbcType="VARCHAR" property="transactionaccountid"/>
+        <result column="DistributorCode" jdbcType="VARCHAR" property="distributorcode"/>
         <result column="BusinessCode" jdbcType="CHAR" property="businesscode"/>
         <result column="TargetTransactionAccountID" jdbcType="VARCHAR" property="targettransactionaccountid"/>
         <result column="AcctNoOfFMInClearingAgency" jdbcType="VARCHAR" property="acctnooffminclearingagency"/>
@@ -90,13 +88,15 @@
         <result column="OriginalSerialNo" jdbcType="VARCHAR" property="originalserialno"/>
         <result column="OriginalAppSheetNo" jdbcType="VARCHAR" property="originalappsheetno"/>
         <result column="Specification" jdbcType="VARCHAR" property="specification"/>
+        <result column="TACode" jdbcType="VARCHAR" property="tacode"/>
+        <result column="ReferenceNo" jdbcType="INTEGER" property="referenceno"/>
     </resultMap>
     <sql id="Base_Column_List">
         AppSheetSerialNo
-        , TACode, DistributorCode, ReferenceNo, Address, InstReprIDCode,
-    InstReprIDType, InstReprName, CertificateType, CertificateNo, InvestorName, TransactionDate, 
-    TransactionTime, IndividualOrInstitution, InstitutionType, PostCode, TransactorCertNo, 
-    TransactorCertType, TransactorName, TransactionAccountID, BusinessCode, TargetTransactionAccountID, 
+        , Address, InstReprIDCode, InstReprIDType, InstReprName, CertificateType,
+    CertificateNo, InvestorName, TransactionDate, TransactionTime, IndividualOrInstitution, 
+    InstitutionType, PostCode, TransactorCertNo, TransactorCertType, TransactorName, 
+    TransactionAccountID, DistributorCode, BusinessCode, TargetTransactionAccountID, 
     AcctNoOfFMInClearingAgency, AcctNameOfFMInClearingAgency, ClearingAgencyCode, InvestorsBirthday, 
     DepositAcct, RegionCode, EducationLevel, EmailAddress, FaxNo, VocationCode, HomeTelNo, 
     AnnualIncome, MobileTelNo, MultiAcctFlag, BranchCode, OfficeTelNo, AccountAbbr, ConfidentialDocumentCode, 
@@ -107,38 +107,32 @@
     FamilyNum, Penates, MediaHobby, EnglishFirstName, EnglishFamliyName, Vocation, CorpoProperty, 
     StaffNum, Hobbytype, Province, City, County, CommendPerson, CommendPersonType, AcctNameOfInvestorInClearingAgency, 
     AcctNoOfInvestorInClearingAgency, ClearingAgency, AcceptMethod, FrozenCause, FreezingDeadline, 
-    OriginalSerialNo, OriginalAppSheetNo, Specification
+    OriginalSerialNo, OriginalAppSheetNo, Specification, TACode, ReferenceNo
     </sql>
-    <select id="selectByPrimaryKey" parameterType="com.psbc.pojo.AccountApplicationKey" resultMap="BaseResultMap">
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from account_application
         where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
-        and TACode = #{tacode,jdbcType=VARCHAR}
-        and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
-        and ReferenceNo = #{referenceno,jdbcType=INTEGER}
     </select>
     <select id="selectAll" resultType="com.psbc.pojo.AccountApplication">
         select *
         from account_application
     </select>
-    <delete id="deleteByPrimaryKey" parameterType="com.psbc.pojo.AccountApplicationKey">
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
         delete
         from account_application
         where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
-          and TACode = #{tacode,jdbcType=VARCHAR}
-          and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
-          and ReferenceNo = #{referenceno,jdbcType=INTEGER}
     </delete>
     <insert id="insert" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno"
             parameterType="com.psbc.pojo.AccountApplication" useGeneratedKeys="true">
-        insert into account_application (AppSheetSerialNo,TACode, DistributorCode, ReferenceNo,
-                                         Address, InstReprIDCode, InstReprIDType,
+        insert into account_application (Address, InstReprIDCode, InstReprIDType,
                                          InstReprName, CertificateType, CertificateNo,
                                          InvestorName, TransactionDate, TransactionTime,
                                          IndividualOrInstitution, InstitutionType, PostCode,
                                          TransactorCertNo, TransactorCertType, TransactorName,
-                                         TransactionAccountID, BusinessCode, TargetTransactionAccountID,
+                                         TransactionAccountID, DistributorCode,
+                                         BusinessCode, TargetTransactionAccountID,
                                          AcctNoOfFMInClearingAgency, AcctNameOfFMInClearingAgency,
                                          ClearingAgencyCode, InvestorsBirthday, DepositAcct,
                                          RegionCode, EducationLevel, EmailAddress,
@@ -160,16 +154,16 @@
                                          CommendPersonType, AcctNameOfInvestorInClearingAgency,
                                          AcctNoOfInvestorInClearingAgency, ClearingAgency,
                                          AcceptMethod, FrozenCause, FreezingDeadline,
-                                         OriginalSerialNo, OriginalAppSheetNo, Specification)
-        values (#{AppSheetSerialNo},#{tacode,jdbcType=VARCHAR}, #{distributorcode,jdbcType=VARCHAR}, #{referenceno,jdbcType=INTEGER},
-                #{address,jdbcType=VARCHAR}, #{instrepridcode,jdbcType=VARCHAR}, #{instrepridtype,jdbcType=OTHER},
+                                         OriginalSerialNo, OriginalAppSheetNo, Specification,
+                                         TACode, ReferenceNo)
+        values (#{address,jdbcType=VARCHAR}, #{instrepridcode,jdbcType=VARCHAR}, #{instrepridtype,jdbcType=OTHER},
                 #{instreprname,jdbcType=VARCHAR}, #{certificatetype,jdbcType=OTHER}, #{certificateno,jdbcType=VARCHAR},
                 #{investorname,jdbcType=VARCHAR}, #{transactiondate,jdbcType=CHAR}, #{transactiontime,jdbcType=CHAR},
                 #{individualorinstitution,jdbcType=OTHER}, #{institutiontype,jdbcType=OTHER}, #{postcode,jdbcType=CHAR},
                 #{transactorcertno,jdbcType=VARCHAR}, #{transactorcerttype,jdbcType=OTHER},
                 #{transactorname,jdbcType=VARCHAR},
-                #{transactionaccountid,jdbcType=VARCHAR}, #{businesscode,jdbcType=CHAR},
-                #{targettransactionaccountid,jdbcType=VARCHAR},
+                #{transactionaccountid,jdbcType=VARCHAR}, #{distributorcode,jdbcType=VARCHAR},
+                #{businesscode,jdbcType=CHAR}, #{targettransactionaccountid,jdbcType=VARCHAR},
                 #{acctnooffminclearingagency,jdbcType=VARCHAR}, #{acctnameoffminclearingagency,jdbcType=VARCHAR},
                 #{clearingagencycode,jdbcType=VARCHAR}, #{investorsbirthday,jdbcType=CHAR},
                 #{depositacct,jdbcType=VARCHAR},
@@ -197,21 +191,13 @@
                 #{acctnoofinvestorinclearingagency,jdbcType=VARCHAR}, #{clearingagency,jdbcType=VARCHAR},
                 #{acceptmethod,jdbcType=VARCHAR}, #{frozencause,jdbcType=OTHER}, #{freezingdeadline,jdbcType=CHAR},
                 #{originalserialno,jdbcType=VARCHAR}, #{originalappsheetno,jdbcType=VARCHAR},
-                #{specification,jdbcType=VARCHAR})
+                #{specification,jdbcType=VARCHAR},
+                #{tacode,jdbcType=VARCHAR}, #{referenceno,jdbcType=INTEGER})
     </insert>
     <insert id="insertSelective" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno"
             parameterType="com.psbc.pojo.AccountApplication" useGeneratedKeys="true">
         insert into account_application
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="tacode != null">
-                TACode,
-            </if>
-            <if test="distributorcode != null">
-                DistributorCode,
-            </if>
-            <if test="referenceno != null">
-                ReferenceNo,
-            </if>
             <if test="address != null">
                 Address,
             </if>
@@ -259,6 +245,9 @@
             </if>
             <if test="transactionaccountid != null">
                 TransactionAccountID,
+            </if>
+            <if test="distributorcode != null">
+                DistributorCode,
             </if>
             <if test="businesscode != null">
                 BusinessCode,
@@ -458,17 +447,14 @@
             <if test="specification != null">
                 Specification,
             </if>
-        </trim>
-        <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="tacode != null">
-                #{tacode,jdbcType=VARCHAR},
-            </if>
-            <if test="distributorcode != null">
-                #{distributorcode,jdbcType=VARCHAR},
+                TACode,
             </if>
             <if test="referenceno != null">
-                #{referenceno,jdbcType=INTEGER},
+                ReferenceNo,
             </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="address != null">
                 #{address,jdbcType=VARCHAR},
             </if>
@@ -516,6 +502,9 @@
             </if>
             <if test="transactionaccountid != null">
                 #{transactionaccountid,jdbcType=VARCHAR},
+            </if>
+            <if test="distributorcode != null">
+                #{distributorcode,jdbcType=VARCHAR},
             </if>
             <if test="businesscode != null">
                 #{businesscode,jdbcType=CHAR},
@@ -715,6 +704,12 @@
             <if test="specification != null">
                 #{specification,jdbcType=VARCHAR},
             </if>
+            <if test="tacode != null">
+                #{tacode,jdbcType=VARCHAR},
+            </if>
+            <if test="referenceno != null">
+                #{referenceno,jdbcType=INTEGER},
+            </if>
         </trim>
     </insert>
     <update id="updateByPrimaryKeySelective" parameterType="com.psbc.pojo.AccountApplication">
@@ -767,6 +762,9 @@
             </if>
             <if test="transactionaccountid != null">
                 TransactionAccountID = #{transactionaccountid,jdbcType=VARCHAR},
+            </if>
+            <if test="distributorcode != null">
+                DistributorCode = #{distributorcode,jdbcType=VARCHAR},
             </if>
             <if test="businesscode != null">
                 BusinessCode = #{businesscode,jdbcType=CHAR},
@@ -966,11 +964,14 @@
             <if test="specification != null">
                 Specification = #{specification,jdbcType=VARCHAR},
             </if>
+            <if test="tacode != null">
+                TACode = #{tacode,jdbcType=VARCHAR},
+            </if>
+            <if test="referenceno != null">
+                ReferenceNo = #{referenceno,jdbcType=INTEGER},
+            </if>
         </set>
         where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
-        and TACode = #{tacode,jdbcType=VARCHAR}
-        and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
-        and ReferenceNo = #{referenceno,jdbcType=INTEGER}
     </update>
     <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AccountApplication">
         update account_application
@@ -990,6 +991,7 @@
             TransactorCertType                 = #{transactorcerttype,jdbcType=OTHER},
             TransactorName                     = #{transactorname,jdbcType=VARCHAR},
             TransactionAccountID               = #{transactionaccountid,jdbcType=VARCHAR},
+            DistributorCode                    = #{distributorcode,jdbcType=VARCHAR},
             BusinessCode                       = #{businesscode,jdbcType=CHAR},
             TargetTransactionAccountID         = #{targettransactionaccountid,jdbcType=VARCHAR},
             AcctNoOfFMInClearingAgency         = #{acctnooffminclearingagency,jdbcType=VARCHAR},
@@ -1055,10 +1057,9 @@
             FreezingDeadline                   = #{freezingdeadline,jdbcType=CHAR},
             OriginalSerialNo                   = #{originalserialno,jdbcType=VARCHAR},
             OriginalAppSheetNo                 = #{originalappsheetno,jdbcType=VARCHAR},
-            Specification                      = #{specification,jdbcType=VARCHAR}
+            Specification                      = #{specification,jdbcType=VARCHAR},
+            TACode                             = #{tacode,jdbcType=VARCHAR},
+            ReferenceNo                        = #{referenceno,jdbcType=INTEGER}
         where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
-          and TACode = #{tacode,jdbcType=VARCHAR}
-          and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
-          and ReferenceNo = #{referenceno,jdbcType=INTEGER}
     </update>
 </mapper>
