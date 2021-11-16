@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.psbc.mapper.AccountConfirmationDao">
+  <resultMap id="BaseResultMap" type="com.psbc.pojo.AccountConfirmation">
+    <id column="ConfirmID" jdbcType="INTEGER" property="confirmid" />
+    <result column="TransactionCfmDate" jdbcType="CHAR" property="transactioncfmdate" />
+    <result column="ReturnCode" jdbcType="CHAR" property="returncode" />
+    <result column="BusinessCode" jdbcType="CHAR" property="businesscode" />
+    <result column="TransactionDate" jdbcType="CHAR" property="transactiondate" />
+    <result column="TransactionTime" jdbcType="CHAR" property="transactiontime" />
+    <result column="TASerialNo" jdbcType="INTEGER" property="taserialno" />
+    <result column="FromTAFlag" jdbcType="VARCHAR" property="fromtaflag" />
+    <result column="RegionCode" jdbcType="VARCHAR" property="regioncode" />
+    <result column="NetNo" jdbcType="INTEGER" property="netno" />
+    <result column="Specification" jdbcType="VARCHAR" property="specification" />
+    <result column="CustomerNo" jdbcType="INTEGER" property="customerno" />
+    <result column="ErrorDetail" jdbcType="VARCHAR" property="errordetail" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ConfirmID, TransactionCfmDate, ReturnCode, BusinessCode, TransactionDate, TransactionTime, 
+    TASerialNo, FromTAFlag, RegionCode, NetNo, Specification, CustomerNo, ErrorDetail
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from account_confirmation
+    where ConfirmID = #{confirmid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from account_confirmation
+    where ConfirmID = #{confirmid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="ConfirmID" keyProperty="confirmid" parameterType="com.psbc.pojo.AccountConfirmation" useGeneratedKeys="true">
+    insert into account_confirmation (TransactionCfmDate, ReturnCode, BusinessCode, 
+      TransactionDate, TransactionTime, TASerialNo, 
+      FromTAFlag, RegionCode, NetNo, 
+      Specification, CustomerNo, ErrorDetail
+      )
+    values (#{transactioncfmdate,jdbcType=CHAR}, #{returncode,jdbcType=CHAR}, #{businesscode,jdbcType=CHAR}, 
+      #{transactiondate,jdbcType=CHAR}, #{transactiontime,jdbcType=CHAR}, #{taserialno,jdbcType=INTEGER}, 
+      #{fromtaflag,jdbcType=VARCHAR}, #{regioncode,jdbcType=VARCHAR}, #{netno,jdbcType=INTEGER}, 
+      #{specification,jdbcType=VARCHAR}, #{customerno,jdbcType=INTEGER}, #{errordetail,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="ConfirmID" keyProperty="confirmid" parameterType="com.psbc.pojo.AccountConfirmation" useGeneratedKeys="true">
+    insert into account_confirmation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="transactioncfmdate != null">
+        TransactionCfmDate,
+      </if>
+      <if test="returncode != null">
+        ReturnCode,
+      </if>
+      <if test="businesscode != null">
+        BusinessCode,
+      </if>
+      <if test="transactiondate != null">
+        TransactionDate,
+      </if>
+      <if test="transactiontime != null">
+        TransactionTime,
+      </if>
+      <if test="taserialno != null">
+        TASerialNo,
+      </if>
+      <if test="fromtaflag != null">
+        FromTAFlag,
+      </if>
+      <if test="regioncode != null">
+        RegionCode,
+      </if>
+      <if test="netno != null">
+        NetNo,
+      </if>
+      <if test="specification != null">
+        Specification,
+      </if>
+      <if test="customerno != null">
+        CustomerNo,
+      </if>
+      <if test="errordetail != null">
+        ErrorDetail,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="transactioncfmdate != null">
+        #{transactioncfmdate,jdbcType=CHAR},
+      </if>
+      <if test="returncode != null">
+        #{returncode,jdbcType=CHAR},
+      </if>
+      <if test="businesscode != null">
+        #{businesscode,jdbcType=CHAR},
+      </if>
+      <if test="transactiondate != null">
+        #{transactiondate,jdbcType=CHAR},
+      </if>
+      <if test="transactiontime != null">
+        #{transactiontime,jdbcType=CHAR},
+      </if>
+      <if test="taserialno != null">
+        #{taserialno,jdbcType=INTEGER},
+      </if>
+      <if test="fromtaflag != null">
+        #{fromtaflag,jdbcType=VARCHAR},
+      </if>
+      <if test="regioncode != null">
+        #{regioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="netno != null">
+        #{netno,jdbcType=INTEGER},
+      </if>
+      <if test="specification != null">
+        #{specification,jdbcType=VARCHAR},
+      </if>
+      <if test="customerno != null">
+        #{customerno,jdbcType=INTEGER},
+      </if>
+      <if test="errordetail != null">
+        #{errordetail,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.psbc.pojo.AccountConfirmation">
+    update account_confirmation
+    <set>
+      <if test="transactioncfmdate != null">
+        TransactionCfmDate = #{transactioncfmdate,jdbcType=CHAR},
+      </if>
+      <if test="returncode != null">
+        ReturnCode = #{returncode,jdbcType=CHAR},
+      </if>
+      <if test="businesscode != null">
+        BusinessCode = #{businesscode,jdbcType=CHAR},
+      </if>
+      <if test="transactiondate != null">
+        TransactionDate = #{transactiondate,jdbcType=CHAR},
+      </if>
+      <if test="transactiontime != null">
+        TransactionTime = #{transactiontime,jdbcType=CHAR},
+      </if>
+      <if test="taserialno != null">
+        TASerialNo = #{taserialno,jdbcType=INTEGER},
+      </if>
+      <if test="fromtaflag != null">
+        FromTAFlag = #{fromtaflag,jdbcType=VARCHAR},
+      </if>
+      <if test="regioncode != null">
+        RegionCode = #{regioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="netno != null">
+        NetNo = #{netno,jdbcType=INTEGER},
+      </if>
+      <if test="specification != null">
+        Specification = #{specification,jdbcType=VARCHAR},
+      </if>
+      <if test="customerno != null">
+        CustomerNo = #{customerno,jdbcType=INTEGER},
+      </if>
+      <if test="errordetail != null">
+        ErrorDetail = #{errordetail,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ConfirmID = #{confirmid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AccountConfirmation">
+    update account_confirmation
+    set TransactionCfmDate = #{transactioncfmdate,jdbcType=CHAR},
+      ReturnCode = #{returncode,jdbcType=CHAR},
+      BusinessCode = #{businesscode,jdbcType=CHAR},
+      TransactionDate = #{transactiondate,jdbcType=CHAR},
+      TransactionTime = #{transactiontime,jdbcType=CHAR},
+      TASerialNo = #{taserialno,jdbcType=INTEGER},
+      FromTAFlag = #{fromtaflag,jdbcType=VARCHAR},
+      RegionCode = #{regioncode,jdbcType=VARCHAR},
+      NetNo = #{netno,jdbcType=INTEGER},
+      Specification = #{specification,jdbcType=VARCHAR},
+      CustomerNo = #{customerno,jdbcType=INTEGER},
+      ErrorDetail = #{errordetail,jdbcType=VARCHAR}
+    where ConfirmID = #{confirmid,jdbcType=INTEGER}
+  </update>
+</mapper>

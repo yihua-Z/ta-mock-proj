@@ -59,20 +59,5 @@ public class AccountExpectation implements Serializable {
      */
     private String specification;
 
-    /**
-     * 销售人代码
-     */
-    private String distributorcode;
-
-    /**
-     * TA代
-     */
-    private String tacode;
-
-    /**
-     * 同一个申请的序列
-     */
-    private Integer referencenumber;
-
     private static final long serialVersionUID = 1L;
 }

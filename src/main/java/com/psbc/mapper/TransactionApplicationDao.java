@@ -1,19 +1,16 @@
 package com.psbc.mapper;
 
 import com.psbc.pojo.TransactionApplication;
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
+import com.psbc.pojo.TransactionApplicationKey;
 
-@Mapper
-@Repository
 public interface TransactionApplicationDao {
-    int deleteByPrimaryKey(String appsheetserialno);
+    int deleteByPrimaryKey(TransactionApplicationKey key);
 
     int insert(TransactionApplication record);
 
     int insertSelective(TransactionApplication record);
 
-    TransactionApplication selectByPrimaryKey(String appsheetserialno);
+    TransactionApplication selectByPrimaryKey(TransactionApplicationKey key);
 
     int updateByPrimaryKeySelective(TransactionApplication record);
 

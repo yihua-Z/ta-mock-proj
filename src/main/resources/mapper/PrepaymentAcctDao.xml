@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.psbc.mapper.PrepaymentAcctDao">
+  <resultMap id="BaseResultMap" type="com.psbc.pojo.PrepaymentAcct">
+    <id column="TACode" jdbcType="VARCHAR" property="tacode" />
+    <result column="OriginalDistributorCode" jdbcType="VARCHAR" property="originaldistributorcode" />
+    <result column="TargetDistributorCode" jdbcType="VARCHAR" property="targetdistributorcode" />
+    <result column="OriginalTransactionAccountID" jdbcType="VARCHAR" property="originaltransactionaccountid" />
+    <result column="TargetTransactionAccountID" jdbcType="VARCHAR" property="targettransactionaccountid" />
+    <result column="OriginalRegionCode" jdbcType="VARCHAR" property="originalregioncode" />
+    <result column="TargetRegionCode" jdbcType="VARCHAR" property="targetregioncode" />
+    <result column="OriginalBranchCode" jdbcType="VARCHAR" property="originalbranchcode" />
+    <result column="TargetBranchCode" jdbcType="VARCHAR" property="targetbranchcode" />
+    <result column="TotalVol" jdbcType="DECIMAL" property="totalvol" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    TACode, OriginalDistributorCode, TargetDistributorCode, OriginalTransactionAccountID, 
+    TargetTransactionAccountID, OriginalRegionCode, TargetRegionCode, OriginalBranchCode, 
+    TargetBranchCode, TotalVol
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from prepayment_acct
+    where TACode = #{tacode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from prepayment_acct
+    where TACode = #{tacode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" keyColumn="TACode" keyProperty="tacode" parameterType="com.psbc.pojo.PrepaymentAcct" useGeneratedKeys="true">
+    insert into prepayment_acct (OriginalDistributorCode, TargetDistributorCode, 
+      OriginalTransactionAccountID, TargetTransactionAccountID, 
+      OriginalRegionCode, TargetRegionCode, OriginalBranchCode, 
+      TargetBranchCode, TotalVol)
+    values (#{originaldistributorcode,jdbcType=VARCHAR}, #{targetdistributorcode,jdbcType=VARCHAR}, 
+      #{originaltransactionaccountid,jdbcType=VARCHAR}, #{targettransactionaccountid,jdbcType=VARCHAR}, 
+      #{originalregioncode,jdbcType=VARCHAR}, #{targetregioncode,jdbcType=VARCHAR}, #{originalbranchcode,jdbcType=VARCHAR}, 
+      #{targetbranchcode,jdbcType=VARCHAR}, #{totalvol,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" keyColumn="TACode" keyProperty="tacode" parameterType="com.psbc.pojo.PrepaymentAcct" useGeneratedKeys="true">
+    insert into prepayment_acct
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="originaldistributorcode != null">
+        OriginalDistributorCode,
+      </if>
+      <if test="targetdistributorcode != null">
+        TargetDistributorCode,
+      </if>
+      <if test="originaltransactionaccountid != null">
+        OriginalTransactionAccountID,
+      </if>
+      <if test="targettransactionaccountid != null">
+        TargetTransactionAccountID,
+      </if>
+      <if test="originalregioncode != null">
+        OriginalRegionCode,
+      </if>
+      <if test="targetregioncode != null">
+        TargetRegionCode,
+      </if>
+      <if test="originalbranchcode != null">
+        OriginalBranchCode,
+      </if>
+      <if test="targetbranchcode != null">
+        TargetBranchCode,
+      </if>
+      <if test="totalvol != null">
+        TotalVol,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="originaldistributorcode != null">
+        #{originaldistributorcode,jdbcType=VARCHAR},
+      </if>
+      <if test="targetdistributorcode != null">
+        #{targetdistributorcode,jdbcType=VARCHAR},
+      </if>
+      <if test="originaltransactionaccountid != null">
+        #{originaltransactionaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="targettransactionaccountid != null">
+        #{targettransactionaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="originalregioncode != null">
+        #{originalregioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="targetregioncode != null">
+        #{targetregioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="originalbranchcode != null">
+        #{originalbranchcode,jdbcType=VARCHAR},
+      </if>
+      <if test="targetbranchcode != null">
+        #{targetbranchcode,jdbcType=VARCHAR},
+      </if>
+      <if test="totalvol != null">
+        #{totalvol,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.psbc.pojo.PrepaymentAcct">
+    update prepayment_acct
+    <set>
+      <if test="originaldistributorcode != null">
+        OriginalDistributorCode = #{originaldistributorcode,jdbcType=VARCHAR},
+      </if>
+      <if test="targetdistributorcode != null">
+        TargetDistributorCode = #{targetdistributorcode,jdbcType=VARCHAR},
+      </if>
+      <if test="originaltransactionaccountid != null">
+        OriginalTransactionAccountID = #{originaltransactionaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="targettransactionaccountid != null">
+        TargetTransactionAccountID = #{targettransactionaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="originalregioncode != null">
+        OriginalRegionCode = #{originalregioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="targetregioncode != null">
+        TargetRegionCode = #{targetregioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="originalbranchcode != null">
+        OriginalBranchCode = #{originalbranchcode,jdbcType=VARCHAR},
+      </if>
+      <if test="targetbranchcode != null">
+        TargetBranchCode = #{targetbranchcode,jdbcType=VARCHAR},
+      </if>
+      <if test="totalvol != null">
+        TotalVol = #{totalvol,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where TACode = #{tacode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.PrepaymentAcct">
+    update prepayment_acct
+    set OriginalDistributorCode = #{originaldistributorcode,jdbcType=VARCHAR},
+      TargetDistributorCode = #{targetdistributorcode,jdbcType=VARCHAR},
+      OriginalTransactionAccountID = #{originaltransactionaccountid,jdbcType=VARCHAR},
+      TargetTransactionAccountID = #{targettransactionaccountid,jdbcType=VARCHAR},
+      OriginalRegionCode = #{originalregioncode,jdbcType=VARCHAR},
+      TargetRegionCode = #{targetregioncode,jdbcType=VARCHAR},
+      OriginalBranchCode = #{originalbranchcode,jdbcType=VARCHAR},
+      TargetBranchCode = #{targetbranchcode,jdbcType=VARCHAR},
+      TotalVol = #{totalvol,jdbcType=DECIMAL}
+    where TACode = #{tacode,jdbcType=VARCHAR}
+  </update>
+</mapper>

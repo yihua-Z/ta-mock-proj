@@ -9,41 +9,31 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class TransactionApplication implements Serializable {
-    /**
-     * 申请单编号
-     */
-    private String appsheetserialno;
-
+public class TransactionApplication extends TransactionApplicationKey implements Serializable {
     /**
      * 理财产品代码
      */
     private String fundcode;
 
     /**
-     * 巨额赎回处理标志
+     * 巨额赎回处理标志(0-取消，1-顺延)
      */
-    private String largeredemptionflag;
+    private Object largeredemptionflag;
 
     /**
-     * 交易发生日期
+     * 交易发生日期(YYYYMMDD)
      */
     private String transactiondate;
 
     /**
-     * 交易发生时间
+     * 交易发生时间(HHMMSS)
      */
     private String transactiontime;
 
     /**
-     * 投资人理财交易账号
+     * 投资人在销售机构内开设的用于交易的账号
      */
     private String transactionaccountid;
-
-    /**
-     * 销售人代码
-     */
-    private String distributorcode;
 
     /**
      * 申请理财产品份数
@@ -61,7 +51,7 @@ public class TransactionApplication implements Serializable {
     private String businesscode;
 
     /**
-     * 投资人理财账号
+     * 投资人理财帐号
      */
     private String taaccountid;
 
@@ -93,7 +83,7 @@ public class TransactionApplication implements Serializable {
     /**
      * 原申请单编号
      */
-    private String originalappsheetno;
+    private Integer originalappsheetno;
 
     /**
      * 原申购日期
@@ -101,9 +91,9 @@ public class TransactionApplication implements Serializable {
     private String originalsubsdate;
 
     /**
-     * 个人/机构标志
+     * 个人/机构标志(0-机构，1-个人，2-产品)
      */
-    private String individualorinstitution;
+    private Object individualorinstitution;
 
     /**
      * 交易申请有效天数
@@ -116,17 +106,17 @@ public class TransactionApplication implements Serializable {
     private Integer daysredemptioninadvance;
 
     /**
-     * 预约赎回日期
+     * 预约赎回日期(客户周期产品，购买时上送该字段作为指定到期日) 
      */
     private String redemptiondateinadvance;
 
     /**
-     * TA的原确认流水号
+     * TA原确认流水号
      */
     private String originalserialno;
 
     /**
-     * 定时定额申购日期
+     * 定期定额申购日期
      */
     private String dateofperiodicsubs;
 
@@ -136,7 +126,7 @@ public class TransactionApplication implements Serializable {
     private String taserialno;
 
     /**
-     * 定时定额申购期限
+     * 定期定额申购期限
      */
     private Integer termofperiodicsubs;
 
@@ -188,12 +178,12 @@ public class TransactionApplication implements Serializable {
     /**
      * 交易后端收费总额
      */
-    private BigDecimal totalbackendloa;
+    private BigDecimal totalbackendload;
 
     /**
      * 收费方式
      */
-    private String shareclass;
+    private Object shareclass;
 
     /**
      * TA的原确认日期
@@ -203,7 +193,7 @@ public class TransactionApplication implements Serializable {
     /**
      * 明细标志
      */
-    private String detailflag;
+    private Object detailflag;
 
     /**
      * 原申请日期
@@ -213,12 +203,14 @@ public class TransactionApplication implements Serializable {
     /**
      * 默认分红方式
      */
-    private String defdividendmethod;
+    private Object defdividendmethod;
 
     /**
-     * 冻结原因
+     * 冻结原因(0-司法冻结，1-柜台冻结 
+2-质押冻结，3-质押、司法双重冻结 4-柜台、司法双重冻结
+)
      */
-    private String frozencause;
+    private Object frozencause;
 
     /**
      * 冻结截止日期
@@ -261,9 +253,9 @@ public class TransactionApplication implements Serializable {
     private String customerno;
 
     /**
-     * 对方理财产品份额类别
+     * 对方理财产品份额类别(0-前收费，1-后收费)
      */
-    private String targetsharetype;
+    private Object targetsharetype;
 
     /**
      * 定期定额协议号
@@ -281,7 +273,7 @@ public class TransactionApplication implements Serializable {
     private String enddateofperiodicsubs;
 
     /**
-     * 定时定额申购每周期发送日
+     * 定时定额申购每月发送日
      */
     private Integer senddayofperiodicsubs;
 
@@ -301,14 +293,14 @@ public class TransactionApplication implements Serializable {
     private String acceptmethod;
 
     /**
-     * 强制赎回类型
+     * 强制赎回类型(0-强制赎回，1-违约赎回，2-到期)
      */
-    private String forceredemptiontype;
+    private Object forceredemptiontype;
 
     /**
-     * 带走收益标志
+     * 带走收益标志(0-不带走，1-带走)
      */
-    private String takeincomeflag;
+    private Object takeincomeflag;
 
     /**
      * 定投目的
@@ -338,7 +330,7 @@ public class TransactionApplication implements Serializable {
     /**
      * 明细资金方式
      */
-    private String detailcapitalmode;
+    private String detailcapticalmode;
 
     /**
      * 补差费折扣率
@@ -363,7 +355,7 @@ public class TransactionApplication implements Serializable {
     /**
      * 巨额购买处理标志
      */
-    private String largebuyflag;
+    private Object largebuyflag;
 
     /**
      * 收费类型
@@ -379,16 +371,6 @@ public class TransactionApplication implements Serializable {
      * 指定费用
      */
     private BigDecimal specifyfee;
-
-    /**
-     * TA代码
-     */
-    private String tacode;
-
-    /**
-     * 同一个申请的序列号
-     */
-    private Integer referencenumber;
 
     private static final long serialVersionUID = 1L;
 }

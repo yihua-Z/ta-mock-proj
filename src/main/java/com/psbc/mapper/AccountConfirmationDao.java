@@ -1,11 +1,7 @@
 package com.psbc.mapper;
 
 import com.psbc.pojo.AccountConfirmation;
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
 
-@Mapper
-@Repository
 public interface AccountConfirmationDao {
     int deleteByPrimaryKey(Integer confirmid);
 

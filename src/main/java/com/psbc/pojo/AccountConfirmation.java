@@ -20,84 +20,38 @@ public class AccountConfirmation implements Serializable {
     private String transactioncfmdate;
 
     /**
-     * 交易处理返回代码
+     * 返回码
      */
     private String returncode;
 
     /**
-     * 业务代码
+     * 交易码
      */
     private String businesscode;
 
     /**
-     * 交易发生日期
+     * 交易日期
      */
     private String transactiondate;
 
     /**
-     * 交易发生时间
+     * 交易时间
      */
     private String transactiontime;
 
-    /**
-     * TA确认交易流水号
-     */
-    private String taserialno;
+    private Integer taserialno;
 
-    /**
-     * 是否注册登记人发起业务标志
-     */
     private String fromtaflag;
 
-    /**
-     * 交易所在地区编号
-     */
     private String regioncode;
 
-    /**
-     * 操作（清算）网点编号
-     */
-    private String netno;
+    private Integer netno;
 
-    /**
-     * 摘要/说明
-     */
     private String specification;
 
-    /**
-     * TA客户编号
-     */
-    private String customerno;
+    private Integer customerno;
 
-    /**
-     * 出错详细信息
-     */
     private String errordetail;
-
-    /**
-     * 申请单编号
-     */
-    private String appsheetserialno;
-
-    /**
-     * TA代码
-     */
-    private String tacode;
-
-    /**
-     * 投资人理财账号
-     */
-    private String taaccountid;
-
-    /**
-     * 销售人代码
-     */
-    private String distributorcode;
-
-    /**
-     * 同一个确认的序列号
-     */
-    private Integer referencenumber;
 
     private static final long serialVersionUID = 1L;
 }

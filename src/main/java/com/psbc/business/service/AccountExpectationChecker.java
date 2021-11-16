@@ -1,9 +1,8 @@
 package com.psbc.business.service;
 
+import com.psbc.mapper.AccountApplicationDao;
 import com.psbc.mapper.AccountExpectationDao;
-import com.psbc.pojo.AccountApplication;
-import com.psbc.pojo.AccountConfirmation;
-import com.psbc.pojo.AccountExpectation;
+import com.psbc.pojo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,28 +16,47 @@ public class AccountExpectationChecker {
 
     private RecordOperator operator = new RecordOperator();
     private AccountConfirmation accountConfirmation = new AccountConfirmation();
+    private AccountInfo accountInfo = new AccountInfo();
+    private AcctShare acctShare = new AcctShare();
 
-    public void ExpectationOperate(List<AccountApplication> accountApplication) {
+    public void ExpectationOperate(List<AccountApplication> accountApplications) {
 
-        for (AccountApplication application : accountApplication
+
+        checkAppSheetSeriaNo(accountApplications);
+
+    }
+
+    @Autowired
+    AccountApplicationDao accountApplicationDao;
+
+    public void ExpectationOperate() {
+
+        List<AccountApplication> accountApplications = accountApplicationDao.selectAll();
+
+        checkAppSheetSeriaNo(accountApplications);
+    }
+
+    private void checkAppSheetSeriaNo(List<AccountApplication> accountApplications) {
+
+
+        for (AccountApplication application : accountApplications
         ) {
             String appsheetserialno = application.getAppsheetserialno();
 
             AccountExpectation expectation = accountExpectationDao.selectByPrimaryKey(appsheetserialno);
 
             if (expectation != null) {
-                System.out.println("exists");
-                expectation.getDistributorcode();
-                expectation.getReferencenumber();
-                expectation.getReturncode();
-                expectation.getTacode();
+                AccountConfirmation accountConfirmation;
+
+                String returncode = expectation.getReturncode();
+
+                AccountConfirmation targetObject = (AccountConfirmation) this.operator.getTargetObject(application, this.accountConfirmation);
+
+
             }
         }
-
-//        Object targetObject = this.operator.getTargetObject(accountExpectation, this.accountConfirmation);
-
-
     }
+
 
     public List<AccountExpectation> getAllAccountExpectation() {
         List<AccountExpectation> accountExpectations = accountExpectationDao.selectAll();

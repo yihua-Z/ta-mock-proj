@@ -1,55 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.psbc.mapper.AccountInfoDao">
-  <resultMap id="BaseResultMap" type="com.psbc.pojo.AccountInfo">
-    <id column="TAAccountID" jdbcType="VARCHAR" property="taaccountid" />
+<mapper namespace="com.psbc.mapper.CustomerInfoDao">
+  <resultMap id="BaseResultMap" type="com.psbc.pojo.CustomerInfo">
+    <id column="TAAccountID" jdbcType="INTEGER" property="taaccountid" />
     <result column="Name" jdbcType="VARCHAR" property="name" />
-    <result column="Sex" jdbcType="VARCHAR" property="sex" />
-    <result column="Nationality" jdbcType="VARCHAR" property="nationality" />
-    <result column="Vocation" jdbcType="VARCHAR" property="vocation" />
+    <result column="Sex" jdbcType="OTHER" property="sex" />
+    <result column="Nationality" jdbcType="CHAR" property="nationality" />
+    <result column="Vocation" jdbcType="CHAR" property="vocation" />
     <result column="Address" jdbcType="VARCHAR" property="address" />
     <result column="TelNo" jdbcType="VARCHAR" property="telno" />
-    <result column="CertificateType" jdbcType="VARCHAR" property="certificatetype" />
+    <result column="CertificateType" jdbcType="CHAR" property="certificatetype" />
     <result column="CertificateNo" jdbcType="VARCHAR" property="certificateno" />
-    <result column="CertValidDate" jdbcType="VARCHAR" property="certvaliddate" />
-    <result column="TransactionAccountID" jdbcType="VARCHAR" property="transactionaccountid" />
+    <result column="CertValidDate" jdbcType="CHAR" property="certvaliddate" />
     <result column="DistributorCode" jdbcType="VARCHAR" property="distributorcode" />
     <result column="BranchCode" jdbcType="VARCHAR" property="branchcode" />
-    <result column="AccountStatus" jdbcType="VARCHAR" property="accountstatus" />
     <result column="TACode" jdbcType="VARCHAR" property="tacode" />
     <result column="CustomerNo" jdbcType="VARCHAR" property="customerno" />
   </resultMap>
   <sql id="Base_Column_List">
     TAAccountID, `Name`, Sex, Nationality, Vocation, Address, TelNo, CertificateType, 
-    CertificateNo, CertValidDate, TransactionAccountID, DistributorCode, BranchCode, 
-    AccountStatus, TACode, CustomerNo
+    CertificateNo, CertValidDate, DistributorCode, BranchCode, TACode, CustomerNo
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from account_info
-    where TAAccountID = #{taaccountid,jdbcType=VARCHAR}
+    from customer_info
+    where TAAccountID = #{taaccountid,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from account_info
-    where TAAccountID = #{taaccountid,jdbcType=VARCHAR}
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from customer_info
+    where TAAccountID = #{taaccountid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="TAAccountID" keyProperty="taaccountid" parameterType="com.psbc.pojo.AccountInfo" useGeneratedKeys="true">
-    insert into account_info (`Name`, Sex, Nationality, 
+  <insert id="insert" keyColumn="TAAccountID" keyProperty="taaccountid" parameterType="com.psbc.pojo.CustomerInfo" useGeneratedKeys="true">
+    insert into customer_info (`Name`, Sex, Nationality, 
       Vocation, Address, TelNo, 
       CertificateType, CertificateNo, CertValidDate, 
-      TransactionAccountID, DistributorCode, 
-      BranchCode, AccountStatus, TACode, 
+      DistributorCode, BranchCode, TACode, 
       CustomerNo)
-    values (#{name,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{nationality,jdbcType=VARCHAR}, 
-      #{vocation,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{telno,jdbcType=VARCHAR}, 
-      #{certificatetype,jdbcType=VARCHAR}, #{certificateno,jdbcType=VARCHAR}, #{certvaliddate,jdbcType=VARCHAR}, 
-      #{transactionaccountid,jdbcType=VARCHAR}, #{distributorcode,jdbcType=VARCHAR}, 
-      #{branchcode,jdbcType=VARCHAR}, #{accountstatus,jdbcType=VARCHAR}, #{tacode,jdbcType=VARCHAR}, 
+    values (#{name,jdbcType=VARCHAR}, #{sex,jdbcType=OTHER}, #{nationality,jdbcType=CHAR}, 
+      #{vocation,jdbcType=CHAR}, #{address,jdbcType=VARCHAR}, #{telno,jdbcType=VARCHAR}, 
+      #{certificatetype,jdbcType=CHAR}, #{certificateno,jdbcType=VARCHAR}, #{certvaliddate,jdbcType=CHAR}, 
+      #{distributorcode,jdbcType=VARCHAR}, #{branchcode,jdbcType=VARCHAR}, #{tacode,jdbcType=VARCHAR}, 
       #{customerno,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="TAAccountID" keyProperty="taaccountid" parameterType="com.psbc.pojo.AccountInfo" useGeneratedKeys="true">
-    insert into account_info
+  <insert id="insertSelective" keyColumn="TAAccountID" keyProperty="taaccountid" parameterType="com.psbc.pojo.CustomerInfo" useGeneratedKeys="true">
+    insert into customer_info
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="name != null">
         `Name`,
@@ -78,17 +73,11 @@
       <if test="certvaliddate != null">
         CertValidDate,
       </if>
-      <if test="transactionaccountid != null">
-        TransactionAccountID,
-      </if>
       <if test="distributorcode != null">
         DistributorCode,
       </if>
       <if test="branchcode != null">
         BranchCode,
-      </if>
-      <if test="accountstatus != null">
-        AccountStatus,
       </if>
       <if test="tacode != null">
         TACode,
@@ -102,13 +91,13 @@
         #{name,jdbcType=VARCHAR},
       </if>
       <if test="sex != null">
-        #{sex,jdbcType=VARCHAR},
+        #{sex,jdbcType=OTHER},
       </if>
       <if test="nationality != null">
-        #{nationality,jdbcType=VARCHAR},
+        #{nationality,jdbcType=CHAR},
       </if>
       <if test="vocation != null">
-        #{vocation,jdbcType=VARCHAR},
+        #{vocation,jdbcType=CHAR},
       </if>
       <if test="address != null">
         #{address,jdbcType=VARCHAR},
@@ -117,25 +106,19 @@
         #{telno,jdbcType=VARCHAR},
       </if>
       <if test="certificatetype != null">
-        #{certificatetype,jdbcType=VARCHAR},
+        #{certificatetype,jdbcType=CHAR},
       </if>
       <if test="certificateno != null">
         #{certificateno,jdbcType=VARCHAR},
       </if>
       <if test="certvaliddate != null">
-        #{certvaliddate,jdbcType=VARCHAR},
-      </if>
-      <if test="transactionaccountid != null">
-        #{transactionaccountid,jdbcType=VARCHAR},
+        #{certvaliddate,jdbcType=CHAR},
       </if>
       <if test="distributorcode != null">
         #{distributorcode,jdbcType=VARCHAR},
       </if>
       <if test="branchcode != null">
         #{branchcode,jdbcType=VARCHAR},
-      </if>
-      <if test="accountstatus != null">
-        #{accountstatus,jdbcType=VARCHAR},
       </if>
       <if test="tacode != null">
         #{tacode,jdbcType=VARCHAR},
@@ -145,20 +128,20 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.psbc.pojo.AccountInfo">
-    update account_info
+  <update id="updateByPrimaryKeySelective" parameterType="com.psbc.pojo.CustomerInfo">
+    update customer_info
     <set>
       <if test="name != null">
         `Name` = #{name,jdbcType=VARCHAR},
       </if>
       <if test="sex != null">
-        Sex = #{sex,jdbcType=VARCHAR},
+        Sex = #{sex,jdbcType=OTHER},
       </if>
       <if test="nationality != null">
-        Nationality = #{nationality,jdbcType=VARCHAR},
+        Nationality = #{nationality,jdbcType=CHAR},
       </if>
       <if test="vocation != null">
-        Vocation = #{vocation,jdbcType=VARCHAR},
+        Vocation = #{vocation,jdbcType=CHAR},
       </if>
       <if test="address != null">
         Address = #{address,jdbcType=VARCHAR},
@@ -167,25 +150,19 @@
         TelNo = #{telno,jdbcType=VARCHAR},
       </if>
       <if test="certificatetype != null">
-        CertificateType = #{certificatetype,jdbcType=VARCHAR},
+        CertificateType = #{certificatetype,jdbcType=CHAR},
       </if>
       <if test="certificateno != null">
         CertificateNo = #{certificateno,jdbcType=VARCHAR},
       </if>
       <if test="certvaliddate != null">
-        CertValidDate = #{certvaliddate,jdbcType=VARCHAR},
-      </if>
-      <if test="transactionaccountid != null">
-        TransactionAccountID = #{transactionaccountid,jdbcType=VARCHAR},
+        CertValidDate = #{certvaliddate,jdbcType=CHAR},
       </if>
       <if test="distributorcode != null">
         DistributorCode = #{distributorcode,jdbcType=VARCHAR},
       </if>
       <if test="branchcode != null">
         BranchCode = #{branchcode,jdbcType=VARCHAR},
-      </if>
-      <if test="accountstatus != null">
-        AccountStatus = #{accountstatus,jdbcType=VARCHAR},
       </if>
       <if test="tacode != null">
         TACode = #{tacode,jdbcType=VARCHAR},
@@ -194,25 +171,23 @@
         CustomerNo = #{customerno,jdbcType=VARCHAR},
       </if>
     </set>
-    where TAAccountID = #{taaccountid,jdbcType=VARCHAR}
+    where TAAccountID = #{taaccountid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AccountInfo">
-    update account_info
+  <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.CustomerInfo">
+    update customer_info
     set `Name` = #{name,jdbcType=VARCHAR},
-      Sex = #{sex,jdbcType=VARCHAR},
-      Nationality = #{nationality,jdbcType=VARCHAR},
-      Vocation = #{vocation,jdbcType=VARCHAR},
+      Sex = #{sex,jdbcType=OTHER},
+      Nationality = #{nationality,jdbcType=CHAR},
+      Vocation = #{vocation,jdbcType=CHAR},
       Address = #{address,jdbcType=VARCHAR},
       TelNo = #{telno,jdbcType=VARCHAR},
-      CertificateType = #{certificatetype,jdbcType=VARCHAR},
+      CertificateType = #{certificatetype,jdbcType=CHAR},
       CertificateNo = #{certificateno,jdbcType=VARCHAR},
-      CertValidDate = #{certvaliddate,jdbcType=VARCHAR},
-      TransactionAccountID = #{transactionaccountid,jdbcType=VARCHAR},
+      CertValidDate = #{certvaliddate,jdbcType=CHAR},
       DistributorCode = #{distributorcode,jdbcType=VARCHAR},
       BranchCode = #{branchcode,jdbcType=VARCHAR},
-      AccountStatus = #{accountstatus,jdbcType=VARCHAR},
       TACode = #{tacode,jdbcType=VARCHAR},
       CustomerNo = #{customerno,jdbcType=VARCHAR}
-    where TAAccountID = #{taaccountid,jdbcType=VARCHAR}
+    where TAAccountID = #{taaccountid,jdbcType=INTEGER}
   </update>
 </mapper>

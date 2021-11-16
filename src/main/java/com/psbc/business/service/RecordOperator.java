@@ -143,7 +143,7 @@ public class RecordOperator {
 //        }
 
         this.targetObject = targetObject;
-        
+
         return this.targetObject;
 
     }
