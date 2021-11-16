@@ -119,6 +119,18 @@
         select *
         from account_application
     </select>
+    <select id="selectUnionPrimaryKey"
+            parameterType="com.psbc.pojo.AccountApplication"
+            resultType="com.psbc.pojo.AccountApplication">
+        select count(*)
+        from account_application
+        where
+            AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR} and
+            TACode=#{tacode,jdbcType=VARCHAR} and
+            DistributorCode=#{distributorcode,jdbcType=VARCHAR} and
+            ReferenceNo=#{referenceno,jdbcType=INTEGER}
+
+    </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
         delete
         from account_application

@@ -27,7 +27,6 @@ public class ExceptionKey implements Serializable {
     /**
      * 同一记录序列号
      */
-    private Integer referencenumber;
+    private Integer referenceno;
 
-    private static final long serialVersionUID = 1L;
 }

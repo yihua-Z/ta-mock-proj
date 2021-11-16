@@ -442,7 +442,6 @@ public class AccountApplication implements DatabaseModel {
      */
     private Integer referenceno;
 
-    private static final long serialVersionUID = 1L;
 
     @Override
     public DatabaseModel newInstanceWithoutArgs() {

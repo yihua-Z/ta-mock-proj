@@ -8,7 +8,7 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class AccountConfirmation implements Serializable {
+public class AccountConfirmation implements DatabaseModel {
     /**
      * 确认ID
      */
@@ -53,5 +53,8 @@ public class AccountConfirmation implements Serializable {
 
     private String errordetail;
 
-    private static final long serialVersionUID = 1L;
+    @Override
+    public DatabaseModel newInstanceWithoutArgs() {
+        return new AccountConfirmation();
+    }
 }

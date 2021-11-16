@@ -858,3 +858,8 @@ CREATE TABLE `transaction_expectation`
   ROW_FORMAT = Dynamic;
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+
+
+
+# PRIMARY KEY (`AppSheetSerialNo`, `TACode`, `DistributorCode`, `ReferenceNo`) USING BTREE

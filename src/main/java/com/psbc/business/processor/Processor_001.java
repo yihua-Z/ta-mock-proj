@@ -58,22 +58,8 @@ public class Processor_001 {
     }
 
 
-//    public static Processor_001 processor_001;
-//    @PostConstruct
-//    public void init() {
-//        processor_001 = this;
-//        processor_001.applicationMapper = this.applicationMapper;
-//    }
-
-    public static void main(String[] args) {
-
-        String applicationFilePath = ".\\src\\main\\resources\\data\\OFD_037_999_20211025_01.TXT";
-
-//        processor_001.setApplicationFilePath(applicationFilePath);
-//        processor_001.processor();
 
 
-    }
 
 
 }

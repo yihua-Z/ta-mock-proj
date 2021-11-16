@@ -17,6 +17,7 @@ public interface AccountApplicationDao {
 
     AccountApplication selectByPrimaryKey(String appsheetserialno);
     List<AccountApplication> selectAll();
+    List<AccountApplication> selectUnionPrimaryKey(AccountApplication record);
 
     int updateByPrimaryKeySelective(AccountApplication record);
 

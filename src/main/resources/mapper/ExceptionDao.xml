@@ -5,7 +5,7 @@
     <id column="AppSheetSerialNo" jdbcType="VARCHAR" property="appsheetserialno" />
     <id column="TACode" jdbcType="VARCHAR" property="tacode" />
     <id column="DistributorCode" jdbcType="VARCHAR" property="distributorcode" />
-    <id column="ReferenceNumber" jdbcType="INTEGER" property="referencenumber" />
+    <id column="ReferenceNo" jdbcType="INTEGER" property="referenceno" />
     <result column="AppTransactionDate" jdbcType="CHAR" property="apptransactiondate" />
     <result column="TransactionAccountID" jdbcType="VARCHAR" property="transactionaccountid" />
     <result column="BusinessCode" jdbcType="CHAR" property="businesscode" />
@@ -13,7 +13,7 @@
     <result column="Speification" jdbcType="VARCHAR" property="speification" />
   </resultMap>
   <sql id="Base_Column_List">
-    AppSheetSerialNo, TACode, DistributorCode, ReferenceNumber, AppTransactionDate, TransactionAccountID, 
+    AppSheetSerialNo, TACode, DistributorCode, ReferenceNo, AppTransactionDate, TransactionAccountID, 
     BusinessCode, ErrorType, Speification
   </sql>
   <select id="selectByPrimaryKey" parameterType="com.psbc.pojo.ExceptionKey" resultMap="BaseResultMap">
@@ -23,21 +23,21 @@
     where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
       and TACode = #{tacode,jdbcType=VARCHAR}
       and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
-      and ReferenceNumber = #{referencenumber,jdbcType=INTEGER}
+      and ReferenceNo = #{referenceno,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="com.psbc.pojo.ExceptionKey">
     delete from exception
     where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
       and TACode = #{tacode,jdbcType=VARCHAR}
       and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
-      and ReferenceNumber = #{referencenumber,jdbcType=INTEGER}
+      and ReferenceNo = #{referenceno,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno" parameterType="com.psbc.pojo.Exception" useGeneratedKeys="true">
-    insert into exception (TACode, DistributorCode, ReferenceNumber, 
+  <insert id="insert" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno" parameterType="com.psbc.pojo.ExceptionKey" useGeneratedKeys="true">
+    insert into exception (AppSheetSerialNo,TACode, DistributorCode, ReferenceNo,
       AppTransactionDate, TransactionAccountID, 
       BusinessCode, ErrorType, Speification
       )
-    values (#{tacode,jdbcType=VARCHAR}, #{distributorcode,jdbcType=VARCHAR}, #{referencenumber,jdbcType=INTEGER}, 
+    values (#{appsheetserialno,jdbcType=VARCHAR},#{tacode,jdbcType=VARCHAR}, #{distributorcode,jdbcType=VARCHAR}, #{referenceno,jdbcType=INTEGER},
       #{apptransactiondate,jdbcType=CHAR}, #{transactionaccountid,jdbcType=VARCHAR}, 
       #{businesscode,jdbcType=CHAR}, #{errortype,jdbcType=OTHER}, #{speification,jdbcType=VARCHAR}
       )
@@ -51,8 +51,8 @@
       <if test="distributorcode != null">
         DistributorCode,
       </if>
-      <if test="referencenumber != null">
-        ReferenceNumber,
+      <if test="referenceno != null">
+        ReferenceNo,
       </if>
       <if test="apptransactiondate != null">
         AppTransactionDate,
@@ -77,8 +77,8 @@
       <if test="distributorcode != null">
         #{distributorcode,jdbcType=VARCHAR},
       </if>
-      <if test="referencenumber != null">
-        #{referencenumber,jdbcType=INTEGER},
+      <if test="referenceno != null">
+        #{referenceno,jdbcType=INTEGER},
       </if>
       <if test="apptransactiondate != null">
         #{apptransactiondate,jdbcType=CHAR},
@@ -119,7 +119,7 @@
     where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
       and TACode = #{tacode,jdbcType=VARCHAR}
       and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
-      and ReferenceNumber = #{referencenumber,jdbcType=INTEGER}
+      and ReferenceNo = #{referenceno,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.Exception">
     update exception
@@ -131,6 +131,6 @@
     where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
       and TACode = #{tacode,jdbcType=VARCHAR}
       and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
-      and ReferenceNumber = #{referencenumber,jdbcType=INTEGER}
+      and ReferenceNo = #{referenceno,jdbcType=INTEGER}
   </update>
 </mapper>

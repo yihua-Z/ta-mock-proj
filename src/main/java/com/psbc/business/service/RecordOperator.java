@@ -6,6 +6,7 @@ import com.psbc.reader.xmlModel.XMLNode;
 import com.psbc.utils.StringProcessor;
 import com.psbc.utils.helper.XMLParser;
 import lombok.Data;
+import org.apache.commons.lang3.reflect.FieldUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -95,7 +96,8 @@ public class RecordOperator {
     private Object objectToObject(Object sourceObject, Object targetObject) {
 
         List<Field> tableModelDeclaredFields = Arrays.asList(sourceObject.getClass().getDeclaredFields());
-        List<Field> databaseModelDeclaredFields = Arrays.asList(targetObject.getClass().getDeclaredFields());
+//        List<Field> databaseModelDeclaredFields = Arrays.asList(targetObject.getClass().getDeclaredFields());
+        List<Field> databaseModelDeclaredFields = Arrays.asList(FieldUtils.getAllFields(targetObject.getClass()));
 
         for (Field a : tableModelDeclaredFields
         ) {
@@ -105,7 +107,9 @@ public class RecordOperator {
                 c.setAccessible(true);
                 String lowa = a.getName().toLowerCase();
                 String lowc = c.getName().toLowerCase();
-
+                if(value==null){
+                    value="";
+                }
                 if (lowa.equals(lowc)) {
                     try {
                         if (c.getType().getSimpleName().equals("String")) {

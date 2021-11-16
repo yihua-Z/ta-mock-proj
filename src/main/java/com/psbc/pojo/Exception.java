@@ -8,7 +8,7 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class Exception extends ExceptionKey implements Serializable {
+public class Exception extends ExceptionKey implements DatabaseModel {
     /**
      * 交易日期
      */
@@ -34,5 +34,9 @@ public class Exception extends ExceptionKey implements Serializable {
      */
     private String speification;
 
-    private static final long serialVersionUID = 1L;
+
+    @Override
+    public DatabaseModel newInstanceWithoutArgs() {
+        return new Exception();
+    }
 }

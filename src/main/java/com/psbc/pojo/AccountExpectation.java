@@ -59,5 +59,4 @@ public class AccountExpectation implements Serializable {
      */
     private String specification;
 
-    private static final long serialVersionUID = 1L;
 }
