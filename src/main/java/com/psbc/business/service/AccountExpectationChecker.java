@@ -24,6 +24,35 @@ public class AccountExpectationChecker {
     private boolean checkAppSheetSeriaNo = false;
 
 
+    public String generateRecord() {
+        String returnCode = "0000";
+//        Expectation中由对应的记录
+//        获取确认记录中需要赋值的字段
+//        生成相应字段的值
+//        生成 returnCode
+        return returnCode;
+    }
+
+    public void generateSucceed() {
+//                生成对应确认成功记录
+//                写入""account_info"表
+//                初始化"acct_share"表
+//                写入"account_confirmation"表
+    }
+
+
+    public String errorOperate() {
+//        生成 returnCode
+//        将不合法的申请记录写入“异常登 记簿”(包括不合法原因)
+        return "";
+    }
+
+
+    public void generateFailed() {
+//        生成对应确认失败记录
+//        写入 "account_confirmation" 表
+    }
+
     public void ExpectationOperate(List<AccountApplication> accountApplications) {
 
         for (AccountApplication accountApplication : accountApplications
@@ -31,22 +60,21 @@ public class AccountExpectationChecker {
             checkAppSheetSeriaNo(accountApplication);
             if (this.checkAppSheetSeriaNo) {
 
+
+                String returnCode = this.generateRecord();
+//                returnCode = 0000?
+                if (returnCode.equals("0000")) {
+                    this.generateSucceed();
+                }
+            } else {
+//              校验记录的数据业务合法性
                 CheckDataLegality checkDataLegality = new CheckDataLegality();
                 boolean legality = checkDataLegality.Check();
-                if()
-
-//                Expectation中由对应的记录
-//                获取确认记录中需要赋值的字段
-//                生成相应字段的值
-//                returnCode = 0000?
-//                生成对应确认成功记录
-//                写入""account_info"表
-//                初始化"acct_share"表
-//                写入"account_confirmation"表
-            } else {
-//                校验记录的数据业务合法性
-//                是否合法
-
+                if (legality) {
+                    this.generateRecord();
+                } else {
+                    String returncode = this.errorOperate();
+                }
 
             }
         }
