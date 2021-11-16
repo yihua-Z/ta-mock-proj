@@ -28,14 +28,13 @@ public class AccountExpectationChecker {
 
         for (AccountApplication accountApplication : accountApplications
         ) {
+            checkAppSheetSeriaNo(accountApplication);
+            if (this.checkAppSheetSeriaNo) {
 
-            this.checkAppSheetSeriaNo = checkAppSheetSeriaNo(accountApplication);
-            if(checkAppSheetSeriaNo){
-
+            } else {
+                
             }
         }
-
-
 
     }
 
@@ -46,20 +45,11 @@ public class AccountExpectationChecker {
 
         List<AccountApplication> accountApplications = accountApplicationDao.selectAll();
 
-        for (AccountApplication accountApplication : accountApplications
-        ) {
-
-            this.checkAppSheetSeriaNo = checkAppSheetSeriaNo(accountApplication);
-            if(checkAppSheetSeriaNo){
-
-            }
-        }
+        this.ExpectationOperate(accountApplications);
 
     }
 
-    private boolean checkAppSheetSeriaNo(AccountApplication application) {
-
-        boolean exists = false;
+    private void checkAppSheetSeriaNo(AccountApplication application) {
 
         String appsheetserialno = application.getAppsheetserialno();
 
@@ -68,11 +58,9 @@ public class AccountExpectationChecker {
         if (expectation != null) {
             AccountConfirmation accountConfirmation;
             String returncode = expectation.getReturncode();
-
-            exists = true;
+            this.checkAppSheetSeriaNo = true;
         }
 
-        return exists;
     }
 
     public List<AccountExpectation> getAllAccountExpectation() {
