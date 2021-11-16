@@ -4,6 +4,6 @@ public class CheckDataLegality {
 
     public boolean Check()
     {
-        return false;
+        return true;
     }
 }

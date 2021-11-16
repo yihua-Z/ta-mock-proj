@@ -44,7 +44,7 @@ public class AccountExpectationChecker {
     public String errorOperate() {
 //        生成 returnCode
 //        将不合法的申请记录写入“异常登 记簿”(包括不合法原因)
-        return "";
+        return "9999";
     }
 
 
@@ -58,22 +58,26 @@ public class AccountExpectationChecker {
         for (AccountApplication accountApplication : accountApplications
         ) {
             checkAppSheetSeriaNo(accountApplication);
+//          记录存在 Expectation 中
             if (this.checkAppSheetSeriaNo) {
-
-
                 String returnCode = this.generateRecord();
-//                returnCode = 0000?
+//                判断returnCode = 0000?
                 if (returnCode.equals("0000")) {
                     this.generateSucceed();
                 }
-            } else {
+            }
+//            记录不存在 Expectation 中
+            else{
 //              校验记录的数据业务合法性
                 CheckDataLegality checkDataLegality = new CheckDataLegality();
                 boolean legality = checkDataLegality.Check();
+//              数据合法 生成记录
                 if (legality) {
                     this.generateRecord();
                 } else {
+//                  数据不合法 异常登记 原因
                     String returncode = this.errorOperate();
+
                 }
 
             }
