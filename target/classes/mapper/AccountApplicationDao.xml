@@ -132,7 +132,7 @@
     </delete>
     <insert id="insert" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno"
             parameterType="com.psbc.pojo.AccountApplication" useGeneratedKeys="true">
-        insert into account_application (TACode, DistributorCode, ReferenceNo,
+        insert into account_application (AppSheetSerialNo,TACode, DistributorCode, ReferenceNo,
                                          Address, InstReprIDCode, InstReprIDType,
                                          InstReprName, CertificateType, CertificateNo,
                                          InvestorName, TransactionDate, TransactionTime,
@@ -161,7 +161,7 @@
                                          AcctNoOfInvestorInClearingAgency, ClearingAgency,
                                          AcceptMethod, FrozenCause, FreezingDeadline,
                                          OriginalSerialNo, OriginalAppSheetNo, Specification)
-        values (#{tacode,jdbcType=VARCHAR}, #{distributorcode,jdbcType=VARCHAR}, #{referenceno,jdbcType=INTEGER},
+        values (#{AppSheetSerialNo},#{tacode,jdbcType=VARCHAR}, #{distributorcode,jdbcType=VARCHAR}, #{referenceno,jdbcType=INTEGER},
                 #{address,jdbcType=VARCHAR}, #{instrepridcode,jdbcType=VARCHAR}, #{instrepridtype,jdbcType=OTHER},
                 #{instreprname,jdbcType=VARCHAR}, #{certificatetype,jdbcType=OTHER}, #{certificateno,jdbcType=VARCHAR},
                 #{investorname,jdbcType=VARCHAR}, #{transactiondate,jdbcType=CHAR}, #{transactiontime,jdbcType=CHAR},
