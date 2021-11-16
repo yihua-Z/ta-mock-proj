@@ -126,7 +126,7 @@
     </delete>
     <insert id="insert" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno"
             parameterType="com.psbc.pojo.AccountApplication" useGeneratedKeys="true">
-        insert into account_application (Address, InstReprIDCode, InstReprIDType,
+        insert into account_application (AppSheetSerialNo, Address, InstReprIDCode, InstReprIDType,
                                          InstReprName, CertificateType, CertificateNo,
                                          InvestorName, TransactionDate, TransactionTime,
                                          IndividualOrInstitution, InstitutionType, PostCode,
@@ -156,7 +156,8 @@
                                          AcceptMethod, FrozenCause, FreezingDeadline,
                                          OriginalSerialNo, OriginalAppSheetNo, Specification,
                                          TACode, ReferenceNo)
-        values (#{address,jdbcType=VARCHAR}, #{instrepridcode,jdbcType=VARCHAR}, #{instrepridtype,jdbcType=OTHER},
+        values (#{appsheetserialno,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{instrepridcode,jdbcType=VARCHAR},
+                #{instrepridtype,jdbcType=OTHER},
                 #{instreprname,jdbcType=VARCHAR}, #{certificatetype,jdbcType=OTHER}, #{certificateno,jdbcType=VARCHAR},
                 #{investorname,jdbcType=VARCHAR}, #{transactiondate,jdbcType=CHAR}, #{transactiontime,jdbcType=CHAR},
                 #{individualorinstitution,jdbcType=OTHER}, #{institutiontype,jdbcType=OTHER}, #{postcode,jdbcType=CHAR},
