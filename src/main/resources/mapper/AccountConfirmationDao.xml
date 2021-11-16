@@ -8,7 +8,7 @@
     <result column="BusinessCode" jdbcType="CHAR" property="businesscode" />
     <result column="TransactionDate" jdbcType="CHAR" property="transactiondate" />
     <result column="TransactionTime" jdbcType="CHAR" property="transactiontime" />
-    <result column="TASerialNo" jdbcType="INTEGER" property="taserialno" />
+    <result column="TASerialNo" jdbcType="VARCHAR" property="taserialno" />
     <result column="FromTAFlag" jdbcType="VARCHAR" property="fromtaflag" />
     <result column="RegionCode" jdbcType="VARCHAR" property="regioncode" />
     <result column="NetNo" jdbcType="INTEGER" property="netno" />
@@ -31,12 +31,12 @@
     where ConfirmID = #{confirmid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" keyColumn="ConfirmID" keyProperty="confirmid" parameterType="com.psbc.pojo.AccountConfirmation" useGeneratedKeys="true">
-    insert into account_confirmation (TransactionCfmDate, ReturnCode, BusinessCode, 
+    insert into account_confirmation (TransactionCfmDate, ReturnCode, BusinessCode,
       TransactionDate, TransactionTime, TASerialNo, 
       FromTAFlag, RegionCode, NetNo, 
       Specification, CustomerNo, ErrorDetail
       )
-    values (#{transactioncfmdate,jdbcType=CHAR}, #{returncode,jdbcType=CHAR}, #{businesscode,jdbcType=CHAR}, 
+    values (#{transactioncfmdate,jdbcType=CHAR}, #{returncode,jdbcType=CHAR}, #{businesscode,jdbcType=CHAR},
       #{transactiondate,jdbcType=CHAR}, #{transactiontime,jdbcType=CHAR}, #{taserialno,jdbcType=INTEGER}, 
       #{fromtaflag,jdbcType=VARCHAR}, #{regioncode,jdbcType=VARCHAR}, #{netno,jdbcType=INTEGER}, 
       #{specification,jdbcType=VARCHAR}, #{customerno,jdbcType=INTEGER}, #{errordetail,jdbcType=VARCHAR}

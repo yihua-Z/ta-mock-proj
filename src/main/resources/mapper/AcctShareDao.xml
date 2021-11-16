@@ -24,9 +24,9 @@
     where TAAccountID = #{taaccountid,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" keyColumn="TAAccountID" keyProperty="taaccountid" parameterType="com.psbc.pojo.AcctShare" useGeneratedKeys="true">
-    insert into acct_share (DistributorCode, TACode, TotalVolOfDistributorInTA, 
+    insert into acct_share (TAAccountID,DistributorCode, TACode, TotalVolOfDistributorInTA,
       TotalFrozenVol, TransactionCfmDate)
-    values (#{distributorcode,jdbcType=VARCHAR}, #{tacode,jdbcType=VARCHAR}, #{totalvolofdistributorinta,jdbcType=DECIMAL}, 
+    values (#{taaccountid,jdbcType=VARCHAR},#{distributorcode,jdbcType=VARCHAR}, #{tacode,jdbcType=VARCHAR}, #{totalvolofdistributorinta,jdbcType=DECIMAL},
       #{totalfrozenvol,jdbcType=DECIMAL}, #{transactioncfmdate,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" keyColumn="TAAccountID" keyProperty="taaccountid" parameterType="com.psbc.pojo.AcctShare" useGeneratedKeys="true">

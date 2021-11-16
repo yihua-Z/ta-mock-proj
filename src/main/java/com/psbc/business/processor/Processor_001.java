@@ -3,6 +3,7 @@ package com.psbc.business.processor;
 import com.psbc.business.service.BusinessCodeChecker;
 import com.psbc.business.service.RecordOperator;
 import com.psbc.mapper.AccountApplicationDao;
+import com.psbc.mapper.AccountInfoDao;
 import com.psbc.pojo.AccountApplication;
 import com.psbc.pojo.TableModel;
 import com.psbc.reader.DataFileReader;
@@ -22,6 +23,9 @@ public class Processor_001 {
     @Autowired
     AccountApplicationDao applicationMapper;
 
+    @Autowired
+    AccountInfoDao accountInfoDao;
+
     private String applicationFilePath = "";
 
     private BusinessCodeChecker businessCodeChecker = new BusinessCodeChecker();
@@ -40,12 +44,15 @@ public class Processor_001 {
             String businessCode = this.businessCodeChecker.businessCodeChecker(tableModel);
             if (businessCode != null) {
                 this.recordOperator.setBusinessCode(businessCode);
+
 //                检查业务值是否合法
                 checkerFiledValue = this.recordOperator.checkerFiledValue(tableModel);
+
                 if (checkerFiledValue) {
 //                    检查字段是否合法，合法返回对应的AccountApplication
                     AccountApplication accountApplication = new AccountApplication();
                     accountApplication = (AccountApplication) this.recordOperator.getTargetObject(tableModel, accountApplication.newInstanceWithoutArgs());
+
 //                    插入记录到 account_application
                     this.applicationMapper.insert(accountApplication);
                     this.accountApplicationList.add(accountApplication);

@@ -9,7 +9,7 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class AcctShare implements Serializable {
+public class AcctShare implements DatabaseModel {
     /**
      * 投资人理财账号
      */
@@ -41,4 +41,9 @@ public class AcctShare implements Serializable {
     private String transactioncfmdate;
 
     private static final long serialVersionUID = 1L;
+
+    @Override
+    public DatabaseModel newInstanceWithoutArgs() {
+        return new AcctShare();
+    }
 }

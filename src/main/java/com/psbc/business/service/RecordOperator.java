@@ -133,18 +133,6 @@ public class RecordOperator {
             }
         }
 
-//        for (Field c : databaseModelDeclaredFields) {
-//            Object o = null;
-//            try {
-//                c.setAccessible(true);
-//                o = c.get(targetObject);
-//                if (o == null) {
-//                    c.set(targetObject, "");
-//                }
-//            } catch (IllegalAccessException e) {
-//                e.printStackTrace();
-//            }
-//        }
 
         this.targetObject = targetObject;
 

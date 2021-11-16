@@ -39,7 +39,7 @@ public class AccountConfirmation implements DatabaseModel {
      */
     private String transactiontime;
 
-    private Integer taserialno;
+    private String taserialno;
 
     private String fromtaflag;
 
