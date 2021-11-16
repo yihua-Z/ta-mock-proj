@@ -31,8 +31,23 @@ public class AccountExpectationChecker {
             checkAppSheetSeriaNo(accountApplication);
             if (this.checkAppSheetSeriaNo) {
 
+                CheckDataLegality checkDataLegality = new CheckDataLegality();
+                boolean legality = checkDataLegality.Check();
+                if()
+
+//                Expectation中由对应的记录
+//                获取确认记录中需要赋值的字段
+//                生成相应字段的值
+//                returnCode = 0000?
+//                生成对应确认成功记录
+//                写入""account_info"表
+//                初始化"acct_share"表
+//                写入"account_confirmation"表
             } else {
-                
+//                校验记录的数据业务合法性
+//                是否合法
+
+
             }
         }
 
