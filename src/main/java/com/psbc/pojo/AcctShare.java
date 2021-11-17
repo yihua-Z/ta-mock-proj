@@ -13,7 +13,7 @@ public class AcctShare implements DatabaseModel {
     /**
      * 投资人理财账号
      */
-    private String taaccountid;
+    private String taacountid;
 
     /**
      * 销售人代码
@@ -39,7 +39,6 @@ public class AcctShare implements DatabaseModel {
      * 交易确认日期
      */
     private String transactioncfmdate;
-
 
     @Override
     public DatabaseModel newInstanceWithoutArgs() {

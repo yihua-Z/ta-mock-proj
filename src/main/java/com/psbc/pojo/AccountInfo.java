@@ -13,7 +13,6 @@ public class AccountInfo implements DatabaseModel {
 
     private String taacountid;
 
-
     @Override
     public DatabaseModel newInstanceWithoutArgs() {
         return new AccountInfo();

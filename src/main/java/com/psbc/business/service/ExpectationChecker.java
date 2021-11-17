@@ -18,9 +18,9 @@ import static com.psbc.utils.DateAndTimeUtil.*;
 public class ExpectationChecker {
 
 
-    private ExceptionRecordOperator errorOperate = SpringContextUtil.getBean(ExceptionRecordOperator.class);
-    private SucceedRecordOperator generateSucceed = SpringContextUtil.getBean(SucceedRecordOperator.class);
-
+    private ExceptionRecordOperator errorOperate;
+    private SucceedRecordOperator generateSucceed;
+    private AccountExpectation expectation;
     private boolean checkAppSheetSeriaNo = false;
     private String returnCode = "0000";
 
@@ -29,38 +29,31 @@ public class ExpectationChecker {
 
     public void ExpectationOperate(List<AccountApplication> accountApplications) {
         if (accountApplications != null) {
-
             for (AccountApplication accountApplication : accountApplications
             ) {
                 checkAppSheetSeriaNo(accountApplication);
 //          记录存在 Expectation 中
                 if (this.checkAppSheetSeriaNo) {
-                    this.generateSucceed.generateRecord(accountApplication);
+                    this.returnCode = this.generateSucceed.generateRecord(accountApplication, expectation);
                     if (this.returnCode.equals("0000")) {
                         this.generateSucceed.generateSucceed(accountApplication);
                     } else {
-                        this.errorOperate.errorOperate(accountApplication);
+                        this.errorOperate.errorOperate(accountApplication, this.returnCode);
                     }
                 }
-//            记录不存在 Expectation 中
-                else {
-//              校验记录的数据业务合法性
+//                记录不存在 Expectation 中
+                else{
+//                    校验记录的数据业务合法性
                     CheckDataLegality checkDataLegality = SpringContextUtil.getBean(CheckDataLegality.class);
                     checkDataLegality.Check(accountApplication);
 
-                    {
-//                        测试代码，为了强制失败
-                        checkDataLegality.setLegality(false);
-                        this.returnCode = "9999";
-                    }
-
-                    //              数据合法 生成记录
+//                  数据合法 生成记录
                     if (checkDataLegality.isLegality()) {
-                        this.generateSucceed.generateRecord(accountApplication);
+                        this.generateSucceed.generateRecord(accountApplication,checkDataLegality.getReturnCode());
                     } else {
-//                  数据不合法 异常登记， 原因
+//                  数据不合法 异常登记
                         this.returnCode = checkDataLegality.getReturnCode();
-                        this.errorOperate.errorOperate(accountApplication);
+                        this.errorOperate.errorOperate(accountApplication, this.returnCode);
                     }
 
                 }
@@ -76,21 +69,15 @@ public class ExpectationChecker {
     public void ExpectationOperate() {
 
         List<AccountApplication> accountApplications = accountApplicationDao.selectAll();
-
         this.ExpectationOperate(accountApplications);
 
     }
 
     private void checkAppSheetSeriaNo(AccountApplication application) {
-
-        String appsheetserialno = application.getAppsheetserialno();
-
-        AccountExpectation expectation = accountExpectationDao.selectByPrimaryKey(appsheetserialno);
-
+        this.expectation = accountExpectationDao.selectByPrimaryKey(application.getAppsheetserialno());
         if (expectation != null) {
             this.checkAppSheetSeriaNo = true;
         }
-
     }
 
 

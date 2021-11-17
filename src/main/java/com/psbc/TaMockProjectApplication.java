@@ -1,8 +1,10 @@
 package com.psbc;
 
 import com.psbc.business.processor.Processor_001;
+import com.psbc.business.service.ExceptionRecordOperator;
 import com.psbc.business.service.ExpectationChecker;
 import com.psbc.business.service.SpringContextUtil;
+import com.psbc.business.service.SucceedRecordOperator;
 import com.psbc.pojo.AccountApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,12 +28,20 @@ public class TaMockProjectApplication {
 
         SpringApplication.run(TaMockProjectApplication.class, args);
 
+
         Processor_001 processor_001 = SpringContextUtil.getBean(Processor_001.class);
         ExpectationChecker expectationChecker = SpringContextUtil.getBean(ExpectationChecker.class);
+        ExceptionRecordOperator errorOperate = SpringContextUtil.getBean(ExceptionRecordOperator.class);
+        SucceedRecordOperator generateSucceed = SpringContextUtil.getBean(SucceedRecordOperator.class);
+
 
 //        List<AccountApplication> accountApplications = getApplication(processor_001);
 
+        expectationChecker.setErrorOperate(errorOperate);
+        expectationChecker.setGenerateSucceed(generateSucceed);
+
         expectationChecker.ExpectationOperate();
+
         System.out.println();
 
 

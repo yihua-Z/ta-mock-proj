@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.psbc.mapper.AcctShareDao">
   <resultMap id="BaseResultMap" type="com.psbc.pojo.AcctShare">
-    <id column="TAAccountID" jdbcType="VARCHAR" property="taaccountid" />
+    <id column="TAAcountID" jdbcType="VARCHAR" property="taacountid" />
     <result column="DistributorCode" jdbcType="VARCHAR" property="distributorcode" />
     <result column="TACode" jdbcType="VARCHAR" property="tacode" />
     <result column="TotalVolOfDistributorInTA" jdbcType="DECIMAL" property="totalvolofdistributorinta" />
@@ -10,26 +10,25 @@
     <result column="TransactionCfmDate" jdbcType="VARCHAR" property="transactioncfmdate" />
   </resultMap>
   <sql id="Base_Column_List">
-    TAAccountID, DistributorCode, TACode, TotalVolOfDistributorInTA, TotalFrozenVol, 
-    TransactionCfmDate
+    TAAcountID, DistributorCode, TACode, TotalVolOfDistributorInTA, TotalFrozenVol, TransactionCfmDate
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from acct_share
-    where TAAccountID = #{taaccountid,jdbcType=VARCHAR}
+    where TAAcountID = #{taacountid,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from acct_share
-    where TAAccountID = #{taaccountid,jdbcType=VARCHAR}
+    where TAAcountID = #{taacountid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" keyColumn="TAAccountID" keyProperty="taaccountid" parameterType="com.psbc.pojo.AcctShare" useGeneratedKeys="true">
-    insert into acct_share (TAAccountID,DistributorCode, TACode, TotalVolOfDistributorInTA,
+  <insert id="insert" keyColumn="TAAcountID" keyProperty="taacountid" parameterType="com.psbc.pojo.AcctShare" useGeneratedKeys="true">
+    insert into acct_share (TAAcountID,DistributorCode, TACode, TotalVolOfDistributorInTA,
       TotalFrozenVol, TransactionCfmDate)
-    values (#{taaccountid,jdbcType=VARCHAR},#{distributorcode,jdbcType=VARCHAR}, #{tacode,jdbcType=VARCHAR}, #{totalvolofdistributorinta,jdbcType=DECIMAL},
+    values (#{taacountid,jdbcType=VARCHAR},#{distributorcode,jdbcType=VARCHAR}, #{tacode,jdbcType=VARCHAR}, #{totalvolofdistributorinta,jdbcType=DECIMAL},
       #{totalfrozenvol,jdbcType=DECIMAL}, #{transactioncfmdate,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="TAAccountID" keyProperty="taaccountid" parameterType="com.psbc.pojo.AcctShare" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="TAAcountID" keyProperty="taacountid" parameterType="com.psbc.pojo.AcctShare" useGeneratedKeys="true">
     insert into acct_share
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="distributorcode != null">
@@ -85,7 +84,7 @@
         TransactionCfmDate = #{transactioncfmdate,jdbcType=VARCHAR},
       </if>
     </set>
-    where TAAccountID = #{taaccountid,jdbcType=VARCHAR}
+    where TAAcountID = #{taacountid,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AcctShare">
     update acct_share
@@ -94,6 +93,6 @@
       TotalVolOfDistributorInTA = #{totalvolofdistributorinta,jdbcType=DECIMAL},
       TotalFrozenVol = #{totalfrozenvol,jdbcType=DECIMAL},
       TransactionCfmDate = #{transactioncfmdate,jdbcType=VARCHAR}
-    where TAAccountID = #{taaccountid,jdbcType=VARCHAR}
+    where TAAcountID = #{taacountid,jdbcType=VARCHAR}
   </update>
 </mapper>

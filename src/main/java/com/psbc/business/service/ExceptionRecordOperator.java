@@ -19,14 +19,16 @@ public class ExceptionRecordOperator {
 
     private String returnCode = "0000";
     private RecordOperator operator = new RecordOperator();
-    public void errorOperate(AccountApplication application) {
+    public void errorOperate(AccountApplication application,String returnCode) {
 
 //        将不合法的申请记录写入“异常登 记簿”(包括不合法原因)
 //        returnCode
         Exception exception = new Exception();
         exception = (Exception) this.operator.getTargetObject(application, exception.newInstanceWithoutArgs());
         exception.setSpeification(this.returnCode);
+
         exceptionDao.insert(exception);
+        this.returnCode=returnCode;
         this.generateFailed(application);
 
     }
@@ -41,6 +43,7 @@ public class ExceptionRecordOperator {
         accountConfirmation = (AccountConfirmation) this.operator.getTargetObject(accountApplication, accountConfirmation.newInstanceWithoutArgs());
         accountConfirmation.setReturncode(this.returnCode);
         accountConfirmation.setTransactioncfmdate(getNowDate());
+
         accountConfirmationDao.insert(accountConfirmation);
     }
 
