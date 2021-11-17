@@ -1,15 +1,16 @@
 package com.psbc.pojo;
 
 import java.io.Serializable;
+
 import lombok.Data;
 
 /**
  * ta_property_config
- * @author 
+ *
+ * @author
  */
 @Data
-
-public class TaPropertyConfig implements Serializable {
+public class TaPropertyConfig implements DatabaseModel {
     /**
      * TA代码
      */
@@ -25,5 +26,8 @@ public class TaPropertyConfig implements Serializable {
      */
     private Integer accountindex;
 
-    private static final long serialVersionUID = 1L;
+    @Override
+    public DatabaseModel newInstanceWithoutArgs() {
+        return new TaPropertyConfig();
+    }
 }

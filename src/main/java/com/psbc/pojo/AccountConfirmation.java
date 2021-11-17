@@ -39,7 +39,7 @@ public class AccountConfirmation implements DatabaseModel {
      */
     private String transactiontime;
 
-    private String taserialno;
+    private Integer taserialno;
 
     private String fromtaflag;
 
@@ -52,6 +52,8 @@ public class AccountConfirmation implements DatabaseModel {
     private Integer customerno;
 
     private String errordetail;
+
+    private String taaccountid;
 
     @Override
     public DatabaseModel newInstanceWithoutArgs() {

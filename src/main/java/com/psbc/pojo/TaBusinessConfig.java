@@ -8,7 +8,7 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class TaBusinessConfig implements Serializable {
+public class TaBusinessConfig implements DatabaseModel {
     /**
      * TA代码
      */
@@ -40,4 +40,9 @@ public class TaBusinessConfig implements Serializable {
     private String confimbusinesscodes;
 
     private static final long serialVersionUID = 1L;
+
+    @Override
+    public DatabaseModel newInstanceWithoutArgs() {
+        return new TaBusinessConfig();
+    }
 }

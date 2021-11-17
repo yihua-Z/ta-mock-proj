@@ -19,8 +19,6 @@ import java.util.*;
 @Component
 public class RecordOperator {
 
-    @Autowired
-    AccountApplicationDao accountApplicationDao;
     private Object targetObject;
 
     private String businessCode;
@@ -124,8 +122,6 @@ public class RecordOperator {
                         if (c.getType().getSimpleName().equals("BigDecimal")) {
                             c.set(targetObject, BigDecimal.valueOf(Long.parseLong(value.toString())));
                         }
-
-
                     } catch (IllegalAccessException e) {
                         e.printStackTrace();
                     }
@@ -139,4 +135,8 @@ public class RecordOperator {
         return this.targetObject;
 
     }
+
+
+
+
 }

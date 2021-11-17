@@ -859,7 +859,13 @@ CREATE TABLE `transaction_expectation`
 
 SET FOREIGN_KEY_CHECKS = 1;
 
-
-
-
+DROP TABLE IF EXISTS `ta_property_config`;
+create table ta_property_config
+(
+    TACode        varchar(9)       not null comment 'TA代码'
+        primary key,
+    accountPrefix varchar(4)       not null comment 'TA账户前缀',
+    accountIndex  int(8) default 0 not null comment 'TA账户序号'
+)
+    charset = utf8;
 # PRIMARY KEY (`AppSheetSerialNo`, `TACode`, `DistributorCode`, `ReferenceNo`) USING BTREE

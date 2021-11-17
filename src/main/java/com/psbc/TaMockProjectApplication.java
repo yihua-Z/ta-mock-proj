@@ -1,7 +1,7 @@
 package com.psbc;
 
 import com.psbc.business.processor.Processor_001;
-import com.psbc.business.service.AccountExpectationChecker;
+import com.psbc.business.service.ExpectationChecker;
 import com.psbc.business.service.SpringContextUtil;
 import com.psbc.pojo.AccountApplication;
 import org.springframework.boot.SpringApplication;
@@ -27,11 +27,11 @@ public class TaMockProjectApplication {
         SpringApplication.run(TaMockProjectApplication.class, args);
 
         Processor_001 processor_001 = SpringContextUtil.getBean(Processor_001.class);
-        AccountExpectationChecker accountExpectationChecker = SpringContextUtil.getBean(AccountExpectationChecker.class);
+        ExpectationChecker expectationChecker = SpringContextUtil.getBean(ExpectationChecker.class);
 
 //        List<AccountApplication> accountApplications = getApplication(processor_001);
 
-        accountExpectationChecker.ExpectationOperate();
+        expectationChecker.ExpectationOperate();
         System.out.println();
 
 

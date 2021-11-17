@@ -40,7 +40,6 @@ public class AcctShare implements DatabaseModel {
      */
     private String transactioncfmdate;
 
-    private static final long serialVersionUID = 1L;
 
     @Override
     public DatabaseModel newInstanceWithoutArgs() {
