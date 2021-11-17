@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.psbc.mapper.TaPropertyConfigDao">
+  <resultMap id="BaseResultMap" type="com.psbc.pojo.TaPropertyConfig">
+    <result column="TACode" jdbcType="VARCHAR" property="tacode" />
+    <result column="accountPrefix" jdbcType="VARCHAR" property="accountprefix" />
+    <result column="accountIndex" jdbcType="INTEGER" property="accountindex" />
+  </resultMap>
+  <insert id="insert" parameterType="com.psbc.pojo.TaPropertyConfig">
+    insert into ta_property_config (TACode, accountPrefix, accountIndex
+      )
+    values (#{tacode,jdbcType=VARCHAR}, #{accountprefix,jdbcType=VARCHAR}, #{accountindex,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.psbc.pojo.TaPropertyConfig">
+    insert into ta_property_config
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tacode != null">
+        TACode,
+      </if>
+      <if test="accountprefix != null">
+        accountPrefix,
+      </if>
+      <if test="accountindex != null">
+        accountIndex,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tacode != null">
+        #{tacode,jdbcType=VARCHAR},
+      </if>
+      <if test="accountprefix != null">
+        #{accountprefix,jdbcType=VARCHAR},
+      </if>
+      <if test="accountindex != null">
+        #{accountindex,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>
