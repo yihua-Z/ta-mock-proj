@@ -29,28 +29,27 @@ public class AccountExpectationChecker {
     private String returnCode = "0000";
 
     public String generateRecord() {
-        String returnCode = "0000";
 //        Expectation中由对应的记录
 //        获取确认记录中需要赋值的字段
 //        生成相应字段的值
 //        生成 returnCode
-        return returnCode;
+        return this.returnCode;
     }
 
     public void generateSucceed() {
-//                生成对应确认成功记录
-//                写入""account_info"表
-//                初始化"acct_share"表
-//                写入"account_confirmation"表
+//         生成对应确认成功记录
+//         写入""account_info"表
+//         初始化"acct_share"表
+//         写入"account_confirmation"表
     }
 
     @Autowired
     ExceptionDao exceptionDao;
 
     public void errorOperate(AccountApplication application) {
-//        生成 returnCode
-//        将不合法的申请记录写入“异常登 记簿”(包括不合法原因)
 
+//        将不合法的申请记录写入“异常登 记簿”(包括不合法原因)
+//        returnCode
         Exception exception = new Exception();
         exception = (Exception) this.operator.getTargetObject(application, exception.newInstanceWithoutArgs());
         exception.setSpeification(this.returnCode);
@@ -75,43 +74,49 @@ public class AccountExpectationChecker {
     AccountExpectationDao accountExpectationDao;
 
     public void ExpectationOperate(List<AccountApplication> accountApplications) {
-
-        for (AccountApplication accountApplication : accountApplications
-        ) {
-            accountApplication.setTacode("0");
-            accountApplication.setReferenceno(0);
-
-            checkAppSheetSeriaNo(accountApplication);
-//          记录存在 Expectation 中
-            if (this.checkAppSheetSeriaNo) {
-                this.generateRecord();
-                if (this.returnCode.equals("0000")) {
-                    this.generateSucceed();
-                } else {
-                    this.errorOperate(accountApplication);
-                }
-            }
-//            记录不存在 Expectation 中
-            else {
-//              校验记录的数据业务合法性
-                CheckDataLegality checkDataLegality = SpringContextUtil.getBean(CheckDataLegality.class);
-                checkDataLegality.Check(accountApplication);
-
+        if(accountApplications!=null){
+            for (AccountApplication accountApplication : accountApplications
+            ) {
                 {
-                    checkDataLegality.setLegality(false);
-                    this.returnCode = "9999";
+//              测试代码 测试数据没有对应的数据
+                    accountApplication.setTacode("0");
+                    accountApplication.setReferenceno(0);
                 }
 
-                //              数据合法 生成记录
-                if (checkDataLegality.isLegality()) {
+                checkAppSheetSeriaNo(accountApplication);
+//          记录存在 Expectation 中
+                if (this.checkAppSheetSeriaNo) {
                     this.generateRecord();
-                } else {
-//                  数据不合法 异常登记 原因
-                    this.returnCode = checkDataLegality.getReturnCode();
-                    this.errorOperate(accountApplication);
-                    this.generateFailed(accountApplication);
+                    if (this.returnCode.equals("0000")) {
+                        this.generateSucceed();
+                    } else {
+                        this.errorOperate(accountApplication);
+                    }
                 }
+//            记录不存在 Expectation 中
+                else {
+//              校验记录的数据业务合法性
+                    CheckDataLegality checkDataLegality = SpringContextUtil.getBean(CheckDataLegality.class);
+                    checkDataLegality.Check(accountApplication);
 
+                    {
+//                  测试代码，为了强制失败
+                        checkDataLegality.setLegality(false);
+                        this.returnCode = "9999";
+                    }
+
+                    //              数据合法 生成记录
+                    if (checkDataLegality.isLegality()) {
+                        this.generateRecord();
+                    } else {
+//                  数据不合法 异常登记， 原因
+                        this.returnCode = checkDataLegality.getReturnCode();
+
+                        this.errorOperate(accountApplication);
+                        this.generateFailed(accountApplication);
+                    }
+
+                }
             }
         }
 
