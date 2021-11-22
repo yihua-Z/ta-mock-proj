@@ -92,7 +92,7 @@
               <option name="name" value="account_info" />
               <option name="overrideJava" value="true" />
               <option name="overrideXML" value="true" />
-              <option name="primaryKey" value="TransactionAccountID" />
+              <option name="primaryKey" value="accountInfoID" />
               <option name="projectFolder" value="$PROJECT_DIR$" />
               <option name="tableName" value="account_info" />
               <option name="useLombokPlugin" value="true" />
@@ -140,7 +140,7 @@
               <option name="name" value="acct_share" />
               <option name="overrideJava" value="true" />
               <option name="overrideXML" value="true" />
-              <option name="primaryKey" value="TAAcountID" />
+              <option name="primaryKey" value="TAAccountID" />
               <option name="projectFolder" value="$PROJECT_DIR$" />
               <option name="tableName" value="acct_share" />
               <option name="useLombokPlugin" value="true" />

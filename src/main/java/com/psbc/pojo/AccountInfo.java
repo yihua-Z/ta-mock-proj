@@ -9,9 +9,15 @@ import lombok.Data;
  */
 @Data
 public class AccountInfo implements DatabaseModel {
+    /**
+     * 账户信息ID
+     */
+    private Integer accountinfoid;
+
     private String transactionaccountid;
 
-    private String taacountid;
+    private String taaccountid;
+
 
     @Override
     public DatabaseModel newInstanceWithoutArgs() {

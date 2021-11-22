@@ -7,13 +7,13 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface AccountInfoDao {
-    int deleteByPrimaryKey(String transactionaccountid);
+    int deleteByPrimaryKey(Integer accountinfoid);
 
     int insert(AccountInfo record);
 
     int insertSelective(AccountInfo record);
 
-    AccountInfo selectByPrimaryKey(String transactionaccountid);
+    AccountInfo selectByPrimaryKey(Integer accountinfoid);
 
     int updateByPrimaryKeySelective(AccountInfo record);
 

@@ -85,17 +85,26 @@ public class SucceedRecordOperator {
 //        写入 "account_info "表
         AccountInfo accountInfo = new AccountInfo();
         accountInfo = (AccountInfo) this.operator.getTargetObject(accountApplication, accountInfo.newInstanceWithoutArgs());
-        accountInfo.setTaacountid(getFullNowDateTime());
-//        accountInfoDao.insert(accountInfo);
+
+
+        accountInfo.setTaaccountid(this.accountConfirmation.getTaaccountid());
+        accountInfo.setAccountinfoid(1);
+        accountInfo.setTransactionaccountid("1");
+
+
+        accountInfoDao.insert(accountInfo);
 
 //        初始化 "acct_share" 表
 
         AcctShare acctShare = new AcctShare();
         acctShare = (AcctShare) this.operator.getTargetObject(accountApplication, acctShare.newInstanceWithoutArgs());
-        acctShare = (AcctShare) this.operator.getTargetObject(accountInfo, acctShare.newInstanceWithoutArgs());
+        acctShare = (AcctShare) this.operator.getTargetObject(accountInfo, acctShare);
         acctShare.setTotalvolofdistributorinta(BigDecimal.valueOf(0));
 
-//        acctShareDao.insert(acctShare);
+        acctShare.setDistributorcode("0");
+        acctShare.setTransactioncfmdate("");
+
+        acctShareDao.insert(acctShare);
 
 //        写入确认表
 

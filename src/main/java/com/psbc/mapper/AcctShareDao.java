@@ -7,13 +7,13 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface AcctShareDao {
-    int deleteByPrimaryKey(String taacountid);
+    int deleteByPrimaryKey(String taaccountid);
 
     int insert(AcctShare record);
 
     int insertSelective(AcctShare record);
 
-    AcctShare selectByPrimaryKey(String taacountid);
+    AcctShare selectByPrimaryKey(String taaccountid);
 
     int updateByPrimaryKeySelective(AcctShare record);
 
