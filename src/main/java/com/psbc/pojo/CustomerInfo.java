@@ -79,5 +79,4 @@ public class CustomerInfo implements Serializable {
      */
     private String customerno;
 
-    private static final long serialVersionUID = 1L;
 }

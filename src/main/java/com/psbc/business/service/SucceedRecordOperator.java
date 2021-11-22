@@ -1,18 +1,14 @@
 package com.psbc.business.service;
 
-import com.psbc.mapper.AccountConfirmationDao;
-import com.psbc.mapper.AccountInfoDao;
-import com.psbc.mapper.AcctShareDao;
-import com.psbc.mapper.TaPropertyConfigDao;
+import com.psbc.mapper.*;
 import com.psbc.pojo.*;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.lang.Exception;
 import java.math.BigDecimal;
 
-import static com.psbc.utils.DateAndTimeUtil.getNowDateTime;
+import static com.psbc.utils.DateAndTimeUtil.*;
 
 @Data
 @Component
@@ -25,7 +21,7 @@ public class SucceedRecordOperator {
     private AccountConfirmation accountConfirmation = new AccountConfirmation();
 
     @Autowired
-    TaPropertyConfigDao taPropertyConfigDao;
+    TaPropertyDao taPropertyDao;
 
     @Autowired
     AccountInfoDao accountInfoDao;
@@ -41,45 +37,44 @@ public class SucceedRecordOperator {
         AccountConfirmation accountConfirmation = new AccountConfirmation();
         accountConfirmation = (AccountConfirmation) this.operator.getTargetObject(application, accountConfirmation.newInstanceWithoutArgs());
         if (expectation != null) {
-            accountConfirmation = (AccountConfirmation) this.operator.getTargetObject(expectation, accountConfirmation);
+            this.accountConfirmation = (AccountConfirmation) this.operator.getTargetObject(expectation, accountConfirmation);
         }
 
-        this.getAccountConfirmation(accountConfirmation);
+        this.getAccountConfirmation("0");
 
         this.returnCode = expectation.getReturncode();
 
         return this.returnCode;
     }
 
-    public void getAccountConfirmation(AccountConfirmation accountConfirmation) {
-
-        TaPropertyConfig taPropertyConfig = taPropertyConfigDao.selectByPrimaryKey("0");
-        String accountprefix = taPropertyConfig.getAccountprefix();
-        Integer accountindex = taPropertyConfig.getAccountindex();
+    public void getAccountConfirmation(String taCode) {
+//      taCode应该配置
+        TaProperty taProperty = taPropertyDao.selectByPrimaryKey(taCode);
+        String accountprefix = taProperty.getAccountPrefix();
+        Integer accountindex = taProperty.getAccountIndex();
 
 //        TransactionCfmDate: T+1;  无字段（已手动添加） 无明确解释
-//        MultiAcctFlag: 0；  无字段
-        accountConfirmation.setTaaccountid(accountprefix + accountindex + getNowDateTime());
-        accountConfirmation.setTransactioncfmdate("");
-//        int 不合理 未按照要求生成
-        accountConfirmation.setTaserialno((int) (Math.random() * (10000)));
-        accountConfirmation.setFromtaflag("0");
-        accountConfirmation.setReturncode("0001");
+//        MultiAcctFlag: 0；  为了生成确认文件
 
-        this.accountConfirmation = accountConfirmation;
+//      TaAccountid 随机生成待改进
+        this.accountConfirmation.setTaaccountid(accountprefix + accountindex + getNowDate());
+        this.accountConfirmation.setTransactioncfmdate("");
+        this.accountConfirmation.setTaserialno(getFullNowDateTime() + (int) (Math.random() * (1000)));
+        this.accountConfirmation.setFromtaflag("0");
+        this.accountConfirmation.setRegioncode("0001");
+        this.accountConfirmation.setReturncode(this.returnCode);
+
 
     }
 
-    public String generateRecord(AccountApplication application, String returnCode) {
+    public void generateRecord(AccountApplication application, String returnCode) {
 
 
         AccountConfirmation accountConfirmation = new AccountConfirmation();
-        accountConfirmation = (AccountConfirmation) this.operator.getTargetObject(application, accountConfirmation.newInstanceWithoutArgs());
-        this.getAccountConfirmation(accountConfirmation);
-
+        this.accountConfirmation = (AccountConfirmation) this.operator.getTargetObject(application, accountConfirmation.newInstanceWithoutArgs());
         this.returnCode = returnCode;
+        this.getAccountConfirmation("0");
 
-        return this.returnCode;
 
     }
 
@@ -90,7 +85,7 @@ public class SucceedRecordOperator {
 //        写入 "account_info "表
         AccountInfo accountInfo = new AccountInfo();
         accountInfo = (AccountInfo) this.operator.getTargetObject(accountApplication, accountInfo.newInstanceWithoutArgs());
-        accountInfo.setTaacountid(getNowDateTime());
+        accountInfo.setTaacountid(getFullNowDateTime());
 //        accountInfoDao.insert(accountInfo);
 
 //        初始化 "acct_share" 表
@@ -103,6 +98,8 @@ public class SucceedRecordOperator {
 //        acctShareDao.insert(acctShare);
 
 //        写入确认表
+
+
         accountConfirmationDao.insert(this.accountConfirmation);
 
         System.out.println();

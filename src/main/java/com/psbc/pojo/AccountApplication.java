@@ -2,20 +2,35 @@ package com.psbc.pojo;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-
 import lombok.Data;
 
 /**
  * account_application
- *
- * @author
+ * @author 
  */
 @Data
-public class AccountApplication implements DatabaseModel {
+public class AccountApplication extends AccountApplicationKey implements DatabaseModel {
+
     /**
      * 申请单编号
      */
-    private String appsheetserialno;
+    private String appSheetSerialNo;
+
+    /**
+     * TA代码
+     */
+    private String TACode;
+
+    /**
+     * 销售人代码
+     */
+    private String distributorCode;
+
+    /**
+     * 同一交易序列码
+     */
+    private Integer referenceNo;
+
 
     /**
      * 通讯地址
@@ -25,182 +40,177 @@ public class AccountApplication implements DatabaseModel {
     /**
      * 法人代表身份证件代码
      */
-    private String instrepridcode;
+    private String instReprIDCode;
 
     /**
      * 法人代表证件类型
      */
-    private Object instrepridtype;
+    private Object instReprIDType;
 
     /**
      * 法人代表姓名
      */
-    private String instreprname;
+    private String instReprName;
 
     /**
      * 个人证件类型及机构证件型
      */
-    private Object certificatetype;
+    private Object certificateType;
 
     /**
      * 投资人证件号码
      */
-    private String certificateno;
+    private String certificateNo;
 
     /**
      * 投资人户名
      */
-    private String investorname;
+    private String investorName;
 
     /**
      * 交易发生日期
      */
-    private String transactiondate;
+    private String transactionDate;
 
     /**
      * 交易发生时间
      */
-    private String transactiontime;
+    private String transactionTime;
 
     /**
      * 个人/机构标志
      */
-    private Object individualorinstitution;
+    private Object individualOrInstitution;
 
     /**
      * 机构类型
      */
-    private Object institutiontype;
+    private Object institutionType;
 
     /**
      * 投资人邮政编码
      */
-    private String postcode;
+    private String postCode;
 
     /**
      * 经办人证件号码
      */
-    private String transactorcertno;
+    private String transactorCertNo;
 
     /**
      * 经办人证件类型
      */
-    private Object transactorcerttype;
+    private Object transactorCertType;
 
     /**
      * 经办人姓名
      */
-    private String transactorname;
+    private String transactorName;
 
     /**
      * 投资人理财交易帐号
      */
-    private String transactionaccountid;
-
-    /**
-     * 销售人代码
-     */
-    private String distributorcode;
+    private String transactionAccountID;
 
     /**
      * 业务代码
      */
-    private String businesscode;
+    private String businessCode;
 
     /**
      * 对方销售人处投资人基金交易帐号
      */
-    private String targettransactionaccountid;
+    private String targetTransactionAccountID;
 
     /**
      * 投资人收款银行账户账号
      */
-    private String acctnooffminclearingagency;
+    private String acctNoOfFMInClearingAgency;
 
     /**
      * 投资人收款银行账户户名
      */
-    private String acctnameoffminclearingagency;
+    private String acctNameOfFMInClearingAgency;
 
     /**
      * 理财资金清算机构代码
      */
-    private String clearingagencycode;
+    private String clearingAgencyCode;
 
     /**
      * 投资人出生日期
      */
-    private String investorsbirthday;
+    private String investorsBirthday;
 
     /**
      * 投资人在销售人处用于交易的资金账号
      */
-    private String depositacct;
+    private String depositAcct;
 
     /**
      * 交易所在地区编号
      */
-    private String regioncode;
+    private String regionCode;
 
     /**
      * 投资人学历
      */
-    private Object educationlevel;
+    private Object educationLevel;
 
     /**
      * 投资人E-MAIL地址
      */
-    private String emailaddress;
+    private String emailAddress;
 
     /**
      * 投资人传真号码
      */
-    private String faxno;
+    private String faxNo;
 
     /**
      * 投资人职业代码
      */
-    private String vocationcode;
+    private String vocationCode;
 
     /**
      * 投资人住址电话
      */
-    private String hometelno;
+    private String homeTelNo;
 
     /**
      * 投资人年收入
      */
-    private Integer annualincome;
+    private Integer annualIncome;
 
     /**
      * 投资人手机号码
      */
-    private String mobiletelno;
+    private String mobileTelNo;
 
     /**
      * 多渠道开户标志
      */
-    private Object multiacctflag;
+    private Object multiAcctFlag;
 
     /**
      * 网点号码
      */
-    private String branchcode;
+    private String branchCode;
 
     /**
      * 投资人单位电话号码
      */
-    private String officetelno;
+    private String officeTelNo;
 
     /**
      * 投资人户名简称
      */
-    private String accountabbr;
+    private String accountAbbr;
 
     /**
      * 密函编号
      */
-    private String confidentialdocumentcode;
+    private String confidentialDocumentCode;
 
     /**
      * 投资人性别（1-男，2-女）
@@ -210,52 +220,52 @@ public class AccountApplication implements DatabaseModel {
     /**
      * 上交所证券账号
      */
-    private String shsecuritiesaccountid;
+    private String SHSecuritiesAccountID;
 
     /**
      * 深交所证券账号
      */
-    private String szsecuritiesaccountid;
+    private String SZSecuritiesAccountID;
 
     /**
      * 投资人理财账号
      */
-    private String taaccountid;
+    private String TAAccountID;
 
     /**
      * 投资人电话号码
      */
-    private String telno;
+    private String telNo;
 
     /**
      * 使用的交易手段
      */
-    private String tradingmethod;
+    private String tradingMethod;
 
     /**
      * 未成年人标志
      */
-    private Object minorflag;
+    private Object minorFlag;
 
     /**
      * 对账单寄送选择
      */
-    private Object delivertype;
+    private Object deliverType;
 
     /**
      * 经办人识别方式
      */
-    private Object transactoridtype;
+    private Object transactorIDType;
 
     /**
      * 理财账户卡的凭证号
      */
-    private String accountcardid;
+    private String accountCardID;
 
     /**
      * 对账单寄送方式
      */
-    private String deliverway;
+    private String deliverWay;
 
     /**
      * 投资者国籍
@@ -265,7 +275,7 @@ public class AccountApplication implements DatabaseModel {
     /**
      * 操作（清算）网点编号
      */
-    private String netno;
+    private String netNo;
 
     /**
      * 客户所属的经纪人
@@ -275,52 +285,52 @@ public class AccountApplication implements DatabaseModel {
     /**
      * 工作单位名称
      */
-    private String corpname;
+    private String corpName;
 
     /**
      * 证件有效日期
      */
-    private String certvaliddate;
+    private String certValidDate;
 
     /**
      * 机构经办人身份证件有效日期
      */
-    private String insttrancertvaliddate;
+    private String instTranCertValidDate;
 
     /**
      * 机构法人身份证件有效日期
      */
-    private String instreprcertvaliddate;
+    private String instReprCertValidDate;
 
     /**
      * 客户风险等级
      */
-    private String clientriskrate;
+    private String clientRiskRate;
 
     /**
      * 机构法人经营范围
      */
-    private String instreprmanagerange;
+    private String instReprManageRange;
 
     /**
      * 控股股东
      */
-    private String controlholder;
+    private String controlHolder;
 
     /**
      * 实际控制人
      */
-    private String actualcontroller;
+    private String actualController;
 
     /**
      * 婚姻状况
      */
-    private String marriagestatus;
+    private String marriageStatus;
 
     /**
      * 家庭人口数
      */
-    private Integer familynum;
+    private Integer familyNum;
 
     /**
      * 家庭资产
@@ -330,17 +340,17 @@ public class AccountApplication implements DatabaseModel {
     /**
      * 媒体偏好
      */
-    private String mediahobby;
+    private String mediaHobby;
 
     /**
      * 投资人英文名
      */
-    private String englishfirstname;
+    private String englishFirstName;
 
     /**
      * 投资人英文姓
      */
-    private String englishfamliyname;
+    private String englishFamliyName;
 
     /**
      * 行业（采用国标 GB/T4754-2011）
@@ -350,12 +360,12 @@ public class AccountApplication implements DatabaseModel {
     /**
      * 企业性质
      */
-    private String corpoproperty;
+    private String corpoProperty;
 
     /**
      * 员工人数
      */
-    private BigDecimal staffnum;
+    private BigDecimal staffNum;
 
     /**
      * 兴趣爱好类型
@@ -380,52 +390,52 @@ public class AccountApplication implements DatabaseModel {
     /**
      * 推荐人
      */
-    private String commendperson;
+    private String commendPerson;
 
     /**
      * 推荐人类型
      */
-    private Object commendpersontype;
+    private Object commendPersonType;
 
     /**
      * 投资人收款银行账户户名
      */
-    private String acctnameofinvestorinclearingagency;
+    private String acctNameOfInvestorInClearingAgency;
 
     /**
      * 投资人收款银行账户账号
      */
-    private String acctnoofinvestorinclearingagency;
+    private String acctNoOfInvestorInClearingAgency;
 
     /**
      * 投资人收款银行账户开户行
      */
-    private String clearingagency;
+    private String clearingAgency;
 
     /**
      * 受理方式
      */
-    private String acceptmethod;
+    private String acceptMethod;
 
     /**
      * 冻结原因
      */
-    private Object frozencause;
+    private Object frozenCause;
 
     /**
      * 冻结截止日期（YYYYMMDD）
      */
-    private String freezingdeadline;
+    private String freezingDeadline;
 
     /**
      * TA的原确认流水号
      */
-    private String originalserialno;
+    private String originalSerialNo;
 
     /**
      * 原申请单编号
      */
-    private String originalappsheetno;
+    private String originalAppSheetNo;
 
     /**
      * 摘要/说明
@@ -433,14 +443,9 @@ public class AccountApplication implements DatabaseModel {
     private String specification;
 
     /**
-     * TA代码
+     * 记录状态（0-waiting, 1-processing, 2-processed）
      */
-    private String tacode;
-
-    /**
-     * 同一交易序列码
-     */
-    private Integer referenceno;
+    private Object recordStatus;
 
 
     @Override

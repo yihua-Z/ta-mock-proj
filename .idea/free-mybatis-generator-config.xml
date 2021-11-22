@@ -6,6 +6,7 @@
         <entry key="account_application">
           <value>
             <Config>
+              <option name="annotationDAO" value="true" />
               <option name="comment" value="true" />
               <option name="daoMvnPath" value="src/main/java" />
               <option name="daoName" value="AccountApplicationDao" />
@@ -20,6 +21,7 @@
               <option name="primaryKey" value="AppSheetSerialNo" />
               <option name="projectFolder" value="$PROJECT_DIR$" />
               <option name="tableName" value="account_application" />
+              <option name="useActualColumnNames" value="true" />
               <option name="useLombokPlugin" value="true" />
               <option name="useSchemaPrefix" value="true" />
               <option name="xmlMvnPath" value="src/main/resources" />
@@ -30,6 +32,7 @@
         <entry key="account_confirmation">
           <value>
             <Config>
+              <option name="annotationDAO" value="true" />
               <option name="comment" value="true" />
               <option name="daoMvnPath" value="src/main/java" />
               <option name="daoName" value="AccountConfirmationDao" />
@@ -332,6 +335,32 @@
               <option name="primaryKey" value="TACode" />
               <option name="projectFolder" value="$PROJECT_DIR$" />
               <option name="tableName" value="ta_business_config" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="mapper" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="ta_property">
+          <value>
+            <Config>
+              <option name="annotationDAO" value="true" />
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="TaPropertyDao" />
+              <option name="daoPackage" value="com.psbc.mapper" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="TaProperty" />
+              <option name="modelPackage" value="com.psbc.pojo" />
+              <option name="name" value="ta_property" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="TACode" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="ta_property" />
+              <option name="useActualColumnNames" value="true" />
               <option name="useLombokPlugin" value="true" />
               <option name="useSchemaPrefix" value="true" />
               <option name="xmlMvnPath" value="src/main/resources" />

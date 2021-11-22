@@ -8,7 +8,7 @@
     <result column="BusinessCode" jdbcType="CHAR" property="businesscode" />
     <result column="TransactionDate" jdbcType="CHAR" property="transactiondate" />
     <result column="TransactionTime" jdbcType="CHAR" property="transactiontime" />
-    <result column="TASerialNo" jdbcType="INTEGER" property="taserialno" />
+    <result column="TASerialNo" jdbcType="VARCHAR" property="taserialno" />
     <result column="FromTAFlag" jdbcType="VARCHAR" property="fromtaflag" />
     <result column="RegionCode" jdbcType="VARCHAR" property="regioncode" />
     <result column="NetNo" jdbcType="INTEGER" property="netno" />
@@ -16,11 +16,12 @@
     <result column="CustomerNo" jdbcType="INTEGER" property="customerno" />
     <result column="ErrorDetail" jdbcType="VARCHAR" property="errordetail" />
     <result column="TAAccountID" jdbcType="VARCHAR" property="taaccountid" />
+    <result column="AppSheetSerialNo" jdbcType="VARCHAR" property="appsheetserialno" />
   </resultMap>
   <sql id="Base_Column_List">
     ConfirmID, TransactionCfmDate, ReturnCode, BusinessCode, TransactionDate, TransactionTime, 
     TASerialNo, FromTAFlag, RegionCode, NetNo, Specification, CustomerNo, ErrorDetail, 
-    TAAccountID
+    TAAccountID, AppSheetSerialNo
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -37,12 +38,12 @@
       TransactionDate, TransactionTime, TASerialNo, 
       FromTAFlag, RegionCode, NetNo, 
       Specification, CustomerNo, ErrorDetail, 
-      TAAccountID)
+      TAAccountID, AppSheetSerialNo)
     values (#{transactioncfmdate,jdbcType=CHAR}, #{returncode,jdbcType=CHAR}, #{businesscode,jdbcType=CHAR}, 
-      #{transactiondate,jdbcType=CHAR}, #{transactiontime,jdbcType=CHAR}, #{taserialno,jdbcType=INTEGER}, 
+      #{transactiondate,jdbcType=CHAR}, #{transactiontime,jdbcType=CHAR}, #{taserialno,jdbcType=VARCHAR}, 
       #{fromtaflag,jdbcType=VARCHAR}, #{regioncode,jdbcType=VARCHAR}, #{netno,jdbcType=INTEGER}, 
       #{specification,jdbcType=VARCHAR}, #{customerno,jdbcType=INTEGER}, #{errordetail,jdbcType=VARCHAR}, 
-      #{taaccountid,jdbcType=VARCHAR})
+      #{taaccountid,jdbcType=VARCHAR}, #{appsheetserialno,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" keyColumn="ConfirmID" keyProperty="confirmid" parameterType="com.psbc.pojo.AccountConfirmation" useGeneratedKeys="true">
     insert into account_confirmation
@@ -86,6 +87,9 @@
       <if test="taaccountid != null">
         TAAccountID,
       </if>
+      <if test="appsheetserialno != null">
+        AppSheetSerialNo,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="transactioncfmdate != null">
@@ -104,7 +108,7 @@
         #{transactiontime,jdbcType=CHAR},
       </if>
       <if test="taserialno != null">
-        #{taserialno,jdbcType=INTEGER},
+        #{taserialno,jdbcType=VARCHAR},
       </if>
       <if test="fromtaflag != null">
         #{fromtaflag,jdbcType=VARCHAR},
@@ -127,6 +131,9 @@
       <if test="taaccountid != null">
         #{taaccountid,jdbcType=VARCHAR},
       </if>
+      <if test="appsheetserialno != null">
+        #{appsheetserialno,jdbcType=VARCHAR},
+      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.psbc.pojo.AccountConfirmation">
@@ -148,7 +155,7 @@
         TransactionTime = #{transactiontime,jdbcType=CHAR},
       </if>
       <if test="taserialno != null">
-        TASerialNo = #{taserialno,jdbcType=INTEGER},
+        TASerialNo = #{taserialno,jdbcType=VARCHAR},
       </if>
       <if test="fromtaflag != null">
         FromTAFlag = #{fromtaflag,jdbcType=VARCHAR},
@@ -171,6 +178,9 @@
       <if test="taaccountid != null">
         TAAccountID = #{taaccountid,jdbcType=VARCHAR},
       </if>
+      <if test="appsheetserialno != null">
+        AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR},
+      </if>
     </set>
     where ConfirmID = #{confirmid,jdbcType=INTEGER}
   </update>
@@ -181,14 +191,15 @@
       BusinessCode = #{businesscode,jdbcType=CHAR},
       TransactionDate = #{transactiondate,jdbcType=CHAR},
       TransactionTime = #{transactiontime,jdbcType=CHAR},
-      TASerialNo = #{taserialno,jdbcType=INTEGER},
+      TASerialNo = #{taserialno,jdbcType=VARCHAR},
       FromTAFlag = #{fromtaflag,jdbcType=VARCHAR},
       RegionCode = #{regioncode,jdbcType=VARCHAR},
       NetNo = #{netno,jdbcType=INTEGER},
       Specification = #{specification,jdbcType=VARCHAR},
       CustomerNo = #{customerno,jdbcType=INTEGER},
       ErrorDetail = #{errordetail,jdbcType=VARCHAR},
-      TAAccountID = #{taaccountid,jdbcType=VARCHAR}
+      TAAccountID = #{taaccountid,jdbcType=VARCHAR},
+      AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
     where ConfirmID = #{confirmid,jdbcType=INTEGER}
   </update>
 </mapper>

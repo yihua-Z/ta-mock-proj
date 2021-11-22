@@ -5,12 +5,20 @@ import java.util.Date;
 //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
 public class DateAndTimeUtil {
+    public static String getFullNowDateTime() {
+        Date date = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmssSSS");
+        String s = simpleDateFormat.format(date);
+        return s;
+    }
+
     public static String getNowDateTime() {
         Date date = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
         String s = simpleDateFormat.format(date);
         return s;
     }
+
 
     public static String getNowDate() {
         Date date = new Date();
@@ -27,9 +35,9 @@ public class DateAndTimeUtil {
     }
 
     public static void main(String[] args) {
-        System.out.println(getNowDate());
-        System.out.println(getNowTime());
-        System.out.println(getNowDateTime());
+//        System.out.println(getNowDate());
+//        System.out.println(getNowTime());
+        System.out.println(getFullNowDateTime());
 
 
     }

@@ -21,38 +21,47 @@ public class ExpectationChecker {
     private ExceptionRecordOperator errorOperate;
     private SucceedRecordOperator generateSucceed;
     private AccountExpectation expectation;
+    private CheckDataLegality checkDataLegality;
+
     private boolean checkAppSheetSeriaNo = false;
     private String returnCode = "0000";
 
     @Autowired
     AccountExpectationDao accountExpectationDao;
 
+    public void ExpectationFlow(AccountApplication accountApplication) {
+
+        if (this.returnCode.equals("0000")) {
+            this.generateSucceed.generateSucceed(accountApplication);
+        } else {
+            this.errorOperate.errorOperate(accountApplication, this.returnCode);
+        }
+
+    }
+
     public void ExpectationOperate(List<AccountApplication> accountApplications) {
         if (accountApplications != null) {
             for (AccountApplication accountApplication : accountApplications
             ) {
                 checkAppSheetSeriaNo(accountApplication);
-//          记录存在 Expectation 中
+//                记录存在 Expectation 中
                 if (this.checkAppSheetSeriaNo) {
+//                    使用expectation的returnCode
                     this.returnCode = this.generateSucceed.generateRecord(accountApplication, expectation);
-                    if (this.returnCode.equals("0000")) {
-                        this.generateSucceed.generateSucceed(accountApplication);
-                    } else {
-                        this.errorOperate.errorOperate(accountApplication, this.returnCode);
-                    }
+                    ExpectationFlow(accountApplication);
                 }
 //                记录不存在 Expectation 中
-                else{
+                else {
 //                    校验记录的数据业务合法性
-                    CheckDataLegality checkDataLegality = SpringContextUtil.getBean(CheckDataLegality.class);
-                    checkDataLegality.Check(accountApplication);
-
+                    this.checkDataLegality.Check(accountApplication);
 //                  数据合法 生成记录
-                    if (checkDataLegality.isLegality()) {
-                        this.generateSucceed.generateRecord(accountApplication,checkDataLegality.getReturnCode());
+                    if (this.checkDataLegality.isLegality()) {
+//                        使用合法性检查后checkDataLegality的returnCode
+                        this.generateSucceed.generateRecord(accountApplication, this.checkDataLegality.getReturnCode());
+                        ExpectationFlow(accountApplication);
                     } else {
 //                  数据不合法 异常登记
-                        this.returnCode = checkDataLegality.getReturnCode();
+                        this.returnCode = this.checkDataLegality.getReturnCode();
                         this.errorOperate.errorOperate(accountApplication, this.returnCode);
                     }
 
@@ -74,7 +83,7 @@ public class ExpectationChecker {
     }
 
     private void checkAppSheetSeriaNo(AccountApplication application) {
-        this.expectation = accountExpectationDao.selectByPrimaryKey(application.getAppsheetserialno());
+        this.expectation = accountExpectationDao.selectByPrimaryKey(application.getAppSheetSerialNo());
         if (expectation != null) {
             this.checkAppSheetSeriaNo = true;
         }

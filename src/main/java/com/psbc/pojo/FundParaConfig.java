@@ -545,5 +545,4 @@ public class FundParaConfig implements Serializable {
      */
     private String tacode;
 
-    private static final long serialVersionUID = 1L;
 }

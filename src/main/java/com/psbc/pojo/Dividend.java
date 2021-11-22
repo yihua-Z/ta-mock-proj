@@ -195,5 +195,4 @@ public class Dividend implements Serializable {
      */
     private String fundcode;
 
-    private static final long serialVersionUID = 1L;
 }

@@ -93,8 +93,11 @@ public class RecordOperator {
 
     private Object objectToObject(Object sourceObject, Object targetObject) {
 
-        List<Field> tableModelDeclaredFields = Arrays.asList(sourceObject.getClass().getDeclaredFields());
+//        List<Field> tableModelDeclaredFields = Arrays.asList(sourceObject.getClass().getDeclaredFields());
 //        List<Field> databaseModelDeclaredFields = Arrays.asList(targetObject.getClass().getDeclaredFields());
+
+        List<Field> tableModelDeclaredFields = Arrays.asList(FieldUtils.getAllFields(sourceObject.getClass()));
+
         List<Field> databaseModelDeclaredFields = Arrays.asList(FieldUtils.getAllFields(targetObject.getClass()));
 
         for (Field a : tableModelDeclaredFields
@@ -105,7 +108,8 @@ public class RecordOperator {
                 c.setAccessible(true);
                 String lowa = a.getName().toLowerCase();
                 String lowc = c.getName().toLowerCase();
-                if(value==null){
+
+                if (value == null) {
                     break;
                 }
                 if (lowa.equals(lowc)) {
@@ -135,8 +139,6 @@ public class RecordOperator {
         return this.targetObject;
 
     }
-
-
 
 
 }

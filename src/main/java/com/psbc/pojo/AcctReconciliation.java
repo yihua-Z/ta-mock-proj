@@ -100,5 +100,4 @@ public class AcctReconciliation implements Serializable {
      */
     private String distributorcode;
 
-    private static final long serialVersionUID = 1L;
 }

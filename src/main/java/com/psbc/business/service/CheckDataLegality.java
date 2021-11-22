@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-import static com.psbc.utils.DateAndTimeUtil.getNowDateTime;
+import static com.psbc.utils.DateAndTimeUtil.getFullNowDateTime;
 
 @Data
 @Component
@@ -32,11 +32,11 @@ public class CheckDataLegality {
                 return false;
             }
 
-            String transactionDate = accountApplication.getTransactiondate();
-            String transactionTime = accountApplication.getTransactiontime();
+            String transactionDate = accountApplication.getTransactionDate();
+            String transactionTime = accountApplication.getTransactionTime();
             if (transactionDate != null & transactionTime != null) {
                 String transactionDateTime = transactionDate + transactionTime;
-                if (Double.valueOf(transactionDateTime) > Double.valueOf(getNowDateTime())) {
+                if (Double.valueOf(transactionDateTime) > Double.valueOf(getFullNowDateTime())) {
                     this.returnCode = this.ERRORCODE;
                     this.legality = false;
                 }

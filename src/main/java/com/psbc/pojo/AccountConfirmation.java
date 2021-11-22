@@ -39,21 +39,51 @@ public class AccountConfirmation implements DatabaseModel {
      */
     private String transactiontime;
 
-    private Integer taserialno;
+    /**
+     * TA确认交易流水号
+     */
+    private String taserialno;
 
+    /**
+     * 是否注册登记人发起业务标志
+     */
     private String fromtaflag;
 
+    /**
+     * 交易所在地区编号
+     */
     private String regioncode;
 
+    /**
+     * 操作（清算）网点编号
+     */
     private Integer netno;
 
+    /**
+     * 摘要/说明
+     */
     private String specification;
 
+    /**
+     * TA客户编号
+     */
     private Integer customerno;
 
+    /**
+     * 出错详细信息
+     */
     private String errordetail;
 
+    /**
+     * 投资人理财账号
+     */
     private String taaccountid;
+
+    /**
+     * 申请单编号
+     */
+    private String appsheetserialno;
+
 
     @Override
     public DatabaseModel newInstanceWithoutArgs() {
