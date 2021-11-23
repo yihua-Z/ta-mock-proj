@@ -2,14 +2,16 @@ package com.psbc.pojo;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+
 import lombok.Data;
 
 /**
  * transaction_expectation
- * @author 
+ *
+ * @author
  */
 @Data
-public class TransactionExpectation implements Serializable {
+public class TransactionExpectation implements DatabaseModel {
     /**
      * 申请单编号
      */
@@ -285,5 +287,9 @@ public class TransactionExpectation implements Serializable {
      */
     private String status;
 
-    private static final long serialVersionUID = 1L;
+
+    @Override
+    public DatabaseModel newInstanceWithoutArgs() {
+        return new TransactionExpectation();
+    }
 }

@@ -9,6 +9,27 @@ import lombok.Data;
  */
 @Data
 public class Exception extends ExceptionKey implements DatabaseModel {
+
+    /**
+     * 申请单编号
+     */
+    private String appsheetserialno;
+
+    /**
+     * TA代码
+     */
+    private String tacode;
+
+    /**
+     * 销售人代码
+     */
+    private String distributorcode;
+
+    /**
+     * 同一记录序列号
+     */
+    private Integer referenceno;
+
     /**
      * 交易日期
      */

@@ -9,7 +9,7 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class TransactionConfirmation implements Serializable {
+public class TransactionConfirmation implements DatabaseModel {
     /**
      * 确认ID
      */
@@ -326,4 +326,9 @@ public class TransactionConfirmation implements Serializable {
     private Integer referencenumber;
 
     private static final long serialVersionUID = 1L;
+
+    @Override
+    public DatabaseModel newInstanceWithoutArgs() {
+        return new TransactionConfirmation();
+    }
 }

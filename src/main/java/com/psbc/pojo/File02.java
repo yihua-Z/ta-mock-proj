@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class File02 implements TableModel {
+
 	private String AppSheetSerialNo;
 	private String TransactionCfmDate;
 	private String ReturnCode;

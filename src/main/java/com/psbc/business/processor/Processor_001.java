@@ -55,9 +55,9 @@ public class Processor_001 {
                     accountApplication = (AccountApplication) this.recordOperator.getTargetObject(tableModel, accountApplication.newInstanceWithoutArgs());
 //                    插入记录到 account_application
 
-//                    accountApplication.setTACode("0");
-//                    accountApplication.setReferenceNo(37);
-//                    accountApplication.setRecordStatus("0");
+                    accountApplication.setTACode("0");
+                    accountApplication.setReferenceNo(37);
+                    accountApplication.setRecordStatus("0");
 
                     this.applicationMapper.insert(accountApplication);
                     this.accountApplicationList.add(accountApplication);

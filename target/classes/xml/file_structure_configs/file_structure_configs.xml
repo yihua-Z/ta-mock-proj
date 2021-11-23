@@ -12,12 +12,12 @@
     </file>
     <file name="data">
         <field fieldName="identifier" length="8" align="left"/>
-        <field fieldName="version" length="4" align="right"/>
+        <field fieldName="version" length="4" align="left"/>
         <field fieldName="fileCreator" length="9" align="left"/>
         <field fieldName="fileReceiver" length="9" align="left"/>
         <field fieldName="date" length="8" align="left"/>
         <field fieldName="summaryCode" length="3" align="right"/>
-        <field fieldName="fileTypeCode" length="3" align="right"/>
+        <field fieldName="fileTypeCode" length="3" align="left"/>
         <field fieldName="sender" length="8" align="left"/>
         <field fieldName="receiver" length="8" align="left"/>
         <field fieldName="fieldNum" length="3" align="right"/>

@@ -9,7 +9,28 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class TransactionApplication extends TransactionApplicationKey implements Serializable {
+public class TransactionApplication extends TransactionApplicationKey implements DatabaseModel {
+    /**
+     * 申请单编号
+     */
+    private String appsheetserialno;
+
+    /**
+     * 销售人代码
+     */
+    private String distributorcode;
+
+    /**
+     * 同一申请序列号
+     */
+    private Integer referencenumber;
+
+    /**
+     * TA代码
+     */
+    private String tacode;
+
+
     /**
      * 理财产品代码
      */
@@ -372,5 +393,9 @@ public class TransactionApplication extends TransactionApplicationKey implements
      */
     private BigDecimal specifyfee;
 
-    private static final long serialVersionUID = 1L;
+
+    @Override
+    public DatabaseModel newInstanceWithoutArgs() {
+        return new TransactionApplication();
+    }
 }

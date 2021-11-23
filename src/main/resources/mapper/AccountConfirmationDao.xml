@@ -29,7 +29,10 @@
     from account_confirmation
     where ConfirmID = #{confirmid,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <select id="selectAll" resultType="com.psbc.pojo.AccountConfirmation">
+      select * from account_confirmation
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from account_confirmation
     where ConfirmID = #{confirmid,jdbcType=INTEGER}
   </delete>

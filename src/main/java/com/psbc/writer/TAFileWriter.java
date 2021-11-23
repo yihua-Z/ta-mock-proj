@@ -1,11 +1,15 @@
 package com.psbc.writer;
 
+import com.psbc.pojo.File01;
 import com.psbc.reader.xmlModel.XMLNode;
+import lombok.Data;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 
 import static com.psbc.utils.StringProcessor.flushString;
-
+@Data
+@Component
 public abstract class TAFileWriter implements Writer {
 
     // 生成文件的字符集
@@ -116,4 +120,6 @@ public abstract class TAFileWriter implements Writer {
      * Index File Writer中需具体实现
      */
     abstract void collect(String name);
+
+
 }
