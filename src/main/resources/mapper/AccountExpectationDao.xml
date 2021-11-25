@@ -1,153 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.psbc.mapper.AccountExpectationDao">
-    <resultMap id="BaseResultMap" type="com.psbc.pojo.AccountExpectation">
-        <id column="AppSheetSerialNo" jdbcType="VARCHAR" property="appsheetserialno"/>
-        <result column="ReturnCode" jdbcType="VARCHAR" property="returncode"/>
-        <result column="ErrorDetail" jdbcType="VARCHAR" property="errordetail"/>
-        <result column="Status" jdbcType="VARCHAR" property="status"/>
-        <result column="TransactionCfmDate" jdbcType="VARCHAR" property="transactioncfmdate"/>
-        <result column="TASerialNO" jdbcType="VARCHAR" property="taserialno"/>
-        <result column="FromTAFlag" jdbcType="VARCHAR" property="fromtaflag"/>
-        <result column="RegionCode" jdbcType="VARCHAR" property="regioncode"/>
-        <result column="NetNo" jdbcType="VARCHAR" property="netno"/>
-        <result column="Specification" jdbcType="VARCHAR" property="specification"/>
-    </resultMap>
-    <sql id="Base_Column_List">
-        AppSheetSerialNo
-        , ReturnCode, ErrorDetail, `Status`, TransactionCfmDate, TASerialNO,
-    FromTAFlag, RegionCode, NetNo, Specification
-    </sql>
-    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List"/>
-        from account_expectation
-        where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
-    </select>
-    <select id="selectAll" resultType="com.psbc.pojo.AccountExpectation">
-        select *
-        from account_expectation
-    </select>
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-        delete
-        from account_expectation
-        where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
-    </delete>
-    <insert id="insert" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno"
-            parameterType="com.psbc.pojo.AccountExpectation" useGeneratedKeys="true">
-        insert into account_expectation (ReturnCode, ErrorDetail, `Status`,
-                                         TransactionCfmDate, TASerialNO, FromTAFlag,
-                                         RegionCode, NetNo, Specification)
-        values (#{returncode,jdbcType=VARCHAR}, #{errordetail,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR},
-                #{transactioncfmdate,jdbcType=VARCHAR}, #{taserialno,jdbcType=VARCHAR}, #{fromtaflag,jdbcType=VARCHAR},
-                #{regioncode,jdbcType=VARCHAR}, #{netno,jdbcType=VARCHAR}, #{specification,jdbcType=VARCHAR})
-    </insert>
-    <insert id="insertSelective" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno"
-            parameterType="com.psbc.pojo.AccountExpectation" useGeneratedKeys="true">
-        insert into account_expectation
-        <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="returncode != null">
-                ReturnCode,
-            </if>
-            <if test="errordetail != null">
-                ErrorDetail,
-            </if>
-            <if test="status != null">
-                `Status`,
-            </if>
-            <if test="transactioncfmdate != null">
-                TransactionCfmDate,
-            </if>
-            <if test="taserialno != null">
-                TASerialNO,
-            </if>
-            <if test="fromtaflag != null">
-                FromTAFlag,
-            </if>
-            <if test="regioncode != null">
-                RegionCode,
-            </if>
-            <if test="netno != null">
-                NetNo,
-            </if>
-            <if test="specification != null">
-                Specification,
-            </if>
-        </trim>
-        <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="returncode != null">
-                #{returncode,jdbcType=VARCHAR},
-            </if>
-            <if test="errordetail != null">
-                #{errordetail,jdbcType=VARCHAR},
-            </if>
-            <if test="status != null">
-                #{status,jdbcType=VARCHAR},
-            </if>
-            <if test="transactioncfmdate != null">
-                #{transactioncfmdate,jdbcType=VARCHAR},
-            </if>
-            <if test="taserialno != null">
-                #{taserialno,jdbcType=VARCHAR},
-            </if>
-            <if test="fromtaflag != null">
-                #{fromtaflag,jdbcType=VARCHAR},
-            </if>
-            <if test="regioncode != null">
-                #{regioncode,jdbcType=VARCHAR},
-            </if>
-            <if test="netno != null">
-                #{netno,jdbcType=VARCHAR},
-            </if>
-            <if test="specification != null">
-                #{specification,jdbcType=VARCHAR},
-            </if>
-        </trim>
-    </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.psbc.pojo.AccountExpectation">
-        update account_expectation
-        <set>
-            <if test="returncode != null">
-                ReturnCode = #{returncode,jdbcType=VARCHAR},
-            </if>
-            <if test="errordetail != null">
-                ErrorDetail = #{errordetail,jdbcType=VARCHAR},
-            </if>
-            <if test="status != null">
-                `Status` = #{status,jdbcType=VARCHAR},
-            </if>
-            <if test="transactioncfmdate != null">
-                TransactionCfmDate = #{transactioncfmdate,jdbcType=VARCHAR},
-            </if>
-            <if test="taserialno != null">
-                TASerialNO = #{taserialno,jdbcType=VARCHAR},
-            </if>
-            <if test="fromtaflag != null">
-                FromTAFlag = #{fromtaflag,jdbcType=VARCHAR},
-            </if>
-            <if test="regioncode != null">
-                RegionCode = #{regioncode,jdbcType=VARCHAR},
-            </if>
-            <if test="netno != null">
-                NetNo = #{netno,jdbcType=VARCHAR},
-            </if>
-            <if test="specification != null">
-                Specification = #{specification,jdbcType=VARCHAR},
-            </if>
-        </set>
-        where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
-    </update>
-    <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AccountExpectation">
-        update account_expectation
-        set ReturnCode         = #{returncode,jdbcType=VARCHAR},
-            ErrorDetail        = #{errordetail,jdbcType=VARCHAR},
-            `Status`           = #{status,jdbcType=VARCHAR},
-            TransactionCfmDate = #{transactioncfmdate,jdbcType=VARCHAR},
-            TASerialNO         = #{taserialno,jdbcType=VARCHAR},
-            FromTAFlag         = #{fromtaflag,jdbcType=VARCHAR},
-            RegionCode         = #{regioncode,jdbcType=VARCHAR},
-            NetNo              = #{netno,jdbcType=VARCHAR},
-            Specification      = #{specification,jdbcType=VARCHAR}
-        where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
-    </update>
+  <resultMap id="BaseResultMap" type="com.psbc.pojo.AccountExpectation">
+    <id column="AppSheetSerialNo" jdbcType="VARCHAR" property="appsheetserialno" />
+    <id column="TACode" jdbcType="VARCHAR" property="tacode" />
+    <id column="DistributorCode" jdbcType="VARCHAR" property="distributorcode" />
+    <id column="ReferenceNo" jdbcType="INTEGER" property="referenceno" />
+    <result column="ReturnCode" jdbcType="VARCHAR" property="returncode" />
+    <result column="ErrorDetail" jdbcType="VARCHAR" property="errordetail" />
+    <result column="Status" jdbcType="VARCHAR" property="status" />
+    <result column="TransactionCfmDate" jdbcType="VARCHAR" property="transactioncfmdate" />
+    <result column="TASerialNO" jdbcType="VARCHAR" property="taserialno" />
+    <result column="FromTAFlag" jdbcType="VARCHAR" property="fromtaflag" />
+    <result column="RegionCode" jdbcType="VARCHAR" property="regioncode" />
+    <result column="NetNo" jdbcType="VARCHAR" property="netno" />
+    <result column="Specification" jdbcType="VARCHAR" property="specification" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    AppSheetSerialNo, TACode, DistributorCode, ReferenceNo, ReturnCode, ErrorDetail, 
+    `Status`, TransactionCfmDate, TASerialNO, FromTAFlag, RegionCode, NetNo, Specification
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="com.psbc.pojo.AccountExpectationKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from account_expectation
+    where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
+      and TACode = #{tacode,jdbcType=VARCHAR}
+      and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
+      and ReferenceNo = #{referenceno,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.psbc.pojo.AccountExpectationKey">
+    delete from account_expectation
+    where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
+      and TACode = #{tacode,jdbcType=VARCHAR}
+      and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
+      and ReferenceNo = #{referenceno,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno" parameterType="com.psbc.pojo.AccountExpectation" useGeneratedKeys="true">
+    insert into account_expectation (TACode, DistributorCode, ReferenceNo, 
+      ReturnCode, ErrorDetail, `Status`, 
+      TransactionCfmDate, TASerialNO, FromTAFlag, 
+      RegionCode, NetNo, Specification
+      )
+    values (#{tacode,jdbcType=VARCHAR}, #{distributorcode,jdbcType=VARCHAR}, #{referenceno,jdbcType=INTEGER}, 
+      #{returncode,jdbcType=VARCHAR}, #{errordetail,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{transactioncfmdate,jdbcType=VARCHAR}, #{taserialno,jdbcType=VARCHAR}, #{fromtaflag,jdbcType=VARCHAR}, 
+      #{regioncode,jdbcType=VARCHAR}, #{netno,jdbcType=VARCHAR}, #{specification,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno" parameterType="com.psbc.pojo.AccountExpectation" useGeneratedKeys="true">
+    insert into account_expectation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tacode != null">
+        TACode,
+      </if>
+      <if test="distributorcode != null">
+        DistributorCode,
+      </if>
+      <if test="referenceno != null">
+        ReferenceNo,
+      </if>
+      <if test="returncode != null">
+        ReturnCode,
+      </if>
+      <if test="errordetail != null">
+        ErrorDetail,
+      </if>
+      <if test="status != null">
+        `Status`,
+      </if>
+      <if test="transactioncfmdate != null">
+        TransactionCfmDate,
+      </if>
+      <if test="taserialno != null">
+        TASerialNO,
+      </if>
+      <if test="fromtaflag != null">
+        FromTAFlag,
+      </if>
+      <if test="regioncode != null">
+        RegionCode,
+      </if>
+      <if test="netno != null">
+        NetNo,
+      </if>
+      <if test="specification != null">
+        Specification,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tacode != null">
+        #{tacode,jdbcType=VARCHAR},
+      </if>
+      <if test="distributorcode != null">
+        #{distributorcode,jdbcType=VARCHAR},
+      </if>
+      <if test="referenceno != null">
+        #{referenceno,jdbcType=INTEGER},
+      </if>
+      <if test="returncode != null">
+        #{returncode,jdbcType=VARCHAR},
+      </if>
+      <if test="errordetail != null">
+        #{errordetail,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="transactioncfmdate != null">
+        #{transactioncfmdate,jdbcType=VARCHAR},
+      </if>
+      <if test="taserialno != null">
+        #{taserialno,jdbcType=VARCHAR},
+      </if>
+      <if test="fromtaflag != null">
+        #{fromtaflag,jdbcType=VARCHAR},
+      </if>
+      <if test="regioncode != null">
+        #{regioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="netno != null">
+        #{netno,jdbcType=VARCHAR},
+      </if>
+      <if test="specification != null">
+        #{specification,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.psbc.pojo.AccountExpectation">
+    update account_expectation
+    <set>
+      <if test="returncode != null">
+        ReturnCode = #{returncode,jdbcType=VARCHAR},
+      </if>
+      <if test="errordetail != null">
+        ErrorDetail = #{errordetail,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        `Status` = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="transactioncfmdate != null">
+        TransactionCfmDate = #{transactioncfmdate,jdbcType=VARCHAR},
+      </if>
+      <if test="taserialno != null">
+        TASerialNO = #{taserialno,jdbcType=VARCHAR},
+      </if>
+      <if test="fromtaflag != null">
+        FromTAFlag = #{fromtaflag,jdbcType=VARCHAR},
+      </if>
+      <if test="regioncode != null">
+        RegionCode = #{regioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="netno != null">
+        NetNo = #{netno,jdbcType=VARCHAR},
+      </if>
+      <if test="specification != null">
+        Specification = #{specification,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
+      and TACode = #{tacode,jdbcType=VARCHAR}
+      and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
+      and ReferenceNo = #{referenceno,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AccountExpectation">
+    update account_expectation
+    set ReturnCode = #{returncode,jdbcType=VARCHAR},
+      ErrorDetail = #{errordetail,jdbcType=VARCHAR},
+      `Status` = #{status,jdbcType=VARCHAR},
+      TransactionCfmDate = #{transactioncfmdate,jdbcType=VARCHAR},
+      TASerialNO = #{taserialno,jdbcType=VARCHAR},
+      FromTAFlag = #{fromtaflag,jdbcType=VARCHAR},
+      RegionCode = #{regioncode,jdbcType=VARCHAR},
+      NetNo = #{netno,jdbcType=VARCHAR},
+      Specification = #{specification,jdbcType=VARCHAR}
+    where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
+      and TACode = #{tacode,jdbcType=VARCHAR}
+      and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
+      and ReferenceNo = #{referenceno,jdbcType=INTEGER}
+  </update>
 </mapper>

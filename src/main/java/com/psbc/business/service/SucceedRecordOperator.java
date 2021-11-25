@@ -62,7 +62,7 @@ public class SucceedRecordOperator {
         String accountprefix = taProperty.getAccountPrefix();
         Integer accountindex = taProperty.getAccountIndex();
 
-        if (application.getClass().getSimpleName().equals("File01")) {
+        if (application.getClass().getSimpleName().equals("AccountApplication")) {
             AccountApplication accountApplication = (AccountApplication) application;
             this.accountConfirmation.setBusinesscode("1" + accountApplication.getBusinessCode().substring(1));
         }
@@ -120,7 +120,7 @@ public class SucceedRecordOperator {
             //        写入"account_confirmation"表
             accountConfirmationDao.insert(this.accountConfirmation);
 
-            if (Application.getClass().getSimpleName().equals("File01")) {
+            if (Application.getClass().getSimpleName().equals("AccountApplication")) {
                 AccountApplication accountApplication = (AccountApplication) Application;
                 accountApplication.setRecordStatus("2");
                 accountApplicationDao.updateByPrimaryKey(accountApplication);

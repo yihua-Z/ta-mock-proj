@@ -24,7 +24,7 @@ public class CheckDataLegality {
 
 
     public boolean Check(DatabaseModel Application) {
-        if(Application.getClass().getSimpleName().equals("File01")){
+        if(Application.getClass().getSimpleName().equals("AccountApplication")){
            AccountApplication accountApplication= (AccountApplication) Application;
             List<AccountApplication> accountApplications;
             accountApplications = accountApplicationDao.selectUnionPrimaryKey(accountApplication);

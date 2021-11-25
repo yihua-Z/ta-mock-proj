@@ -8,11 +8,29 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class AccountExpectation implements Serializable {
+public class AccountExpectation extends AccountExpectationKey implements Serializable {
+
+
     /**
      * 申请单编号
      */
     private String appsheetserialno;
+
+    /**
+     * TA代码
+     */
+    private String tacode;
+
+    /**
+     * 销售人代码
+     */
+    private String distributorcode;
+
+    /**
+     * 同一交易序列码
+     */
+    private Integer referenceno;
+
 
     /**
      * 交易处理返回代码

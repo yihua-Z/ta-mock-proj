@@ -91,7 +91,7 @@ public class RecordOperator {
         }
     }
 
-    public Object getTargetObject(Object sourceObject, Object targetObject) {
+    public  Object getTargetObject(Object sourceObject, Object targetObject) {
         Object object = this.objectToObject(sourceObject, targetObject);
         return object;
     }

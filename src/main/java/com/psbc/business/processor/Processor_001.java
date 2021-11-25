@@ -154,7 +154,7 @@ public class Processor_001 {
         return databaseModelList;
     }
 
-    public void processor(String applicationFilePath, boolean notInsertFlag, boolean isWirteFlag) {
+    public void processor(String applicationFilePath, boolean notInsertFlag, boolean isWriteFlag) {
 
         this.setApplicationFilePath(applicationFilePath);
 
@@ -166,10 +166,9 @@ public class Processor_001 {
             databaseModelList = accountApplicationDao.selectAll();
         }
 
-        List<DatabaseModel> confirmationList = this.generateConfirmation(databaseModelList);
+        this.generateConfirmation(databaseModelList);
 
-
-        if (isWirteFlag) {
+        if (isWriteFlag) {
 
             dataFileWriterDataBase.write();
         }

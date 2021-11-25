@@ -1,20 +1,13 @@
 package com.psbc.business.service;
 
-import com.psbc.TaMockProjectApplication;
 import com.psbc.mapper.*;
 import com.psbc.pojo.*;
-import com.psbc.pojo.Exception;
 import lombok.Data;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-
-import static com.psbc.utils.DateAndTimeUtil.*;
 
 @Data
 @Component
@@ -41,13 +34,13 @@ public class ExpectationChecker {
 
         if (application != null) {
             String businessCode = application.getClass().getSimpleName();
-            if (businessCode.equals("File01")) {
+            if (businessCode.equals("AccountApplication")) {
                 AccountApplication accountApplication = (AccountApplication) application;
                 accountApplication.setRecordStatus("1");
                 accountApplicationDao.updateByPrimaryKey(accountApplication);
             }
 
-            boolean checkAppSheetSeriaNo = checkAppSheetSeriaNo(application);
+            boolean checkAppSheetSeriaNo = checkPrimaryKey(application);
             return checkAppSheetSeriaNo;
         }
         return false;
@@ -57,10 +50,12 @@ public class ExpectationChecker {
     @Autowired
     AccountApplicationDao accountApplicationDao;
 
-    private boolean checkAppSheetSeriaNo(DatabaseModel application) {
+    private boolean checkPrimaryKey(DatabaseModel application) {
         boolean checkAppSheetSeriaNo = false;
-
-        this.expectation = accountExpectationDao.selectByPrimaryKey(((AccountApplication) application).getAppSheetSerialNo());
+        AccountExpectation accountExpectation = new AccountExpectation();
+        RecordOperator recordOperator=new RecordOperator();
+        accountExpectation = (AccountExpectation) recordOperator.getTargetObject(accountExpectation, application);
+        this.expectation = accountExpectationDao.selectByPrimaryKey(accountExpectation);
         if (expectation != null) {
             checkAppSheetSeriaNo = true;
         }
