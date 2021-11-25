@@ -26,7 +26,7 @@ public class ExceptionRecordOperator {
     private RecordOperator operator = new RecordOperator();
 
     @Transactional
-    public void errorOperate(DatabaseModel application, String returnCode) {
+    public DatabaseModel errorOperate(DatabaseModel application, String returnCode) {
 
 //        将不合法的申请记录写入“异常登 记簿”(包括不合法原因)
 //        returnCode
@@ -36,7 +36,8 @@ public class ExceptionRecordOperator {
 
         exceptionDao.insert(exception);
         this.returnCode = returnCode;
-        this.generateFailed(application);
+        DatabaseModel generateFailed = this.generateFailed(application);
+        return generateFailed;
 
     }
 
@@ -49,7 +50,7 @@ public class ExceptionRecordOperator {
     AccountApplicationDao accountApplicationDao;
 
     @Transactional
-    public void generateFailed(DatabaseModel Application) {
+    public DatabaseModel generateFailed(DatabaseModel Application) {
         //        生成对应确认失败记录
         //        写入 "account_confirmation" 表
         AccountConfirmation accountConfirmation = new AccountConfirmation();
@@ -65,11 +66,12 @@ public class ExceptionRecordOperator {
                 accountApplication.setRecordStatus("2");
                 accountApplicationDao.updateByPrimaryKey(accountApplication);
             }
-
+            return accountConfirmation;
 
         } catch (java.lang.Exception e) {
             logger.error(e);
         }
+        return null;
 
 
     }

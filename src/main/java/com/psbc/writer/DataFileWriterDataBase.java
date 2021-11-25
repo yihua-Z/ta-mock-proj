@@ -54,7 +54,9 @@ public class DataFileWriterDataBase extends TAFileWriter {
                 applicationKey.setDistributorCode("037");
                 applicationKey.setReferenceNo(37);
                 applicationKey.setTACode("0");
+                
                 AccountApplication application = accountApplicationDao.selectByPrimaryKey(applicationKey);
+                
                 file02 = (File02) this.operator.getTargetObject(application, file02.newInstanceWithoutArgs());
                 file02 = (File02) this.operator.getTargetObject(confirmation, file02);
                 file02.setMultiAcctFlag((String) application.getMultiAcctFlag());
@@ -66,6 +68,7 @@ public class DataFileWriterDataBase extends TAFileWriter {
 
 
     }
+
 
     public void initialData(String configFile, String target) {
 

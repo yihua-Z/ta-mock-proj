@@ -337,4 +337,5 @@
   2021-11-25 16:50:18.265  WARN 16576 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m3s357ms356?s800ns).
 2021-11-25 16:51:04.848  WARN 16576 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=46s583ms63?s300ns).
 2021-11-25-16-51 [main] [com.psbc.TaMockProjectApplication] [INFO] - process 001 done!
-  
+  2021-11-25 17:31:21.871  INFO 16576 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-25 17:31:21.888  INFO 16576 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

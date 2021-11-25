@@ -56,10 +56,8 @@ public class SucceedRecordOperator {
         return this.returnCode;
     }
 
-    public void getAccountConfirmation(DatabaseModel application, String taCode) {
+    public DatabaseModel getAccountConfirmation(DatabaseModel application, String taCode) {
 //      taCode应该配置
-
-
         TaProperty taProperty = taPropertyDao.selectByPrimaryKey(taCode);
         String accountprefix = taProperty.getAccountPrefix();
         Integer accountindex = taProperty.getAccountIndex();
@@ -69,9 +67,7 @@ public class SucceedRecordOperator {
             this.accountConfirmation.setBusinesscode("1" + accountApplication.getBusinessCode().substring(1));
         }
 
-//        TransactionCfmDate: T+1;  无字段（已手动添加）
-//        MultiAcctFlag: 0；  为了生成确认文件
-
+//      @TODO
 //      TaAccountid 随机生成待改进
         this.accountConfirmation.setTaaccountid(accountprefix + accountindex + (int) (Math.random() * (100000000)));
         this.accountConfirmation.setTransactioncfmdate(getNowDate());
@@ -80,15 +76,14 @@ public class SucceedRecordOperator {
         this.accountConfirmation.setRegioncode("0001");
         this.accountConfirmation.setReturncode(this.returnCode);
 
+        return this.accountConfirmation;
 
     }
 
     public void generateRecord(DatabaseModel application, String returnCode) {
 
-
         AccountConfirmation accountConfirmation = new AccountConfirmation();
         this.accountConfirmation = (AccountConfirmation) this.operator.getTargetObject(application, accountConfirmation.newInstanceWithoutArgs());
-
         this.returnCode = returnCode;
         this.getAccountConfirmation(application, "0");
 
@@ -96,7 +91,7 @@ public class SucceedRecordOperator {
     }
 
     @Transactional
-    public void generateSucceed(DatabaseModel Application) {
+    public DatabaseModel generateSucceed(DatabaseModel Application) {
 
 
         AccountInfo accountInfo = new AccountInfo();
@@ -130,11 +125,13 @@ public class SucceedRecordOperator {
                 accountApplication.setRecordStatus("2");
                 accountApplicationDao.updateByPrimaryKey(accountApplication);
             }
+            return this.accountConfirmation;
 
 
         } catch (Exception e) {
             logger.error("insert:" + e);
         }
+        return null;
 
     }
 

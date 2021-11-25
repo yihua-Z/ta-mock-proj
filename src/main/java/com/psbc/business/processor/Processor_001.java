@@ -7,6 +7,7 @@ import com.psbc.mapper.ExceptionDao;
 import com.psbc.pojo.*;
 import com.psbc.pojo.Exception;
 import com.psbc.reader.DataFileReader;
+import com.psbc.writer.DataFileWriterDataBase;
 import lombok.Data;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,9 +34,9 @@ public class Processor_001 {
     private SucceedRecordOperator generateSucceed;
     private AccountExpectation expectation;
     private CheckDataLegality checkDataLegality;
-
+    private DataFileWriterDataBase dataFileWriterDataBase;
     private ExpectationChecker expectationChecker;
-    private boolean checkAppSheetSeriaNo = false;
+
     private String returnCode = "0000";
 
     private String applicationFilePath = "";
@@ -79,48 +80,50 @@ public class Processor_001 {
         return applyRecords;
     }
 
-    public void expectationFlow(DatabaseModel accountApplication) {
+    public DatabaseModel expectationFlow(DatabaseModel accountApplication) {
 
+        DatabaseModel confirm;
         if (this.returnCode.equals("0000")) {
-            this.generateSucceed.generateSucceed(accountApplication);
+            confirm = this.generateSucceed.generateSucceed(accountApplication);
         } else {
-            this.errorOperate.errorOperate(accountApplication, this.returnCode);
+            confirm = this.errorOperate.errorOperate(accountApplication, this.returnCode);
         }
-
+        return confirm;
     }
 
 
-    public void generateConfirmation(List<DatabaseModel> databaseModelList) {
+    public List<DatabaseModel> generateConfirmation(List<DatabaseModel> databaseModelList) {
 
+        List<DatabaseModel> confirmList = new ArrayList<>();
         for (DatabaseModel application : databaseModelList
         ) {
-
 //          @todo
 //          联合主键查询
             boolean checkAppSheetSeriaNo = this.expectationChecker.ExpectationOperate(application);
             // 记录存在 Expectation 中
             if (checkAppSheetSeriaNo) {
-//                    使用expectation的returnCode
+//              使用expectation的returnCode
                 this.returnCode = this.generateSucceed.generateRecord(application, expectation);
-                this.expectationFlow(application);
+                confirmList.add(this.expectationFlow(application));
             }
-//                记录不存在 Expectation 中
+//          记录不存在 Expectation 中
             else {
-//                    校验记录的数据业务合法性
+//              校验记录的数据业务合法性
                 this.checkDataLegality.Check(application);
-//                  数据合法 生成记录
+//              数据合法 生成记录
                 if (this.checkDataLegality.isLegality()) {
-//                        使用合法性检查后checkDataLegality的returnCode
+//                  使用合法性检查后checkDataLegality的returnCode
                     this.generateSucceed.generateRecord(application, this.checkDataLegality.getReturnCode());
-                    this.expectationFlow(application);
+                    confirmList.add(this.expectationFlow(application));
                 } else {
 //                  数据不合法 异常登记
                     this.returnCode = this.checkDataLegality.getReturnCode();
-                    this.errorOperate.errorOperate(application, this.returnCode);
+                    confirmList.add(this.errorOperate.errorOperate(application, this.returnCode));
                 }
 
             }
         }
+        return confirmList;
     }
 
     public List<DatabaseModel> ApplicationProcessor() {
@@ -151,7 +154,7 @@ public class Processor_001 {
         return databaseModelList;
     }
 
-    public void processor(String applicationFilePath, boolean notInsertFlag) {
+    public void processor(String applicationFilePath, boolean notInsertFlag, boolean isWirteFlag) {
 
         this.setApplicationFilePath(applicationFilePath);
 
@@ -163,8 +166,13 @@ public class Processor_001 {
             databaseModelList = accountApplicationDao.selectAll();
         }
 
-        this.generateConfirmation(databaseModelList);
+        List<DatabaseModel> confirmationList = this.generateConfirmation(databaseModelList);
 
+
+        if (isWirteFlag) {
+
+            dataFileWriterDataBase.write();
+        }
 
     }
 
