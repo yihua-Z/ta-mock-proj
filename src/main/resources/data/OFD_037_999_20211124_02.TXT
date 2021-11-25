@@ -1,0 +1,44 @@
+OFDCFDAT
+21  
+037      
+999      
+20211124
+001
+02 
+037     
+999     
+027
+AppSheetSerialNo
+TransactionCfmDate
+ReturnCode
+TransactionAccountID
+DistributorCode
+BusinessCode
+TAAccountID
+MultiAcctFlag
+TASerialNO
+TransactionDate
+TransactionTime
+BranchCode
+FromTAFlag
+CertificateType
+CertificateNo
+InvestorName
+IndividualOrInstitution
+AccountAbbr
+AccountCardID
+RegionCode
+TargetTransactionAccountID
+NetNo
+Specification
+CustomerNo
+FrozenCause
+FreezingDeadline
+ErrorDetail
+00000005
+211101FSM0r0220204      202111240000r0220211101016402037      101001176701583 2021112414290767141120211101100012037             0 150110198912103123            张珲                                                                                                                                         0001                 10                                                                                                                                                    
+211029FSM0r0120104      202111240000r0120211029016301037      101001139893875 2021112414290771236820211101144536037             0 370305199806182425            羊徽瑜                                                                                                                                       0001                 10                                                                                                                                                    
+211030FSM0r0120201      202111240000r0120211030016401037      101001160480759 2021112414290775219520211101100852037             0 110109199209144523            理财九                                                                                                                                       0001                 10                                                                                                                                                    
+211101FSM0r0120501      202111240000r0120211101016601037      101001159328724 2021112414290776679320211101143944037             0 110101199005070998            活动                                                                                                                                         0001                 10                                                                                                                                                    
+211101FSM0r0120502      202111240000r0120211101016602037      101001139415474 2021112414290780050120211101144552037             0 110101199011077133            优惠券                                                                                                                                       0001                 10                                                                                                                                                    
+OFDCFEND

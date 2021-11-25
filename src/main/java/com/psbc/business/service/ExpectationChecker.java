@@ -1,11 +1,14 @@
 package com.psbc.business.service;
 
+import com.psbc.TaMockProjectApplication;
 import com.psbc.mapper.*;
 import com.psbc.pojo.*;
 import com.psbc.pojo.Exception;
 import lombok.Data;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -23,70 +26,45 @@ public class ExpectationChecker {
     private AccountExpectation expectation;
     private CheckDataLegality checkDataLegality;
 
-    private boolean checkAppSheetSeriaNo = false;
+
     private String returnCode = "0000";
+    private String businessCode = "";
+
+    private static final Logger logger = Logger.getLogger(ExpectationChecker.class);
 
     @Autowired
     AccountExpectationDao accountExpectationDao;
 
-    public void ExpectationFlow(AccountApplication accountApplication) {
 
-        if (this.returnCode.equals("0000")) {
-            this.generateSucceed.generateSucceed(accountApplication);
-        } else {
-            this.errorOperate.errorOperate(accountApplication, this.returnCode);
-        }
+    @Transactional
+    public boolean ExpectationOperate(DatabaseModel application) {
 
-    }
-
-    public void ExpectationOperate(List<AccountApplication> accountApplications) {
-        if (accountApplications != null) {
-            for (AccountApplication accountApplication : accountApplications
-            ) {
-                checkAppSheetSeriaNo(accountApplication);
-//                记录存在 Expectation 中
-                if (this.checkAppSheetSeriaNo) {
-//                    使用expectation的returnCode
-                    this.returnCode = this.generateSucceed.generateRecord(accountApplication, expectation);
-                    ExpectationFlow(accountApplication);
-                }
-//                记录不存在 Expectation 中
-                else {
-//                    校验记录的数据业务合法性
-                    this.checkDataLegality.Check(accountApplication);
-//                  数据合法 生成记录
-                    if (this.checkDataLegality.isLegality()) {
-//                        使用合法性检查后checkDataLegality的returnCode
-                        this.generateSucceed.generateRecord(accountApplication, this.checkDataLegality.getReturnCode());
-                        ExpectationFlow(accountApplication);
-                    } else {
-//                  数据不合法 异常登记
-                        this.returnCode = this.checkDataLegality.getReturnCode();
-                        this.errorOperate.errorOperate(accountApplication, this.returnCode);
-                    }
-
-                }
+        if (application != null) {
+            String businessCode = application.getClass().getSimpleName();
+            if (businessCode.equals("File01")) {
+                AccountApplication accountApplication = (AccountApplication) application;
+                accountApplication.setRecordStatus("1");
+                accountApplicationDao.updateByPrimaryKey(accountApplication);
             }
-        }
 
+            boolean checkAppSheetSeriaNo = checkAppSheetSeriaNo(application);
+            return checkAppSheetSeriaNo;
+        }
+        return false;
     }
 
 
     @Autowired
     AccountApplicationDao accountApplicationDao;
 
-    public void ExpectationOperate() {
+    private boolean checkAppSheetSeriaNo(DatabaseModel application) {
+        boolean checkAppSheetSeriaNo = false;
 
-        List<AccountApplication> accountApplications = accountApplicationDao.selectAll();
-        this.ExpectationOperate(accountApplications);
-
-    }
-
-    private void checkAppSheetSeriaNo(AccountApplication application) {
-        this.expectation = accountExpectationDao.selectByPrimaryKey(application.getAppSheetSerialNo());
+        this.expectation = accountExpectationDao.selectByPrimaryKey(((AccountApplication) application).getAppSheetSerialNo());
         if (expectation != null) {
-            this.checkAppSheetSeriaNo = true;
+            checkAppSheetSeriaNo = true;
         }
+        return checkAppSheetSeriaNo;
     }
 
 

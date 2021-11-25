@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.lang.Exception;
 import java.math.BigDecimal;
@@ -35,9 +36,12 @@ public class SucceedRecordOperator {
 
     @Autowired
     AccountConfirmationDao accountConfirmationDao;
+
+    @Autowired
+    AccountApplicationDao accountApplicationDao;
     private static final Logger logger = Logger.getLogger(TaMockProjectApplication.class);
 
-    public String generateRecord(AccountApplication application, AccountExpectation expectation) {
+    public String generateRecord(DatabaseModel application, AccountExpectation expectation) {
 
         AccountConfirmation accountConfirmation = new AccountConfirmation();
         accountConfirmation = (AccountConfirmation) this.operator.getTargetObject(application, accountConfirmation.newInstanceWithoutArgs());
@@ -52,21 +56,25 @@ public class SucceedRecordOperator {
         return this.returnCode;
     }
 
-    public void getAccountConfirmation(AccountApplication application, String taCode) {
+    public void getAccountConfirmation(DatabaseModel application, String taCode) {
 //      taCode应该配置
+
+
         TaProperty taProperty = taPropertyDao.selectByPrimaryKey(taCode);
         String accountprefix = taProperty.getAccountPrefix();
         Integer accountindex = taProperty.getAccountIndex();
 
+        if (application.getClass().getSimpleName().equals("File01")) {
+            AccountApplication accountApplication = (AccountApplication) application;
+            this.accountConfirmation.setBusinesscode("1" + accountApplication.getBusinessCode().substring(1));
+        }
 
-        this.accountConfirmation.setBusinesscode("1" + application.getBusinessCode().substring(1));
-
-//        TransactionCfmDate: T+1;  无字段（已手动添加） 无明确解释
+//        TransactionCfmDate: T+1;  无字段（已手动添加）
 //        MultiAcctFlag: 0；  为了生成确认文件
 
 //      TaAccountid 随机生成待改进
         this.accountConfirmation.setTaaccountid(accountprefix + accountindex + (int) (Math.random() * (100000000)));
-        this.accountConfirmation.setTransactioncfmdate("");
+        this.accountConfirmation.setTransactioncfmdate(getNowDate());
         this.accountConfirmation.setTaserialno(getFullNowDateTime() + (int) (Math.random() * (1000)));
         this.accountConfirmation.setFromtaflag("0");
         this.accountConfirmation.setRegioncode("0001");
@@ -75,7 +83,7 @@ public class SucceedRecordOperator {
 
     }
 
-    public void generateRecord(AccountApplication application, String returnCode) {
+    public void generateRecord(DatabaseModel application, String returnCode) {
 
 
         AccountConfirmation accountConfirmation = new AccountConfirmation();
@@ -87,12 +95,12 @@ public class SucceedRecordOperator {
 
     }
 
-
-    public void generateSucceed(AccountApplication accountApplication) {
+    @Transactional
+    public void generateSucceed(DatabaseModel Application) {
 
 
         AccountInfo accountInfo = new AccountInfo();
-        accountInfo = (AccountInfo) this.operator.getTargetObject(accountApplication, accountInfo.newInstanceWithoutArgs());
+        accountInfo = (AccountInfo) this.operator.getTargetObject(Application, accountInfo.newInstanceWithoutArgs());
 
 
         accountInfo.setTaaccountid(this.accountConfirmation.getTaaccountid());
@@ -101,7 +109,7 @@ public class SucceedRecordOperator {
 
 
         AcctShare acctShare = new AcctShare();
-        acctShare = (AcctShare) this.operator.getTargetObject(accountApplication, acctShare.newInstanceWithoutArgs());
+        acctShare = (AcctShare) this.operator.getTargetObject(Application, acctShare.newInstanceWithoutArgs());
         acctShare = (AcctShare) this.operator.getTargetObject(accountInfo, acctShare);
         acctShare.setTotalvolofdistributorinta(BigDecimal.valueOf(0));
 
@@ -117,12 +125,17 @@ public class SucceedRecordOperator {
             //        写入"account_confirmation"表
             accountConfirmationDao.insert(this.accountConfirmation);
 
+            if (Application.getClass().getSimpleName().equals("File01")) {
+                AccountApplication accountApplication = (AccountApplication) Application;
+                accountApplication.setRecordStatus("2");
+                accountApplicationDao.updateByPrimaryKey(accountApplication);
+            }
+
+
         } catch (Exception e) {
             logger.error("insert:" + e);
         }
 
-
-        System.out.println();
     }
 
 }

@@ -2,6 +2,7 @@ package com.psbc.mapper;
 
 import com.psbc.pojo.AccountApplication;
 import com.psbc.pojo.AccountApplicationKey;
+import com.psbc.pojo.DatabaseModel;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -16,7 +17,7 @@ public interface AccountApplicationDao {
 
     int insertSelective(AccountApplication record);
 
-    List<AccountApplication> selectAll();
+    List<DatabaseModel> selectAll();
 
     AccountApplication selectByPrimaryKey(AccountApplicationKey key);
     List<AccountApplication> selectUnionPrimaryKey(AccountApplication record);

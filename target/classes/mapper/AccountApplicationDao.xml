@@ -119,7 +119,7 @@
         and DistributorCode = #{distributorCode,jdbcType=VARCHAR}
         and ReferenceNo = #{referenceNo,jdbcType=INTEGER}
     </select>
-    <select id="selectAll" resultType="com.psbc.pojo.AccountApplication">
+    <select id="selectAll" resultType="com.psbc.pojo.DatabaseModel">
         select *
         from account_application
     </select>

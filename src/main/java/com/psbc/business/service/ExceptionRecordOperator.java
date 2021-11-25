@@ -1,13 +1,18 @@
 package com.psbc.business.service;
 
+import com.psbc.TaMockProjectApplication;
+import com.psbc.mapper.AccountApplicationDao;
 import com.psbc.mapper.AccountConfirmationDao;
 import com.psbc.mapper.ExceptionDao;
 import com.psbc.pojo.AccountApplication;
 import com.psbc.pojo.AccountConfirmation;
+import com.psbc.pojo.DatabaseModel;
 import com.psbc.pojo.Exception;
 import lombok.Data;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import static com.psbc.utils.DateAndTimeUtil.getNowDate;
 
@@ -19,7 +24,9 @@ public class ExceptionRecordOperator {
 
     private String returnCode = "0000";
     private RecordOperator operator = new RecordOperator();
-    public void errorOperate(AccountApplication application,String returnCode) {
+
+    @Transactional
+    public void errorOperate(DatabaseModel application, String returnCode) {
 
 //        将不合法的申请记录写入“异常登 记簿”(包括不合法原因)
 //        returnCode
@@ -28,23 +35,43 @@ public class ExceptionRecordOperator {
         exception.setSpeification(this.returnCode);
 
         exceptionDao.insert(exception);
-        this.returnCode=returnCode;
+        this.returnCode = returnCode;
         this.generateFailed(application);
 
     }
 
+    private static final Logger logger = Logger.getLogger(TaMockProjectApplication.class);
+
+
     @Autowired
     AccountConfirmationDao accountConfirmationDao;
+    @Autowired
+    AccountApplicationDao accountApplicationDao;
 
-    public void generateFailed(AccountApplication accountApplication) {
+    @Transactional
+    public void generateFailed(DatabaseModel Application) {
         //        生成对应确认失败记录
         //        写入 "account_confirmation" 表
         AccountConfirmation accountConfirmation = new AccountConfirmation();
-        accountConfirmation = (AccountConfirmation) this.operator.getTargetObject(accountApplication, accountConfirmation.newInstanceWithoutArgs());
+        accountConfirmation = (AccountConfirmation) this.operator.getTargetObject(Application, accountConfirmation.newInstanceWithoutArgs());
         accountConfirmation.setReturncode(this.returnCode);
         accountConfirmation.setTransactioncfmdate(getNowDate());
 
-        accountConfirmationDao.insert(accountConfirmation);
+
+        try {
+            accountConfirmationDao.insert(accountConfirmation);
+            if (Application.getClass().getSimpleName().equals("File01")) {
+                AccountApplication accountApplication = (AccountApplication) Application;
+                accountApplication.setRecordStatus("2");
+                accountApplicationDao.updateByPrimaryKey(accountApplication);
+            }
+
+
+        } catch (java.lang.Exception e) {
+            logger.error(e);
+        }
+
+
     }
 
 
