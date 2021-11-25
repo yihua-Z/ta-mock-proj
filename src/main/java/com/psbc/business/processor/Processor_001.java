@@ -46,7 +46,6 @@ public class Processor_001 {
 
 //        @todo
 //        referenceNo的处理
-        
 
 //      检查字段是否合法，合法返回对应的AccountApplication
         AccountApplication accountApplication = new AccountApplication();
@@ -80,7 +79,7 @@ public class Processor_001 {
         return applyRecords;
     }
 
-    public void ExpectationFlow(DatabaseModel accountApplication) {
+    public void expectationFlow(DatabaseModel accountApplication) {
 
         if (this.returnCode.equals("0000")) {
             this.generateSucceed.generateSucceed(accountApplication);
@@ -103,7 +102,7 @@ public class Processor_001 {
             if (checkAppSheetSeriaNo) {
 //                    使用expectation的returnCode
                 this.returnCode = this.generateSucceed.generateRecord(application, expectation);
-                this.ExpectationFlow(application);
+                this.expectationFlow(application);
             }
 //                记录不存在 Expectation 中
             else {
@@ -113,7 +112,7 @@ public class Processor_001 {
                 if (this.checkDataLegality.isLegality()) {
 //                        使用合法性检查后checkDataLegality的returnCode
                     this.generateSucceed.generateRecord(application, this.checkDataLegality.getReturnCode());
-                    this.ExpectationFlow(application);
+                    this.expectationFlow(application);
                 } else {
 //                  数据不合法 异常登记
                     this.returnCode = this.checkDataLegality.getReturnCode();
@@ -122,8 +121,6 @@ public class Processor_001 {
 
             }
         }
-
-
     }
 
     public List<DatabaseModel> ApplicationProcessor() {
@@ -154,7 +151,7 @@ public class Processor_001 {
         return databaseModelList;
     }
 
-    public void processor(String applicationFilePath,boolean notInsertFlag) {
+    public void processor(String applicationFilePath, boolean notInsertFlag) {
 
         this.setApplicationFilePath(applicationFilePath);
 
