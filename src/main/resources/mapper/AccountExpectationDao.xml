@@ -29,7 +29,10 @@
       and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
       and ReferenceNo = #{referenceno,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.psbc.pojo.AccountExpectationKey">
+    <select id="selectAll" resultType="com.psbc.pojo.AccountExpectation">
+      select * from account_expectation;
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="com.psbc.pojo.AccountExpectationKey">
     delete from account_expectation
     where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
       and TACode = #{tacode,jdbcType=VARCHAR}

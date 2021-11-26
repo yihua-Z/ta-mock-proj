@@ -58,9 +58,17 @@ public class SucceedRecordOperator {
 
     public DatabaseModel getAccountConfirmation(DatabaseModel application, String taCode) {
 //      taCode应该配置
-        TaProperty taProperty = taPropertyDao.selectByPrimaryKey(taCode);
-        String accountprefix = taProperty.getAccountPrefix();
-        Integer accountindex = taProperty.getAccountIndex();
+        String accountprefix = "";
+        Integer accountindex=0;
+        try {
+            TaProperty taProperty = taPropertyDao.selectByPrimaryKey(taCode);
+            accountprefix = taProperty.getAccountPrefix();
+            accountindex = taProperty.getAccountIndex();
+
+        } catch (Exception e) {
+            logger.error(e);
+        }
+
 
         if (application.getClass().getSimpleName().equals("AccountApplication")) {
             AccountApplication accountApplication = (AccountApplication) application;

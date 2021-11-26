@@ -5,6 +5,8 @@ import com.psbc.pojo.AccountExpectationKey;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Mapper
 @Repository
 public interface AccountExpectationDao {
@@ -15,6 +17,7 @@ public interface AccountExpectationDao {
     int insertSelective(AccountExpectation record);
 
     AccountExpectation selectByPrimaryKey(AccountExpectationKey key);
+    List<AccountExpectation> selectAll();
 
     int updateByPrimaryKeySelective(AccountExpectation record);
 

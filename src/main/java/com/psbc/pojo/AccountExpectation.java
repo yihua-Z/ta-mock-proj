@@ -8,7 +8,7 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class AccountExpectation extends AccountExpectationKey implements Serializable {
+public class AccountExpectation extends AccountExpectationKey implements DatabaseModel {
 
 
     /**
@@ -77,4 +77,8 @@ public class AccountExpectation extends AccountExpectationKey implements Seriali
      */
     private String specification;
 
+    @Override
+    public DatabaseModel newInstanceWithoutArgs() {
+        return new AccountExpectation();
+    }
 }

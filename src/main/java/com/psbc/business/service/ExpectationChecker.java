@@ -52,9 +52,9 @@ public class ExpectationChecker {
 
     private boolean checkPrimaryKey(DatabaseModel application) {
         boolean checkAppSheetSeriaNo = false;
+        RecordOperator recordOperator = new RecordOperator();
         AccountExpectation accountExpectation = new AccountExpectation();
-        RecordOperator recordOperator=new RecordOperator();
-        accountExpectation = (AccountExpectation) recordOperator.getTargetObject(accountExpectation, application);
+        accountExpectation = (AccountExpectation) recordOperator.getTargetObject(application, accountExpectation.newInstanceWithoutArgs());
         this.expectation = accountExpectationDao.selectByPrimaryKey(accountExpectation);
         if (expectation != null) {
             checkAppSheetSeriaNo = true;

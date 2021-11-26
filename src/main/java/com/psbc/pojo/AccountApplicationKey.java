@@ -10,7 +10,7 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class AccountApplicationKey implements Serializable {
+public class AccountApplicationKey implements DatabaseModel {
     /**
      * 申请单编号
      */
@@ -31,4 +31,8 @@ public class AccountApplicationKey implements Serializable {
      */
     private Integer referenceNo;
 
+    @Override
+    public DatabaseModel newInstanceWithoutArgs() {
+        return new AccountApplicationKey();
+    }
 }

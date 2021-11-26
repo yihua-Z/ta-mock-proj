@@ -45,8 +45,7 @@ public class Processor_001 {
     @Transactional
     public DatabaseModel insertAccountApplicationImpl(TableModel tableModel) {
 
-//        @todo
-//        referenceNo的处理
+//        @TODO referenceNo的处理
 
 //      检查字段是否合法，合法返回对应的AccountApplication
         AccountApplication accountApplication = new AccountApplication();
@@ -97,8 +96,6 @@ public class Processor_001 {
         List<DatabaseModel> confirmList = new ArrayList<>();
         for (DatabaseModel application : databaseModelList
         ) {
-//          @todo
-//          联合主键查询
             boolean checkAppSheetSeriaNo = this.expectationChecker.ExpectationOperate(application);
             // 记录存在 Expectation 中
             if (checkAppSheetSeriaNo) {
@@ -166,8 +163,9 @@ public class Processor_001 {
             databaseModelList = accountApplicationDao.selectAll();
         }
 
-        this.generateConfirmation(databaseModelList);
+        List<DatabaseModel> generateConfirmation = this.generateConfirmation(databaseModelList);
 
+        logger.info(generateConfirmation.toString());
         if (isWriteFlag) {
 
             dataFileWriterDataBase.write();
