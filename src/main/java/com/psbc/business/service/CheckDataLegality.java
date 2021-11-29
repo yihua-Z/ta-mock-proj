@@ -35,8 +35,8 @@ public class CheckDataLegality {
                     return false;
                 }
 
-                String transactionDate = accountApplication.getTransactionDate();
-                String transactionTime = accountApplication.getTransactionTime();
+                String transactionDate = accountApplication.getTransactiondate();
+                String transactionTime = accountApplication.getTransactiontime();
                 if (transactionDate != null & transactionTime != null) {
                     String transactionDateTime = transactionDate + transactionTime;
                     if (Double.valueOf(transactionDateTime) > Double.valueOf(getFullNowDateTime())) {

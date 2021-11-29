@@ -1,5 +1,6 @@
 package com.psbc.writer;
 
+import com.psbc.TaMockProjectApplication;
 import com.psbc.business.service.RecordOperator;
 import com.psbc.exceptions.XMLParsingException;
 import com.psbc.mapper.AccountApplicationDao;
@@ -9,6 +10,7 @@ import com.psbc.reader.xmlModel.XMLNode;
 import com.psbc.utils.StringProcessor;
 import com.psbc.utils.helper.XMLParser;
 import lombok.Data;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -34,32 +36,38 @@ public class DataFileWriterDataBase extends TAFileWriter {
     private String filePrefix = "OFD";
 
     // 数据文件中的字段记录
-    private XMLNode xmlNode=XMLParser.parseXml("D:\\TONG\\JAVA\\ta-mock-proj\\src\\main\\resources\\xml\\file_configs\\File02.xml");
+    private XMLNode xmlNode = XMLParser.parseXml("D:\\TONG\\JAVA\\ta-mock-proj\\src\\main\\resources\\xml\\file_configs\\File02.xml");
     private RecordOperator operator = new RecordOperator();
     // 数据文件中的记录列表
     private List<TableModel> records;
+    private static final Logger logger = Logger.getLogger(TaMockProjectApplication.class);
 
     public void getRecords() {
 
         List<TableModel> records = new ArrayList<>();
-        List<AccountConfirmation> accountConfirmations = accountConfirmationDao.selectAll();
+        List<AccountConfirmation> accountConfirmations = new ArrayList<>();
+        try {
+            accountConfirmations = accountConfirmationDao.selectAll();
+        } catch (Exception e) {
+            logger.error(e);
+        }
 
         for (AccountConfirmation confirmation : accountConfirmations
         ) {
 
             if (confirmation.getReturncode().equals("0000")) {
                 File02 file02 = new File02();
-                AccountApplicationKey applicationKey = new AccountApplicationKey();
-                applicationKey.setAppSheetSerialNo(confirmation.getAppsheetserialno());
-                applicationKey.setDistributorCode("037");
-                applicationKey.setReferenceNo(37);
-                applicationKey.setTACode("0");
-                
-                AccountApplication application = accountApplicationDao.selectByPrimaryKey(applicationKey);
-                
+                AccountApplication accountApplication = new AccountApplication();
+                accountApplication.setAppsheetserialno(confirmation.getAppsheetserialno());
+                accountApplication.setDistributorcode("037");
+                accountApplication.setReferenceno(37);
+                accountApplication.setTacode("0");
+
+                AccountApplication application = (AccountApplication) accountApplicationDao.selectByPrimaryKey(accountApplication);
+
                 file02 = (File02) this.operator.getTargetObject(application, file02.newInstanceWithoutArgs());
                 file02 = (File02) this.operator.getTargetObject(confirmation, file02);
-                file02.setMultiAcctFlag((String) application.getMultiAcctFlag());
+                file02.setMultiacctflag((String) application.getMultiacctflag());
                 records.add(file02);
             }
 

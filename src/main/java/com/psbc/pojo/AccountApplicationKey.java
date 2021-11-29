@@ -1,8 +1,6 @@
 package com.psbc.pojo;
 
 import java.io.Serializable;
-
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
@@ -10,29 +8,24 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class AccountApplicationKey implements DatabaseModel {
+public class AccountApplicationKey implements Serializable {
     /**
      * 申请单编号
      */
-    private String appSheetSerialNo;
+    private String appsheetserialno;
 
     /**
      * TA代码
      */
-    private String TACode;
+    private String tacode;
 
     /**
      * 销售人代码
      */
-    private String distributorCode;
+    private String distributorcode;
 
     /**
      * 同一交易序列码
      */
-    private Integer referenceNo;
-
-    @Override
-    public DatabaseModel newInstanceWithoutArgs() {
-        return new AccountApplicationKey();
-    }
+    private Integer referenceno;
 }

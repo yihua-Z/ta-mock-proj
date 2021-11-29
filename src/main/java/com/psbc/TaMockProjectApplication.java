@@ -31,13 +31,11 @@ public class TaMockProjectApplication {
         processor_001.setErrorOperate(errorOperate);
         processor_001.setGenerateSucceed(generateSucceed);
         processor_001.setCheckDataLegality(checkDataLegality);
-
+        processor_001.setDataFileWriterDataBase(dataFileWriterDataBase);
 
         String applicationFilePath = ".\\src\\main\\resources\\data\\OFD_037_999_20211101_01.TXT";
 
-        dataFileWriterDataBase.initialData(".\\src\\main\\resources\\xml\\file_structure_configs\\file_structure_configs.xml", "D:\\TONG\\JAVA\\ta-mock-proj\\src\\main\\resources\\data\\");
-
-        processor_001.processor(applicationFilePath, false, false);
+        processor_001.processor(applicationFilePath, true, false);
         logger.info("process 001 done!");
 
 

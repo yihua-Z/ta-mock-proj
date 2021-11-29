@@ -51,7 +51,7 @@ public class RecordOperator {
                     Field field = null;
                     fieldName = attributes.get(k);
                     try {
-                        field = tableModel.getClass().getDeclaredField(fieldName);
+                        field = tableModel.getClass().getDeclaredField(fieldName.toLowerCase());
                         field.setAccessible(true);
                         Object o = field.get(tableModel);
                         fieldNameValue = o.toString();
@@ -97,8 +97,8 @@ public class RecordOperator {
     }
 
     public Object getBeanUtilsCopyProperties(Object sourceObject, Object targetObject) {
-        Object target = this.transferObjectIgnoreCase(sourceObject, targetObject.getClass());
-        return target;
+        BeanUtils.copyProperties(sourceObject,targetObject);
+        return targetObject;
     }
 
 

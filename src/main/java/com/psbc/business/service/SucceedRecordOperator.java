@@ -72,7 +72,7 @@ public class SucceedRecordOperator {
 
         if (application.getClass().getSimpleName().equals("AccountApplication")) {
             AccountApplication accountApplication = (AccountApplication) application;
-            this.accountConfirmation.setBusinesscode("1" + accountApplication.getBusinessCode().substring(1));
+            this.accountConfirmation.setBusinesscode("1" + accountApplication.getBusinesscode().substring(1));
         }
 
 //      @TODO
@@ -130,7 +130,7 @@ public class SucceedRecordOperator {
 
             if (Application.getClass().getSimpleName().equals("AccountApplication")) {
                 AccountApplication accountApplication = (AccountApplication) Application;
-                accountApplication.setRecordStatus("2");
+                accountApplication.setRecordstatus("2");
                 accountApplicationDao.updateByPrimaryKey(accountApplication);
             }
             return this.accountConfirmation;

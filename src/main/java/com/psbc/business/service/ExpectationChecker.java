@@ -36,7 +36,7 @@ public class ExpectationChecker {
             String businessCode = application.getClass().getSimpleName();
             if (businessCode.equals("AccountApplication")) {
                 AccountApplication accountApplication = (AccountApplication) application;
-                accountApplication.setRecordStatus("1");
+                accountApplication.setRecordstatus("1");
                 accountApplicationDao.updateByPrimaryKey(accountApplication);
             }
 

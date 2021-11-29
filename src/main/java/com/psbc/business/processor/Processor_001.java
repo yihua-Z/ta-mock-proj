@@ -19,6 +19,8 @@ import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
+import static com.psbc.business.service.CommonProcessUtils.readRecords;
+
 @Data
 @Component
 public class Processor_001 {
@@ -50,10 +52,15 @@ public class Processor_001 {
 //      检查字段是否合法，合法返回对应的AccountApplication
         AccountApplication accountApplication = new AccountApplication();
         accountApplication = (AccountApplication) this.recordOperator.getTargetObject(tableModel, accountApplication.newInstanceWithoutArgs());
-//      插入记录到 account_application
-        accountApplication.setTACode("0");
-        accountApplication.setReferenceNo(37);
-        accountApplication.setRecordStatus("0");
+//        accountApplication = (AccountApplication) this.recordOperator.getBeanUtilsCopyProperties(tableModel, accountApplication.newInstanceWithoutArgs());
+
+        //      插入记录到 account_application
+        accountApplication.setTacode("0");
+        accountApplication.setReferenceno(37);
+        accountApplication.setRecordstatus("0");
+//        accountApplication.setInstrepridtype("0");
+//        accountApplication.setTransactorcerttype("0");
+//        accountApplication.setMultiacctflag("");
         try {
             this.accountApplicationDao.insert(accountApplication);
         } catch (java.lang.Exception e) {
@@ -69,14 +76,6 @@ public class Processor_001 {
         exception.setErrortype("0");
         exceptionDao.insert(exception);
         System.out.println("申请失败：" + tableModel.toString());
-    }
-
-
-    public List<TableModel> readRecords(String applicationFilePath) {
-
-        DataFileReader applyReader = new DataFileReader(new File(applicationFilePath));
-        List<TableModel> applyRecords = applyReader.read();
-        return applyRecords;
     }
 
     public DatabaseModel expectationFlow(DatabaseModel accountApplication) {
@@ -167,7 +166,7 @@ public class Processor_001 {
 
         logger.info(generateConfirmation.toString());
         if (isWriteFlag) {
-
+            dataFileWriterDataBase.initialData(".\\src\\main\\resources\\xml\\file_structure_configs\\file_structure_configs.xml", "D:\\TONG\\JAVA\\ta-mock-proj\\src\\main\\resources\\data\\");
             dataFileWriterDataBase.write();
         }
 

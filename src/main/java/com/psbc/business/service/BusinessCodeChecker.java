@@ -27,7 +27,7 @@ public class BusinessCodeChecker {
 
         Field field = null;
         try {
-            field = tableModel.getClass().getDeclaredField("BusinessCode");
+            field = tableModel.getClass().getDeclaredField("businesscode");
             field.setAccessible(true);
             Object o = field.get(tableModel);
             businessCode = o.toString();
