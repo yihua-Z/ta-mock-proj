@@ -11,8 +11,8 @@ import java.util.List;
 
 abstract class BiDirectionProcessor implements Processor {
     // 包装主方法，主要做状态更新
-    public List<DatabaseModel> process(final ApplicationModel apply) throws ConfirmExpectationException {
-        List<DatabaseModel> confirmations = null;
+    public List<ConfirmationModel> process(final ApplicationModel apply) throws ConfirmExpectationException {
+        List<ConfirmationModel> confirmations = null;
         ApplyException applyException=null;
         updateRecordStatus(apply, "1"); 
         try{
@@ -33,12 +33,12 @@ abstract class BiDirectionProcessor implements Processor {
 
     // 主方法：实现不同业务的具体业务逻辑的主流程
     // 确认记录结果作为List返回：方便一条申请记可能对应多条确认记录
-    private List<DatabaseModel> doProcess(final ApplicationModel apply) throws ConfirmExpectationException {
-        final List<DatabaseModel> confirmList = new LinkedList<>();
+    private List<ConfirmationModel> doProcess(final ApplicationModel apply) throws ConfirmExpectationException {
+        final List<ConfirmationModel> confirmList = new LinkedList<>();
 
         
         TransactionExpectation confirmExpect = null;
-        TransactionConfirmation confirmation = null;
+        ConfirmationModel confirmation = null;
         ApplyException applyException=null;
         // 判断申请记录是否有异常；如果有，抓取异常
         try{
@@ -86,7 +86,7 @@ abstract class BiDirectionProcessor implements Processor {
     }
 
     // 用于期望确认对象转型为确认对象
-    private void transformObject(TransactionExpectation originObj, TransactionConfirmation targetObj){
+    private void transformObject(TransactionExpectation originObj, ConfirmationModel targetObj){
         // 直接用辅助部分的代码实现
     }
 
@@ -96,7 +96,7 @@ abstract class BiDirectionProcessor implements Processor {
     }
 
     // 调取单向业务处理器
-    private List<DatabaseModel> callOtherProcessor(String businessCode){
+    private List<ConfirmationModel> callOtherProcessor(String businessCode){
         // 利用反射实现
         return null;
     }
@@ -115,10 +115,10 @@ abstract class BiDirectionProcessor implements Processor {
     abstract void validateConfirmExpectation(TransactionExpectation expect) throws ConfirmExpectationException;
 
     // 根据业务逻辑更新对应库表
-    abstract void updateRepository(ApplicationModel apply, List<DatabaseModel> confirm, ApplyException applyException);
+    abstract void updateRepository(ApplicationModel apply, List<ConfirmationModel> confirm, ApplyException applyException);
     
     // 生成确认记录，不同业务需具体实现
-    abstract void generateConfirm(ApplicationModel apply, TransactionConfirmation confirm, ApplyException applyException);
+    abstract void generateConfirm(ApplicationModel apply, ConfirmationModel confirm, ApplyException applyException);
 
 
 

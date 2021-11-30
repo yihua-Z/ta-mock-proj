@@ -183,12 +183,12 @@ public class Processor022 extends BiDirectionProcessor{
     }
 
     @Override
-    void updateRepository(ApplicationModel apply, List<DatabaseModel> confirm, ApplyException applyException) {
+    void updateRepository(ApplicationModel apply, List<ConfirmationModel> confirm, ApplyException applyException) {
 
     }
 
     @Override
-    void generateConfirm(ApplicationModel apply, TransactionConfirmation confirm, ApplyException applyException) {
+    void generateConfirm(ApplicationModel apply, ConfirmationModel confirm, ApplyException applyException) {
 
     }
 }

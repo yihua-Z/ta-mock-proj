@@ -9,7 +9,7 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class TransactionConfirmation implements DatabaseModel {
+public class TransactionConfirmation implements ConfirmationModel {
     /**
      * 确认ID
      */
