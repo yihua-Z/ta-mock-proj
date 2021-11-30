@@ -11,7 +11,7 @@ import lombok.Data;
  * @author
  */
 @Data
-public class TransactionExpectation implements DatabaseModel {
+public class TransactionExpectation implements ExpectationModel {
     /**
      * 申请单编号
      */

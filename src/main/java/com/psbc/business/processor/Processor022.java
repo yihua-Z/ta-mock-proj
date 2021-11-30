@@ -178,7 +178,7 @@ public class Processor022 extends BiDirectionProcessor{
     }
 
     @Override
-    void validateConfirmExpectation(TransactionExpectation expect) throws ConfirmExpectationException {
+    void validateConfirmExpectation(ExpectationModel expect) throws ConfirmExpectationException {
 
     }
 

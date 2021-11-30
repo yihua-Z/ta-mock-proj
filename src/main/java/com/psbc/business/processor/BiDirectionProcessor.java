@@ -36,8 +36,8 @@ abstract class BiDirectionProcessor implements Processor {
     private List<ConfirmationModel> doProcess(final ApplicationModel apply) throws ConfirmExpectationException {
         final List<ConfirmationModel> confirmList = new LinkedList<>();
 
-        
-        TransactionExpectation confirmExpect = null;
+
+        ExpectationModel confirmExpect = null;
         ConfirmationModel confirmation = null;
         ApplyException applyException=null;
         // 判断申请记录是否有异常；如果有，抓取异常
@@ -55,7 +55,8 @@ abstract class BiDirectionProcessor implements Processor {
         else {
             confirmExpect = getExpectation(apply);
             // 如果期望条目已更新
-            final boolean isExpectationUpdated = "1".equals(confirmExpect.getStatus());
+//            final boolean isExpectationUpdated = "1".equals(confirmExpect.getStatus());
+            final boolean isExpectationUpdated =false;
             if(isExpectationUpdated){
                 validateConfirmExpectation(confirmExpect); // 会异常
             }
@@ -86,7 +87,7 @@ abstract class BiDirectionProcessor implements Processor {
     }
 
     // 用于期望确认对象转型为确认对象
-    private void transformObject(TransactionExpectation originObj, ConfirmationModel targetObj){
+    private void transformObject(ExpectationModel originObj, ConfirmationModel targetObj){
         // 直接用辅助部分的代码实现
     }
 
@@ -112,7 +113,7 @@ abstract class BiDirectionProcessor implements Processor {
     abstract void validateApply(ApplicationModel apply) throws ApplyException;
 
     // 判断所获期望是否合理，不同业务需具体实现
-    abstract void validateConfirmExpectation(TransactionExpectation expect) throws ConfirmExpectationException;
+    abstract void validateConfirmExpectation(ExpectationModel expect) throws ConfirmExpectationException;
 
     // 根据业务逻辑更新对应库表
     abstract void updateRepository(ApplicationModel apply, List<ConfirmationModel> confirm, ApplyException applyException);

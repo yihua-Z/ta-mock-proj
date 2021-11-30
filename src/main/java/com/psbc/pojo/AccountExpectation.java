@@ -8,7 +8,7 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class AccountExpectation extends AccountExpectationKey implements DatabaseModel {
+public class AccountExpectation extends AccountExpectationKey implements ExpectationModel {
 
 
     /**
