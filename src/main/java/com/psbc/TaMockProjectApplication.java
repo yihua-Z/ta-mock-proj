@@ -1,7 +1,7 @@
 package com.psbc;
 
 import com.psbc.business.processor.Processor_001;
-import com.psbc.business.processor.Processor_022;
+
 import com.psbc.business.service.*;
 import com.psbc.writer.DataFileWriterDataBase;
 import org.apache.log4j.Logger;
@@ -21,7 +21,7 @@ public class TaMockProjectApplication {
         SpringApplication.run(TaMockProjectApplication.class, args);
 
         Processor_001 processor_001 = SpringContextUtil.getBean(Processor_001.class);
-        Processor_022 processor_022 = SpringContextUtil.getBean(Processor_022.class);
+//        Processor_022 processor_022 = SpringContextUtil.getBean(Processor_022.class);
         ExpectationChecker expectationChecker = SpringContextUtil.getBean(ExpectationChecker.class);
         ExceptionRecordOperator errorOperate = SpringContextUtil.getBean(ExceptionRecordOperator.class);
         SucceedRecordOperator generateSucceed = SpringContextUtil.getBean(SucceedRecordOperator.class);
@@ -42,7 +42,7 @@ public class TaMockProjectApplication {
         processor_001.processor(applicationFilePath, true, true);
         logger.info("process 001 done!");
 
-        processor_022.processor(applicationFilePath,false,false);
+//        processor_022.processor(applicationFilePath,false,false);
         logger.info("process 022 done!");
 
     }
