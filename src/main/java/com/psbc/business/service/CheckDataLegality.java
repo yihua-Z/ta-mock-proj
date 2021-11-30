@@ -1,8 +1,10 @@
 package com.psbc.business.service;
 
 import com.psbc.mapper.AccountApplicationDao;
+import com.psbc.mapper.TransactionApplicationDao;
 import com.psbc.pojo.AccountApplication;
 import com.psbc.pojo.DatabaseModel;
+import com.psbc.pojo.TransactionApplication;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -20,6 +22,8 @@ public class CheckDataLegality {
 
     @Autowired
     AccountApplicationDao accountApplicationDao;
+    @Autowired
+    TransactionApplicationDao transactionApplicationDao;
 
 
 
@@ -37,6 +41,35 @@ public class CheckDataLegality {
 
                 String transactionDate = accountApplication.getTransactionDate();
                 String transactionTime = accountApplication.getTransactionTime();
+                if (transactionDate != null & transactionTime != null) {
+                    String transactionDateTime = transactionDate + transactionTime;
+                    if (Double.valueOf(transactionDateTime) > Double.valueOf(getFullNowDateTime())) {
+                        this.returnCode = this.ERRORCODE;
+                        this.legality = false;
+                    }
+                }
+
+            }
+
+        }
+
+        return this.legality;
+    }
+
+    public boolean CheckTransaction(DatabaseModel Application) {
+        if(Application.getClass().getSimpleName().equals("TransactionApplication")){
+            TransactionApplication transactionApplication =(TransactionApplication) Application;
+            List<TransactionApplication> transactionApplications;
+            transactionApplications = transactionApplicationDao.selectUnionPrimaryKey(transactionApplication);
+            if (transactionApplications != null) {
+                if (transactionApplications.size() > 1) {
+                    this.returnCode = this.ERRORCODE;
+                    this.legality = false;
+                    return false;
+                }
+
+                String transactionDate = transactionApplication.getTransactiondate();
+                String transactionTime = transactionApplication.getTransactiontime();
                 if (transactionDate != null & transactionTime != null) {
                     String transactionDateTime = transactionDate + transactionTime;
                     if (Double.valueOf(transactionDateTime) > Double.valueOf(getFullNowDateTime())) {

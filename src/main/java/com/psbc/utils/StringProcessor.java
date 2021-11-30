@@ -6,11 +6,19 @@ import com.psbc.exceptions.ConfirmationTypeNotFoundException;
 import com.psbc.exceptions.EmptyStringException;
 import com.psbc.reader.xmlModel.XMLNode;
 import com.psbc.utils.helper.XMLParser;
+import lombok.NonNull;
 
 import java.util.List;
 import java.util.Objects;
 
 public class StringProcessor {
+
+    /**
+     * 从文件类名获得文件序号
+     */
+    public static String getFileNoFromFileClazzName(@NonNull final String className){
+        return className.substring(4,6);
+    }
     public static String removeAllBlanks(String str) {
         if(str == null || str.trim().length() < 1){
             //throw new EmptyStringException();

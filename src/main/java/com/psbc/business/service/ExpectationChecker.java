@@ -17,6 +17,7 @@ public class ExpectationChecker {
     private ExceptionRecordOperator errorOperate;
     private SucceedRecordOperator generateSucceed;
     private AccountExpectation expectation;
+    private TransactionExpectation transactionExpectation;
     private CheckDataLegality checkDataLegality;
 
 
@@ -27,6 +28,14 @@ public class ExpectationChecker {
 
     @Autowired
     AccountExpectationDao accountExpectationDao;
+
+    @Autowired
+    TransactionApplicationDao transactionApplicationDao;
+
+    @Autowired
+    TransactionExpectationDao transactionExpectationDao;
+
+
 
 
     @Transactional
@@ -57,6 +66,29 @@ public class ExpectationChecker {
         accountExpectation = (AccountExpectation) recordOperator.getTargetObject(application, accountExpectation.newInstanceWithoutArgs());
         this.expectation = accountExpectationDao.selectByPrimaryKey(accountExpectation);
         if (expectation != null) {
+            checkAppSheetSeriaNo = true;
+        }
+        return checkAppSheetSeriaNo;
+    }
+
+    @Transactional
+    public boolean ExpectationTransactionOperate(DatabaseModel application ) {
+
+        if (application != null) {
+
+            boolean checkAppSheetSeriaNo = checkTransactionPrimaryKey(application);
+            return checkAppSheetSeriaNo;
+        }
+        return false;
+    }
+
+    private boolean checkTransactionPrimaryKey(DatabaseModel application) {
+        boolean checkAppSheetSeriaNo = false;
+        RecordOperator recordOperator = new RecordOperator();
+        TransactionExpectation transactionExpectation = new TransactionExpectation();
+        transactionExpectation=(TransactionExpectation)recordOperator.getTargetObject(application,transactionExpectation.newInstanceWithoutArgs());
+        this.transactionExpectation = transactionExpectationDao.selectByPrimaryKey(transactionExpectation.getAppsheetserialno());
+        if (transactionExpectation != null) {
             checkAppSheetSeriaNo = true;
         }
         return checkAppSheetSeriaNo;

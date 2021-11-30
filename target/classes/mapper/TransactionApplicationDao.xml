@@ -105,6 +105,14 @@
       and ReferenceNumber = #{referencenumber,jdbcType=INTEGER}
       and TACode = #{tacode,jdbcType=VARCHAR}
   </select>
+  <select id="selectUnionPrimaryKey" resultType="com.psbc.pojo.TransactionApplication">
+    select *
+    from transaction_application
+    where AppSheetSerialNo = #{appSheetSerialNo,jdbcType=VARCHAR}
+      and TACode = #{TACode,jdbcType=VARCHAR}
+      and DistributorCode = #{distributorCode,jdbcType=VARCHAR}
+      and ReferenceNo = #{referenceNo,jdbcType=INTEGER}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="com.psbc.pojo.TransactionApplicationKey">
     delete from transaction_application
     where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
@@ -113,6 +121,7 @@
       and TACode = #{tacode,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno" parameterType="com.psbc.pojo.TransactionApplication" useGeneratedKeys="true">
+
     insert into transaction_application (DistributorCode, ReferenceNumber, 
       TACode, FundCode, LargeRedemptionFlag, 
       TransactionDate, TransactionTime, TransactionAccountID, 
@@ -170,6 +179,10 @@
       #{largebuyflag,jdbcType=OTHER}, #{chargetype,jdbcType=CHAR}, #{specifyratefee,jdbcType=DECIMAL}, 
       #{specifyfee,jdbcType=DECIMAL})
   </insert>
+  <select id="selectAll" resultType="com.psbc.pojo.TransactionApplication">
+    select *
+    from transaction_application
+  </select>
   <insert id="insertSelective" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno" parameterType="com.psbc.pojo.TransactionApplication" useGeneratedKeys="true">
     insert into transaction_application
     <trim prefix="(" suffix=")" suffixOverrides=",">

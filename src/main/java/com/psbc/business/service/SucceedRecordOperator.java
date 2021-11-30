@@ -24,6 +24,8 @@ public class SucceedRecordOperator {
     private AcctShare acctShare = new AcctShare();
     private String returnCode;
     private AccountConfirmation accountConfirmation = new AccountConfirmation();
+    private TransactionApplication transactionApplication=new TransactionApplication();
+    private TransactionConfirmation transactionConfirmation =new TransactionConfirmation();
 
     @Autowired
     TaPropertyDao taPropertyDao;
@@ -39,6 +41,12 @@ public class SucceedRecordOperator {
 
     @Autowired
     AccountApplicationDao accountApplicationDao;
+
+    @Autowired
+    TransactionConfirmationDao transactionConfirmationDao;
+
+    @Autowired
+    TransactionApplicationDao transactionApplicationDao;
     private static final Logger logger = Logger.getLogger(TaMockProjectApplication.class);
 
     public String generateRecord(DatabaseModel application, AccountExpectation expectation) {
@@ -140,6 +148,73 @@ public class SucceedRecordOperator {
             logger.error("insert:" + e);
         }
         return null;
+
+    }
+
+    @Transactional
+    public DatabaseModel generateTransactionSucceed(DatabaseModel Application) {
+
+        TransactionConfirmation transactionConfirmation = new TransactionConfirmation();
+        this.operator.getTargetObject(Application,transactionConfirmation.newInstanceWithoutArgs());
+
+
+        AcctShare acctShare = new AcctShare();
+        acctShare = (AcctShare) this.operator.getTargetObject(Application, acctShare.newInstanceWithoutArgs());
+        acctShare = (AcctShare) this.operator.getTargetObject(accountInfo, acctShare);
+        acctShare.setTotalvolofdistributorinta(BigDecimal.valueOf(0));
+
+        acctShare.setDistributorcode("0");
+        acctShare.setTransactioncfmdate("");
+
+
+        try {
+            //        写入 "account_info " 表
+            accountInfoDao.insert(accountInfo);
+            //        写入 "acct_share" 表
+            acctShareDao.insert(acctShare);
+            //        写入"transactionConfirmation"表
+            transactionConfirmationDao.insert(transactionConfirmation);
+
+            if (Application.getClass().getSimpleName().equals("transactionApplication")) {
+                AccountApplication accountApplication = (AccountApplication) Application;
+                TransactionApplication transactionApplication =(TransactionApplication) Application;
+//                更新transactionApplication部分值
+//                transactionApplication.set
+                transactionApplicationDao.updateByPrimaryKey(transactionApplication);
+            }
+            return this.transactionConfirmation;
+
+
+
+        } catch (Exception e) {
+            logger.error("insert:" + e);
+        }
+        return null;
+
+    }
+
+    public String generateTransactionRecord(DatabaseModel application, TransactionExpectation expectation) {
+
+        TransactionConfirmation transactionConfirmation =new TransactionConfirmation();
+        transactionConfirmation=(TransactionConfirmation)this.operator.getTargetObject(application,transactionConfirmation.newInstanceWithoutArgs());
+        if (expectation != null) {
+            this.transactionConfirmation=(TransactionConfirmation)this.operator.getTargetObject(expectation,transactionConfirmation) ;
+        }
+        this.returnCode = expectation.getReturncode();
+
+        return this.returnCode;
+    }
+
+    public void generateTransactionRecord(DatabaseModel application, String returnCode) {
+
+        AccountConfirmation accountConfirmation = new AccountConfirmation();
+        this.accountConfirmation = (AccountConfirmation) this.operator.getTargetObject(application, accountConfirmation.newInstanceWithoutArgs());
+
+        TransactionConfirmation transactionConfirmation =new TransactionConfirmation();
+        this.transactionConfirmation=(TransactionConfirmation)this.operator.getTargetObject(application,transactionConfirmation.newInstanceWithoutArgs());
+        this.returnCode = returnCode;
+//        this.getAccountConfirmation(application, "0");
+
 
     }
 

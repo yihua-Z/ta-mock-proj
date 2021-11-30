@@ -34,7 +34,7 @@ public class DataFileWriterDataBase extends TAFileWriter {
     private String filePrefix = "OFD";
 
     // 数据文件中的字段记录
-    private XMLNode xmlNode=XMLParser.parseXml("D:\\TONG\\JAVA\\ta-mock-proj\\src\\main\\resources\\xml\\file_configs\\File02.xml");
+    private XMLNode xmlNode=XMLParser.parseXml(".\\src\\main\\resources\\xml\\file_configs\\File02.xml");
     private RecordOperator operator = new RecordOperator();
     // 数据文件中的记录列表
     private List<TableModel> records;
