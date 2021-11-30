@@ -9,7 +9,7 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class AccountApplication extends AccountApplicationKey implements DatabaseModel {
+public class AccountApplication extends AccountApplicationKey implements ApplicationModel {
 
     /**
      * 申请单编号

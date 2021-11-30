@@ -9,7 +9,7 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class TransactionApplication extends TransactionApplicationKey implements DatabaseModel {
+public class TransactionApplication extends TransactionApplicationKey implements ApplicationModel{
     /**
      * 申请单编号
      */

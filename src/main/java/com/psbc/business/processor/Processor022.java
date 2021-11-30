@@ -173,7 +173,7 @@ public class Processor022 extends BiDirectionProcessor{
 
 
     @Override
-    void validateApply(TransactionApplication apply) throws ApplyException {
+    void validateApply(ApplicationModel apply) throws ApplyException {
 
     }
 
@@ -183,12 +183,12 @@ public class Processor022 extends BiDirectionProcessor{
     }
 
     @Override
-    void updateRepository(TransactionApplication apply, List<DatabaseModel> confirm, ApplyException applyException) {
+    void updateRepository(ApplicationModel apply, List<DatabaseModel> confirm, ApplyException applyException) {
 
     }
 
     @Override
-    void generateConfirm(TransactionApplication apply, TransactionConfirmation confirm, ApplyException applyException) {
+    void generateConfirm(ApplicationModel apply, TransactionConfirmation confirm, ApplyException applyException) {
 
     }
 }
