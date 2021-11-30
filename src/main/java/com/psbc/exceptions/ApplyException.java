@@ -6,4 +6,7 @@ package com.psbc.exceptions;
  * @date 2021/11/30 10:38
  */
 public class ApplyException extends ProcessingException{
+
+
+
 }

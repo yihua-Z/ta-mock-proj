@@ -9,26 +9,16 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class AcctShare implements DatabaseModel {
-    /**
-     * 投资人理财账号
-     */
-    private String taaccountid;
-
-    /**
-     * 销售人代码
-     */
-    private String distributorcode;
-
-    /**
-     * TA代码
-     */
-    private String tacode;
-
+public class AcctShare extends AcctShareKey implements DatabaseModel {
     /**
      * 理财产品总份数（含冻结）
      */
     private BigDecimal totalvolofdistributorinta;
+
+    /**
+     * 理财产品总金额（含冻结）
+     */
+    private BigDecimal totalamountofdistributorinta;
 
     /**
      * 理财产品冻结总份数
@@ -36,10 +26,16 @@ public class AcctShare implements DatabaseModel {
     private BigDecimal totalfrozenvol;
 
     /**
-     * 交易确认日期
+     * 理财产品冻结总金额
      */
-    private String transactioncfmdate;
+    private BigDecimal totalfrozenamount;
 
+    /**
+     * 更新日期
+     */
+    private String updatedate;
+
+    private static final long serialVersionUID = 1L;
 
     @Override
     public DatabaseModel newInstanceWithoutArgs() {

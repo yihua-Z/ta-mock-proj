@@ -1,19 +1,16 @@
 package com.psbc.mapper;
 
 import com.psbc.pojo.AcctShare;
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
+import com.psbc.pojo.AcctShareKey;
 
-@Mapper
-@Repository
 public interface AcctShareDao {
-    int deleteByPrimaryKey(String taaccountid);
+    int deleteByPrimaryKey(AcctShareKey key);
 
     int insert(AcctShare record);
 
     int insertSelective(AcctShare record);
 
-    AcctShare selectByPrimaryKey(String taaccountid);
+    AcctShare selectByPrimaryKey(AcctShareKey key);
 
     int updateByPrimaryKeySelective(AcctShare record);
 

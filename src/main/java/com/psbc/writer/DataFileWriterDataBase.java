@@ -49,17 +49,17 @@ public class DataFileWriterDataBase extends TAFileWriter {
 
             if (confirmation.getReturncode().equals("0000")) {
                 File02 file02 = new File02();
-                AccountApplicationKey applicationKey = new AccountApplicationKey();
-                applicationKey.setAppSheetSerialNo(confirmation.getAppsheetserialno());
-                applicationKey.setDistributorCode("037");
-                applicationKey.setReferenceNo(37);
-                applicationKey.setTACode("0");
+                AccountApplication accountApplication = new AccountApplication();
+                accountApplication.setAppsheetserialno(confirmation.getAppsheetserialno());
+                accountApplication.setDistributorcode("037");
+                accountApplication.setReferenceno(37);
+                accountApplication.setTacode("0");
                 
-                AccountApplication application = accountApplicationDao.selectByPrimaryKey(applicationKey);
+                AccountApplication application = (AccountApplication) accountApplicationDao.selectByPrimaryKey(accountApplication);
                 
                 file02 = (File02) this.operator.getTargetObject(application, file02.newInstanceWithoutArgs());
                 file02 = (File02) this.operator.getTargetObject(confirmation, file02);
-                file02.setMultiAcctFlag((String) application.getMultiAcctFlag());
+                file02.setMultiacctflag((String) application.getMultiacctflag());
                 records.add(file02);
             }
 

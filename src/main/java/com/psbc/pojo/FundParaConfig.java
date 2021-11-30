@@ -2,14 +2,16 @@ package com.psbc.pojo;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+
 import lombok.Data;
 
 /**
  * fund_para_config
- * @author 
+ *
+ * @author
  */
 @Data
-public class FundParaConfig implements Serializable {
+public class FundParaConfig implements DatabaseModel {
     /**
      * 产品参数ID
      */
@@ -21,6 +23,11 @@ public class FundParaConfig implements Serializable {
     private String distributorcode;
 
     /**
+     * TA代码
+     */
+    private String tacode;
+
+    /**
      * 理财产品代码
      */
     private String fundcode;
@@ -29,6 +36,301 @@ public class FundParaConfig implements Serializable {
      * 交易数据下传日期
      */
     private String downloaddate;
+
+    /**
+     * 法人追加认购金额
+     */
+    private BigDecimal instappsubsamnt;
+
+    /**
+     * 法人追加认购份数
+     */
+    private BigDecimal instappsubsvol;
+
+    /**
+     * 法人首次认购最低金额
+     */
+    private BigDecimal minamountbyinst;
+
+    /**
+     * 法人首次认购最低份数
+     */
+    private BigDecimal minvolbyinst;
+
+    /**
+     * 个人最高认购份数
+     */
+    private BigDecimal maxsubsvolbyindi;
+
+    /**
+     * 个人最高认购金额
+     */
+    private BigDecimal maxsubsamountbyindi;
+
+    /**
+     * 法人最高认购份数
+     */
+    private BigDecimal maxsubsvolbyinst;
+
+    /**
+     * 法人最高认购金额
+     */
+    private BigDecimal maxsubsamountbyinst;
+
+    /**
+     * 个人认购份数单位
+     */
+    private BigDecimal unitsubsvolbyindi;
+
+    /**
+     * 个人认购金额单位
+     */
+    private BigDecimal unitsubsamountbyindi;
+
+    /**
+     * 法人认购份数单位
+     */
+    private BigDecimal unitsubsvolbyinst;
+
+    /**
+     * 法人认购金额单位
+     */
+    private BigDecimal unitsubsamountbyinst;
+
+    /**
+     * 个人首次申购最低金额
+     */
+    private BigDecimal minbidsamountbyindi;
+
+    /**
+     * 法人首次申购最低金额
+     */
+    private BigDecimal minbidsamountbyinst;
+
+    /**
+     * 个人追加申购最低金额
+     */
+    private BigDecimal minappbidsamountbyindi;
+
+    /**
+     * 法人追加申购最低金额
+     */
+    private BigDecimal minappbidsamountbyinst;
+
+    /**
+     * 个人追加认购份数
+     */
+    private BigDecimal indiappsubsvol;
+
+    /**
+     * 个人追加认购金额
+     */
+    private BigDecimal indiappsubsamount;
+
+    /**
+     * 个人首次认购最低份数
+     */
+    private BigDecimal minsubsvolbyindi;
+
+    /**
+     * 个人首次认购最低金额
+     */
+    private BigDecimal minsubsamountbyindi;
+
+    /**
+     * 个人最大申购金额
+     */
+    private BigDecimal indimaxpurchase;
+
+    /**
+     * 法人最大申购金额
+     */
+    private BigDecimal instmaxpurchase;
+
+    /**
+     * 个人当日累计购买最大金额
+     */
+    private BigDecimal indidaymaxsumbuy;
+
+    /**
+     * 法人当日累计购买最大金额
+     */
+    private BigDecimal instdaymaxsumbuy;
+
+    /**
+     * 个人当日累计赎回最大份额
+     */
+    private BigDecimal indidaymaxsumredeem;
+
+    /**
+     * 法人当日累计赎回最大份额
+     */
+    private BigDecimal instdaymaxsumredeem;
+
+    /**
+     * 个人最大赎回份额
+     */
+    private BigDecimal indimaxredeem;
+
+    /**
+     * 法人最大赎回份额
+     */
+    private BigDecimal instmaxredeem;
+
+    /**
+     * 理财最高赎回份数
+     */
+    private BigDecimal maxredemptionvol;
+
+    /**
+     * 理财最低持有份数
+     */
+    private BigDecimal minaccountbalance;
+
+    /**
+     * 最低理财产品转换份数
+     */
+    private BigDecimal mininterconvertvol;
+
+    /**
+     * 认购方式
+     */
+    private String substype;
+
+    /**
+     * 允许违约赎回标志
+     */
+    private String allowbreachredempt;
+
+    /**
+     * 理财产品转换状态
+     */
+    private String convertstatus;
+
+    /**
+     * 定期定额状态
+     */
+    private String periodicstatus;
+
+    /**
+     * 定期定额申购的金额
+     */
+    private BigDecimal amountofperiodicsubs;
+
+    /**
+     * 定时定额申购日期
+     */
+    private String dateofperiodicsubs;
+
+    /**
+     * 个人发行方式
+     */
+    private String issuetypebyindi;
+
+    /**
+     * 机构发行方式
+     */
+    private String issuetypebyinst;
+
+    /**
+     * 货币式理财万份收益率
+     */
+    private BigDecimal fundincome;
+
+    /**
+     * 货币式理财万份收益正负
+     */
+    private String fundincomeflag;
+
+    /**
+     * 货币式理财七日年收益
+     */
+    private BigDecimal yield;
+
+    /**
+     * 货币式理财七日年收益正负
+     */
+    private String yieldflag;
+
+    /**
+     * 保本净值
+     */
+    private BigDecimal guaranteednav;
+
+    /**
+     * 交易价格
+     */
+    private BigDecimal tradingprice;
+
+    /**
+     * 理财产品面值
+     */
+    private BigDecimal facevalue;
+
+    /**
+     * 公告标志
+     */
+    private String announcflag;
+
+    /**
+     * 默认分红方式
+     */
+    private String defdividendmethod;
+
+    /**
+     * 权益登记日期
+     */
+    private String registrationdate;
+
+    /**
+     * 交易费收取方式
+     */
+    private String collectfeetype;
+
+    /**
+     * 货币式理财年收益率
+     */
+    private BigDecimal fundyearincomerate;
+
+    /**
+     * 货币式理财年收益率正负
+     */
+    private String fundyearincomerateflag;
+
+    /**
+     * 单位净值
+     */
+    private BigDecimal nav;
+
+    /**
+     * 理财产品净值日期
+     */
+    private String updatedate;
+
+    /**
+     * 净值类型（0-普通净值 1-申购净值 2-赎回净值）
+     */
+    private Object netvaluetype;
+
+    /**
+     * 理财产品募集开始日期
+     */
+    private String ipostartdate;
+
+    /**
+     * 理财产品募集结束日期
+     */
+    private String ipoenddate;
+
+    /**
+     * 下一开放日
+     */
+    private String nexttradedate;
+
+    /**
+     * 分红日/发放日
+     */
+    private String dividentdate;
 
     /**
      * 产品风险等级
@@ -226,11 +528,6 @@ public class FundParaConfig implements Serializable {
     private BigDecimal comparisonratio;
 
     /**
-     * 产品发行人
-     */
-    private String fundissuer;
-
-    /**
      * 浮动管理费年化基数
      */
     private String managementbasic;
@@ -279,11 +576,6 @@ public class FundParaConfig implements Serializable {
      * 收费方式
      */
     private String shareclass;
-
-    /**
-     * 理财产品简称
-     */
-    private String fundnameabbr;
 
     /**
      * 理财产品类型
@@ -541,8 +833,28 @@ public class FundParaConfig implements Serializable {
     private String fundbuyaccount;
 
     /**
-     * TA代码
+     * 转托管状态
      */
-    private String tacode;
+    private String transferagencystatus;
 
+    /**
+     * 除权日
+     */
+    private String xrdate;
+
+    /**
+     * 产品价值线数值
+     */
+    private BigDecimal valueline;
+
+    /**
+     * 累积单位分红
+     */
+    private BigDecimal totaldivident;
+
+
+    @Override
+    public DatabaseModel newInstanceWithoutArgs() {
+        return new FundParaConfig();
+    }
 }
