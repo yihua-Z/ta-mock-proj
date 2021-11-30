@@ -21,7 +21,6 @@
               <option name="primaryKey" value="AppSheetSerialNo" />
               <option name="projectFolder" value="$PROJECT_DIR$" />
               <option name="tableName" value="account_application" />
-              <option name="useActualColumnNames" value="true" />
               <option name="useLombokPlugin" value="true" />
               <option name="useSchemaPrefix" value="true" />
               <option name="xmlMvnPath" value="src/main/resources" />

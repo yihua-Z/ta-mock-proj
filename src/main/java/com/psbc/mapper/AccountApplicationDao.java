@@ -7,7 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
 @Mapper
 @Repository
 public interface AccountApplicationDao {
@@ -19,8 +18,10 @@ public interface AccountApplicationDao {
 
     List<DatabaseModel> selectAll();
 
-    AccountApplication selectByPrimaryKey(AccountApplicationKey key);
+    DatabaseModel selectByPrimaryKey(AccountApplication key);
+
     List<AccountApplication> selectUnionPrimaryKey(AccountApplication record);
+
 
     int updateByPrimaryKeySelective(AccountApplication record);
 

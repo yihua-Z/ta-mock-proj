@@ -63,7 +63,7 @@ public class ExceptionRecordOperator {
             accountConfirmationDao.insert(accountConfirmation);
             if (Application.getClass().getSimpleName().equals("AccountApplication")) {
                 AccountApplication accountApplication = (AccountApplication) Application;
-                accountApplication.setRecordStatus("2");
+                accountApplication.setRecordstatus("2");
                 accountApplicationDao.updateByPrimaryKey(accountApplication);
             }
             return accountConfirmation;

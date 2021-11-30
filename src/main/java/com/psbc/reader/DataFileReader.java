@@ -9,6 +9,7 @@ import java.io.*;
 import java.lang.reflect.Field;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 import static com.psbc.utils.Reflector.*;
@@ -110,7 +111,7 @@ public class DataFileReader extends TAFileReader {
             // 一一匹配配置文件中的字段和fields中的字段
             for (XMLNode node : Objects.requireNonNull(configNode).getChildrenNodes()) {
                 String fieldName = node.getAttributeValue("fieldName");
-                Field field = res.getClass().getDeclaredField(fieldName);
+                Field field = res.getClass().getDeclaredField(fieldName.toLowerCase());
                 field.setAccessible(true);
                 if (fieldName.equals(fields.get(fieldsIndex))) {
                     int len = Integer.parseInt(node.getAttributeValue("length"));

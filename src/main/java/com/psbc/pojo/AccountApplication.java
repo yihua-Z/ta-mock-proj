@@ -14,23 +14,22 @@ public class AccountApplication extends AccountApplicationKey implements Databas
     /**
      * 申请单编号
      */
-    private String appSheetSerialNo;
+    private String appsheetserialno;
 
     /**
      * TA代码
      */
-    private String TACode;
+    private String tacode;
 
     /**
      * 销售人代码
      */
-    private String distributorCode;
+    private String distributorcode;
 
     /**
      * 同一交易序列码
      */
-    private Integer referenceNo;
-
+    private Integer referenceno;
 
     /**
      * 通讯地址
@@ -40,177 +39,177 @@ public class AccountApplication extends AccountApplicationKey implements Databas
     /**
      * 法人代表身份证件代码
      */
-    private String instReprIDCode;
+    private String instrepridcode;
 
     /**
      * 法人代表证件类型
      */
-    private Object instReprIDType;
+    private Object instrepridtype;
 
     /**
      * 法人代表姓名
      */
-    private String instReprName;
+    private String instreprname;
 
     /**
      * 个人证件类型及机构证件型
      */
-    private Object certificateType;
+    private Object certificatetype;
 
     /**
      * 投资人证件号码
      */
-    private String certificateNo;
+    private String certificateno;
 
     /**
      * 投资人户名
      */
-    private String investorName;
+    private String investorname;
 
     /**
      * 交易发生日期
      */
-    private String transactionDate;
+    private String transactiondate;
 
     /**
      * 交易发生时间
      */
-    private String transactionTime;
+    private String transactiontime;
 
     /**
      * 个人/机构标志
      */
-    private Object individualOrInstitution;
+    private Object individualorinstitution;
 
     /**
      * 机构类型
      */
-    private Object institutionType;
+    private Object institutiontype;
 
     /**
      * 投资人邮政编码
      */
-    private String postCode;
+    private String postcode;
 
     /**
      * 经办人证件号码
      */
-    private String transactorCertNo;
+    private String transactorcertno;
 
     /**
      * 经办人证件类型
      */
-    private Object transactorCertType;
+    private Object transactorcerttype;
 
     /**
      * 经办人姓名
      */
-    private String transactorName;
+    private String transactorname;
 
     /**
      * 投资人理财交易帐号
      */
-    private String transactionAccountID;
+    private String transactionaccountid;
 
     /**
      * 业务代码
      */
-    private String businessCode;
+    private String businesscode;
 
     /**
      * 对方销售人处投资人基金交易帐号
      */
-    private String targetTransactionAccountID;
+    private String targettransactionaccountid;
 
     /**
      * 投资人收款银行账户账号
      */
-    private String acctNoOfFMInClearingAgency;
+    private String acctnooffminclearingagency;
 
     /**
      * 投资人收款银行账户户名
      */
-    private String acctNameOfFMInClearingAgency;
+    private String acctnameoffminclearingagency;
 
     /**
      * 理财资金清算机构代码
      */
-    private String clearingAgencyCode;
+    private String clearingagencycode;
 
     /**
      * 投资人出生日期
      */
-    private String investorsBirthday;
+    private String investorsbirthday;
 
     /**
      * 投资人在销售人处用于交易的资金账号
      */
-    private String depositAcct;
+    private String depositacct;
 
     /**
      * 交易所在地区编号
      */
-    private String regionCode;
+    private String regioncode;
 
     /**
      * 投资人学历
      */
-    private Object educationLevel;
+    private Object educationlevel;
 
     /**
      * 投资人E-MAIL地址
      */
-    private String emailAddress;
+    private String emailaddress;
 
     /**
      * 投资人传真号码
      */
-    private String faxNo;
+    private String faxno;
 
     /**
      * 投资人职业代码
      */
-    private String vocationCode;
+    private String vocationcode;
 
     /**
      * 投资人住址电话
      */
-    private String homeTelNo;
+    private String hometelno;
 
     /**
      * 投资人年收入
      */
-    private Integer annualIncome;
+    private Integer annualincome;
 
     /**
      * 投资人手机号码
      */
-    private String mobileTelNo;
+    private String mobiletelno;
 
     /**
      * 多渠道开户标志
      */
-    private Object multiAcctFlag;
+    private Object multiacctflag;
 
     /**
      * 网点号码
      */
-    private String branchCode;
+    private String branchcode;
 
     /**
      * 投资人单位电话号码
      */
-    private String officeTelNo;
+    private String officetelno;
 
     /**
      * 投资人户名简称
      */
-    private String accountAbbr;
+    private String accountabbr;
 
     /**
      * 密函编号
      */
-    private String confidentialDocumentCode;
+    private String confidentialdocumentcode;
 
     /**
      * 投资人性别（1-男，2-女）
@@ -220,52 +219,52 @@ public class AccountApplication extends AccountApplicationKey implements Databas
     /**
      * 上交所证券账号
      */
-    private String SHSecuritiesAccountID;
+    private String shsecuritiesaccountid;
 
     /**
      * 深交所证券账号
      */
-    private String SZSecuritiesAccountID;
+    private String szsecuritiesaccountid;
 
     /**
      * 投资人理财账号
      */
-    private String TAAccountID;
+    private String taaccountid;
 
     /**
      * 投资人电话号码
      */
-    private String telNo;
+    private String telno;
 
     /**
      * 使用的交易手段
      */
-    private String tradingMethod;
+    private String tradingmethod;
 
     /**
      * 未成年人标志
      */
-    private Object minorFlag;
+    private Object minorflag;
 
     /**
      * 对账单寄送选择
      */
-    private Object deliverType;
+    private Object delivertype;
 
     /**
      * 经办人识别方式
      */
-    private Object transactorIDType;
+    private Object transactoridtype;
 
     /**
      * 理财账户卡的凭证号
      */
-    private String accountCardID;
+    private String accountcardid;
 
     /**
      * 对账单寄送方式
      */
-    private String deliverWay;
+    private String deliverway;
 
     /**
      * 投资者国籍
@@ -275,7 +274,7 @@ public class AccountApplication extends AccountApplicationKey implements Databas
     /**
      * 操作（清算）网点编号
      */
-    private String netNo;
+    private String netno;
 
     /**
      * 客户所属的经纪人
@@ -285,52 +284,52 @@ public class AccountApplication extends AccountApplicationKey implements Databas
     /**
      * 工作单位名称
      */
-    private String corpName;
+    private String corpname;
 
     /**
      * 证件有效日期
      */
-    private String certValidDate;
+    private String certvaliddate;
 
     /**
      * 机构经办人身份证件有效日期
      */
-    private String instTranCertValidDate;
+    private String insttrancertvaliddate;
 
     /**
      * 机构法人身份证件有效日期
      */
-    private String instReprCertValidDate;
+    private String instreprcertvaliddate;
 
     /**
      * 客户风险等级
      */
-    private String clientRiskRate;
+    private String clientriskrate;
 
     /**
      * 机构法人经营范围
      */
-    private String instReprManageRange;
+    private String instreprmanagerange;
 
     /**
      * 控股股东
      */
-    private String controlHolder;
+    private String controlholder;
 
     /**
      * 实际控制人
      */
-    private String actualController;
+    private String actualcontroller;
 
     /**
      * 婚姻状况
      */
-    private String marriageStatus;
+    private String marriagestatus;
 
     /**
      * 家庭人口数
      */
-    private Integer familyNum;
+    private Integer familynum;
 
     /**
      * 家庭资产
@@ -340,17 +339,17 @@ public class AccountApplication extends AccountApplicationKey implements Databas
     /**
      * 媒体偏好
      */
-    private String mediaHobby;
+    private String mediahobby;
 
     /**
      * 投资人英文名
      */
-    private String englishFirstName;
+    private String englishfirstname;
 
     /**
      * 投资人英文姓
      */
-    private String englishFamliyName;
+    private String englishfamliyname;
 
     /**
      * 行业（采用国标 GB/T4754-2011）
@@ -360,12 +359,12 @@ public class AccountApplication extends AccountApplicationKey implements Databas
     /**
      * 企业性质
      */
-    private String corpoProperty;
+    private String corpoproperty;
 
     /**
      * 员工人数
      */
-    private BigDecimal staffNum;
+    private BigDecimal staffnum;
 
     /**
      * 兴趣爱好类型
@@ -390,52 +389,52 @@ public class AccountApplication extends AccountApplicationKey implements Databas
     /**
      * 推荐人
      */
-    private String commendPerson;
+    private String commendperson;
 
     /**
      * 推荐人类型
      */
-    private Object commendPersonType;
+    private Object commendpersontype;
 
     /**
      * 投资人收款银行账户户名
      */
-    private String acctNameOfInvestorInClearingAgency;
+    private String acctnameofinvestorinclearingagency;
 
     /**
      * 投资人收款银行账户账号
      */
-    private String acctNoOfInvestorInClearingAgency;
+    private String acctnoofinvestorinclearingagency;
 
     /**
      * 投资人收款银行账户开户行
      */
-    private String clearingAgency;
+    private String clearingagency;
 
     /**
      * 受理方式
      */
-    private String acceptMethod;
+    private String acceptmethod;
 
     /**
      * 冻结原因
      */
-    private Object frozenCause;
+    private Object frozencause;
 
     /**
      * 冻结截止日期（YYYYMMDD）
      */
-    private String freezingDeadline;
+    private String freezingdeadline;
 
     /**
      * TA的原确认流水号
      */
-    private String originalSerialNo;
+    private String originalserialno;
 
     /**
      * 原申请单编号
      */
-    private String originalAppSheetNo;
+    private String originalappsheetno;
 
     /**
      * 摘要/说明
@@ -445,7 +444,7 @@ public class AccountApplication extends AccountApplicationKey implements Databas
     /**
      * 记录状态（0-waiting, 1-processing, 2-processed）
      */
-    private Object recordStatus;
+    private Object recordstatus;
 
 
     @Override

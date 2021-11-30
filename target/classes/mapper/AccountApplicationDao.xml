@@ -1,100 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.psbc.mapper.AccountApplicationDao">
-    <resultMap id="BaseResultMap" type="com.psbc.pojo.AccountApplication">
-        <id column="AppSheetSerialNo" jdbcType="VARCHAR" property="appSheetSerialNo"/>
-        <id column="TACode" jdbcType="VARCHAR" property="TACode"/>
-        <id column="DistributorCode" jdbcType="VARCHAR" property="distributorCode"/>
-        <id column="ReferenceNo" jdbcType="INTEGER" property="referenceNo"/>
-        <result column="Address" jdbcType="VARCHAR" property="address"/>
-        <result column="InstReprIDCode" jdbcType="VARCHAR" property="instReprIDCode"/>
-        <result column="InstReprIDType" jdbcType="OTHER" property="instReprIDType"/>
-        <result column="InstReprName" jdbcType="VARCHAR" property="instReprName"/>
-        <result column="CertificateType" jdbcType="OTHER" property="certificateType"/>
-        <result column="CertificateNo" jdbcType="VARCHAR" property="certificateNo"/>
-        <result column="InvestorName" jdbcType="VARCHAR" property="investorName"/>
-        <result column="TransactionDate" jdbcType="CHAR" property="transactionDate"/>
-        <result column="TransactionTime" jdbcType="CHAR" property="transactionTime"/>
-        <result column="IndividualOrInstitution" jdbcType="OTHER" property="individualOrInstitution"/>
-        <result column="InstitutionType" jdbcType="OTHER" property="institutionType"/>
-        <result column="PostCode" jdbcType="CHAR" property="postCode"/>
-        <result column="TransactorCertNo" jdbcType="VARCHAR" property="transactorCertNo"/>
-        <result column="TransactorCertType" jdbcType="OTHER" property="transactorCertType"/>
-        <result column="TransactorName" jdbcType="VARCHAR" property="transactorName"/>
-        <result column="TransactionAccountID" jdbcType="VARCHAR" property="transactionAccountID"/>
-        <result column="BusinessCode" jdbcType="CHAR" property="businessCode"/>
-        <result column="TargetTransactionAccountID" jdbcType="VARCHAR" property="targetTransactionAccountID"/>
-        <result column="AcctNoOfFMInClearingAgency" jdbcType="VARCHAR" property="acctNoOfFMInClearingAgency"/>
-        <result column="AcctNameOfFMInClearingAgency" jdbcType="VARCHAR" property="acctNameOfFMInClearingAgency"/>
-        <result column="ClearingAgencyCode" jdbcType="VARCHAR" property="clearingAgencyCode"/>
-        <result column="InvestorsBirthday" jdbcType="CHAR" property="investorsBirthday"/>
-        <result column="DepositAcct" jdbcType="VARCHAR" property="depositAcct"/>
-        <result column="RegionCode" jdbcType="VARCHAR" property="regionCode"/>
-        <result column="EducationLevel" jdbcType="OTHER" property="educationLevel"/>
-        <result column="EmailAddress" jdbcType="VARCHAR" property="emailAddress"/>
-        <result column="FaxNo" jdbcType="VARCHAR" property="faxNo"/>
-        <result column="VocationCode" jdbcType="CHAR" property="vocationCode"/>
-        <result column="HomeTelNo" jdbcType="VARCHAR" property="homeTelNo"/>
-        <result column="AnnualIncome" jdbcType="INTEGER" property="annualIncome"/>
-        <result column="MobileTelNo" jdbcType="VARCHAR" property="mobileTelNo"/>
-        <result column="MultiAcctFlag" jdbcType="OTHER" property="multiAcctFlag"/>
-        <result column="BranchCode" jdbcType="VARCHAR" property="branchCode"/>
-        <result column="OfficeTelNo" jdbcType="VARCHAR" property="officeTelNo"/>
-        <result column="AccountAbbr" jdbcType="VARCHAR" property="accountAbbr"/>
-        <result column="ConfidentialDocumentCode" jdbcType="VARCHAR" property="confidentialDocumentCode"/>
-        <result column="Sex" jdbcType="OTHER" property="sex"/>
-        <result column="SHSecuritiesAccountID" jdbcType="VARCHAR" property="SHSecuritiesAccountID"/>
-        <result column="SZSecuritiesAccountID" jdbcType="VARCHAR" property="SZSecuritiesAccountID"/>
-        <result column="TAAccountID" jdbcType="VARCHAR" property="TAAccountID"/>
-        <result column="TelNo" jdbcType="VARCHAR" property="telNo"/>
-        <result column="TradingMethod" jdbcType="VARCHAR" property="tradingMethod"/>
-        <result column="MinorFlag" jdbcType="OTHER" property="minorFlag"/>
-        <result column="DeliverType" jdbcType="OTHER" property="deliverType"/>
-        <result column="TransactorIDType" jdbcType="OTHER" property="transactorIDType"/>
-        <result column="AccountCardID" jdbcType="VARCHAR" property="accountCardID"/>
-        <result column="DeliverWay" jdbcType="CHAR" property="deliverWay"/>
-        <result column="Nationlity" jdbcType="CHAR" property="nationlity"/>
-        <result column="NetNo" jdbcType="CHAR" property="netNo"/>
-        <result column="Broker" jdbcType="VARCHAR" property="broker"/>
-        <result column="CorpName" jdbcType="VARCHAR" property="corpName"/>
-        <result column="CertValidDate" jdbcType="CHAR" property="certValidDate"/>
-        <result column="InstTranCertValidDate" jdbcType="CHAR" property="instTranCertValidDate"/>
-        <result column="InstReprCertValidDate" jdbcType="CHAR" property="instReprCertValidDate"/>
-        <result column="ClientRiskRate" jdbcType="CHAR" property="clientRiskRate"/>
-        <result column="InstReprManageRange" jdbcType="VARCHAR" property="instReprManageRange"/>
-        <result column="ControlHolder" jdbcType="VARCHAR" property="controlHolder"/>
-        <result column="ActualController" jdbcType="VARCHAR" property="actualController"/>
-        <result column="MarriageStatus" jdbcType="CHAR" property="marriageStatus"/>
-        <result column="FamilyNum" jdbcType="INTEGER" property="familyNum"/>
-        <result column="Penates" jdbcType="DECIMAL" property="penates"/>
-        <result column="MediaHobby" jdbcType="CHAR" property="mediaHobby"/>
-        <result column="EnglishFirstName" jdbcType="VARCHAR" property="englishFirstName"/>
-        <result column="EnglishFamliyName" jdbcType="VARCHAR" property="englishFamliyName"/>
-        <result column="Vocation" jdbcType="CHAR" property="vocation"/>
-        <result column="CorpoProperty" jdbcType="VARCHAR" property="corpoProperty"/>
-        <result column="StaffNum" jdbcType="DECIMAL" property="staffNum"/>
-        <result column="Hobbytype" jdbcType="VARCHAR" property="hobbytype"/>
-        <result column="Province" jdbcType="CHAR" property="province"/>
-        <result column="City" jdbcType="CHAR" property="city"/>
-        <result column="County" jdbcType="CHAR" property="county"/>
-        <result column="CommendPerson" jdbcType="VARCHAR" property="commendPerson"/>
-        <result column="CommendPersonType" jdbcType="OTHER" property="commendPersonType"/>
-        <result column="AcctNameOfInvestorInClearingAgency" jdbcType="VARCHAR"
-                property="acctNameOfInvestorInClearingAgency"/>
-        <result column="AcctNoOfInvestorInClearingAgency" jdbcType="VARCHAR"
-                property="acctNoOfInvestorInClearingAgency"/>
-        <result column="ClearingAgency" jdbcType="VARCHAR" property="clearingAgency"/>
-        <result column="AcceptMethod" jdbcType="VARCHAR" property="acceptMethod"/>
-        <result column="FrozenCause" jdbcType="OTHER" property="frozenCause"/>
-        <result column="FreezingDeadline" jdbcType="CHAR" property="freezingDeadline"/>
-        <result column="OriginalSerialNo" jdbcType="VARCHAR" property="originalSerialNo"/>
-        <result column="OriginalAppSheetNo" jdbcType="VARCHAR" property="originalAppSheetNo"/>
-        <result column="Specification" jdbcType="VARCHAR" property="specification"/>
-        <result column="recordStatus" jdbcType="OTHER" property="recordStatus"/>
-    </resultMap>
-    <sql id="Base_Column_List">
-        AppSheetSerialNo
-        , TACode, DistributorCode, ReferenceNo, Address, InstReprIDCode,
+  <resultMap id="BaseResultMap" type="com.psbc.pojo.AccountApplication">
+    <id column="AppSheetSerialNo" jdbcType="VARCHAR" property="appsheetserialno" />
+    <id column="TACode" jdbcType="VARCHAR" property="tacode" />
+    <id column="DistributorCode" jdbcType="VARCHAR" property="distributorcode" />
+    <id column="ReferenceNo" jdbcType="INTEGER" property="referenceno" />
+    <result column="Address" jdbcType="VARCHAR" property="address" />
+    <result column="InstReprIDCode" jdbcType="VARCHAR" property="instrepridcode" />
+    <result column="InstReprIDType" jdbcType="OTHER" property="instrepridtype" />
+    <result column="InstReprName" jdbcType="VARCHAR" property="instreprname" />
+    <result column="CertificateType" jdbcType="OTHER" property="certificatetype" />
+    <result column="CertificateNo" jdbcType="VARCHAR" property="certificateno" />
+    <result column="InvestorName" jdbcType="VARCHAR" property="investorname" />
+    <result column="TransactionDate" jdbcType="CHAR" property="transactiondate" />
+    <result column="TransactionTime" jdbcType="CHAR" property="transactiontime" />
+    <result column="IndividualOrInstitution" jdbcType="OTHER" property="individualorinstitution" />
+    <result column="InstitutionType" jdbcType="OTHER" property="institutiontype" />
+    <result column="PostCode" jdbcType="CHAR" property="postcode" />
+    <result column="TransactorCertNo" jdbcType="VARCHAR" property="transactorcertno" />
+    <result column="TransactorCertType" jdbcType="OTHER" property="transactorcerttype" />
+    <result column="TransactorName" jdbcType="VARCHAR" property="transactorname" />
+    <result column="TransactionAccountID" jdbcType="VARCHAR" property="transactionaccountid" />
+    <result column="BusinessCode" jdbcType="CHAR" property="businesscode" />
+    <result column="TargetTransactionAccountID" jdbcType="VARCHAR" property="targettransactionaccountid" />
+    <result column="AcctNoOfFMInClearingAgency" jdbcType="VARCHAR" property="acctnooffminclearingagency" />
+    <result column="AcctNameOfFMInClearingAgency" jdbcType="VARCHAR" property="acctnameoffminclearingagency" />
+    <result column="ClearingAgencyCode" jdbcType="VARCHAR" property="clearingagencycode" />
+    <result column="InvestorsBirthday" jdbcType="CHAR" property="investorsbirthday" />
+    <result column="DepositAcct" jdbcType="VARCHAR" property="depositacct" />
+    <result column="RegionCode" jdbcType="VARCHAR" property="regioncode" />
+    <result column="EducationLevel" jdbcType="OTHER" property="educationlevel" />
+    <result column="EmailAddress" jdbcType="VARCHAR" property="emailaddress" />
+    <result column="FaxNo" jdbcType="VARCHAR" property="faxno" />
+    <result column="VocationCode" jdbcType="CHAR" property="vocationcode" />
+    <result column="HomeTelNo" jdbcType="VARCHAR" property="hometelno" />
+    <result column="AnnualIncome" jdbcType="INTEGER" property="annualincome" />
+    <result column="MobileTelNo" jdbcType="VARCHAR" property="mobiletelno" />
+    <result column="MultiAcctFlag" jdbcType="OTHER" property="multiacctflag" />
+    <result column="BranchCode" jdbcType="VARCHAR" property="branchcode" />
+    <result column="OfficeTelNo" jdbcType="VARCHAR" property="officetelno" />
+    <result column="AccountAbbr" jdbcType="VARCHAR" property="accountabbr" />
+    <result column="ConfidentialDocumentCode" jdbcType="VARCHAR" property="confidentialdocumentcode" />
+    <result column="Sex" jdbcType="OTHER" property="sex" />
+    <result column="SHSecuritiesAccountID" jdbcType="VARCHAR" property="shsecuritiesaccountid" />
+    <result column="SZSecuritiesAccountID" jdbcType="VARCHAR" property="szsecuritiesaccountid" />
+    <result column="TAAccountID" jdbcType="VARCHAR" property="taaccountid" />
+    <result column="TelNo" jdbcType="VARCHAR" property="telno" />
+    <result column="TradingMethod" jdbcType="VARCHAR" property="tradingmethod" />
+    <result column="MinorFlag" jdbcType="OTHER" property="minorflag" />
+    <result column="DeliverType" jdbcType="OTHER" property="delivertype" />
+    <result column="TransactorIDType" jdbcType="OTHER" property="transactoridtype" />
+    <result column="AccountCardID" jdbcType="VARCHAR" property="accountcardid" />
+    <result column="DeliverWay" jdbcType="CHAR" property="deliverway" />
+    <result column="Nationlity" jdbcType="CHAR" property="nationlity" />
+    <result column="NetNo" jdbcType="CHAR" property="netno" />
+    <result column="Broker" jdbcType="VARCHAR" property="broker" />
+    <result column="CorpName" jdbcType="VARCHAR" property="corpname" />
+    <result column="CertValidDate" jdbcType="CHAR" property="certvaliddate" />
+    <result column="InstTranCertValidDate" jdbcType="CHAR" property="insttrancertvaliddate" />
+    <result column="InstReprCertValidDate" jdbcType="CHAR" property="instreprcertvaliddate" />
+    <result column="ClientRiskRate" jdbcType="CHAR" property="clientriskrate" />
+    <result column="InstReprManageRange" jdbcType="VARCHAR" property="instreprmanagerange" />
+    <result column="ControlHolder" jdbcType="VARCHAR" property="controlholder" />
+    <result column="ActualController" jdbcType="VARCHAR" property="actualcontroller" />
+    <result column="MarriageStatus" jdbcType="CHAR" property="marriagestatus" />
+    <result column="FamilyNum" jdbcType="INTEGER" property="familynum" />
+    <result column="Penates" jdbcType="DECIMAL" property="penates" />
+    <result column="MediaHobby" jdbcType="CHAR" property="mediahobby" />
+    <result column="EnglishFirstName" jdbcType="VARCHAR" property="englishfirstname" />
+    <result column="EnglishFamliyName" jdbcType="VARCHAR" property="englishfamliyname" />
+    <result column="Vocation" jdbcType="CHAR" property="vocation" />
+    <result column="CorpoProperty" jdbcType="VARCHAR" property="corpoproperty" />
+    <result column="StaffNum" jdbcType="DECIMAL" property="staffnum" />
+    <result column="Hobbytype" jdbcType="VARCHAR" property="hobbytype" />
+    <result column="Province" jdbcType="CHAR" property="province" />
+    <result column="City" jdbcType="CHAR" property="city" />
+    <result column="County" jdbcType="CHAR" property="county" />
+    <result column="CommendPerson" jdbcType="VARCHAR" property="commendperson" />
+    <result column="CommendPersonType" jdbcType="OTHER" property="commendpersontype" />
+    <result column="AcctNameOfInvestorInClearingAgency" jdbcType="VARCHAR" property="acctnameofinvestorinclearingagency" />
+    <result column="AcctNoOfInvestorInClearingAgency" jdbcType="VARCHAR" property="acctnoofinvestorinclearingagency" />
+    <result column="ClearingAgency" jdbcType="VARCHAR" property="clearingagency" />
+    <result column="AcceptMethod" jdbcType="VARCHAR" property="acceptmethod" />
+    <result column="FrozenCause" jdbcType="OTHER" property="frozencause" />
+    <result column="FreezingDeadline" jdbcType="CHAR" property="freezingdeadline" />
+    <result column="OriginalSerialNo" jdbcType="VARCHAR" property="originalserialno" />
+    <result column="OriginalAppSheetNo" jdbcType="VARCHAR" property="originalappsheetno" />
+    <result column="Specification" jdbcType="VARCHAR" property="specification" />
+    <result column="recordStatus" jdbcType="OTHER" property="recordstatus" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    AppSheetSerialNo, TACode, DistributorCode, ReferenceNo, Address, InstReprIDCode, 
     InstReprIDType, InstReprName, CertificateType, CertificateNo, InvestorName, TransactionDate, 
     TransactionTime, IndividualOrInstitution, InstitutionType, PostCode, TransactorCertNo, 
     TransactorCertType, TransactorName, TransactionAccountID, BusinessCode, TargetTransactionAccountID, 
@@ -109,977 +106,966 @@
     StaffNum, Hobbytype, Province, City, County, CommendPerson, CommendPersonType, AcctNameOfInvestorInClearingAgency, 
     AcctNoOfInvestorInClearingAgency, ClearingAgency, AcceptMethod, FrozenCause, FreezingDeadline, 
     OriginalSerialNo, OriginalAppSheetNo, Specification, recordStatus
-    </sql>
-    <select id="selectByPrimaryKey" parameterType="com.psbc.pojo.AccountApplicationKey" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List"/>
-        from account_application
-        where AppSheetSerialNo = #{appSheetSerialNo,jdbcType=VARCHAR}
-        and TACode = #{TACode,jdbcType=VARCHAR}
-        and DistributorCode = #{distributorCode,jdbcType=VARCHAR}
-        and ReferenceNo = #{referenceNo,jdbcType=INTEGER}
-    </select>
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="com.psbc.pojo.AccountApplication" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from account_application
+    where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
+      and TACode = #{tacode,jdbcType=VARCHAR}
+      and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
+      and ReferenceNo = #{referenceno,jdbcType=INTEGER}
+  </select>
     <select id="selectAll" resultType="com.psbc.pojo.AccountApplication">
-        select *
-        from account_application
+      select * from account_application
     </select>
-    <select id="selectUnionPrimaryKey" resultType="com.psbc.pojo.AccountApplication">
-        select *
-        from account_application
-        where AppSheetSerialNo = #{appSheetSerialNo,jdbcType=VARCHAR}
-          and TACode = #{TACode,jdbcType=VARCHAR}
-          and DistributorCode = #{distributorCode,jdbcType=VARCHAR}
-          and ReferenceNo = #{referenceNo,jdbcType=INTEGER}
-    </select>
-    <delete id="deleteByPrimaryKey" parameterType="com.psbc.pojo.AccountApplicationKey">
-        delete
-        from account_application
-        where AppSheetSerialNo = #{appSheetSerialNo,jdbcType=VARCHAR}
-          and TACode = #{TACode,jdbcType=VARCHAR}
-          and DistributorCode = #{distributorCode,jdbcType=VARCHAR}
-          and ReferenceNo = #{referenceNo,jdbcType=INTEGER}
-    </delete>
-    <insert id="insert" keyColumn="AppSheetSerialNo" keyProperty="appSheetSerialNo"
-            parameterType="com.psbc.pojo.AccountApplication" useGeneratedKeys="true">
-        insert into account_application (AppSheetSerialNo,TACode, DistributorCode, ReferenceNo,
-                                         Address, InstReprIDCode, InstReprIDType,
-                                         InstReprName, CertificateType, CertificateNo,
-                                         InvestorName, TransactionDate, TransactionTime,
-                                         IndividualOrInstitution, InstitutionType, PostCode,
-                                         TransactorCertNo, TransactorCertType, TransactorName,
-                                         TransactionAccountID, BusinessCode, TargetTransactionAccountID,
-                                         AcctNoOfFMInClearingAgency, AcctNameOfFMInClearingAgency,
-                                         ClearingAgencyCode, InvestorsBirthday, DepositAcct,
-                                         RegionCode, EducationLevel, EmailAddress,
-                                         FaxNo, VocationCode, HomeTelNo,
-                                         AnnualIncome, MobileTelNo, MultiAcctFlag,
-                                         BranchCode, OfficeTelNo, AccountAbbr,
-                                         ConfidentialDocumentCode, Sex, SHSecuritiesAccountID,
-                                         SZSecuritiesAccountID, TAAccountID, TelNo,
-                                         TradingMethod, MinorFlag, DeliverType,
-                                         TransactorIDType, AccountCardID, DeliverWay,
-                                         Nationlity, NetNo, Broker,
-                                         CorpName, CertValidDate, InstTranCertValidDate,
-                                         InstReprCertValidDate, ClientRiskRate, InstReprManageRange,
-                                         ControlHolder, ActualController, MarriageStatus,
-                                         FamilyNum, Penates, MediaHobby,
-                                         EnglishFirstName, EnglishFamliyName, Vocation,
-                                         CorpoProperty, StaffNum, Hobbytype,
-                                         Province, City, County, CommendPerson,
-                                         CommendPersonType, AcctNameOfInvestorInClearingAgency,
-                                         AcctNoOfInvestorInClearingAgency, ClearingAgency,
-                                         AcceptMethod, FrozenCause, FreezingDeadline,
-                                         OriginalSerialNo, OriginalAppSheetNo, Specification,
-                                         recordStatus)
-        values (#{appSheetSerialNo,jdbcType=VARCHAR},#{TACode,jdbcType=VARCHAR}, #{distributorCode,jdbcType=VARCHAR}, #{referenceNo,jdbcType=INTEGER},
-                #{address,jdbcType=VARCHAR}, #{instReprIDCode,jdbcType=VARCHAR}, #{instReprIDType,jdbcType=OTHER},
-                #{instReprName,jdbcType=VARCHAR}, #{certificateType,jdbcType=OTHER}, #{certificateNo,jdbcType=VARCHAR},
-                #{investorName,jdbcType=VARCHAR}, #{transactionDate,jdbcType=CHAR}, #{transactionTime,jdbcType=CHAR},
-                #{individualOrInstitution,jdbcType=OTHER}, #{institutionType,jdbcType=OTHER}, #{postCode,jdbcType=CHAR},
-                #{transactorCertNo,jdbcType=VARCHAR}, #{transactorCertType,jdbcType=OTHER},
-                #{transactorName,jdbcType=VARCHAR},
-                #{transactionAccountID,jdbcType=VARCHAR}, #{businessCode,jdbcType=CHAR},
-                #{targetTransactionAccountID,jdbcType=VARCHAR},
-                #{acctNoOfFMInClearingAgency,jdbcType=VARCHAR}, #{acctNameOfFMInClearingAgency,jdbcType=VARCHAR},
-                #{clearingAgencyCode,jdbcType=VARCHAR}, #{investorsBirthday,jdbcType=CHAR},
-                #{depositAcct,jdbcType=VARCHAR},
-                #{regionCode,jdbcType=VARCHAR}, #{educationLevel,jdbcType=OTHER}, #{emailAddress,jdbcType=VARCHAR},
-                #{faxNo,jdbcType=VARCHAR}, #{vocationCode,jdbcType=CHAR}, #{homeTelNo,jdbcType=VARCHAR},
-                #{annualIncome,jdbcType=INTEGER}, #{mobileTelNo,jdbcType=VARCHAR}, #{multiAcctFlag,jdbcType=OTHER},
-                #{branchCode,jdbcType=VARCHAR}, #{officeTelNo,jdbcType=VARCHAR}, #{accountAbbr,jdbcType=VARCHAR},
-                #{confidentialDocumentCode,jdbcType=VARCHAR}, #{sex,jdbcType=OTHER},
-                #{SHSecuritiesAccountID,jdbcType=VARCHAR},
-                #{SZSecuritiesAccountID,jdbcType=VARCHAR}, #{TAAccountID,jdbcType=VARCHAR}, #{telNo,jdbcType=VARCHAR},
-                #{tradingMethod,jdbcType=VARCHAR}, #{minorFlag,jdbcType=OTHER}, #{deliverType,jdbcType=OTHER},
-                #{transactorIDType,jdbcType=OTHER}, #{accountCardID,jdbcType=VARCHAR}, #{deliverWay,jdbcType=CHAR},
-                #{nationlity,jdbcType=CHAR}, #{netNo,jdbcType=CHAR}, #{broker,jdbcType=VARCHAR},
-                #{corpName,jdbcType=VARCHAR}, #{certValidDate,jdbcType=CHAR}, #{instTranCertValidDate,jdbcType=CHAR},
-                #{instReprCertValidDate,jdbcType=CHAR}, #{clientRiskRate,jdbcType=CHAR},
-                #{instReprManageRange,jdbcType=VARCHAR},
-                #{controlHolder,jdbcType=VARCHAR}, #{actualController,jdbcType=VARCHAR},
-                #{marriageStatus,jdbcType=CHAR},
-                #{familyNum,jdbcType=INTEGER}, #{penates,jdbcType=DECIMAL}, #{mediaHobby,jdbcType=CHAR},
-                #{englishFirstName,jdbcType=VARCHAR}, #{englishFamliyName,jdbcType=VARCHAR}, #{vocation,jdbcType=CHAR},
-                #{corpoProperty,jdbcType=VARCHAR}, #{staffNum,jdbcType=DECIMAL}, #{hobbytype,jdbcType=VARCHAR},
-                #{province,jdbcType=CHAR}, #{city,jdbcType=CHAR}, #{county,jdbcType=CHAR},
-                #{commendPerson,jdbcType=VARCHAR},
-                #{commendPersonType,jdbcType=OTHER}, #{acctNameOfInvestorInClearingAgency,jdbcType=VARCHAR},
-                #{acctNoOfInvestorInClearingAgency,jdbcType=VARCHAR}, #{clearingAgency,jdbcType=VARCHAR},
-                #{acceptMethod,jdbcType=VARCHAR}, #{frozenCause,jdbcType=OTHER}, #{freezingDeadline,jdbcType=CHAR},
-                #{originalSerialNo,jdbcType=VARCHAR}, #{originalAppSheetNo,jdbcType=VARCHAR},
-                #{specification,jdbcType=VARCHAR},
-                #{recordStatus,jdbcType=OTHER})
-    </insert>
-    <insert id="insertSelective" keyColumn="AppSheetSerialNo" keyProperty="appSheetSerialNo"
-            parameterType="com.psbc.pojo.AccountApplication" useGeneratedKeys="true">
-        insert into account_application
-        <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="TACode != null">
-                TACode,
-            </if>
-            <if test="distributorCode != null">
-                DistributorCode,
-            </if>
-            <if test="referenceNo != null">
-                ReferenceNo,
-            </if>
-            <if test="address != null">
-                Address,
-            </if>
-            <if test="instReprIDCode != null">
-                InstReprIDCode,
-            </if>
-            <if test="instReprIDType != null">
-                InstReprIDType,
-            </if>
-            <if test="instReprName != null">
-                InstReprName,
-            </if>
-            <if test="certificateType != null">
-                CertificateType,
-            </if>
-            <if test="certificateNo != null">
-                CertificateNo,
-            </if>
-            <if test="investorName != null">
-                InvestorName,
-            </if>
-            <if test="transactionDate != null">
-                TransactionDate,
-            </if>
-            <if test="transactionTime != null">
-                TransactionTime,
-            </if>
-            <if test="individualOrInstitution != null">
-                IndividualOrInstitution,
-            </if>
-            <if test="institutionType != null">
-                InstitutionType,
-            </if>
-            <if test="postCode != null">
-                PostCode,
-            </if>
-            <if test="transactorCertNo != null">
-                TransactorCertNo,
-            </if>
-            <if test="transactorCertType != null">
-                TransactorCertType,
-            </if>
-            <if test="transactorName != null">
-                TransactorName,
-            </if>
-            <if test="transactionAccountID != null">
-                TransactionAccountID,
-            </if>
-            <if test="businessCode != null">
-                BusinessCode,
-            </if>
-            <if test="targetTransactionAccountID != null">
-                TargetTransactionAccountID,
-            </if>
-            <if test="acctNoOfFMInClearingAgency != null">
-                AcctNoOfFMInClearingAgency,
-            </if>
-            <if test="acctNameOfFMInClearingAgency != null">
-                AcctNameOfFMInClearingAgency,
-            </if>
-            <if test="clearingAgencyCode != null">
-                ClearingAgencyCode,
-            </if>
-            <if test="investorsBirthday != null">
-                InvestorsBirthday,
-            </if>
-            <if test="depositAcct != null">
-                DepositAcct,
-            </if>
-            <if test="regionCode != null">
-                RegionCode,
-            </if>
-            <if test="educationLevel != null">
-                EducationLevel,
-            </if>
-            <if test="emailAddress != null">
-                EmailAddress,
-            </if>
-            <if test="faxNo != null">
-                FaxNo,
-            </if>
-            <if test="vocationCode != null">
-                VocationCode,
-            </if>
-            <if test="homeTelNo != null">
-                HomeTelNo,
-            </if>
-            <if test="annualIncome != null">
-                AnnualIncome,
-            </if>
-            <if test="mobileTelNo != null">
-                MobileTelNo,
-            </if>
-            <if test="multiAcctFlag != null">
-                MultiAcctFlag,
-            </if>
-            <if test="branchCode != null">
-                BranchCode,
-            </if>
-            <if test="officeTelNo != null">
-                OfficeTelNo,
-            </if>
-            <if test="accountAbbr != null">
-                AccountAbbr,
-            </if>
-            <if test="confidentialDocumentCode != null">
-                ConfidentialDocumentCode,
-            </if>
-            <if test="sex != null">
-                Sex,
-            </if>
-            <if test="SHSecuritiesAccountID != null">
-                SHSecuritiesAccountID,
-            </if>
-            <if test="SZSecuritiesAccountID != null">
-                SZSecuritiesAccountID,
-            </if>
-            <if test="TAAccountID != null">
-                TAAccountID,
-            </if>
-            <if test="telNo != null">
-                TelNo,
-            </if>
-            <if test="tradingMethod != null">
-                TradingMethod,
-            </if>
-            <if test="minorFlag != null">
-                MinorFlag,
-            </if>
-            <if test="deliverType != null">
-                DeliverType,
-            </if>
-            <if test="transactorIDType != null">
-                TransactorIDType,
-            </if>
-            <if test="accountCardID != null">
-                AccountCardID,
-            </if>
-            <if test="deliverWay != null">
-                DeliverWay,
-            </if>
-            <if test="nationlity != null">
-                Nationlity,
-            </if>
-            <if test="netNo != null">
-                NetNo,
-            </if>
-            <if test="broker != null">
-                Broker,
-            </if>
-            <if test="corpName != null">
-                CorpName,
-            </if>
-            <if test="certValidDate != null">
-                CertValidDate,
-            </if>
-            <if test="instTranCertValidDate != null">
-                InstTranCertValidDate,
-            </if>
-            <if test="instReprCertValidDate != null">
-                InstReprCertValidDate,
-            </if>
-            <if test="clientRiskRate != null">
-                ClientRiskRate,
-            </if>
-            <if test="instReprManageRange != null">
-                InstReprManageRange,
-            </if>
-            <if test="controlHolder != null">
-                ControlHolder,
-            </if>
-            <if test="actualController != null">
-                ActualController,
-            </if>
-            <if test="marriageStatus != null">
-                MarriageStatus,
-            </if>
-            <if test="familyNum != null">
-                FamilyNum,
-            </if>
-            <if test="penates != null">
-                Penates,
-            </if>
-            <if test="mediaHobby != null">
-                MediaHobby,
-            </if>
-            <if test="englishFirstName != null">
-                EnglishFirstName,
-            </if>
-            <if test="englishFamliyName != null">
-                EnglishFamliyName,
-            </if>
-            <if test="vocation != null">
-                Vocation,
-            </if>
-            <if test="corpoProperty != null">
-                CorpoProperty,
-            </if>
-            <if test="staffNum != null">
-                StaffNum,
-            </if>
-            <if test="hobbytype != null">
-                Hobbytype,
-            </if>
-            <if test="province != null">
-                Province,
-            </if>
-            <if test="city != null">
-                City,
-            </if>
-            <if test="county != null">
-                County,
-            </if>
-            <if test="commendPerson != null">
-                CommendPerson,
-            </if>
-            <if test="commendPersonType != null">
-                CommendPersonType,
-            </if>
-            <if test="acctNameOfInvestorInClearingAgency != null">
-                AcctNameOfInvestorInClearingAgency,
-            </if>
-            <if test="acctNoOfInvestorInClearingAgency != null">
-                AcctNoOfInvestorInClearingAgency,
-            </if>
-            <if test="clearingAgency != null">
-                ClearingAgency,
-            </if>
-            <if test="acceptMethod != null">
-                AcceptMethod,
-            </if>
-            <if test="frozenCause != null">
-                FrozenCause,
-            </if>
-            <if test="freezingDeadline != null">
-                FreezingDeadline,
-            </if>
-            <if test="originalSerialNo != null">
-                OriginalSerialNo,
-            </if>
-            <if test="originalAppSheetNo != null">
-                OriginalAppSheetNo,
-            </if>
-            <if test="specification != null">
-                Specification,
-            </if>
-            <if test="recordStatus != null">
-                recordStatus,
-            </if>
-        </trim>
-        <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="TACode != null">
-                #{TACode,jdbcType=VARCHAR},
-            </if>
-            <if test="distributorCode != null">
-                #{distributorCode,jdbcType=VARCHAR},
-            </if>
-            <if test="referenceNo != null">
-                #{referenceNo,jdbcType=INTEGER},
-            </if>
-            <if test="address != null">
-                #{address,jdbcType=VARCHAR},
-            </if>
-            <if test="instReprIDCode != null">
-                #{instReprIDCode,jdbcType=VARCHAR},
-            </if>
-            <if test="instReprIDType != null">
-                #{instReprIDType,jdbcType=OTHER},
-            </if>
-            <if test="instReprName != null">
-                #{instReprName,jdbcType=VARCHAR},
-            </if>
-            <if test="certificateType != null">
-                #{certificateType,jdbcType=OTHER},
-            </if>
-            <if test="certificateNo != null">
-                #{certificateNo,jdbcType=VARCHAR},
-            </if>
-            <if test="investorName != null">
-                #{investorName,jdbcType=VARCHAR},
-            </if>
-            <if test="transactionDate != null">
-                #{transactionDate,jdbcType=CHAR},
-            </if>
-            <if test="transactionTime != null">
-                #{transactionTime,jdbcType=CHAR},
-            </if>
-            <if test="individualOrInstitution != null">
-                #{individualOrInstitution,jdbcType=OTHER},
-            </if>
-            <if test="institutionType != null">
-                #{institutionType,jdbcType=OTHER},
-            </if>
-            <if test="postCode != null">
-                #{postCode,jdbcType=CHAR},
-            </if>
-            <if test="transactorCertNo != null">
-                #{transactorCertNo,jdbcType=VARCHAR},
-            </if>
-            <if test="transactorCertType != null">
-                #{transactorCertType,jdbcType=OTHER},
-            </if>
-            <if test="transactorName != null">
-                #{transactorName,jdbcType=VARCHAR},
-            </if>
-            <if test="transactionAccountID != null">
-                #{transactionAccountID,jdbcType=VARCHAR},
-            </if>
-            <if test="businessCode != null">
-                #{businessCode,jdbcType=CHAR},
-            </if>
-            <if test="targetTransactionAccountID != null">
-                #{targetTransactionAccountID,jdbcType=VARCHAR},
-            </if>
-            <if test="acctNoOfFMInClearingAgency != null">
-                #{acctNoOfFMInClearingAgency,jdbcType=VARCHAR},
-            </if>
-            <if test="acctNameOfFMInClearingAgency != null">
-                #{acctNameOfFMInClearingAgency,jdbcType=VARCHAR},
-            </if>
-            <if test="clearingAgencyCode != null">
-                #{clearingAgencyCode,jdbcType=VARCHAR},
-            </if>
-            <if test="investorsBirthday != null">
-                #{investorsBirthday,jdbcType=CHAR},
-            </if>
-            <if test="depositAcct != null">
-                #{depositAcct,jdbcType=VARCHAR},
-            </if>
-            <if test="regionCode != null">
-                #{regionCode,jdbcType=VARCHAR},
-            </if>
-            <if test="educationLevel != null">
-                #{educationLevel,jdbcType=OTHER},
-            </if>
-            <if test="emailAddress != null">
-                #{emailAddress,jdbcType=VARCHAR},
-            </if>
-            <if test="faxNo != null">
-                #{faxNo,jdbcType=VARCHAR},
-            </if>
-            <if test="vocationCode != null">
-                #{vocationCode,jdbcType=CHAR},
-            </if>
-            <if test="homeTelNo != null">
-                #{homeTelNo,jdbcType=VARCHAR},
-            </if>
-            <if test="annualIncome != null">
-                #{annualIncome,jdbcType=INTEGER},
-            </if>
-            <if test="mobileTelNo != null">
-                #{mobileTelNo,jdbcType=VARCHAR},
-            </if>
-            <if test="multiAcctFlag != null">
-                #{multiAcctFlag,jdbcType=OTHER},
-            </if>
-            <if test="branchCode != null">
-                #{branchCode,jdbcType=VARCHAR},
-            </if>
-            <if test="officeTelNo != null">
-                #{officeTelNo,jdbcType=VARCHAR},
-            </if>
-            <if test="accountAbbr != null">
-                #{accountAbbr,jdbcType=VARCHAR},
-            </if>
-            <if test="confidentialDocumentCode != null">
-                #{confidentialDocumentCode,jdbcType=VARCHAR},
-            </if>
-            <if test="sex != null">
-                #{sex,jdbcType=OTHER},
-            </if>
-            <if test="SHSecuritiesAccountID != null">
-                #{SHSecuritiesAccountID,jdbcType=VARCHAR},
-            </if>
-            <if test="SZSecuritiesAccountID != null">
-                #{SZSecuritiesAccountID,jdbcType=VARCHAR},
-            </if>
-            <if test="TAAccountID != null">
-                #{TAAccountID,jdbcType=VARCHAR},
-            </if>
-            <if test="telNo != null">
-                #{telNo,jdbcType=VARCHAR},
-            </if>
-            <if test="tradingMethod != null">
-                #{tradingMethod,jdbcType=VARCHAR},
-            </if>
-            <if test="minorFlag != null">
-                #{minorFlag,jdbcType=OTHER},
-            </if>
-            <if test="deliverType != null">
-                #{deliverType,jdbcType=OTHER},
-            </if>
-            <if test="transactorIDType != null">
-                #{transactorIDType,jdbcType=OTHER},
-            </if>
-            <if test="accountCardID != null">
-                #{accountCardID,jdbcType=VARCHAR},
-            </if>
-            <if test="deliverWay != null">
-                #{deliverWay,jdbcType=CHAR},
-            </if>
-            <if test="nationlity != null">
-                #{nationlity,jdbcType=CHAR},
-            </if>
-            <if test="netNo != null">
-                #{netNo,jdbcType=CHAR},
-            </if>
-            <if test="broker != null">
-                #{broker,jdbcType=VARCHAR},
-            </if>
-            <if test="corpName != null">
-                #{corpName,jdbcType=VARCHAR},
-            </if>
-            <if test="certValidDate != null">
-                #{certValidDate,jdbcType=CHAR},
-            </if>
-            <if test="instTranCertValidDate != null">
-                #{instTranCertValidDate,jdbcType=CHAR},
-            </if>
-            <if test="instReprCertValidDate != null">
-                #{instReprCertValidDate,jdbcType=CHAR},
-            </if>
-            <if test="clientRiskRate != null">
-                #{clientRiskRate,jdbcType=CHAR},
-            </if>
-            <if test="instReprManageRange != null">
-                #{instReprManageRange,jdbcType=VARCHAR},
-            </if>
-            <if test="controlHolder != null">
-                #{controlHolder,jdbcType=VARCHAR},
-            </if>
-            <if test="actualController != null">
-                #{actualController,jdbcType=VARCHAR},
-            </if>
-            <if test="marriageStatus != null">
-                #{marriageStatus,jdbcType=CHAR},
-            </if>
-            <if test="familyNum != null">
-                #{familyNum,jdbcType=INTEGER},
-            </if>
-            <if test="penates != null">
-                #{penates,jdbcType=DECIMAL},
-            </if>
-            <if test="mediaHobby != null">
-                #{mediaHobby,jdbcType=CHAR},
-            </if>
-            <if test="englishFirstName != null">
-                #{englishFirstName,jdbcType=VARCHAR},
-            </if>
-            <if test="englishFamliyName != null">
-                #{englishFamliyName,jdbcType=VARCHAR},
-            </if>
-            <if test="vocation != null">
-                #{vocation,jdbcType=CHAR},
-            </if>
-            <if test="corpoProperty != null">
-                #{corpoProperty,jdbcType=VARCHAR},
-            </if>
-            <if test="staffNum != null">
-                #{staffNum,jdbcType=DECIMAL},
-            </if>
-            <if test="hobbytype != null">
-                #{hobbytype,jdbcType=VARCHAR},
-            </if>
-            <if test="province != null">
-                #{province,jdbcType=CHAR},
-            </if>
-            <if test="city != null">
-                #{city,jdbcType=CHAR},
-            </if>
-            <if test="county != null">
-                #{county,jdbcType=CHAR},
-            </if>
-            <if test="commendPerson != null">
-                #{commendPerson,jdbcType=VARCHAR},
-            </if>
-            <if test="commendPersonType != null">
-                #{commendPersonType,jdbcType=OTHER},
-            </if>
-            <if test="acctNameOfInvestorInClearingAgency != null">
-                #{acctNameOfInvestorInClearingAgency,jdbcType=VARCHAR},
-            </if>
-            <if test="acctNoOfInvestorInClearingAgency != null">
-                #{acctNoOfInvestorInClearingAgency,jdbcType=VARCHAR},
-            </if>
-            <if test="clearingAgency != null">
-                #{clearingAgency,jdbcType=VARCHAR},
-            </if>
-            <if test="acceptMethod != null">
-                #{acceptMethod,jdbcType=VARCHAR},
-            </if>
-            <if test="frozenCause != null">
-                #{frozenCause,jdbcType=OTHER},
-            </if>
-            <if test="freezingDeadline != null">
-                #{freezingDeadline,jdbcType=CHAR},
-            </if>
-            <if test="originalSerialNo != null">
-                #{originalSerialNo,jdbcType=VARCHAR},
-            </if>
-            <if test="originalAppSheetNo != null">
-                #{originalAppSheetNo,jdbcType=VARCHAR},
-            </if>
-            <if test="specification != null">
-                #{specification,jdbcType=VARCHAR},
-            </if>
-            <if test="recordStatus != null">
-                #{recordStatus,jdbcType=OTHER},
-            </if>
-        </trim>
-    </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.psbc.pojo.AccountApplication">
-        update account_application
-        <set>
-            <if test="address != null">
-                Address = #{address,jdbcType=VARCHAR},
-            </if>
-            <if test="instReprIDCode != null">
-                InstReprIDCode = #{instReprIDCode,jdbcType=VARCHAR},
-            </if>
-            <if test="instReprIDType != null">
-                InstReprIDType = #{instReprIDType,jdbcType=OTHER},
-            </if>
-            <if test="instReprName != null">
-                InstReprName = #{instReprName,jdbcType=VARCHAR},
-            </if>
-            <if test="certificateType != null">
-                CertificateType = #{certificateType,jdbcType=OTHER},
-            </if>
-            <if test="certificateNo != null">
-                CertificateNo = #{certificateNo,jdbcType=VARCHAR},
-            </if>
-            <if test="investorName != null">
-                InvestorName = #{investorName,jdbcType=VARCHAR},
-            </if>
-            <if test="transactionDate != null">
-                TransactionDate = #{transactionDate,jdbcType=CHAR},
-            </if>
-            <if test="transactionTime != null">
-                TransactionTime = #{transactionTime,jdbcType=CHAR},
-            </if>
-            <if test="individualOrInstitution != null">
-                IndividualOrInstitution = #{individualOrInstitution,jdbcType=OTHER},
-            </if>
-            <if test="institutionType != null">
-                InstitutionType = #{institutionType,jdbcType=OTHER},
-            </if>
-            <if test="postCode != null">
-                PostCode = #{postCode,jdbcType=CHAR},
-            </if>
-            <if test="transactorCertNo != null">
-                TransactorCertNo = #{transactorCertNo,jdbcType=VARCHAR},
-            </if>
-            <if test="transactorCertType != null">
-                TransactorCertType = #{transactorCertType,jdbcType=OTHER},
-            </if>
-            <if test="transactorName != null">
-                TransactorName = #{transactorName,jdbcType=VARCHAR},
-            </if>
-            <if test="transactionAccountID != null">
-                TransactionAccountID = #{transactionAccountID,jdbcType=VARCHAR},
-            </if>
-            <if test="businessCode != null">
-                BusinessCode = #{businessCode,jdbcType=CHAR},
-            </if>
-            <if test="targetTransactionAccountID != null">
-                TargetTransactionAccountID = #{targetTransactionAccountID,jdbcType=VARCHAR},
-            </if>
-            <if test="acctNoOfFMInClearingAgency != null">
-                AcctNoOfFMInClearingAgency = #{acctNoOfFMInClearingAgency,jdbcType=VARCHAR},
-            </if>
-            <if test="acctNameOfFMInClearingAgency != null">
-                AcctNameOfFMInClearingAgency = #{acctNameOfFMInClearingAgency,jdbcType=VARCHAR},
-            </if>
-            <if test="clearingAgencyCode != null">
-                ClearingAgencyCode = #{clearingAgencyCode,jdbcType=VARCHAR},
-            </if>
-            <if test="investorsBirthday != null">
-                InvestorsBirthday = #{investorsBirthday,jdbcType=CHAR},
-            </if>
-            <if test="depositAcct != null">
-                DepositAcct = #{depositAcct,jdbcType=VARCHAR},
-            </if>
-            <if test="regionCode != null">
-                RegionCode = #{regionCode,jdbcType=VARCHAR},
-            </if>
-            <if test="educationLevel != null">
-                EducationLevel = #{educationLevel,jdbcType=OTHER},
-            </if>
-            <if test="emailAddress != null">
-                EmailAddress = #{emailAddress,jdbcType=VARCHAR},
-            </if>
-            <if test="faxNo != null">
-                FaxNo = #{faxNo,jdbcType=VARCHAR},
-            </if>
-            <if test="vocationCode != null">
-                VocationCode = #{vocationCode,jdbcType=CHAR},
-            </if>
-            <if test="homeTelNo != null">
-                HomeTelNo = #{homeTelNo,jdbcType=VARCHAR},
-            </if>
-            <if test="annualIncome != null">
-                AnnualIncome = #{annualIncome,jdbcType=INTEGER},
-            </if>
-            <if test="mobileTelNo != null">
-                MobileTelNo = #{mobileTelNo,jdbcType=VARCHAR},
-            </if>
-            <if test="multiAcctFlag != null">
-                MultiAcctFlag = #{multiAcctFlag,jdbcType=OTHER},
-            </if>
-            <if test="branchCode != null">
-                BranchCode = #{branchCode,jdbcType=VARCHAR},
-            </if>
-            <if test="officeTelNo != null">
-                OfficeTelNo = #{officeTelNo,jdbcType=VARCHAR},
-            </if>
-            <if test="accountAbbr != null">
-                AccountAbbr = #{accountAbbr,jdbcType=VARCHAR},
-            </if>
-            <if test="confidentialDocumentCode != null">
-                ConfidentialDocumentCode = #{confidentialDocumentCode,jdbcType=VARCHAR},
-            </if>
-            <if test="sex != null">
-                Sex = #{sex,jdbcType=OTHER},
-            </if>
-            <if test="SHSecuritiesAccountID != null">
-                SHSecuritiesAccountID = #{SHSecuritiesAccountID,jdbcType=VARCHAR},
-            </if>
-            <if test="SZSecuritiesAccountID != null">
-                SZSecuritiesAccountID = #{SZSecuritiesAccountID,jdbcType=VARCHAR},
-            </if>
-            <if test="TAAccountID != null">
-                TAAccountID = #{TAAccountID,jdbcType=VARCHAR},
-            </if>
-            <if test="telNo != null">
-                TelNo = #{telNo,jdbcType=VARCHAR},
-            </if>
-            <if test="tradingMethod != null">
-                TradingMethod = #{tradingMethod,jdbcType=VARCHAR},
-            </if>
-            <if test="minorFlag != null">
-                MinorFlag = #{minorFlag,jdbcType=OTHER},
-            </if>
-            <if test="deliverType != null">
-                DeliverType = #{deliverType,jdbcType=OTHER},
-            </if>
-            <if test="transactorIDType != null">
-                TransactorIDType = #{transactorIDType,jdbcType=OTHER},
-            </if>
-            <if test="accountCardID != null">
-                AccountCardID = #{accountCardID,jdbcType=VARCHAR},
-            </if>
-            <if test="deliverWay != null">
-                DeliverWay = #{deliverWay,jdbcType=CHAR},
-            </if>
-            <if test="nationlity != null">
-                Nationlity = #{nationlity,jdbcType=CHAR},
-            </if>
-            <if test="netNo != null">
-                NetNo = #{netNo,jdbcType=CHAR},
-            </if>
-            <if test="broker != null">
-                Broker = #{broker,jdbcType=VARCHAR},
-            </if>
-            <if test="corpName != null">
-                CorpName = #{corpName,jdbcType=VARCHAR},
-            </if>
-            <if test="certValidDate != null">
-                CertValidDate = #{certValidDate,jdbcType=CHAR},
-            </if>
-            <if test="instTranCertValidDate != null">
-                InstTranCertValidDate = #{instTranCertValidDate,jdbcType=CHAR},
-            </if>
-            <if test="instReprCertValidDate != null">
-                InstReprCertValidDate = #{instReprCertValidDate,jdbcType=CHAR},
-            </if>
-            <if test="clientRiskRate != null">
-                ClientRiskRate = #{clientRiskRate,jdbcType=CHAR},
-            </if>
-            <if test="instReprManageRange != null">
-                InstReprManageRange = #{instReprManageRange,jdbcType=VARCHAR},
-            </if>
-            <if test="controlHolder != null">
-                ControlHolder = #{controlHolder,jdbcType=VARCHAR},
-            </if>
-            <if test="actualController != null">
-                ActualController = #{actualController,jdbcType=VARCHAR},
-            </if>
-            <if test="marriageStatus != null">
-                MarriageStatus = #{marriageStatus,jdbcType=CHAR},
-            </if>
-            <if test="familyNum != null">
-                FamilyNum = #{familyNum,jdbcType=INTEGER},
-            </if>
-            <if test="penates != null">
-                Penates = #{penates,jdbcType=DECIMAL},
-            </if>
-            <if test="mediaHobby != null">
-                MediaHobby = #{mediaHobby,jdbcType=CHAR},
-            </if>
-            <if test="englishFirstName != null">
-                EnglishFirstName = #{englishFirstName,jdbcType=VARCHAR},
-            </if>
-            <if test="englishFamliyName != null">
-                EnglishFamliyName = #{englishFamliyName,jdbcType=VARCHAR},
-            </if>
-            <if test="vocation != null">
-                Vocation = #{vocation,jdbcType=CHAR},
-            </if>
-            <if test="corpoProperty != null">
-                CorpoProperty = #{corpoProperty,jdbcType=VARCHAR},
-            </if>
-            <if test="staffNum != null">
-                StaffNum = #{staffNum,jdbcType=DECIMAL},
-            </if>
-            <if test="hobbytype != null">
-                Hobbytype = #{hobbytype,jdbcType=VARCHAR},
-            </if>
-            <if test="province != null">
-                Province = #{province,jdbcType=CHAR},
-            </if>
-            <if test="city != null">
-                City = #{city,jdbcType=CHAR},
-            </if>
-            <if test="county != null">
-                County = #{county,jdbcType=CHAR},
-            </if>
-            <if test="commendPerson != null">
-                CommendPerson = #{commendPerson,jdbcType=VARCHAR},
-            </if>
-            <if test="commendPersonType != null">
-                CommendPersonType = #{commendPersonType,jdbcType=OTHER},
-            </if>
-            <if test="acctNameOfInvestorInClearingAgency != null">
-                AcctNameOfInvestorInClearingAgency = #{acctNameOfInvestorInClearingAgency,jdbcType=VARCHAR},
-            </if>
-            <if test="acctNoOfInvestorInClearingAgency != null">
-                AcctNoOfInvestorInClearingAgency = #{acctNoOfInvestorInClearingAgency,jdbcType=VARCHAR},
-            </if>
-            <if test="clearingAgency != null">
-                ClearingAgency = #{clearingAgency,jdbcType=VARCHAR},
-            </if>
-            <if test="acceptMethod != null">
-                AcceptMethod = #{acceptMethod,jdbcType=VARCHAR},
-            </if>
-            <if test="frozenCause != null">
-                FrozenCause = #{frozenCause,jdbcType=OTHER},
-            </if>
-            <if test="freezingDeadline != null">
-                FreezingDeadline = #{freezingDeadline,jdbcType=CHAR},
-            </if>
-            <if test="originalSerialNo != null">
-                OriginalSerialNo = #{originalSerialNo,jdbcType=VARCHAR},
-            </if>
-            <if test="originalAppSheetNo != null">
-                OriginalAppSheetNo = #{originalAppSheetNo,jdbcType=VARCHAR},
-            </if>
-            <if test="specification != null">
-                Specification = #{specification,jdbcType=VARCHAR},
-            </if>
-            <if test="recordStatus != null">
-                recordStatus = #{recordStatus,jdbcType=OTHER},
-            </if>
-        </set>
-        where AppSheetSerialNo = #{appSheetSerialNo,jdbcType=VARCHAR}
-        and TACode = #{TACode,jdbcType=VARCHAR}
-        and DistributorCode = #{distributorCode,jdbcType=VARCHAR}
-        and ReferenceNo = #{referenceNo,jdbcType=INTEGER}
-    </update>
-    <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AccountApplication">
-        update account_application
-        set Address                            = #{address,jdbcType=VARCHAR},
-            InstReprIDCode                     = #{instReprIDCode,jdbcType=VARCHAR},
-            InstReprIDType                     = #{instReprIDType,jdbcType=OTHER},
-            InstReprName                       = #{instReprName,jdbcType=VARCHAR},
-            CertificateType                    = #{certificateType,jdbcType=OTHER},
-            CertificateNo                      = #{certificateNo,jdbcType=VARCHAR},
-            InvestorName                       = #{investorName,jdbcType=VARCHAR},
-            TransactionDate                    = #{transactionDate,jdbcType=CHAR},
-            TransactionTime                    = #{transactionTime,jdbcType=CHAR},
-            IndividualOrInstitution            = #{individualOrInstitution,jdbcType=OTHER},
-            InstitutionType                    = #{institutionType,jdbcType=OTHER},
-            PostCode                           = #{postCode,jdbcType=CHAR},
-            TransactorCertNo                   = #{transactorCertNo,jdbcType=VARCHAR},
-            TransactorCertType                 = #{transactorCertType,jdbcType=OTHER},
-            TransactorName                     = #{transactorName,jdbcType=VARCHAR},
-            TransactionAccountID               = #{transactionAccountID,jdbcType=VARCHAR},
-            BusinessCode                       = #{businessCode,jdbcType=CHAR},
-            TargetTransactionAccountID         = #{targetTransactionAccountID,jdbcType=VARCHAR},
-            AcctNoOfFMInClearingAgency         = #{acctNoOfFMInClearingAgency,jdbcType=VARCHAR},
-            AcctNameOfFMInClearingAgency       = #{acctNameOfFMInClearingAgency,jdbcType=VARCHAR},
-            ClearingAgencyCode                 = #{clearingAgencyCode,jdbcType=VARCHAR},
-            InvestorsBirthday                  = #{investorsBirthday,jdbcType=CHAR},
-            DepositAcct                        = #{depositAcct,jdbcType=VARCHAR},
-            RegionCode                         = #{regionCode,jdbcType=VARCHAR},
-            EducationLevel                     = #{educationLevel,jdbcType=OTHER},
-            EmailAddress                       = #{emailAddress,jdbcType=VARCHAR},
-            FaxNo                              = #{faxNo,jdbcType=VARCHAR},
-            VocationCode                       = #{vocationCode,jdbcType=CHAR},
-            HomeTelNo                          = #{homeTelNo,jdbcType=VARCHAR},
-            AnnualIncome                       = #{annualIncome,jdbcType=INTEGER},
-            MobileTelNo                        = #{mobileTelNo,jdbcType=VARCHAR},
-            MultiAcctFlag                      = #{multiAcctFlag,jdbcType=OTHER},
-            BranchCode                         = #{branchCode,jdbcType=VARCHAR},
-            OfficeTelNo                        = #{officeTelNo,jdbcType=VARCHAR},
-            AccountAbbr                        = #{accountAbbr,jdbcType=VARCHAR},
-            ConfidentialDocumentCode           = #{confidentialDocumentCode,jdbcType=VARCHAR},
-            Sex                                = #{sex,jdbcType=OTHER},
-            SHSecuritiesAccountID              = #{SHSecuritiesAccountID,jdbcType=VARCHAR},
-            SZSecuritiesAccountID              = #{SZSecuritiesAccountID,jdbcType=VARCHAR},
-            TAAccountID                        = #{TAAccountID,jdbcType=VARCHAR},
-            TelNo                              = #{telNo,jdbcType=VARCHAR},
-            TradingMethod                      = #{tradingMethod,jdbcType=VARCHAR},
-            MinorFlag                          = #{minorFlag,jdbcType=OTHER},
-            DeliverType                        = #{deliverType,jdbcType=OTHER},
-            TransactorIDType                   = #{transactorIDType,jdbcType=OTHER},
-            AccountCardID                      = #{accountCardID,jdbcType=VARCHAR},
-            DeliverWay                         = #{deliverWay,jdbcType=CHAR},
-            Nationlity                         = #{nationlity,jdbcType=CHAR},
-            NetNo                              = #{netNo,jdbcType=CHAR},
-            Broker                             = #{broker,jdbcType=VARCHAR},
-            CorpName                           = #{corpName,jdbcType=VARCHAR},
-            CertValidDate                      = #{certValidDate,jdbcType=CHAR},
-            InstTranCertValidDate              = #{instTranCertValidDate,jdbcType=CHAR},
-            InstReprCertValidDate              = #{instReprCertValidDate,jdbcType=CHAR},
-            ClientRiskRate                     = #{clientRiskRate,jdbcType=CHAR},
-            InstReprManageRange                = #{instReprManageRange,jdbcType=VARCHAR},
-            ControlHolder                      = #{controlHolder,jdbcType=VARCHAR},
-            ActualController                   = #{actualController,jdbcType=VARCHAR},
-            MarriageStatus                     = #{marriageStatus,jdbcType=CHAR},
-            FamilyNum                          = #{familyNum,jdbcType=INTEGER},
-            Penates                            = #{penates,jdbcType=DECIMAL},
-            MediaHobby                         = #{mediaHobby,jdbcType=CHAR},
-            EnglishFirstName                   = #{englishFirstName,jdbcType=VARCHAR},
-            EnglishFamliyName                  = #{englishFamliyName,jdbcType=VARCHAR},
-            Vocation                           = #{vocation,jdbcType=CHAR},
-            CorpoProperty                      = #{corpoProperty,jdbcType=VARCHAR},
-            StaffNum                           = #{staffNum,jdbcType=DECIMAL},
-            Hobbytype                          = #{hobbytype,jdbcType=VARCHAR},
-            Province                           = #{province,jdbcType=CHAR},
-            City                               = #{city,jdbcType=CHAR},
-            County                             = #{county,jdbcType=CHAR},
-            CommendPerson                      = #{commendPerson,jdbcType=VARCHAR},
-            CommendPersonType                  = #{commendPersonType,jdbcType=OTHER},
-            AcctNameOfInvestorInClearingAgency = #{acctNameOfInvestorInClearingAgency,jdbcType=VARCHAR},
-            AcctNoOfInvestorInClearingAgency   = #{acctNoOfInvestorInClearingAgency,jdbcType=VARCHAR},
-            ClearingAgency                     = #{clearingAgency,jdbcType=VARCHAR},
-            AcceptMethod                       = #{acceptMethod,jdbcType=VARCHAR},
-            FrozenCause                        = #{frozenCause,jdbcType=OTHER},
-            FreezingDeadline                   = #{freezingDeadline,jdbcType=CHAR},
-            OriginalSerialNo                   = #{originalSerialNo,jdbcType=VARCHAR},
-            OriginalAppSheetNo                 = #{originalAppSheetNo,jdbcType=VARCHAR},
-            Specification                      = #{specification,jdbcType=VARCHAR},
-            recordStatus                       = #{recordStatus,jdbcType=OTHER}
-        where AppSheetSerialNo = #{appSheetSerialNo,jdbcType=VARCHAR}
-          and TACode = #{TACode,jdbcType=VARCHAR}
-          and DistributorCode = #{distributorCode,jdbcType=VARCHAR}
-          and ReferenceNo = #{referenceNo,jdbcType=INTEGER}
-    </update>
+  <select id="selectUnionPrimaryKey" resultType="com.psbc.pojo.AccountApplication">
+    select
+    <include refid="Base_Column_List" />
+    from account_application
+    where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
+    and TACode = #{tacode,jdbcType=VARCHAR}
+    and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
+    and ReferenceNo = #{referenceno,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.psbc.pojo.AccountApplicationKey">
+    delete from account_application
+    where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
+      and TACode = #{tacode,jdbcType=VARCHAR}
+      and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
+      and ReferenceNo = #{referenceno,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno" parameterType="com.psbc.pojo.AccountApplication" useGeneratedKeys="true">
+    insert into account_application (AppSheetSerialNo,TACode, DistributorCode, ReferenceNo,
+      Address, InstReprIDCode, InstReprIDType, 
+      InstReprName, CertificateType, CertificateNo, 
+      InvestorName, TransactionDate, TransactionTime, 
+      IndividualOrInstitution, InstitutionType, PostCode, 
+      TransactorCertNo, TransactorCertType, TransactorName, 
+      TransactionAccountID, BusinessCode, TargetTransactionAccountID, 
+      AcctNoOfFMInClearingAgency, AcctNameOfFMInClearingAgency, 
+      ClearingAgencyCode, InvestorsBirthday, DepositAcct, 
+      RegionCode, EducationLevel, EmailAddress, 
+      FaxNo, VocationCode, HomeTelNo, 
+      AnnualIncome, MobileTelNo, MultiAcctFlag, 
+      BranchCode, OfficeTelNo, AccountAbbr, 
+      ConfidentialDocumentCode, Sex, SHSecuritiesAccountID, 
+      SZSecuritiesAccountID, TAAccountID, TelNo, 
+      TradingMethod, MinorFlag, DeliverType, 
+      TransactorIDType, AccountCardID, DeliverWay, 
+      Nationlity, NetNo, Broker, 
+      CorpName, CertValidDate, InstTranCertValidDate, 
+      InstReprCertValidDate, ClientRiskRate, InstReprManageRange, 
+      ControlHolder, ActualController, MarriageStatus, 
+      FamilyNum, Penates, MediaHobby, 
+      EnglishFirstName, EnglishFamliyName, Vocation, 
+      CorpoProperty, StaffNum, Hobbytype, 
+      Province, City, County, CommendPerson, 
+      CommendPersonType, AcctNameOfInvestorInClearingAgency, 
+      AcctNoOfInvestorInClearingAgency, ClearingAgency, 
+      AcceptMethod, FrozenCause, FreezingDeadline, 
+      OriginalSerialNo, OriginalAppSheetNo, Specification, 
+      recordStatus)
+    values (#{appsheetserialno,jdbcType=VARCHAR},#{tacode,jdbcType=VARCHAR}, #{distributorcode,jdbcType=VARCHAR}, #{referenceno,jdbcType=INTEGER},
+      #{address,jdbcType=VARCHAR}, #{instrepridcode,jdbcType=VARCHAR}, #{instrepridtype,jdbcType=OTHER}, 
+      #{instreprname,jdbcType=VARCHAR}, #{certificatetype,jdbcType=OTHER}, #{certificateno,jdbcType=VARCHAR}, 
+      #{investorname,jdbcType=VARCHAR}, #{transactiondate,jdbcType=CHAR}, #{transactiontime,jdbcType=CHAR}, 
+      #{individualorinstitution,jdbcType=OTHER}, #{institutiontype,jdbcType=OTHER}, #{postcode,jdbcType=CHAR}, 
+      #{transactorcertno,jdbcType=VARCHAR}, #{transactorcerttype,jdbcType=OTHER}, #{transactorname,jdbcType=VARCHAR}, 
+      #{transactionaccountid,jdbcType=VARCHAR}, #{businesscode,jdbcType=CHAR}, #{targettransactionaccountid,jdbcType=VARCHAR}, 
+      #{acctnooffminclearingagency,jdbcType=VARCHAR}, #{acctnameoffminclearingagency,jdbcType=VARCHAR}, 
+      #{clearingagencycode,jdbcType=VARCHAR}, #{investorsbirthday,jdbcType=CHAR}, #{depositacct,jdbcType=VARCHAR}, 
+      #{regioncode,jdbcType=VARCHAR}, #{educationlevel,jdbcType=OTHER}, #{emailaddress,jdbcType=VARCHAR}, 
+      #{faxno,jdbcType=VARCHAR}, #{vocationcode,jdbcType=CHAR}, #{hometelno,jdbcType=VARCHAR}, 
+      #{annualincome,jdbcType=INTEGER}, #{mobiletelno,jdbcType=VARCHAR}, #{multiacctflag,jdbcType=OTHER}, 
+      #{branchcode,jdbcType=VARCHAR}, #{officetelno,jdbcType=VARCHAR}, #{accountabbr,jdbcType=VARCHAR}, 
+      #{confidentialdocumentcode,jdbcType=VARCHAR}, #{sex,jdbcType=OTHER}, #{shsecuritiesaccountid,jdbcType=VARCHAR}, 
+      #{szsecuritiesaccountid,jdbcType=VARCHAR}, #{taaccountid,jdbcType=VARCHAR}, #{telno,jdbcType=VARCHAR}, 
+      #{tradingmethod,jdbcType=VARCHAR}, #{minorflag,jdbcType=OTHER}, #{delivertype,jdbcType=OTHER}, 
+      #{transactoridtype,jdbcType=OTHER}, #{accountcardid,jdbcType=VARCHAR}, #{deliverway,jdbcType=CHAR}, 
+      #{nationlity,jdbcType=CHAR}, #{netno,jdbcType=CHAR}, #{broker,jdbcType=VARCHAR}, 
+      #{corpname,jdbcType=VARCHAR}, #{certvaliddate,jdbcType=CHAR}, #{insttrancertvaliddate,jdbcType=CHAR}, 
+      #{instreprcertvaliddate,jdbcType=CHAR}, #{clientriskrate,jdbcType=CHAR}, #{instreprmanagerange,jdbcType=VARCHAR}, 
+      #{controlholder,jdbcType=VARCHAR}, #{actualcontroller,jdbcType=VARCHAR}, #{marriagestatus,jdbcType=CHAR}, 
+      #{familynum,jdbcType=INTEGER}, #{penates,jdbcType=DECIMAL}, #{mediahobby,jdbcType=CHAR}, 
+      #{englishfirstname,jdbcType=VARCHAR}, #{englishfamliyname,jdbcType=VARCHAR}, #{vocation,jdbcType=CHAR}, 
+      #{corpoproperty,jdbcType=VARCHAR}, #{staffnum,jdbcType=DECIMAL}, #{hobbytype,jdbcType=VARCHAR}, 
+      #{province,jdbcType=CHAR}, #{city,jdbcType=CHAR}, #{county,jdbcType=CHAR}, #{commendperson,jdbcType=VARCHAR}, 
+      #{commendpersontype,jdbcType=OTHER}, #{acctnameofinvestorinclearingagency,jdbcType=VARCHAR}, 
+      #{acctnoofinvestorinclearingagency,jdbcType=VARCHAR}, #{clearingagency,jdbcType=VARCHAR}, 
+      #{acceptmethod,jdbcType=VARCHAR}, #{frozencause,jdbcType=OTHER}, #{freezingdeadline,jdbcType=CHAR}, 
+      #{originalserialno,jdbcType=VARCHAR}, #{originalappsheetno,jdbcType=VARCHAR}, #{specification,jdbcType=VARCHAR}, 
+      #{recordstatus,jdbcType=OTHER})
+  </insert>
+  <insert id="insertSelective" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno" parameterType="com.psbc.pojo.AccountApplication" useGeneratedKeys="true">
+    insert into account_application
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tacode != null">
+        TACode,
+      </if>
+      <if test="distributorcode != null">
+        DistributorCode,
+      </if>
+      <if test="referenceno != null">
+        ReferenceNo,
+      </if>
+      <if test="address != null">
+        Address,
+      </if>
+      <if test="instrepridcode != null">
+        InstReprIDCode,
+      </if>
+      <if test="instrepridtype != null">
+        InstReprIDType,
+      </if>
+      <if test="instreprname != null">
+        InstReprName,
+      </if>
+      <if test="certificatetype != null">
+        CertificateType,
+      </if>
+      <if test="certificateno != null">
+        CertificateNo,
+      </if>
+      <if test="investorname != null">
+        InvestorName,
+      </if>
+      <if test="transactiondate != null">
+        TransactionDate,
+      </if>
+      <if test="transactiontime != null">
+        TransactionTime,
+      </if>
+      <if test="individualorinstitution != null">
+        IndividualOrInstitution,
+      </if>
+      <if test="institutiontype != null">
+        InstitutionType,
+      </if>
+      <if test="postcode != null">
+        PostCode,
+      </if>
+      <if test="transactorcertno != null">
+        TransactorCertNo,
+      </if>
+      <if test="transactorcerttype != null">
+        TransactorCertType,
+      </if>
+      <if test="transactorname != null">
+        TransactorName,
+      </if>
+      <if test="transactionaccountid != null">
+        TransactionAccountID,
+      </if>
+      <if test="businesscode != null">
+        BusinessCode,
+      </if>
+      <if test="targettransactionaccountid != null">
+        TargetTransactionAccountID,
+      </if>
+      <if test="acctnooffminclearingagency != null">
+        AcctNoOfFMInClearingAgency,
+      </if>
+      <if test="acctnameoffminclearingagency != null">
+        AcctNameOfFMInClearingAgency,
+      </if>
+      <if test="clearingagencycode != null">
+        ClearingAgencyCode,
+      </if>
+      <if test="investorsbirthday != null">
+        InvestorsBirthday,
+      </if>
+      <if test="depositacct != null">
+        DepositAcct,
+      </if>
+      <if test="regioncode != null">
+        RegionCode,
+      </if>
+      <if test="educationlevel != null">
+        EducationLevel,
+      </if>
+      <if test="emailaddress != null">
+        EmailAddress,
+      </if>
+      <if test="faxno != null">
+        FaxNo,
+      </if>
+      <if test="vocationcode != null">
+        VocationCode,
+      </if>
+      <if test="hometelno != null">
+        HomeTelNo,
+      </if>
+      <if test="annualincome != null">
+        AnnualIncome,
+      </if>
+      <if test="mobiletelno != null">
+        MobileTelNo,
+      </if>
+      <if test="multiacctflag != null">
+        MultiAcctFlag,
+      </if>
+      <if test="branchcode != null">
+        BranchCode,
+      </if>
+      <if test="officetelno != null">
+        OfficeTelNo,
+      </if>
+      <if test="accountabbr != null">
+        AccountAbbr,
+      </if>
+      <if test="confidentialdocumentcode != null">
+        ConfidentialDocumentCode,
+      </if>
+      <if test="sex != null">
+        Sex,
+      </if>
+      <if test="shsecuritiesaccountid != null">
+        SHSecuritiesAccountID,
+      </if>
+      <if test="szsecuritiesaccountid != null">
+        SZSecuritiesAccountID,
+      </if>
+      <if test="taaccountid != null">
+        TAAccountID,
+      </if>
+      <if test="telno != null">
+        TelNo,
+      </if>
+      <if test="tradingmethod != null">
+        TradingMethod,
+      </if>
+      <if test="minorflag != null">
+        MinorFlag,
+      </if>
+      <if test="delivertype != null">
+        DeliverType,
+      </if>
+      <if test="transactoridtype != null">
+        TransactorIDType,
+      </if>
+      <if test="accountcardid != null">
+        AccountCardID,
+      </if>
+      <if test="deliverway != null">
+        DeliverWay,
+      </if>
+      <if test="nationlity != null">
+        Nationlity,
+      </if>
+      <if test="netno != null">
+        NetNo,
+      </if>
+      <if test="broker != null">
+        Broker,
+      </if>
+      <if test="corpname != null">
+        CorpName,
+      </if>
+      <if test="certvaliddate != null">
+        CertValidDate,
+      </if>
+      <if test="insttrancertvaliddate != null">
+        InstTranCertValidDate,
+      </if>
+      <if test="instreprcertvaliddate != null">
+        InstReprCertValidDate,
+      </if>
+      <if test="clientriskrate != null">
+        ClientRiskRate,
+      </if>
+      <if test="instreprmanagerange != null">
+        InstReprManageRange,
+      </if>
+      <if test="controlholder != null">
+        ControlHolder,
+      </if>
+      <if test="actualcontroller != null">
+        ActualController,
+      </if>
+      <if test="marriagestatus != null">
+        MarriageStatus,
+      </if>
+      <if test="familynum != null">
+        FamilyNum,
+      </if>
+      <if test="penates != null">
+        Penates,
+      </if>
+      <if test="mediahobby != null">
+        MediaHobby,
+      </if>
+      <if test="englishfirstname != null">
+        EnglishFirstName,
+      </if>
+      <if test="englishfamliyname != null">
+        EnglishFamliyName,
+      </if>
+      <if test="vocation != null">
+        Vocation,
+      </if>
+      <if test="corpoproperty != null">
+        CorpoProperty,
+      </if>
+      <if test="staffnum != null">
+        StaffNum,
+      </if>
+      <if test="hobbytype != null">
+        Hobbytype,
+      </if>
+      <if test="province != null">
+        Province,
+      </if>
+      <if test="city != null">
+        City,
+      </if>
+      <if test="county != null">
+        County,
+      </if>
+      <if test="commendperson != null">
+        CommendPerson,
+      </if>
+      <if test="commendpersontype != null">
+        CommendPersonType,
+      </if>
+      <if test="acctnameofinvestorinclearingagency != null">
+        AcctNameOfInvestorInClearingAgency,
+      </if>
+      <if test="acctnoofinvestorinclearingagency != null">
+        AcctNoOfInvestorInClearingAgency,
+      </if>
+      <if test="clearingagency != null">
+        ClearingAgency,
+      </if>
+      <if test="acceptmethod != null">
+        AcceptMethod,
+      </if>
+      <if test="frozencause != null">
+        FrozenCause,
+      </if>
+      <if test="freezingdeadline != null">
+        FreezingDeadline,
+      </if>
+      <if test="originalserialno != null">
+        OriginalSerialNo,
+      </if>
+      <if test="originalappsheetno != null">
+        OriginalAppSheetNo,
+      </if>
+      <if test="specification != null">
+        Specification,
+      </if>
+      <if test="recordstatus != null">
+        recordStatus,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tacode != null">
+        #{tacode,jdbcType=VARCHAR},
+      </if>
+      <if test="distributorcode != null">
+        #{distributorcode,jdbcType=VARCHAR},
+      </if>
+      <if test="referenceno != null">
+        #{referenceno,jdbcType=INTEGER},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="instrepridcode != null">
+        #{instrepridcode,jdbcType=VARCHAR},
+      </if>
+      <if test="instrepridtype != null">
+        #{instrepridtype,jdbcType=OTHER},
+      </if>
+      <if test="instreprname != null">
+        #{instreprname,jdbcType=VARCHAR},
+      </if>
+      <if test="certificatetype != null">
+        #{certificatetype,jdbcType=OTHER},
+      </if>
+      <if test="certificateno != null">
+        #{certificateno,jdbcType=VARCHAR},
+      </if>
+      <if test="investorname != null">
+        #{investorname,jdbcType=VARCHAR},
+      </if>
+      <if test="transactiondate != null">
+        #{transactiondate,jdbcType=CHAR},
+      </if>
+      <if test="transactiontime != null">
+        #{transactiontime,jdbcType=CHAR},
+      </if>
+      <if test="individualorinstitution != null">
+        #{individualorinstitution,jdbcType=OTHER},
+      </if>
+      <if test="institutiontype != null">
+        #{institutiontype,jdbcType=OTHER},
+      </if>
+      <if test="postcode != null">
+        #{postcode,jdbcType=CHAR},
+      </if>
+      <if test="transactorcertno != null">
+        #{transactorcertno,jdbcType=VARCHAR},
+      </if>
+      <if test="transactorcerttype != null">
+        #{transactorcerttype,jdbcType=OTHER},
+      </if>
+      <if test="transactorname != null">
+        #{transactorname,jdbcType=VARCHAR},
+      </if>
+      <if test="transactionaccountid != null">
+        #{transactionaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="businesscode != null">
+        #{businesscode,jdbcType=CHAR},
+      </if>
+      <if test="targettransactionaccountid != null">
+        #{targettransactionaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="acctnooffminclearingagency != null">
+        #{acctnooffminclearingagency,jdbcType=VARCHAR},
+      </if>
+      <if test="acctnameoffminclearingagency != null">
+        #{acctnameoffminclearingagency,jdbcType=VARCHAR},
+      </if>
+      <if test="clearingagencycode != null">
+        #{clearingagencycode,jdbcType=VARCHAR},
+      </if>
+      <if test="investorsbirthday != null">
+        #{investorsbirthday,jdbcType=CHAR},
+      </if>
+      <if test="depositacct != null">
+        #{depositacct,jdbcType=VARCHAR},
+      </if>
+      <if test="regioncode != null">
+        #{regioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="educationlevel != null">
+        #{educationlevel,jdbcType=OTHER},
+      </if>
+      <if test="emailaddress != null">
+        #{emailaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="faxno != null">
+        #{faxno,jdbcType=VARCHAR},
+      </if>
+      <if test="vocationcode != null">
+        #{vocationcode,jdbcType=CHAR},
+      </if>
+      <if test="hometelno != null">
+        #{hometelno,jdbcType=VARCHAR},
+      </if>
+      <if test="annualincome != null">
+        #{annualincome,jdbcType=INTEGER},
+      </if>
+      <if test="mobiletelno != null">
+        #{mobiletelno,jdbcType=VARCHAR},
+      </if>
+      <if test="multiacctflag != null">
+        #{multiacctflag,jdbcType=OTHER},
+      </if>
+      <if test="branchcode != null">
+        #{branchcode,jdbcType=VARCHAR},
+      </if>
+      <if test="officetelno != null">
+        #{officetelno,jdbcType=VARCHAR},
+      </if>
+      <if test="accountabbr != null">
+        #{accountabbr,jdbcType=VARCHAR},
+      </if>
+      <if test="confidentialdocumentcode != null">
+        #{confidentialdocumentcode,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=OTHER},
+      </if>
+      <if test="shsecuritiesaccountid != null">
+        #{shsecuritiesaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="szsecuritiesaccountid != null">
+        #{szsecuritiesaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="taaccountid != null">
+        #{taaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="telno != null">
+        #{telno,jdbcType=VARCHAR},
+      </if>
+      <if test="tradingmethod != null">
+        #{tradingmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="minorflag != null">
+        #{minorflag,jdbcType=OTHER},
+      </if>
+      <if test="delivertype != null">
+        #{delivertype,jdbcType=OTHER},
+      </if>
+      <if test="transactoridtype != null">
+        #{transactoridtype,jdbcType=OTHER},
+      </if>
+      <if test="accountcardid != null">
+        #{accountcardid,jdbcType=VARCHAR},
+      </if>
+      <if test="deliverway != null">
+        #{deliverway,jdbcType=CHAR},
+      </if>
+      <if test="nationlity != null">
+        #{nationlity,jdbcType=CHAR},
+      </if>
+      <if test="netno != null">
+        #{netno,jdbcType=CHAR},
+      </if>
+      <if test="broker != null">
+        #{broker,jdbcType=VARCHAR},
+      </if>
+      <if test="corpname != null">
+        #{corpname,jdbcType=VARCHAR},
+      </if>
+      <if test="certvaliddate != null">
+        #{certvaliddate,jdbcType=CHAR},
+      </if>
+      <if test="insttrancertvaliddate != null">
+        #{insttrancertvaliddate,jdbcType=CHAR},
+      </if>
+      <if test="instreprcertvaliddate != null">
+        #{instreprcertvaliddate,jdbcType=CHAR},
+      </if>
+      <if test="clientriskrate != null">
+        #{clientriskrate,jdbcType=CHAR},
+      </if>
+      <if test="instreprmanagerange != null">
+        #{instreprmanagerange,jdbcType=VARCHAR},
+      </if>
+      <if test="controlholder != null">
+        #{controlholder,jdbcType=VARCHAR},
+      </if>
+      <if test="actualcontroller != null">
+        #{actualcontroller,jdbcType=VARCHAR},
+      </if>
+      <if test="marriagestatus != null">
+        #{marriagestatus,jdbcType=CHAR},
+      </if>
+      <if test="familynum != null">
+        #{familynum,jdbcType=INTEGER},
+      </if>
+      <if test="penates != null">
+        #{penates,jdbcType=DECIMAL},
+      </if>
+      <if test="mediahobby != null">
+        #{mediahobby,jdbcType=CHAR},
+      </if>
+      <if test="englishfirstname != null">
+        #{englishfirstname,jdbcType=VARCHAR},
+      </if>
+      <if test="englishfamliyname != null">
+        #{englishfamliyname,jdbcType=VARCHAR},
+      </if>
+      <if test="vocation != null">
+        #{vocation,jdbcType=CHAR},
+      </if>
+      <if test="corpoproperty != null">
+        #{corpoproperty,jdbcType=VARCHAR},
+      </if>
+      <if test="staffnum != null">
+        #{staffnum,jdbcType=DECIMAL},
+      </if>
+      <if test="hobbytype != null">
+        #{hobbytype,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=CHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=CHAR},
+      </if>
+      <if test="county != null">
+        #{county,jdbcType=CHAR},
+      </if>
+      <if test="commendperson != null">
+        #{commendperson,jdbcType=VARCHAR},
+      </if>
+      <if test="commendpersontype != null">
+        #{commendpersontype,jdbcType=OTHER},
+      </if>
+      <if test="acctnameofinvestorinclearingagency != null">
+        #{acctnameofinvestorinclearingagency,jdbcType=VARCHAR},
+      </if>
+      <if test="acctnoofinvestorinclearingagency != null">
+        #{acctnoofinvestorinclearingagency,jdbcType=VARCHAR},
+      </if>
+      <if test="clearingagency != null">
+        #{clearingagency,jdbcType=VARCHAR},
+      </if>
+      <if test="acceptmethod != null">
+        #{acceptmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="frozencause != null">
+        #{frozencause,jdbcType=OTHER},
+      </if>
+      <if test="freezingdeadline != null">
+        #{freezingdeadline,jdbcType=CHAR},
+      </if>
+      <if test="originalserialno != null">
+        #{originalserialno,jdbcType=VARCHAR},
+      </if>
+      <if test="originalappsheetno != null">
+        #{originalappsheetno,jdbcType=VARCHAR},
+      </if>
+      <if test="specification != null">
+        #{specification,jdbcType=VARCHAR},
+      </if>
+      <if test="recordstatus != null">
+        #{recordstatus,jdbcType=OTHER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.psbc.pojo.AccountApplication">
+    update account_application
+    <set>
+      <if test="address != null">
+        Address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="instrepridcode != null">
+        InstReprIDCode = #{instrepridcode,jdbcType=VARCHAR},
+      </if>
+      <if test="instrepridtype != null">
+        InstReprIDType = #{instrepridtype,jdbcType=OTHER},
+      </if>
+      <if test="instreprname != null">
+        InstReprName = #{instreprname,jdbcType=VARCHAR},
+      </if>
+      <if test="certificatetype != null">
+        CertificateType = #{certificatetype,jdbcType=OTHER},
+      </if>
+      <if test="certificateno != null">
+        CertificateNo = #{certificateno,jdbcType=VARCHAR},
+      </if>
+      <if test="investorname != null">
+        InvestorName = #{investorname,jdbcType=VARCHAR},
+      </if>
+      <if test="transactiondate != null">
+        TransactionDate = #{transactiondate,jdbcType=CHAR},
+      </if>
+      <if test="transactiontime != null">
+        TransactionTime = #{transactiontime,jdbcType=CHAR},
+      </if>
+      <if test="individualorinstitution != null">
+        IndividualOrInstitution = #{individualorinstitution,jdbcType=OTHER},
+      </if>
+      <if test="institutiontype != null">
+        InstitutionType = #{institutiontype,jdbcType=OTHER},
+      </if>
+      <if test="postcode != null">
+        PostCode = #{postcode,jdbcType=CHAR},
+      </if>
+      <if test="transactorcertno != null">
+        TransactorCertNo = #{transactorcertno,jdbcType=VARCHAR},
+      </if>
+      <if test="transactorcerttype != null">
+        TransactorCertType = #{transactorcerttype,jdbcType=OTHER},
+      </if>
+      <if test="transactorname != null">
+        TransactorName = #{transactorname,jdbcType=VARCHAR},
+      </if>
+      <if test="transactionaccountid != null">
+        TransactionAccountID = #{transactionaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="businesscode != null">
+        BusinessCode = #{businesscode,jdbcType=CHAR},
+      </if>
+      <if test="targettransactionaccountid != null">
+        TargetTransactionAccountID = #{targettransactionaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="acctnooffminclearingagency != null">
+        AcctNoOfFMInClearingAgency = #{acctnooffminclearingagency,jdbcType=VARCHAR},
+      </if>
+      <if test="acctnameoffminclearingagency != null">
+        AcctNameOfFMInClearingAgency = #{acctnameoffminclearingagency,jdbcType=VARCHAR},
+      </if>
+      <if test="clearingagencycode != null">
+        ClearingAgencyCode = #{clearingagencycode,jdbcType=VARCHAR},
+      </if>
+      <if test="investorsbirthday != null">
+        InvestorsBirthday = #{investorsbirthday,jdbcType=CHAR},
+      </if>
+      <if test="depositacct != null">
+        DepositAcct = #{depositacct,jdbcType=VARCHAR},
+      </if>
+      <if test="regioncode != null">
+        RegionCode = #{regioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="educationlevel != null">
+        EducationLevel = #{educationlevel,jdbcType=OTHER},
+      </if>
+      <if test="emailaddress != null">
+        EmailAddress = #{emailaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="faxno != null">
+        FaxNo = #{faxno,jdbcType=VARCHAR},
+      </if>
+      <if test="vocationcode != null">
+        VocationCode = #{vocationcode,jdbcType=CHAR},
+      </if>
+      <if test="hometelno != null">
+        HomeTelNo = #{hometelno,jdbcType=VARCHAR},
+      </if>
+      <if test="annualincome != null">
+        AnnualIncome = #{annualincome,jdbcType=INTEGER},
+      </if>
+      <if test="mobiletelno != null">
+        MobileTelNo = #{mobiletelno,jdbcType=VARCHAR},
+      </if>
+      <if test="multiacctflag != null">
+        MultiAcctFlag = #{multiacctflag,jdbcType=OTHER},
+      </if>
+      <if test="branchcode != null">
+        BranchCode = #{branchcode,jdbcType=VARCHAR},
+      </if>
+      <if test="officetelno != null">
+        OfficeTelNo = #{officetelno,jdbcType=VARCHAR},
+      </if>
+      <if test="accountabbr != null">
+        AccountAbbr = #{accountabbr,jdbcType=VARCHAR},
+      </if>
+      <if test="confidentialdocumentcode != null">
+        ConfidentialDocumentCode = #{confidentialdocumentcode,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        Sex = #{sex,jdbcType=OTHER},
+      </if>
+      <if test="shsecuritiesaccountid != null">
+        SHSecuritiesAccountID = #{shsecuritiesaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="szsecuritiesaccountid != null">
+        SZSecuritiesAccountID = #{szsecuritiesaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="taaccountid != null">
+        TAAccountID = #{taaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="telno != null">
+        TelNo = #{telno,jdbcType=VARCHAR},
+      </if>
+      <if test="tradingmethod != null">
+        TradingMethod = #{tradingmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="minorflag != null">
+        MinorFlag = #{minorflag,jdbcType=OTHER},
+      </if>
+      <if test="delivertype != null">
+        DeliverType = #{delivertype,jdbcType=OTHER},
+      </if>
+      <if test="transactoridtype != null">
+        TransactorIDType = #{transactoridtype,jdbcType=OTHER},
+      </if>
+      <if test="accountcardid != null">
+        AccountCardID = #{accountcardid,jdbcType=VARCHAR},
+      </if>
+      <if test="deliverway != null">
+        DeliverWay = #{deliverway,jdbcType=CHAR},
+      </if>
+      <if test="nationlity != null">
+        Nationlity = #{nationlity,jdbcType=CHAR},
+      </if>
+      <if test="netno != null">
+        NetNo = #{netno,jdbcType=CHAR},
+      </if>
+      <if test="broker != null">
+        Broker = #{broker,jdbcType=VARCHAR},
+      </if>
+      <if test="corpname != null">
+        CorpName = #{corpname,jdbcType=VARCHAR},
+      </if>
+      <if test="certvaliddate != null">
+        CertValidDate = #{certvaliddate,jdbcType=CHAR},
+      </if>
+      <if test="insttrancertvaliddate != null">
+        InstTranCertValidDate = #{insttrancertvaliddate,jdbcType=CHAR},
+      </if>
+      <if test="instreprcertvaliddate != null">
+        InstReprCertValidDate = #{instreprcertvaliddate,jdbcType=CHAR},
+      </if>
+      <if test="clientriskrate != null">
+        ClientRiskRate = #{clientriskrate,jdbcType=CHAR},
+      </if>
+      <if test="instreprmanagerange != null">
+        InstReprManageRange = #{instreprmanagerange,jdbcType=VARCHAR},
+      </if>
+      <if test="controlholder != null">
+        ControlHolder = #{controlholder,jdbcType=VARCHAR},
+      </if>
+      <if test="actualcontroller != null">
+        ActualController = #{actualcontroller,jdbcType=VARCHAR},
+      </if>
+      <if test="marriagestatus != null">
+        MarriageStatus = #{marriagestatus,jdbcType=CHAR},
+      </if>
+      <if test="familynum != null">
+        FamilyNum = #{familynum,jdbcType=INTEGER},
+      </if>
+      <if test="penates != null">
+        Penates = #{penates,jdbcType=DECIMAL},
+      </if>
+      <if test="mediahobby != null">
+        MediaHobby = #{mediahobby,jdbcType=CHAR},
+      </if>
+      <if test="englishfirstname != null">
+        EnglishFirstName = #{englishfirstname,jdbcType=VARCHAR},
+      </if>
+      <if test="englishfamliyname != null">
+        EnglishFamliyName = #{englishfamliyname,jdbcType=VARCHAR},
+      </if>
+      <if test="vocation != null">
+        Vocation = #{vocation,jdbcType=CHAR},
+      </if>
+      <if test="corpoproperty != null">
+        CorpoProperty = #{corpoproperty,jdbcType=VARCHAR},
+      </if>
+      <if test="staffnum != null">
+        StaffNum = #{staffnum,jdbcType=DECIMAL},
+      </if>
+      <if test="hobbytype != null">
+        Hobbytype = #{hobbytype,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        Province = #{province,jdbcType=CHAR},
+      </if>
+      <if test="city != null">
+        City = #{city,jdbcType=CHAR},
+      </if>
+      <if test="county != null">
+        County = #{county,jdbcType=CHAR},
+      </if>
+      <if test="commendperson != null">
+        CommendPerson = #{commendperson,jdbcType=VARCHAR},
+      </if>
+      <if test="commendpersontype != null">
+        CommendPersonType = #{commendpersontype,jdbcType=OTHER},
+      </if>
+      <if test="acctnameofinvestorinclearingagency != null">
+        AcctNameOfInvestorInClearingAgency = #{acctnameofinvestorinclearingagency,jdbcType=VARCHAR},
+      </if>
+      <if test="acctnoofinvestorinclearingagency != null">
+        AcctNoOfInvestorInClearingAgency = #{acctnoofinvestorinclearingagency,jdbcType=VARCHAR},
+      </if>
+      <if test="clearingagency != null">
+        ClearingAgency = #{clearingagency,jdbcType=VARCHAR},
+      </if>
+      <if test="acceptmethod != null">
+        AcceptMethod = #{acceptmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="frozencause != null">
+        FrozenCause = #{frozencause,jdbcType=OTHER},
+      </if>
+      <if test="freezingdeadline != null">
+        FreezingDeadline = #{freezingdeadline,jdbcType=CHAR},
+      </if>
+      <if test="originalserialno != null">
+        OriginalSerialNo = #{originalserialno,jdbcType=VARCHAR},
+      </if>
+      <if test="originalappsheetno != null">
+        OriginalAppSheetNo = #{originalappsheetno,jdbcType=VARCHAR},
+      </if>
+      <if test="specification != null">
+        Specification = #{specification,jdbcType=VARCHAR},
+      </if>
+      <if test="recordstatus != null">
+        recordStatus = #{recordstatus,jdbcType=OTHER},
+      </if>
+    </set>
+    where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
+      and TACode = #{tacode,jdbcType=VARCHAR}
+      and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
+      and ReferenceNo = #{referenceno,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.AccountApplication">
+    update account_application
+    set Address = #{address,jdbcType=VARCHAR},
+      InstReprIDCode = #{instrepridcode,jdbcType=VARCHAR},
+      InstReprIDType = #{instrepridtype,jdbcType=OTHER},
+      InstReprName = #{instreprname,jdbcType=VARCHAR},
+      CertificateType = #{certificatetype,jdbcType=OTHER},
+      CertificateNo = #{certificateno,jdbcType=VARCHAR},
+      InvestorName = #{investorname,jdbcType=VARCHAR},
+      TransactionDate = #{transactiondate,jdbcType=CHAR},
+      TransactionTime = #{transactiontime,jdbcType=CHAR},
+      IndividualOrInstitution = #{individualorinstitution,jdbcType=OTHER},
+      InstitutionType = #{institutiontype,jdbcType=OTHER},
+      PostCode = #{postcode,jdbcType=CHAR},
+      TransactorCertNo = #{transactorcertno,jdbcType=VARCHAR},
+      TransactorCertType = #{transactorcerttype,jdbcType=OTHER},
+      TransactorName = #{transactorname,jdbcType=VARCHAR},
+      TransactionAccountID = #{transactionaccountid,jdbcType=VARCHAR},
+      BusinessCode = #{businesscode,jdbcType=CHAR},
+      TargetTransactionAccountID = #{targettransactionaccountid,jdbcType=VARCHAR},
+      AcctNoOfFMInClearingAgency = #{acctnooffminclearingagency,jdbcType=VARCHAR},
+      AcctNameOfFMInClearingAgency = #{acctnameoffminclearingagency,jdbcType=VARCHAR},
+      ClearingAgencyCode = #{clearingagencycode,jdbcType=VARCHAR},
+      InvestorsBirthday = #{investorsbirthday,jdbcType=CHAR},
+      DepositAcct = #{depositacct,jdbcType=VARCHAR},
+      RegionCode = #{regioncode,jdbcType=VARCHAR},
+      EducationLevel = #{educationlevel,jdbcType=OTHER},
+      EmailAddress = #{emailaddress,jdbcType=VARCHAR},
+      FaxNo = #{faxno,jdbcType=VARCHAR},
+      VocationCode = #{vocationcode,jdbcType=CHAR},
+      HomeTelNo = #{hometelno,jdbcType=VARCHAR},
+      AnnualIncome = #{annualincome,jdbcType=INTEGER},
+      MobileTelNo = #{mobiletelno,jdbcType=VARCHAR},
+      MultiAcctFlag = #{multiacctflag,jdbcType=OTHER},
+      BranchCode = #{branchcode,jdbcType=VARCHAR},
+      OfficeTelNo = #{officetelno,jdbcType=VARCHAR},
+      AccountAbbr = #{accountabbr,jdbcType=VARCHAR},
+      ConfidentialDocumentCode = #{confidentialdocumentcode,jdbcType=VARCHAR},
+      Sex = #{sex,jdbcType=OTHER},
+      SHSecuritiesAccountID = #{shsecuritiesaccountid,jdbcType=VARCHAR},
+      SZSecuritiesAccountID = #{szsecuritiesaccountid,jdbcType=VARCHAR},
+      TAAccountID = #{taaccountid,jdbcType=VARCHAR},
+      TelNo = #{telno,jdbcType=VARCHAR},
+      TradingMethod = #{tradingmethod,jdbcType=VARCHAR},
+      MinorFlag = #{minorflag,jdbcType=OTHER},
+      DeliverType = #{delivertype,jdbcType=OTHER},
+      TransactorIDType = #{transactoridtype,jdbcType=OTHER},
+      AccountCardID = #{accountcardid,jdbcType=VARCHAR},
+      DeliverWay = #{deliverway,jdbcType=CHAR},
+      Nationlity = #{nationlity,jdbcType=CHAR},
+      NetNo = #{netno,jdbcType=CHAR},
+      Broker = #{broker,jdbcType=VARCHAR},
+      CorpName = #{corpname,jdbcType=VARCHAR},
+      CertValidDate = #{certvaliddate,jdbcType=CHAR},
+      InstTranCertValidDate = #{insttrancertvaliddate,jdbcType=CHAR},
+      InstReprCertValidDate = #{instreprcertvaliddate,jdbcType=CHAR},
+      ClientRiskRate = #{clientriskrate,jdbcType=CHAR},
+      InstReprManageRange = #{instreprmanagerange,jdbcType=VARCHAR},
+      ControlHolder = #{controlholder,jdbcType=VARCHAR},
+      ActualController = #{actualcontroller,jdbcType=VARCHAR},
+      MarriageStatus = #{marriagestatus,jdbcType=CHAR},
+      FamilyNum = #{familynum,jdbcType=INTEGER},
+      Penates = #{penates,jdbcType=DECIMAL},
+      MediaHobby = #{mediahobby,jdbcType=CHAR},
+      EnglishFirstName = #{englishfirstname,jdbcType=VARCHAR},
+      EnglishFamliyName = #{englishfamliyname,jdbcType=VARCHAR},
+      Vocation = #{vocation,jdbcType=CHAR},
+      CorpoProperty = #{corpoproperty,jdbcType=VARCHAR},
+      StaffNum = #{staffnum,jdbcType=DECIMAL},
+      Hobbytype = #{hobbytype,jdbcType=VARCHAR},
+      Province = #{province,jdbcType=CHAR},
+      City = #{city,jdbcType=CHAR},
+      County = #{county,jdbcType=CHAR},
+      CommendPerson = #{commendperson,jdbcType=VARCHAR},
+      CommendPersonType = #{commendpersontype,jdbcType=OTHER},
+      AcctNameOfInvestorInClearingAgency = #{acctnameofinvestorinclearingagency,jdbcType=VARCHAR},
+      AcctNoOfInvestorInClearingAgency = #{acctnoofinvestorinclearingagency,jdbcType=VARCHAR},
+      ClearingAgency = #{clearingagency,jdbcType=VARCHAR},
+      AcceptMethod = #{acceptmethod,jdbcType=VARCHAR},
+      FrozenCause = #{frozencause,jdbcType=OTHER},
+      FreezingDeadline = #{freezingdeadline,jdbcType=CHAR},
+      OriginalSerialNo = #{originalserialno,jdbcType=VARCHAR},
+      OriginalAppSheetNo = #{originalappsheetno,jdbcType=VARCHAR},
+      Specification = #{specification,jdbcType=VARCHAR},
+      recordStatus = #{recordstatus,jdbcType=OTHER}
+    where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
+      and TACode = #{tacode,jdbcType=VARCHAR}
+      and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
+      and ReferenceNo = #{referenceno,jdbcType=INTEGER}
+  </update>
 </mapper>
