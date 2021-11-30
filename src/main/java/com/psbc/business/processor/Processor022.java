@@ -175,6 +175,8 @@ public class Processor022 extends BiDirectionProcessor{
     @Override
     void validateApply(ApplicationModel apply) throws ApplyException {
 
+        RepositoryFactory repositoryFactory = SpringContextUtil.getBean(RepositoryFactory.class);
+        repositoryFactory.getTransactionApplicationDao().selectAll();
     }
 
     @Override
