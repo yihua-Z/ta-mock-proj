@@ -9,6 +9,7 @@
     <file url="file://$PROJECT_DIR$/src/main/resources/data/OFD_037_999_20211101_01.TXT" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/resources/data/OFD_037_999_20211105_02.TXT" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/resources/data/OFD_037_999_20211124_02.TXT" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/ta_schema.sql" charset="GBK" />
     <file url="PROJECT" charset="GBK" />
   </component>
 </project>

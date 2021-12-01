@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.lang.Exception;
 import java.math.BigDecimal;
 
+import static com.psbc.service.ObjectProcessor.copyFields;
 import static com.psbc.utils.DateAndTimeUtil.*;
 
 @Data
@@ -111,22 +112,29 @@ public class SucceedRecordOperator {
 
 
         AccountInfo accountInfo = new AccountInfo();
-        accountInfo = (AccountInfo) this.operator.getTargetObject(Application, accountInfo.newInstanceWithoutArgs());
+//        accountInfo = (AccountInfo) this.operator.getTargetObject(Application, accountInfo.newInstanceWithoutArgs());
+        copyFields(Application,accountInfo);
 
-
-        accountInfo.setTaaccountid(this.accountConfirmation.getTaaccountid());
-        accountInfo.setAccountinfoid(1);
+        accountInfo.setAccountinfoid(Integer.valueOf(this.accountConfirmation.getTaaccountid()));
+        accountInfo.setTaacountid("EW");
         accountInfo.setTransactionaccountid("1");
 
 
         AcctShare acctShare = new AcctShare();
+//        copyFields(Application,acctShare);
+//        copyFields(accountInfo,acctShare);
         acctShare = (AcctShare) this.operator.getTargetObject(Application, acctShare.newInstanceWithoutArgs());
         acctShare = (AcctShare) this.operator.getTargetObject(accountInfo, acctShare);
+
+        acctShare.setTaaccountid(this.accountConfirmation.getTaaccountid());
+        acctShare.setTacode("EW");
+        acctShare.setFundcode("EW0002");
+        acctShare.setDistributorcode("PSB");
+        acctShare.setTotalamountofdistributorinta(BigDecimal.valueOf(0));;
         acctShare.setTotalvolofdistributorinta(BigDecimal.valueOf(0));
-
-        acctShare.setDistributorcode("0");
-        acctShare.setTransactioncfmdate("");
-
+        acctShare.setUpdatedate(getNowDate());
+        acctShare.setTotalfrozenvol(BigDecimal.valueOf(0));
+        acctShare.setTotalfrozenamount(BigDecimal.valueOf(0));
 
         try {
             //        写入 "account_info " 表
@@ -164,7 +172,7 @@ public class SucceedRecordOperator {
         acctShare.setTotalvolofdistributorinta(BigDecimal.valueOf(0));
 
         acctShare.setDistributorcode("0");
-        acctShare.setTransactioncfmdate("");
+        acctShare.setUpdatedate(getNowDate());
 
 
         try {

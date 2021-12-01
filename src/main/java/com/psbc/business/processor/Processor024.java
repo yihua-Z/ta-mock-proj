@@ -20,8 +20,8 @@ import static com.psbc.utils.DateAndTimeUtil.getFullNowDateTime;
  */
 public class Processor024 extends BiDirectionProcessor {
 
-//  赎回必输字段校验，
-//  金额、日期等等
+    //  赎回必输字段校验，
+    //  金额、日期等等
     @Override
     void validateApply(ApplicationModel apply) throws ApplyException {
 
@@ -59,7 +59,7 @@ public class Processor024 extends BiDirectionProcessor {
 //        a = -1,表示 applyAmount 小于 shareAmount；
 //        a =  0,表示 applyAmount 等于 shareAmount；
 //        a =  1,表示 applyAmount 大于 shareAmount；
-        if (applicationvol.compareTo(shareVol) < 0) {
+        if (shareVol.compareTo(applicationvol) < 0) {
 //            超过当前额度，赎回异常
             throw new ApplyException();
         }
@@ -71,16 +71,35 @@ public class Processor024 extends BiDirectionProcessor {
 
     @Override
     void validateConfirmExpectation(ExpectationModel expect) throws ConfirmExpectationException {
+        RepositoryFactory factory = SpringContextUtil.getBean(RepositoryFactory.class);
 
+        TransactionConfirmation transactionConfirmation = (TransactionConfirmation) expect;
+
+        String transactiondate = transactionConfirmation.getTransactiondate();
+        String transactiontime = transactionConfirmation.getTransactiontime();
+
+        if (Double.valueOf(transactiondate + transactiontime) > Double.valueOf(getFullNowDateTime())) {
+            throw new ConfirmExpectationException();
+        }
+
+//        读取期望配置表（获取失败信息）
+//        获取交易日期配置表，获取延迟确认天数
+//        获取工作日日历表
+//        读取产品表（获取个人额度，产品额度）
+//        读取账户信息表（获取个人已购额度）
     }
 
     @Override
     void updateRepository(ApplicationModel apply, List<ConfirmationModel> confirm, ApplyException applyException) {
+        RepositoryFactory factory = SpringContextUtil.getBean(RepositoryFactory.class);
 
     }
 
     @Override
     void generateConfirm(ApplicationModel apply, ConfirmationModel confirm, ApplyException applyException) {
-
+        RepositoryFactory factory = SpringContextUtil.getBean(RepositoryFactory.class);
+//        生成交易确认成功记录（124）
+//        更新或新增账户持仓表
+//        更新产品已售额度等
     }
 }

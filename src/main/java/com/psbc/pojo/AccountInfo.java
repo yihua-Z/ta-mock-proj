@@ -16,11 +16,11 @@ public class AccountInfo implements DatabaseModel {
 
     private String transactionaccountid;
 
-    private String taaccountid;
+    private String taacountid;
 
 
     @Override
     public DatabaseModel newInstanceWithoutArgs() {
-        return new AccountInfo();
+        return new AcctShare();
     }
 }

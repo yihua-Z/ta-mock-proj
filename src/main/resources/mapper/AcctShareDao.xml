@@ -38,7 +38,7 @@
       TotalFrozenVol, TotalFrozenAmount, updateDate
       )
     values (#{tacode,jdbcType=VARCHAR},#{taaccountid,jdbcType=VARCHAR}, #{distributorcode,jdbcType=VARCHAR}, #{fundcode,jdbcType=VARCHAR},
-      #{totalvolofdistributorinta,jdbcType=DECIMAL}, #{totalamountofdistributorinta,jdbcType=DECIMAL}, 
+      #{totalvolofdistributorinta,jdbcType=DECIMAL}, #{totalamountofdistributorinta,jdbcType=DECIMAL},
       #{totalfrozenvol,jdbcType=DECIMAL}, #{totalfrozenamount,jdbcType=DECIMAL}, #{updatedate,jdbcType=VARCHAR}
       )
   </insert>

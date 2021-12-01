@@ -29,5 +29,4 @@ public class AcctShareKey implements Serializable {
      */
     private String tacode;
 
-    private static final long serialVersionUID = 1L;
 }

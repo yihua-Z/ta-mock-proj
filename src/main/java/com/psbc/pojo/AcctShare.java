@@ -11,6 +11,25 @@ import lombok.Data;
 @Data
 public class AcctShare extends AcctShareKey implements DatabaseModel {
     /**
+     * 投资人理财账号
+     */
+    private String taaccountid;
+
+    /**
+     * 销售人代码
+     */
+    private String distributorcode;
+
+    /**
+     * 理财产品代码
+     */
+    private String fundcode;
+
+    /**
+     * TA代码
+     */
+    private String tacode;
+    /**
      * 理财产品总份数（含冻结）
      */
     private BigDecimal totalvolofdistributorinta;
@@ -35,7 +54,6 @@ public class AcctShare extends AcctShareKey implements DatabaseModel {
      */
     private String updatedate;
 
-    private static final long serialVersionUID = 1L;
 
     @Override
     public DatabaseModel newInstanceWithoutArgs() {

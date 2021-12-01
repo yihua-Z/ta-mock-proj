@@ -156,7 +156,7 @@ CREATE TABLE `account_info`
 (
     `accountInfoID`        int         NOT NULL AUTO_INCREMENT COMMENT '账户信息ID',
     `TransactionAccountID` VARCHAR(17) NOT NULL,
-    `TAAccountID`           VARCHAR(12) NOT NULL,
+    `TAAcountID`           VARCHAR(12) NOT NULL,
     PRIMARY KEY (`accountInfoID`) USING BTREE
 ) ENGINE = InnoDB
   CHARACTER SET = utf8
@@ -197,13 +197,16 @@ CREATE TABLE `acct_reconciliation`
 DROP TABLE IF EXISTS `acct_share`;
 CREATE TABLE `acct_share`
 (
-    `TAAccountID`               varchar(12)    NOT NULL COMMENT '投资人理财账号',
-    `DistributorCode`           varchar(9)     NOT NULL COMMENT '销售人代码',
-    `TACode`                    varchar(9)     NOT NULL COMMENT 'TA代码',
-    `TotalVolOfDistributorInTA` decimal(16, 2) NOT NULL COMMENT '理财产品总份数（含冻结）',
-    `TotalFrozenVol`            decimal(16, 2) NULL COMMENT '理财产品冻结总份数',
-    `TransactionCfmDate`        varchar(8)     NOT NULL COMMENT '交易确认日期',
-    PRIMARY KEY (`TAAccountID`) USING BTREE
+    `TACode`                       varchar(9)     NOT NULL COMMENT 'TA代码',
+    `FundCode`                     varchar(20)    NOT NULL COMMENT '理财产品代码',
+    `TAAccountID`                  varchar(12)    NOT NULL COMMENT '投资人理财账号',
+    `DistributorCode`              varchar(9)     NOT NULL COMMENT '销售人代码',
+    `TotalVolOfDistributorInTA`    decimal(16, 2) NOT NULL COMMENT '理财产品总份数（含冻结）',
+    `TotalAmountOfDistributorInTA` decimal(16, 2) NOT NULL COMMENT '理财产品总金额（含冻结）',
+    `TotalFrozenVol`               decimal(16, 2) NULL COMMENT '理财产品冻结总份数',
+    `TotalFrozenAmount`            decimal(16, 2) NULL COMMENT '理财产品冻结总金额',
+    `updateDate`                   varchar(8)     NOT NULL COMMENT '更新日期',
+    PRIMARY KEY (`TAAccountID`, `DistributorCode`, `FundCode`, `TACode`) USING BTREE
 ) ENGINE = InnoDB
   CHARACTER SET = utf8
   ROW_FORMAT = Dynamic;
@@ -571,24 +574,6 @@ CREATE TABLE `ta_business_config`
   ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Table structure for timed_application
--- ----------------------------
---
-DROP TABLE IF EXISTS `timed_application`;
---
-CREATE TABLE `timed_application`
-(
-    `AppSheetSerialNo` int  NOT NULL COMMENT '定时申请序列号',
-    `TACode` varchar(9)   NOT NULL COMMENT 'TA代码',
-    `DistributorCode` varchar(9)   NOT NULL COMMENT '销售人代码',
-    `TransactionDate` char(8)   NOT NULL COMMENT '处理日期',
-    `Completness` enum('0','1')   NOT NULL COMMENT '是否完成标志（每日由脚本完成更新）',
-    PRIMARY KEY (`AppSheetSerialNo`) USING BTREE
-) ENGINE = InnoDB
-  CHARACTER SET = utf8
-  ROW_FORMAT = Dynamic;
-
--- ----------------------------
 -- Table structure for timed_task（定时任务表）
 -- ----------------------------
 DROP TABLE IF EXISTS `timed_task`;
@@ -617,7 +602,7 @@ CREATE TABLE `transaction_application`
     `TransactionDate`            char(8)                    NULL COMMENT '交易发生日期(YYYYMMDD)',
     `TransactionTime`            char(6)                    NULL COMMENT '交易发生时间(HHMMSS)',
     `TransactionAccountID`       varchar(17)                NULL COMMENT '投资人在销售机构内开设的用于交易的账号',
-    `DistributorCode`            varchar(9)                 NULL COMMENT '销售人代码',
+    `DistributorCode`            varchar(9)                 NOT NULL COMMENT '销售人代码',
     `ApplicationVol`             decimal(16, 2)             NULL COMMENT '申请理财产品份数',
     `ApplicationAmount`          decimal(16, 2)             NULL COMMENT '申请金额',
     `BusinessCode`               char(3)                    NULL COMMENT '业务代码',
@@ -778,9 +763,12 @@ CREATE TABLE `transaction_expectation`
     `TransactionCfmDate`                varchar(8)     NULL COMMENT '交易确认日期',
     `ConfirmedVol`                      decimal(16, 2) NULL COMMENT '理财账户交易确认份数',
     `ConfirmedAmount`                   decimal(16, 2) NULL COMMENT '每笔交易确认金额',
+    `TransactionDate`                   varchar(8)     NOT NULL COMMENT '交易发生日期',
+    `TransactionTime`                   varchar(6)     NOT NULL COMMENT '交易发生时间',
     `ReturnCode`                        varchar(4)     NULL COMMENT '交易处理返回代码',
     `BusinessFinishFlag`                varchar(1)     NULL COMMENT '业务过程完全结束标识',
     `RegionCode`                        varchar(4)     NULL COMMENT '交易所在地区编号',
+    `DownLoaddate`                      varchar(8)     NULL COMMENT '交易数据下传日期',
     `AgencyFee`                         decimal(10, 2) NULL COMMENT '代理费',
     `NAV`                               decimal(9, 6)  NULL COMMENT '单位净值',
     `OtherFee1`                         decimal(10, 2) NULL COMMENT '其他费用1',
@@ -813,6 +801,7 @@ CREATE TABLE `transaction_expectation`
     `AchievementPay`                    decimal(16, 2) NULL COMMENT '业绩报酬',
     `AchievementCompen`                 decimal(16, 2) NULL COMMENT '业绩补偿',
     `SharesAdjustmentFlag`              varchar(1)     NULL COMMENT '份额强制调整标志',
+    `GeneralTASerialNO`                 varchar(20)    NULL COMMENT '总TA确认流水号',
     `UndistributeMonetaryIncome`        decimal(16, 2) NULL COMMENT '货币式理财未付收益金额',
     `UndistributeMonetaryIncomeFlag`    varchar(1)     NULL COMMENT '货币式理财未付收益金额正负',
     `BreachFee`                         decimal(16, 2) NULL COMMENT '违约金',
@@ -852,99 +841,107 @@ CREATE TABLE `ta_property`
   ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Table structure for current_transaction（当前交易表）[待补充]
+-- Table structure for holiday（假期表）
+-- ----------------------------
+DROP TABLE IF EXISTS `holiday`;
+CREATE TABLE `holiday`
+(
+    `Day`         char(8)        NOT NULL COMMENT '具体日期',
+    `IsHoliday`   boolean        NOT NULL COMMENT '这个日期是否为假期',
+    `NextHoliday` char(8)        NULL COMMENT '下一假期日',
+    `TACode`      varchar(9)     NOT NULL COMMENT 'TA代码',
+    `DayType`     enum ('0','1') NOT NULL COMMENT '日期类型（0-银行工作日，1-债券交易日）',
+    PRIMARY KEY (`TACode`) USING BTREE
+) ENGINE = InnoDB
+  CHARACTER SET = utf8;
+
+-- ----------------------------
+-- Table structure for current_transaction（当前交易表）
 -- ----------------------------
 DROP TABLE IF EXISTS `current_transaction`;
 CREATE TABLE `current_transaction`
 (
-    `AppSheetSerialNo`                   varchar(24)                                                                                       NOT NULL COMMENT '申请单编号',
-    `Address`                            varchar(120)                                                                                      NULL COMMENT '通讯地址',
-    `InstReprIDCode`                     varchar(30)                                                                                       NULL COMMENT '法人代表身份证件代码',
-    `InstReprIDType`                     enum ('0','1','2','3','4','5','6','7','8','9','A','B','E','G','H','K','L')                        NULL COMMENT '法人代表证件类型',
-    `InstReprName`                       varchar(20)                                                                                       NULL COMMENT '法人代表姓名',
-    `CertificateType`                    enum ('0','1','2','3','4')                                                                        NULL COMMENT '个人证件类型及机构证件型',
-    `CertificateNo`                      varchar(30)                                                                                       NULL COMMENT '投资人证件号码',
-    `InvestorName`                       varchar(120)                                                                                      NULL COMMENT '投资人户名',
-    `TransactionDate`                    char(8)                                                                                           NOT NULL COMMENT '交易发生日期',
-    `TransactionTime`                    char(6)                                                                                           NOT NULL COMMENT '交易发生时间',
-    `IndividualOrInstitution`            enum ('0','1','2')                                                                                NULL COMMENT '个人/机构标志',
-    `InstitutionType`                    enum ('0','1','3','4','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','P','Q','') NULL COMMENT '机构类型',
-    `PostCode`                           char(6)                                                                                           NULL COMMENT '投资人邮政编码',
-    `TransactorCertNo`                   varchar(30)                                                                                       NULL COMMENT '经办人证件号码',
-    `TransactorCertType`                 enum ('0','1','2','3','4','5','6','7','8','9','A','B')                                            NULL COMMENT '经办人证件类型',
-    `TransactorName`                     varchar(20)                                                                                       NULL COMMENT '经办人姓名',
-    `TransactionAccountID`               varchar(17)                                                                                       NOT NULL COMMENT '投资人理财交易帐号',
-    `DistributorCode`                    varchar(9)                                                                                        NOT NULL COMMENT '销售人代码',
-    `BusinessCode`                       char(3)                                                                                           NOT NULL COMMENT '业务代码',
-    `TargetTransactionAccountID`         varchar(17)                                                                                       NULL COMMENT '对方销售人处投资人基金交易帐号',
-    `AcctNoOfFMInClearingAgency`         varchar(28)                                                                                       NULL COMMENT '投资人收款银行账户账号',
-    `AcctNameOfFMInClearingAgency`       varchar(60)                                                                                       NULL COMMENT '投资人收款银行账户户名',
-    `ClearingAgencyCode`                 varchar(9)                                                                                        NULL COMMENT '理财资金清算机构代码',
-    `InvestorsBirthday`                  char(8)                                                                                           NULL COMMENT '投资人出生日期',
-    `DepositAcct`                        varchar(19)                                                                                       NULL COMMENT '投资人在销售人处用于交易的资金账号',
-    `RegionCode`                         varchar(4)                                                                                        NULL COMMENT '交易所在地区编号',
-    `EducationLevel`                     enum ('01','02','03','04','05','06','07','08','09')                                               NULL COMMENT '投资人学历',
-    `EmailAddress`                       varchar(40)                                                                                       NULL COMMENT '投资人E-MAIL地址',
-    `FaxNo`                              varchar(24)                                                                                       NULL COMMENT '投资人传真号码',
-    `VocationCode`                       char(3)                                                                                           NULL COMMENT '投资人职业代码',
-    `HomeTelNo`                          varchar(22)                                                                                       NULL COMMENT '投资人住址电话',
-    `AnnualIncome`                       int                                                                                               NULL COMMENT '投资人年收入',
-    `MobileTelNo`                        varchar(24)                                                                                       NULL COMMENT '投资人手机号码',
-    `MultiAcctFlag`                      enum ('0','1')                                                                                    NULL COMMENT '多渠道开户标志',
-    `BranchCode`                         varchar(16)                                                                                       NOT NULL COMMENT '网点号码',
-    `OfficeTelNo`                        varchar(22)                                                                                       NULL COMMENT '投资人单位电话号码',
-    `AccountAbbr`                        varchar(12)                                                                                       NULL COMMENT '投资人户名简称',
-    `ConfidentialDocumentCode`           varchar(8)                                                                                        NULL COMMENT '密函编号',
-    `Sex`                                enum ('1','2')                                                                                    NULL COMMENT '投资人性别（1-男，2-女）',
-    `SHSecuritiesAccountID`              varchar(10)                                                                                       NULL COMMENT '上交所证券账号',
-    `SZSecuritiesAccountID`              varchar(10)                                                                                       NULL COMMENT '深交所证券账号',
-    `TAAccountID`                        varchar(12)                                                                                       NULL COMMENT '投资人理财账号',
-    `TelNo`                              varchar(22)                                                                                       NULL COMMENT '投资人电话号码',
-    `TradingMethod`                      varchar(8)                                                                                        NULL COMMENT '使用的交易手段',
-    `MinorFlag`                          enum ('0','1')                                                                                    NULL COMMENT '未成年人标志',
-    `DeliverType`                        enum ('1','2','3','4','5')                                                                        NULL COMMENT '对账单寄送选择',
-    `TransactorIDType`                   enum ('1','2','3','4')                                                                            NULL COMMENT '经办人识别方式',
-    `AccountCardID`                      varchar(8)                                                                                        NULL COMMENT '理财账户卡的凭证号',
-    `DeliverWay`                         char(8)                                                                                           NULL COMMENT '对账单寄送方式',
-    `Nationlity`                         char(3)                                                                                           NULL COMMENT '投资者国籍',
-    `NetNo`                              char(9)                                                                                           NULL COMMENT '操作（清算）网点编号',
-    `Broker`                             varchar(12)                                                                                       NULL COMMENT '客户所属的经纪人',
-    `CorpName`                           varchar(40)                                                                                       NULL COMMENT '工作单位名称',
-    `CertValidDate`                      char(8)                                                                                           NULL COMMENT '证件有效日期',
-    `InstTranCertValidDate`              char(8)                                                                                           NULL COMMENT '机构经办人身份证件有效日期',
-    `InstReprCertValidDate`              char(8)                                                                                           NULL COMMENT '机构法人身份证件有效日期',
-    `ClientRiskRate`                     char(1)                                                                                           NULL COMMENT '客户风险等级',
-    `InstReprManageRange`                varchar(2)                                                                                        NULL COMMENT '机构法人经营范围',
-    `ControlHolder`                      varchar(80)                                                                                       NULL COMMENT '控股股东',
-    `ActualController`                   varchar(80)                                                                                       NULL COMMENT '实际控制人',
-    `MarriageStatus`                     char(1)                                                                                           NULL COMMENT '婚姻状况',
-    `FamilyNum`                          int                                                                                               NULL COMMENT '家庭人口数',
-    `Penates`                            decimal(16, 2)                                                                                    NULL COMMENT '家庭资产',
-    `MediaHobby`                         char(1)                                                                                           NULL COMMENT '媒体偏好',
-    `EnglishFirstName`                   varchar(20)                                                                                       NULL COMMENT '投资人英文名',
-    `EnglishFamliyName`                  varchar(20)                                                                                       NULL COMMENT '投资人英文姓',
-    `Vocation`                           char(4)                                                                                           NULL COMMENT '行业（采用国标 GB/T4754-2011）',
-    `CorpoProperty`                      varchar(2)                                                                                        NULL COMMENT '企业性质',
-    `StaffNum`                           decimal(16, 2)                                                                                    NULL COMMENT '员工人数',
-    `Hobbytype`                          varchar(2)                                                                                        NULL COMMENT '兴趣爱好类型',
-    `Province`                           char(6)                                                                                           NULL COMMENT '省/直辖市',
-    `City`                               char(6)                                                                                           NULL COMMENT '市',
-    `County`                             char(6)                                                                                           NULL COMMENT '县/区',
-    `CommendPerson`                      varchar(40)                                                                                       NULL COMMENT '推荐人',
-    `CommendPersonType`                  enum ('0','1','2','3','4','5')                                                                    NULL COMMENT '推荐人类型',
-    `AcctNameOfInvestorInClearingAgency` varchar(60)                                                                                       NULL COMMENT '投资人收款银行账户户名',
-    `AcctNoOfInvestorInClearingAgency`   varchar(28)                                                                                       NULL COMMENT '投资人收款银行账户账号',
-    `ClearingAgency`                     varchar(9)                                                                                        NULL COMMENT '投资人收款银行账户开户行',
-    `AcceptMethod`                       varchar(1)                                                                                        NULL COMMENT '受理方式',
-    `FrozenCause`                        enum ('0','1','2','3','4')                                                                        NULL COMMENT '冻结原因',
-    `FreezingDeadline`                   char(8)                                                                                           NULL COMMENT '冻结截止日期（YYYYMMDD）',
-    `OriginalSerialNo`                   varchar(24)                                                                                       NULL COMMENT 'TA的原确认流水号',
-    `OriginalAppSheetNo`                 varchar(24)                                                                                       NULL COMMENT '原申请单编号',
-    `Specification`                      varchar(60)                                                                                       NULL COMMENT '摘要/说明',
-    `TACode`                             varchar(9)                                                                                        NOT NULL COMMENT 'TA代码',
-    `ReferenceNo`                        int                                                                                               NOT NULL COMMENT '同一交易序列码',
-    `recordStatus`                       enum ('0','1','2')                                                                                NOT NULL DEFAULT '0' COMMENT '记录状态（0-waiting, 1-processing, 2-processed）'
-
+    `AppSheetSerialNo`           varchar(24)                NOT NULL COMMENT '申请单编号',
+    `FundCode`                   varchar(20)                NOT NULL COMMENT '理财产品代码',
+    `LargeRedemptionFlag`        enum ('0','1')             NULL COMMENT '巨额赎回处理标志(0-取消，1-顺延)',
+    `TransactionDate`            char(8)                    NULL COMMENT '交易发生日期(YYYYMMDD)',
+    `TransactionTime`            char(6)                    NULL COMMENT '交易发生时间(HHMMSS)',
+    `TransactionAccountID`       varchar(17)                NULL COMMENT '投资人在销售机构内开设的用于交易的账号',
+    `DistributorCode`            varchar(9)                 NULL COMMENT '销售人代码',
+    `ApplicationVol`             decimal(16, 2)             NULL COMMENT '申请理财产品份数',
+    `ApplicationAmount`          decimal(16, 2)             NULL COMMENT '申请金额',
+    `BusinessCode`               char(3)                    NULL COMMENT '业务代码',
+    `TAAccountID`                varchar(12)                NULL COMMENT '投资人理财帐号',
+    `DiscountRateOfCommission`   decimal(5, 4)              NULL COMMENT '销售佣金折扣率',
+    `DepositAcct`                varchar(19)                NULL COMMENT '投资人在销售人处用于交易的资金账号',
+    `RegionCode`                 varchar(4)                 NULL COMMENT '交易所在地区编号',
+    `CurrencyType`               char(3)                    NULL COMMENT '结算币种',
+    `BranchCode`                 varchar(16)                NULL COMMENT '网点号码',
+    `OriginalAppSheetNo`         int                        NULL COMMENT '原申请单编号',
+    `OriginalSubsDate`           char(8)                    NULL COMMENT '原申购日期',
+    `IndividualOrInstitution`    enum ('1','0','2')         NULL COMMENT '个人/机构标志(0-机构，1-个人，2-产品)',
+    `ValidPeriod`                int                        NULL COMMENT '交易申请有效天数',
+    `DaysRedemptionInAdvance`    int                        NULL COMMENT '预约赎回工作日天数',
+    `RedemptionDateInAdvance`    char(8)                    NULL COMMENT '预约赎回日期(客户周期产品，购买时上送该字段作为指定到期日) ',
+    `OriginalSerialNo`           varchar(20)                NULL COMMENT 'TA原确认流水号',
+    `DateOfPeriodicSubs`         char(8)                    NULL COMMENT '定期定额申购日期',
+    `TASerialNO`                 varchar(20)                NULL COMMENT 'TA确认交易流水号',
+    `TermOfPeriodicSubs`         int                        NULL COMMENT '定期定额申购期限',
+    `FutureBuyDate`              char(8)                    NULL COMMENT '指定申购日期',
+    `TargetDistributorCode`      varchar(9)                 NULL COMMENT '对方销售人代码',
+    `Charge`                     decimal(10, 2)             NULL COMMENT '手续费',
+    `TargetBranchCode`           varchar(16)                NULL COMMENT '对方网点号',
+    `TargetTransactionAccountID` varchar(17)                NULL COMMENT '对方销售人处投资人理财交易账号',
+    `TargetRegionCode`           varchar(4)                 NULL COMMENT '对方所在地区编号',
+    `DividendRatio`              decimal(16, 2)             NULL COMMENT '红利比例',
+    `Specification`              varchar(60)                NULL COMMENT '摘要/说明',
+    `CodeOfTargetFund`           varchar(20)                NULL COMMENT '转换时的目标理财产品代码',
+    `TotalBackendLoad`           decimal(16, 2)             NULL COMMENT '交易后端收费总额',
+    `ShareClass`                 enum ('0','1')             NULL COMMENT '收费方式',
+    `OriginalCfmDate`            char(8)                    NULL COMMENT 'TA的原确认日期',
+    `DetailFlag`                 enum ('0','1')             NULL COMMENT '明细标志',
+    `OriginalAppDate`            char(8)                    NULL COMMENT '原申请日期',
+    `DefDividendMethod`          enum ('0','1')             NULL COMMENT '默认分红方式',
+    `FrozenCause`                enum ('0','1','2','3','4') NULL COMMENT '冻结原因(0-司法冻结，1-柜台冻结 \r\n2-质押冻结，3-质押、司法双重冻结 4-柜台、司法双重冻结\r\n)',
+    `FreezingDeadline`           char(8)                    NULL COMMENT '冻结截止日期',
+    `VarietyCodeOfPeriodicSubs`  varchar(5)                 NULL COMMENT '定时定额品种代码',
+    `SerialNoOfPeriodicSubs`     varchar(5)                 NULL COMMENT '定时定额申购序号',
+    `RationType`                 varchar(1)                 NULL COMMENT '定期定额种类',
+    `TargetTAAccountID`          varchar(12)                NULL COMMENT '对方理财账号',
+    `TargetRegistrarCode`        varchar(9)                 NULL COMMENT '对方TA代码',
+    `NetNo`                      varchar(9)                 NULL COMMENT '操作（清算）网点编号',
+    `CustomerNo`                 varchar(12)                NULL COMMENT 'TA客户编号',
+    `TargetShareType`            enum ('0','1')             NULL COMMENT '对方理财产品份额类别(0-前收费，1-后收费)',
+    `RationProtocolNo`           varchar(20)                NULL COMMENT '定期定额协议号',
+    `BeginDateOfPeriodicSubs`    char(8)                    NULL COMMENT '定时定额申购起始日期',
+    `EndDateOfPeriodicSubs`      char(8)                    NULL COMMENT '定时定额申购终止日期',
+    `SendDayOfPeriodicSubs`      int                        NULL COMMENT '定时定额申购每月发送日',
+    `Broker`                     varchar(12)                NULL COMMENT '经纪人',
+    `SalesPromotion`             varchar(3)                 NULL COMMENT '促销活动代码',
+    `AcceptMethod`               char(1)                    NULL COMMENT '受理方式',
+    `ForceRedemptionType`        enum ('0','1','2')         NULL COMMENT '强制赎回类型(0-强制赎回，1-违约赎回，2-到期)',
+    `TakeIncomeFlag`             enum ('0','1')             NULL COMMENT '带走收益标志(0-不带走，1-带走)',
+    `PurposeOfPeSubs`            varchar(40)                NULL COMMENT '定投目的',
+    `FrequencyOfPeSubs`          int                        NULL COMMENT '定投频率',
+    `PeriodSubTimeUnit`          char(1)                    NULL COMMENT '定投周期单位',
+    `BatchNumOfPeSubs`           decimal(16, 2)             NULL COMMENT '定投期数',
+    `CapitalMode`                char(2)                    NULL COMMENT '资金方式',
+    `DetailCapticalMode`         char(2)                    NULL COMMENT '明细资金方式',
+    `BackenloadDiscount`         decimal(5, 4)              NULL COMMENT '补差费折扣率',
+    `CombineNum`                 varchar(6)                 NULL COMMENT '组合编号',
+    `FutureSubscribeDate`        char(8)                    NULL COMMENT '指定认购日期',
+    `TradingMethod`              varchar(8)                 NULL COMMENT '使用的交易手段',
+    `LargeBuyFlag`               enum ('0','1')             NULL COMMENT '巨额购买处理标志',
+    `ChargeType`                 char(1)                    NULL COMMENT '收费类型',
+    `SpecifyRateFee`             decimal(9, 8)              NULL COMMENT '指定费率',
+    `SpecifyFee`                 decimal(16, 2)             NULL COMMENT '指定费用',
+    `TACode`                     varchar(9)                 NOT NULL COMMENT 'TA代码',
+    `ReferenceNo`                int                        NOT NULL COMMENT '同一申请序列号',
+    `TransactionCfmDate`         char(8)                    NULL COMMENT '交易确认日期',
+    `ReturnCode`                 char(4)                    NULL COMMENT '返回码',
+    `FromTAFlag`                 varchar(255)               NULL COMMENT '是否注册登记人发起业务标志',
+    `ErrorDetail`                varchar(255)               NULL COMMENT '出错详细信息',
+    `recordStatus`               enum ('0','1','2')         NOT NULL DEFAULT '0' COMMENT '记录状态'
 ) ENGINE = InnoDB
   CHARACTER SET = utf8
   ROW_FORMAT = Dynamic;
