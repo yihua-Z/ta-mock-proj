@@ -6,7 +6,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static com.psbc.business.processor.Processor022.addDay;
+import static com.psbc.utils.DateAndTimeUtil.addDay;
+
 
 /**
  * @author Dealyz

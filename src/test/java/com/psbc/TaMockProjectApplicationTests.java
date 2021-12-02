@@ -1,5 +1,6 @@
 package com.psbc;
 
+import com.nlf.calendar.util.HolidayUtil;
 import com.psbc.business.processor.Processor_001;
 import com.psbc.business.service.RepositoryFactory;
 import com.psbc.business.service.SpringContextUtil;
@@ -11,7 +12,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.text.ParseException;
 import java.util.List;
+
+import static com.psbc.utils.DateAndTimeUtil.addDay;
 
 @SpringBootTest
 class TaMockProjectApplicationTests {
@@ -57,6 +61,13 @@ class TaMockProjectApplicationTests {
         System.out.println(holidays);
 
 
+    }
+
+    @Test
+    public void testHoliday() throws ParseException {
+        com.nlf.calendar.Holiday holiday = HolidayUtil.getHoliday(("20210501"));
+        System.out.println(holiday.toString());
+        String s = addDay("20210501", 1);
     }
 
 

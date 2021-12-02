@@ -17,6 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 import static com.psbc.service.ObjectProcessor.copyFields;
+import static com.psbc.utils.DateAndTimeUtil.addDay;
 import static com.psbc.utils.DateAndTimeUtil.getFullNowDateTime;
 
 @Data
@@ -189,11 +190,5 @@ public class Processor022 extends BiDirectionProcessor {
     }
 
 
-//      用于增加天数
-    public static String addDay(String time , int addDay) throws ParseException {
-        SimpleDateFormat ft = new SimpleDateFormat("yyyyMMdd");
-        Date date = ft.parse(time);
-        String format = ft.format(new Date(date.getTime() + addDay * 24 * 60 * 60 * 1000));
-        return format;
-    }
+
 }

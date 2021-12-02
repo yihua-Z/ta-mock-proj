@@ -38,7 +38,6 @@ abstract class BiDirectionProcessor implements Processor {
     private List<ConfirmationModel> doProcess(final ApplicationModel apply) throws ConfirmExpectationException {
         final List<ConfirmationModel> confirmList = new LinkedList<>();
 
-
         ExpectationModel confirmExpect = null;
         ConfirmationModel confirmation = null;
         ApplyException applyException=null;
