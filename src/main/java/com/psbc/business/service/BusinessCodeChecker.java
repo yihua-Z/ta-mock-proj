@@ -7,7 +7,6 @@ import com.psbc.utils.helper.XMLParser;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
 import java.lang.reflect.Field;
 import java.util.*;
 

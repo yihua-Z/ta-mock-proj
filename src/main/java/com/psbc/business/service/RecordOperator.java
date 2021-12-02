@@ -1,17 +1,14 @@
 package com.psbc.business.service;
 
 import com.psbc.TaMockProjectApplication;
-import com.psbc.mapper.AccountApplicationDao;
 import com.psbc.pojo.TableModel;
 import com.psbc.reader.xmlModel.XMLNode;
 import com.psbc.utils.StringProcessor;
 import com.psbc.utils.helper.XMLParser;
 import lombok.Data;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.reflect.FieldUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Field;

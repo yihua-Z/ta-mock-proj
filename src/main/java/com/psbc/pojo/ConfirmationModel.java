@@ -1,4 +1,6 @@
 package com.psbc.pojo;
 
-public interface ConfirmationModel extends DatabaseModel{
+import com.psbc.pojo.DatabaseModel;
+
+public interface ConfirmationModel extends DatabaseModel {
 }

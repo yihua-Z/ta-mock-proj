@@ -1,7 +1,7 @@
 package com.psbc.pojo;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
+
 import lombok.Data;
 
 /**
@@ -9,7 +9,7 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class TransactionApplication extends TransactionApplicationKey implements ApplicationModel{
+public class TransactionApplication extends TransactionApplicationKey implements ApplicationModel {
     /**
      * 申请单编号
      */

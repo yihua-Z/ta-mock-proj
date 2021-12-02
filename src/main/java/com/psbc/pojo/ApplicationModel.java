@@ -1,4 +1,4 @@
 package com.psbc.pojo;
 
-public interface ApplicationModel extends DatabaseModel{
+public interface ApplicationModel extends DatabaseModel {
 }

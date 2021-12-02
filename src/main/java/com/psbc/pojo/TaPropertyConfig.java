@@ -1,7 +1,5 @@
 package com.psbc.pojo;
 
-import java.io.Serializable;
-
 import lombok.Data;
 
 /**

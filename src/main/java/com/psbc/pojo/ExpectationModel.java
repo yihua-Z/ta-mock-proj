@@ -1,4 +1,6 @@
 package com.psbc.pojo;
 
-public interface ExpectationModel extends DatabaseModel{
+import com.psbc.pojo.DatabaseModel;
+
+public interface ExpectationModel extends DatabaseModel {
 }

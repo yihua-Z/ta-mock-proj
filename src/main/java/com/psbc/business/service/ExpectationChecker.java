@@ -2,6 +2,7 @@ package com.psbc.business.service;
 
 import com.psbc.mapper.*;
 import com.psbc.pojo.*;
+import com.psbc.pojo.DatabaseModel;
 import lombok.Data;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

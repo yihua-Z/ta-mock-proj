@@ -4,8 +4,10 @@ import com.psbc.exceptions.ApplyException;
 import com.psbc.exceptions.ConfirmExpectationException;
 import com.psbc.exceptions.ProcessingException;
 import com.psbc.pojo.*;
+import com.psbc.pojo.ApplicationModel;
+import com.psbc.pojo.ConfirmationModel;
+import com.psbc.pojo.ExpectationModel;
 
-import java.lang.Exception;
 import java.util.LinkedList;
 import java.util.List;
 

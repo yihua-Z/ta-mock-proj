@@ -1,6 +1,5 @@
 package com.psbc.mapper;
 
-import com.psbc.pojo.AccountApplication;
 import com.psbc.pojo.DatabaseModel;
 import com.psbc.pojo.TransactionApplication;
 import com.psbc.pojo.TransactionApplicationKey;

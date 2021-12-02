@@ -29,4 +29,5 @@ public class RepositoryFactory {
     private TransactionApplicationDao transactionApplicationDao;
     private TransactionConfirmationDao transactionConfirmationDao;
     private TransactionExpectationDao transactionExpectationDao;
+    private HolidayDao holidayDao;
 }

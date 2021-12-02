@@ -6,14 +6,14 @@ import com.psbc.mapper.AccountApplicationDao;
 import com.psbc.mapper.ExceptionDao;
 import com.psbc.pojo.*;
 import com.psbc.pojo.Exception;
-import com.psbc.reader.DataFileReader;
+import com.psbc.pojo.DatabaseModel;
+import com.psbc.pojo.TableModel;
 import com.psbc.writer.DataFileWriterDataBase;
 import lombok.Data;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 

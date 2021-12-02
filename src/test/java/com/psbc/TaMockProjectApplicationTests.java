@@ -1,9 +1,12 @@
 package com.psbc;
 
 import com.psbc.business.processor.Processor_001;
+import com.psbc.business.service.RepositoryFactory;
+import com.psbc.business.service.SpringContextUtil;
 import com.psbc.mapper.AccountExpectationDao;
 import com.psbc.mapper.AccountInfoDao;
 import com.psbc.pojo.AccountExpectation;;
+import com.psbc.pojo.Holiday;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -41,6 +44,16 @@ class TaMockProjectApplicationTests {
 
     @Test
     void testMybatis() {
+
+
+    }
+    @Test
+    void test(){
+        RepositoryFactory repositoryFactory = SpringContextUtil.getBean(RepositoryFactory.class);
+        Holiday holiday = new Holiday();
+        holiday.setDay("12");
+        List<Holiday> holidays = repositoryFactory.getHolidayDao().selectByCondition(holiday);
+        System.out.println(holidays);
 
 
     }
