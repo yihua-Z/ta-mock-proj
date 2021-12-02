@@ -34,7 +34,7 @@ public class TaMockProjectApplication {
         String applicationFilePath = ".\\src\\main\\resources\\data\\OFD_037_999_20211101_01.TXT";
 
         //        dataFileWriterDataBase.initialData(".\\src\\main\\resources\\xml\\file_structure_configs\\file_structure_configs.xml", ".\\src\\main\\resources\\data\\");
-        processor_001.processor(applicationFilePath, false, false);
+        processor_001.processor(applicationFilePath, true, false);
         logger.info("process 001 done!");
 
 

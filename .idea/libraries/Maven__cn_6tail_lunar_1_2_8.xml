@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: cn.6tail:lunar:1.2.8">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/cn/6tail/lunar/1.2.8/lunar-1.2.8.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/cn/6tail/lunar/1.2.8/lunar-1.2.8-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/cn/6tail/lunar/1.2.8/lunar-1.2.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
