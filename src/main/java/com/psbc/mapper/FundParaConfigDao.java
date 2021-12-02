@@ -15,6 +15,9 @@ public interface FundParaConfigDao {
 
     FundParaConfig selectByPrimaryKey(Integer fundparaid);
 
+
+    FundParaConfig selectByUnionCode(FundParaConfig record);
+
     int updateByPrimaryKeySelective(FundParaConfig record);
 
     int updateByPrimaryKey(FundParaConfig record);

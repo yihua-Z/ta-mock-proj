@@ -4,10 +4,11 @@ import com.psbc.business.service.RepositoryFactory;
 import com.psbc.business.service.SpringContextUtil;
 import com.psbc.exceptions.ApplyException;
 import com.psbc.exceptions.ConfirmExpectationException;
+import com.psbc.mapper.AcctShareDao;
+import com.psbc.mapper.FundParaConfigDao;
+import com.psbc.mapper.TransactionConfirmationDao;
 import com.psbc.pojo.*;
-import com.psbc.pojo.ApplicationModel;
-import com.psbc.pojo.ConfirmationModel;
-import com.psbc.pojo.ExpectationModel;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -42,9 +43,9 @@ public class Processor024 extends BiDirectionProcessor {
         AcctShare acctShare = factory.getAcctShareDao().selectByPrimaryKey(acctShareKey);
 
 //      查找当前赎回的对应产品参数
-//      @TODO   fundParaConfig 应增加联合字段查询
-        FundParaConfig fundParaConfig = factory.getFundParaConfigDao().selectByPrimaryKey(1);
-
+//        FundParaConfig fundParaConfig=new FundParaConfig();
+//        copyFields(transactionApplication,fundParaConfig);
+//        fundParaConfig = factory.getFundParaConfigDao().selectByUnionCode(fundParaConfig);
 //        当前净值
 //        BigDecimal nav = fundParaConfig.getNav();
 
@@ -57,9 +58,9 @@ public class Processor024 extends BiDirectionProcessor {
         BigDecimal shareVol = totalvolofdistributorinta.subtract(totalfrozenvol);
 
 
-//        a = -1,表示 applyAmount 小于 shareAmount；
-//        a =  0,表示 applyAmount 等于 shareAmount；
-//        a =  1,表示 applyAmount 大于 shareAmount；
+//        a = -1,表示 shareAmount 小于 applyAmount；
+//        a =  0,表示 shareAmount 等于 applyAmount；
+//        a =  1,表示 shareAmount 大于 applyAmount；
         if (shareVol.compareTo(applicationvol) < 0) {
 //            超过当前额度，赎回异常
             throw new ApplyException();
@@ -78,29 +79,82 @@ public class Processor024 extends BiDirectionProcessor {
 
         String transactiondate = transactionConfirmation.getTransactiondate();
         String transactiontime = transactionConfirmation.getTransactiontime();
+//        赎回份数
+        BigDecimal applicationvol = transactionConfirmation.getConfirmedvol();
 
         if (Double.valueOf(transactiondate + transactiontime) > Double.valueOf(getFullNowDateTime())) {
             throw new ConfirmExpectationException();
         }
 
+        //      查找当前赎期望 的持仓表记录
+        AcctShareKey acctShareKey = new AcctShareKey();
+        copyFields(transactionConfirmation, acctShareKey);
+        AcctShare acctShare = factory.getAcctShareDao().selectByPrimaryKey(acctShareKey);
+
+        //        理财产品总份数（含冻结）
+        BigDecimal totalvolofdistributorinta = acctShare.getTotalvolofdistributorinta();
+        //        理财产品冻结总份数
+        BigDecimal totalfrozenvol = acctShare.getTotalfrozenvol();
+
+        //        理财产品实际可用总份数
+        BigDecimal shareVol = totalvolofdistributorinta.subtract(totalfrozenvol);
+
+        if (shareVol.compareTo(applicationvol) < 0) {
+//            超过当前额度，赎回异常
+            throw new ConfirmExpectationException();
+        }
+
 //        读取期望配置表（获取失败信息）
 //        获取交易日期配置表，获取延迟确认天数
+
 //        获取工作日日历表
+
 //        读取产品表（获取个人额度，产品额度）
 //        读取账户信息表（获取个人已购额度）
     }
 
     @Override
     void updateRepository(ApplicationModel apply, List<ConfirmationModel> confirm, ApplyException applyException) {
-        RepositoryFactory factory = SpringContextUtil.getBean(RepositoryFactory.class);
 
+        RepositoryFactory factory = SpringContextUtil.getBean(RepositoryFactory.class);
+        TransactionConfirmationDao transactionConfirmationDao = factory.getTransactionConfirmationDao();
+        AcctShareDao acctShareDao = factory.getAcctShareDao();
+        FundParaConfigDao fundParaConfigDao = factory.getFundParaConfigDao();
+
+        TransactionApplication transactionApplication = (TransactionApplication) apply;
+        TransactionConfirmation transactionConfirmation = (TransactionConfirmation) confirm;
+
+        FundParaConfig fundParaConfig = new FundParaConfig();
+
+        fundParaConfig.setFundcode(transactionApplication.getFundcode());
+        fundParaConfig.setTacode(transactionApplication.getTacode());
+        fundParaConfig.setDistributorcode(transactionApplication.getDistributorcode());
+
+        FundParaConfig paraConfig = fundParaConfigDao.selectByUnionCode(fundParaConfig);
+        BigDecimal nav = paraConfig.getNav();
+
+        paraConfig.setFundmaxbala(paraConfig.getFundmaxbala().add((nav.multiply(transactionApplication.getApplicationvol()))));
+
+
+        AcctShareKey acctShareKey = new AcctShareKey();
+        copyFields(transactionConfirmation, acctShareKey);
+        AcctShare acctShare = factory.getAcctShareDao().selectByPrimaryKey(acctShareKey);
+
+        BigDecimal shareTotalvolofdistributorinta = acctShare.getTotalvolofdistributorinta();
+        acctShare.setTotalvolofdistributorinta(shareTotalvolofdistributorinta.subtract(transactionApplication.getApplicationvol()));
+
+        copyFields(transactionApplication, transactionConfirmation);
+
+        //生成交易确认成功记录（124）
+        transactionConfirmationDao.insert(transactionConfirmation);
+        //更新或新增账户持仓表
+        acctShareDao.updateByPrimaryKey(acctShare);
+        //更新产品已售额度等
+        fundParaConfigDao.updateByPrimaryKey(paraConfig);
     }
 
     @Override
     void generateConfirm(ApplicationModel apply, ConfirmationModel confirm, ApplyException applyException) {
         RepositoryFactory factory = SpringContextUtil.getBean(RepositoryFactory.class);
-//        生成交易确认成功记录（124）
-//        更新或新增账户持仓表
-//        更新产品已售额度等
     }
 }
