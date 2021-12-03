@@ -82,6 +82,7 @@ public class Processor022 extends BiDirectionProcessor {
                     || applicationamount.compareTo(fundParaConfig.getMaxsubsamountbyindi()) == 1) {
                 logger.error("首次申购的金额国小或者过大");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 throw new ApplyException();
             } else {
 //                设定金额
@@ -123,6 +124,34 @@ public class Processor022 extends BiDirectionProcessor {
                 logger.error("再判断自己加上之前的金额是否超过个人最大申购");
                 throw new ApplyException();
             } else {
+=======
+                throw new ApplyException();
+            } else {
+//                设定金额
+                acctShare.setTotalamountofdistributorinta(applicationamount);
+//                设定份额
+                acctShare.setTotalfrozenvol(applicationamount.divide(fundParaConfig.getNav()));
+            }
+//            非首次购买
+        } else {
+            //   先判断申购金额是否超过个人最大申购金额getIndimaxpurchase
+            if (applicationamount.compareTo(fundParaConfig.getIndimaxpurchase()) == 1) {
+                logger.error("申购金额超过个人最大申购金额");
+                throw new ApplyException();
+//            再判断是否超过单日可申购最高额度buyupperamount
+            } else if (applicationamount.compareTo(fundParaConfig.getBuyupperamount()) == 1) {
+                logger.error("超过单日可申购最高额度");
+                throw new ApplyException();
+//             个人当日累计购买最大金额 indidaymaxsumbuy
+            } else if (applicationamount.compareTo(fundParaConfig.getIndidaymaxsumbuy()) == 1) {
+                logger.error("超过个人当日累计购买最大金额");
+                throw new ApplyException();
+//            再判断自己加上之前的金额是否超过个人最大申购
+            } else if ((applicationamount.add(acctShare.getTotalamountofdistributorinta())).compareTo(fundParaConfig.getIndidaymaxsumbuy()) == 1) {
+                logger.error("再判断自己加上之前的金额是否超过个人最大申购");
+                throw new ApplyException();
+            } else {
+>>>>>>> Stashed changes
 //                增加的金额
                 acctShare.setTotalamountofdistributorinta(acctShare.getTotalamountofdistributorinta().add(applicationamount));
 //                增加的份额
@@ -174,8 +203,13 @@ public class Processor022 extends BiDirectionProcessor {
         TransactionExpectationDao transactionExpectationDao = SpringContextUtil.getBean(TransactionExpectationDao.class);
         transactionExpectationDao.updateByPrimaryKey(transactionExpectation);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 
+=======
+
+
+>>>>>>> Stashed changes
 =======
 
 
@@ -299,10 +333,14 @@ public class Processor022 extends BiDirectionProcessor {
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 <<<<<<< Updated upstream
 
 =======
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes

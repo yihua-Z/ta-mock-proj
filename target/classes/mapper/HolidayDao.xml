@@ -24,6 +24,7 @@
     <if test="day != null">
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       and day = #{day,jdbcType=CHAR},
     </if>
     <if test="isholiday != null">
@@ -37,6 +38,8 @@
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
      day = #{day,jdbcType=CHAR}
     </if>
     <if test="isholiday != null">
@@ -48,6 +51,9 @@
     <if test="daytype != null">
       and daytype = #{daytype,jdbcType=OTHER}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
