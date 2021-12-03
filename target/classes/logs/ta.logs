@@ -372,6 +372,7 @@
 2021-12-02 14:04:10.695  INFO 3164 --- [main] com.psbc.TaMockProjectApplicationTests   : Started TaMockProjectApplicationTests in 8.423 seconds (JVM running for 12.083)
 2021-12-02 14:04:11.346 DEBUG 3164 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@39fc6b2c, started on Thu Dec 02 14:04:03 CST 2021
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 2021-12-02 15:20:08.461  INFO 18356 --- [main] com.psbc.TaMockProjectApplication        : Starting TaMockProjectApplication using Java 1.8.0_302 on LAPTOP-CDO5N2P7 with PID 18356 (D:\TONG\JAVA\ta-mock-proj\target\classes started by Tong in D:\TONG\JAVA\ta-mock-proj)
 2021-12-02 15:20:08.468  INFO 18356 --- [main] com.psbc.TaMockProjectApplication        : No active profile set, falling back to default profiles: default
@@ -410,6 +411,8 @@
 2021-12-02 15:20:10.871  INFO 18356 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
 2021-12-02 15:20:12.002 ERROR 18356 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
 =======
+=======
+>>>>>>> Stashed changes
 2021-12-02 18:13:41.339  INFO 6808 --- [main] com.psbc.TaMockProjectApplicationTests   : Starting TaMockProjectApplicationTests using Java 1.8.0_271 on dealyz-13LAPTOP with PID 6808 (started by Dealyz in E:\TA-MOCK\ta-mock-proj)
 2021-12-02 18:13:41.349  INFO 6808 --- [main] com.psbc.TaMockProjectApplicationTests   : No active profile set, falling back to default profiles: default
 2021-12-02 18:13:41.549 DEBUG 6808 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@46944ca9
@@ -659,6 +662,9 @@
 2021-12-02 18:26:41.016  INFO 9076 --- [main] com.psbc.TaMockProjectApplicationTests   : Started TaMockProjectApplicationTests in 7.793 seconds (JVM running for 10.477)
 2021-12-02 18:26:41.700  INFO 9076 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
 2021-12-02 18:26:43.185 ERROR 9076 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
@@ -683,6 +689,7 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337) [mybatis-3.5.7.jar:3.5.7]
 	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86) [mybatis-3.5.7.jar:3.5.7]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49) [mybatis-3.5.7.jar:3.5.7]
 	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117) [mybatis-3.5.7.jar:3.5.7]
 	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76) [mybatis-3.5.7.jar:3.5.7]
@@ -704,6 +711,8 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_302]
 	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_302]
 =======
+=======
+>>>>>>> Stashed changes
 	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) [mybatis-3.5.7.jar:3.5.7]
 	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325) [mybatis-3.5.7.jar:3.5.7]
 	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) [mybatis-3.5.7.jar:3.5.7]
@@ -728,6 +737,9 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_271]
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_271]
 	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_271]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) [spring-aop-5.3.9.jar:5.3.9]
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) [spring-aop-5.3.9.jar:5.3.9]
@@ -735,6 +747,7 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) [spring-tx-5.3.10.jar:5.3.10]
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.9.jar:5.3.9]
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) [spring-aop-5.3.9.jar:5.3.9]
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 	at com.sun.proxy.$Proxy57.insert(Unknown Source) [na:na]
 	at com.psbc.business.processor.Processor_001.insertAccountApplicationImpl(Processor_001.java:65) [classes/:na]
@@ -1159,6 +1172,8 @@ java.lang.UnsatisfiedLinkError: D:\software\apache-tomcat-10.0.8\bin\tcnative-1.
 	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:79) ~[junit-platform-engine-1.7.2.jar:1.7.2]
 	at java.util.ArrayList.forEach(ArrayList.java:1259) ~[na:1.8.0_291]
 =======
+=======
+>>>>>>> Stashed changes
 	at com.sun.proxy.$Proxy93.selectByCondition(Unknown Source) [na:na]
 	at com.psbc.TaMockProjectApplicationTests.test(TaMockProjectApplicationTests.java:61) [test-classes/:na]
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_271]
@@ -1193,6 +1208,9 @@ java.lang.UnsatisfiedLinkError: D:\software\apache-tomcat-10.0.8\bin\tcnative-1.
 	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) ~[junit-platform-engine-1.7.2.jar:1.7.2]
 	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) ~[junit-platform-engine-1.7.2.jar:1.7.2]
 	at java.util.ArrayList.forEach(ArrayList.java:1259) ~[na:1.8.0_271]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.7.2.jar:1.7.2]
 	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143) ~[junit-platform-engine-1.7.2.jar:1.7.2]
@@ -1204,7 +1222,11 @@ java.lang.UnsatisfiedLinkError: D:\software\apache-tomcat-10.0.8\bin\tcnative-1.
 	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) ~[junit-platform-engine-1.7.2.jar:1.7.2]
 	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) ~[junit-platform-engine-1.7.2.jar:1.7.2]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	at java.util.ArrayList.forEach(ArrayList.java:1259) ~[na:1.8.0_291]
+=======
+	at java.util.ArrayList.forEach(ArrayList.java:1259) ~[na:1.8.0_271]
+>>>>>>> Stashed changes
 =======
 	at java.util.ArrayList.forEach(ArrayList.java:1259) ~[na:1.8.0_271]
 >>>>>>> Stashed changes
@@ -1229,6 +1251,7 @@ java.lang.UnsatisfiedLinkError: D:\software\apache-tomcat-10.0.8\bin\tcnative-1.
 	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75) ~[junit-platform-launcher-1.7.2.jar:1.7.2]
 	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:71) ~[junit5-rt.jar:na]
 	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33) ~[junit-rt.jar:na]
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235) ~[junit-rt.jar:na]
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54) ~[junit-rt.jar:na]
@@ -1338,6 +1361,8 @@ java.lang.UnsatisfiedLinkError: D:\software\apache-tomcat-10.0.8\bin\tcnative-1.
 	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:79) ~[junit-platform-engine-1.7.2.jar:1.7.2]
 	at java.util.ArrayList.forEach(ArrayList.java:1259) ~[na:1.8.0_291]
 =======
+=======
+>>>>>>> Stashed changes
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:221) ~[junit-rt.jar:na]
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54) ~[junit-rt.jar:na]
 
@@ -1460,6 +1485,9 @@ java.sql.SQLSyntaxErrorException: Unknown database 'ta-mack'
 	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) ~[junit-platform-engine-1.7.2.jar:1.7.2]
 	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) ~[junit-platform-engine-1.7.2.jar:1.7.2]
 	at java.util.ArrayList.forEach(ArrayList.java:1259) ~[na:1.8.0_271]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.7.2.jar:1.7.2]
 	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143) ~[junit-platform-engine-1.7.2.jar:1.7.2]
@@ -1471,7 +1499,11 @@ java.sql.SQLSyntaxErrorException: Unknown database 'ta-mack'
 	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) ~[junit-platform-engine-1.7.2.jar:1.7.2]
 	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) ~[junit-platform-engine-1.7.2.jar:1.7.2]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	at java.util.ArrayList.forEach(ArrayList.java:1259) ~[na:1.8.0_291]
+=======
+	at java.util.ArrayList.forEach(ArrayList.java:1259) ~[na:1.8.0_271]
+>>>>>>> Stashed changes
 =======
 	at java.util.ArrayList.forEach(ArrayList.java:1259) ~[na:1.8.0_271]
 >>>>>>> Stashed changes
@@ -1496,6 +1528,7 @@ java.sql.SQLSyntaxErrorException: Unknown database 'ta-mack'
 	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75) ~[junit-platform-launcher-1.7.2.jar:1.7.2]
 	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:71) ~[junit5-rt.jar:na]
 	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33) ~[junit-rt.jar:na]
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235) ~[junit-rt.jar:na]
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54) ~[junit-rt.jar:na]
@@ -1569,6 +1602,8 @@ java.sql.SQLSyntaxErrorException: Unknown database 'ta-mack'
 2021-12-03 15:01:26.963  INFO 7620 --- [main] com.psbc.TaMockProjectApplicationTests   : Started TaMockProjectApplicationTests in 5.646 seconds (JVM running for 7.907)
 2021-12-03 15:01:58.167 DEBUG 7620 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@76884e4b, started on Fri Dec 03 15:01:21 CST 2021
 =======
+=======
+>>>>>>> Stashed changes
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:221) ~[junit-rt.jar:na]
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54) ~[junit-rt.jar:na]
 
@@ -1812,4 +1847,7 @@ java.sql.SQLSyntaxErrorException: Unknown database 'ta-mack'
 2021-12-02 19:01:34.106  WARN 13720 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m23s964ms953?s700ns).
 2021-12-02 19:01:34.863  INFO 13720 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-12-02 19:01:34.880  INFO 13720 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
