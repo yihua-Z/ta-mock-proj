@@ -2,8 +2,10 @@ package com.psbc.utils;
 
 import com.nlf.calendar.util.HolidayUtil;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -55,25 +57,42 @@ public class DateAndTimeUtil {
 
 
     public static String getNextTransactionDay(String transactiondate) {
-        if (HolidayUtil.getHoliday(transactiondate) != null) {
-            while (true) {
-                try {
-//                    日期加1后再次判断是否是节假日
+        try {
+            if (HolidayUtil.getHoliday(transactiondate) != null) {
+                while (true) {
+                    //  日期加1后再次判断是否是节假日
                     transactiondate = addDay(transactiondate, 1);
-                    if (HolidayUtil.getHoliday(transactiondate) == null) {
-//                        获得交易日日期
+                    //  当前日期不是节假日与周末时
+                    if (HolidayUtil.getHoliday(transactiondate) == null & !isWeekend(transactiondate)) {
+                    //  获得交易日日期
                         return transactiondate;
                     }
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-            }
-        } else {
-            return transactiondate;
 
+                }
+            } else {
+                return transactiondate;
+
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
+        return transactiondate;
 
     }
+
+
+    public static Boolean isWeekend(String bDate) throws ParseException {
+        DateFormat format1 = new SimpleDateFormat("yyyyMMdd");
+        Date bdate = format1.parse(bDate);
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(bdate);
+        if (cal.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY || cal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
     public static void main(String[] args) {
 //        List<Holiday> holidays = HolidayUtil.getHolidays(getNowYear());

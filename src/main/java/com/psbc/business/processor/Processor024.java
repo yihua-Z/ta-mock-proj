@@ -78,7 +78,7 @@ public class Processor024 extends BiDirectionProcessor {
             logger.error("赎回超过当前额度");
             throw new ApplyException();
         }
-//        @TODO 判断的日期应该从Holiday表中获取交易日
+//
         if (Double.valueOf(transactiondate + transactiontime) > Double.valueOf(getFullNowDateTime())) {
             logger.error("日期错误");
             throw new ApplyException();
