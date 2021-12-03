@@ -20,7 +20,7 @@ import java.text.ParseException;
 import java.util.List;
 
 import static com.psbc.service.ObjectProcessor.copyFields;
-import static com.psbc.utils.DateAndTimeUtil.addDay;
+import static com.psbc.utils.DateAndTimeUtil.*;
 
 @SpringBootTest
 class TaMockProjectApplicationTests {
@@ -89,6 +89,15 @@ class TaMockProjectApplicationTests {
         copyFields(transactionApplication,applyException);
 
         System.out.println(applyException.getAppsheetserialno());
+    }
+
+    @Test
+    public  void testHolidayDB(){
+        String nextTransactionDay = getNextTransactionDay("20211001");
+        System.out.println(nextTransactionDay);
+
+        String nextTransactionDayFromDB = getNextTransactionDayFromDB("20210101");
+        System.out.println(nextTransactionDayFromDB);
     }
 
 

@@ -6,11 +6,11 @@
     <result column="Direction" jdbcType="OTHER" property="direction" />
     <result column="ApplyBusinessCode" jdbcType="CHAR" property="applybusinesscode" />
     <result column="SettlementDays" jdbcType="INTEGER" property="settlementdays" />
-    <result column="ProcessStatus" jdbcType="OTHER" property="processstatus" />
     <result column="ConfimBusinessCodes" jdbcType="VARCHAR" property="confimbusinesscodes" />
+    <result column="Status" jdbcType="OTHER" property="status" />
   </resultMap>
   <sql id="Base_Column_List">
-    TACode, Direction, ApplyBusinessCode, SettlementDays, ProcessStatus, ConfimBusinessCodes
+    TACode, Direction, ApplyBusinessCode, SettlementDays, ConfimBusinessCodes, `Status`
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
@@ -23,10 +23,10 @@
     where TACode = #{tacode,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" keyColumn="TACode" keyProperty="tacode" parameterType="com.psbc.pojo.TaBusinessConfig" useGeneratedKeys="true">
-    insert into ta_business_config (Direction, ApplyBusinessCode, SettlementDays, 
-      ProcessStatus, ConfimBusinessCodes)
-    values (#{direction,jdbcType=OTHER}, #{applybusinesscode,jdbcType=CHAR}, #{settlementdays,jdbcType=INTEGER}, 
-      #{processstatus,jdbcType=OTHER}, #{confimbusinesscodes,jdbcType=VARCHAR})
+    insert into ta_business_config (TACode,Direction, ApplyBusinessCode, SettlementDays,
+      ConfimBusinessCodes, `Status`)
+    values (#{tacode,jdbcType=VARCHAR},#{direction,jdbcType=OTHER}, #{applybusinesscode,jdbcType=CHAR}, #{settlementdays,jdbcType=INTEGER},
+      #{confimbusinesscodes,jdbcType=VARCHAR}, #{status,jdbcType=OTHER})
   </insert>
   <insert id="insertSelective" keyColumn="TACode" keyProperty="tacode" parameterType="com.psbc.pojo.TaBusinessConfig" useGeneratedKeys="true">
     insert into ta_business_config
@@ -40,11 +40,11 @@
       <if test="settlementdays != null">
         SettlementDays,
       </if>
-      <if test="processstatus != null">
-        ProcessStatus,
-      </if>
       <if test="confimbusinesscodes != null">
         ConfimBusinessCodes,
+      </if>
+      <if test="status != null">
+        `Status`,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -57,11 +57,11 @@
       <if test="settlementdays != null">
         #{settlementdays,jdbcType=INTEGER},
       </if>
-      <if test="processstatus != null">
-        #{processstatus,jdbcType=OTHER},
-      </if>
       <if test="confimbusinesscodes != null">
         #{confimbusinesscodes,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=OTHER},
       </if>
     </trim>
   </insert>
@@ -77,11 +77,11 @@
       <if test="settlementdays != null">
         SettlementDays = #{settlementdays,jdbcType=INTEGER},
       </if>
-      <if test="processstatus != null">
-        ProcessStatus = #{processstatus,jdbcType=OTHER},
-      </if>
       <if test="confimbusinesscodes != null">
         ConfimBusinessCodes = #{confimbusinesscodes,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        `Status` = #{status,jdbcType=OTHER},
       </if>
     </set>
     where TACode = #{tacode,jdbcType=VARCHAR}
@@ -91,8 +91,8 @@
     set Direction = #{direction,jdbcType=OTHER},
       ApplyBusinessCode = #{applybusinesscode,jdbcType=CHAR},
       SettlementDays = #{settlementdays,jdbcType=INTEGER},
-      ProcessStatus = #{processstatus,jdbcType=OTHER},
-      ConfimBusinessCodes = #{confimbusinesscodes,jdbcType=VARCHAR}
+      ConfimBusinessCodes = #{confimbusinesscodes,jdbcType=VARCHAR},
+      `Status` = #{status,jdbcType=OTHER}
     where TACode = #{tacode,jdbcType=VARCHAR}
   </update>
 </mapper>

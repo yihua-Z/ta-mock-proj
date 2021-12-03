@@ -1903,3 +1903,133 @@ java.sql.SQLSyntaxErrorException: Unknown database 'ta-mack'
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+2021-12-03 17:31:09.553  INFO 18880 --- [main] com.psbc.TaMockProjectApplicationTests   : Starting TaMockProjectApplicationTests using Java 1.8.0_302 on LAPTOP-CDO5N2P7 with PID 18880 (started by Tong in D:\TONG\JAVA\ta-mock-proj)
+2021-12-03 17:31:09.556  INFO 18880 --- [main] com.psbc.TaMockProjectApplicationTests   : No active profile set, falling back to default profiles: default
+2021-12-03 17:31:09.610 DEBUG 18880 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@e8df99a
+2021-12-03 17:31:11.897  INFO 18880 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static org.springframework.context.ApplicationContext com.psbc.business.service.SpringContextUtil.applicationContext
+2021-12-03 17:31:12.430 DEBUG 18880 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-12-03 17:31:12.562 DEBUG 18880 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2021-12-03 17:31:12.640 DEBUG 18880 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-12-03 17:31:12.664 DEBUG 18880 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-12-03 17:31:12.886  INFO 18880 --- [main] com.psbc.TaMockProjectApplicationTests   : Started TaMockProjectApplicationTests in 3.739 seconds (JVM running for 5.349)
+2021-12-03 17:31:13.224 DEBUG 18880 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@e8df99a, started on Fri Dec 03 17:31:09 CST 2021
+2021-12-03 17:35:08.260  INFO 5848 --- [main] com.psbc.TaMockProjectApplicationTests   : Starting TaMockProjectApplicationTests using Java 1.8.0_302 on LAPTOP-CDO5N2P7 with PID 5848 (started by Tong in D:\TONG\JAVA\ta-mock-proj)
+2021-12-03 17:35:08.264  INFO 5848 --- [main] com.psbc.TaMockProjectApplicationTests   : No active profile set, falling back to default profiles: default
+2021-12-03 17:35:08.361 DEBUG 5848 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@74eb909f
+2021-12-03 17:35:11.252  INFO 5848 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static org.springframework.context.ApplicationContext com.psbc.business.service.SpringContextUtil.applicationContext
+2021-12-03 17:35:12.029 DEBUG 5848 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-12-03 17:35:12.177 DEBUG 5848 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2021-12-03 17:35:12.312 DEBUG 5848 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-12-03 17:35:12.351 DEBUG 5848 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-12-03 17:35:12.730  INFO 5848 --- [main] com.psbc.TaMockProjectApplicationTests   : Started TaMockProjectApplicationTests in 4.995 seconds (JVM running for 6.807)
+2021-12-03 17:35:27.547 DEBUG 5848 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@74eb909f, started on Fri Dec 03 17:35:08 CST 2021
+2021-12-03 17:36:12.319  INFO 10752 --- [main] com.psbc.TaMockProjectApplicationTests   : Starting TaMockProjectApplicationTests using Java 1.8.0_302 on LAPTOP-CDO5N2P7 with PID 10752 (started by Tong in D:\TONG\JAVA\ta-mock-proj)
+2021-12-03 17:36:12.324  INFO 10752 --- [main] com.psbc.TaMockProjectApplicationTests   : No active profile set, falling back to default profiles: default
+2021-12-03 17:36:12.433 DEBUG 10752 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@74eb909f
+2021-12-03 17:36:14.910  INFO 10752 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static org.springframework.context.ApplicationContext com.psbc.business.service.SpringContextUtil.applicationContext
+2021-12-03 17:36:15.657 DEBUG 10752 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-12-03 17:36:15.804 DEBUG 10752 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2021-12-03 17:36:15.913 DEBUG 10752 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-12-03 17:36:15.937 DEBUG 10752 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-12-03 17:36:16.226  INFO 10752 --- [main] com.psbc.TaMockProjectApplicationTests   : Started TaMockProjectApplicationTests in 4.394 seconds (JVM running for 6.25)
+2021-12-03 17:37:08.805 DEBUG 10752 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@74eb909f, started on Fri Dec 03 17:36:12 CST 2021
+2021-12-03 17:37:15.228  INFO 14444 --- [main] com.psbc.TaMockProjectApplicationTests   : Starting TaMockProjectApplicationTests using Java 1.8.0_302 on LAPTOP-CDO5N2P7 with PID 14444 (started by Tong in D:\TONG\JAVA\ta-mock-proj)
+2021-12-03 17:37:15.232  INFO 14444 --- [main] com.psbc.TaMockProjectApplicationTests   : No active profile set, falling back to default profiles: default
+2021-12-03 17:37:15.308 DEBUG 14444 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@74eb909f
+2021-12-03 17:37:17.905  INFO 14444 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static org.springframework.context.ApplicationContext com.psbc.business.service.SpringContextUtil.applicationContext
+2021-12-03 17:37:18.596 DEBUG 14444 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-12-03 17:37:18.791 DEBUG 14444 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2021-12-03 17:37:18.922 DEBUG 14444 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-12-03 17:37:18.948 DEBUG 14444 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-12-03 17:37:19.283  INFO 14444 --- [main] com.psbc.TaMockProjectApplicationTests   : Started TaMockProjectApplicationTests in 4.512 seconds (JVM running for 6.357)
+2021-12-03 17:37:32.134  INFO 14444 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-03 17:37:32.386  INFO 14444 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-03 17:38:15.448 DEBUG 14444 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@74eb909f, started on Fri Dec 03 17:37:15 CST 2021
+2021-12-03 17:38:15.453  INFO 14444 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-03 17:38:15.479  INFO 14444 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-03 17:38:22.105  INFO 17160 --- [main] com.psbc.TaMockProjectApplicationTests   : Starting TaMockProjectApplicationTests using Java 1.8.0_302 on LAPTOP-CDO5N2P7 with PID 17160 (started by Tong in D:\TONG\JAVA\ta-mock-proj)
+2021-12-03 17:38:22.109  INFO 17160 --- [main] com.psbc.TaMockProjectApplicationTests   : No active profile set, falling back to default profiles: default
+2021-12-03 17:38:22.194 DEBUG 17160 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@74eb909f
+2021-12-03 17:38:24.754  INFO 17160 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static org.springframework.context.ApplicationContext com.psbc.business.service.SpringContextUtil.applicationContext
+2021-12-03 17:38:25.627 DEBUG 17160 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-12-03 17:38:25.773 DEBUG 17160 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2021-12-03 17:38:25.904 DEBUG 17160 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-12-03 17:38:25.936 DEBUG 17160 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-12-03 17:38:26.255  INFO 17160 --- [main] com.psbc.TaMockProjectApplicationTests   : Started TaMockProjectApplicationTests in 4.608 seconds (JVM running for 6.69)
+2021-12-03 17:38:26.596  INFO 17160 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-03 17:38:26.829  INFO 17160 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-03 17:38:39.716 DEBUG 17160 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@74eb909f, started on Fri Dec 03 17:38:22 CST 2021
+2021-12-03 17:38:39.721  INFO 17160 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-03 17:38:39.745  INFO 17160 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-03 17:41:32.367  INFO 14964 --- [main] com.psbc.TaMockProjectApplicationTests   : Starting TaMockProjectApplicationTests using Java 1.8.0_302 on LAPTOP-CDO5N2P7 with PID 14964 (started by Tong in D:\TONG\JAVA\ta-mock-proj)
+2021-12-03 17:41:32.371  INFO 14964 --- [main] com.psbc.TaMockProjectApplicationTests   : No active profile set, falling back to default profiles: default
+2021-12-03 17:41:32.454 DEBUG 14964 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@74eb909f
+2021-12-03 17:41:34.961  INFO 14964 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static org.springframework.context.ApplicationContext com.psbc.business.service.SpringContextUtil.applicationContext
+2021-12-03 17:41:35.672 DEBUG 14964 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-12-03 17:41:35.825 DEBUG 14964 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2021-12-03 17:41:35.946 DEBUG 14964 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-12-03 17:41:35.970 DEBUG 14964 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-12-03 17:41:36.260  INFO 14964 --- [main] com.psbc.TaMockProjectApplicationTests   : Started TaMockProjectApplicationTests in 4.357 seconds (JVM running for 6.302)
+2021-12-03 17:41:36.647  INFO 14964 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-03 17:41:36.996  INFO 14964 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-03 17:42:00.905 DEBUG 14964 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@74eb909f, started on Fri Dec 03 17:41:32 CST 2021
+2021-12-03 17:42:00.913  INFO 14964 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-03 17:42:01.084  INFO 14964 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-03 17:42:04.649  INFO 8028 --- [main] com.psbc.TaMockProjectApplicationTests   : Starting TaMockProjectApplicationTests using Java 1.8.0_302 on LAPTOP-CDO5N2P7 with PID 8028 (started by Tong in D:\TONG\JAVA\ta-mock-proj)
+2021-12-03 17:42:04.652  INFO 8028 --- [main] com.psbc.TaMockProjectApplicationTests   : No active profile set, falling back to default profiles: default
+2021-12-03 17:42:04.705 DEBUG 8028 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@74eb909f
+2021-12-03 17:42:07.225  INFO 8028 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static org.springframework.context.ApplicationContext com.psbc.business.service.SpringContextUtil.applicationContext
+2021-12-03 17:42:07.904 DEBUG 8028 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-12-03 17:42:08.050 DEBUG 8028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2021-12-03 17:42:08.175 DEBUG 8028 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-12-03 17:42:08.211 DEBUG 8028 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-12-03 17:42:08.504  INFO 8028 --- [main] com.psbc.TaMockProjectApplicationTests   : Started TaMockProjectApplicationTests in 4.369 seconds (JVM running for 6.762)
+2021-12-03 17:42:08.888  INFO 8028 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-03 17:42:09.124  INFO 8028 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-03 17:42:34.839  WARN 8028 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=52s727ms367?s800ns).
+2021-12-03 17:43:38.997  WARN 8028 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m7s145ms619?s500ns).
+2021-12-03 17:43:39.125 DEBUG 8028 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@74eb909f, started on Fri Dec 03 17:42:04 CST 2021
+2021-12-03 17:43:39.134  INFO 8028 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-03 17:43:39.163  INFO 8028 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-03 17:43:45.834  INFO 11540 --- [main] com.psbc.TaMockProjectApplicationTests   : Starting TaMockProjectApplicationTests using Java 1.8.0_302 on LAPTOP-CDO5N2P7 with PID 11540 (started by Tong in D:\TONG\JAVA\ta-mock-proj)
+2021-12-03 17:43:45.839  INFO 11540 --- [main] com.psbc.TaMockProjectApplicationTests   : No active profile set, falling back to default profiles: default
+2021-12-03 17:43:45.947 DEBUG 11540 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@74eb909f
+2021-12-03 17:43:48.525  INFO 11540 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static org.springframework.context.ApplicationContext com.psbc.business.service.SpringContextUtil.applicationContext
+2021-12-03 17:43:49.292 DEBUG 11540 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-12-03 17:43:49.437 DEBUG 11540 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2021-12-03 17:43:49.572 DEBUG 11540 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-12-03 17:43:49.604 DEBUG 11540 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-12-03 17:43:49.919  INFO 11540 --- [main] com.psbc.TaMockProjectApplicationTests   : Started TaMockProjectApplicationTests in 4.558 seconds (JVM running for 6.29)
+2021-12-03 17:43:50.289  INFO 11540 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-03 17:43:50.533  INFO 11540 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-03 17:44:16.310 DEBUG 11540 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@74eb909f, started on Fri Dec 03 17:43:45 CST 2021
+2021-12-03 17:44:16.314  INFO 11540 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-03 17:44:16.539  INFO 11540 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-03 17:44:56.782  INFO 18300 --- [main] com.psbc.TaMockProjectApplicationTests   : Starting TaMockProjectApplicationTests using Java 1.8.0_302 on LAPTOP-CDO5N2P7 with PID 18300 (started by Tong in D:\TONG\JAVA\ta-mock-proj)
+2021-12-03 17:44:56.786  INFO 18300 --- [main] com.psbc.TaMockProjectApplicationTests   : No active profile set, falling back to default profiles: default
+2021-12-03 17:44:56.852 DEBUG 18300 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@e8df99a
+2021-12-03 17:44:59.275  INFO 18300 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static org.springframework.context.ApplicationContext com.psbc.business.service.SpringContextUtil.applicationContext
+2021-12-03 17:45:00.005 DEBUG 18300 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-12-03 17:45:00.208 DEBUG 18300 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2021-12-03 17:45:00.348 DEBUG 18300 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-12-03 17:45:00.379 DEBUG 18300 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-12-03 17:45:00.683  INFO 18300 --- [main] com.psbc.TaMockProjectApplicationTests   : Started TaMockProjectApplicationTests in 4.298 seconds (JVM running for 5.697)
+2021-12-03 17:45:01.054  INFO 18300 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-03 17:45:01.348  INFO 18300 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-03 17:45:01.456 DEBUG 18300 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@e8df99a, started on Fri Dec 03 17:44:56 CST 2021
+2021-12-03 17:45:01.461  INFO 18300 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-03 17:45:01.476  INFO 18300 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-03 17:46:34.737  INFO 21268 --- [main] com.psbc.TaMockProjectApplicationTests   : Starting TaMockProjectApplicationTests using Java 1.8.0_302 on LAPTOP-CDO5N2P7 with PID 21268 (started by Tong in D:\TONG\JAVA\ta-mock-proj)
+2021-12-03 17:46:34.741  INFO 21268 --- [main] com.psbc.TaMockProjectApplicationTests   : No active profile set, falling back to default profiles: default
+2021-12-03 17:46:34.790 DEBUG 21268 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@e8df99a
+2021-12-03 17:46:36.919  INFO 21268 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static org.springframework.context.ApplicationContext com.psbc.business.service.SpringContextUtil.applicationContext
+2021-12-03 17:46:37.449 DEBUG 21268 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-12-03 17:46:37.557 DEBUG 21268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2021-12-03 17:46:37.640 DEBUG 21268 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-12-03 17:46:37.666 DEBUG 21268 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-12-03 17:46:37.876  INFO 21268 --- [main] com.psbc.TaMockProjectApplicationTests   : Started TaMockProjectApplicationTests in 3.522 seconds (JVM running for 4.993)
+2021-12-03 17:46:38.137  INFO 21268 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-03 17:46:38.357  INFO 21268 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-03 17:46:38.446 DEBUG 21268 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@e8df99a, started on Fri Dec 03 17:46:34 CST 2021
+2021-12-03 17:46:38.451  INFO 21268 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-03 17:46:38.462  INFO 21268 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

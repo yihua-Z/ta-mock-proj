@@ -305,6 +305,5 @@ public class Processor024 extends BiDirectionProcessor {
         //      获得交易日日期
         transactionConfirmation.setTransactiontime(getNextTransactionDay(transactiondate));
         transactionConfirmation.setBusinesscode("1" + transactionApplication.getBusinesscode().substring(1));
-
     }
 }

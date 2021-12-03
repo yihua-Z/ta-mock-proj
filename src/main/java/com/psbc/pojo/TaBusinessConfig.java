@@ -1,5 +1,6 @@
 package com.psbc.pojo;
 
+import java.io.Serializable;
 import lombok.Data;
 
 /**
@@ -29,14 +30,14 @@ public class TaBusinessConfig implements DatabaseModel {
     private Integer settlementdays;
 
     /**
-     * 处理状态（‘1’-成功，‘2’-失败）
-     */
-    private Object processstatus;
-
-    /**
      * 确认业务代码(可以是多个，以逗号分隔)
      */
     private String confimbusinesscodes;
+
+    /**
+     * 状态（0-未激活(即不会执行)，1-立即执行(但确认日期根据延迟来写)，2-立即执行(确认日期为当天)，3-严格执行(即等到对应日期才执行)）
+     */
+    private Object status;
 
     private static final long serialVersionUID = 1L;
 
