@@ -63,11 +63,10 @@ public class DateAndTimeUtil {
                     //  日期加1后再次判断是否是节假日
                     transactiondate = addDay(transactiondate, 1);
                     //  当前日期不是节假日与周末时
-                    if (HolidayUtil.getHoliday(transactiondate) == null & !isWeekend(transactiondate)) {
+                    if (HolidayUtil.getHoliday(transactiondate) == null && !isWeekend(transactiondate)) {
                     //  获得交易日日期
                         return transactiondate;
                     }
-
                 }
             } else {
                 return transactiondate;
@@ -79,7 +78,6 @@ public class DateAndTimeUtil {
         return transactiondate;
 
     }
-
 
     public static Boolean isWeekend(String bDate) throws ParseException {
         DateFormat format1 = new SimpleDateFormat("yyyyMMdd");
