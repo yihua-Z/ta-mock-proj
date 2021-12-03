@@ -1,5 +1,6 @@
 package com.psbc;
 
+import com.nlf.calendar.Lunar;
 import com.nlf.calendar.util.HolidayUtil;
 import org.junit.Test;
 import java.text.ParseException;
@@ -31,12 +32,14 @@ public class test {
     @Test
     public void dar(){
 
-        String transactioncfmdate = "202112310929990";
+        String transactioncfmdate = "202110011629990";
         String transactionDate = transactioncfmdate.substring(0,8);
         String transactionYear = transactionDate.substring(0,4);
         String transactionMonth = transactionDate.substring(4,6);
         String transactionDay = transactionDate.substring(6,8);
         String transactionDateNew=transactionDate;
+
+        System.out.println(HolidayUtil.getHoliday(Integer.valueOf(transactionYear),Integer.valueOf(transactionMonth),Integer.valueOf(transactionDay)));
         while (HolidayUtil.getHoliday(Integer.valueOf(transactionYear),Integer.valueOf(transactionMonth),Integer.valueOf(transactionDay))!=null){
             try {
                 transactionDateNew = addDay(transactionDateNew, 1);
@@ -50,9 +53,15 @@ public class test {
 //        判断日期是否为节假日
         if (transactionDateNew!=transactionDate){
             transactioncfmdate=transactionDateNew+transactioncfmdate.substring(9);
-            System.out.println(transactioncfmdate);
+//            System.out.println(transactioncfmdate);
         }
         System.out.println(transactioncfmdate);
+
+        System.out.println(Lunar.fromDate(new Date()).getWeek());
+
+
+//        console.log(d.getWeek());
+//        console.log(d.getWeekInChinese());
 
     }
 

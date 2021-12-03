@@ -22,16 +22,16 @@
     from holiday
     where
     <if test="day != null">
-      and day = #{day,jdbcType=CHAR},
+     day = #{day,jdbcType=CHAR}
     </if>
     <if test="isholiday != null">
-      and isholiday = #{isholiday,jdbcType=BOOLEAN},
+      and isholiday = #{isholiday,jdbcType=BOOLEAN}
     </if>
     <if test="nextholiday != null">
-      and nextholiday = #{nextholiday,jdbcType=CHAR},
+      and nextholiday = #{nextholiday,jdbcType=CHAR}
     </if>
     <if test="daytype != null">
-     and daytype = #{daytype,jdbcType=OTHER},
+      and daytype = #{daytype,jdbcType=OTHER}
     </if>
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">

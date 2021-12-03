@@ -8,6 +8,7 @@ import com.psbc.exceptions.ApplyException;
 import com.psbc.exceptions.ProcessingException;
 import com.psbc.mapper.AccountExpectationDao;
 import com.psbc.mapper.AccountInfoDao;
+import com.psbc.mapper.HolidayDao;
 import com.psbc.pojo.AccountExpectation;;
 import com.psbc.pojo.Holiday;
 import com.psbc.pojo.TransactionApplication;
@@ -56,12 +57,17 @@ class TaMockProjectApplicationTests {
 
         
     }
+
+/*    @Autowired
+    HolidayDao holidayDao;*/
     @Test
     void test(){
         RepositoryFactory repositoryFactory = SpringContextUtil.getBean(RepositoryFactory.class);
         Holiday holiday = new Holiday();
         holiday.setDay("12");
-        List<Holiday> holidays = repositoryFactory.getHolidayDao().selectByCondition(holiday);
+        HolidayDao holidayDao = repositoryFactory.getHolidayDao();
+        System.out.println(holidayDao == null);
+        List<Holiday> holidays =holidayDao.selectByCondition(holiday);
         System.out.println(holidays);
 
 
