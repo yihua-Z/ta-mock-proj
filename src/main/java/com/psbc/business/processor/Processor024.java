@@ -1,5 +1,4 @@
 package com.psbc.business.processor;
-
 import com.nlf.calendar.util.HolidayUtil;
 import com.psbc.business.service.RepositoryFactory;
 import com.psbc.business.service.SpringContextUtil;
@@ -13,15 +12,12 @@ import com.psbc.pojo.*;
 import com.psbc.reader.xmlModel.XMLNode;
 import com.psbc.utils.helper.XMLParser;
 import org.apache.log4j.Logger;
-
 import java.lang.Exception;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
-
 import static com.psbc.service.ObjectProcessor.copyFields;
 import static com.psbc.utils.DateAndTimeUtil.getFullNowDateTime;
 import static com.psbc.utils.DateAndTimeUtil.getNextTransactionDay;
