@@ -1,5 +1,6 @@
 package com.psbc.pojo;
 
+import java.io.Serializable;
 import lombok.Data;
 
 /**
@@ -8,7 +9,6 @@ import lombok.Data;
  */
 @Data
 public class Exception extends ExceptionKey implements DatabaseModel {
-
     /**
      * 申请单编号
      */
@@ -28,11 +28,10 @@ public class Exception extends ExceptionKey implements DatabaseModel {
      * 同一记录序列号
      */
     private Integer referenceno;
-
     /**
      * 交易日期
      */
-    private String apptransactiondate;
+    private String transactiondate;
 
     /**
      * 投资人理财交易账号
@@ -53,6 +52,8 @@ public class Exception extends ExceptionKey implements DatabaseModel {
      * 错误说明
      */
     private String speification;
+
+    private String returncode;
 
 
     @Override

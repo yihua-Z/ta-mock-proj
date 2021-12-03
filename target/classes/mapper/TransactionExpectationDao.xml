@@ -3,12 +3,19 @@
 <mapper namespace="com.psbc.mapper.TransactionExpectationDao">
   <resultMap id="BaseResultMap" type="com.psbc.pojo.TransactionExpectation">
     <id column="AppSheetSerialNo" jdbcType="VARCHAR" property="appsheetserialno" />
+    <id column="TACode" jdbcType="VARCHAR" property="tacode" />
+    <id column="ReferenceNo" jdbcType="INTEGER" property="referenceno" />
+    <id column="DistributorCode" jdbcType="VARCHAR" property="distributorcode" />
+    <result column="BusinessCode" jdbcType="VARCHAR" property="businesscode" />
     <result column="TransactionCfmDate" jdbcType="VARCHAR" property="transactioncfmdate" />
     <result column="ConfirmedVol" jdbcType="DECIMAL" property="confirmedvol" />
     <result column="ConfirmedAmount" jdbcType="DECIMAL" property="confirmedamount" />
+    <result column="TransactionDate" jdbcType="VARCHAR" property="transactiondate" />
+    <result column="TransactionTime" jdbcType="VARCHAR" property="transactiontime" />
     <result column="ReturnCode" jdbcType="VARCHAR" property="returncode" />
     <result column="BusinessFinishFlag" jdbcType="VARCHAR" property="businessfinishflag" />
     <result column="RegionCode" jdbcType="VARCHAR" property="regioncode" />
+    <result column="DownLoaddate" jdbcType="VARCHAR" property="downloaddate" />
     <result column="AgencyFee" jdbcType="DECIMAL" property="agencyfee" />
     <result column="NAV" jdbcType="DECIMAL" property="nav" />
     <result column="OtherFee1" jdbcType="DECIMAL" property="otherfee1" />
@@ -41,6 +48,7 @@
     <result column="AchievementPay" jdbcType="DECIMAL" property="achievementpay" />
     <result column="AchievementCompen" jdbcType="DECIMAL" property="achievementcompen" />
     <result column="SharesAdjustmentFlag" jdbcType="VARCHAR" property="sharesadjustmentflag" />
+    <result column="GeneralTASerialNO" jdbcType="VARCHAR" property="generaltaserialno" />
     <result column="UndistributeMonetaryIncome" jdbcType="DECIMAL" property="undistributemonetaryincome" />
     <result column="UndistributeMonetaryIncomeFlag" jdbcType="VARCHAR" property="undistributemonetaryincomeflag" />
     <result column="BreachFee" jdbcType="DECIMAL" property="breachfee" />
@@ -59,31 +67,41 @@
     <result column="Status" jdbcType="VARCHAR" property="status" />
   </resultMap>
   <sql id="Base_Column_List">
-    AppSheetSerialNo, TransactionCfmDate, ConfirmedVol, ConfirmedAmount, ReturnCode, 
-    BusinessFinishFlag, RegionCode, AgencyFee, NAV, OtherFee1, StampDuty, RateFee, Specification, 
+    AppSheetSerialNo, TACode, ReferenceNo, DistributorCode, BusinessCode, TransactionCfmDate, 
+    ConfirmedVol, ConfirmedAmount, TransactionDate, TransactionTime, ReturnCode, BusinessFinishFlag, 
+    RegionCode, DownLoaddate, AgencyFee, NAV, OtherFee1, StampDuty, RateFee, Specification, 
     TransferDirection, Interest, VolumeByInterest, InterestTax, TradingPrice, Tax, TargetNAV, 
     TargetFundPrice, CfmVolOfTargetFund, MinFee, OtherFee2, TransferFee, FromTAFlag, 
     RedemptionInAdvanceFlag, FrozenMethod, RedemptionReason, TotalTransFee, AlternationDate, 
     RefundAmount, SalePercent, ManagerRealRatio, ChangeFee, RecuperateFee, AchievementPay, 
-    AchievementCompen, SharesAdjustmentFlag, UndistributeMonetaryIncome, UndistributeMonetaryIncomeFlag, 
-    BreachFee, BreachFeeBackToFund, PunishFee, ChangeAgencyFee, RecuperateAgencyFee, 
-    ErrorDetail, RaiseInterest, FeeCalculator, ShareRegisterDate, TotalFrozenVol, FundVolBalance, 
-    FrozenBalance, TransferDateThroughClearingAgency, `Status`
+    AchievementCompen, SharesAdjustmentFlag, GeneralTASerialNO, UndistributeMonetaryIncome, 
+    UndistributeMonetaryIncomeFlag, BreachFee, BreachFeeBackToFund, PunishFee, ChangeAgencyFee, 
+    RecuperateAgencyFee, ErrorDetail, RaiseInterest, FeeCalculator, ShareRegisterDate, 
+    TotalFrozenVol, FundVolBalance, FrozenBalance, TransferDateThroughClearingAgency, 
+    `Status`
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="com.psbc.pojo.TransactionExpectationKey" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from transaction_expectation
     where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
+      and TACode = #{tacode,jdbcType=VARCHAR}
+      and ReferenceNo = #{referenceno,jdbcType=INTEGER}
+      and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+  <delete id="deleteByPrimaryKey" parameterType="com.psbc.pojo.TransactionExpectationKey">
     delete from transaction_expectation
     where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
+      and TACode = #{tacode,jdbcType=VARCHAR}
+      and ReferenceNo = #{referenceno,jdbcType=INTEGER}
+      and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno" parameterType="com.psbc.pojo.TransactionExpectation" useGeneratedKeys="true">
-    insert into transaction_expectation (TransactionCfmDate, ConfirmedVol, 
-      ConfirmedAmount, ReturnCode, BusinessFinishFlag, 
-      RegionCode, AgencyFee, NAV, 
+    insert into transaction_expectation (AppSheetSerialNo,TACode, ReferenceNo, DistributorCode,
+      BusinessCode, TransactionCfmDate, ConfirmedVol, 
+      ConfirmedAmount, TransactionDate, TransactionTime, 
+      ReturnCode, BusinessFinishFlag, RegionCode, 
+      DownLoaddate, AgencyFee, NAV, 
       OtherFee1, StampDuty, RateFee, 
       Specification, TransferDirection, Interest, 
       VolumeByInterest, InterestTax, TradingPrice, 
@@ -94,16 +112,18 @@
       AlternationDate, RefundAmount, SalePercent, 
       ManagerRealRatio, ChangeFee, RecuperateFee, 
       AchievementPay, AchievementCompen, SharesAdjustmentFlag, 
-      UndistributeMonetaryIncome, UndistributeMonetaryIncomeFlag, 
-      BreachFee, BreachFeeBackToFund, PunishFee, 
-      ChangeAgencyFee, RecuperateAgencyFee, ErrorDetail, 
-      RaiseInterest, FeeCalculator, ShareRegisterDate, 
-      TotalFrozenVol, FundVolBalance, FrozenBalance, 
-      TransferDateThroughClearingAgency, `Status`
-      )
-    values (#{transactioncfmdate,jdbcType=VARCHAR}, #{confirmedvol,jdbcType=DECIMAL}, 
-      #{confirmedamount,jdbcType=DECIMAL}, #{returncode,jdbcType=VARCHAR}, #{businessfinishflag,jdbcType=VARCHAR}, 
-      #{regioncode,jdbcType=VARCHAR}, #{agencyfee,jdbcType=DECIMAL}, #{nav,jdbcType=DECIMAL}, 
+      GeneralTASerialNO, UndistributeMonetaryIncome, 
+      UndistributeMonetaryIncomeFlag, BreachFee, 
+      BreachFeeBackToFund, PunishFee, ChangeAgencyFee, 
+      RecuperateAgencyFee, ErrorDetail, RaiseInterest, 
+      FeeCalculator, ShareRegisterDate, TotalFrozenVol, 
+      FundVolBalance, FrozenBalance, TransferDateThroughClearingAgency, 
+      `Status`)
+    values (#{appsheetserialno,jdbcType=VARCHAR},#{tacode,jdbcType=VARCHAR}, #{referenceno,jdbcType=INTEGER}, #{distributorcode,jdbcType=VARCHAR},
+      #{businesscode,jdbcType=VARCHAR}, #{transactioncfmdate,jdbcType=VARCHAR}, #{confirmedvol,jdbcType=DECIMAL}, 
+      #{confirmedamount,jdbcType=DECIMAL}, #{transactiondate,jdbcType=VARCHAR}, #{transactiontime,jdbcType=VARCHAR}, 
+      #{returncode,jdbcType=VARCHAR}, #{businessfinishflag,jdbcType=VARCHAR}, #{regioncode,jdbcType=VARCHAR}, 
+      #{downloaddate,jdbcType=VARCHAR}, #{agencyfee,jdbcType=DECIMAL}, #{nav,jdbcType=DECIMAL}, 
       #{otherfee1,jdbcType=DECIMAL}, #{stampduty,jdbcType=DECIMAL}, #{ratefee,jdbcType=DECIMAL}, 
       #{specification,jdbcType=VARCHAR}, #{transferdirection,jdbcType=VARCHAR}, #{interest,jdbcType=DECIMAL}, 
       #{volumebyinterest,jdbcType=DECIMAL}, #{interesttax,jdbcType=DECIMAL}, #{tradingprice,jdbcType=DECIMAL}, 
@@ -114,17 +134,29 @@
       #{alternationdate,jdbcType=VARCHAR}, #{refundamount,jdbcType=DECIMAL}, #{salepercent,jdbcType=DECIMAL}, 
       #{managerrealratio,jdbcType=DECIMAL}, #{changefee,jdbcType=DECIMAL}, #{recuperatefee,jdbcType=DECIMAL}, 
       #{achievementpay,jdbcType=DECIMAL}, #{achievementcompen,jdbcType=DECIMAL}, #{sharesadjustmentflag,jdbcType=VARCHAR}, 
-      #{undistributemonetaryincome,jdbcType=DECIMAL}, #{undistributemonetaryincomeflag,jdbcType=VARCHAR}, 
-      #{breachfee,jdbcType=DECIMAL}, #{breachfeebacktofund,jdbcType=DECIMAL}, #{punishfee,jdbcType=DECIMAL}, 
-      #{changeagencyfee,jdbcType=DECIMAL}, #{recuperateagencyfee,jdbcType=DECIMAL}, #{errordetail,jdbcType=VARCHAR}, 
-      #{raiseinterest,jdbcType=DECIMAL}, #{feecalculator,jdbcType=VARCHAR}, #{shareregisterdate,jdbcType=VARCHAR}, 
-      #{totalfrozenvol,jdbcType=DECIMAL}, #{fundvolbalance,jdbcType=DECIMAL}, #{frozenbalance,jdbcType=DECIMAL}, 
-      #{transferdatethroughclearingagency,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}
-      )
+      #{generaltaserialno,jdbcType=VARCHAR}, #{undistributemonetaryincome,jdbcType=DECIMAL}, 
+      #{undistributemonetaryincomeflag,jdbcType=VARCHAR}, #{breachfee,jdbcType=DECIMAL}, 
+      #{breachfeebacktofund,jdbcType=DECIMAL}, #{punishfee,jdbcType=DECIMAL}, #{changeagencyfee,jdbcType=DECIMAL}, 
+      #{recuperateagencyfee,jdbcType=DECIMAL}, #{errordetail,jdbcType=VARCHAR}, #{raiseinterest,jdbcType=DECIMAL}, 
+      #{feecalculator,jdbcType=VARCHAR}, #{shareregisterdate,jdbcType=VARCHAR}, #{totalfrozenvol,jdbcType=DECIMAL}, 
+      #{fundvolbalance,jdbcType=DECIMAL}, #{frozenbalance,jdbcType=DECIMAL}, #{transferdatethroughclearingagency,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno" parameterType="com.psbc.pojo.TransactionExpectation" useGeneratedKeys="true">
     insert into transaction_expectation
     <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tacode != null">
+        TACode,
+      </if>
+      <if test="referenceno != null">
+        ReferenceNo,
+      </if>
+      <if test="distributorcode != null">
+        DistributorCode,
+      </if>
+      <if test="businesscode != null">
+        BusinessCode,
+      </if>
       <if test="transactioncfmdate != null">
         TransactionCfmDate,
       </if>
@@ -134,6 +166,12 @@
       <if test="confirmedamount != null">
         ConfirmedAmount,
       </if>
+      <if test="transactiondate != null">
+        TransactionDate,
+      </if>
+      <if test="transactiontime != null">
+        TransactionTime,
+      </if>
       <if test="returncode != null">
         ReturnCode,
       </if>
@@ -142,6 +180,9 @@
       </if>
       <if test="regioncode != null">
         RegionCode,
+      </if>
+      <if test="downloaddate != null">
+        DownLoaddate,
       </if>
       <if test="agencyfee != null">
         AgencyFee,
@@ -239,6 +280,9 @@
       <if test="sharesadjustmentflag != null">
         SharesAdjustmentFlag,
       </if>
+      <if test="generaltaserialno != null">
+        GeneralTASerialNO,
+      </if>
       <if test="undistributemonetaryincome != null">
         UndistributeMonetaryIncome,
       </if>
@@ -289,6 +333,18 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tacode != null">
+        #{tacode,jdbcType=VARCHAR},
+      </if>
+      <if test="referenceno != null">
+        #{referenceno,jdbcType=INTEGER},
+      </if>
+      <if test="distributorcode != null">
+        #{distributorcode,jdbcType=VARCHAR},
+      </if>
+      <if test="businesscode != null">
+        #{businesscode,jdbcType=VARCHAR},
+      </if>
       <if test="transactioncfmdate != null">
         #{transactioncfmdate,jdbcType=VARCHAR},
       </if>
@@ -298,6 +354,12 @@
       <if test="confirmedamount != null">
         #{confirmedamount,jdbcType=DECIMAL},
       </if>
+      <if test="transactiondate != null">
+        #{transactiondate,jdbcType=VARCHAR},
+      </if>
+      <if test="transactiontime != null">
+        #{transactiontime,jdbcType=VARCHAR},
+      </if>
       <if test="returncode != null">
         #{returncode,jdbcType=VARCHAR},
       </if>
@@ -306,6 +368,9 @@
       </if>
       <if test="regioncode != null">
         #{regioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="downloaddate != null">
+        #{downloaddate,jdbcType=VARCHAR},
       </if>
       <if test="agencyfee != null">
         #{agencyfee,jdbcType=DECIMAL},
@@ -403,6 +468,9 @@
       <if test="sharesadjustmentflag != null">
         #{sharesadjustmentflag,jdbcType=VARCHAR},
       </if>
+      <if test="generaltaserialno != null">
+        #{generaltaserialno,jdbcType=VARCHAR},
+      </if>
       <if test="undistributemonetaryincome != null">
         #{undistributemonetaryincome,jdbcType=DECIMAL},
       </if>
@@ -456,6 +524,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.psbc.pojo.TransactionExpectation">
     update transaction_expectation
     <set>
+      <if test="businesscode != null">
+        BusinessCode = #{businesscode,jdbcType=VARCHAR},
+      </if>
       <if test="transactioncfmdate != null">
         TransactionCfmDate = #{transactioncfmdate,jdbcType=VARCHAR},
       </if>
@@ -465,6 +536,12 @@
       <if test="confirmedamount != null">
         ConfirmedAmount = #{confirmedamount,jdbcType=DECIMAL},
       </if>
+      <if test="transactiondate != null">
+        TransactionDate = #{transactiondate,jdbcType=VARCHAR},
+      </if>
+      <if test="transactiontime != null">
+        TransactionTime = #{transactiontime,jdbcType=VARCHAR},
+      </if>
       <if test="returncode != null">
         ReturnCode = #{returncode,jdbcType=VARCHAR},
       </if>
@@ -473,6 +550,9 @@
       </if>
       <if test="regioncode != null">
         RegionCode = #{regioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="downloaddate != null">
+        DownLoaddate = #{downloaddate,jdbcType=VARCHAR},
       </if>
       <if test="agencyfee != null">
         AgencyFee = #{agencyfee,jdbcType=DECIMAL},
@@ -570,6 +650,9 @@
       <if test="sharesadjustmentflag != null">
         SharesAdjustmentFlag = #{sharesadjustmentflag,jdbcType=VARCHAR},
       </if>
+      <if test="generaltaserialno != null">
+        GeneralTASerialNO = #{generaltaserialno,jdbcType=VARCHAR},
+      </if>
       <if test="undistributemonetaryincome != null">
         UndistributeMonetaryIncome = #{undistributemonetaryincome,jdbcType=DECIMAL},
       </if>
@@ -620,15 +703,22 @@
       </if>
     </set>
     where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
+      and TACode = #{tacode,jdbcType=VARCHAR}
+      and ReferenceNo = #{referenceno,jdbcType=INTEGER}
+      and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.TransactionExpectation">
     update transaction_expectation
-    set TransactionCfmDate = #{transactioncfmdate,jdbcType=VARCHAR},
+    set BusinessCode = #{businesscode,jdbcType=VARCHAR},
+      TransactionCfmDate = #{transactioncfmdate,jdbcType=VARCHAR},
       ConfirmedVol = #{confirmedvol,jdbcType=DECIMAL},
       ConfirmedAmount = #{confirmedamount,jdbcType=DECIMAL},
+      TransactionDate = #{transactiondate,jdbcType=VARCHAR},
+      TransactionTime = #{transactiontime,jdbcType=VARCHAR},
       ReturnCode = #{returncode,jdbcType=VARCHAR},
       BusinessFinishFlag = #{businessfinishflag,jdbcType=VARCHAR},
       RegionCode = #{regioncode,jdbcType=VARCHAR},
+      DownLoaddate = #{downloaddate,jdbcType=VARCHAR},
       AgencyFee = #{agencyfee,jdbcType=DECIMAL},
       NAV = #{nav,jdbcType=DECIMAL},
       OtherFee1 = #{otherfee1,jdbcType=DECIMAL},
@@ -661,6 +751,7 @@
       AchievementPay = #{achievementpay,jdbcType=DECIMAL},
       AchievementCompen = #{achievementcompen,jdbcType=DECIMAL},
       SharesAdjustmentFlag = #{sharesadjustmentflag,jdbcType=VARCHAR},
+      GeneralTASerialNO = #{generaltaserialno,jdbcType=VARCHAR},
       UndistributeMonetaryIncome = #{undistributemonetaryincome,jdbcType=DECIMAL},
       UndistributeMonetaryIncomeFlag = #{undistributemonetaryincomeflag,jdbcType=VARCHAR},
       BreachFee = #{breachfee,jdbcType=DECIMAL},
@@ -678,5 +769,8 @@
       TransferDateThroughClearingAgency = #{transferdatethroughclearingagency,jdbcType=VARCHAR},
       `Status` = #{status,jdbcType=VARCHAR}
     where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
+      and TACode = #{tacode,jdbcType=VARCHAR}
+      and ReferenceNo = #{referenceno,jdbcType=INTEGER}
+      and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
   </update>
 </mapper>

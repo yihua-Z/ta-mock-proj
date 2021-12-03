@@ -6,15 +6,16 @@
     <id column="TACode" jdbcType="VARCHAR" property="tacode" />
     <id column="DistributorCode" jdbcType="VARCHAR" property="distributorcode" />
     <id column="ReferenceNo" jdbcType="INTEGER" property="referenceno" />
-    <result column="AppTransactionDate" jdbcType="CHAR" property="apptransactiondate" />
+    <result column="TransactionDate" jdbcType="CHAR" property="transactiondate" />
     <result column="TransactionAccountID" jdbcType="VARCHAR" property="transactionaccountid" />
     <result column="BusinessCode" jdbcType="CHAR" property="businesscode" />
     <result column="ErrorType" jdbcType="OTHER" property="errortype" />
     <result column="Speification" jdbcType="VARCHAR" property="speification" />
+    <result column="ReturnCode" jdbcType="VARCHAR" property="returncode" />
   </resultMap>
   <sql id="Base_Column_List">
-    AppSheetSerialNo, TACode, DistributorCode, ReferenceNo, AppTransactionDate, TransactionAccountID, 
-    BusinessCode, ErrorType, Speification
+    AppSheetSerialNo, TACode, DistributorCode, ReferenceNo, TransactionDate, TransactionAccountID, 
+    BusinessCode, ErrorType, Speification, ReturnCode
   </sql>
   <select id="selectByPrimaryKey" parameterType="com.psbc.pojo.ExceptionKey" resultMap="BaseResultMap">
     select 
@@ -32,14 +33,14 @@
       and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
       and ReferenceNo = #{referenceno,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno" parameterType="com.psbc.pojo.ExceptionKey" useGeneratedKeys="true">
-    insert into exception (AppSheetSerialNo,TACode, DistributorCode, ReferenceNo,
-      AppTransactionDate, TransactionAccountID, 
-      BusinessCode, ErrorType, Speification
+  <insert id="insert" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno" parameterType="com.psbc.pojo.Exception" useGeneratedKeys="true">
+    insert into exception (TACode, DistributorCode, ReferenceNo, 
+      TransactionDate, TransactionAccountID, BusinessCode, 
+      ErrorType, Speification, ReturnCode
       )
-    values (#{appsheetserialno,jdbcType=VARCHAR},#{tacode,jdbcType=VARCHAR}, #{distributorcode,jdbcType=VARCHAR}, #{referenceno,jdbcType=INTEGER},
-      #{apptransactiondate,jdbcType=CHAR}, #{transactionaccountid,jdbcType=VARCHAR}, 
-      #{businesscode,jdbcType=CHAR}, #{errortype,jdbcType=OTHER}, #{speification,jdbcType=VARCHAR}
+    values (#{tacode,jdbcType=VARCHAR}, #{distributorcode,jdbcType=VARCHAR}, #{referenceno,jdbcType=INTEGER}, 
+      #{transactiondate,jdbcType=CHAR}, #{transactionaccountid,jdbcType=VARCHAR}, #{businesscode,jdbcType=CHAR}, 
+      #{errortype,jdbcType=OTHER}, #{speification,jdbcType=VARCHAR}, #{returncode,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno" parameterType="com.psbc.pojo.Exception" useGeneratedKeys="true">
@@ -54,8 +55,8 @@
       <if test="referenceno != null">
         ReferenceNo,
       </if>
-      <if test="apptransactiondate != null">
-        AppTransactionDate,
+      <if test="transactiondate != null">
+        TransactionDate,
       </if>
       <if test="transactionaccountid != null">
         TransactionAccountID,
@@ -69,6 +70,9 @@
       <if test="speification != null">
         Speification,
       </if>
+      <if test="returncode != null">
+        ReturnCode,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="tacode != null">
@@ -80,8 +84,8 @@
       <if test="referenceno != null">
         #{referenceno,jdbcType=INTEGER},
       </if>
-      <if test="apptransactiondate != null">
-        #{apptransactiondate,jdbcType=CHAR},
+      <if test="transactiondate != null">
+        #{transactiondate,jdbcType=CHAR},
       </if>
       <if test="transactionaccountid != null">
         #{transactionaccountid,jdbcType=VARCHAR},
@@ -95,13 +99,16 @@
       <if test="speification != null">
         #{speification,jdbcType=VARCHAR},
       </if>
+      <if test="returncode != null">
+        #{returncode,jdbcType=VARCHAR},
+      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.psbc.pojo.Exception">
     update exception
     <set>
-      <if test="apptransactiondate != null">
-        AppTransactionDate = #{apptransactiondate,jdbcType=CHAR},
+      <if test="transactiondate != null">
+        TransactionDate = #{transactiondate,jdbcType=CHAR},
       </if>
       <if test="transactionaccountid != null">
         TransactionAccountID = #{transactionaccountid,jdbcType=VARCHAR},
@@ -115,6 +122,9 @@
       <if test="speification != null">
         Speification = #{speification,jdbcType=VARCHAR},
       </if>
+      <if test="returncode != null">
+        ReturnCode = #{returncode,jdbcType=VARCHAR},
+      </if>
     </set>
     where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
       and TACode = #{tacode,jdbcType=VARCHAR}
@@ -123,11 +133,12 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.Exception">
     update exception
-    set AppTransactionDate = #{apptransactiondate,jdbcType=CHAR},
+    set TransactionDate = #{transactiondate,jdbcType=CHAR},
       TransactionAccountID = #{transactionaccountid,jdbcType=VARCHAR},
       BusinessCode = #{businesscode,jdbcType=CHAR},
       ErrorType = #{errortype,jdbcType=OTHER},
-      Speification = #{speification,jdbcType=VARCHAR}
+      Speification = #{speification,jdbcType=VARCHAR},
+      ReturnCode = #{returncode,jdbcType=VARCHAR}
     where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
       and TACode = #{tacode,jdbcType=VARCHAR}
       and DistributorCode = #{distributorcode,jdbcType=VARCHAR}

@@ -288,21 +288,26 @@ CREATE TABLE `dividend`
 -- Table structure for exception（异常表）
 -- ----------------------------
 DROP TABLE IF EXISTS `exception`;
-CREATE TABLE `exception`
+
+-- auto-generated definition
+create table EXCEPTION
 (
-    `AppSheetSerialNo`     varchar(24)    NOT NULL COMMENT '申请单编号',
-    `TACode`               varchar(9)     NOT NULL COMMENT 'TA代码',
-    `DistributorCode`      varchar(9)     NOT NULL COMMENT '销售人代码',
-    `ReferenceNo`          int            NOT NULL COMMENT '同一记录序列号',
-    `TransactionDate`      char(8)        NOT NULL COMMENT '交易日期',
-    `TransactionAccountID` varchar(17)    NOT NULL COMMENT '投资人理财交易账号',
-    `BusinessCode`         char(3)        NOT NULL COMMENT '业务代码',
-    `ErrorType`            enum ('0','1') NOT NULL COMMENT '错误类型（0-非业务逻辑错误，1-业务逻辑错误）',
-    `Speification`         varchar(255)   NULL COMMENT '错误说明',
-    PRIMARY KEY (`AppSheetSerialNo`, `TACode`, `DistributorCode`, `ReferenceNo`) USING BTREE
-) ENGINE = InnoDB
-  CHARACTER SET = utf8
-  ROW_FORMAT = Dynamic;
+    AppSheetSerialNo     varchar(24)     not null comment '申请单编号',
+    TACode               varchar(9)      not null comment 'TA代码',
+    DistributorCode      varchar(9)      not null comment '销售人代码',
+    ReferenceNo          int             not null comment '同一记录序列号',
+    TransactionDate      char(8)         not null comment '交易日期',
+    TransactionAccountID varchar(17)     not null comment '投资人理财交易账号',
+    BusinessCode         char(3)         not null comment '业务代码',
+    ErrorType            enum ('0', '1') not null comment '错误类型（0-非业务逻辑错误，1-业务逻辑错误）',
+    Speification         varchar(255)    null comment '错误说明',
+    ReturnCode           varchar(50)     null comment '返回代码',
+    primary key (AppSheetSerialNo, TACode, DistributorCode, ReferenceNo)
+)
+    ENGINE = InnoDB
+    CHARACTER SET = utf8
+    ROW_FORMAT = Dynamic;
+
 
 -- ----------------------------
 -- Table structure for fund_date（产品日历表）

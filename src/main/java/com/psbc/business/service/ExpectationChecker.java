@@ -88,7 +88,7 @@ public class ExpectationChecker {
         RecordOperator recordOperator = new RecordOperator();
         TransactionExpectation transactionExpectation = new TransactionExpectation();
         transactionExpectation=(TransactionExpectation)recordOperator.getTargetObject(application,transactionExpectation.newInstanceWithoutArgs());
-        this.transactionExpectation = transactionExpectationDao.selectByPrimaryKey(transactionExpectation.getAppsheetserialno());
+        this.transactionExpectation = transactionExpectationDao.selectByPrimaryKey(transactionExpectation);
         if (transactionExpectation != null) {
             checkAppSheetSeriaNo = true;
         }

@@ -1,20 +1,41 @@
 package com.psbc.pojo;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
+import com.psbc.exceptions.ConfirmExpectationException;
 import lombok.Data;
 
 /**
  * transaction_expectation
- *
- * @author
+ * @author 
  */
 @Data
-public class TransactionExpectation implements ExpectationModel {
+public class TransactionExpectation extends TransactionExpectationKey implements ExpectationModel {
     /**
      * 申请单编号
      */
     private String appsheetserialno;
+
+    /**
+     * TA代码
+     */
+    private String tacode;
+
+    /**
+     * 同一交易序列码
+     */
+    private Integer referenceno;
+
+    /**
+     * 销售人代码
+     */
+    private String distributorcode;
+
+    /**
+     * 确认业务代码
+     */
+    private String businesscode;
 
     /**
      * 交易确认日期
@@ -32,6 +53,16 @@ public class TransactionExpectation implements ExpectationModel {
     private BigDecimal confirmedamount;
 
     /**
+     * 交易发生日期
+     */
+    private String transactiondate;
+
+    /**
+     * 交易发生时间
+     */
+    private String transactiontime;
+
+    /**
      * 交易处理返回代码
      */
     private String returncode;
@@ -45,6 +76,11 @@ public class TransactionExpectation implements ExpectationModel {
      * 交易所在地区编号
      */
     private String regioncode;
+
+    /**
+     * 交易数据下传日期
+     */
+    private String downloaddate;
 
     /**
      * 代理费
@@ -205,6 +241,11 @@ public class TransactionExpectation implements ExpectationModel {
      * 份额强制调整标志
      */
     private String sharesadjustmentflag;
+
+    /**
+     * 总TA确认流水号
+     */
+    private String generaltaserialno;
 
     /**
      * 货币式理财未付收益金额
