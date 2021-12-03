@@ -22,24 +22,6 @@
     from holiday
     where
     <if test="day != null">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      and day = #{day,jdbcType=CHAR},
-    </if>
-    <if test="isholiday != null">
-      and isholiday = #{isholiday,jdbcType=BOOLEAN},
-    </if>
-    <if test="nextholiday != null">
-      and nextholiday = #{nextholiday,jdbcType=CHAR},
-    </if>
-    <if test="daytype != null">
-     and daytype = #{daytype,jdbcType=OTHER},
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
      day = #{day,jdbcType=CHAR}
     </if>
     <if test="isholiday != null">
@@ -50,13 +32,6 @@
     </if>
     <if test="daytype != null">
       and daytype = #{daytype,jdbcType=OTHER}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     </if>
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">

@@ -1,6 +1,6 @@
 package com.psbc.business.service.annotation;
 
-import com.psbc.business.service.validator.FieldValidator;
+import com.psbc.business.service.FieldValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

@@ -1882,6 +1882,20 @@ java.sql.SQLSyntaxErrorException: Unknown database 'ta-mack'
 2021-12-02 19:01:34.106  WARN 13720 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m23s964ms953?s700ns).
 2021-12-02 19:01:34.863  INFO 13720 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-12-02 19:01:34.880  INFO 13720 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-02 19:02:49.648  INFO 10156 --- [main] com.psbc.TaMockProjectApplicationTests   : Starting TaMockProjectApplicationTests using Java 1.8.0_271 on dealyz-13LAPTOP with PID 10156 (started by Dealyz in E:\TA-MOCK\ta-mock-proj)
+2021-12-02 19:02:49.658  INFO 10156 --- [main] com.psbc.TaMockProjectApplicationTests   : No active profile set, falling back to default profiles: default
+2021-12-02 19:02:49.851 DEBUG 10156 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@46944ca9
+2021-12-02 19:02:54.218  INFO 10156 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static org.springframework.context.ApplicationContext com.psbc.business.service.SpringContextUtil.applicationContext
+2021-12-02 19:02:55.498 DEBUG 10156 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-12-02 19:02:55.777 DEBUG 10156 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2021-12-02 19:02:55.926 DEBUG 10156 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-12-02 19:02:55.968 DEBUG 10156 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-12-02 19:02:56.434  INFO 10156 --- [main] com.psbc.TaMockProjectApplicationTests   : Started TaMockProjectApplicationTests in 7.649 seconds (JVM running for 10.215)
+2021-12-02 19:02:57.057  INFO 10156 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-02 19:02:57.512  INFO 10156 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-02 19:02:57.694 DEBUG 10156 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@46944ca9, started on Thu Dec 02 19:02:49 CST 2021
+2021-12-02 19:02:57.705  INFO 10156 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-02 19:02:57.735  INFO 10156 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 >>>>>>> Stashed changes
