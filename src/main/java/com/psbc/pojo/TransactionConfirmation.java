@@ -1,7 +1,7 @@
 package com.psbc.pojo;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
-
 import lombok.Data;
 
 /**
@@ -323,9 +323,7 @@ public class TransactionConfirmation implements ConfirmationModel {
     /**
      * 同一个确认的序列号
      */
-    private Integer referencenumber;
-
-    private static final long serialVersionUID = 1L;
+    private Integer referenceno;
 
     @Override
     public DatabaseModel newInstanceWithoutArgs() {

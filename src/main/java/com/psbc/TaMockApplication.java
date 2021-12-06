@@ -27,8 +27,7 @@ public class TaMockApplication {
         for (TransactionApplication application : applyList
         ) {
             try {
-                if (application.getBusinesscode().equals("024")) {
-
+                if (application.getBusinesscode().equals("024")&&!application.getRecordstatus().equals("2")) {
                     processor024.process(application);
                 }
             } catch (ConfirmExpectationException e) {

@@ -63,20 +63,22 @@ abstract class BiDirectionProcessor implements Processor {
         // 申请记录无异常，进行正常的业务流程
         confirmExpect = getExpectation(apply);
         // 如果期望条目已更新
-        assert confirmExpect != null;
-        final boolean isExpectationUpdated = "1".equals(confirmExpect.getStatus());
-        if(isExpectationUpdated){
-            validateConfirmExpectation(confirmExpect); // 可能会有异常
+        if(confirmExpect!=null){
+            final boolean isExpectationUpdated = "1".equals(confirmExpect.getStatus());
+            if(isExpectationUpdated){
+                validateConfirmExpectation(confirmExpect); // 可能会有异常
+            }
+            // 由确认期望条目转为确认条目
+            transformObject(confirmExpect, confirmation);
         }
 
-        // 由确认期望条目转为确认条目
-        transformObject(confirmExpect, confirmation);
+
         // 根据申请记录，生成对应的确认记录
         generateConfirm(apply, confirmation, applyException);
         confirmList.add(confirmation);
-        for(String businessCode : Objects.requireNonNull(getExtraConfirmationBusiness(apply))){
-            confirmList.addAll(Objects.requireNonNull(callOtherProcessor(businessCode)));
-        }
+//        for(String businessCode : Objects.requireNonNull(getExtraConfirmationBusiness(apply))){
+//            confirmList.addAll(Objects.requireNonNull(callOtherProcessor(businessCode)));
+//        }
         // 更新库表(因为要用到applyException，所以妥协地在这里更新库表)
         updateRepository(apply, confirmList, applyException);
         // 可能包含跨天的确认记录，写入文件时，要判断确认时间

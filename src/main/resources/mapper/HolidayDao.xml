@@ -21,18 +21,7 @@
     select *
     from holiday
     where
-    <if test="day != null">
      day = #{day,jdbcType=CHAR}
-    </if>
-    <if test="isholiday != null">
-      and isholiday = #{isholiday,jdbcType=BOOLEAN}
-    </if>
-    <if test="nextholiday != null">
-      and nextholiday = #{nextholiday,jdbcType=CHAR}
-    </if>
-    <if test="daytype != null">
-      and daytype = #{daytype,jdbcType=OTHER}
-    </if>
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from holiday
