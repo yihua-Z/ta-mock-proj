@@ -8,7 +8,7 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class ExceptionKey implements Serializable {
+public class ExceptionKey extends Throwable implements Serializable {
     /**
      * 申请单编号
      */

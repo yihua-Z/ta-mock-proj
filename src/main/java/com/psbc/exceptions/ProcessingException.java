@@ -1,5 +1,6 @@
 package com.psbc.exceptions;
 
+import com.psbc.pojo.Exception;
 import lombok.Data;
 
 /**
@@ -8,7 +9,7 @@ import lombok.Data;
  * @date 2021/11/30 11:09
  */
 @Data
-public class ProcessingException extends Exception{
+public class ProcessingException extends Exception {
     /**
      * 申请单编号
      */
