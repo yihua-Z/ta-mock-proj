@@ -121,7 +121,7 @@ class TaMockProjectApplicationTests {
             copyFields(t, application);
             application.setReferenceno(0);
             application.setTacode("0");
-            application.setDiscountrateofcommission(BigDecimal.valueOf(1));
+            application.setDiscountrateofcommission(BigDecimal.valueOf(0));
             application.setRecordstatus("0");
 //            transactionApplicationDao.insert(application);
         }

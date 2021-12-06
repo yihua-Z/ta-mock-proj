@@ -1,4 +1,5 @@
 package com.psbc.business.processor;
+
 import com.nlf.calendar.util.HolidayUtil;
 import com.psbc.business.service.RepositoryFactory;
 import com.psbc.business.service.SpringContextUtil;
@@ -7,18 +8,24 @@ import com.psbc.exceptions.ConfirmExpectationException;
 import com.psbc.exceptions.ProcessingException;
 import com.psbc.mapper.AcctShareDao;
 import com.psbc.mapper.FundParaConfigDao;
+import com.psbc.mapper.TransactionApplicationDao;
 import com.psbc.mapper.TransactionConfirmationDao;
 import com.psbc.pojo.*;
 import com.psbc.reader.xmlModel.XMLNode;
 import com.psbc.utils.helper.XMLParser;
+import lombok.Data;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
+
 import java.lang.Exception;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
 import static com.psbc.business.service.ObjectProcessor.copyFields;
+import static com.psbc.business.service.RecordOperator.invokeGetMethod;
 import static com.psbc.utils.DateAndTimeUtil.getFullNowDateTime;
 import static com.psbc.utils.DateAndTimeUtil.getNextTransactionDay;
 
@@ -26,6 +33,8 @@ import static com.psbc.utils.DateAndTimeUtil.getNextTransactionDay;
  * @author Huilin Tong
  * @date 2021年11月30日 14:23
  */
+@Data
+@Component
 public class Processor024 extends BiDirectionProcessor {
     private static final Logger logger = Logger.getLogger(Processor024.class);
 
@@ -37,7 +46,9 @@ public class Processor024 extends BiDirectionProcessor {
     public static void validateApplyFromXML(ApplicationModel apply) throws ApplyException {
 
         TransactionApplication transactionApplication = (TransactionApplication) apply;
-        ApplyException applyException = (ApplyException) new ProcessingException();
+
+
+        ApplyException applyException = new ApplyException();
         copyFields(transactionApplication, applyException);
         String businesscode = transactionApplication.getBusinesscode();
 
@@ -55,9 +66,10 @@ public class Processor024 extends BiDirectionProcessor {
                         String required = attributes.get("required");
                         Field field = transactionApplication.getClass().getDeclaredField(fieldName);
                         field.setAccessible(true);
-                        Object o = field.get(fieldName);
-                        String s = o.toString();
-                        if (required.equals(true) && s == null) {
+                        Object o = invokeGetMethod(transactionApplication, field.getName(), null);
+//                        Object o = field.get(fieldName);
+
+                        if (required.equals(true) && o != null) {
                             logger.error(fieldName + "字段缺失");
                             applyException.setReturncode("9999");
                             applyException.setErrortype("1");
@@ -65,7 +77,7 @@ public class Processor024 extends BiDirectionProcessor {
                             logger.error(fieldName + "字段缺失");
                             throw applyException;
                         }
-                    } catch (NoSuchFieldException | IllegalAccessException e) {
+                    } catch (NoSuchFieldException e) {
                         logger.error(e);
                     }
                 }
@@ -100,7 +112,7 @@ public class Processor024 extends BiDirectionProcessor {
         return description;
     }
 
-    public static ProcessingException getProcessingException(ProcessingException exception,String code) {
+    public static ProcessingException getProcessingException(ProcessingException exception, String code) {
 
         String description = ReturnCodeDescription(code);
         exception.setReturncode(code);
@@ -108,6 +120,12 @@ public class Processor024 extends BiDirectionProcessor {
         exception.setSpeification(description);
         logger.error(description);
         return exception;
+    }
+
+    public List<TransactionApplication> getApplyList() {
+        TransactionApplicationDao applicationDao = FactoryDao().getTransactionApplicationDao();
+        List<TransactionApplication> transactionApplications = applicationDao.selectAll();
+        return transactionApplications;
     }
 
 
@@ -157,12 +175,12 @@ public class Processor024 extends BiDirectionProcessor {
 //        a =  1,表示 shareAmount 大于 applyAmount；
         if (shareVol.compareTo(applicationvol) < 0) {
 //            超过当前额度，赎回异常
-            ApplyException processingException =(ApplyException) getProcessingException(applyException, "1386");
+            ApplyException processingException = (ApplyException) getProcessingException(applyException, "1386");
             throw processingException;
         }
 //
         if (Double.valueOf(transactiondate + transactiontime) < Double.valueOf(getFullNowDateTime())) {
-            ApplyException processingException =(ApplyException) getProcessingException(applyException, "1864");
+            ApplyException processingException = (ApplyException) getProcessingException(applyException, "1864");
             throw processingException;
         }
 
@@ -175,8 +193,8 @@ public class Processor024 extends BiDirectionProcessor {
         //        读取期望配置表（获取失败信息）
         TransactionExpectation transactionExpectation = (TransactionExpectation) expect;
 
-        ConfirmExpectationException confirmExpectationException=new ConfirmExpectationException();
-        copyFields(transactionExpectation,confirmExpectationException);
+        ConfirmExpectationException confirmExpectationException = new ConfirmExpectationException();
+        copyFields(transactionExpectation, confirmExpectationException);
 
         String transactiondate = transactionExpectation.getTransactiondate();
         String transactiontime = transactionExpectation.getTransactiontime();
@@ -192,13 +210,13 @@ public class Processor024 extends BiDirectionProcessor {
 
         if (Double.valueOf(transactiondate + transactiontime) < Double.valueOf(getFullNowDateTime())) {
 
-            ConfirmExpectationException processingException =(ConfirmExpectationException) getProcessingException(confirmExpectationException, "1864");
+            ConfirmExpectationException processingException = (ConfirmExpectationException) getProcessingException(confirmExpectationException, "1864");
             throw processingException;
         }
         //        获取交易日期配置表，获取延迟确认天数
         //        获取工作日日历表
         if (HolidayUtil.getHoliday(transactionExpectation.getTransactioncfmdate()) != null) {
-            ConfirmExpectationException processingException =(ConfirmExpectationException) getProcessingException(confirmExpectationException, "1864");
+            ConfirmExpectationException processingException = (ConfirmExpectationException) getProcessingException(confirmExpectationException, "1864");
             throw processingException;
         }
 
@@ -218,7 +236,7 @@ public class Processor024 extends BiDirectionProcessor {
         BigDecimal shareVol = totalvolofdistributorinta.subtract(totalfrozenvol);
 
         if (shareVol.compareTo(applicationvol) < 0) {
-            ConfirmExpectationException processingException =(ConfirmExpectationException) getProcessingException(confirmExpectationException, "1386");
+            ConfirmExpectationException processingException = (ConfirmExpectationException) getProcessingException(confirmExpectationException, "1386");
             throw processingException;
         }
 
@@ -229,6 +247,7 @@ public class Processor024 extends BiDirectionProcessor {
     void updateRepository(ApplicationModel apply, List<ConfirmationModel> confirm, ApplyException applyException) {
 
         TransactionApplication transactionApplication = (TransactionApplication) apply;
+
         TransactionConfirmationDao transactionConfirmationDao = FactoryDao().getTransactionConfirmationDao();
         AcctShareDao acctShareDao = FactoryDao().getAcctShareDao();
         FundParaConfigDao fundParaConfigDao = FactoryDao().getFundParaConfigDao();

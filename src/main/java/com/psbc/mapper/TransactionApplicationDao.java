@@ -5,6 +5,8 @@ import com.psbc.pojo.TransactionApplicationKey;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Mapper
 @Repository
 public interface TransactionApplicationDao {
@@ -15,6 +17,8 @@ public interface TransactionApplicationDao {
     int insertSelective(TransactionApplication record);
 
     TransactionApplication selectByPrimaryKey(TransactionApplicationKey key);
+
+    List<TransactionApplication> selectAll();
 
     int updateByPrimaryKeySelective(TransactionApplication record);
 

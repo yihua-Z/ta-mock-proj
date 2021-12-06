@@ -11,6 +11,26 @@ import lombok.Data;
 @Data
 public class TransactionApplication extends TransactionApplicationKey implements ApplicationModel {
     /**
+     * 申请单编号
+     */
+    private String appsheetserialno;
+
+    /**
+     * 销售人代码
+     */
+    private String distributorcode;
+
+    /**
+     * 同一申请序列号
+     */
+    private Integer referenceno;
+
+    /**
+     * TA代码
+     */
+    private String tacode;
+
+    /**
      * 理财产品代码
      */
     private String fundcode;
@@ -377,7 +397,6 @@ public class TransactionApplication extends TransactionApplicationKey implements
      */
     private String recordstatus;
 
-    private static final long serialVersionUID = 1L;
 
     @Override
     public DatabaseModel newInstanceWithoutArgs() {

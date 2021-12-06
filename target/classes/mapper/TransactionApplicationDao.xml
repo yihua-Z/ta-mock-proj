@@ -106,7 +106,10 @@
       and ReferenceNo = #{referenceno,jdbcType=INTEGER}
       and TACode = #{tacode,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.psbc.pojo.TransactionApplicationKey">
+    <select id="selectAll" resultType="com.psbc.pojo.TransactionApplication">
+      select * from transaction_application
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="com.psbc.pojo.TransactionApplicationKey">
     delete from transaction_application
     where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
       and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
