@@ -56,33 +56,4 @@ public class CheckDataLegality {
         return this.legality;
     }
 
-    public boolean CheckTransaction(DatabaseModel Application) {
-//        if(Application.getClass().getSimpleName().equals("TransactionApplication")){
-//            TransactionApplication transactionApplication =(TransactionApplication) Application;
-//            List<TransactionApplication> transactionApplications;
-//            transactionApplications = transactionApplicationDao.selectUnionPrimaryKey(transactionApplication);
-//            if (transactionApplications != null) {
-//                if (transactionApplications.size() > 1) {
-//                    this.returnCode = this.ERRORCODE;
-//                    this.legality = false;
-//                    return false;
-//                }
-//
-//                String transactionDate = transactionApplication.getTransactiondate();
-//                String transactionTime = transactionApplication.getTransactiontime();
-//                if (transactionDate != null & transactionTime != null) {
-//                    String transactionDateTime = transactionDate + transactionTime;
-//                    if (Double.valueOf(transactionDateTime) > Double.valueOf(getFullNowDateTime())) {
-//                        this.returnCode = this.ERRORCODE;
-//                        this.legality = false;
-//                    }
-//                }
-//
-//            }
-//
-//        }
-
-        return this.legality;
-    }
-
 }
