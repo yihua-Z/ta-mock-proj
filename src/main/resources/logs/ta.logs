@@ -1,0 +1,20 @@
+2021-12-06 11:18:53.194 DEBUG 22064 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@4879dfad, started on Mon Dec 06 11:01:28 CST 2021
+2021-12-06 13:37:26.995  INFO 1492 --- [main] com.psbc.TaMockProjectApplicationTests   : Starting TaMockProjectApplicationTests using Java 1.8.0_302 on LAPTOP-CDO5N2P7 with PID 1492 (started by Tong in D:\TONG\JAVA\ta-mock-proj)
+2021-12-06 13:37:27.000  INFO 1492 --- [main] com.psbc.TaMockProjectApplicationTests   : No active profile set, falling back to default profiles: default
+2021-12-06 13:37:27.177 DEBUG 1492 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@16c63f5
+2021-12-06 13:37:36.315  INFO 1492 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static org.springframework.context.ApplicationContext com.psbc.business.service.SpringContextUtil.applicationContext
+2021-12-06 13:37:38.609 DEBUG 1492 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-12-06 13:37:39.262 DEBUG 1492 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2021-12-06 13:37:39.584 DEBUG 1492 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-12-06 13:37:39.646 DEBUG 1492 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-12-06 13:37:41.804  INFO 1492 --- [main] com.psbc.TaMockProjectApplicationTests   : Started TaMockProjectApplicationTests in 15.933 seconds (JVM running for 21.189)
+2021-12-06 13:37:44.395 DEBUG 1492 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@16c63f5, started on Mon Dec 06 13:37:27 CST 2021
+2021-12-06 13:40:39.079  INFO 21596 --- [main] com.psbc.TaMockProjectApplicationTests   : Starting TaMockProjectApplicationTests using Java 1.8.0_302 on LAPTOP-CDO5N2P7 with PID 21596 (started by Tong in D:\TONG\JAVA\ta-mock-proj)
+2021-12-06 13:40:39.097  INFO 21596 --- [main] com.psbc.TaMockProjectApplicationTests   : No active profile set, falling back to default profiles: default
+2021-12-06 13:40:39.397 DEBUG 21596 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@16c63f5
+2021-12-06 13:40:46.838  INFO 21596 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static org.springframework.context.ApplicationContext com.psbc.business.service.SpringContextUtil.applicationContext
+2021-12-06 13:40:49.500 DEBUG 21596 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-12-06 13:40:49.954 DEBUG 21596 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2021-12-06 13:40:50.453 DEBUG 21596 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-12-06 13:40:50.508 DEBUG 21596 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-12-06 13:40:51.762  INFO 21596 --- [main] com.psbc.TaMockProjectApplicationTests   : Started TaMockProjectApplicationTests in 13.718 seconds (JVM running for 17.614)

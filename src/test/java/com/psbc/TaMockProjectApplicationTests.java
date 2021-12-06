@@ -6,7 +6,6 @@ import com.psbc.business.service.RecordOperator;
 import com.psbc.business.service.RepositoryFactory;
 import com.psbc.business.service.SpringContextUtil;
 import com.psbc.exceptions.ApplyException;
-import com.psbc.exceptions.ProcessingException;
 import com.psbc.mapper.AccountExpectationDao;
 import com.psbc.mapper.AccountInfoDao;
 import com.psbc.mapper.HolidayDao;
@@ -24,7 +23,7 @@ import java.text.ParseException;
 import java.util.List;
 
 import static com.psbc.business.service.CommonProcessUtils.readRecords;
-import static com.psbc.service.ObjectProcessor.copyFields;
+import static com.psbc.business.service.ObjectProcessor.copyFields;
 import static com.psbc.utils.DateAndTimeUtil.*;
 
 @SpringBootTest
@@ -118,13 +117,13 @@ class TaMockProjectApplicationTests {
         for (TableModel t : tableModels
         ) {
             TransactionApplication application = new TransactionApplication();
-            application = (TransactionApplication) recordOperator.getTargetObject(t, application);
-//            copyFields(t, application);
+//            application = (TransactionApplication) recordOperator.getTargetObject(t, application);
+            copyFields(t, application);
             application.setReferenceno(0);
             application.setTacode("0");
             application.setDiscountrateofcommission(BigDecimal.valueOf(1));
             application.setRecordstatus("0");
-            transactionApplicationDao.insert(application);
+//            transactionApplicationDao.insert(application);
         }
 
     }

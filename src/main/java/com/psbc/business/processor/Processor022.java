@@ -22,7 +22,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-import static com.psbc.service.ObjectProcessor.copyFields;
+import static com.psbc.business.service.ObjectProcessor.copyFields;
 import static com.psbc.utils.DateAndTimeUtil.getFullNowDateTime;
 
 @Data

@@ -1,5 +1,6 @@
 package com.psbc.business.processor;
 
+import com.psbc.business.service.ObjectProcessor;
 import com.psbc.business.service.RepositoryFactory;
 import com.psbc.business.service.SpringContextUtil;
 import com.psbc.exceptions.ApplyException;
@@ -11,7 +12,6 @@ import com.psbc.mapper.TransactionExpectationDao;
 import com.psbc.pojo.*;
 import com.psbc.pojo.ApplicationModel;
 import com.psbc.pojo.ConfirmationModel;
-import com.psbc.pojo.Exception;
 import com.psbc.pojo.ExpectationModel;
 import org.apache.log4j.Logger;
 
@@ -102,7 +102,7 @@ abstract class BiDirectionProcessor implements Processor {
     // 用于期望确认对象转型为确认对象
     private void transformObject(Object originObj, Object targetObj){
         // 直接用辅助部分的代码实现
-        com.psbc.service.ObjectProcessor.copyFields(originObj, targetObj);
+        ObjectProcessor.copyFields(originObj, targetObj);
     }
 
     // 登记异常

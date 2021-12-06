@@ -18,7 +18,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import static com.psbc.service.ObjectProcessor.copyFields;
+import static com.psbc.business.service.ObjectProcessor.copyFields;
 import static com.psbc.utils.DateAndTimeUtil.getFullNowDateTime;
 import static com.psbc.utils.DateAndTimeUtil.getNextTransactionDay;
 

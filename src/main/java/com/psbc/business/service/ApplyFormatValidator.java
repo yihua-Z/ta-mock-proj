@@ -44,7 +44,7 @@ public class ApplyFormatValidator {
                         String error = "字段“" + field.getName() + "”的格式不合法";
                         log.error(error);
                         ApplyException applyException = new ApplyException();
-                        com.psbc.service.ObjectProcessor.copyFields(record,applyException);
+                        ObjectProcessor.copyFields(record,applyException);
                         applyException.setErrortype("1");
                         applyException.setReturncode(MISS_RETURN_CODE);
                         applyException.setSpeification(error);
@@ -93,10 +93,10 @@ public class ApplyFormatValidator {
                         ApplyException exception = new ApplyException();
                         String serialNo = "";
                         if(accountApplication != null){
-                            com.psbc.service.ObjectProcessor.copyFields(accountApplication,exception);
+                            ObjectProcessor.copyFields(accountApplication,exception);
                             serialNo = accountApplication.getAppsheetserialno();
                         } else {
-                            com.psbc.service.ObjectProcessor.copyFields(transactionApplication,exception);
+                            ObjectProcessor.copyFields(transactionApplication,exception);
                             serialNo = transactionApplication.getNetno();
                         }
                         exception.setErrortype("1");

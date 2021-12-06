@@ -1,15 +1,18 @@
-package com.psbc.service;
+package com.psbc.business.service;
 
 import lombok.NonNull;
 
 import java.lang.reflect.Field;
+import java.math.BigDecimal;
 
 /**
  * 对象处理器
  */
 public final class ObjectProcessor {
+
+
     /**
-     * 两对象间的域赋值（域名严格一致，包括大小写）
+     * 两对象间的域赋值
      * <p><em>注意：涉及到的类要有getter和setter</em></p>
      * @param originObj 赋值的对象
      * @param targetObj 待赋值的对象
@@ -22,10 +25,25 @@ public final class ObjectProcessor {
                 String targetFieldName = targetField.getName();
                 for (Field originField : originFields) {
                     String originFieldName = originField.getName();
-                    if(targetFieldName.equalsIgnoreCase(originFieldName)){
-                        originField.setAccessible(true);
-                        targetField.setAccessible(true);
-                        targetField.set(targetObj, originField.get(originObj));
+                    originField.setAccessible(true);
+                    targetField.setAccessible(true);
+                    if(targetFieldName.equalsIgnoreCase(originFieldName) && originField.get(originObj) != null && originField.get(originObj).toString().trim().length()>0){
+                        String type = targetField.getType().getSimpleName();
+
+                        switch (type) {
+                            case "Integer":
+                                targetField.set(targetObj, Integer.parseInt(originField.get(originObj).toString()));
+                                break;
+                            case "String":
+                                targetField.set(targetObj, originField.get(originObj).toString());
+                                break;
+                            case "BigDecimal":
+                                targetField.set(targetObj, new BigDecimal(originField.get(originObj).toString()));
+                                break;
+                            case "Double":
+                                targetField.set(targetObj, Double.parseDouble(originField.get(originObj).toString()));
+                                break;
+                        }
                     }
                 }
             }
