@@ -4,4 +4,5 @@ src/main/resources/application.properties
 *.logs
 *.class
 target/
+.idea/
 *.properties
