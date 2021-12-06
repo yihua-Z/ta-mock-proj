@@ -1,34 +1,43 @@
 package com.psbc.business.processor;
 
+import com.psbc.business.service.RepositoryFactory;
+import com.psbc.business.service.SpringContextUtil;
 import com.psbc.exceptions.ApplyException;
 import com.psbc.exceptions.ConfirmExpectationException;
 import com.psbc.exceptions.ProcessingException;
+import com.psbc.mapper.ExceptionDao;
+import com.psbc.mapper.TransactionApplicationDao;
+import com.psbc.mapper.TransactionExpectationDao;
 import com.psbc.pojo.*;
 import com.psbc.pojo.ApplicationModel;
 import com.psbc.pojo.ConfirmationModel;
+import com.psbc.pojo.Exception;
 import com.psbc.pojo.ExpectationModel;
+import org.apache.log4j.Logger;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 abstract class BiDirectionProcessor implements Processor {
+
+    private static final Logger logger = Logger.getLogger(BiDirectionProcessor.class);
+
     // 包装主方法，主要做状态更新
     public List<ConfirmationModel> process(final ApplicationModel apply) throws ConfirmExpectationException {
-        List<ConfirmationModel> confirmations = null;
-        ApplyException applyException=null;
-        updateRecordStatus(apply, "1"); 
+        List<ConfirmationModel> confirmations;
+        // 此申请记录正在处理中
+        updateRecordStatus(apply, "1");
         try{
             confirmations = doProcess(apply);
         }catch(ConfirmExpectationException e){
-            // 确认期望内容异常
-            // TODO: 打印log
+            // 此申请记录有“处理时异常”
+            logger.error("确认期望内容异常" + e.getSpeification());
             registerException(e);
             updateRecordStatus(apply, "3");   
             throw e;
         }
-        ////
-        // 更新库表
-        updateRepository(apply, confirmations, applyException);
+        // 此申请记录完成处理
         updateRecordStatus(apply, "2");
         return confirmations;
     }
@@ -38,63 +47,69 @@ abstract class BiDirectionProcessor implements Processor {
     private List<ConfirmationModel> doProcess(final ApplicationModel apply) throws ConfirmExpectationException {
         final List<ConfirmationModel> confirmList = new LinkedList<>();
 
-        ExpectationModel confirmExpect = null;
-        ConfirmationModel confirmation = null;
-        ApplyException applyException=null;
+        ExpectationModel confirmExpect;
+        // TODO：此处需判断是交易申请还账户申请。（暂定为交易申请）
+        ConfirmationModel confirmation = new TransactionConfirmation();
+        ApplyException applyException = null;
         // 判断申请记录是否有异常；如果有，抓取异常
         try{
             validateApply(apply);
         }catch(ApplyException e){
             applyException = e;
-        }
-        
-        // 写入异常表（此时只可能为业务异常，必会有确认记录生成）
-        if(applyException != null){
+            // 写入异常表（此时只可能为业务异常，必会有确认记录生成）
             registerException(applyException);
         }
+
         // 申请记录无异常，进行正常的业务流程
-        else {
-            confirmExpect = getExpectation(apply);
-            // 如果期望条目已更新
-//            final boolean isExpectationUpdated = "1".equals(confirmExpect.getStatus());
-            final boolean isExpectationUpdated =false;
-            if(isExpectationUpdated){
-                validateConfirmExpectation(confirmExpect); // 会异常
-            }
+        confirmExpect = getExpectation(apply);
+        // 如果期望条目已更新
+        assert confirmExpect != null;
+        final boolean isExpectationUpdated = "1".equals(confirmExpect.getStatus());
+        if(isExpectationUpdated){
+            validateConfirmExpectation(confirmExpect); // 可能会有异常
         }
+
         // 由确认期望条目转为确认条目
         transformObject(confirmExpect, confirmation);
         // 根据申请记录，生成对应的确认记录
         generateConfirm(apply, confirmation, applyException);
         confirmList.add(confirmation);
-        for(String businessCode : getExtraConfirmationBusiness(apply)){
-            confirmList.addAll(callOtherProcessor(businessCode));
+        for(String businessCode : Objects.requireNonNull(getExtraConfirmationBusiness(apply))){
+            confirmList.addAll(Objects.requireNonNull(callOtherProcessor(businessCode)));
         }
+        // 更新库表(因为要用到applyException，所以妥协地在这里更新库表)
+        updateRepository(apply, confirmList, applyException);
         // 可能包含跨天的确认记录，写入文件时，要判断确认时间
         return confirmList;
     }
 
     // 获取申请记录对应的确认期望记录
     private TransactionExpectation getExpectation(ApplicationModel apply){
-        // 直接用辅助部分的代码实现
-        return null;
+        TransactionExpectationDao transactionExpectationDao = SpringContextUtil.getBean(RepositoryFactory.class).getTransactionExpectationDao();
+        TransactionExpectation key = new TransactionExpectation();
+        transformObject(apply,key);
+        return transactionExpectationDao.selectByPrimaryKey(key);
     }
 
     // 获取额外的确认业务（主要是单向业务）
     // 返回业务代码
     private List<String> getExtraConfirmationBusiness(ApplicationModel apply){
         // 可暂时用配置文件实现
+
         return null;
     }
 
     // 用于期望确认对象转型为确认对象
-    private void transformObject(ExpectationModel originObj, ConfirmationModel targetObj){
+    private void transformObject(Object originObj, Object targetObj){
         // 直接用辅助部分的代码实现
+        com.psbc.service.ObjectProcessor.copyFields(originObj, targetObj);
     }
 
     // 登记异常
     private void registerException(ProcessingException exception){
         // 直接用辅助部分的代码实现
+        ExceptionDao exceptionDao = SpringContextUtil.getBean(RepositoryFactory.class).getExceptionDao();
+        exceptionDao.insert(exception);
     }
 
     // 调取单向业务处理器
@@ -105,7 +120,9 @@ abstract class BiDirectionProcessor implements Processor {
 
     // 更新记录状态（至‘processingError’）
     private void updateRecordStatus(ApplicationModel apply, String status){
-        
+        TransactionApplicationDao transactionApplicationDao = SpringContextUtil.getBean(RepositoryFactory.class).getTransactionApplicationDao();
+        ((TransactionApplication) apply).setRecordStatus(status);
+        transactionApplicationDao.updateByPrimaryKeySelective((TransactionApplication) apply);
     }
 
 
@@ -121,8 +138,5 @@ abstract class BiDirectionProcessor implements Processor {
     
     // 生成确认记录，不同业务需具体实现
     abstract void generateConfirm(ApplicationModel apply, ConfirmationModel confirm, ApplyException applyException);
-
-
-
 
 }

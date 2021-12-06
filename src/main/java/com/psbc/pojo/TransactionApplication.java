@@ -441,8 +441,14 @@ public class TransactionApplication extends TransactionApplicationKey implements
     private BigDecimal specifyfee;
 
 
+    private String recordStatus;
+
+
     @Override
     public DatabaseModel newInstanceWithoutArgs() {
         return new TransactionApplication();
     }
+
+
+
 }

@@ -332,4 +332,9 @@ public class TransactionExpectation extends TransactionExpectationKey implements
     public DatabaseModel newInstanceWithoutArgs() {
         return new TransactionExpectation();
     }
+
+    @Override
+    public String getStatus() {
+        return status;
+    }
 }

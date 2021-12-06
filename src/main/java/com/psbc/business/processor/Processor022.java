@@ -16,6 +16,7 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 import java.lang.Exception;
+import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -67,12 +68,56 @@ public class Processor022 extends BiDirectionProcessor {
         return description;
     }
 
+    public static void validateApplyFromXML(ApplicationModel apply) throws ApplyException {
+
+        TransactionApplication transactionApplication = (TransactionApplication) apply;
+        ApplyException applyException = (ApplyException) new ProcessingException();
+        copyFields(transactionApplication, applyException);
+        String businesscode = transactionApplication.getBusinesscode();
+
+        XMLNode business_configs = XMLParser.parseXml(".\\src\\main\\resources\\xml\\business_configs\\BUSINESSCODE.xml".replace("BUSINESSCODE", businesscode));
+        List<XMLNode> childrenNodes = business_configs.getChildrenNodes();
+        for (XMLNode c : childrenNodes
+        ) {
+            Map<String, String> attributes = c.getAttributes();
+            Set<String> keySet = attributes.keySet();
+            for (String key : keySet
+            ) {
+                if (key.equals("fieldName")) {
+                    try {
+                        String fieldName = attributes.get(key).toLowerCase();
+                        String required = attributes.get("required");
+                        Field field = transactionApplication.getClass().getDeclaredField(fieldName);
+                        field.setAccessible(true);
+                        Object o = field.get(fieldName);
+                        String s = o.toString();
+                        if (required.equals(true) && s == null) {
+                            logger.error(fieldName + "字段缺失");
+                            applyException.setReturncode("9999");
+                            applyException.setErrortype("1");
+                            applyException.setSpeification(fieldName + "字段缺失");
+                            logger.error(fieldName + "字段缺失");
+                            throw applyException;
+                        }
+                    } catch (NoSuchFieldException | IllegalAccessException e) {
+                        logger.error(e);
+                    }
+                }
+            }
+        }
+
+
+    }
+
 
     // 判断申请记录的业务合法性，不同业务需具体实现;
     // 若合法，不做任何返回；若不合法，抛对应异常
 
     @Override
     void validateApply(ApplicationModel apply) throws ApplyException {
+        //  检查必要字段不为空,根据对应业务的XML解析是否required
+        validateApplyFromXML(apply);
+
         TransactionApplication transactionApplication = (TransactionApplication) apply;
         ApplyException applyException=new ApplyException();
         copyFields(apply,applyException);
@@ -81,7 +126,8 @@ public class Processor022 extends BiDirectionProcessor {
         try {
             applyFormatValidator.validateFieldFormat(transactionApplication);
         }catch (ApplyException e){
-            getProcessingException(applyException,"0000");
+//            交易请求报文格式错误
+            getProcessingException(applyException,"3105");
             logger.error("申请记录字段格式不正确");
             throw e;
         }
@@ -107,7 +153,8 @@ public class Processor022 extends BiDirectionProcessor {
 //        申购日期不在申请期限内
         if (transactiondate > Double.valueOf(fundParaConfig.getFundestablishdate())) {
             logger.error("申请日期不在申购日期期限中");
-            getProcessingException(applyException,"0000");
+            ApplyException processingException =(ApplyException) getProcessingException(applyException,"1864");
+            throw  processingException;
         }
 
 

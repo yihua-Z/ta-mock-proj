@@ -80,4 +80,10 @@ public class AccountExpectation extends AccountExpectationKey implements Expecta
     public DatabaseModel newInstanceWithoutArgs() {
         return new AccountExpectation();
     }
+
+    @Override
+    public String getStatus() {
+        return status;
+    }
+
 }
