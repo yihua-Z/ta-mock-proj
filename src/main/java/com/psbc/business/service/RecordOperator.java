@@ -119,7 +119,7 @@ public class RecordOperator {
                 String lowa = a.getName().toLowerCase();
                 String lowc = c.getName().toLowerCase();
 
-                if (value == null) {
+                if (value == null || value.equals("")) {
                     break;
                 }
                 if (lowa.equals(lowc)) {

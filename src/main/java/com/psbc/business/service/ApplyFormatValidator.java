@@ -19,7 +19,7 @@ public class ApplyFormatValidator {
 
     private static final Logger log = Logger.getLogger(ApplyFormatValidator.class);
     public static final String BUSINESS_CONFIG = ".\\src\\main\\resources\\xml\\business_configs\\";
-    public static final String MISS_RETURN_CODE = "9999";
+    public static final String MISS_RETURN_CODE = "3105";
     /**
      * 检验每个字段的内容格式合法性
      */
@@ -46,6 +46,7 @@ public class ApplyFormatValidator {
                         ApplyException applyException = new ApplyException();
                         com.psbc.service.ObjectProcessor.copyFields(record,applyException);
                         applyException.setErrortype("1");
+                        applyException.setReturncode(MISS_RETURN_CODE);
                         applyException.setSpeification(error);
                         throw applyException;
                     }

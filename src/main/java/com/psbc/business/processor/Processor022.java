@@ -35,16 +35,15 @@ public class Processor022 extends BiDirectionProcessor {
         return repositoryFactory;
     }
 
-    public static ProcessingException getProcessingException(ProcessingException exception, String code) {
+    public void getProcessingException(ProcessingException exception, String code) {
 
         String description = ReturnCodeDescription(code);
         exception.setReturncode(code);
         exception.setErrortype("1");
         exception.setSpeification(description);
         logger.error(description);
-        return exception;
     }
-    public static String ReturnCodeDescription(String code) {
+    public String ReturnCodeDescription(String code) {
         XMLNode return_codes = XMLParser.parseXml(".\\src\\main\\resources\\xml\\return_code\\return_codes.xml");
         String description = "未知错误";
         List<XMLNode> childrenNodes = return_codes.getChildrenNodes();
@@ -68,7 +67,7 @@ public class Processor022 extends BiDirectionProcessor {
         return description;
     }
 
-    public static void validateApplyFromXML(ApplicationModel apply) throws ApplyException {
+    public void validateApplyFromXML(ApplicationModel apply) throws ApplyException {
 
         TransactionApplication transactionApplication = (TransactionApplication) apply;
         ApplyException applyException = (ApplyException) new ProcessingException();
@@ -116,18 +115,21 @@ public class Processor022 extends BiDirectionProcessor {
     @Override
     void validateApply(ApplicationModel apply) throws ApplyException {
         //  检查必要字段不为空,根据对应业务的XML解析是否required
-        validateApplyFromXML(apply);
+        //validateApplyFromXML(apply);
+
 
         TransactionApplication transactionApplication = (TransactionApplication) apply;
         ApplyException applyException=new ApplyException();
         copyFields(apply,applyException);
 
         ApplyFormatValidator applyFormatValidator = SpringContextUtil.getBean(ApplyFormatValidator.class);
+
         try {
+            applyFormatValidator.validateFieldRequirement(transactionApplication);
             applyFormatValidator.validateFieldFormat(transactionApplication);
         }catch (ApplyException e){
 //            交易请求报文格式错误
-            getProcessingException(applyException,"3105");
+            getProcessingException(e,"3105");
             logger.error("申请记录字段格式不正确");
             throw e;
         }
@@ -153,8 +155,8 @@ public class Processor022 extends BiDirectionProcessor {
 //        申购日期不在申请期限内
         if (transactiondate > Double.valueOf(fundParaConfig.getFundestablishdate())) {
             logger.error("申请日期不在申购日期期限中");
-            ApplyException processingException =(ApplyException) getProcessingException(applyException,"1864");
-            throw  processingException;
+            getProcessingException(applyException,"1864");
+            throw applyException;
         }
 
 
@@ -425,7 +427,7 @@ public class Processor022 extends BiDirectionProcessor {
 
 
     //      用于增加天数
-    public static String addDay(String time, int addDay) throws ParseException {
+    public String addDay(String time, int addDay) throws ParseException {
         SimpleDateFormat ft = new SimpleDateFormat("yyyyMMdd");
         Date date = ft.parse(time);
         String format = ft.format(new Date(date.getTime() + addDay * 24 * 60 * 60 * 1000));

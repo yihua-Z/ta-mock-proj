@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.psbc.pojo.TransactionApplication">
     <id column="AppSheetSerialNo" jdbcType="VARCHAR" property="appsheetserialno" />
     <id column="DistributorCode" jdbcType="VARCHAR" property="distributorcode" />
-    <id column="ReferenceNumber" jdbcType="INTEGER" property="referencenumber" />
+    <id column="ReferenceNo" jdbcType="INTEGER" property="referenceno" />
     <id column="TACode" jdbcType="VARCHAR" property="tacode" />
     <result column="FundCode" jdbcType="VARCHAR" property="fundcode" />
     <result column="LargeRedemptionFlag" jdbcType="OTHER" property="largeredemptionflag" />
@@ -78,9 +78,10 @@
     <result column="ChargeType" jdbcType="CHAR" property="chargetype" />
     <result column="SpecifyRateFee" jdbcType="DECIMAL" property="specifyratefee" />
     <result column="SpecifyFee" jdbcType="DECIMAL" property="specifyfee" />
+    <result column="recordStatus" jdbcType="CHAR" property="recordstatus" />
   </resultMap>
   <sql id="Base_Column_List">
-    AppSheetSerialNo, DistributorCode, ReferenceNumber, TACode, FundCode, LargeRedemptionFlag, 
+    AppSheetSerialNo, DistributorCode, ReferenceNo, TACode, FundCode, LargeRedemptionFlag, 
     TransactionDate, TransactionTime, TransactionAccountID, ApplicationVol, ApplicationAmount, 
     BusinessCode, TAAccountID, DiscountRateOfCommission, DepositAcct, RegionCode, CurrencyType, 
     BranchCode, OriginalAppSheetNo, OriginalSubsDate, IndividualOrInstitution, ValidPeriod, 
@@ -94,7 +95,7 @@
     Broker, SalesPromotion, AcceptMethod, ForceRedemptionType, TakeIncomeFlag, PurposeOfPeSubs, 
     FrequencyOfPeSubs, PeriodSubTimeUnit, BatchNumOfPeSubs, CapitalMode, DetailCapticalMode, 
     BackenloadDiscount, CombineNum, FutureSubscribeDate, TradingMethod, LargeBuyFlag, 
-    ChargeType, SpecifyRateFee, SpecifyFee
+    ChargeType, SpecifyRateFee, SpecifyFee, recordStatus
   </sql>
   <select id="selectByPrimaryKey" parameterType="com.psbc.pojo.TransactionApplicationKey" resultMap="BaseResultMap">
     select 
@@ -102,38 +103,28 @@
     from transaction_application
     where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
       and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
-      and ReferenceNumber = #{referencenumber,jdbcType=INTEGER}
+      and ReferenceNo = #{referenceno,jdbcType=INTEGER}
       and TACode = #{tacode,jdbcType=VARCHAR}
-  </select>
-  <select id="selectUnionPrimaryKey" resultType="com.psbc.pojo.TransactionApplication">
-    select *
-    from transaction_application
-    where AppSheetSerialNo = #{appSheetSerialNo,jdbcType=VARCHAR}
-      and TACode = #{TACode,jdbcType=VARCHAR}
-      and DistributorCode = #{distributorCode,jdbcType=VARCHAR}
-      and ReferenceNo = #{referenceNo,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="com.psbc.pojo.TransactionApplicationKey">
     delete from transaction_application
     where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
       and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
-      and ReferenceNumber = #{referencenumber,jdbcType=INTEGER}
+      and ReferenceNo = #{referenceno,jdbcType=INTEGER}
       and TACode = #{tacode,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno" parameterType="com.psbc.pojo.TransactionApplication" useGeneratedKeys="true">
-
-    insert into transaction_application (DistributorCode, ReferenceNumber, 
-      TACode, FundCode, LargeRedemptionFlag, 
-      TransactionDate, TransactionTime, TransactionAccountID, 
-      ApplicationVol, ApplicationAmount, BusinessCode, 
-      TAAccountID, DiscountRateOfCommission, 
-      DepositAcct, RegionCode, CurrencyType, 
-      BranchCode, OriginalAppSheetNo, OriginalSubsDate, 
-      IndividualOrInstitution, ValidPeriod, DaysRedemptionInAdvance, 
-      RedemptionDateInAdvance, OriginalSerialNo, 
-      DateOfPeriodicSubs, TASerialNO, TermOfPeriodicSubs, 
-      FutureBuyDate, TargetDistributorCode, Charge, 
-      TargetBranchCode, TargetTransactionAccountID, 
+    insert into transaction_application (AppSheetSerialNo,DistributorCode, ReferenceNo, TACode,
+      FundCode, LargeRedemptionFlag, TransactionDate, 
+      TransactionTime, TransactionAccountID, ApplicationVol, 
+      ApplicationAmount, BusinessCode, TAAccountID, 
+      DiscountRateOfCommission, DepositAcct, 
+      RegionCode, CurrencyType, BranchCode, 
+      OriginalAppSheetNo, OriginalSubsDate, IndividualOrInstitution, 
+      ValidPeriod, DaysRedemptionInAdvance, RedemptionDateInAdvance, 
+      OriginalSerialNo, DateOfPeriodicSubs, TASerialNO, 
+      TermOfPeriodicSubs, FutureBuyDate, TargetDistributorCode, 
+      Charge, TargetBranchCode, TargetTransactionAccountID, 
       TargetRegionCode, DividendRatio, Specification, 
       CodeOfTargetFund, TotalBackendLoad, ShareClass, 
       OriginalCfmDate, DetailFlag, OriginalAppDate, 
@@ -149,19 +140,18 @@
       CapitalMode, DetailCapticalMode, BackenloadDiscount, 
       CombineNum, FutureSubscribeDate, TradingMethod, 
       LargeBuyFlag, ChargeType, SpecifyRateFee, 
-      SpecifyFee)
-    values (#{distributorcode,jdbcType=VARCHAR}, #{referencenumber,jdbcType=INTEGER}, 
-      #{tacode,jdbcType=VARCHAR}, #{fundcode,jdbcType=VARCHAR}, #{largeredemptionflag,jdbcType=OTHER}, 
-      #{transactiondate,jdbcType=CHAR}, #{transactiontime,jdbcType=CHAR}, #{transactionaccountid,jdbcType=VARCHAR}, 
-      #{applicationvol,jdbcType=DECIMAL}, #{applicationamount,jdbcType=DECIMAL}, #{businesscode,jdbcType=CHAR}, 
-      #{taaccountid,jdbcType=VARCHAR}, #{discountrateofcommission,jdbcType=DECIMAL}, 
-      #{depositacct,jdbcType=VARCHAR}, #{regioncode,jdbcType=VARCHAR}, #{currencytype,jdbcType=CHAR}, 
-      #{branchcode,jdbcType=VARCHAR}, #{originalappsheetno,jdbcType=INTEGER}, #{originalsubsdate,jdbcType=CHAR}, 
-      #{individualorinstitution,jdbcType=OTHER}, #{validperiod,jdbcType=INTEGER}, #{daysredemptioninadvance,jdbcType=INTEGER}, 
-      #{redemptiondateinadvance,jdbcType=CHAR}, #{originalserialno,jdbcType=VARCHAR}, 
-      #{dateofperiodicsubs,jdbcType=CHAR}, #{taserialno,jdbcType=VARCHAR}, #{termofperiodicsubs,jdbcType=INTEGER}, 
-      #{futurebuydate,jdbcType=CHAR}, #{targetdistributorcode,jdbcType=VARCHAR}, #{charge,jdbcType=DECIMAL}, 
-      #{targetbranchcode,jdbcType=VARCHAR}, #{targettransactionaccountid,jdbcType=VARCHAR}, 
+      SpecifyFee, recordStatus)
+    values (#{appsheetserialno,jdbcType=VARCHAR},#{distributorcode,jdbcType=VARCHAR}, #{referenceno,jdbcType=INTEGER}, #{tacode,jdbcType=VARCHAR},
+      #{fundcode,jdbcType=VARCHAR}, #{largeredemptionflag,jdbcType=OTHER}, #{transactiondate,jdbcType=CHAR}, 
+      #{transactiontime,jdbcType=CHAR}, #{transactionaccountid,jdbcType=VARCHAR}, #{applicationvol,jdbcType=DECIMAL}, 
+      #{applicationamount,jdbcType=DECIMAL}, #{businesscode,jdbcType=CHAR}, #{taaccountid,jdbcType=VARCHAR}, 
+      #{discountrateofcommission,jdbcType=DECIMAL}, #{depositacct,jdbcType=VARCHAR}, 
+      #{regioncode,jdbcType=VARCHAR}, #{currencytype,jdbcType=CHAR}, #{branchcode,jdbcType=VARCHAR}, 
+      #{originalappsheetno,jdbcType=INTEGER}, #{originalsubsdate,jdbcType=CHAR}, #{individualorinstitution,jdbcType=OTHER}, 
+      #{validperiod,jdbcType=INTEGER}, #{daysredemptioninadvance,jdbcType=INTEGER}, #{redemptiondateinadvance,jdbcType=CHAR}, 
+      #{originalserialno,jdbcType=VARCHAR}, #{dateofperiodicsubs,jdbcType=CHAR}, #{taserialno,jdbcType=VARCHAR}, 
+      #{termofperiodicsubs,jdbcType=INTEGER}, #{futurebuydate,jdbcType=CHAR}, #{targetdistributorcode,jdbcType=VARCHAR}, 
+      #{charge,jdbcType=DECIMAL}, #{targetbranchcode,jdbcType=VARCHAR}, #{targettransactionaccountid,jdbcType=VARCHAR}, 
       #{targetregioncode,jdbcType=VARCHAR}, #{dividendratio,jdbcType=DECIMAL}, #{specification,jdbcType=VARCHAR}, 
       #{codeoftargetfund,jdbcType=VARCHAR}, #{totalbackendload,jdbcType=DECIMAL}, #{shareclass,jdbcType=OTHER}, 
       #{originalcfmdate,jdbcType=CHAR}, #{detailflag,jdbcType=OTHER}, #{originalappdate,jdbcType=CHAR}, 
@@ -177,20 +167,16 @@
       #{capitalmode,jdbcType=CHAR}, #{detailcapticalmode,jdbcType=CHAR}, #{backenloaddiscount,jdbcType=DECIMAL}, 
       #{combinenum,jdbcType=VARCHAR}, #{futuresubscribedate,jdbcType=CHAR}, #{tradingmethod,jdbcType=VARCHAR}, 
       #{largebuyflag,jdbcType=OTHER}, #{chargetype,jdbcType=CHAR}, #{specifyratefee,jdbcType=DECIMAL}, 
-      #{specifyfee,jdbcType=DECIMAL})
+      #{specifyfee,jdbcType=DECIMAL}, #{recordstatus,jdbcType=CHAR})
   </insert>
-  <select id="selectAll" resultType="com.psbc.pojo.TransactionApplication">
-    select *
-    from transaction_application
-  </select>
   <insert id="insertSelective" keyColumn="AppSheetSerialNo" keyProperty="appsheetserialno" parameterType="com.psbc.pojo.TransactionApplication" useGeneratedKeys="true">
     insert into transaction_application
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="distributorcode != null">
         DistributorCode,
       </if>
-      <if test="referencenumber != null">
-        ReferenceNumber,
+      <if test="referenceno != null">
+        ReferenceNo,
       </if>
       <if test="tacode != null">
         TACode,
@@ -411,13 +397,16 @@
       <if test="specifyfee != null">
         SpecifyFee,
       </if>
+      <if test="recordstatus != null">
+        recordStatus,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="distributorcode != null">
         #{distributorcode,jdbcType=VARCHAR},
       </if>
-      <if test="referencenumber != null">
-        #{referencenumber,jdbcType=INTEGER},
+      <if test="referenceno != null">
+        #{referenceno,jdbcType=INTEGER},
       </if>
       <if test="tacode != null">
         #{tacode,jdbcType=VARCHAR},
@@ -637,6 +626,9 @@
       </if>
       <if test="specifyfee != null">
         #{specifyfee,jdbcType=DECIMAL},
+      </if>
+      <if test="recordstatus != null">
+        #{recordstatus,jdbcType=CHAR},
       </if>
     </trim>
   </insert>
@@ -859,10 +851,13 @@
       <if test="specifyfee != null">
         SpecifyFee = #{specifyfee,jdbcType=DECIMAL},
       </if>
+      <if test="recordstatus != null">
+        recordStatus = #{recordstatus,jdbcType=CHAR},
+      </if>
     </set>
     where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
       and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
-      and ReferenceNumber = #{referencenumber,jdbcType=INTEGER}
+      and ReferenceNo = #{referenceno,jdbcType=INTEGER}
       and TACode = #{tacode,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.TransactionApplication">
@@ -938,10 +933,11 @@
       LargeBuyFlag = #{largebuyflag,jdbcType=OTHER},
       ChargeType = #{chargetype,jdbcType=CHAR},
       SpecifyRateFee = #{specifyratefee,jdbcType=DECIMAL},
-      SpecifyFee = #{specifyfee,jdbcType=DECIMAL}
+      SpecifyFee = #{specifyfee,jdbcType=DECIMAL},
+      recordStatus = #{recordstatus,jdbcType=CHAR}
     where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
       and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
-      and ReferenceNumber = #{referencenumber,jdbcType=INTEGER}
+      and ReferenceNo = #{referenceno,jdbcType=INTEGER}
       and TACode = #{tacode,jdbcType=VARCHAR}
   </update>
 </mapper>

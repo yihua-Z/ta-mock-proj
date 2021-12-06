@@ -22,11 +22,12 @@ public class TransactionApplicationKey implements Serializable {
     /**
      * 同一申请序列号
      */
-    private Integer referencenumber;
+    private Integer referenceno;
 
     /**
      * TA代码
      */
     private String tacode;
 
+    private static final long serialVersionUID = 1L;
 }

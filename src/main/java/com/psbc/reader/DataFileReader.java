@@ -109,7 +109,7 @@ public class DataFileReader extends TAFileReader {
             // 一一匹配配置文件中的字段和fields中的字段
             for (XMLNode node : Objects.requireNonNull(configNode).getChildrenNodes()) {
                 String fieldName = node.getAttributeValue("fieldName");
-                Field field = res.getClass().getDeclaredField(fieldName.toLowerCase());
+                Field field = res.getClass().getDeclaredField(fieldName);
                 field.setAccessible(true);
                 if (fieldName.equals(fields.get(fieldsIndex))) {
                     int len = Integer.parseInt(node.getAttributeValue("length"));

@@ -2,69 +2,37 @@ package com.psbc.pojo;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-
-import com.psbc.business.service.annotation.Validator;
 import lombok.Data;
-import lombok.Setter;
-import org.springframework.stereotype.Component;
 
 /**
  * transaction_application
  * @author 
  */
 @Data
-@Component
-@Setter
-public class TransactionApplication extends TransactionApplicationKey implements ApplicationModel{
-    /**
-     * 申请单编号
-     */
-    private String appsheetserialno;
-
-    /**
-     * 销售人代码
-     */
-    private String distributorcode;
-
-    /**
-     * 同一申请序列号
-     */
-    private Integer referencenumber;
-
-    /**
-     * TA代码
-     */
-    private String tacode;
-
-
+public class TransactionApplication extends TransactionApplicationKey implements ApplicationModel {
     /**
      * 理财产品代码
      */
-    @Validator(message = "理财产品代码", rule = "RE", content = "[0-9A-Za-z]+")
     private String fundcode;
 
     /**
      * 巨额赎回处理标志(0-取消，1-顺延)
      */
-    @Validator(message = "巨额赎回处理标志", rule = "enum", content = "0,1")
     private Object largeredemptionflag;
 
     /**
      * 交易发生日期(YYYYMMDD)
      */
-    @Validator(message = "交易发生日期", rule = "date")
     private String transactiondate;
 
     /**
      * 交易发生时间(HHMMSS)
      */
-    @Validator(message = "交易发生时间", rule = "time")
     private String transactiontime;
 
     /**
      * 投资人在销售机构内开设的用于交易的账号
      */
-    @Validator(message = "投资人在销售机构内开设的用于交易的账号", rule = "RE", content = "[0-9A-Za-z]+")
     private String transactionaccountid;
 
     /**
@@ -80,13 +48,11 @@ public class TransactionApplication extends TransactionApplicationKey implements
     /**
      * 业务代码
      */
-    @Validator(message = "业务代码", rule = "RE", content = "[0-9]{3}")
     private String businesscode;
 
     /**
      * 投资人理财帐号
      */
-    @Validator(message = "投资人理财帐号", rule = "RE", content = "[0-9]+")
     private String taaccountid;
 
     /**
@@ -97,7 +63,6 @@ public class TransactionApplication extends TransactionApplicationKey implements
     /**
      * 投资人在销售人处用于交易的资金账号
      */
-    @Validator(message = "投资人在销售人处用于交易的资金账号", rule = "RE", content = "[0-9A-Za-z]+")
     private String depositacct;
 
     /**
@@ -108,7 +73,6 @@ public class TransactionApplication extends TransactionApplicationKey implements
     /**
      * 结算币种
      */
-    @Validator(message = "结算币种", rule = "RE", content = "[0-9]{3}")
     private String currencytype;
 
     /**
@@ -119,19 +83,16 @@ public class TransactionApplication extends TransactionApplicationKey implements
     /**
      * 原申请单编号
      */
-    @Validator(message = "原申请单编号", rule = "RE", content = "[0-9A-Za-z]+")
     private Integer originalappsheetno;
 
     /**
      * 原申购日期
      */
-    @Validator(message = "原申购日期", rule = "date")
     private String originalsubsdate;
 
     /**
      * 个人/机构标志(0-机构，1-个人，2-产品)
      */
-    @Validator(message = "个人/机构标志", rule = "enum", content = "0,1,2")
     private Object individualorinstitution;
 
     /**
@@ -147,25 +108,21 @@ public class TransactionApplication extends TransactionApplicationKey implements
     /**
      * 预约赎回日期(客户周期产品，购买时上送该字段作为指定到期日) 
      */
-    @Validator(message = "预约赎回日期", rule = "date")
     private String redemptiondateinadvance;
 
     /**
      * TA原确认流水号
      */
-    @Validator(message = "TA原确认流水号", rule = "RE", content = "[0-9A-Za-z]+")
     private String originalserialno;
 
     /**
      * 定期定额申购日期
      */
-    @Validator(message = "定期定额申购日期", rule = "date")
     private String dateofperiodicsubs;
 
     /**
      * TA确认交易流水号
      */
-    @Validator(message = "TA确认交易流水号", rule = "RE", content = "[0-9A-Za-z]+")
     private String taserialno;
 
     /**
@@ -176,26 +133,22 @@ public class TransactionApplication extends TransactionApplicationKey implements
     /**
      * 指定申购日期
      */
-    @Validator(message = "指定申购日期", rule = "date")
     private String futurebuydate;
 
     /**
      * 对方销售人代码
      */
-    @Validator(message = "对方销售人代码", rule = "RE", content = "[0-9A-Za-z]+")
     private String targetdistributorcode;
 
     /**
      * 手续费
      */
-    @Validator(message = "手续费", rule = "RE", content = "[+]{0,1}(\\d+)$|^[+]{0,1}(\\d+\\.\\d+)")
     private BigDecimal charge;
 
     /**
      * 对方网点号
      */
     private String targetbranchcode;
-
 
     /**
      * 对方销售人处投资人理财交易账号
@@ -225,37 +178,31 @@ public class TransactionApplication extends TransactionApplicationKey implements
     /**
      * 交易后端收费总额
      */
-    @Validator(message = "交易后端收费总额", rule = "RE", content = "[+]{0,1}(\\d+)$|^[+]{0,1}(\\d+\\.\\d+)")
     private BigDecimal totalbackendload;
 
     /**
      * 收费方式
      */
-    @Validator(message = "收费方式", rule = "enum", content = "0,1,2")
     private Object shareclass;
 
     /**
      * TA的原确认日期
      */
-    @Validator(message = "TA的原确认日期", rule = "date")
     private String originalcfmdate;
 
     /**
      * 明细标志
      */
-    @Validator(message = "明细标志", rule = "enum", content = "0,1")
     private Object detailflag;
 
     /**
      * 原申请日期
      */
-    @Validator(message = "原申请日期", rule = "date")
     private String originalappdate;
 
     /**
      * 默认分红方式
      */
-    @Validator(message = "默认分红方式", rule = "enum", content = "0,1")
     private Object defdividendmethod;
 
     /**
@@ -263,13 +210,11 @@ public class TransactionApplication extends TransactionApplicationKey implements
 2-质押冻结，3-质押、司法双重冻结 4-柜台、司法双重冻结
 )
      */
-    @Validator(message = "冻结原因", rule = "enum", content = "0,1,2,3,4")
     private Object frozencause;
 
     /**
      * 冻结截止日期
      */
-    @Validator(message = "冻结截止日期", rule = "date")
     private String freezingdeadline;
 
     /**
@@ -290,7 +235,6 @@ public class TransactionApplication extends TransactionApplicationKey implements
     /**
      * 对方理财账号
      */
-    @Validator(message = "对方理财账号", rule = "RE", content = "[0-9A-Za-z]+")
     private String targettaaccountid;
 
     /**
@@ -311,7 +255,6 @@ public class TransactionApplication extends TransactionApplicationKey implements
     /**
      * 对方理财产品份额类别(0-前收费，1-后收费)
      */
-    @Validator(message = "对方理财产品份额类别", rule = "enum", content = "0,1")
     private Object targetsharetype;
 
     /**
@@ -322,19 +265,16 @@ public class TransactionApplication extends TransactionApplicationKey implements
     /**
      * 定时定额申购起始日期
      */
-    @Validator(message = "定时定额申购起始日期", rule = "date")
     private String begindateofperiodicsubs;
 
     /**
      * 定时定额申购终止日期
      */
-    @Validator(message = "定时定额申购终止日期", rule = "date")
     private String enddateofperiodicsubs;
 
     /**
      * 定时定额申购每月发送日
      */
-    @Validator(message = "定时定额申购每月发送日", rule = "date")
     private Integer senddayofperiodicsubs;
 
     /**
@@ -350,19 +290,16 @@ public class TransactionApplication extends TransactionApplicationKey implements
     /**
      * 受理方式
      */
-    @Validator(message = "受理方式", rule = "enum", content = "0,1,2,3,4,5")
     private String acceptmethod;
 
     /**
      * 强制赎回类型(0-强制赎回，1-违约赎回，2-到期)
      */
-    @Validator(message = "强制赎回类型", rule = "enum", content = "0,1,2")
     private Object forceredemptiontype;
 
     /**
      * 带走收益标志(0-不带走，1-带走)
      */
-    @Validator(message = "带走收益标志", rule = "enum", content = "0,1")
     private Object takeincomeflag;
 
     /**
@@ -388,7 +325,6 @@ public class TransactionApplication extends TransactionApplicationKey implements
     /**
      * 资金方式
      */
-    @Validator(message = "资金方式", rule = "RE", content = "[1-9A-Q]")
     private String capitalmode;
 
     /**
@@ -409,25 +345,21 @@ public class TransactionApplication extends TransactionApplicationKey implements
     /**
      * 指定认购日期
      */
-    @Validator(message = "指定认购日期", rule = "date")
     private String futuresubscribedate;
 
     /**
      * 使用的交易手段
      */
-    @Validator(message = "使用的交易手段", rule = "RE", content = "[01]+")
     private String tradingmethod;
 
     /**
      * 巨额购买处理标志
      */
-    @Validator(message = "巨额购买处理标志", rule = "enum", content = "0,1")
     private Object largebuyflag;
 
     /**
      * 收费类型
      */
-    @Validator(message = "收费类型", rule = "enum", content = "0,1,2")
     private String chargetype;
 
     /**
@@ -440,15 +372,15 @@ public class TransactionApplication extends TransactionApplicationKey implements
      */
     private BigDecimal specifyfee;
 
+    /**
+     * 记录状态
+     */
+    private String recordstatus;
 
-    private String recordStatus;
-
+    private static final long serialVersionUID = 1L;
 
     @Override
     public DatabaseModel newInstanceWithoutArgs() {
         return new TransactionApplication();
     }
-
-
-
 }
