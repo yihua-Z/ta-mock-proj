@@ -109,7 +109,8 @@ abstract class BiDirectionProcessor implements Processor {
     private void registerException(ProcessingException exception){
         // 直接用辅助部分的代码实现
         ExceptionDao exceptionDao = SpringContextUtil.getBean(RepositoryFactory.class).getExceptionDao();
-        exceptionDao.insert(exception);
+//        @TODO 此处有问题
+//        exceptionDao.insert(exception);
     }
 
     // 调取单向业务处理器
@@ -121,7 +122,7 @@ abstract class BiDirectionProcessor implements Processor {
     // 更新记录状态（至‘processingError’）
     private void updateRecordStatus(ApplicationModel apply, String status){
         TransactionApplicationDao transactionApplicationDao = SpringContextUtil.getBean(RepositoryFactory.class).getTransactionApplicationDao();
-        ((TransactionApplication) apply).setRecordStatus(status);
+        ((TransactionApplication) apply).setRecordstatus(status);
         transactionApplicationDao.updateByPrimaryKeySelective((TransactionApplication) apply);
     }
 
