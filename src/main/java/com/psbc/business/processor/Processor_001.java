@@ -159,7 +159,7 @@ public class Processor_001 {
         if (notInsertFlag) {
             databaseModelList = this.ApplicationProcessor();
         } else {
-            databaseModelList = accountApplicationDao.selectAll();
+//            databaseModelList = accountApplicationDao.selectAll();
         }
 
         List<DatabaseModel> generateConfirmation = this.generateConfirmation(databaseModelList);

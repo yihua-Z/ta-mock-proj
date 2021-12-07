@@ -25,6 +25,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import static com.psbc.business.service.CommonProcessUtils.FactoryDao;
 import static com.psbc.business.service.ObjectProcessor.copyFields;
 import static com.psbc.business.service.RecordOperator.invokeGetMethod;
 import static com.psbc.utils.DateAndTimeUtil.*;
@@ -38,15 +39,9 @@ import static com.psbc.utils.DateAndTimeUtil.*;
 public class Processor024 extends BiDirectionProcessor {
     private static final Logger logger = Logger.getLogger(Processor024.class);
 
-    public static RepositoryFactory FactoryDao() {
-        RepositoryFactory repositoryFactory = SpringContextUtil.getBean(RepositoryFactory.class);
-        return repositoryFactory;
-    }
-
-    public static void validateApplyFromXML(ApplicationModel apply) throws ApplyException {
+    public static void validateApplyFromXML(ApplicationModel apply, Logger logger) throws ApplyException {
 
         TransactionApplication transactionApplication = (TransactionApplication) apply;
-
 
         ApplyException applyException = new ApplyException();
         copyFields(transactionApplication, applyException);
@@ -120,7 +115,7 @@ public class Processor024 extends BiDirectionProcessor {
         return exception;
     }
 
-    public List<TransactionApplication> getApplyList() {
+    public static List<TransactionApplication> getApplyList() {
         TransactionApplicationDao applicationDao = FactoryDao().getTransactionApplicationDao();
         List<TransactionApplication> transactionApplications = applicationDao.selectAll();
         return transactionApplications;
@@ -132,14 +127,24 @@ public class Processor024 extends BiDirectionProcessor {
     @Override
     void validateApply(ApplicationModel apply) throws ApplyException {
         //  检查必要字段不为空,根据对应业务的XML解析是否required
-        validateApplyFromXML(apply);
+        validateApplyFromXML(apply,logger);
 
         TransactionApplication transactionApplication = (TransactionApplication) apply;
 
         ApplyException applyException = new ApplyException();
         copyFields(transactionApplication, applyException);
-        //  @TODO 赎回最小份数的判断
-        //  @TODO 当日最大赎回份数的判断
+
+        //  @TODO 个人单笔最少赎回份额 PMinRedemptionVol
+        //  @TODO 个人当日累计赎回最大份额 IndiMaxRedeem
+
+        //  @TODO 赎回期内判断
+        //  @TODO 币种 产品收益币种 IncomeCurrType 本金返还币种 CostCurrType
+
+        //  @TODO 收费类型 ShareClass
+        //  @TODO 收费方式判断、是否扣除手术费
+
+        //  @TODO 理财最高赎回份数 MaxRedemptionVol
+        //  @TODO 理财最低持有份数 MinAccountBalance
 
         String transactiondate = transactionApplication.getTransactiondate();
         String transactiontime = transactionApplication.getTransactiontime();
@@ -314,7 +319,7 @@ public class Processor024 extends BiDirectionProcessor {
                 try {
                     //生成交易确认记录
                     transactionConfirmationDao.insert(transactionConfirmation);
-                    if(applyException!=null){
+                    if (applyException != null) {
                         FactoryDao().getExceptionDao().insert(applyException);
                     }
                 } catch (Exception e) {
