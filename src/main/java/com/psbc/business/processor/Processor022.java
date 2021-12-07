@@ -14,6 +14,7 @@ import com.psbc.utils.helper.XMLParser;
 import lombok.Data;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.lang.Exception;
 import java.lang.reflect.Field;
@@ -24,7 +25,8 @@ import java.util.*;
 
 import static com.psbc.business.service.ObjectProcessor.copyFields;
 import static com.psbc.business.service.RecordOperator.invokeGetMethod;
-import static com.psbc.utils.DateAndTimeUtil.getFullNowDateTime;
+import static com.psbc.utils.DateAndTimeUtil.*;
+import static com.psbc.utils.DateAndTimeUtil.getNowDate;
 
 @Data
 @Component
@@ -335,49 +337,9 @@ public class Processor022 extends BiDirectionProcessor {
 
     }
 
-    // 生成确认记录，不同业务需具体实现
-    @Override
-    void generateConfirm(ApplicationModel apply, ConfirmationModel confirm, ApplyException applyException) {
-
-//      业务流程更新confirm
-        TransactionApplication transactionApplication = (TransactionApplication) apply;
-        TransactionConfirmation transactionConfirmation = (TransactionConfirmation) confirm;
-        FundParaConfigDao fundParaConfigDao = FactoryDao().getFundParaConfigDao();
-        TransactionConfirmationDao transactionConfirmationDao = FactoryDao().getTransactionConfirmationDao();
-        AcctShareDao acctShareDao = FactoryDao().getAcctShareDao();
-        FundParaConfig fundParaConfig = new FundParaConfig();
-
-
-        fundParaConfig.setFundcode(transactionApplication.getFundcode());
-        fundParaConfig.setTacode(transactionApplication.getTacode());
-        fundParaConfig.setDistributorcode(transactionApplication.getDistributorcode());
-
-        FundParaConfig paraConfig = fundParaConfigDao.selectByUnionCode(fundParaConfig);
-        BigDecimal nav = paraConfig.getNav();
-
-
-        AcctShareKey acctShareKey = new AcctShareKey();
-        copyFields(transactionConfirmation, acctShareKey);
-        AcctShare acctShare = FactoryDao().getAcctShareDao().selectByPrimaryKey(acctShareKey);
-
-        BigDecimal shareTotalvolofdistributorinta = acctShare.getTotalvolofdistributorinta();
-        if (transactionApplication.getApplicationvol()==(transactionApplication.getApplicationamount().subtract(fundParaConfig.getNav()))){
-            acctShare.setTotalvolofdistributorinta(shareTotalvolofdistributorinta.add(transactionApplication.getApplicationvol()));
-        }
-
-        copyFields(transactionApplication, transactionConfirmation);
-
-        //生成交易确认成功记录（122）
-        transactionConfirmationDao.insert(transactionConfirmation);
-        //更新或新增账户持仓表
-        acctShareDao.updateByPrimaryKey(acctShare);
-        //更新产品已售额度等
-        fundParaConfigDao.updateByPrimaryKey(paraConfig);
-    }
-
-
     // 根据业务逻辑更新对应库表
     @Override
+    @Transactional
     void updateRepository(ApplicationModel apply, List<ConfirmationModel> confirm, ApplyException applyException) {
         FactoryDao().getTransactionApplicationDao().updateByPrimaryKey((TransactionApplication) apply);
         List<TransactionConfirmation> transactionConfirmationList = Collections.singletonList((TransactionConfirmation) confirm);
@@ -446,6 +408,66 @@ public class Processor022 extends BiDirectionProcessor {
             }
         }
     }
+
+
+    // 生成确认记录，不同业务需具体实现
+    @Override
+    void generateConfirm(ApplicationModel apply, ConfirmationModel confirm, ApplyException applyException) {
+
+//      业务流程更新confirm
+        TransactionApplication transactionApplication = (TransactionApplication) apply;
+        TransactionConfirmation transactionConfirmation = (TransactionConfirmation) confirm;
+        FundParaConfigDao fundParaConfigDao = FactoryDao().getFundParaConfigDao();
+        TransactionConfirmationDao transactionConfirmationDao = FactoryDao().getTransactionConfirmationDao();
+        AcctShareDao acctShareDao = FactoryDao().getAcctShareDao();
+        FundParaConfig fundParaConfig = new FundParaConfig();
+
+
+        fundParaConfig.setFundcode(transactionApplication.getFundcode());
+        fundParaConfig.setTacode(transactionApplication.getTacode());
+        fundParaConfig.setDistributorcode(transactionApplication.getDistributorcode());
+
+        FundParaConfig paraConfig = fundParaConfigDao.selectByUnionCode(fundParaConfig);
+        BigDecimal nav = paraConfig.getNav();
+
+
+        AcctShareKey acctShareKey = new AcctShareKey();
+        copyFields(transactionConfirmation, acctShareKey);
+        AcctShare acctShare = FactoryDao().getAcctShareDao().selectByPrimaryKey(acctShareKey);
+
+
+        String transactiondate = transactionConfirmation.getTransactiondate();
+        copyFields(transactionApplication, transactionConfirmation);
+        //      获得交易日日期
+        if (applyException != null && applyException.getReturncode() != null) {
+            transactionConfirmation.setReturncode(applyException.getReturncode());
+
+        } else {
+            transactionConfirmation.setReturncode("0000");
+        }
+
+        transactionConfirmation.setConfirmedvol(transactionApplication.getApplicationvol());
+        transactionConfirmation.setTransactioncfmdate(getNextTransactionDayFromDB(transactiondate));
+        transactionConfirmation.setTransactiondate(getNextTransactionDayFromDB(transactiondate));
+        transactionConfirmation.setBusinesscode("1" + transactionApplication.getBusinesscode().substring(1));
+
+        BigDecimal shareTotalvolofdistributorinta = acctShare.getTotalvolofdistributorinta();
+        if (transactionApplication.getApplicationvol()==(transactionApplication.getApplicationamount().subtract(fundParaConfig.getNav()))){
+            acctShare.setTotalvolofdistributorinta(shareTotalvolofdistributorinta.add(transactionApplication.getApplicationvol()));
+        }
+
+        transactionConfirmation.setTransactiondate(getNextTransactionDayFromDB(getNowDate()));
+        transactionConfirmation.setTransactioncfmdate(getNextTransactionDayFromDB(getNowDate()));
+        transactionConfirmation.setBusinesscode("1" + transactionApplication.getBusinesscode().substring(1));
+
+        //生成交易确认成功记录（122）
+        transactionConfirmationDao.insert(transactionConfirmation);
+        //更新或新增账户持仓表
+        acctShareDao.updateByPrimaryKey(acctShare);
+        //更新产品已售额度等
+        fundParaConfigDao.updateByPrimaryKey(paraConfig);
+    }
+
 
 
 

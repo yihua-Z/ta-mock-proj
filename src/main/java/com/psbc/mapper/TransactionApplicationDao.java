@@ -16,7 +16,7 @@ public interface TransactionApplicationDao {
 
     int insertSelective(TransactionApplication record);
 
-    TransactionApplication selectByPrimaryKey(TransactionApplicationKey key);
+    TransactionApplication selectByPrimaryKey(TransactionApplication key);
 
     List<TransactionApplication> selectAll();
 

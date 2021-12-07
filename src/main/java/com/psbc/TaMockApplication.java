@@ -28,8 +28,8 @@ public class TaMockApplication {
         for (TransactionApplication application : applyList
         ) {
             try {
-                if (application.getBusinesscode().equals("022")) {
 
+                if (application.getBusinesscode().equals("022")&&!application.getRecordstatus().equals("2")) {
                     processor022.process(application);
                 }
             } catch (ConfirmExpectationException e) {

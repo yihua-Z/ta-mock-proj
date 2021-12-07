@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Mapper
 @Repository
+
 public interface TransactionConfirmationDao {
     int deleteByPrimaryKey(Integer confirmid);
 

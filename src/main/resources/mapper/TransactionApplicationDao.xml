@@ -97,7 +97,7 @@
     BackenloadDiscount, CombineNum, FutureSubscribeDate, TradingMethod, LargeBuyFlag, 
     ChargeType, SpecifyRateFee, SpecifyFee, recordStatus
   </sql>
-  <select id="selectByPrimaryKey" parameterType="com.psbc.pojo.TransactionApplicationKey" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="com.psbc.pojo.TransactionApplication" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from transaction_application
