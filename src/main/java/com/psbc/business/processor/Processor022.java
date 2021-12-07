@@ -17,17 +17,20 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.lang.Exception;
-import java.lang.reflect.Field;
+
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 import static com.psbc.business.service.ObjectProcessor.copyFields;
-import static com.psbc.business.service.RecordOperator.invokeGetMethod;
+
 import static com.psbc.utils.DateAndTimeUtil.*;
 import static com.psbc.utils.DateAndTimeUtil.getNowDate;
-
+/**
+ * @author Dealyz
+ * @date 2021年11月30日
+ */
 @Data
 @Component
 public class Processor022 extends BiDirectionProcessor {
