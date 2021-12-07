@@ -11,14 +11,10 @@ import com.psbc.mapper.ExceptionDao;
 import com.psbc.mapper.TransactionApplicationDao;
 import com.psbc.mapper.TransactionExpectationDao;
 import com.psbc.pojo.*;
-import com.psbc.pojo.ApplicationModel;
-import com.psbc.pojo.ConfirmationModel;
-import com.psbc.pojo.ExpectationModel;
 import org.apache.log4j.Logger;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Objects;
 
 abstract class BiDirectionProcessor implements Processor {
 

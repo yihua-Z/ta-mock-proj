@@ -20,7 +20,7 @@ import java.util.Map;
 import java.util.Set;
 
 import static com.psbc.business.service.ObjectProcessor.copyFields;
-import static com.psbc.business.service.RecordOperator.invokeGetMethod;
+import static com.psbc.business.backup.RecordOperator.invokeGetMethod;
 
 public class CommonProcessUtils {
     public static List<TableModel> readRecords(String applicationFilePath) {

@@ -1,33 +1,23 @@
 package com.psbc.business.processor;
 
 import com.nlf.calendar.util.HolidayUtil;
-import com.psbc.business.service.RepositoryFactory;
-import com.psbc.business.service.SpringContextUtil;
 import com.psbc.exceptions.ApplyException;
 import com.psbc.exceptions.ConfirmExpectationException;
-import com.psbc.exceptions.ProcessingException;
 import com.psbc.mapper.AcctShareDao;
 import com.psbc.mapper.FundParaConfigDao;
-import com.psbc.mapper.TransactionApplicationDao;
 import com.psbc.mapper.TransactionConfirmationDao;
 import com.psbc.pojo.*;
-import com.psbc.reader.xmlModel.XMLNode;
-import com.psbc.utils.helper.XMLParser;
 import lombok.Data;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.lang.Exception;
-import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 import static com.psbc.business.service.CommonProcessUtils.*;
 import static com.psbc.business.service.ObjectProcessor.copyFields;
-import static com.psbc.business.service.RecordOperator.invokeGetMethod;
 import static com.psbc.utils.DateAndTimeUtil.*;
 
 /**
