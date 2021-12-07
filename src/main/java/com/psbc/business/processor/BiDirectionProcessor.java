@@ -6,6 +6,7 @@ import com.psbc.business.service.SpringContextUtil;
 import com.psbc.exceptions.ApplyException;
 import com.psbc.exceptions.ConfirmExpectationException;
 import com.psbc.exceptions.ProcessingException;
+import com.psbc.mapper.AccountApplicationDao;
 import com.psbc.mapper.ExceptionDao;
 import com.psbc.mapper.TransactionApplicationDao;
 import com.psbc.mapper.TransactionExpectationDao;
@@ -48,8 +49,11 @@ abstract class BiDirectionProcessor implements Processor {
         final List<ConfirmationModel> confirmList = new LinkedList<>();
 
         ExpectationModel confirmExpect;
-        // TODO：此处需判断是交易申请还账户申请。（暂定为交易申请）
-        ConfirmationModel confirmation = new TransactionConfirmation();
+        // 判断是交易申请还账户申请。（暂定为交易申请）
+
+        ConfirmationModel accountConfirmation=new AccountConfirmation();
+        ConfirmationModel transactionConfirmation=new TransactionConfirmation();
+
         ApplyException applyException = null;
         // 判断申请记录是否有异常；如果有，抓取异常
         try{
@@ -69,13 +73,24 @@ abstract class BiDirectionProcessor implements Processor {
                 validateConfirmExpectation(confirmExpect); // 可能会有异常
             }
             // 由确认期望条目转为确认条目
-            transformObject(confirmExpect, confirmation);
+            if(apply.getClass().getSimpleName().equals("AccountApplication")){
+                transformObject(confirmExpect, accountConfirmation);
+            }else {
+                transformObject(confirmExpect, transactionConfirmation);
+            }
+
         }
 
-
         // 根据申请记录，生成对应的确认记录
-        generateConfirm(apply, confirmation, applyException);
-        confirmList.add(confirmation);
+
+        if(apply.getClass().getSimpleName().equals("AccountApplication")){
+            generateConfirm(apply, accountConfirmation, applyException);
+            confirmList.add(accountConfirmation);
+        }else {
+            generateConfirm(apply, transactionConfirmation, applyException);
+            confirmList.add(transactionConfirmation);
+        }
+
 //        for(String businessCode : Objects.requireNonNull(getExtraConfirmationBusiness(apply))){
 //            confirmList.addAll(Objects.requireNonNull(callOtherProcessor(businessCode)));
 //        }
@@ -123,9 +138,17 @@ abstract class BiDirectionProcessor implements Processor {
 
     // 更新记录状态（至‘processingError’）
     private void updateRecordStatus(ApplicationModel apply, String status){
-        TransactionApplicationDao transactionApplicationDao = SpringContextUtil.getBean(RepositoryFactory.class).getTransactionApplicationDao();
-        ((TransactionApplication) apply).setRecordstatus(status);
-        transactionApplicationDao.updateByPrimaryKeySelective((TransactionApplication) apply);
+        if(apply.getClass().getSimpleName().equals("TransactionApplication")){
+            TransactionApplicationDao transactionApplicationDao = SpringContextUtil.getBean(RepositoryFactory.class).getTransactionApplicationDao();
+            ((TransactionApplication) apply).setRecordstatus(status);
+            transactionApplicationDao.updateByPrimaryKeySelective((TransactionApplication) apply);
+        }
+        if(apply.getClass().getSimpleName().equals("AccountApplication")){
+            AccountApplicationDao accountApplicationDao = SpringContextUtil.getBean(RepositoryFactory.class).getAccountApplicationDao();
+            ((AccountApplication) apply).setRecordstatus(status);
+            accountApplicationDao.updateByPrimaryKeySelective((AccountApplication) apply);
+        }
+
     }
 
 

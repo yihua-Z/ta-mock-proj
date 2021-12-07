@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import static com.psbc.business.service.CommonProcessUtils.FactoryDao;
+import static com.psbc.business.service.CommonProcessUtils.*;
 import static com.psbc.business.service.ObjectProcessor.copyFields;
 import static com.psbc.business.service.RecordOperator.invokeGetMethod;
 import static com.psbc.utils.DateAndTimeUtil.*;
@@ -39,89 +39,6 @@ import static com.psbc.utils.DateAndTimeUtil.*;
 public class Processor024 extends BiDirectionProcessor {
     private static final Logger logger = Logger.getLogger(Processor024.class);
 
-    public static void validateApplyFromXML(ApplicationModel apply, Logger logger) throws ApplyException {
-
-        TransactionApplication transactionApplication = (TransactionApplication) apply;
-
-        ApplyException applyException = new ApplyException();
-        copyFields(transactionApplication, applyException);
-        String businesscode = transactionApplication.getBusinesscode();
-
-        XMLNode business_configs = XMLParser.parseXml(".\\src\\main\\resources\\xml\\business_configs\\BUSINESSCODE.xml".replace("BUSINESSCODE", businesscode));
-        List<XMLNode> childrenNodes = business_configs.getChildrenNodes();
-        for (XMLNode c : childrenNodes
-        ) {
-            Map<String, String> attributes = c.getAttributes();
-            Set<String> keySet = attributes.keySet();
-            for (String key : keySet
-            ) {
-                if (key.equals("fieldName")) {
-                    try {
-                        String fieldName = attributes.get(key).toLowerCase();
-                        String required = attributes.get("required");
-                        Field field = transactionApplication.getClass().getDeclaredField(fieldName);
-                        field.setAccessible(true);
-                        Object o = invokeGetMethod(transactionApplication, field.getName(), null);
-                        if ((required.equals("true") && o == null) || (required.equals("true") && o.toString().equals(""))) {
-                            logger.error(fieldName + "字段缺失");
-                            applyException.setReturncode("9999");
-                            applyException.setErrortype("1");
-                            applyException.setSpeification(fieldName + "字段缺失");
-                            logger.error(fieldName + "字段缺失");
-                            throw applyException;
-                        }
-                    } catch (NoSuchFieldException e) {
-                        logger.error(e);
-                    }
-                }
-            }
-        }
-
-
-    }
-
-
-    public static String ReturnCodeDescription(String code) {
-        XMLNode return_codes = XMLParser.parseXml(".\\src\\main\\resources\\xml\\return_code\\return_codes.xml");
-        String description = "未知错误";
-        List<XMLNode> childrenNodes = return_codes.getChildrenNodes();
-        for (XMLNode x : childrenNodes
-        ) {
-            Map<String, String> attributes = x.getAttributes();
-            Set<String> keySet = attributes.keySet();
-
-            for (String key : keySet
-            ) {
-                if (key.equals("code")) {
-                    if (attributes.get(key).equals(code)) {
-                        description = attributes.get("description");
-                        return description;
-                    }
-                }
-
-            }
-        }
-
-        return description;
-    }
-
-    public static ProcessingException getProcessingException(ProcessingException exception, String code) {
-
-        String description = ReturnCodeDescription(code);
-        exception.setReturncode(code);
-        exception.setErrortype("1");
-        exception.setSpeification(description);
-        logger.error(description);
-        return exception;
-    }
-
-    public static List<TransactionApplication> getApplyList() {
-        TransactionApplicationDao applicationDao = FactoryDao().getTransactionApplicationDao();
-        List<TransactionApplication> transactionApplications = applicationDao.selectAll();
-        return transactionApplications;
-    }
-
-
     //  赎回必输字段校验，
     //  金额、日期等等
     @Override
@@ -129,22 +46,11 @@ public class Processor024 extends BiDirectionProcessor {
         //  检查必要字段不为空,根据对应业务的XML解析是否required
         validateApplyFromXML(apply,logger);
 
+
         TransactionApplication transactionApplication = (TransactionApplication) apply;
 
         ApplyException applyException = new ApplyException();
         copyFields(transactionApplication, applyException);
-
-        //  @TODO 个人单笔最少赎回份额 PMinRedemptionVol
-        //  @TODO 个人当日累计赎回最大份额 IndiMaxRedeem
-
-        //  @TODO 赎回期内判断
-        //  @TODO 币种 产品收益币种 IncomeCurrType 本金返还币种 CostCurrType
-
-        //  @TODO 收费类型 ShareClass
-        //  @TODO 收费方式判断、是否扣除手术费
-
-        //  @TODO 理财最高赎回份数 MaxRedemptionVol
-        //  @TODO 理财最低持有份数 MinAccountBalance
 
         String transactiondate = transactionApplication.getTransactiondate();
         String transactiontime = transactionApplication.getTransactiontime();
@@ -173,21 +79,57 @@ public class Processor024 extends BiDirectionProcessor {
         BigDecimal shareVol = totalvolofdistributorinta.subtract(totalfrozenvol);
 
 
-//        a = -1,表示 shareAmount 小于 applyAmount；
-//        a =  0,表示 shareAmount 等于 applyAmount；
-//        a =  1,表示 shareAmount 大于 applyAmount；
+//        a = -1,表示 shareVol 小于 applicationvol；
+//        a =  0,表示 shareVol 等于 applicationvol；
+//        a =  1,表示 shareVol 大于 applicationvol；
         if (shareVol.compareTo(applicationvol) < 0) {
 //            超过当前额度，赎回异常
-            ApplyException processingException = (ApplyException) getProcessingException(applyException, "1386");
+            ApplyException processingException = (ApplyException) getProcessingException(applyException, "1386",logger);
             throw processingException;
         }
 //
         if (Double.valueOf(transactiondate + transactiontime) > Double.valueOf(getFullNowDateTime())) {
-            ApplyException processingException = (ApplyException) getProcessingException(applyException, "1864");
+            ApplyException processingException = (ApplyException) getProcessingException(applyException, "1864",logger);
             throw processingException;
         }
         applyException.setReturncode("0000");
 
+        //  个人单笔最少赎回份额 PMinRedemptionVol
+        if(applicationvol.compareTo(fundParaConfig.getPmininterconvertvol())<0){
+            ApplyException processingException = (ApplyException) getProcessingException(applyException, "1320",logger);
+            throw processingException;
+        }
+
+
+        //  个人最大赎回份额 IndiMaxRedeem
+        //  个人当日累计赎回最大份额 IndiDayMaxSumRedeem
+        if(applicationvol.compareTo(fundParaConfig.getIndimaxredeem())>0){
+            ApplyException processingException = (ApplyException) getProcessingException(applyException, "1321",logger);
+            throw processingException;
+        }
+        //  @TODO 累计赎回份额需要增加字段判断 acctShare.getIndidaymaxsumredeem()
+        if(applicationvol.compareTo(fundParaConfig.getIndidaymaxsumredeem())>0){
+
+            ApplyException processingException = (ApplyException) getProcessingException(applyException, "1321",logger);
+            throw processingException;
+        }
+
+        // 赎回期内判断
+        FundDateKey fundDateKey = new FundDateKey();
+        copyFields(transactionApplication,fundDateKey);
+        FundDate fundDate = FactoryDao().getFundDateDao().selectByPrimaryKey(fundDateKey);
+        if (!fundDate.getDatetype().equals("B")){
+            ApplyException processingException = (ApplyException) getProcessingException(applyException, "1372",logger);
+            throw processingException;
+
+        }
+
+
+        //  币种 产品收益币种 IncomeCurrType 本金返还币种 CostCurrType
+        if(!transactionApplication.getCurrencytype().equals(fundParaConfig.getIncomecurrtype())){
+            ApplyException processingException = (ApplyException) getProcessingException(applyException, "1526",logger);
+            throw processingException;
+        }
 
     }
 
@@ -209,18 +151,17 @@ public class Processor024 extends BiDirectionProcessor {
         //        单位净值
         BigDecimal nav = transactionExpectation.getNav();
 
-        //  @TODO 赎回最小份数的判断
-        //  @TODO 当日最大赎回份数的判断
 
-        if (Double.valueOf(transactiondate + transactiontime) > Double.valueOf(getFullNowDateTime())) {
 
-            ConfirmExpectationException processingException = (ConfirmExpectationException) getProcessingException(confirmExpectationException, "1864");
+        if (Double.valueOf(transactiondate) > Double.valueOf(getNextTransactionDayFromDB(transactiondate))) {
+
+            ConfirmExpectationException processingException = (ConfirmExpectationException) getProcessingException(confirmExpectationException, "1864",logger);
             throw processingException;
         }
         //        获取交易日期配置表，获取延迟确认天数
         //        获取工作日日历表
         if (HolidayUtil.getHoliday(transactionExpectation.getTransactioncfmdate()) != null) {
-            ConfirmExpectationException processingException = (ConfirmExpectationException) getProcessingException(confirmExpectationException, "1864");
+            ConfirmExpectationException processingException = (ConfirmExpectationException) getProcessingException(confirmExpectationException, "1864",logger);
             throw processingException;
         }
 
@@ -247,8 +188,8 @@ public class Processor024 extends BiDirectionProcessor {
         //        理财产品实际可用总份数
         BigDecimal shareVol = totalvolofdistributorinta.subtract(totalfrozenvol);
 
-        if (shareVol.compareTo(applicationvol) < 0) {
-            ConfirmExpectationException processingException = (ConfirmExpectationException) getProcessingException(confirmExpectationException, "1386");
+        if (applicationvol.compareTo(shareVol) > 0) {
+            ConfirmExpectationException processingException = (ConfirmExpectationException) getProcessingException(confirmExpectationException, "1386",logger);
             throw processingException;
         }
 
@@ -260,15 +201,18 @@ public class Processor024 extends BiDirectionProcessor {
     void updateRepository(ApplicationModel apply, List<ConfirmationModel> confirm, ApplyException applyException) {
 
         try {
+
             TransactionApplication transactionApplication = (TransactionApplication) apply;
+
             TransactionConfirmationDao transactionConfirmationDao = FactoryDao().getTransactionConfirmationDao();
             AcctShareDao acctShareDao = FactoryDao().getAcctShareDao();
             FundParaConfigDao fundParaConfigDao = FactoryDao().getFundParaConfigDao();
+
             FundParaConfig fundParaConfig = new FundParaConfig();
             fundParaConfig.setFundcode(transactionApplication.getFundcode());
             fundParaConfig.setTacode(transactionApplication.getTacode());
             fundParaConfig.setDistributorcode(transactionApplication.getDistributorcode());
-            //        查询当前赎回对应的产品
+            //        查询当前赎回对应的产品信息
             FundParaConfig paraConfig = fundParaConfigDao.selectByUnionCode(fundParaConfig);
 
             for (ConfirmationModel c : confirm
@@ -298,11 +242,21 @@ public class Processor024 extends BiDirectionProcessor {
                             //    当前持仓金额
                             BigDecimal totalamountofdistributorinta = acctShare.getTotalamountofdistributorinta();
 
+                            //  收费类型 ShareClass
+                            //  收费方式判断、是否扣除手续费
+                            if (!transactionApplication.getShareclass().equals(fundParaConfig.getShareclass())){
+                                //  收费计算
+                            }
+
                             //    持仓份额更新  当前 总持仓=总持仓-赎回份额
                             acctShare.setTotalvolofdistributorinta(shareTotalvolofdistributorinta.subtract(transactionConfirmation.getConfirmedvol()));
                             //    持仓金额更新  当前 总金额=总持仓-赎回份额*净值
                             acctShare.setTotalamountofdistributorinta(totalamountofdistributorinta.subtract(transactionConfirmation.getConfirmedvol().multiply(nav)));
                             transactionConfirmation.setConfirmedamount(transactionConfirmation.getConfirmedvol().multiply(nav));
+
+
+
+
                             try {
                                 //更新或新增账户持仓表
                                 acctShareDao.updateByPrimaryKey(acctShare);
@@ -319,9 +273,6 @@ public class Processor024 extends BiDirectionProcessor {
                 try {
                     //生成交易确认记录
                     transactionConfirmationDao.insert(transactionConfirmation);
-                    if (applyException != null) {
-                        FactoryDao().getExceptionDao().insert(applyException);
-                    }
                 } catch (Exception e) {
                     logger.error(e);
                 }

@@ -48,7 +48,7 @@
 	<field fieldName="TransactorIDType" fieldType="C" length="1" description="经办人识别方式" required="false" placeholder="space" align="left" caseSensitive="insensitive"/>
 	<field fieldName="AccountCardID" fieldType="C" length="8" description="理财账户卡的凭证号" required="false" placeholder="space" align="left" caseSensitive="insensitive"/>
 	<field fieldName="DeliverWay" fieldType="C" length="8" description="对账单寄送方式" required="false" placeholder="space" align="left" caseSensitive="insensitive"/>
-	<field fieldName="Nationality" fieldType="C" length="3" description="投资者国籍" required="false" placeholder="space" align="left" caseSensitive="insensitive"/>
+<!--	<field fieldName="Nationality" fieldType="C" length="3" description="投资者国籍" required="false" placeholder="space" align="left" caseSensitive="insensitive"/>-->
 	<field fieldName="NetNo" fieldType="C" length="9" description="操作（清算）网点编号" required="false" placeholder="space" align="left" caseSensitive="insensitive"/>
 	<field fieldName="Broker" fieldType="C" length="12" description="经纪人" required="false" placeholder="space" align="left" caseSensitive="insensitive"/>
 	<field fieldName="CorpName" fieldType="C" length="40" description="工作单位名称" required="false" placeholder="space" align="left" caseSensitive="insensitive"/>

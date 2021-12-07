@@ -116,17 +116,8 @@
       and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
       and ReferenceNo = #{referenceno,jdbcType=INTEGER}
   </select>
-    <select id="selectAll" resultType="com.psbc.pojo.AccountApplication">
-      select * from account_application
-    </select>
-  <select id="selectUnionPrimaryKey" resultType="com.psbc.pojo.AccountApplication">
-    select
-    <include refid="Base_Column_List" />
-    from account_application
-    where AppSheetSerialNo = #{appsheetserialno,jdbcType=VARCHAR}
-    and TACode = #{tacode,jdbcType=VARCHAR}
-    and DistributorCode = #{distributorcode,jdbcType=VARCHAR}
-    and ReferenceNo = #{referenceno,jdbcType=INTEGER}
+  <select id="selectAll" resultType="com.psbc.pojo.AccountApplication">
+    select * from account_application
   </select>
   <delete id="deleteByPrimaryKey" parameterType="com.psbc.pojo.AccountApplicationKey">
     delete from account_application

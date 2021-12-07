@@ -1030,3 +1030,8 @@ values ('PSB',
         '0',
         '0',
         '0');
+
+update fund_para_config set Pmininterconvertvol=1 where TACode='0';
+update fund_para_config set Indimaxredeem=1000000000000 where TACode='0';
+update fund_para_config set Indidaymaxsumredeem=1000000000000 where TACode='0';
+update fund_para_config set Incomecurrtype=156 where TACode='0';

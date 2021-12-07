@@ -28,4 +28,5 @@ public class AccountApplicationKey implements Serializable {
      * 同一交易序列码
      */
     private Integer referenceno;
+
 }

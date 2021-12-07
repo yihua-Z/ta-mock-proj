@@ -32,7 +32,8 @@ public class TaMockApplication {
         for (AccountApplication application : applyList
         ) {
             try {
-                if (application.getBusinesscode().equals("001") && !application.getRecordstatus().equals("2")) {
+//                && !application.getRecordstatus().equals("2")
+                if (application.getBusinesscode().equals("001") ) {
                     processor001.process(application);
                 }
             } catch (ConfirmExpectationException e) {
@@ -44,7 +45,7 @@ public class TaMockApplication {
 
     public static void Process024() {
         Processor024 processor024 = SpringContextUtil.getBean(Processor024.class);
-        List<TransactionApplication> applyList = processor024.getApplyList();
+        List<TransactionApplication> applyList =getTransactionApplicationList();
         for (TransactionApplication application : applyList
         ) {
             try {
@@ -81,8 +82,8 @@ public class TaMockApplication {
         SpringApplication.run(TaMockApplication.class, args);
 
         Process001();
-        Process024();
-        Process022();
+//        Process024();
+//        Process022();
     }
 
 }

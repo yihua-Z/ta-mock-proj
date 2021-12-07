@@ -26,18 +26,15 @@ public class CheckDataLegality {
     TransactionApplicationDao transactionApplicationDao;
 
 
-
     public boolean Check(DatabaseModel Application) {
-        if(Application.getClass().getSimpleName().equals("AccountApplication")){
-           AccountApplication accountApplication= (AccountApplication) Application;
-            List<AccountApplication> accountApplications;
-            accountApplications = accountApplicationDao.selectUnionPrimaryKey(accountApplication);
+        if (Application.getClass().getSimpleName().equals("AccountApplication")) {
+            AccountApplication accountApplication = (AccountApplication) Application;
+            AccountApplication accountApplications;
+            accountApplications = accountApplicationDao.selectByPrimaryKey(accountApplication);
             if (accountApplications != null) {
-                if (accountApplications.size() > 1) {
-                    this.returnCode = this.ERRORCODE;
-                    this.legality = false;
-                    return false;
-                }
+
+                this.returnCode = this.ERRORCODE;
+                this.legality = false;
 
                 String transactionDate = accountApplication.getTransactiondate();
                 String transactionTime = accountApplication.getTransactiontime();

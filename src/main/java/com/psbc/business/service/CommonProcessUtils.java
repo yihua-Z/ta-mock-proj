@@ -37,8 +37,8 @@ public class CommonProcessUtils {
     }
 
 
-    public static String ReturnCodeDescription(String code,String XMLPath) {
-        XMLNode return_codes = XMLParser.parseXml(XMLPath);
+    public static String ReturnCodeDescription(String code) {
+        XMLNode return_codes = XMLParser.parseXml(".\\src\\main\\resources\\xml\\return_code\\return_codes.xml");
         String description = "未知错误";
         List<XMLNode> childrenNodes = return_codes.getChildrenNodes();
         for (XMLNode x : childrenNodes
@@ -61,9 +61,9 @@ public class CommonProcessUtils {
         return description;
     }
 
-    public static ProcessingException getProcessingException(ProcessingException exception, String code,String XMLPath,Logger logger) {
+    public static ProcessingException getProcessingException(ProcessingException exception, String code ,Logger logger) {
 
-        String description = ReturnCodeDescription(code,XMLPath);
+        String description = ReturnCodeDescription(code);
         exception.setReturncode(code);
         exception.setErrortype("1");
         exception.setSpeification(description);
