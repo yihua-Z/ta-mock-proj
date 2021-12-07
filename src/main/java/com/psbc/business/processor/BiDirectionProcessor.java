@@ -1,5 +1,6 @@
 package com.psbc.business.processor;
 
+
 import com.psbc.business.service.ObjectProcessor;
 import com.psbc.business.service.RepositoryFactory;
 import com.psbc.business.service.SpringContextUtil;
@@ -123,7 +124,7 @@ abstract class BiDirectionProcessor implements Processor {
         // 直接用辅助部分的代码实现
         ExceptionDao exceptionDao = SpringContextUtil.getBean(RepositoryFactory.class).getExceptionDao();
 //        @TODO 此处有问题
-//        exceptionDao.insert(exception);
+        exceptionDao.insert(exception);
     }
 
     // 调取单向业务处理器
@@ -159,6 +160,6 @@ abstract class BiDirectionProcessor implements Processor {
     abstract void updateRepository(ApplicationModel apply, List<ConfirmationModel> confirm, ApplyException applyException);
     
     // 生成确认记录，不同业务需具体实现
-    abstract void generateConfirm(ApplicationModel apply, ConfirmationModel confirm, ApplyException applyException);
+    abstract void generateConfirm(ApplicationModel apply, ConfirmationModel confirm, ApplyException applyException) ;
 
 }

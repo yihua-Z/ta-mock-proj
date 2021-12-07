@@ -1,5 +1,6 @@
 package com.psbc.business.processor;
 
+import com.nlf.calendar.util.HolidayUtil;
 import com.psbc.business.service.*;
 import com.psbc.exceptions.ApplyException;
 import com.psbc.exceptions.ConfirmExpectationException;
@@ -10,6 +11,7 @@ import com.psbc.pojo.ApplicationModel;
 import com.psbc.pojo.ConfirmationModel;
 import com.psbc.pojo.ExpectationModel;
 import com.psbc.reader.xmlModel.XMLNode;
+import com.psbc.utils.DateAndTimeUtil;
 import com.psbc.utils.helper.XMLParser;
 import lombok.Data;
 import org.apache.log4j.Logger;
@@ -80,6 +82,25 @@ public class Processor022 extends BiDirectionProcessor {
         return description;
     }
 
+//    用于判断是否为周末和节假日
+    public String getNextTransactionDate(String transactionDate) {
+        String  transactionCfdate=transactionDate;
+        while (isWeekend(transactionCfdate)){
+            try {
+                transactionCfdate = addDay(transactionCfdate, 1);
+            } catch (ParseException e) {
+//                getProcessingException(applyException,"0000");
+                logger.error(e);
+            }
+        }
+        //        获取交易日期配置表，获取延迟确认天数
+        //        获取工作日日历表
+        if (HolidayUtil.getHoliday(transactionCfdate) != null) {
+            transactionCfdate=getNextTransactionDayFromDB(transactionDate);
+        }
+
+        return transactionCfdate;
+    }
 //    public void validateApplyFromXML(ApplicationModel apply) throws ApplyException {
 //
 //        TransactionApplication transactionApplication = (TransactionApplication) apply;
@@ -138,6 +159,7 @@ public class Processor022 extends BiDirectionProcessor {
         //  检查必要字段不为空,根据对应业务的XML解析是否required
 //        validateApplyFromXML(apply);
 
+
         TransactionApplication transactionApplication = (TransactionApplication) apply;
         ApplyException applyException=new ApplyException();
         copyFields(apply,applyException);
@@ -154,17 +176,18 @@ public class Processor022 extends BiDirectionProcessor {
             throw e;
         }
 
-        Double transactiondate = Double.valueOf(transactionApplication.getTransactiondate());
+        String transactiondate = transactionApplication.getTransactiondate();
         Double transactiontime = Double.valueOf(transactionApplication.getTransactiontime());
-
         BigDecimal.valueOf(Long.valueOf(transactionApplication.getTransactiondate()));
         BigDecimal applicationamount = transactionApplication.getApplicationamount();
         //判断是否下午三点切日，如果切日日期加一天
         String CHANGEDTE = "150000";
+        String transactionCfdate=transactiondate;
         if (Double.valueOf(CHANGEDTE) < transactiontime) {
-            transactiondate += 1;
+            String  transactiondateHead= transactiondate.substring(0,7);
+            String day = String.valueOf(Integer.parseInt(transactiondate.substring(7)) + 1);
+            transactionCfdate=transactiondateHead+day;
         }
-
 
 
         AcctShareKey acctShareKey = new AcctShareKey();
@@ -176,11 +199,11 @@ public class Processor022 extends BiDirectionProcessor {
         copyFields(transactionApplication, fundParaConfig);
         fundParaConfig = FactoryDao().getFundParaConfigDao().selectByUnionCode(fundParaConfig);
 //        申购日期不在申请期限内
-        if (transactiondate > Double.valueOf(fundParaConfig.getFundestablishdate())) {
-            logger.error("申请日期不在申购日期期限中");
-            getProcessingException(applyException,"1864");
-            throw applyException;
-        }
+//        if (Double.valueOf(transactiondate) > Double.valueOf(fundParaConfig.getFundestablishdate())) {
+//            logger.error("申请日期不在申购日期期限中");
+//            getProcessingException(applyException,"1864");
+//            throw applyException;
+//        }
 
 
 //        判断申购是否为首次购买 AppSheetSerialNo 通过申请单编号
@@ -221,17 +244,18 @@ public class Processor022 extends BiDirectionProcessor {
                 getProcessingException(applyException,"1393");
             } else {
 //                增加的金额
-                acctShare.setTotalamountofdistributorinta(acctShare.getTotalamountofdistributorinta().add(applicationamount));
+                BigDecimal add = acctShare.getTotalamountofdistributorinta().add(applicationamount);
+                acctShare.setTotalamountofdistributorinta(add);
 //                增加的份额
                 acctShare.setTotalfrozenvol(acctShare.getTotalfrozenvol().add(applicationamount.divide(fundParaConfig.getNav())));
             }
         }
 
-
 //            当前净值类型非申购类型下   个人购买额度超过总额度
-        if (fundParaConfig.getNetvaluetype().equals(1)) {
+        if (fundParaConfig.getNetvaluetype().equals("1")) {
             BigDecimal nav = fundParaConfig.getNav();
-            BigDecimal share = applicationamount.divide(nav, 20, BigDecimal.ROUND_HALF_UP);
+//           2为有效位数
+            BigDecimal share = applicationamount.divide(nav, 2, BigDecimal.ROUND_HALF_UP);
 //            理财产品总份数（含冻结）
             BigDecimal totalvolofdistributorinta = acctShare.getTotalvolofdistributorinta();
 //            理财产品冻结份数
@@ -242,78 +266,77 @@ public class Processor022 extends BiDirectionProcessor {
             totalvolofdistributorinta = totalvolofdistributorinta.add(share);
             acctShare.setTotalvolofdistributorinta(totalvolofdistributorinta);
             FactoryDao().getAcctShareDao().updateByPrimaryKey(acctShare);
-
         } else {
             logger.error("当前净值类型非申购类型");
             getProcessingException(applyException,"0000");
         }
 
 //        跳过节假日和周末，生成确认表
-        Boolean isHoliday = true;
-        String transactioncfmdate = transactionApplication.getTransactiondate();
-        String transactionDate = transactioncfmdate.substring(0, 8);
-        Holiday holiday = new Holiday();
-        while (isHoliday) {
-            holiday.setDay(transactionDate);
-            List<Holiday> holidays = FactoryDao().getHolidayDao().selectByCondition(holiday);
-            if (holidays != null) {
-                try {
-                    transactionDate = addDay(transactionDate, 1);
-                } catch (ParseException e) {
-                    getProcessingException(applyException,"0000");
-                    logger.error(e);
-                }
-            } else {
-                isHoliday = false;
-            }
-        }
-        TransactionExpectation transactionExpectation = new TransactionExpectation();
-        transactionExpectation.setTransactioncfmdate(transactioncfmdate.substring(9) + transactionDate);
-        TransactionExpectationDao transactionExpectationDao = SpringContextUtil.getBean(TransactionExpectationDao.class);
-        transactionExpectationDao.updateByPrimaryKey(transactionExpectation);
 
 
-        if (!(fundParaConfig.getNav().compareTo(applicationamount.divide(transactionApplication.getApplicationvol()))==0)){
-            logger.error("申请金额与申请份额不一致");
-            getProcessingException(applyException,"0000");
-        }
+//        while (isHoliday) {
+//            holiday.setDay(transactionDate);
+//            List<Holiday> holidays = FactoryDao().getHolidayDao().selectByCondition(holiday);
+//            if (holidays != null) {
+//                try {
+//                    transactionDate = addDay(transactionDate, 1);
+//                } catch (ParseException e) {
+//                    getProcessingException(applyException,"0000");
+//                    logger.error(e);
+//                }
+//            } else {
+//                isHoliday = false;
+//            }
+//        }
+        transactionCfdate = getNextTransactionDate(transactionCfdate);
+
+
     }
 
-    // 判断所获期望是否合理，不同业务需具体实现
-
-    //        读取期望配置表（获取失败信息）
-//        获取交易日期配置表，获取延迟确认天数  获取工作日日历表
-//        读取产品表（获取个人额度，产品额度）
-//        读取账户信息表（获取个人已购额度）
 
     @Override
     void validateConfirmExpectation(ExpectationModel expect) throws ConfirmExpectationException {
-        TransactionConfirmation transactionConfirmation = (TransactionConfirmation) expect;
+        TransactionExpectation transactionExpectation = (TransactionExpectation) expect;
 
         ConfirmExpectationException confirmExpectationException=new ConfirmExpectationException();
         copyFields(expect,confirmExpectationException);
-        BigDecimal Confirmedamount = transactionConfirmation.getConfirmedamount();
-        String transactiondate = transactionConfirmation.getTransactiondate();
-        String transactiontime = transactionConfirmation.getTransactiontime();
-        if (Double.valueOf(transactiondate + transactiontime) > Double.valueOf(getFullNowDateTime())) {
-            getProcessingException(confirmExpectationException,"0000");
+        BigDecimal Confirmedamount = transactionExpectation.getConfirmedamount();
+        String transactiondate = transactionExpectation.getTransactiondate();
+        String transactiontime = transactionExpectation.getTransactiontime();
+
+        String CHANGEDTE = "150000";
+        String transactionCfdate=transactiondate;
+        if (Double.valueOf(CHANGEDTE) < Double.valueOf(transactiontime)) {
+            String  transactiondateHead= transactiondate.substring(0,7);
+            String day = String.valueOf(Integer.parseInt(transactiondate.substring(7)) + 1);
+            transactionCfdate=transactiondateHead+day;
         }
+        transactionExpectation.setTransactioncfmdate(transactionCfdate);
 
         FundDateKey fundDateKey = new FundDateKey();
-        copyFields(transactionConfirmation, fundDateKey);
+        copyFields(transactionExpectation, fundDateKey);
         FundDate fundDate = FactoryDao().getFundDateDao().selectByPrimaryKey(fundDateKey);
 
         //      查找当前申购期望 的持仓表记录
         AcctShareKey acctShareKey = new AcctShareKey();
+//        copyFields(transactionExpectation,acctShareKey);
+        TransactionApplication transactionApplication = new TransactionApplication();
+        copyFields(transactionExpectation,transactionApplication);
+        transactionApplication = FactoryDao().getTransactionApplicationDao().selectByPrimaryKey(transactionApplication);
+        copyFields(transactionApplication,acctShareKey);
+
+
         AcctShare acctShare = FactoryDao().getAcctShareDao().selectByPrimaryKey(acctShareKey);
 
         //        理财产品总金额（含冻结）
         BigDecimal totalamountofdistributorinta = acctShare.getTotalamountofdistributorinta();
         FundParaConfigDao fundParaConfigDao = SpringContextUtil.getBean(FundParaConfigDao.class);
-        FundParaConfig fundParaConfig = fundParaConfigDao.selectByPrimaryKey(1);
+        FundParaConfig fundParaConfig1 = new FundParaConfig();
+        copyFields(transactionApplication,fundParaConfig1);
+        FundParaConfig fundParaConfig = fundParaConfigDao.selectByUnionCode(fundParaConfig1);
 
 
-        totalamountofdistributorinta.add(transactionConfirmation.getConfirmedamount());
+        totalamountofdistributorinta.add(transactionExpectation.getConfirmedamount());
 
         //   先判断申购金额是否超过个人最大申购金额getIndimaxpurchase
         if (Confirmedamount.compareTo(fundParaConfig.getIndimaxpurchase()) == 1) {
@@ -345,9 +368,9 @@ public class Processor022 extends BiDirectionProcessor {
     @Transactional
     void updateRepository(ApplicationModel apply, List<ConfirmationModel> confirm, ApplyException applyException) {
         FactoryDao().getTransactionApplicationDao().updateByPrimaryKey((TransactionApplication) apply);
-        List<TransactionConfirmation> transactionConfirmationList = Collections.singletonList((TransactionConfirmation) confirm);
-        for (TransactionConfirmation transactionConfirmation : transactionConfirmationList) {
-            FactoryDao().getTransactionConfirmationDao().updateByPrimaryKey(transactionConfirmation);
+        for (ConfirmationModel transactionConfirmation : confirm) {
+            TransactionConfirmation confirmation = (TransactionConfirmation) transactionConfirmation;
+            FactoryDao().getTransactionConfirmationDao().updateByPrimaryKey(confirmation);
         }
 
 
@@ -358,9 +381,7 @@ public class Processor022 extends BiDirectionProcessor {
 
 
         FundParaConfig fundParaConfig = new FundParaConfig();
-        fundParaConfig.setFundcode(transactionApplication.getFundcode());
-        fundParaConfig.setTacode(transactionApplication.getTacode());
-        fundParaConfig.setDistributorcode(transactionApplication.getDistributorcode());
+        copyFields(transactionApplication,fundParaConfig);
         //        查询当前申购对应的产品
         FundParaConfig paraConfig = fundParaConfigDao.selectByUnionCode(fundParaConfig);
         //        产品额度更新
@@ -372,11 +393,11 @@ public class Processor022 extends BiDirectionProcessor {
         ) {
             TransactionConfirmation transactionConfirmation = (TransactionConfirmation) c;
 
-//            当确认记录的业务代码为124 时更新 持仓与 产品 表
+//            当确认记录的业务代码为122 时更新 持仓与 产品 表
             if (transactionConfirmation.getBusinesscode().equals("1" + transactionApplication.getBusinesscode().substring(1))) {
 //                当返回码为"0000"成功时
                 if (transactionConfirmation.getReturncode().equals("0000")) {
-                    copyFields(transactionConfirmation, acctShareKey);
+                    copyFields(transactionApplication, acctShareKey);
                     AcctShare acctShare = FactoryDao().getAcctShareDao().selectByPrimaryKey(acctShareKey);
                     //   当前持仓金额
                     BigDecimal totalamountofdistributorinta = acctShare.getTotalamountofdistributorinta();
@@ -384,7 +405,7 @@ public class Processor022 extends BiDirectionProcessor {
                     BigDecimal totalvolofdistributorinta = acctShare.getTotalvolofdistributorinta();
                     //    当前持仓金额
 //                    持仓金额更新  当前 总金额=总金额+申购金额
-                    acctShare.setTotalamountofdistributorinta(totalamountofdistributorinta.add(transactionConfirmation.getAchievementcompen()));
+                    acctShare.setTotalamountofdistributorinta(totalamountofdistributorinta.add(transactionApplication.getApplicationamount()));
 
                     //    持仓份额更新  当前 总持仓=总持仓+申购份额
                     acctShare.setTotalvolofdistributorinta(totalvolofdistributorinta.add(transactionApplication.getApplicationvol()));
@@ -415,27 +436,25 @@ public class Processor022 extends BiDirectionProcessor {
 
     // 生成确认记录，不同业务需具体实现
     @Override
-    void generateConfirm(ApplicationModel apply, ConfirmationModel confirm, ApplyException applyException) {
+    void generateConfirm(ApplicationModel apply, ConfirmationModel confirm, ApplyException applyException){
 
 //      业务流程更新confirm
         TransactionApplication transactionApplication = (TransactionApplication) apply;
         TransactionConfirmation transactionConfirmation = (TransactionConfirmation) confirm;
+//        get DAO
         FundParaConfigDao fundParaConfigDao = FactoryDao().getFundParaConfigDao();
         TransactionConfirmationDao transactionConfirmationDao = FactoryDao().getTransactionConfirmationDao();
         AcctShareDao acctShareDao = FactoryDao().getAcctShareDao();
+
         FundParaConfig fundParaConfig = new FundParaConfig();
-
-
-        fundParaConfig.setFundcode(transactionApplication.getFundcode());
-        fundParaConfig.setTacode(transactionApplication.getTacode());
-        fundParaConfig.setDistributorcode(transactionApplication.getDistributorcode());
+        copyFields(transactionApplication,fundParaConfig);
 
         FundParaConfig paraConfig = fundParaConfigDao.selectByUnionCode(fundParaConfig);
         BigDecimal nav = paraConfig.getNav();
 
 
         AcctShareKey acctShareKey = new AcctShareKey();
-        copyFields(transactionConfirmation, acctShareKey);
+        copyFields(transactionApplication, acctShareKey);
         AcctShare acctShare = FactoryDao().getAcctShareDao().selectByPrimaryKey(acctShareKey);
 
 
@@ -448,14 +467,16 @@ public class Processor022 extends BiDirectionProcessor {
         } else {
             transactionConfirmation.setReturncode("0000");
         }
+//     周末和节假日排除
+        String nextTransactionDate = getNextTransactionDate(transactionApplication.getTransactiondate());
 
-        transactionConfirmation.setConfirmedvol(transactionApplication.getApplicationvol());
-        transactionConfirmation.setTransactioncfmdate(getNextTransactionDayFromDB(transactiondate));
-        transactionConfirmation.setTransactiondate(getNextTransactionDayFromDB(transactiondate));
+        transactionConfirmation.setConfirmedvol(transactionApplication.getApplicationamount().divide(paraConfig.getNav()));
+        transactionConfirmation.setTransactioncfmdate(nextTransactionDate);
+        transactionConfirmation.setTransactiondate(transactionApplication.getTransactiondate());
         transactionConfirmation.setBusinesscode("1" + transactionApplication.getBusinesscode().substring(1));
 
         BigDecimal shareTotalvolofdistributorinta = acctShare.getTotalvolofdistributorinta();
-        if (transactionApplication.getApplicationvol()==(transactionApplication.getApplicationamount().subtract(fundParaConfig.getNav()))){
+        if (transactionApplication.getApplicationvol()==(transactionApplication.getApplicationamount().subtract(paraConfig.getNav()))){
             acctShare.setTotalvolofdistributorinta(shareTotalvolofdistributorinta.add(transactionApplication.getApplicationvol()));
         }
 
@@ -464,12 +485,14 @@ public class Processor022 extends BiDirectionProcessor {
         transactionConfirmation.setBusinesscode("1" + transactionApplication.getBusinesscode().substring(1));
 
         //生成交易确认成功记录（122）
-        transactionConfirmationDao.insert(transactionConfirmation);
+//        transactionConfirmationDao.insert(transactionConfirmation);
         //更新或新增账户持仓表
         acctShareDao.updateByPrimaryKey(acctShare);
         //更新产品已售额度等
         fundParaConfigDao.updateByPrimaryKey(paraConfig);
     }
+
+
 
 
 

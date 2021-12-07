@@ -156,13 +156,13 @@ public class DateAndTimeUtil {
              ) {
             System.out.println(h.toString());
         }
-//        String nextTransactionDay = getNextTransactionDay("20211001");
-//        System.out.println(nextTransactionDay);
-//
+        String nextTransactionDay = getNextTransactionDay("20211001");
+        System.out.println(nextTransactionDay);
+
 //        String nextTransactionDayFromDB = getNextTransactionDayFromDB("20210101");
 //        System.out.println(nextTransactionDayFromDB);
-//        System.out.println(getNowDate());
-//        System.out.println(isWeekend("20211204"));
+        System.out.println(getNowDate());
+        System.out.println(isWeekend("20211204"));
 
     }
 
