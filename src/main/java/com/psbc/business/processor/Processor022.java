@@ -42,13 +42,7 @@ public class Processor022 extends BiDirectionProcessor {
         RepositoryFactory repositoryFactory = SpringContextUtil.getBean(RepositoryFactory.class);
         return repositoryFactory;
     }
-    //      用于增加天数
-    public String addDay(String time, int addDay) throws ParseException {
-        SimpleDateFormat ft = new SimpleDateFormat("yyyyMMdd");
-        Date date = ft.parse(time);
-        String format = ft.format(new Date(date.getTime() + addDay * 24 * 60 * 60 * 1000));
-        return format;
-    }
+
 
     public void getProcessingException(ProcessingException exception, String code) {
 
@@ -87,7 +81,7 @@ public class Processor022 extends BiDirectionProcessor {
         String  transactionCfdate=transactionDate;
         while (isWeekend(transactionCfdate)){
             try {
-                transactionCfdate = addDay(transactionCfdate, 1);
+                transactionCfdate = DateAndTimeUtil.addDay(transactionCfdate, 1);
             } catch (ParseException e) {
 //                getProcessingException(applyException,"0000");
                 logger.error(e);
@@ -171,7 +165,7 @@ public class Processor022 extends BiDirectionProcessor {
             applyFormatValidator.validateFieldFormat(transactionApplication);
         }catch (ApplyException e){
 //            交易请求报文格式错误
-            getProcessingException(e,"3105");
+            CommonProcessUtils.getProcessingException(e,"3105",logger);
             logger.error("申请记录字段格式不正确");
             throw e;
         }
