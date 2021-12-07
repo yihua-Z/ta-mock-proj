@@ -11,6 +11,7 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Field;
+import java.math.BigDecimal;
 import java.util.Locale;
 import java.util.Map;
 
@@ -76,7 +77,7 @@ public class ApplyFormatValidator {
             return;
         }
 
-        final XMLNode xmlNode = XMLParser.parseXml(BUSINESS_CONFIG + businessCode + "xml");
+        final XMLNode xmlNode = XMLParser.parseXml(BUSINESS_CONFIG + businessCode + ".xml");
 
         try {
             for (XMLNode childrenNode : xmlNode.getChildrenNodes()) {
@@ -87,9 +88,30 @@ public class ApplyFormatValidator {
 
                     Field field = record.getClass().getDeclaredField(fieldName.toLowerCase(Locale.ROOT));
                     field.setAccessible(true);
+                    String type = field.getType().getSimpleName();
                     Object o = field.get(record);
+                    String content = "";
+                    if(o != null) {
+                        switch (type) {
+                            case "Integer":
+                                content = Converter.getAsInteger(o)+"";
+                                break;
+                            case "String":
+                                content = Converter.getAsString(o);
+                                break;
+                            case "BigDecimal":
+                                content = Converter.getAsBigDecimal(o) + "";
+                                break;
+                            case "Double":
+                                content = Converter.getAsDouble(o) + "";
+                                break;
+                            case "Object":
+                                content = Converter.getAsString(o)+"";
+                                break;
+                        }
+                    }
 
-                    if(o == null || ((String) o).length() < 1 || "".equals(((String) o).trim())){
+                    if(o == null || content.length() < 1 || "".equals(content.trim())){
                         ApplyException exception = new ApplyException();
                         String serialNo = "";
                         if(accountApplication != null){
@@ -97,13 +119,14 @@ public class ApplyFormatValidator {
                             serialNo = accountApplication.getAppsheetserialno();
                         } else {
                             ObjectProcessor.copyFields(transactionApplication,exception);
-                            serialNo = transactionApplication.getNetno();
+                            serialNo = transactionApplication.getAppsheetserialno();
                         }
                         exception.setErrortype("1");
                         exception.setReturncode(MISS_RETURN_CODE);
                         String errorContent = "申请记录" + serialNo + "中必填字段" + fieldName + "内容缺失";
                         exception.setSpeification(errorContent);
                         log.error("申请记录中必填字段缺失：" + errorContent);
+                        throw exception;
                     }
                 }
             }

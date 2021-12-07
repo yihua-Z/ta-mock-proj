@@ -23,6 +23,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 import static com.psbc.business.service.ObjectProcessor.copyFields;
+import static com.psbc.business.service.RecordOperator.invokeGetMethod;
 import static com.psbc.utils.DateAndTimeUtil.getFullNowDateTime;
 
 @Data
@@ -33,6 +34,13 @@ public class Processor022 extends BiDirectionProcessor {
     public RepositoryFactory FactoryDao() {
         RepositoryFactory repositoryFactory = SpringContextUtil.getBean(RepositoryFactory.class);
         return repositoryFactory;
+    }
+    //      用于增加天数
+    public String addDay(String time, int addDay) throws ParseException {
+        SimpleDateFormat ft = new SimpleDateFormat("yyyyMMdd");
+        Date date = ft.parse(time);
+        String format = ft.format(new Date(date.getTime() + addDay * 24 * 60 * 60 * 1000));
+        return format;
     }
 
     public void getProcessingException(ProcessingException exception, String code) {
@@ -67,45 +75,53 @@ public class Processor022 extends BiDirectionProcessor {
         return description;
     }
 
-    public void validateApplyFromXML(ApplicationModel apply) throws ApplyException {
+//    public void validateApplyFromXML(ApplicationModel apply) throws ApplyException {
+//
+//        TransactionApplication transactionApplication = (TransactionApplication) apply;
+//        ApplyException applyException =  new ApplyException();
+////        ApplyException applyException = (ApplyException) new ProcessingException();
+//        copyFields(transactionApplication, applyException);
+//        String businesscode = transactionApplication.getBusinesscode();
+//
+//        XMLNode business_configs = XMLParser.parseXml(".\\src\\main\\resources\\xml\\business_configs\\BUSINESSCODE.xml".replace("BUSINESSCODE", businesscode));
+//        List<XMLNode> childrenNodes = business_configs.getChildrenNodes();
+//        for (XMLNode c : childrenNodes
+//        ) {
+//            Map<String, String> attributes = c.getAttributes();
+//            Set<String> keySet = attributes.keySet();
+//            for (String key : keySet
+//            ) {
+//                if (key.equals("fieldName")) {
+//                    try {
+//                        String fieldName = attributes.get(key).toLowerCase();
+//                        String required = attributes.get("required");
+//                        Field field = transactionApplication.getClass().getDeclaredField(fieldName);
+//                        field.setAccessible(true);
+//
+//                        Object o = invokeGetMethod(transactionApplication, field.getName(), null);
+//                        if ((required.equals(true) && o== null)||(required.equals(true) &&"".equals(o.toString()))) {
+//                            logger.error(fieldName + "字段缺失");
+//                            applyException.setReturncode("9999");
+//                            applyException.setErrortype("1");
+//                            applyException.setSpeification(fieldName + "字段缺失");
+//                            logger.error(fieldName + "字段缺失");
+//                            throw applyException;
+//                        }
+//                    } catch (NoSuchFieldException e) {
+//                        logger.error(e);
+//                    }
+//                }
+//            }
+//        }
+//
+//
+//    }
 
-        TransactionApplication transactionApplication = (TransactionApplication) apply;
-        ApplyException applyException = (ApplyException) new ProcessingException();
-        copyFields(transactionApplication, applyException);
-        String businesscode = transactionApplication.getBusinesscode();
 
-        XMLNode business_configs = XMLParser.parseXml(".\\src\\main\\resources\\xml\\business_configs\\BUSINESSCODE.xml".replace("BUSINESSCODE", businesscode));
-        List<XMLNode> childrenNodes = business_configs.getChildrenNodes();
-        for (XMLNode c : childrenNodes
-        ) {
-            Map<String, String> attributes = c.getAttributes();
-            Set<String> keySet = attributes.keySet();
-            for (String key : keySet
-            ) {
-                if (key.equals("fieldName")) {
-                    try {
-                        String fieldName = attributes.get(key).toLowerCase();
-                        String required = attributes.get("required");
-                        Field field = transactionApplication.getClass().getDeclaredField(fieldName);
-                        field.setAccessible(true);
-                        Object o = field.get(fieldName);
-                        String s = o.toString();
-                        if (required.equals(true) && s == null) {
-                            logger.error(fieldName + "字段缺失");
-                            applyException.setReturncode("9999");
-                            applyException.setErrortype("1");
-                            applyException.setSpeification(fieldName + "字段缺失");
-                            logger.error(fieldName + "字段缺失");
-                            throw applyException;
-                        }
-                    } catch (NoSuchFieldException | IllegalAccessException e) {
-                        logger.error(e);
-                    }
-                }
-            }
-        }
-
-
+    public List<TransactionApplication> getApplyList() {
+        TransactionApplicationDao applicationDao = FactoryDao().getTransactionApplicationDao();
+        List<TransactionApplication> transactionApplications = applicationDao.selectAll();
+        return transactionApplications;
     }
 
 
@@ -115,8 +131,7 @@ public class Processor022 extends BiDirectionProcessor {
     @Override
     void validateApply(ApplicationModel apply) throws ApplyException {
         //  检查必要字段不为空,根据对应业务的XML解析是否required
-        //validateApplyFromXML(apply);
-
+//        validateApplyFromXML(apply);
 
         TransactionApplication transactionApplication = (TransactionApplication) apply;
         ApplyException applyException=new ApplyException();
@@ -134,11 +149,10 @@ public class Processor022 extends BiDirectionProcessor {
             throw e;
         }
 
-
-
         Double transactiondate = Double.valueOf(transactionApplication.getTransactiondate());
         Double transactiontime = Double.valueOf(transactionApplication.getTransactiontime());
 
+        BigDecimal.valueOf(Long.valueOf(transactionApplication.getTransactiondate()));
         BigDecimal applicationamount = transactionApplication.getApplicationamount();
         //判断是否下午三点切日，如果切日日期加一天
         String CHANGEDTE = "150000";
@@ -151,7 +165,11 @@ public class Processor022 extends BiDirectionProcessor {
         AcctShareKey acctShareKey = new AcctShareKey();
         copyFields(transactionApplication, acctShareKey);
         AcctShare acctShare = FactoryDao().getAcctShareDao().selectByPrimaryKey(acctShareKey);
-        FundParaConfig fundParaConfig = FactoryDao().getFundParaConfigDao().selectByPrimaryKey(1);
+
+
+        FundParaConfig fundParaConfig = new FundParaConfig();
+        copyFields(transactionApplication, fundParaConfig);
+        fundParaConfig = FactoryDao().getFundParaConfigDao().selectByUnionCode(fundParaConfig);
 //        申购日期不在申请期限内
         if (transactiondate > Double.valueOf(fundParaConfig.getFundestablishdate())) {
             logger.error("申请日期不在申购日期期限中");
@@ -161,7 +179,10 @@ public class Processor022 extends BiDirectionProcessor {
 
 
 //        判断申购是否为首次购买 AppSheetSerialNo 通过申请单编号
-        String confirmationAppsheetserialno = new TransactionConfirmation().getAppsheetserialno();
+//        @TODO
+        TransactionConfirmation transactionConfirmation = new TransactionConfirmation();
+        copyFields(transactionApplication,transactionConfirmation);
+        String confirmationAppsheetserialno = transactionConfirmation.getAppsheetserialno();
         if (!confirmationAppsheetserialno.contains(transactionApplication.getAppsheetserialno())) {
 //            首次购买额度超值和低于最低额度
             if (applicationamount.compareTo(fundParaConfig.getMinbidsamountbyindi()) == -1
@@ -179,19 +200,20 @@ public class Processor022 extends BiDirectionProcessor {
             //   先判断申购金额是否超过个人最大申购金额getIndimaxpurchase
             if (applicationamount.compareTo(fundParaConfig.getIndimaxpurchase()) == 1) {
                 logger.error("申购金额超过个人最大申购金额");
-                getProcessingException(applyException,"0000");
+                getProcessingException(applyException,"1393");
                 //            再判断是否超过单日可申购最高额度buyupperamount
             } else if (applicationamount.compareTo(fundParaConfig.getBuyupperamount()) == 1) {
                 logger.error("超过单日可申购最高额度");
-                getProcessingException(applyException,"0000");
+                getProcessingException(applyException,"1393");
 //             个人当日累计购买最大金额 indidaymaxsumbuy
             } else if (applicationamount.compareTo(fundParaConfig.getIndidaymaxsumbuy()) == 1) {
                 logger.error("超过个人当日累计购买最大金额");
-                getProcessingException(applyException,"0000");
+                getProcessingException(applyException,"1393");
 //            再判断自己加上之前的金额是否超过个人最大申购
+
             } else if ((applicationamount.add(acctShare.getTotalamountofdistributorinta())).compareTo(fundParaConfig.getIndidaymaxsumbuy()) == 1) {
                 logger.error("再判断自己加上之前的金额是否超过个人最大申购");
-                getProcessingException(applyException,"0000");
+                getProcessingException(applyException,"1393");
             } else {
 //                增加的金额
                 acctShare.setTotalamountofdistributorinta(acctShare.getTotalamountofdistributorinta().add(applicationamount));
@@ -426,11 +448,5 @@ public class Processor022 extends BiDirectionProcessor {
     }
 
 
-    //      用于增加天数
-    public String addDay(String time, int addDay) throws ParseException {
-        SimpleDateFormat ft = new SimpleDateFormat("yyyyMMdd");
-        Date date = ft.parse(time);
-        String format = ft.format(new Date(date.getTime() + addDay * 24 * 60 * 60 * 1000));
-        return format;
-    }
+
 }

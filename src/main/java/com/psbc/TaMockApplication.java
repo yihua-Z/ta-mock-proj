@@ -1,6 +1,6 @@
 package com.psbc;
 
-import com.psbc.business.processor.Processor024;
+import com.psbc.business.processor.Processor022;
 import com.psbc.business.service.SpringContextUtil;
 import com.psbc.exceptions.ConfirmExpectationException;
 import com.psbc.pojo.TransactionApplication;
@@ -22,14 +22,15 @@ public class TaMockApplication {
 
         SpringApplication.run(TaMockApplication.class, args);
 
-        Processor024 processor024 = SpringContextUtil.getBean(Processor024.class);
-        List<TransactionApplication> applyList = processor024.getApplyList();
+        Processor022 processor022 = SpringContextUtil.getBean(Processor022.class);
+
+        List<TransactionApplication> applyList = processor022.getApplyList();
         for (TransactionApplication application : applyList
         ) {
             try {
-                if (application.getBusinesscode().equals("024")) {
+                if (application.getBusinesscode().equals("022")) {
 
-                    processor024.process(application);
+                    processor022.process(application);
                 }
             } catch (ConfirmExpectationException e) {
                 logger.error(e);

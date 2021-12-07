@@ -111,7 +111,7 @@ class TaMockProjectApplicationTests {
 
     @Test
     public void insetTransaction() {
-        RecordOperator recordOperator = new RecordOperator();
+//        RecordOperator recordOperator = new RecordOperator();
         String applicationFilePath = ".\\src\\main\\resources\\data\\OFD_037_999_20211025_03.TXT";
         List<TableModel> tableModels = readRecords(applicationFilePath);
         for (TableModel t : tableModels
@@ -123,7 +123,7 @@ class TaMockProjectApplicationTests {
             application.setTacode("0");
             application.setDiscountrateofcommission(BigDecimal.valueOf(0));
             application.setRecordstatus("0");
-//            transactionApplicationDao.insert(application);
+            transactionApplicationDao.insert(application);
         }
 
     }
