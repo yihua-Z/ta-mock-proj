@@ -288,7 +288,7 @@ public class Processor022 extends BiDirectionProcessor {
 //                isHoliday = false;
 //            }
 //        }
-        transactionCfdate = getNextTransactionDate(transactionCfdate);
+        transactionCfdate = DateAndTimeUtil.getNextTransactionDate(transactionCfdate);
 
 
     }
@@ -468,7 +468,7 @@ public class Processor022 extends BiDirectionProcessor {
             transactionConfirmation.setReturncode("0000");
         }
 //     周末和节假日排除
-        String nextTransactionDate = getNextTransactionDate(transactionApplication.getTransactiondate());
+        String nextTransactionDate = DateAndTimeUtil.getNextTransactionDate(transactionApplication.getTransactiondate());
 
         transactionConfirmation.setConfirmedvol(transactionApplication.getApplicationamount().divide(paraConfig.getNav()));
         transactionConfirmation.setTransactioncfmdate(nextTransactionDate);

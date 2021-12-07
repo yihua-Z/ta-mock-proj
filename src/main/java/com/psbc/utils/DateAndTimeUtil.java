@@ -165,6 +165,25 @@ public class DateAndTimeUtil {
         System.out.println(isWeekend("20211204"));
 
     }
+    //    用于判断是否为周末和节假日
+    public static String getNextTransactionDate(String transactionDate) {
+        String  transactionCfdate=transactionDate;
+        while (isWeekend(transactionCfdate)){
+            try {
+                transactionCfdate = addDay(transactionCfdate, 1);
+            } catch (ParseException e) {
+//                getProcessingException(applyException,"0000");
+//                logger.error(e);
+            }
+        }
+        //        获取交易日期配置表，获取延迟确认天数
+        //        获取工作日日历表
+        if (HolidayUtil.getHoliday(transactionCfdate) != null) {
+            transactionCfdate=getNextTransactionDayFromDB(transactionDate);
+        }
+
+        return transactionCfdate;
+    }
 
 
 }

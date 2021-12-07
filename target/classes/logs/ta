@@ -1,3 +1,1103 @@
+<<<<<<< Updated upstream
+ERROR | 2021-12-07 15:15:17 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:15:17 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:16:45 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:16:45 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:16:45 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:16:45 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:18:47 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:18:47 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:18:47 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:18:47 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:19:32 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:19:32 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:19:32 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:19:32 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:22:06 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:22:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:22:06 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:22:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:22:06 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:22:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:22:06 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:22:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:22:06 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:22:06 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:26:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:26:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:26:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:26:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:27:48 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:27:48 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:27:48 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:27:48 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:27:48 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:27:48 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:27:48 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:27:48 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:27:48 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:27:48 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:27:48 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:27:48 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:27:48 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:27:48 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:27:48 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:27:48 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:27:48 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:27:48 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:27:48 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:27:48 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:27:48 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:27:48 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:27:48 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:27:48 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:27:48 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:27:48 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:27:59 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:27:59 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:27:59 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:27:59 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:30:07 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:30:07 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:30:07 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:30:07 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:30:07 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:30:07 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:30:07 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:30:07 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:30:07 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:30:07 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:30:07 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:30:07 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:30:07 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:30:07 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:30:07 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:30:07 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:30:07 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:30:07 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:30:07 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:30:07 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:30:07 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:30:07 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:30:07 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:30:07 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:30:07 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:30:07 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:30:19 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:30:19 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:30:19 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:30:19 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:31:26 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:31:26 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:31:26 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:31:26 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:31:26 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:31:26 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:31:26 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:31:26 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:31:26 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:31:26 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:31:26 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:31:26 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:31:26 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:31:26 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:31:26 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:31:26 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:31:26 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:31:26 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:31:26 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:31:26 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:31:26 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:31:26 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:31:26 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:31:26 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:31:26 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:31:26 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:31:44 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:31:44 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:31:44 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:31:44 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:32:51 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:32:51 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:32:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:32:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:32:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:32:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:32:51 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:32:51 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:32:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:32:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:32:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:32:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:32:51 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:32:51 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:32:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:32:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:32:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:32:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:32:51 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:32:51 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:32:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:32:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:32:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:32:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:32:51 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:32:51 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:33:00 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:33:00 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:33:00 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:33:00 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:33:47 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:33:47 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:33:47 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:33:47 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:33:47 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:33:47 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:33:47 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:33:47 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:33:47 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:33:47 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:33:47 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:33:47 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:33:47 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:33:47 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:33:47 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:33:47 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:33:47 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:33:47 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:33:47 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:33:47 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:33:47 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:33:47 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:33:47 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:33:47 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:33:47 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:33:47 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:34:24 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:34:24 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:34:24 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:34:24 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:39:29 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:39:29 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:39:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:39:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:39:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:39:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:39:29 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:39:29 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:39:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:39:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:39:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:39:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:39:29 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:39:29 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:39:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:39:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:39:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:39:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:39:29 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:39:29 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:39:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:39:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:39:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:39:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:39:29 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:39:29 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:39:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:39:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:39:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:39:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:40:14 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:40:14 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:40:14 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:40:14 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:40:14 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:40:14 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:40:18 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:40:18 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:40:18 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:40:18 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:40:18 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:40:18 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:40:20 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:40:20 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:40:20 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:40:20 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:40:20 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:40:20 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:40:20 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:40:20 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:40:20 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:40:20 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:40:20 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:40:20 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:40:26 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:40:26 | [main] processor.Processor001 (Processor001.java:89) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:42:09 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:42:09 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:42:09 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:42:09 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:42:55 | [main] processor.Processor001 (Processor001.java:88) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:42:55 | [main] processor.Processor001 (Processor001.java:88) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:42:55 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:42:55 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:42:55 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:42:55 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:42:55 | [main] processor.Processor001 (Processor001.java:88) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:42:55 | [main] processor.Processor001 (Processor001.java:88) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:42:55 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:42:55 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:42:55 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:42:55 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:42:55 | [main] processor.Processor001 (Processor001.java:88) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:42:55 | [main] processor.Processor001 (Processor001.java:88) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:42:55 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:42:55 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:42:55 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:42:55 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:42:55 | [main] processor.Processor001 (Processor001.java:88) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:42:55 | [main] processor.Processor001 (Processor001.java:88) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:42:55 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:42:55 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:42:55 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:42:55 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:42:55 | [main] processor.Processor001 (Processor001.java:88) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:42:55 | [main] processor.Processor001 (Processor001.java:88) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:43:03 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:43:03 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:43:03 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:43:03 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:43:36 | [main] processor.Processor001 (Processor001.java:88) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:43:36 | [main] processor.Processor001 (Processor001.java:88) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:43:36 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:43:36 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:43:36 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:43:36 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:43:58 | [main] processor.Processor001 (Processor001.java:88) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:43:58 | [main] processor.Processor001 (Processor001.java:88) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:43:58 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:43:58 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:43:58 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:43:58 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:16 | [main] processor.Processor001 (Processor001.java:88) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:44:16 | [main] processor.Processor001 (Processor001.java:88) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:44:16 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:16 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:16 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:16 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:16 | [main] processor.Processor001 (Processor001.java:88) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:44:16 | [main] processor.Processor001 (Processor001.java:88) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:44:16 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:16 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:16 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:16 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:16 | [main] processor.Processor001 (Processor001.java:88) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:44:16 | [main] processor.Processor001 (Processor001.java:88) - java.lang.NullPointerException
+ERROR | 2021-12-07 15:44:28 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:28 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:28 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:28 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:35 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:35 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:35 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:35 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:44 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:44 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:44 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:44 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:44 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:44 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:44 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:44 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:44 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:44 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:44 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:44:44 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:47:13 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:47:13 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:47:13 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:47:13 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:47:13 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:47:13 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:47:13 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:47:13 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:47:13 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:47:13 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:47:13 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:47:13 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:47:14 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:47:14 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:47:14 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:47:14 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:47:14 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:47:14 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:47:14 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:47:14 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:48:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:48:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:48:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:48:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:48:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:48:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:48:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:48:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:48:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:48:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:48:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:48:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:48:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:48:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:48:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:48:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:48:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:48:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:48:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:48:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - certificatetype×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:11 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - individualorinstitution×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:11 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - individualorinstitution×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:11 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - individualorinstitution×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:11 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - individualorinstitution×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:11 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - individualorinstitution×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:11 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - individualorinstitution×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:11 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - individualorinstitution×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:11 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - individualorinstitution×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:11 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - individualorinstitution×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:11 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - individualorinstitution×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:11 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - individualorinstitution×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:11 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - individualorinstitution×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:11 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - individualorinstitution×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:11 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - individualorinstitution×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:11 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - individualorinstitution×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:11 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - individualorinstitution×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:11 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - individualorinstitution×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:11 | [main] service.CommonProcessUtils (CommonProcessUtils.java:108) - individualorinstitution×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:11 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - individualorinstitution×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:11 | [main] service.CommonProcessUtils (CommonProcessUtils.java:112) - individualorinstitution×Ö¶ÎÈ±Ê§
+ERROR | 2021-12-07 15:49:50 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:49:50 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:49:50 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:49:50 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:49:50 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:49:50 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:49:50 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:49:50 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:49:50 | [main] processor.Processor001 (Processor001.java:93) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AccountConfirmationDao.xml]
+### The error may involve com.psbc.mapper.AccountConfirmationDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into account_confirmation (TransactionCfmDate, ReturnCode, BusinessCode,        TransactionDate, TransactionTime, TASerialNo,        FromTAFlag, RegionCode, NetNo,        Specification, CustomerNo, ErrorDetail,        TAAccountID, AppSheetSerialNo)     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?)
+### Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+; Data truncation: Data too long for column 'TAAccountID' at row 1; nested exception is com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+ERROR | 2021-12-07 15:49:50 | [main] processor.Processor001 (Processor001.java:93) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AccountConfirmationDao.xml]
+### The error may involve com.psbc.mapper.AccountConfirmationDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into account_confirmation (TransactionCfmDate, ReturnCode, BusinessCode,        TransactionDate, TransactionTime, TASerialNo,        FromTAFlag, RegionCode, NetNo,        Specification, CustomerNo, ErrorDetail,        TAAccountID, AppSheetSerialNo)     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?)
+### Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+; Data truncation: Data too long for column 'TAAccountID' at row 1; nested exception is com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+ERROR | 2021-12-07 15:49:50 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:49:50 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:49:50 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:49:50 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:49:50 | [main] processor.Processor001 (Processor001.java:93) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AccountConfirmationDao.xml]
+### The error may involve com.psbc.mapper.AccountConfirmationDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into account_confirmation (TransactionCfmDate, ReturnCode, BusinessCode,        TransactionDate, TransactionTime, TASerialNo,        FromTAFlag, RegionCode, NetNo,        Specification, CustomerNo, ErrorDetail,        TAAccountID, AppSheetSerialNo)     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?)
+### Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+; Data truncation: Data too long for column 'TAAccountID' at row 1; nested exception is com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+ERROR | 2021-12-07 15:49:50 | [main] processor.Processor001 (Processor001.java:93) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AccountConfirmationDao.xml]
+### The error may involve com.psbc.mapper.AccountConfirmationDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into account_confirmation (TransactionCfmDate, ReturnCode, BusinessCode,        TransactionDate, TransactionTime, TASerialNo,        FromTAFlag, RegionCode, NetNo,        Specification, CustomerNo, ErrorDetail,        TAAccountID, AppSheetSerialNo)     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?)
+### Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+; Data truncation: Data too long for column 'TAAccountID' at row 1; nested exception is com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+ERROR | 2021-12-07 15:49:50 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:49:50 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:49:50 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:49:50 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:49:50 | [main] processor.Processor001 (Processor001.java:93) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AccountConfirmationDao.xml]
+### The error may involve com.psbc.mapper.AccountConfirmationDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into account_confirmation (TransactionCfmDate, ReturnCode, BusinessCode,        TransactionDate, TransactionTime, TASerialNo,        FromTAFlag, RegionCode, NetNo,        Specification, CustomerNo, ErrorDetail,        TAAccountID, AppSheetSerialNo)     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?)
+### Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+; Data truncation: Data too long for column 'TAAccountID' at row 1; nested exception is com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+ERROR | 2021-12-07 15:49:50 | [main] processor.Processor001 (Processor001.java:93) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AccountConfirmationDao.xml]
+### The error may involve com.psbc.mapper.AccountConfirmationDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into account_confirmation (TransactionCfmDate, ReturnCode, BusinessCode,        TransactionDate, TransactionTime, TASerialNo,        FromTAFlag, RegionCode, NetNo,        Specification, CustomerNo, ErrorDetail,        TAAccountID, AppSheetSerialNo)     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?)
+### Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+; Data truncation: Data too long for column 'TAAccountID' at row 1; nested exception is com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+ERROR | 2021-12-07 15:49:50 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:49:50 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:49:50 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:49:50 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:49:50 | [main] processor.Processor001 (Processor001.java:93) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AccountConfirmationDao.xml]
+### The error may involve com.psbc.mapper.AccountConfirmationDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into account_confirmation (TransactionCfmDate, ReturnCode, BusinessCode,        TransactionDate, TransactionTime, TASerialNo,        FromTAFlag, RegionCode, NetNo,        Specification, CustomerNo, ErrorDetail,        TAAccountID, AppSheetSerialNo)     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?)
+### Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+; Data truncation: Data too long for column 'TAAccountID' at row 1; nested exception is com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+ERROR | 2021-12-07 15:49:50 | [main] processor.Processor001 (Processor001.java:93) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AccountConfirmationDao.xml]
+### The error may involve com.psbc.mapper.AccountConfirmationDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into account_confirmation (TransactionCfmDate, ReturnCode, BusinessCode,        TransactionDate, TransactionTime, TASerialNo,        FromTAFlag, RegionCode, NetNo,        Specification, CustomerNo, ErrorDetail,        TAAccountID, AppSheetSerialNo)     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?)
+### Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+; Data truncation: Data too long for column 'TAAccountID' at row 1; nested exception is com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'TAAccountID' at row 1
+ERROR | 2021-12-07 15:50:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:50:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:50:29 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:50:29 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:50:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:50:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:50:29 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:50:29 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:50:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:50:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:50:29 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:50:29 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:50:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:50:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:50:29 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:50:29 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:50:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:50:29 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:50:29 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:50:29 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:51:15 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:51:15 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:52:06 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:52:06 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:52:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:52:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:52:06 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:52:06 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:52:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:52:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:52:06 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:52:06 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:52:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:52:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:52:06 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:52:06 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:52:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:52:06 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:52:06 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:52:06 | [main] processor.Processor001 (Processor001.java:83) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+; Column 'TACode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TACode' cannot be null
+ERROR | 2021-12-07 15:52:22 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:52:22 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:52:22 | [main] processor.Processor001 (Processor001.java:87) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+; Column 'FundCode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+ERROR | 2021-12-07 15:52:22 | [main] processor.Processor001 (Processor001.java:87) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+; Column 'FundCode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+ERROR | 2021-12-07 15:52:22 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:52:22 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:52:22 | [main] processor.Processor001 (Processor001.java:87) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+; Column 'FundCode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+ERROR | 2021-12-07 15:52:22 | [main] processor.Processor001 (Processor001.java:87) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+; Column 'FundCode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+ERROR | 2021-12-07 15:52:22 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:52:22 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:52:22 | [main] processor.Processor001 (Processor001.java:87) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+; Column 'FundCode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+ERROR | 2021-12-07 15:52:22 | [main] processor.Processor001 (Processor001.java:87) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+; Column 'FundCode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+ERROR | 2021-12-07 15:52:22 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:52:22 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:52:22 | [main] processor.Processor001 (Processor001.java:87) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+; Column 'FundCode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+ERROR | 2021-12-07 15:52:22 | [main] processor.Processor001 (Processor001.java:87) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+; Column 'FundCode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+ERROR | 2021-12-07 15:52:22 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:52:22 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:52:22 | [main] processor.Processor001 (Processor001.java:87) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+; Column 'FundCode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+ERROR | 2021-12-07 15:52:22 | [main] processor.Processor001 (Processor001.java:87) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+; Column 'FundCode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+ERROR | 2021-12-07 15:52:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:52:51 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:54:34 | [main] processor.Processor001 (Processor001.java:86) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+; Column 'FundCode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+ERROR | 2021-12-07 15:54:34 | [main] processor.Processor001 (Processor001.java:86) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+; Column 'FundCode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+ERROR | 2021-12-07 15:54:34 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:54:34 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:54:35 | [main] processor.Processor001 (Processor001.java:86) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+; Column 'FundCode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+ERROR | 2021-12-07 15:54:35 | [main] processor.Processor001 (Processor001.java:86) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+; Column 'FundCode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+ERROR | 2021-12-07 15:54:35 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:54:35 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:54:36 | [main] processor.Processor001 (Processor001.java:86) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+; Column 'FundCode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+ERROR | 2021-12-07 15:54:36 | [main] processor.Processor001 (Processor001.java:86) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+; Column 'FundCode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+ERROR | 2021-12-07 15:54:36 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:54:36 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:54:37 | [main] processor.Processor001 (Processor001.java:86) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+; Column 'FundCode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+ERROR | 2021-12-07 15:54:37 | [main] processor.Processor001 (Processor001.java:86) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+; Column 'FundCode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+ERROR | 2021-12-07 15:54:37 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:54:37 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 15:54:37 | [main] processor.Processor001 (Processor001.java:86) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+; Column 'FundCode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+ERROR | 2021-12-07 15:54:37 | [main] processor.Processor001 (Processor001.java:86) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+; Column 'FundCode' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'FundCode' cannot be null
+ERROR | 2021-12-07 16:01:46 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:01:46 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:01:46 | [main] processor.Processor001 (Processor001.java:88) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+; Column 'TotalVolOfDistributorInTA' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+ERROR | 2021-12-07 16:01:46 | [main] processor.Processor001 (Processor001.java:88) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+; Column 'TotalVolOfDistributorInTA' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+ERROR | 2021-12-07 16:01:46 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:01:46 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:01:46 | [main] processor.Processor001 (Processor001.java:88) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+; Column 'TotalVolOfDistributorInTA' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+ERROR | 2021-12-07 16:01:46 | [main] processor.Processor001 (Processor001.java:88) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+; Column 'TotalVolOfDistributorInTA' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+ERROR | 2021-12-07 16:01:46 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:01:46 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:01:46 | [main] processor.Processor001 (Processor001.java:88) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+; Column 'TotalVolOfDistributorInTA' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+ERROR | 2021-12-07 16:01:46 | [main] processor.Processor001 (Processor001.java:88) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+; Column 'TotalVolOfDistributorInTA' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+ERROR | 2021-12-07 16:01:46 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:01:46 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:01:46 | [main] processor.Processor001 (Processor001.java:88) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+; Column 'TotalVolOfDistributorInTA' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+ERROR | 2021-12-07 16:01:46 | [main] processor.Processor001 (Processor001.java:88) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+; Column 'TotalVolOfDistributorInTA' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+ERROR | 2021-12-07 16:01:46 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:01:46 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:01:46 | [main] processor.Processor001 (Processor001.java:88) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+; Column 'TotalVolOfDistributorInTA' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+ERROR | 2021-12-07 16:01:46 | [main] processor.Processor001 (Processor001.java:88) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AcctShareDao.xml]
+### The error may involve com.psbc.mapper.AcctShareDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into acct_share (TACode,TAAccountID, DistributorCode, FundCode,       TotalVolOfDistributorInTA, TotalAmountOfDistributorInTA,        TotalFrozenVol, TotalFrozenAmount, updateDate       )     values (?,?, ?, ?,       ?, ?,       ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+; Column 'TotalVolOfDistributorInTA' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TotalVolOfDistributorInTA' cannot be null
+ERROR | 2021-12-07 16:04:03 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:04:03 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:04:04 | [main] processor.Processor001 (Processor001.java:91) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AccountInfoDao.xml]
+### The error may involve com.psbc.mapper.AccountInfoDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into account_info (accountInfoID,TransactionAccountID, TAAcountID)     values (?,?, ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+; Column 'TAAcountID' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+ERROR | 2021-12-07 16:04:04 | [main] processor.Processor001 (Processor001.java:91) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AccountInfoDao.xml]
+### The error may involve com.psbc.mapper.AccountInfoDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into account_info (accountInfoID,TransactionAccountID, TAAcountID)     values (?,?, ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+; Column 'TAAcountID' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+ERROR | 2021-12-07 16:04:04 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:04:04 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:04:04 | [main] processor.Processor001 (Processor001.java:91) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AccountInfoDao.xml]
+### The error may involve com.psbc.mapper.AccountInfoDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into account_info (accountInfoID,TransactionAccountID, TAAcountID)     values (?,?, ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+; Column 'TAAcountID' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+ERROR | 2021-12-07 16:04:04 | [main] processor.Processor001 (Processor001.java:91) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AccountInfoDao.xml]
+### The error may involve com.psbc.mapper.AccountInfoDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into account_info (accountInfoID,TransactionAccountID, TAAcountID)     values (?,?, ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+; Column 'TAAcountID' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+ERROR | 2021-12-07 16:04:04 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:04:04 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:04:04 | [main] processor.Processor001 (Processor001.java:91) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AccountInfoDao.xml]
+### The error may involve com.psbc.mapper.AccountInfoDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into account_info (accountInfoID,TransactionAccountID, TAAcountID)     values (?,?, ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+; Column 'TAAcountID' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+ERROR | 2021-12-07 16:04:04 | [main] processor.Processor001 (Processor001.java:91) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AccountInfoDao.xml]
+### The error may involve com.psbc.mapper.AccountInfoDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into account_info (accountInfoID,TransactionAccountID, TAAcountID)     values (?,?, ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+; Column 'TAAcountID' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+ERROR | 2021-12-07 16:04:04 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:04:04 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:04:04 | [main] processor.Processor001 (Processor001.java:91) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AccountInfoDao.xml]
+### The error may involve com.psbc.mapper.AccountInfoDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into account_info (accountInfoID,TransactionAccountID, TAAcountID)     values (?,?, ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+; Column 'TAAcountID' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+ERROR | 2021-12-07 16:04:04 | [main] processor.Processor001 (Processor001.java:91) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AccountInfoDao.xml]
+### The error may involve com.psbc.mapper.AccountInfoDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into account_info (accountInfoID,TransactionAccountID, TAAcountID)     values (?,?, ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+; Column 'TAAcountID' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+ERROR | 2021-12-07 16:04:04 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:04:04 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:04:04 | [main] processor.Processor001 (Processor001.java:91) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AccountInfoDao.xml]
+### The error may involve com.psbc.mapper.AccountInfoDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into account_info (accountInfoID,TransactionAccountID, TAAcountID)     values (?,?, ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+; Column 'TAAcountID' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+ERROR | 2021-12-07 16:04:04 | [main] processor.Processor001 (Processor001.java:91) - org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+### The error may exist in file [D:\TONG\JAVA\ta-mock-proj\target\classes\mapper\AccountInfoDao.xml]
+### The error may involve com.psbc.mapper.AccountInfoDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into account_info (accountInfoID,TransactionAccountID, TAAcountID)     values (?,?, ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+; Column 'TAAcountID' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'TAAcountID' cannot be null
+ERROR | 2021-12-07 16:05:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:05:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:05:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:05:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:05:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:05:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:05:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:05:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:05:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+ERROR | 2021-12-07 16:05:05 | [main] service.CommonProcessUtils (CommonProcessUtils.java:116) - java.lang.NoSuchFieldException: nationality
+=======
 ERROR | 2021-12-06 14:27:58 | [main] processor.Processor024 (Processor024.java:121) - ÈÕÆÚ·Ç·¨
 ERROR | 2021-12-06 14:27:58 | [main] processor.Processor024 (Processor024.java:121) - ÈÕÆÚ·Ç·¨
 ERROR | 2021-12-06 14:33:02 | [main] processor.Processor024 (Processor024.java:121) - ÈÕÆÚ·Ç·¨
@@ -478,3 +1578,4 @@ ERROR | 2021-12-07 09:29:17 | [main] processor.Processor022 (Processor022.java:2
 ERROR | 2021-12-07 09:29:17 | [main] processor.Processor022 (Processor022.java:247) - µ±Ç°¾»ÖµÀàĞÍ·ÇÉê¹ºÀàĞÍ
 ERROR | 2021-12-07 09:29:17 | [main] processor.Processor022 (Processor022.java:57) - ³É¹¦
 ERROR | 2021-12-07 09:29:17 | [main] processor.Processor022 (Processor022.java:57) - ³É¹¦
+>>>>>>> Stashed changes
