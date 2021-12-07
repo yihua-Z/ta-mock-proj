@@ -1,11 +1,10 @@
 package com.psbc;
 
-<<<<<<< Updated upstream
+
 import com.psbc.business.processor.Processor022;
-=======
+
 import com.psbc.business.processor.Processor001;
 import com.psbc.business.processor.Processor024;
->>>>>>> Stashed changes
 import com.psbc.business.service.SpringContextUtil;
 import com.psbc.exceptions.ConfirmExpectationException;
 import com.psbc.pojo.AccountApplication;
@@ -42,17 +41,7 @@ public class TaMockApplication {
         }
     }
 
-<<<<<<< Updated upstream
-        Processor022 processor022 = SpringContextUtil.getBean(Processor022.class);
 
-        List<TransactionApplication> applyList = processor022.getApplyList();
-        for (TransactionApplication application : applyList
-        ) {
-            try {
-
-                if (application.getBusinesscode().equals("022")&&!application.getRecordstatus().equals("2")) {
-                    processor022.process(application);
-=======
     public static void Process024() {
         Processor024 processor024 = SpringContextUtil.getBean(Processor024.class);
         List<TransactionApplication> applyList = processor024.getApplyList();
@@ -60,9 +49,26 @@ public class TaMockApplication {
         ) {
             try {
 //                && !application.getRecordstatus().equals("2")
-                if (application.getBusinesscode().equals("024") ) {
+                if (application.getBusinesscode().equals("024")) {
                     processor024.process(application);
->>>>>>> Stashed changes
+                }
+            } catch (ConfirmExpectationException e) {
+                logger.error(e);
+            }
+        }
+    }
+
+
+    public static void Process022() {
+        Processor022 processor022 = SpringContextUtil.getBean(Processor022.class);
+
+        List<TransactionApplication> applyList = processor022.getApplyList();
+        for (TransactionApplication application : applyList
+        ) {
+            try {
+
+                if (application.getBusinesscode().equals("022") && !application.getRecordstatus().equals("2")) {
+                    processor022.process(application);
                 }
             } catch (ConfirmExpectationException e) {
                 logger.error(e);
@@ -74,9 +80,9 @@ public class TaMockApplication {
 
         SpringApplication.run(TaMockApplication.class, args);
 
+        Process001();
         Process024();
-//        Process001();
-
+        Process022();
     }
 
 }
